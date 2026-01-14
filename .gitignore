@@ -1,0 +1,21 @@
+# Quarto temporary artifacts
+/.quarto/
+# Quarto output directory for books
+/_book/
+
+# Optional: Common IDE and OS files
+.Rproj.user
+.jupyter_cache/
+.DS_Store
+
+# Ignore everything in MyDir
+part_01_math/*
+part_02_stat/*
+part_03_code/*
+
+# But do not ignore files directly within MyDir
+!part_01_math/*.qmd
+!part_02_stat/*.qmd
+!part_03_code/*.qmd
+
+!MyDir/*.txt
