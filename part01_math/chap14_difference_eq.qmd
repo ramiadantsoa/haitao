@@ -1,0 +1,50 @@
+# Difference equations {#sec-14_difference}
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+How do we document change in time?
+
+
+In an official chess tournament (probably true for no pro too), after a player move a piece, he/she will tap a clock and then write down the move they have.
+In this, there is a long historical database of all the games that have been played.
+
+What do you see when you read is a sequence of move, alternating each player.
+
+This is an example of using discrete variable to document changes in time.
+In step 1 you know the step of the system, in step 2, there is another change.
+
+However, if you look at move 15 you probably has now idea of how the chess board looks after move 14.
+This is the idea of a recurrence.
+
+So what is a difference equation, in short it is a mathematical stuff that record the state of something using .
+You have already seen that called .
+You could define it implicity, that is state next = f(state now) (see also Markov chain).
+
+A big step is trying to define, this only works for few (see below)
+
+It is an equation so there is the defining it and there is the solving it.
+
+
+## Formal {.unnumbered}
+A difference quation is an application from N to R or anything where
+u_n+1 = f(u_n). This is a recurrence
+
+We could of course define as u_next = f(u_n, u_n-1...).
+
+Two visual representations
+Spider
+and time
+
+
+## Examples {.unnumbered}
+Arithmetic and geometric
+Population size
+
+
+## Tips and warnings {.unnumbered}
+this is very fast computationally.
+It is quite intuitive.
+Convergence and divergence
+Definition
+
+## If you want to know more {.unnumbered}

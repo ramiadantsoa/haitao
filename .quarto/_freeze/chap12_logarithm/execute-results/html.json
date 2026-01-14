@@ -1,0 +1,17 @@
+{
+  "hash": "1b4d18d9fdbfb56c6812e2b78020adcf",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Logarithm function {#sec-12_log}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n::: {.cell}\n\n:::\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n## Concepts and intuitions {.unnumbered}\nWhen measuring the intensity of earthquake, the metric is Richter. Moment Magnitude\nOne of the strongest earthquakes in Madagascar was 6.2 in 1950, 11 May (earthquakelist.org)\nThe strongest earthquake measured measured with a Magnitude 9.5 in 1960 Great Chilean earthquake.\nAccording to wikipedia, 6-6.9 is strong whereas, 9-9.9 is extreme near total dectruction.\nOne might then ask if it ends at 10.\nWhat would a say an earthquake of 12, 15, or 18?\nAccording to xkcd, the latter will case the earth to explode.\nThis is where it is important to realize that Richter is on base 10 a logarithmic scale.\nAdding one unit, will multiply the energy by 10.\nSo to put it in other world. a 6 vs 9 earthquake means the latter is 1000 more powerful than the former.\n\nLogarithm scale and logarithm function.\nAs function, it just takes a value and spits something.\nOne reason why it important is because of the linearization property. turns a multiplication to addition.\nlog(a^2) = log(a x a) = log (a) + log(a) = 2 log a.\nSo log(a^n) = n log(a).\nThe n is the magnitude in the Richter scale.\n\nWhy does it have those properties, let's just say it is the miracle/genuis of mathematicians who discovered it.\n\n## Formal {.unnumbered}\nA logarithm is function defined fomr (0, + inf) to (- inf, + inf). And is written log or ln.\n\nThe other fancy property is that log(e) = 1.\nThe actual definition is that it is the area under the curve for 1/x.\n\nLogarithm and bases\nlog2 = ln/log2, and log10 = ln/log10\n\nHere is plot for log\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](chap12_logarithm_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n## Examples {.unnumbered}\n\n## Tips and warnings {.unnumbered}\n\n## If you want to know more {.unnumbered}",
+    "supporting": [
+      "chap12_logarithm_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

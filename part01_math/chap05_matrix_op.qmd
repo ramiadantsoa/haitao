@@ -1,0 +1,61 @@
+# Matrix operation {#sec-05_matrix_op}
+
+## Concepts and intutions {.unnumbered}
+James  = Marie, James + Marie = Jamie.
+Here is an example of using mathematical notation.
+You should know by now that the equal is not really equal in mathematics, and the addition is merely a notation.
+Yet, they actually have a meaning.
+In fact, James x Marie = Jarie is another notation and might be because they multiply.
+
+So matrix is a rectangle, or a different kind of object at least in mathematics.
+As far as we know we have numbers, they are also calles scalar and they are essentially a 1 x 1 matrix.
+
+What does it mean adding Matrix 1 + Matrix 2 or Matrix 1 per matrix 2. What is multiplication and addition
+
+In this section, we do the simplest that is Matrix 1 is just a scalar. Or combining matrices with same dimension.
+Retain the original property of
+
+The earliest might be with shopping.
+X bought 2 banana, 4 apples and 0 orange
+Y bought x banana, 4 apples and 3 orange
+Z
+A
+
+## Formal {.unnumbered}
+Adding a scalar
+Adding a matrix M means M + 1 = M were each entry is added 1
+
+Multiplying a scalar means that M * 2 = where each entry is multiplied by 2
+
+Adding two matrices
+This is a special case, and the simplest is matrix of same dimension, so that M + L = adding each entry
+
+Multiply two matrices (Hadamard product)
+
+The advantage is that it is commutative
+M + 1 = 1 + M
+M * 2 = 2 * M
+
+It is also associative
+M + L + K = M + K + L
+
+And distributive
+
+This is a desired feature where the + and * have kept their original meaning.
+
+## Examples {.unnumbered}
+Assume we wanted to add one fruit for each person
+
+Change kg to g
+
+Adding only at certain cases
+
+## Tips and warning {.unnumbered}
+These are well defined, essentially, define and do as it was defined.
+You might run into issues, when you apply them in coding.
+There are other, Kronecker product but essentially you come up with rules and define a symbol for it
+We have determinant too.
+Although we could define subtraction in similar way, careful with division so that we don't divide by zero in any of the entry
+
+## if you want to know more {.unnumbered}
+Linear algebra

@@ -1,0 +1,22 @@
+# Differential equations {#sec-15_differential}
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+How do we document change in time?
+See before about playing chess.
+In modern time, we could actually.
+In this case, nothing happens between times so
+However, time keeping is also quite.
+In fact time is continuous and we cut it in a convenient way.
+
+## Formal {.unnumbered}
+A differential equation is dx/dt = f(x).
+This is again the derivative.
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+Ironically, most differential equation are solved as a difference equation.
+Numerical solution.
+
+## If you want to know more {.unnumbered}

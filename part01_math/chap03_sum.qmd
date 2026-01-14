@@ -1,0 +1,42 @@
+# Sum and product {#sec-03_sum}
+
+## Concepts and intutions {.unnumbered}
+Condensing is a natural, see in #c3_operation that multiplication is a condensation of addition.
+So 2 + 2 + 2 = 3 * 2, essentially created a symbol to say things are repeating.
+
+1 + 2 + 3 + 4 = 10
+when faced with enough repetition, it is convenient to create a new one to condense it.
+For sums the idea is to use the S in greek letter Sigma and have
+sigma_i = 1 ^ 4 i = 1 + 2 + 3 + 4.
+
+Likewise, we could have 1 x 2 x 3 x 4 = 12 but more famously, we have 4! factorial four.
+
+Most likely, but two main, sigma and pi.
+
+## Formal {.unnumbered}
+Sigma we need to say sum, then when is the first term and what is the last term, and the moving indice.
+Sigma_i
+
+the other one is using set, w in Omega.
+
+We could extend it into higher
+Sigma_j sigma_i
+with the rule that you do the interior first.
+the other one is Pi, this is product the same as.
+You could also use union, intersection etc.
+
+## Examples {.unnumbered}
+sigma i sigma i^2
+sigma 1/i^2 is Pi^2 over 6
+Sum 1/i! = e
+
+Examples of Pi.
+
+## Tips and warning {.unnumbered}
+This is a matter of definition
+Just try with the first few terms
+Those symbols are not but same concept as using a for loop in programming
+What out when upper is infinite things might get wierd, so stay in the finite realm.
+
+## if you want to know more {.unnumbered}
+xxxx

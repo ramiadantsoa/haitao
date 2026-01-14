@@ -1,0 +1,58 @@
+# Operation {#sec-01_operation}
+
+## Concepts and intutions {.unnumbered}
+Few years ago, there are was an intense debate on Twitter (now X) about a simple calculation.
+
+8 div 2(2 + 2)
+
+One camp would argue that the answer is one, the other camp is convinced that it is sixteen.
+What makes it complicated is that inputing with different calculators also yield different results.
+
+So who is right?
+
+Obviously, the question is formulated to bring confusion.
+But this is still simple arithmetic
+The main is when in doubt, clarify.
+
+Maybe this reflects on society that people make up their own rule and try to impose.
+This might foundation of society, but in mathematics...unless you want to invent a new sort of maths.
+That would be anarchy...
+
+## Formal {.unnumbered}
+Here is a quick review
+Parenthesis is priority.
+In the example above, just do 2 + 2.
+Inner parenthesis goes first: 8 div ( 2 (2 + 2))
+
+Go left to right: 2 / 2 * 2
+
+Power over multiplication: 3 * 2 ^4
+
+Multiplication over addition: 3 * 2 + 2
+
+Position matter
+2 ^ 2 + 1 is different from 2 ^ (2 + 1)
+
+## Examples {.unnumbered}
+Fractals 1/ ( x + 1/ (x + 1/(x + 1/x)))
+Power 2 ^ 2 ^ 2
+Placing parenthsis to yield different results
+11 - 6/2 x 7/5  + 8
+
+11 - 6/2 x (7/5  + 8)
+11 - (6/2) x (7/5)  + 8
+(11 - 6/2) x 7/5  + 8
+
+
+## Tips and warning {.unnumbered}
+It is generally not use in other than arithmetic.
+Just add parenthesis when in doubt.
+The rule of power over multiplication and multiplication over addition should be natural.
+In fact, multiplication by definition is a generalization of addition: 2 + 2 + 2 + 2 = 2 * 4.
+Thus if you reverse and 2 * 4 + 3 = 2 + 2 + 2 + 2 + 3.
+The same applies to power 2 ^ 3 = 2 * 2  * 2.
+This if you revers  2^3 * 3 = 2 * 2 * 2 * 3 and 2^3 + 3 = 2 * 2 * 2 + 3
+
+## if you want to know more {.unnumbered}
+Books on arithmetic
+History of arithmetic

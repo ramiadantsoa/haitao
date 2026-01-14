@@ -1,0 +1,57 @@
+# Logarithm function {#sec-12_log}
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+When measuring the intensity of earthquake, the metric is Richter. Moment Magnitude
+One of the strongest earthquakes in Madagascar was 6.2 in 1950, 11 May (earthquakelist.org)
+The strongest earthquake measured measured with a Magnitude 9.5 in 1960 Great Chilean earthquake.
+According to wikipedia, 6-6.9 is strong whereas, 9-9.9 is extreme near total dectruction.
+One might then ask if it ends at 10.
+What would a say an earthquake of 12, 15, or 18?
+According to xkcd, the latter will case the earth to explode.
+This is where it is important to realize that Richter is on base 10 a logarithmic scale.
+Adding one unit, will multiply the energy by 10.
+So to put it in other world. a 6 vs 9 earthquake means the latter is 1000 more powerful than the former.
+
+Logarithm scale and logarithm function.
+As function, it just takes a value and spits something.
+One reason why it important is because of the linearization property. turns a multiplication to addition.
+log(a^2) = log(a x a) = log (a) + log(a) = 2 log a.
+So log(a^n) = n log(a).
+The n is the magnitude in the Richter scale.
+
+Why does it have those properties, let's just say it is the miracle/genuis of mathematicians who discovered it.
+
+## Formal {.unnumbered}
+A logarithm is function defined from (0, + inf) to (- inf, + inf). And is written log or ln.
+
+The actual definition is that it is the area under the curve for 1/x.
+Essentially, if you so that the area under the curve is 1.
+
+This leads to the fancy property, that is log(e) = 1.
+And this implies that log(e^x) = x log e = x.
+In other words, log is the reciprocal of exponential.
+
+Logarithm and bases
+log2 = ln/log2, and log10 = ln/log10
+
+Here is plot for log
+
+```{r}
+x <- seq(0.01 , 1000, by = 0.1)
+y <- log(x)
+dat <- data.frame(x, y)
+ggplot(dat, aes(x = x, y = y)) +
+    geom_line() +
+    theme_bw()
+```
+
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+A key thing is that x has to be positive negative values.
+Log is useful to convert multiplication to (see that a lot in likelihood)
+It compresses higher value.
+
+## If you want to know more {.unnumbered}

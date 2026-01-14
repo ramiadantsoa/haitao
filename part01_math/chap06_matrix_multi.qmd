@@ -1,0 +1,49 @@
+# Matrix multiplication {#sec-06_matrix_multi}
+
+## Concepts and intutions {.unnumbered}
+Assume we have a matrix,
+X bought 2 banana, 4 apples and 0 orange
+Y bought x banana, 4 apples and 3 orange
+Z
+A
+
+And we wanted to know how much X, Y, Z, A spent.
+We need a new information which is the cost per unit.
+we have so this is essentialy a vector [p1 p2 p3]
+
+To do so we need to do a x + b y + c z = total
+
+This is what we define as multiplication
+
+The condition here is that the number of columns is the same as the number of rows in the second one.
+
+## Formal {.unnumbered}
+Define formally
+
+Identity matrix is one where diagonal is 1 and the rest is zero.
+This is the neutral element in matrix multiplication.
+
+Inverse of a matrix and existence
+If determinant is not null. Refer to other to calculate that.
+
+## Examples {.unnumbered}
+In the above example, we could also use the price in different markets but the condition remains the same. Columns  = raws
+
+1 + 2* M.Z
+
+anothe example is temperature, humidity etc influence x y z
+
+## Tips and warning {.unnumbered}
+It is because of that this is called linear algebra.
+A matrix is also an application that transforms something into another thing.
+This is at the base of linear regression
+
+We could do a x x2 and x3 but this is still linear.
+
+It is tedious but computer can do it faster
+That is not the only way to compute multiplication
+R can forst something, so how they implemented it.
+This is the reason why entry needs to be number otherwise, sums and product are not defined
+
+## if you want to know more {.unnumbered}
+Linear algebra

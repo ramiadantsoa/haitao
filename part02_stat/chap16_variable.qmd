@@ -1,0 +1,31 @@
+# Variable {#sec-16_variable}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+A variable takes different values in different situations
+
+I think the easiest way to understanding a variable is to think of it as a function.
+We give an input and we get an output (@sec-08_func).
+In the old way f: x -> f(x) = y.
+It is important to understand all the values of x and the possible values of y.
+
+This is quite similar as variable in statistics.
+x is the object and y is character we measure from that object.
+
+So how about dependent variable, independent variable
+Explanatory and response variable
+Qualitative, quantitative,
+discrete, continuous,
+nominal, ordinal
+
+In programming, you will see, integer, numeric (float), and string, boolean, characters, factors (see section programming for others)
+
+## Formal {.unnumbered}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

@@ -1,0 +1,41 @@
+# Exponential function {#sec-11_exponential}
+{{< include ../preamble.qmd >}}
+## Concepts and intuitions {.unnumbered}
+As multiplication is generalization of addition 2 + 2 + 2 = 3 x 2, power is a condense notation of multiplication 2 x 2 x 2 = 2^3 (see also tips in notation).
+2^0 = 1
+At middle school, students started to learn about rules
+2^n x 2^m = 2^(n+m).
+Is there a need to learn that by heart?
+One could play, say 2^n x 3^n = (2 x 3)^n etc.
+
+At the end of high school, a new function is introduced which e^x or exponential of x.
+They then learn a but of properties and the famous e^x x e^y = e^(x+y).
+So essentially, the exponential function is just a power and instead of 2 we have e = 2.718...and instead of having integer, it can take any value.
+So e^0 = 1 and e^x should always be positive (could you get a negative value for 2^n for any reel value of n?)
+
+So why e? not, pi = 3.14 or any other numbers.
+There could be a whole book about that but to simplify, wherever mathematicians looked, that number seems to appear, and strangely appears in the solution of some equations.
+
+## Formal {.unnumbered}
+The exponential function e^x is just the power of where e is mathematical constant.
+
+It is an irrational (cannot be a ratio of integer) and transcendental number (cannot be root of a polynomial).
+
+Another peculiar property is that taking the derivative of e^x you still get e^x which is the only function that has such property.
+
+Here is the plot for exponential of x
+```{r}
+x <- seq(-2 , 10, by = 0.1)
+y <- exp(x)
+dat <- data.frame(x, y)
+ggplot(dat, aes(x = x, y = y)) +
+    geom_line() +
+    theme_bw()
+```
+
+## Examples {.unnumbered}
+e^0 = 1, and e^1 = 2.71.
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

@@ -1,0 +1,58 @@
+# Preface {.unnumbered}
+
+This book should not exist.
+There are already so many free available materials online.
+Many universities have materials and open courses (examples).
+There are PDF and books available.
+There are videos on YouTube, some might be more legitimate than others.
+I also hope that there are libraries where you are and you have access to recent up-to-date physical books (e.g. at MBC)...if you are student do not hesitate to make a request to your advisors and acquaintances, still stay reasonable.
+As far as know, foreign researchers are not shy on bringing knowledge.
+And ultimately, I expect that the major part of what is written here are taught during undergraduate and graduate courses at your institutions.
+
+So is there a need for this book?
+Well, I aim and try to address superficial problems with this book.
+The first problem is decentralized information.
+Maybe there is a book on coding and another book on statistics.
+Maybe in some books, the basics are not covered so you need to look somewhere else.
+Maybe the levels differ.
+The first aim to gather in one place multiple informations, maybe this is not a book but an encyclopedia.
+This cover topics that I feel are not understood (essentially basics) or most commonly used without reflection (say PCA or ANOVA).
+Starts with a basic level, maybe at most intermediate level.
+I expect it to grow and be updated overtime although I cannot guarantee the regularity of the update.
+Hopefully, this will also include more advanced topics in the future.
+Although as above, if you look for advanced, maybe this is not the book for you.
+
+The second is language, maybe we are not all comfortable with English.
+Although with mixed opinions, this book will be in Malagasy (an English version is also available although less polished).
+Unfortunately, writing in Malagasy is a huge challenge.
+I had to make a decision for the translation.
+First, I used termed defined by Malagasy Academy.
+Second, if the former does not exist, I aimed to translate the idea.
+Finally, if both fails, I would Malagasize the word and provide a definition.
+See glossary at the end.
+But I hope that breaking the language barrier will make it to more accessible.
+
+Third, this book/encyclopedia is written in a compact form to combine the intuitive, the formal, and applied perspectives.
+Each topic, will be divided into 5 parts.
+The first part will provide the intuition for the concept, I will use metaphor etc.
+The second part will focus on the formal definition which could be Googled.
+The third part will provide a practical side, how to run those things in R.
+The fourth part will provide tips etc.
+**The last part** is on documentation if one wants to _go further_.
+
+As a warning, it is worth mentioning that I am no expert in any of the topics and sections.
+I am mostly self-taught training in statistics and programming.
+There are experts in the field, and I will never dare to compare to them.
+This book is based on my own experience and the way how I understand the concept, the way how I code.
+This is more a generalist approach to the concept.
+Yet, to enhance the value, I had colleagues and past advisors--the experts--that made sure that what is written is not completely nonsense.
+I am grateful and forever in dept to Otso, Tony, Guillaume, Gavin, Eva.
+However, if there is something wrong, I take full responsibility.
+
+This is free book, you can download it from my webpage and MBC page
+Feel free to share it with anyone, use on whatever you want but this is self-edited book so you should not use it as a valid citation.
+As the proverb says, _Saonjo iray lohasa_.
+Someone might try to make a business out of it.
+I am sorry for those who will pay for it and get scammed.
+
+Finally, don't hesitate to reach out if there is something wrong, you will help me greatly.

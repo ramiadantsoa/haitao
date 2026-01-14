@@ -1,0 +1,54 @@
+# Greek letters {#sec-02_greek}
+
+## Concepts and intutions {.unnumbered}
+
+Do you recognize this?
+
+(zeta  + xi)^2 = zeta^2 + xi^2 + 2 zeta  xi
+
+After staring for a while, one might realize that this is identité remarquable.
+In fact it exactly the same as (a + b) ^ 2 = a^2 + b^2 + 2ab.
+
+This is the same as 13 + 9 = 22
+But this is the same as XIII + IX = XXII.
+
+The romans were not great with maths.
+
+One challenge is we don't know how to read.
+
+In short, these are just symbols,  they function as any other notation
+y = a x + b is y =  alpha x + beta.
+
+For some reasons, they might look more complicated, and to a certain extant more relevant. I am alpha and omega. Is less than I am a and z.
+But that is not the best way to use them.
+
+## Formal {.unnumbered}
+The only thing is just to learn the alphabet so here a quick summary
+There are upper and lower case.
+
+The other extension is that they are used
+In physics, constants
+In math, pi is a recognizable
+In statistics, they represent something different.
+As a true parameter.
+This could facilitate
+
+Need more symbols
+
+## Examples {.unnumbered}
+Famous letters
+Zeta function
+Omega for a set, small for element
+Ohm in physics
+rho is for correlation
+
+
+## Tips and warning {.unnumbered}
+epsilon and omicron iota etc are something small
+Omega is used as a set in maths and ohm in physics
+
+Notation for birth is beta and death is delta, or mortality is mu, tau is time.
+Of course, you can but using something intuitive helps.
+
+## if you want to know more {.unnumbered}
+See @sec-01_operation

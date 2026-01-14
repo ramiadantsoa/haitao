@@ -1,0 +1,17 @@
+{
+  "hash": "dc001d066045bb89347d67165bb6c824",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Derivative {#sec-10_derivative}\n\n\n\n\n\n\n\n\n\n\n::: {.cell}\n\n:::\n\n\n\n\n\n\n\n\n\n\n\n\n## Concepts and intuitions {.unnumbered}\nDerivative is again one of those words that somehow rotten us.\nMost of you might remember how to calculate the derivative, study the sign of the derivative etc.\nThis is not about highschool test.\nYet, it is a simple concept, and like function probably use that all the time.\nDerivative is essentially speed (you might remember that from physics and movement of an object).\n\nHow do you calculate speed? Distance over the time it takes to run the distance.\nSo for a same amount of time (say one minute), car 1 travels 1 km and car 2 travels 2 km, then car 2 is faster than car 1, or the speed of car 2 is higher than the speed of car 1.\n\nNow, imagine we plot a function (see @sec-09_function_viz) about relationship between function and visualization.\nif x is time and y is position at a given time.\nLet's plot x0 and  x1 is one minute after x0. y0 and y1 position and y2 position after a minute\n\n\n\n\n\n\n\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](chap10_derivative_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::\n\n\n\n\n\n\n\n\n\n\nWhat is then speed of car 1, 1km/minute = 60 km per hour, and the speed of car 2 is 2km/minute = 120 km per hour.\n\nGraphically, it is just yfinal - yinitial/ xfinal - xinitial.\nSo if we look at the angle in the rectangular triange with respect to the x axis, speed is coté opposé (y2 -y1) divided by coté adjacent x2 - x1.\n\nthe steeper the hypothenus the faster the car is\n\n## Formal {.unnumbered}\nNow, unfortunately, the mathematical rigourous definition is\nlim f(x + h) - f(x)/ h when h goes to zero.\n\nWell, the other definition which is similar is f(x2) - f(x1)/ x2 - x1 where x2 - x1 = h.\n\nYou might recognize how large is the difference between the images.\n\nSo what is the f' things that we have to learn?\nWell, it is just a shortcut so we don't have to calculate the limit.\nSo yes, it is painful but it makes life easier.\n\n## Examples {.unnumbered}\nTo stick to intuition, imagine we have a function that is seen as horizontal line.\nSo a car is not moving and his position through time is a horizontal line.\nWhat is his speed? 0 correct\nLook at the steepness..it is 0 right\nOr also y2 - y1 is 0 also.\nAnd so that is why the derivative of a constant is always zero. There is no slope\n\nAnother example is the function y =  a x + b\n...you see the derivative is just a so the higher the a the higher the speed.\n\nFinally, what if it is not a line\nThis is where the tangent comes in and so we need to shrink the displacement from\n\n## Tips and warnings {.unnumbered}\nTo further clarify any trauma.\nAn increasing function means that the derivative is positive.\nThe curvse go up, y2 is bigger than y1 so the difference is positive\nthe same is a function is decreasing.\nWhat if the derivative is zero means that the tangent is horizontal it could mean three of the next scenario: up, down or S.\n\n## If you want to know more {.unnumbered}",
+    "supporting": [
+      "chap10_derivative_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

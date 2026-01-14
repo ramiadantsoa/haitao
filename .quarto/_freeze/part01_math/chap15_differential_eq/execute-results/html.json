@@ -1,0 +1,15 @@
+{
+  "hash": "d3cced12edd788c44d9a73a38005469f",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Differential equations {#sec-15_differential}\n\n\n\n\n\n\n\n\n\n\n::: {.cell}\n\n:::\n\n\n\n\n\n\n\n\n\n\n\n\n## Concepts and intuitions {.unnumbered}\nHow do we document change in time?\nSee before about playing chess.\nIn modern time, we could actually.\nIn this case, nothing happens between times so\nHowever, time keeping is also quite.\nIn fact time is continuous and we cut it in a convenient way.\n\n## Formal {.unnumbered}\nA differential equation is dx/dt = f(x).\nThis is again the derivative.\n\n## Examples {.unnumbered}\n\n## Tips and warnings {.unnumbered}\nIronically, most differential equation are solved as a difference equation.\nNumerical solution.\n\n## If you want to know more {.unnumbered}\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

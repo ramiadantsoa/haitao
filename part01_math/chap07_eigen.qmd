@@ -1,0 +1,40 @@
+# Eigen decomposition {#sec-07_eigen}
+
+## Concepts and intutions {.unnumbered}
+Version 1: as a product of matrices
+Prime factors, one is to think of.
+To have one of the matrix as a diagonal matrix.
+M = B* D B.
+
+Version 2: matrix as coordinate in a basis
+Think of fruits and make a combination of other.
+So one is fruit salad etc.
+
+## Formal {.unnumbered}
+this is called eigen decomposition.
+If there is a square matrix M, and determinant is not zero,
+There is a diagonal matrix X
+
+## Examples {.unnumbered}
+Version 1
+
+Pick a 3 x 3 matrix.
+Here are the eigenvalues and eigenvectors.
+Do the multiplication to recover the original matrix
+
+Version 2
+
+## Tips and warning {.unnumbered}
+This is at the core of PCA.
+Hard rotation.
+Focus on square matrix.
+Basis not unique
+
+Other fun matrix
+Symetric etc.
+
+This is a huge field and goes beyond what one can imagine.
+We just end here as they are most needed for what's coming
+
+## if you want to know more {.unnumbered}
+Linear algebra

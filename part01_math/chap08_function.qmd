@@ -1,0 +1,49 @@
+# Functions {#sec-08_func}
+
+## Concepts and intutions {.unnumbered}
+For most of us, hearing a function is traumatizing.
+Studying and is, we have a set of procedures.
+I think it is a part of the education failure.
+1- by reducing to monkey
+2- by breaking the a function and its visulization.
+
+
+Well, you actually use functions everyday, and it is a.
+the major difference is that we do it a less quantitative way.
+So if I take X decision, I get Y and if I take not X then I get not Y.
+
+If one works X hours then I get Y money, well that's the theory and so it is not as neat as in mathematics.
+
+Well so why the complicated functions, well, they serve another purpose.
+And that is not the purpose of this chapter nor this book.
+Intuitively, we just need to that if we give an input then we get an output.
+In fact, we want to unravel the relationship, infer what kind of functions is there.
+And ironically, the most popular one is just y =  a x+ b. So secondary school map.
+
+
+## Formal {.unnumbered}
+We need three components to define a function, the starting and ending sets and the actual mapping.
+It is written like f: X -> Y , x, y = f(x)
+
+And that's it. In general, there are unique so that f(x), this is called explicity.
+This is different from implicit but also stochastic stuff.
+
+Well, X could be multidimensional or qualitative etc.
+
+## Examples {.unnumbered}
+The traditional is y = a x + b.
+
+Using integer Cnp is a function.
+
+Baker's ratio or making a cake.
+
+But the shopping is another example: how much you spend.
+
+## Tips and warning {.unnumbered}
+With any programming language, you can do 2 in one line.
+Life is not perfect and the explicit y = f(x) is a wishful thinking.
+In fact, y = f(x1,x2,x3...)
+In principle, one input leads to one output
+Dummy variable
+
+## if you want to know more {.unnumbered}

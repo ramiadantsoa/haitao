@@ -1,0 +1,15 @@
+{
+  "hash": "04b26c56d7a7ecedcb8ef215a05f9440",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Discrete and continuous variables {#sec-13_discretec}\n\n\n\n\n\n\n\n\n\n\n::: {.cell}\n\n:::\n\n\n\n\n\n\n\n\n\n\n\n\n## Concepts and intuitions {.unnumbered}\nTime: is time continuous or discrete?\n\nIn statistics you probably heard qualitative, quantitative, discrete, continuous, factors, integer, ordinal, and others.\nBefore heading there in latter chapters, let's which is discrete and continuous in a mathematical sense.\n\nThe world discrete aligns with the supposedly creation of mathematics.\nCounting object.\nYou migth use this device to count stuff. This is a discrete.\nThe number you get is called an integer.\nAnd the set of all integer is called natural numbers (nombre entier). Related to counting. So if you plot it, you will have discrete points.\n\nIn some situations, you realize that not everything is an integer.\nYour height will rarely be exactly round.\nIf you weight something it will not be an integer.\nThis is related to measuring. To represent it you need a continuous line.\n\nWhy do we need a disctinction? Well, in practice we could just use the set of reel numbers.\nAnd in most cases, it might work.\nUnfortunately, we use different mathematics to work with the different set.\n\nFor instance, add number from 1 to 5, this is 1 + 2 + 3 + 4 + 5 = sum = 10.\nBut what if I say, add number between 1 to 5 in this line? What does that mean.\nIn principle, you could say, 1 + 2 + 3 + 4 + 5 = 10, and then 1.1 + 2.1 + 3.1 + 4.1  = xx. You quickly realize that if summed like that, the number will be infinite.\n\nSee @sec-14_difference vs @sec-sec-15_differential for an example and also discrete vs continuous distribution.\n\n## Formal {.unnumbered}\nSet of discrete number: number theory\nOnly works with addition\n\nSet of continuous number\nDo we need to talk about complete corps or is that not enough.\n\n## Examples {.unnumbered}\nPrime numbers\nIrrational numbers\n\n## Tips and warnings {.unnumbered}\nWhat about rational numbers, they are also discrete.\nAdding rational leads to irrational\n\n## If you want to know more {.unnumbered}",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

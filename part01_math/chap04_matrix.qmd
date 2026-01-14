@@ -1,0 +1,47 @@
+# Matrix {#sec-04_matrix}
+
+## Concepts and intutions {.unnumbered}
+Matrix is the famous movie by Keanu Reaves.
+The appeal to popularity is sometimes frustrating, almost like thinking about Madagascar and people think of lions and zebra.
+
+Like Madagascar existed before, matrix since early age of mathematics.
+And in its simple form, it is just a rectangle filled with numbers.
+
+The earliest might be with shopping.
+X bought 2 banana, 4 apples and 0 orange
+Y bought x banana, 4 apples and 3 orange
+Z
+A
+
+In short we can condense again this into a matrix
+Which one is row or column does not matter as long as we specify which one is row and column.
+Shifting is what is called transpose.
+
+## Formal {.unnumbered}
+Matrix with row and column,
+upper case or bold dimensions, diagonal
+Entries or cells lower case
+They are mainly numbers.
+
+a vector is a one line or one row matrix
+
+## Examples {.unnumbered}
+Diagonal matrix with a special notation
+Upper diagonal
+Null matrix
+Square matrix.
+
+## Tips and warning {.unnumbered}
+Matrix is a new object,
+Coordinates in a new system
+For biologist community matrix is species.
+You choose species or sites as coordinates is up to you.
+
+Do not confuse matrix with data frame, although matrix requires same types as entries.
+Storing data vs. performing mathematical operation on it.
+there are ways to go around but not in this section of the book.
+
+1 x n  is different with n x 1
+
+## if you want to know more {.unnumbered}
+Linear algebra

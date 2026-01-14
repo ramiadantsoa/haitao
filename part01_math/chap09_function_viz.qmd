@@ -1,0 +1,40 @@
+# Function and graphics {#sec-09_function_viz}
+
+## Concepts and intuitions {.unnumbered}
+In ancient times, people have been trying to solve alegraic equations.
+E.g. what are the roots of a second degree polynomial.
+The famous delta and b2 - 4 a c and the rest.
+
+In another word, they have been the geometry.
+Looking at figure, let's build a bridge, what is the arch?
+
+Eventually, they realize that it is one of the same thing.
+That is a figure could be represented by a mathematical function.
+And mathematical function could be replaced by a figure.
+
+The ability to plot a function is a blesssing, as long as you can read a figure but picture this.
+What if I say your monthly salary is f(year) = 10 exp(year)/ year ^2
+Would you take it?
+But if we can plot it, I am sure you will take or deny the deal looking at your salary through time.
+
+## Formal {.unnumbered}
+For simplicity, we look at X and Y as real number.
+See for more details.
+To graphically present a function, we need a few things
+x axis to represent the value, we need a scale on that x axis.
+y axis to represent the
+The angle between x and y axis
+The curve is just how y vary as we continuously change x
+
+## Examples {.unnumbered}
+The simplest is y = a*x + b and
+to plot say a second degree polynomial, we could pick n values and plot each of them.
+Well, this means that you can give any function and I can plot it.
+With computer we can plot anything.
+
+## Tips and warnings {.unnumbered}
+Interpreting figure could be the challenge.
+
+## If you want to know more
+Implicit function
+parameteric plot
