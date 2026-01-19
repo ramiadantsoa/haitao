@@ -4,21 +4,20 @@
 
 ## Concepts and intuitions {.unnumbered}
 
-A variable takes different values in different situations
+A variable is one of those terms (see also math terms) that have predominated intro stat courses.
+A qualitative variable, quantitative variables, nominal, ordinal, and latter the concept of random variable is also used.
+This is an example where why do we need it.
+And that question often arises when we have failed to link to reality.
+() Can also blame the instructor for failed method.
 
-I think the easiest way to understanding a variable is to think of it as a function.
-We give an input and we get an output (@sec-08_func).
-In the old way f: x -> f(x) = y.
-It is important to understand all the values of x and the possible values of y.
+The other challenge with such term is also it has a meaning in the colloquial language that linking makes it even more difficult.
+Another example is when people think that a qualitative variable is related to quality.
+Since there are many books that go from theory to reality.
+Here I would just define/ translate variable as a trait or feature.
+Trait of feature of what (see later chapters).
 
-This is quite similar as variable in statistics.
-x is the object and y is character we measure from that object.
-
-So how about dependent variable, independent variable
-Explanatory and response variable
-Qualitative, quantitative,
-discrete, continuous,
-nominal, ordinal
+At this stage, you could say that a variable is just a function.
+If you take an object x from a population x, you can apply the variable (f) and obtain the value y = f(x). 
 
 In programming, you will see, integer, numeric (float), and string, boolean, characters, factors (see section programming for others)
 

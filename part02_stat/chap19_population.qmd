@@ -1,0 +1,34 @@
+# Population {#sec-19_population}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+Population is the underlying of statistics.
+As you will see throughout this book separating understandig the differences between the same terms used in different field, science vs colloquial is one major goal of this book.
+This is a book about applied stat, and the main audience are ecologists and biologists, or at least those working with natural science.
+Here we will attempt to link what is meant by population in natural science and population in statistics.
+
+Malagasy population is about, what does that mean.
+In its simplest form, it is a group of individual that live in Madagascar.
+Do you count or Malagasy living abroad as Malagasy population?
+What is a population of lemur, same species living in a
+What is an ant population? Does it make sense.
+although, it might become a philosophical that eventually.
+But this is not a book about biology, and can find in textbook the nuances among different definition.
+
+In statistics, things are defined more precisely.
+This makes it more conceptual.
+The most important part is that most of statistics is not studying the whole population.
+The goal is to sample from that population so we can estimate its proriety, somehow extrapolate.
+Only rarely, we will have access to the real population.
+
+## Formal {.unnumbered}
+
+## Examples {.unnumbered}
+Passenger of titanic
+People with disease
+Whale population.
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}
