@@ -27,6 +27,9 @@ book:
     - part: part02_stat/part02_stat.qmd
       chapters:
         - part02_stat/chap16_variable.qmd
+    - part: part05_theory/part05_theory.qmd
+      chapters:
+        - part05_theory/chapX_equations.qmd
 
     - summary.qmd
     - references.qmd

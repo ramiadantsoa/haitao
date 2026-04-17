@@ -28,7 +28,7 @@ Unfortunately, writing in Malagasy is a huge challenge.
 I had to make a decision for the translation.
 First, I used termed defined by Malagasy Academy.
 Second, if the former does not exist, I aimed to translate the idea.
-Finally, if both fails, I would Malagasize the word and provide a definition.
+Finally, if both fail, I would Malagasize the word and provide a definition.
 See glossary at the end.
 But I hope that breaking the language barrier will make it to more accessible.
 

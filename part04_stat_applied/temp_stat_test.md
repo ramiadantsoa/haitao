@@ -1,0 +1,30 @@
+# Variable {#sec-16_variable}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+A variable is one of those terms (see also math terms) that have predominated intro stat courses.
+A qualitative variable, quantitative variables, nominal, ordinal, and latter the concept of random variable is also used.
+This is an example where why do we need it.
+And that question often arises when we have failed to link to reality.
+() Can also blame the instructor for failed method.
+
+The other challenge with such term is also it has a meaning in the colloquial language that linking makes it even more difficult.
+Another example is when people think that a qualitative variable is related to quality.
+Since there are many books that go from theory to reality.
+Here I would just define/ translate variable as a trait or feature.
+Trait of feature of what (see later chapters).
+
+At this stage, you could say that a variable is just a function.
+If you take an object x from a population x, you can apply the variable (f) and obtain the value y = f(x).
+
+In programming, you will see, integer, numeric (float), and string, boolean, characters, factors (see section programming for others)
+
+## Formal {.unnumbered}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}
