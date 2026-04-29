@@ -1,4 +1,4 @@
-# Quantitative variable {#sec-17_quantiative}
+# fix {#sec_equ}
 
 {{< include ../preamble.qmd >}}
 

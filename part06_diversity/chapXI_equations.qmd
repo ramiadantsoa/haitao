@@ -1,0 +1,56 @@
+# Equations {#sec-xx}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+## Formal {.unnumbered}
+
+$$
+    H = - \sum_{i = 1}^S p_i \ln p_i
+$${#eq-shannon}
+$$
+    H = \ln \frac{1}{\prod_{i = 1}^S p_i^{p_i}}
+$${#eq-shannon-alt}
+
+$$
+    \lambda = \sum_{i = 1}^S p_i^2
+$${#eq-simpson}
+
+$$
+    \frac{1}{\lambda} = \frac{1}{\sum_{i = 1}^S p_i^2}
+$${#eq-simpson-inverse}
+
+$$
+    1 - \lambda = 1 - \sum_{i = 1}^S p_i^2
+$${#eq-gini-simpson}
+Probability of interspecific encounter (PIE).
+
+$$
+    \beta = \frac{\gamma}{\alpha}
+$${#eq-beta-multiplicative}
+
+$$
+    \beta = \gamma - \alpha
+$${#eq-beta-additive}
+
+$$
+    BC_{AB} = 1 - \frac{2 \sum_{i=1}^S min(N_i^A, N_i^B)}{\sum_{i=1}^S (N_i^A + N_i^B)}
+$${#eq-bray-curtis}
+$$
+    J = \frac{c}{a + b + c}
+$${#eq-jaccard}
+$$
+    J = \frac{2 c}{a + b + 2 c}
+$${#eq-sorensen}
+
+$$
+    ^q D = \left( \sum_{i = 1}^S p_i^q \right)^{\frac{1}{1-q}}
+$${#eq-hill}
+
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}
