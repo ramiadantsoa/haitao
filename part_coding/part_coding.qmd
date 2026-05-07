@@ -1,0 +1,18 @@
+# Basic coding
+There are over x programming languages.
+the existence of these programming languages is as old as computer but its predominance and conveniency of R
+R is one of the many pl & as such shares the core features of them
+As languages are most similar: subject, verb, complement etc so does all languages.
+This section aims to look at them in that core aspect which is simplified as object & function
+What the most superficial way, what differ is the vocabulary: which is called syntax so it is like it says aov in R and it is anova.test in python
+
+Fortunately, most do not need languages (sorry for those the core is similar but this is for R-perspective)
+So like learning language you need to learn vocabulary
+In the part, we will learn the most atomic elements: different types of variables & object, what kind of operation to do with and what is a function
+
+This is a simplified veresion with what is minimal.
+
+After this, stat applied becomes a collection of functions, programming can be seen as giving orders. But be aware that if, you are the practice & practice
+
+Pseudocode
+

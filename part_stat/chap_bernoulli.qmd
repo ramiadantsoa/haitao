@@ -1,0 +1,17 @@
+# Bernoulli distribution {#sec-bernoulli}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+## Formal {.unnumbered}
+
+$$
+P(X = x) = p^x (1-p)^{1-x}, \quad x \in \{0,1\}
+$${#eq-bernoulli}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

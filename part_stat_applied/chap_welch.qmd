@@ -1,0 +1,17 @@
+# Welch {#sec-welch}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+## Formal {.unnumbered}
+
+$$
+    t = \frac{\bar{X_A} - \bar{X_B}}{\sqrt{\frac{s_A^2}{N_A} + \frac{s_B^2}{N_B}}}
+$${#eq-welch}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

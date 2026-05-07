@@ -1,0 +1,21 @@
+# Homogeneity variance {#sec-homovar}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+## Formal {.unnumbered}
+
+$$
+    \text{Levene based on F stat}
+$${#eq-levene}
+
+$$
+    \text{Bartlett based on likelihood ratio test}
+$${#eq-bartlett}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

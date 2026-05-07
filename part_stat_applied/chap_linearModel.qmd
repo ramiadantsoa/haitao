@@ -1,0 +1,17 @@
+# Linear model {#sec-lm}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+## Formal {.unnumbered}
+
+$$
+    y \sim N(a x + b, \sigma^2)
+$${#eq-lm}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

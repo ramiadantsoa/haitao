@@ -1,0 +1,24 @@
+# Post hoc {#sec-posthoc}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+## Formal {.unnumbered}
+
+$$
+    p_i \leq \frac{\alpha}{m}
+$${#eq-bonferroni}
+
+$$
+    p_k \leq \frac{\alpha}{ m + 1 - k}
+$${#eq-holm}
+$$
+    p_i \leq 1 - (1 - \alpha)^{1/m}
+$${#eq-sidak}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

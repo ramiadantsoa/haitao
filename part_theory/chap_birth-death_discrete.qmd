@@ -1,0 +1,17 @@
+# Birth-death discrete {#sec-bd_discrete}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+## Formal {.unnumbered}
+
+$$
+    N_{t+1} = b N_t - d N_t
+$${#eq-birth-death-discrete}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

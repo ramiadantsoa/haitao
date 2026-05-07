@@ -1,0 +1,22 @@
+# Lotka-Volterra {#sec-lotkaV}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+## Formal {.unnumbered}
+
+$$
+    \left\{
+    \begin{aligned}
+    \frac{d n_1}{dt} = r_1 n_1(1 - \frac{\alpha_{11} n_1 + \alpha_{12} n_2 }{K_1}) \\
+    \frac{d n_2}{dt} = r_2 n_2(1 - \frac{\alpha_{22} n_2 + \alpha_{21} n_1 }{K_2})
+    \end{aligned}
+    \right.
+$${#eq-lotka-voltera}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

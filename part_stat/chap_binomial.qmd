@@ -1,0 +1,20 @@
+# Binomial distribution {#sec-binomial}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+## Formal {.unnumbered}
+$$
+P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
+$${#eq-binomial}
+
+$$
+\binom{n}{k} = \frac{n!}{k!(n-k)!}
+$${#eq-bincoeff}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

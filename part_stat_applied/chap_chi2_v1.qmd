@@ -1,0 +1,17 @@
+# Chi2 v1 {#sec-chi2_v2}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+## Formal {.unnumbered}
+
+$$
+    \chi^2 = \sum_{i = 1}^r \sum_{j = 1}^c \frac{(O_{ij} - E_{ij})^2}{E_{ij}}
+$${#eq-chi2-qualitative}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

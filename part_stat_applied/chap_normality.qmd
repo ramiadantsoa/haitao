@@ -1,0 +1,17 @@
+# Normality Shapiro {#sec-normality}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+## Formal {.unnumbered}
+
+$$
+    W = \frac{(\sum_{i = 1}^n a_i x_{(i)})^2}{\sum_{i = 1}^n (x_i - \bar{x})^2}
+$${#eq-shapiro}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

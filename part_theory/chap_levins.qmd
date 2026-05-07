@@ -1,0 +1,17 @@
+# Levins metapopulation {#sec-levins}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+## Formal {.unnumbered}
+
+$$
+    \frac{dp}{dt} = c p (1 - p) - e p
+$${#eq-levins-metapop}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

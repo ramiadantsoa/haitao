@@ -1,0 +1,17 @@
+# Gompertz {#sec-gompertz}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+## Formal {.unnumbered}
+
+$$
+    N_{t+1} = N_t^b K^{1 -b}
+$${#eq-gompertz}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

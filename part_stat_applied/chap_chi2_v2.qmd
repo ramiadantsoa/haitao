@@ -1,0 +1,17 @@
+# Chi2 likelihood {#sec-chi2_lrt}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+## Formal {.unnumbered}
+
+$$
+    \chi^2 = - 2(\log L_1 - \log L_0)
+$${#eq-chi2-lrt}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

@@ -1,0 +1,18 @@
+# Correlation Pearson {#sec-pearson}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+## Formal {.unnumbered}
+$$
+    r = \frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}
+            {\sqrt{\sum_{i=1}^{n} (x_i - \bar{x})^2}
+            \sqrt{\sum_{i=1}^{n} (y_i - \bar{y})^2}}
+$${#eq-pearson}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

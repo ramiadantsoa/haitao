@@ -1,0 +1,25 @@
+# Compare distribution {#sec-kolmogorov}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+## Formal {.unnumbered}
+
+$$
+    D_n = \sup_x |F_n(x) - F(x)|
+$${#eq-kolmogorov}
+$$
+    D_{n, m} = \sup_x |F_n(x) - D_m(x)|
+$${#eq-kolmogorov-2D}
+
+
+$$
+    F_n(x)  = \frac{1}{n} \text{number}[x_i < x]
+$${#eq-kolmogorov-fn}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

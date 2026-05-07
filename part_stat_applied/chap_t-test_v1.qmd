@@ -1,0 +1,17 @@
+# t-test against true {#sec-ttest_true}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+## Formal {.unnumbered}
+
+$$
+    t = \frac{\bar{x} - \mu_0}{ s/ \sqrt{n}}
+$${#eq-t-test}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

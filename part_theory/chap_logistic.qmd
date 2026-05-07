@@ -1,0 +1,16 @@
+# Logistic growth {#sec-logistic}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+## Formal {.unnumbered}
+$$
+    \frac{dN}{dt} = r N (1 - \frac{N}{K})
+$${#eq-logistic-growth}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

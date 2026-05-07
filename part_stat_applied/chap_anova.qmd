@@ -1,0 +1,17 @@
+# ANOVA {#sec-anova}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+## Formal {.unnumbered}
+
+$$
+    F = \frac{MS_{Treatments}}{MS_{Error}} = \frac{\frac{\sum_j^k n_j (\bar{X_j} - \bar{X})^2}{k - 1}}{\frac{\sum_j \sum (X - \bar{X_j})^2}{N - k}}
+$${#eq-anova}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

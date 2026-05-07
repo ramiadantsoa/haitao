@@ -1,2 +1,10 @@
 # Basic statistics
-What is the point here
+to a large majority, statistis is about choosing the correct these, and look at the p-value whether it is significant or not.
+Despite attempt from statisticians to caution with the use and misuse  of p-value and null hypotesis significant test, and alternative metric, the practice is so anchored and convenient that these correction attemp were futile.
+More failed in underresourced area
+
+The overal goal here is to explain (again) p-value  to eventually prevent misuse
+The concept is based on a statistic  and the explain distribution, its characteristic & concept of a random variable
+Minimum foundation, cannot be avoided, and mathematical notation.
+Strongly recommended to have a good grasp before using the applied part or used as a reference
+Later, test will be based on presenting the statistics and p-value

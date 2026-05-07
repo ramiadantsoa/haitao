@@ -1,0 +1,5 @@
+# Diversity
+To describe biodiversity patterns and compare
+But what is diversity patterns,
+Generally people focus on species richness and equates species richness with diversity
+It is indeed the most convenient to describe patterns. But like stat, mean does not capture distribution.

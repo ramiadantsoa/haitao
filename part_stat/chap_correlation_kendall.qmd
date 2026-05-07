@@ -1,0 +1,21 @@
+
+# Correlation Kendall-Tau {#sec-kendall}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+## Formal {.unnumbered}
+$$
+    \tau = \frac{C - D}{\frac{1}{2}n(n-1)}
+$${#eq-kendall}
+
+$C$ = number of concordant pairs
+$D$ = number of discordant pairs
+$n$ = number of observations
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

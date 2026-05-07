@@ -1,0 +1,22 @@
+# MacArthur-Rosenzwig {#sec-rosenzwig}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+## Formal {.unnumbered}
+
+$$
+    \left\{
+    \begin{aligned}
+    \frac{d N}{dt} & = r N (1 - \frac{N}{K}) - \frac{a N P}{\kappa + P} \\
+    \frac{d P}{dt} & =  \frac{ \beta a N P}{k + P} - d P
+    \end{aligned}
+    \right.
+$${#eq-rosenzweig-macarthur}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

@@ -1,0 +1,16 @@
+# Poisson distribution {#sec-poisson}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+## Formal {.unnumbered}
+$$
+P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}
+$${#eq-poisson}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

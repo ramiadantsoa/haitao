@@ -1,0 +1,17 @@
+# Ricker {#sec-ricker}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+## Formal {.unnumbered}
+
+$$
+    N_{t+1} = N_t e^{r (1 - \frac{N_t}{K})}
+$${#eq-ricker}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

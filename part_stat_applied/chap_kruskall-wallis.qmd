@@ -1,0 +1,17 @@
+# Kruskal-wallis {#sec-kruskal}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+## Formal {.unnumbered}
+
+$$
+    H = (N - 1) \frac{\sum_{i = 1}^g n_i(\bar{r_{i.}} - \bar{r})^2}{\sum_{i = 1}^g \sum_{j = 1}^{n_i} (r_{ij} - \bar{r})^2}
+$${#eq-kruskal}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

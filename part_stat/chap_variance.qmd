@@ -1,0 +1,22 @@
+# Variance and standard deviation {#sec-variance}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+## Formal {.unnumbered}
+$$
+\mathrm{Var}(X) = \sum_i (x_i - \mu)^2 \, p(x_i)
+$${#eq-variance_d}
+
+$$
+
+\mathrm{Var}(X) = \int_{-\infty}^{\infty} (x - \mu)^2 f(x)\,dx
+
+$${#eq-variance_c}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

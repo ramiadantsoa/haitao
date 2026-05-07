@@ -1,0 +1,21 @@
+# Gamma distribution{#sec-gamma}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+## Formal {.unnumbered}
+$$
+f(x; \alpha, \beta) = \frac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha - 1}
+$${#eq-gamma}
+
+α = shape parameter
+β = rate parameter (sometimes scale is used instead)
+Γ(α) = Gamma function
+x>0 is the support of the distribution
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

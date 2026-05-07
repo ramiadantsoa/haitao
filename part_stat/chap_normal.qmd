@@ -1,0 +1,20 @@
+# Normal distribution {#sec-normal}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+## Formal {.unnumbered}
+
+$$
+f(x) = \frac{1}{\sigma \sqrt{2\pi}}
+       \exp\left(
+         -\frac{(x-\mu)^2}{2\sigma^2}
+       \right)
+$${#eq-normal}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}
