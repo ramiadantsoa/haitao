@@ -7,29 +7,41 @@ book:
   date: last-modified
   chapters:
     - index.qmd
-    - part: part01_math/part01_math.qmd
+    - part: part_math/part_math.qmd
       chapters:
-        - part01_math/chap01_operation.qmd
-        - part01_math/chap02_greek.qmd
-        - part01_math/chap03_sum.qmd
-        - part01_math/chap04_matrix.qmd
-        - part01_math/chap05_matrix_op.qmd
-        - part01_math/chap06_matrix_multi.qmd
-        - part01_math/chap07_eigen.qmd
-        - part01_math/chap08_function.qmd
-        - part01_math/chap09_function_viz.qmd
-        - part01_math/chap10_derivative.qmd
-        - part01_math/chap11_exponential.qmd
-        - part01_math/chap12_logarithm.qmd
-        - part01_math/chap13_discretec.qmd
-        - part01_math/chap14_difference_eq.qmd
-        - part01_math/chap15_differential_eq.qmd
-    - part: part02_stat/part02_stat.qmd
+        - part_math/chap_operation.qmd
+        - part_math/chap_greek.qmd
+        - part_math/chap_sum.qmd
+        - part_math/chap_matrix.qmd
+        - part_math/chap_matrix_op.qmd
+        - part_math/chap_matrix_multi.qmd
+        - part_math/chap_eigen.qmd
+        - part_math/chap_function.qmd
+        - part_math/chap_function_viz.qmd
+        - part_math/chap_derivative.qmd
+        - part_math/chap_exponential.qmd
+        - part_math/chap_logarithm.qmd
+        - part_math/chap_discretec.qmd
+        - part_math/chap_difference_eq.qmd
+        - part_math/chap_differential_eq.qmd
+    - part: part_stat/part_stat.qmd
       chapters:
-        - part02_stat/chap16_variable.qmd
-    - part: part05_theory/part05_theory.qmd
+        - part_stat/chap16_variable.qmd
+    - part: part_coding/part_coding.qmd
       chapters:
-        - part05_theory/chapX_equations.qmd
+        - part_coding/chap_.qmd
+    - part: part_stat_applied/part_stat_applied.qmd
+      chapters:
+        - part_stat_applied/chap_.qmd
+    - part: part_theory/part05_theory.qmd
+      chapters:
+        - part_theory/chapX_equations.qmd
+    - part: part_theory/part_theory.qmd
+      chapters:
+        - part_theory/chap_.qmd
+    - part: part_diversity/part_diversity.qmd
+      chapters:
+        - part_diversity/chap_.qmd
 
     - summary.qmd
     - references.qmd
