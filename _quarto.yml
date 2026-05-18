@@ -72,17 +72,50 @@ book:
         - part_coding/chap_function.qmd
     - part: part_stat_applied/part_stat_applied.qmd
       chapters:
-        - part_stat_applied/chap_.qmd
-    - part: part_theory/part05_theory.qmd
-      chapters:
-        - part_theory/chapX_equations.qmd
+        - part_stat_applied/chap_normality.qmd
+        - part_stat_applied/chap_any-distribution.qmd
+        - part_stat_applied/chap_homogeneity-variance.qmd
+        - part_stat_applied/chap_t-test_v1.qmd
+        - part_stat_applied/chap_t-test_v2.qmd
+        - part_stat_applied/chap_chi2_v1.qmd
+        - part_stat_applied/chap_chi2_v2.qmd
+        - part_stat_applied/chap_anova.qmd
+        - part_stat_applied/chap_kruskall-wallis.qmd
+        - part_stat_applied/chap_posthoc.qmd
+        - part_stat_applied/chap_bonferroniEtAL.qmd
+        - part_stat_applied/chap_tuckeytest.qmd
+        - part_stat_applied/chap_welch.qmd
+        - part_stat_applied/chap_permutation.qmd
+        - part_stat_applied/chap_linearModel.qmd
     - part: part_theory/part_theory.qmd
       chapters:
-        - part_theory/chap_.qmd
+        - part_theory/chap_allee-effect.qmd
+        - part_theory/chap_birth-death_discrete.qmd
+        - part_theory/chap_birth-death_continuous.qmd
+        - part_theory/chap_competition-colonization.qmd
+        - part_theory/chap_gompertz.qmd
+        - part_theory/chap_levins.qmd
+        - part_theory/chap_logistic.qmd
+        - part_theory/chap_lotka-volterra.qmd
+        - part_theory/chap_macarthur-rosenzwig.qmd
+        - part_theory/chap_ricker.qmd
     - part: part_diversity/part_diversity.qmd
       chapters:
-        - part_diversity/chap_.qmd
-
+        - part_diversity/chap_richness.qmd
+        - part_diversity/chap_shannon.qmd
+        - part_diversity/chap_simpson.qmd
+        - part_diversity/chap_rarefaction.qmd
+        - part_diversity/chap_extrapolation.qmd
+        - part_diversity/chap_alpha_gamma.qmd
+        - part_diversity/chap_beta.qmd
+        - part_diversity/chap_data_transformation.qmd
+        - part_diversity/chap_bray-curtis.qmd
+        - part_diversity/chap_clustering.qmd
+        - part_diversity/chap_ordination.qmd
+        - part_diversity/chap_pca.qmd
+        - part_diversity/chap_ca.qmd
+        - part_diversity/chap_nmds.qmd
+        - part_diversity/chap_distance_sampling.qmd
     - summary.qmd
     - references.qmd
 
