@@ -1,4 +1,4 @@
-# Functions {#sec-08_func}
+# Functions {#sec-function}
 
 ## Concepts and intutions {.unnumbered}
 For most of us, hearing a function is traumatizing.

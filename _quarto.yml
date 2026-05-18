@@ -21,7 +21,7 @@ book:
         - part_math/chap_derivative.qmd
         - part_math/chap_exponential.qmd
         - part_math/chap_logarithm.qmd
-        - part_math/chap_discretec.qmd
+        - part_math/chap_discrete_continuous.qmd
         - part_math/chap_difference_eq.qmd
         - part_math/chap_differential_eq.qmd
     - part: part_stat/part_stat.qmd

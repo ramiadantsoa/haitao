@@ -1,9 +1,9 @@
-# Operation {#sec-01_operation}
+# Operation {#sec-operation}
 
 ## Concepts and intutions {.unnumbered}
 Few years ago, there are was an intense debate on Twitter (now X) about a simple calculation.
 
-8 div 2(2 + 2)
+8 ÷ 2(2 + 2)
 
 One camp would argue that the answer is one, the other camp is convinced that it is sixteen.
 What makes it complicated is that inputing with different calculators also yield different results.
@@ -36,7 +36,7 @@ Position matter
 ## Examples {.unnumbered}
 Fractals 1/ ( x + 1/ (x + 1/(x + 1/x)))
 Power 2 ^ 2 ^ 2
-Placing parenthsis to yield different results
+Placing parenthesis to yield different results
 11 - 6/2 x 7/5  + 8
 
 11 - 6/2 x (7/5  + 8)
@@ -53,6 +53,6 @@ Thus if you reverse and 2 * 4 + 3 = 2 + 2 + 2 + 2 + 3.
 The same applies to power 2 ^ 3 = 2 * 2  * 2.
 This if you revers  2^3 * 3 = 2 * 2 * 2 * 3 and 2^3 + 3 = 2 * 2 * 2 + 3
 
-## if you want to know more {.unnumbered}
+## If you want to know more {.unnumbered}
 Books on arithmetic
 History of arithmetic

@@ -1,4 +1,4 @@
-# Difference equations {#sec-14_difference}
+# Difference equations {#sec-difference}
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}

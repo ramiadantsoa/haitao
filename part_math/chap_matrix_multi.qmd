@@ -1,4 +1,4 @@
-# Matrix multiplication {#sec-06_matrix_multi}
+# Matrix multiplication {#sec-matrix_multi}
 
 ## Concepts and intutions {.unnumbered}
 Assume we have a matrix,

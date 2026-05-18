@@ -1,4 +1,4 @@
-# Function and graphics {#sec-09_function_viz}
+# Function and graphics {#sec-function_viz}
 
 ## Concepts and intuitions {.unnumbered}
 In ancient times, people have been trying to solve alegraic equations.

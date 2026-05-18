@@ -1,23 +1,23 @@
-# Greek letters {#sec-02_greek}
+# Greek letters {#sec-greek}
 
 ## Concepts and intutions {.unnumbered}
 
 Do you recognize this?
 
-(zeta  + xi)^2 = zeta^2 + xi^2 + 2 zeta  xi
+$(\zeta  + \xi)^2 = \zeta^2 + \xi^2 + 2\zeta\xi$
 
 After staring for a while, one might realize that this is identité remarquable.
-In fact it exactly the same as (a + b) ^ 2 = a^2 + b^2 + 2ab.
+In fact it exactly the same as $(a + b) ^ 2 = a^2 + b^2 + 2ab$.
 
-This is the same as 13 + 9 = 22
-But this is the same as XIII + IX = XXII.
+This is the same as $13 + 9 = 22$
+But this is the same as $XIII + IX = XXII$.
 
-The romans were not great with maths.
+The romans were not great with math notations.
 
 One challenge is we don't know how to read.
 
 In short, these are just symbols,  they function as any other notation
-y = a x + b is y =  alpha x + beta.
+$y = a x + b$ is $y =  \alpha x + \beta$.
 
 For some reasons, they might look more complicated, and to a certain extant more relevant. I am alpha and omega. Is less than I am a and z.
 But that is not the best way to use them.
@@ -25,6 +25,10 @@ But that is not the best way to use them.
 ## Formal {.unnumbered}
 The only thing is just to learn the alphabet so here a quick summary
 There are upper and lower case.
+
+Create a
+$\alpha \beta \gamma \epsilon \nu \mu \eta \varepsilon \omega \zeta \xi \lambda \rho \delta \phi \psi \sigma$
+a b g e n m
 
 The other extension is that they are used
 In physics, constants

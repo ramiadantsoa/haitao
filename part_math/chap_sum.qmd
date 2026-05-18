@@ -1,4 +1,4 @@
-# Sum and product {#sec-03_sum}
+# Sum and product {#sec-sum}
 
 ## Concepts and intutions {.unnumbered}
 Condensing is a natural, see in #c3_operation that multiplication is a condensation of addition.
@@ -11,18 +11,18 @@ sigma_i = 1 ^ 4 i = 1 + 2 + 3 + 4.
 
 Likewise, we could have 1 x 2 x 3 x 4 = 12 but more famously, we have 4! factorial four.
 
-Most likely, but two main, sigma and pi.
+Most likely, but two main, $\sum$ and $\prod$.
 
 ## Formal {.unnumbered}
 Sigma we need to say sum, then when is the first term and what is the last term, and the moving indice.
-Sigma_i
+$\sum_i$ or $\sum_{i = i_0}^{i_n}$ with one increment
 
-the other one is using set, w in Omega.
+the other one is using set, w in Omega. $\sum_{\omega \in \Omega}$
 
 We could extend it into higher
-Sigma_j sigma_i
+$\sum_j \sum_i$
 with the rule that you do the interior first.
-the other one is Pi, this is product the same as.
+the other one is $\prod$, this is product the same as.
 You could also use union, intersection etc.
 
 ## Examples {.unnumbered}

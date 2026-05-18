@@ -1,4 +1,4 @@
-# Differential equations {#sec-15_differential}
+# Differential equations {#sec-differential}
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}

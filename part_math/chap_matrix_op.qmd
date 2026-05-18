@@ -1,4 +1,4 @@
-# Matrix operation {#sec-05_matrix_op}
+# Matrix operation {#sec-matrix_op}
 
 ## Concepts and intutions {.unnumbered}
 James  = Marie, James + Marie = Jamie.

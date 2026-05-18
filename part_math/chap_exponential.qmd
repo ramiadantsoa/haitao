@@ -1,4 +1,4 @@
-# Exponential function {#sec-11_exponential}
+# Exponential function {#sec-exponential}
 {{< include ../preamble.qmd >}}
 ## Concepts and intuitions {.unnumbered}
 As multiplication is generalization of addition 2 + 2 + 2 = 3 x 2, power is a condense notation of multiplication 2 x 2 x 2 = 2^3 (see also tips in notation).

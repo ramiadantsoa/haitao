@@ -1,4 +1,4 @@
-# Eigen decomposition {#sec-07_eigen}
+# Eigen decomposition {#sec-eigen}
 
 ## Concepts and intutions {.unnumbered}
 Version 1: as a product of matrices

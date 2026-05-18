@@ -1,4 +1,4 @@
-# Matrix {#sec-04_matrix}
+# Matrix {#sec-matrix}
 
 ## Concepts and intutions {.unnumbered}
 Matrix is the famous movie by Keanu Reaves.

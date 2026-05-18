@@ -1,4 +1,4 @@
-# Logarithm function {#sec-12_log}
+# Logarithm function {#sec-log}
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}

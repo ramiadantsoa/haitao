@@ -1,4 +1,4 @@
-# Discrete and continuous variables {#sec-13_discretec}
+# Discrete and continuous variables {#sec-discrete_continuous}
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
