@@ -1,4 +1,4 @@
-# Qualitative variable {#sec-18_qualitative}
+# Data frame{#sec-dataframe}
 
 {{< include ../preamble.qmd >}}
 

@@ -58,7 +58,18 @@ book:
         - part_stat/chap_discreteContinuous.qmd
     - part: part_coding/part_coding.qmd
       chapters:
-        - part_coding/chap_.qmd
+        - part_coding/chap_boolean.qmd
+        - part_coding/chap_discrete.qmd
+        - part_coding/chap_qualitative.qmd
+        - part_coding/chap_quantitative.qmd
+        - part_coding/chap_operation_arithmetic.qmd
+        - part_coding/chap_vector.qmd
+        - part_coding/chap_matrix.qmd
+        - part_coding/chap_operation_matrix.qmd
+        - part_coding/chap_dataframe.qmd
+        - part_coding/chap_tibble.qmd
+        - part_coding/chap_list.qmd
+        - part_coding/chap_function.qmd
     - part: part_stat_applied/part_stat_applied.qmd
       chapters:
         - part_stat_applied/chap_.qmd

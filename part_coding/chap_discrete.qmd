@@ -1,4 +1,4 @@
-# Qualitative variable {#sec-18_qualitative}
+# Discrete {#sec-discreteCoding}
 
 {{< include ../preamble.qmd >}}
 

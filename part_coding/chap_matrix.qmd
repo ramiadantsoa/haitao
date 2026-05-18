@@ -1,4 +1,4 @@
-# Qualitative variable {#sec-18_qualitative}
+# Matrix {#sec-matrixCoding}
 
 {{< include ../preamble.qmd >}}
 

@@ -1,4 +1,4 @@
-# Qualitative variable {#sec-18_qualitative}
+# Tibble {#sec-tibble}
 
 {{< include ../preamble.qmd >}}
 

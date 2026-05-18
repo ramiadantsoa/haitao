@@ -1,4 +1,4 @@
-# Qualitative variable {#sec-18_qualitative}
+# Arithmetic operation {#sec-arithmetic}
 
 {{< include ../preamble.qmd >}}
 
