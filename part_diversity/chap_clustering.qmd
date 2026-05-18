@@ -1,4 +1,4 @@
-# Qualitative variable {#sec-18_qualitative}
+# Clustering {#sec-clustering}
 
 {{< include ../preamble.qmd >}}
 

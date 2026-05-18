@@ -1,4 +1,4 @@
-# Qualitative variable {#sec-18_qualitative}
+# Species richness Taxonomic diversity {#sec-richness}
 
 {{< include ../preamble.qmd >}}
 

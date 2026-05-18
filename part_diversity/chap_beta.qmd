@@ -1,10 +1,18 @@
-# Qualitative variable {#sec-18_qualitative}
+# Beta diversity {#sec-beta}
 
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
 
 ## Formal {.unnumbered}
+
+$$
+    \beta = \frac{\gamma}{\alpha}
+$${#eq-beta-multiplicative}
+
+$$
+    \beta = \gamma - \alpha
+$${#eq-beta-additive}
 
 ## Examples {.unnumbered}
 

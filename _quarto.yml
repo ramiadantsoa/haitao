@@ -104,7 +104,7 @@ book:
         - part_diversity/chap_richness.qmd
         - part_diversity/chap_shannon.qmd
         - part_diversity/chap_simpson.qmd
-        - part_diversity/chap_rarefaction.qmd
+        - part_diversity/chap_interpolation.qmd
         - part_diversity/chap_extrapolation.qmd
         - part_diversity/chap_alpha_gamma.qmd
         - part_diversity/chap_beta.qmd

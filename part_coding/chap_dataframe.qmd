@@ -1,4 +1,4 @@
-# Data frame{#sec-dataframe}
+# Data frame {#sec-dataframe}
 
 {{< include ../preamble.qmd >}}
 

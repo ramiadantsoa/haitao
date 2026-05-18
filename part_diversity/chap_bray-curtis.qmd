@@ -1,10 +1,13 @@
-# Qualitative variable {#sec-18_qualitative}
+# Bray-Curtis distance {#sec-brayCurtis}
 
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
 
 ## Formal {.unnumbered}
+$$
+    BC_{AB} = 1 - \frac{2 \sum_{i=1}^S min(N_i^A, N_i^B)}{\sum_{i=1}^S (N_i^A + N_i^B)}
+$${#eq-bray-curtis}
 
 ## Examples {.unnumbered}
 

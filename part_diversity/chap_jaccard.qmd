@@ -5,6 +5,12 @@
 ## Concepts and intuitions {.unnumbered}
 
 ## Formal {.unnumbered}
+$$
+    J = \frac{c}{a + b + c}
+$${#eq-jaccard}
+$$
+    J = \frac{2 c}{a + b + 2 c}
+$${#eq-sorensen}
 
 ## Examples {.unnumbered}
 

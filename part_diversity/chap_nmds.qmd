@@ -1,4 +1,4 @@
-# Qualitative variable {#sec-18_qualitative}
+# NMDS {#sec-nmds}
 
 {{< include ../preamble.qmd >}}
 

@@ -1,4 +1,4 @@
-# Gamma distribution{#sec-gamma}
+# Gamma distribution {#sec-gamma}
 
 {{< include ../preamble.qmd >}}
 

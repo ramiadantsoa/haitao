@@ -1,4 +1,4 @@
-# Qualitative variable {#sec-18_qualitative}
+# Diversity {#sec-diversity}
 
 {{< include ../preamble.qmd >}}
 

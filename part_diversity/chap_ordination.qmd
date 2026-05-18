@@ -1,4 +1,4 @@
-# Qualitative variable {#sec-18_qualitative}
+# Ordination {#sec-ordination}
 
 {{< include ../preamble.qmd >}}
 

@@ -1,0 +1,16 @@
+# Hill numbers {#sec-hill}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+
+## Formal {.unnumbered}
+$$
+    ^q D = \left( \sum_{i = 1}^S p_i^q \right)^{\frac{1}{1-q}}
+$${#eq-hill}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

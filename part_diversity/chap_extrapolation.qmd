@@ -1,4 +1,4 @@
-# Qualitative variable {#sec-18_qualitative}
+# Extrapolation {#sec-extrapolation}
 
 {{< include ../preamble.qmd >}}
 

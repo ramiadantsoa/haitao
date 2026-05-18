@@ -1,4 +1,4 @@
-# Qualitative variable {#sec-18_qualitative}
+# Data transformation {#sec-dataTransformation}
 
 {{< include ../preamble.qmd >}}
 

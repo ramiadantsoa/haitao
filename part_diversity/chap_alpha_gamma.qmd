@@ -1,4 +1,4 @@
-# Qualitative variable {#sec-18_qualitative}
+# Alpha gamma {#sec-alphaGamma}
 
 {{< include ../preamble.qmd >}}
 

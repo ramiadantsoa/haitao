@@ -1,10 +1,16 @@
-# Qualitative variable {#sec-18_qualitative}
+# Shannon-Weiner index {#sec-shannon}
 
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
 
 ## Formal {.unnumbered}
+$$
+    H = - \sum_{i = 1}^S p_i \ln p_i
+$${#eq-shannon}
+$$
+    H = \ln \frac{1}{\prod_{i = 1}^S p_i^{p_i}}
+$${#eq-shannon-alt}
 
 ## Examples {.unnumbered}
 

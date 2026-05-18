@@ -1,4 +1,4 @@
-# Qualitative variable {#sec-18_qualitative}
+# Interplation rarefaction {#sec-interpolation}
 
 {{< include ../preamble.qmd >}}
 

@@ -1,4 +1,4 @@
-# Qualitative variable {#sec-18_qualitative}
+# Correspondance Analaysis {#sec-ca}
 
 {{< include ../preamble.qmd >}}
 
