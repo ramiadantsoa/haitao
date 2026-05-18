@@ -1,4 +1,4 @@
-# Qualitative variable {#sec-18_qualitative}
+# Measure of dispersion {#sec-dispersion}
 
 {{< include ../preamble.qmd >}}
 

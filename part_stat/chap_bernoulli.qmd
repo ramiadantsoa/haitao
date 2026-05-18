@@ -1,5 +1,4 @@
 # Bernoulli distribution {#sec-bernoulli}
-
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}

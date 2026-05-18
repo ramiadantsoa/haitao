@@ -1,4 +1,4 @@
-# Qualitative variable {#sec-18_qualitative}
+# Median {#sec-median}
 
 {{< include ../preamble.qmd >}}
 

@@ -1,0 +1,15 @@
+# Measure of central tendency {#sec-centralTendency}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+Ilay ivony
+
+
+## Formal {.unnumbered}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+## If you want to know more {.unnumbered}

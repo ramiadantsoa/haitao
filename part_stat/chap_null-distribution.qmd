@@ -1,4 +1,4 @@
-# Qualitative variable {#sec-18_qualitative}
+# Null distribution {#sec-nullD}
 
 {{< include ../preamble.qmd >}}
 

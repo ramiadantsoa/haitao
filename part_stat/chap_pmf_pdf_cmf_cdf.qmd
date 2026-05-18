@@ -1,4 +1,4 @@
-# Qualitative variable {#sec-18_qualitative}
+# Mass and density function {#sec-pmf}
 
 {{< include ../preamble.qmd >}}
 

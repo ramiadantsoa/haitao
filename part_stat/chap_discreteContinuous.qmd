@@ -1,4 +1,4 @@
-# Qualitative variable {#sec-18_qualitative}
+# Discrete and continuous {#sec-stat_dc}
 
 {{< include ../preamble.qmd >}}
 

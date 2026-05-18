@@ -5,6 +5,7 @@
 ## Concepts and intuitions {.unnumbered}
 
 ## Formal {.unnumbered}
+Add interqualite range
 
 ## Examples {.unnumbered}
 
