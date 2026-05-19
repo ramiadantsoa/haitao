@@ -4,6 +4,7 @@
 
 ## Concepts and intuitions {.unnumbered}
 
+
 ## Formal {.unnumbered}
 
 $$

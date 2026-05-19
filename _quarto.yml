@@ -133,6 +133,6 @@ format:
     number-sections: true
 
 execute:
-  echo: false
+  echo: true
   message: false
   warning: false

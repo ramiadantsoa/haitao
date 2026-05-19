@@ -1,3 +1,4 @@
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
 library(tidyverse)
+library(deSolve)
 ```
