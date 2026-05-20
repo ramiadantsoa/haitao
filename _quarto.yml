@@ -89,16 +89,16 @@ book:
         - part_stat_applied/chap_linearModel.qmd
     - part: part_theory/part_theory.qmd
       chapters:
-        - part_theory/chap_allee-effect.qmd
         - part_theory/chap_birth-death_discrete.qmd
+        - part_theory/chap_ricker.qmd
         - part_theory/chap_birth-death_continuous.qmd
-        - part_theory/chap_competition-colonization.qmd
-        - part_theory/chap_gompertz.qmd
-        - part_theory/chap_levins.qmd
         - part_theory/chap_logistic.qmd
+        - part_theory/chap_gompertz.qmd
+        - part_theory/chap_allee-effect.qmd
+        - part_theory/chap_levins.qmd
+        - part_theory/chap_competition-colonization.qmd
         - part_theory/chap_lotka-volterra.qmd
         - part_theory/chap_macarthur-rosenzwig.qmd
-        - part_theory/chap_ricker.qmd
     - part: part_diversity/part_diversity.qmd
       chapters:
         - part_diversity/chap_richness.qmd

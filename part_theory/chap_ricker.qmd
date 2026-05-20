@@ -12,6 +12,80 @@ $${#eq-ricker}
 
 ## Examples {.unnumbered}
 
+```{r}
+#| code-fold: false
+#| fig-cap: "Ricker model trajectories showing stable, period-4, and chaotic dynamics"
+#| label: fig-ricker-sim
+
+# Function to simulate Ricker model
+simulate_ricker <- function(N0, r, K, time_steps) {
+  # N0: initial population size
+  # r: intrinsic growth rate
+  # K: carrying capacity
+  # time_steps: number of time steps to simulate
+
+  N <- numeric(time_steps + 1)
+  N[1] <- N0
+
+  for (t in 1:time_steps) {
+    N[t + 1] <- N[t] * exp(r * (1 - N[t] / K))
+  }
+
+  return(N)
+}
+
+# Parameters
+N0 <- 0.1 * 10  # Initial population (10% of K)
+K <- 50  # Carrying capacity
+time_steps <- 50
+burn_in <- 1  # Discard first points to reach attractor
+
+# Example 1: Default r (stable equilibrium)
+r_default <- 0.5
+traj_default <- simulate_ricker(N0, r_default, K, time_steps)
+
+# Example 2: Higher r (period-4 cycle)
+r_p4 <- 2.
+traj_p4 <- simulate_ricker(N0, r_p4, K, time_steps)
+
+# Example 3: Even higher r (chaotic dynamics)
+r_chaos <- 3.
+traj_chaos <- simulate_ricker(N0, r_chaos, K, time_steps)
+
+# Create single plot
+time <- 0:time_steps
+plot(NA, xlim = c(burn_in, time_steps), ylim = c(0, K * 2),
+     xlab = "Time", ylab = "Population size (N)",
+     main = "Ricker model: from stability to chaos")
+
+# Plot trajectories with lines and points
+# Default r (stable)
+lines(time[-(1:(burn_in+1))], traj_default[-(1:(burn_in+1))],
+      col = rgb(0, 0, 1, 0.6), lwd = 1.5)
+points(time[-(1:(burn_in+1))], traj_default[-(1:(burn_in+1))],
+       col = rgb(0, 0, 1, 0.6), pch = 16, cex = 0.4)
+
+# Period-4 r
+lines(time[-(1:(burn_in+1))], traj_p4[-(1:(burn_in+1))],
+      col = rgb(1, 0.5, 0, 0.6), lwd = 1.5)
+points(time[-(1:(burn_in+1))], traj_p4[-(1:(burn_in+1))],
+       col = rgb(1, 0.5, 0, 0.6), pch = 16, cex = 0.4)
+
+# Chaotic r
+lines(time[-(1:(burn_in+1))], traj_chaos[-(1:(burn_in+1))],
+      col = rgb(1, 0, 0, 0.6), lwd = 1.5)
+points(time[-(1:(burn_in+1))], traj_chaos[-(1:(burn_in+1))],
+       col = rgb(1, 0, 0, 0.6), pch = 16, cex = 0.4)
+
+# Add legend
+legend("topright",
+       legend = c(paste0("r = ", r_default, " (stable)"),
+                  paste0("r = ", r_p4, " (period-4)"),
+                  paste0("r = ", r_chaos, " (chaos)")),
+       col = c(rgb(0, 0, 1, 0.8), rgb(1, 0.5, 0, 0.8), rgb(1, 0, 0, 0.8)),
+       lwd = 2, cex = 0.9)
+```
+
 ## Tips and warnings {.unnumbered}
 
 ## If you want to know more {.unnumbered}

@@ -10,6 +10,12 @@ $$
     \frac{dN}{dt} = (b - d) N
 $${#eq-birth-death-continuous}
 
+This can be solved and the solution is  $N(t) = N_0 \, e^{(b-d)t} = N(0) e^{r t}$.
+
+$r$ is growth rate and $N(0)$ is the initial population size at time = 0.
+
+We can see here 
+
 ## Examples {.unnumbered}
 
 Visualizing the function

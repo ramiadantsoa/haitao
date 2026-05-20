@@ -9,13 +9,102 @@
 $$
     \left\{
     \begin{aligned}
-    \frac{d N}{dt} & = r N (1 - \frac{N}{K}) - \frac{a N P}{\kappa + P} \\
-    \frac{d P}{dt} & =  \frac{ \beta a N P}{k + P} - d P
+    \frac{d N}{dt} & = r N (1 - \frac{N}{K}) - \frac{a N P}{1 + a h N} \\
+    \frac{d P}{dt} & =  \frac{ \beta a N P}{1 + a h N} - d P
     \end{aligned}
     \right.
 $${#eq-rosenzweig-macarthur}
 
 ## Examples {.unnumbered}
+
+```{r}
+#| code-fold: false
+#| fig-cap: "Rosenzweig-MacArthur model showing stable fixed point"
+#| label: fig-rosenzweig-macarthur-sim
+
+library(deSolve)
+
+# Function to define Rosenzweig-MacArthur ODE system
+rosenzweig_macarthur <- function(t, state, parms) {
+  N <- state["N"]
+  P <- state["P"]
+
+  r <- parms["r"]
+  K <- parms["K"]
+  a <- parms["a"]
+  h <- parms["h"]
+  beta <- parms["beta"]
+  d <- parms["d"]
+
+  dN_dt <- r * N * (1 - N / K) - (a * N * P) / (1 + a * h * N)
+  dP_dt <- (beta * a * N * P) / (1 + a *h * N) - d * P
+
+  list(c(dN_dt, dP_dt))
+}
+
+# Parameters for stable fixed point
+parms <- c(
+  r = 1.0,      # Prey growth rate
+  K = 5.0,      # Prey carrying capacity
+  a = 1.3,      # Predation rate
+  h = 0.9,       # Handling time
+  beta = 0.6,   # Conversion efficiency
+  d = 0.5       # Predator death rate
+)
+
+# Initial conditions
+state <- c(N = 5, P = 2)
+
+# Time sequence
+times <- seq(0, 200, by = 0.1)
+
+# Solve ODE
+solution <- ode(state, times, rosenzweig_macarthur, parms)
+
+# Calculate equilibrium (fixed point)
+# At equilibrium: dN/dt = 0 and dP/dt = 0
+# P* = (r * kappa) / (a * (beta - 1)) * (1 - N*/K)
+# N* such that dP/dt = 0
+N_eq <- parms["d"] * parms["kappa"] / (parms["beta"] * parms["a"] - parms["d"])
+P_eq <- parms["r"] * (1 - N_eq / parms["K"]) * (parms["kappa"] + N_eq) / parms["a"]
+
+# Create two plots
+par(mfrow = c(1, 2), mar = c(4, 4, 3, 1))
+
+# Plot 1: Time series
+plot(solution[, "time"], solution[, "N"], type = "l",
+     col = rgb(0, 0, 1, 0.7), lwd = 2,
+     xlab = "Time", ylab = "Population size",
+     main = "Time series")
+lines(solution[, "time"], solution[, "P"],
+      col = rgb(1, 0, 0, 0.7), lwd = 2)
+abline(h = N_eq, col = rgb(0, 0, 1, 0.3), lty = 2)
+abline(h = P_eq, col = rgb(1, 0, 0, 0.3), lty = 2)
+legend("topright", legend = c("Prey (N)", "Predator (P)"),
+       col = c(rgb(0, 0, 1, 0.8), rgb(1, 0, 0, 0.8)),
+       lwd = 2, cex = 0.85)
+
+# Plot 2: Phase portrait (state-space diagram)
+plot(solution[, "N"], solution[, "P"], type = "l",
+     col = rgb(0, 0.7, 0, 0.7), lwd = 2,
+     xlab = "Prey (N)", ylab = "Predator (P)",
+     main = "Phase portrait")
+
+# Add fixed point
+points(N_eq, P_eq, pch = 16, col = "red", cex = 1.5)
+text(N_eq, P_eq, " Equilibrium", pos = 1, cex = 0.9, col = "red")
+
+# Add starting point
+points(state["N"], state["P"], pch = 16, col = "blue", cex = 1.2)
+text(state["N"], state["P"], " Start", pos = 2, cex = 0.9)
+
+# Add arrow showing direction
+arrows(solution[1, "N"], solution[1, "P"],
+       solution[100, "N"], solution[100, "P"],
+       length = 0.1, col = rgb(0, 0.7, 0, 0.5), lwd = 1.5)
+
+par(mfrow = c(1, 1))
+```
 
 ## Tips and warnings {.unnumbered}
 

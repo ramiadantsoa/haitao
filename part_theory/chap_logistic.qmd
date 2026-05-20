@@ -11,6 +11,121 @@ $${#eq-logistic-growth}
 
 ## Examples {.unnumbered}
 
+```{r}
+#| fig-cap: "Logistic growth trajectories with different parameters"
+#| label: fig-logistic-trajectories
+
+# Analytical solution to logistic growth equation
+# N(t) = K / (1 + ((K - N0) / N0) * exp(-r * t))
+
+# Time vector
+t <- seq(0, 50, length.out = 1000)
+N0 <- 1  # Initial population size
+
+# Define four parameter sets
+# Default case
+r1 <- 0.2
+K1 <- 100
+
+# Negative r
+r2 <- -0.5
+K2 <- 100
+
+# Slightly higher r
+r3 <- 0.35
+K3 <- 100
+
+# Same r as default, but lower K
+r4 <- 0.2
+K4 <- 50
+
+# Calculate trajectories using the analytical solution
+logistic <- function(t, N0, r, K) {
+  K / (1 + ((K - N0) / N0) * exp(-r * t))
+}
+
+N1 <- logistic(t, N0, r1, K1)
+N2 <- logistic(t, N0, r2, K2)
+N3 <- logistic(t, N0, r3, K3)
+N4 <- logistic(t, N0, r4, K4)
+
+# Create plot
+plot(t, N1, type = "l", lwd = 2, col = "blue",
+     xlab = "Time", ylab = "Population size (N)",
+     ylim = c(-5, 110), main = "Logistic Growth Trajectories")
+lines(t, N2, lwd = 2, col = "red")
+lines(t, N3, lwd = 2, col = "green")
+lines(t, N4, lwd = 2, col = "purple")
+
+# Add legend
+legend("right",
+       c(paste("r =", r1, ", K =", K1, " (default)"),
+         paste("r =", r2, ", K =", K2, " (negative r)"),
+         paste("r =", r3, ", K =", K3, " (higher r)"),
+         paste("r =", r1, ", K =", K4, " (lower K)")),
+       col = c("blue", "red", "green", "purple"),
+       lwd = 2)
+
+# Add grid
+grid()
+```
+
+Solving the differential equation numerically using `deSolve`:
+
+```{r}
+#| fig-cap: "Logistic growth: numerical vs analytical solutions"
+#| label: fig-logistic-desolve
+
+library(deSolve)
+
+# Define the logistic growth ODE system
+logistic_ode <- function(t, state, params) {
+  N <- state
+  r <- params["r"]
+  K <- params["K"]
+
+  dN_dt <- r * N * (1 - N / K)
+
+  list(dN_dt)
+}
+
+# Time vector for numerical solution
+times <- seq(0, 50, by = 0.1)
+N0 <- 1
+
+# Parameter sets (same as before)
+params_list <- list(
+  list(r = 0.2, K = 100, name = "default", col = "blue"),
+  list(r = -0.5, K = 100, name = "negative r", col = "red"),
+  list(r = 0.35, K = 100, name = "higher r", col = "green"),
+  list(r = 0.2, K = 50, name = "lower K", col = "purple")
+)
+
+# Create plot
+plot(NA, NA, xlim = c(0, 50), ylim = c(-5, 110),
+     xlab = "Time", ylab = "Population size (N)",
+     main = "Logistic Growth: Numerical (deSolve) Solutions")
+
+# Solve and plot for each parameter set
+for (params in params_list) {
+  out <- ode(y = N0, times = times, func = logistic_ode,
+             parms = c(r = params$r, K = params$K))
+
+  lines(out[, 1], out[, 2], lwd = 2, col = params$col)
+}
+
+# Add legend
+legend("right",
+       c("r = 0.2, K = 100 (default)",
+         "r = -0.15, K = 100 (negative r)",
+         "r = 0.35, K = 100 (higher r)",
+         "r = 0.2, K = 50 (lower K)"),
+       col = c("blue", "red", "green", "purple"),
+       lwd = 2)
+
+grid()
+```
+
 ## Tips and warnings {.unnumbered}
 
 ## If you want to know more {.unnumbered}
