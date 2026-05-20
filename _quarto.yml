@@ -89,6 +89,7 @@ book:
         - part_stat_applied/chap_linearModel.qmd
     - part: part_theory/part_theory.qmd
       chapters:
+        - part_theory/chap_equilibrium.qmd
         - part_theory/chap_birth-death_discrete.qmd
         - part_theory/chap_ricker.qmd
         - part_theory/chap_birth-death_continuous.qmd
@@ -97,7 +98,8 @@ book:
         - part_theory/chap_allee-effect.qmd
         - part_theory/chap_levins.qmd
         - part_theory/chap_competition-colonization.qmd
-        - part_theory/chap_lotka-volterra.qmd
+        - part_theory/chap_lotka-volterra-compet.qmd
+        - part_theory/chap_lotka-volterra-predprey.qmd
         - part_theory/chap_macarthur-rosenzwig.qmd
     - part: part_diversity/part_diversity.qmd
       chapters:
@@ -133,6 +135,6 @@ format:
     number-sections: true
 
 execute:
-  echo: true
+  echo: false
   message: false
   warning: false

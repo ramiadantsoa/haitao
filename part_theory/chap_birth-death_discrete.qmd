@@ -24,14 +24,14 @@ simulate_bd_discrete <- function(N0, r, time_steps, n_trajectories = 100) {
   # r: net growth rate (b - d)
   # time_steps: number of time steps to simulate
   # n_trajectories: number of trajectories to simulate
-  
+
   trajectories <- matrix(NA, nrow = time_steps + 1, ncol = n_trajectories)
   trajectories[1, ] <- N0
-  
+
   for (t in 1:time_steps) {
     trajectories[t + 1, ] <- trajectories[t, ] * (1 + r)
   }
-  
+
   return(trajectories)
 }
 
@@ -72,9 +72,9 @@ for (i in 1:ncol(traj_higher)) {
 }
 
 # Add legend
-legend("topright", 
-       legend = c(paste0("r = ", r_default), 
-                  paste0("r = ", r_negative), 
+legend("topright",
+       legend = c(paste0("r = ", r_default),
+                  paste0("r = ", r_negative),
                   paste0("r = ", r_higher)),
        col = c(rgb(0, 0, 1, 0.8), rgb(1, 0, 0, 0.8), rgb(0, 0.7, 0, 0.8)),
        pch = 16, cex = 0.9)

@@ -1,4 +1,4 @@
-# Variable {#sec-16_variable}
+# Applied statistics {#sec-16_variable}
 
 {{< include ../preamble.qmd >}}
 
