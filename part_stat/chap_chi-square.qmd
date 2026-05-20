@@ -11,6 +11,44 @@ $${#eq-chi2}
 
 ## Examples {.unnumbered}
 
+```{r}
+#| code-fold: false
+#| fig-cap: "Chi-square Distribution - Probability Density Function with different degrees of freedom"
+#| label: fig-chi2-dist
+
+# Set up the plot with appropriate range
+plot(NULL, xlim = c(0, 15), ylim = c(0, 0.5),
+     xlab = "x", ylab = "f(x)",
+     main = "Chi-square Distribution - Probability Density Function")
+
+# Define degrees of freedom and colors
+df_values <- c(2, 4, 8)
+colors <- c("blue", "red", "green")
+
+# Plot each distribution
+for (i in seq_along(df_values)) {
+  df <- df_values[i]
+  color <- colors[i]
+
+  # Create sequence of x values
+  x <- seq(0, 15, length.out = 500)
+  y <- dchisq(x, df)
+
+  # Plot the curve
+  lines(x, y, col = color, lwd = 2)
+}
+
+# Add legend
+legend("topright",
+       legend = c("df=2", "df=4", "df=8"),
+       col = colors,
+       lwd = 2,
+       cex = 0.9)
+
+# Add grid for better readability
+grid()
+```
+
 ## Tips and warnings {.unnumbered}
 
 ## If you want to know more {.unnumbered}

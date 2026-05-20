@@ -15,6 +15,53 @@ $${#eq-bincoeff}
 
 ## Examples {.unnumbered}
 
+```{r}
+#| code-fold: false
+#| fig-cap: "Binomial Distribution - Probability Mass Function with different parameters"
+#| label: fig-binomial-dist
+
+# Set up the plot
+plot(NULL, xlim = c(-1, 21), ylim = c(0, 0.35),
+     xlab = "x", ylab = "P(X = x)",
+     main = "Binomial Distribution - Probability Mass Function")
+
+# Define colors and parameters
+colors <- c("blue", "red", "green")
+params <- list(
+  list(n = 10, p = 0.2, label = "n=10, p=0.2"),
+  list(n = 10, p = 0.5, label = "n=10, p=0.5"),
+  list(n = 20, p = 0.2, label = "n=20, p=0.2")
+)
+
+# Plot each distribution
+for (i in seq_along(params)) {
+  n <- params[[i]]$n
+  p <- params[[i]]$p
+  label <- params[[i]]$label
+  color <- colors[i]
+
+  # Calculate PMF for each value of x
+  x <- 0:n
+  pmf <- dbinom(x, n, p)
+
+  # Connect points with thin lines and add points
+  lines(x, pmf, col = color, lwd = 1, lty = 1)
+  points(x, pmf, pch = 21, bg = color, col = color, cex = 1.2)
+}
+
+# Add legend
+legend("topright",
+       legend = c("n=10, p=0.2", "n=10, p=0.5", "n=20, p=0.2"),
+       col = colors,
+       lwd = 2,
+       pch = 21,
+       pt.bg = colors,
+       cex = 0.9)
+
+# Add grid for better readability
+grid()
+```
+
 ## Tips and warnings {.unnumbered}
 
 ## If you want to know more {.unnumbered}

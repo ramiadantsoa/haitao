@@ -15,6 +15,48 @@ $${#eq-normal}
 
 ## Examples {.unnumbered}
 
+```{r}
+#| code-fold: false
+#| fig-cap: "Normal Distribution - Probability Density Function with different means and standard deviations"
+#| label: fig-normal-dist
+
+# Set up the plot with appropriate range
+plot(NULL, xlim = c(-6, 8), ylim = c(0, 0.4),
+     xlab = "x", ylab = "f(x)",
+     main = "Normal Distribution - Probability Density Function")
+
+# Define parameters and colors
+params <- list(
+  list(mean = 0, sd = 1, label = "μ=0, σ=1", color = "blue"),
+  list(mean = 0, sd = 2, label = "μ=0, σ=2", color = "red"),
+  list(mean = 3, sd = 2, label = "μ=3, σ=2", color = "green")
+)
+
+# Plot each distribution
+for (i in seq_along(params)) {
+  mean_val <- params[[i]]$mean
+  sd_val <- params[[i]]$sd
+  color <- params[[i]]$color
+
+  # Create sequence of x values
+  x <- seq(-6, 8, length.out = 500)
+  y <- dnorm(x, mean = mean_val, sd = sd_val)
+
+  # Plot the curve
+  lines(x, y, col = color, lwd = 2)
+}
+
+# Add legend
+legend("topright",
+       legend = c("μ=0, σ=1", "μ=0, σ=2", "μ=3, σ=2"),
+       col = c("blue", "red", "green"),
+       lwd = 2,
+       cex = 0.9)
+
+# Add grid for better readability
+grid()
+```
+
 ## Tips and warnings {.unnumbered}
 
 ## If you want to know more {.unnumbered}

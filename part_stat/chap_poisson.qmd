@@ -11,6 +11,48 @@ $${#eq-poisson}
 
 ## Examples {.unnumbered}
 
+```{r}
+#| code-fold: false
+#| fig-cap: "Poisson Distribution - Probability Mass Function with different lambda parameters"
+#| label: fig-poisson-dist
+
+# Set up the plot
+plot(NULL, xlim = c(-1, 45), ylim = c(0, 0.25),
+     xlab = "x", ylab = "P(X = x)",
+     main = "Poisson Distribution - Probability Mass Function")
+
+# Define colors and parameters
+colors <- c("blue", "red", "green")
+lambdas <- c(4, 10, 20)
+
+# Plot each distribution
+for (i in seq_along(lambdas)) {
+  lambda <- lambdas[i]
+  color <- colors[i]
+
+  # Set reasonable upper limit for x based on lambda
+  max_x <- qpois(0.9999, lambda)
+  x <- 0:max_x
+  pmf <- dpois(x, lambda)
+
+  # Connect points with thin lines and add points
+  lines(x, pmf, col = color, lwd = 1, lty = 1)
+  points(x, pmf, pch = 21, bg = color, col = color, cex = 1.2)
+}
+
+# Add legend
+legend("topright",
+       legend = c("λ=4", "λ=10", "λ=20"),
+       col = colors,
+       lwd = 2,
+       pch = 21,
+       pt.bg = colors,
+       cex = 0.9)
+
+# Add grid for better readability
+grid()
+```
+
 ## Tips and warnings {.unnumbered}
 
 ## If you want to know more {.unnumbered}

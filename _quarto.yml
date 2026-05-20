@@ -128,6 +128,7 @@ format:
     theme:
       - cosmo
       - brand
+    html-math-method: mathjax
   pdf:
     documentclass: scrreprt
   docx:

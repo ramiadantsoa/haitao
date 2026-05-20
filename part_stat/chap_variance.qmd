@@ -10,10 +10,8 @@ $$
 $${#eq-variance_d}
 
 $$
-
 \mathrm{Var}(X) = \int_{-\infty}^{\infty} (x - \mu)^2 f(x)\,dx
-
-$${#eq-variance_c}
+$$ {#eq-variance_c}
 
 ## Examples {.unnumbered}
 
