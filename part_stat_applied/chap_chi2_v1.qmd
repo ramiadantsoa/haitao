@@ -12,6 +12,83 @@ $${#eq-chi2-qualitative}
 
 ## Examples {.unnumbered}
 
+```{r}
+#| echo: true
+#| code-fold: false
+#| fig-cap: "Chi-square Test for 3x2 Contingency Table"
+#| label: fig-chi2-test
+
+# Create a 3x2 contingency table
+# Rows: 3 categories (e.g., Treatment A, Treatment B, Control)
+# Columns: 2 outcomes (e.g., Success, Failure)
+contingency_table <- matrix(c(45, 35,    # Treatment A: 45 successes, 35 failures
+                               50, 30,    # Treatment B: 50 successes, 30 failures
+                               38, 42),   # Control: 38 successes, 42 failures
+                            nrow = 3, ncol = 2, byrow = TRUE,
+                            dimnames = list(Treatment = c("Treatment A", "Treatment B", "Control"),
+                                          Outcome = c("Success", "Failure")))
+
+print("Contingency Table:")
+print(contingency_table)
+
+# Run chi-square test
+chi2_result <- chisq.test(contingency_table)
+print("\nChi-square Test Result:")
+print(chi2_result)
+
+# Extract test statistics
+print(paste("Chi-square statistic:", round(chi2_result$statistic, 4)))
+print(paste("p-value:", round(chi2_result$p.value, 4)))
+print(paste("Degrees of freedom:", chi2_result$parameter))
+
+# Expected frequencies
+print("\nExpected Frequencies:")
+print(round(chi2_result$expected, 2))
+
+# Interpretation:
+# If p-value > 0.05: we fail to reject H0 (no association between variables)
+# If p-value < 0.05: we reject H0 (significant association between variables)
+```
+
+```{r}
+#| echo: true
+#| code-fold: false
+#| fig-cap: "Chi-square Visualization: Stacked Barchart"
+#| label: fig-chi2-barchart
+
+# Set up 1x2 panel layout
+par(mfrow = c(1, 2))
+
+# Panel 1: Stacked barchart (counts)
+barplot(contingency_table,
+        main = "Stacked Barchart: Observed Counts",
+        xlab = "Outcome",
+        ylab = "Frequency",
+        col = c("lightblue", "lightcoral", "lightgreen"),
+        legend = rownames(contingency_table),
+        beside = FALSE,
+        border = "black",
+        lwd = 1.5)
+
+# Panel 2: Grouped barchart showing proportions
+# Calculate proportions within each treatment group
+proportions <- sweep(contingency_table, 1, rowSums(contingency_table), FUN = "/")
+
+barplot(t(proportions),
+        main = "Grouped Barchart: Proportions by Treatment",
+        xlab = "Treatment",
+        ylab = "Proportion",
+        col = c("steelblue", "coral"),
+        legend = colnames(contingency_table),
+        beside = TRUE,
+        border = "black",
+        lwd = 1.5,
+        ylim = c(0, 1))
+
+# Reset plot layout
+par(mfrow = c(1, 1))
+```
+
 ## Tips and warnings {.unnumbered}
 
 ## If you want to know more {.unnumbered}

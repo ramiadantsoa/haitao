@@ -2,11 +2,12 @@ project:
   type: book
 
 book:
-  title: "qgasy"
+  title: "A pratical handbook of quantitative methods in ecology"
   author: "Tanjona Ramiadantsoa"
   date: last-modified
   chapters:
     - index.qmd
+    - preface.qmd
     - part: part_math/part_math.qmd
       chapters:
         - part_math/chap_operation.qmd
@@ -78,7 +79,6 @@ book:
         - part_stat_applied/chap_t-test_v1.qmd
         - part_stat_applied/chap_t-test_v2.qmd
         - part_stat_applied/chap_chi2_v1.qmd
-        - part_stat_applied/chap_chi2_v2.qmd
         - part_stat_applied/chap_anova.qmd
         - part_stat_applied/chap_kruskall-wallis.qmd
         - part_stat_applied/chap_posthoc.qmd
@@ -87,6 +87,8 @@ book:
         - part_stat_applied/chap_welch.qmd
         - part_stat_applied/chap_permutation.qmd
         - part_stat_applied/chap_linearModel.qmd
+        - part_stat_applied/chap_chi2_v2.qmd
+        - part_stat_applied/chap_aic.qmd
     - part: part_theory/part_theory.qmd
       chapters:
         - part_theory/chap_equilibrium.qmd
