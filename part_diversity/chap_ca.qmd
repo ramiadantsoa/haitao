@@ -8,6 +8,114 @@
 
 ## Examples {.unnumbered}
 
+### Correspondence Analysis with dune data
+
+Using the classic `dune` dataset from the `vegan` package:
+
+```{r}
+library(vegan)
+data(dune)
+
+# Perform CA using cca() function
+ca <- cca(dune)
+ca
+```
+
+This performs Correspondence Analysis on the dune community data. CA is based on chi-square distances and is particularly suited for count/abundance data like species composition.
+
+### Summary and variance explained
+
+```{r}
+# Summary of results
+summary(ca)
+
+# Variance explained by each axis
+eig <- ca$CA$eig
+var_explained <- eig / sum(eig)
+cumsum(var_explained)
+```
+
+### Basic base R plots
+
+```{r}
+# Scree plot
+plot(ca, main = "CA Scree Plot\nDune Sites and Species")
+```
+
+```{r}
+# Biplot with sites and species
+plot(ca, display = c("sites", "species"),
+     main = "CA Biplot\nSites and Species",
+     xlab = paste0("CA1 (", round(var_explained[1]*100, 1), "%)"),
+     ylab = paste0("CA2 (", round(var_explained[2]*100, 1), "%)"))
+```
+
+```{r}
+# Focus on sites only
+par(mfrow = c(1, 2))
+
+# Sites plot only
+plot(ca, display = "sites",
+     main = "CA Site Plot",
+     xlab = paste0("CA1 (", round(var_explained[1]*100, 1), "%)"),
+     ylab = paste0("CA2 (", round(var_explained[2]*100, 1), "%)"),
+     pch = 16, col = "steelblue")
+abline(h = 0, v = 0, lty = 2, col = "gray")
+
+# Species plot only
+plot(ca, display = "species",
+     main = "CA Species Plot",
+     xlab = paste0("CA1 (", round(var_explained[1]*100, 1), "%)"),
+     ylab = paste0("CA2 (", round(var_explained[2]*100, 1), "%)"),
+     pch = 17, col = "darkgreen")
+abline(h = 0, v = 0, lty = 2, col = "gray")
+
+par(mfrow = c(1, 1))
+```
+
+### Extract results
+
+```{r}
+# Extract site scores (row scores)
+sites_scores <- scores(ca, display = "sites")
+head(sites_scores)
+
+# Extract species scores (column scores)
+species_scores <- scores(ca, display = "species")
+head(species_scores)
+
+# Eigenvalues (inertia) for each axis
+ca$CA$eig
+```
+
+### Manual interpretation
+
+```{r}
+# Create a simple score plot with labels
+plot(ca$CA$u[, 1:2],
+     main = "CA Score Plot (Sites)",
+     xlab = paste0("CA1 (", round(var_explained[1]*100, 1), "%)"),
+     ylab = paste0("CA2 (", round(var_explained[2]*100, 1), "%)"),
+     pch = 16, col = "steelblue", cex = 1.2)
+abline(h = 0, v = 0, lty = 2, col = "gray")
+text(ca$CA$u[, 1:2], labels = rownames(dune), pos = 3, cex = 0.7)
+
+# Add species arrows
+arrows(0, 0, ca$CA$v[, 1]*2, ca$CA$v[, 2]*2,
+       col = "darkgreen", length = 0.1, alpha = 0.7)
+text(ca$CA$v[, 1:2]*2.2, labels = colnames(dune),
+     col = "darkgreen", cex = 0.7)
+```
+
+### Key differences from PCA
+
+- **CA uses chi-square distances** rather than Euclidean distances
+- **CA is inherently scale-invariant** for relative abundances (no standardization needed)
+- **CA is better suited for count data** like species abundance data
+- **CA axes are reciprocal**: species and sites are plotted in the same space, with distances representing similarity
+- **Species are positioned** at the weighted average of sites where they occur
+
+
 ## Tips and warnings {.unnumbered}
 
 ## If you want to know more {.unnumbered}

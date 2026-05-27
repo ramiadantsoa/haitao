@@ -8,6 +8,59 @@
 
 ## Examples {.unnumbered}
 
+### Species richness with dune data
+
+Using the classic `dune` dataset from the `vegan` package:
+
+```{r}
+library(vegan)
+data(dune)
+
+# Calculate species richness (number of species per site)
+richness <- rowSums(dune > 0)
+richness
+```
+
+This counts the number of species (columns with abundance > 0) at each of the 20 dune sites.
+
+### Alternative methods
+
+```{r}
+# Using specnumber() function from vegan
+richness_vegan <- specnumber(dune)
+richness_vegan
+
+# Verify they're the same
+identical(richness, richness_vegan)
+```
+
+### Summary and visualization
+
+```{r}
+# Summary statistics
+summary(richness)
+mean(richness)
+sd(richness)
+
+# Barplot showing richness per site
+barplot(richness, main = "Species Richness - Dune Sites", 
+        xlab = "Site", ylab = "Number of Species", ylim = c(0, max(richness)))
+
+# Histogram showing distribution of richness values
+hist(richness, main = "Distribution of Species Richness", 
+     xlab = "Number of Species", ylab = "Number of Sites", breaks = 5)
+```
+
+### Interpretation
+
+Species richness is the simplest measure of biodiversity—it's simply a **count of the number of species** present in a site or community. While easy to understand and calculate, richness doesn't account for:
+- Relative abundances of species
+- Whether rare or common species are present
+- Evenness of species distribution
+
+For more nuanced diversity measures that account for these factors, see Shannon and Simpson indices.
+
+
 ## Tips and warnings {.unnumbered}
 
 ## If you want to know more {.unnumbered}

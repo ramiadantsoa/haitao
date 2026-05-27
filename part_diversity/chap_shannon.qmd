@@ -14,6 +14,41 @@ $${#eq-shannon-alt}
 
 ## Examples {.unnumbered}
 
+### Shannon index with dune data
+
+Using the classic `dune` dataset from the `vegan` package:
+
+```{r}
+library(vegan)
+data(dune)
+
+# Calculate Shannon index for each site
+shannon <- diversity(dune, index = "shannon")
+shannon
+```
+
+This calculates the Shannon biodiversity index for each of the 20 sites in the dune dataset. The `diversity()` function from `vegan` computes:
+$$H = - \sum_{i = 1}^S p_i \ln p_i$$
+
+where $p_i$ is the proportion of species $i$ relative to all species at that site.
+
+You can also extract specific sites or summarize the results:
+
+```{r}
+# Shannon index for the first site
+shannon[1]
+
+# Summary statistics across all sites
+summary(shannon)
+
+# Visual comparison across sites
+barplot(shannon, main = "Shannon Diversity Index - Dune Sites",
+        xlab = "Site", ylab = "Shannon Index")
+```
+
+Higher Shannon index values indicate greater species diversity (both more species and more even distribution).
+
+
 ## Tips and warnings {.unnumbered}
 
 ## If you want to know more {.unnumbered}

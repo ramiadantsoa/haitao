@@ -11,6 +11,228 @@ $${#eq-hill}
 
 ## Examples {.unnumbered}
 
+### Hill numbers (q = 0, 1, 2) with dune data
+
+Using the classic `dune` dataset from the `vegan` package:
+
+```{r}
+library(vegan)
+data(dune)
+
+# Calculate Hill numbers for each site
+# q = 0: Species richness (number of species)
+hill_q0 <- specnumber(dune)
+
+# q = 1: Exponential of Shannon entropy (exp(H))
+# Related to Shannon index but easier to interpret
+shannon <- diversity(dune, index = "shannon")
+hill_q1 <- exp(shannon)
+
+# q = 2: Inverse Simpson index (1/lambda)
+# Related to Simpson index
+hill_q2 <- diversity(dune, index = "invsimpson")
+
+# Combine into a table
+hill_numbers <- data.frame(
+  Site = rownames(dune),
+  q0_Richness = hill_q0,
+  q1_Shannon = round(hill_q1, 2),
+  q2_Simpson = round(hill_q2, 2)
+)
+
+head(hill_numbers)
+```
+
+### Interpretation of Hill numbers
+
+```{r}
+# For a specific site, compare the three Hill numbers
+site_1 <- hill_numbers[1, ]
+cat("Site 1 Hill Numbers:\n")
+cat("q=0 (Richness):", site_1$q0_Richness, "- actual number of species\n")
+cat("q=1 (Shannon):", site_1$q1_Shannon, "- effective number of equally-common species\n")
+cat("q=2 (Simpson):", site_1$q2_Simpson, "- effective number weighted by dominants\n")
+cat("\nRatio q0/q2:", round(site_1$q0_Richness / site_1$q2_Simpson, 2), 
+    "- higher = more even distribution\n")
+```
+
+### Select three representative sites
+
+```{r}
+# Select sites with different richness and evenness patterns
+site_indices <- c(1, 10, 20)  # Low, medium, high richness
+representative_sites <- dune[site_indices, ]
+
+# Extract their Hill numbers
+rep_hills <- hill_numbers[site_indices, ]
+rep_hills
+```
+
+### Rarefaction curves (interpolation)
+
+```{r}
+# Create rarefaction curves for the three sites
+par(mfrow = c(1, 3))
+
+for(i in seq_along(site_indices)) {
+  site_data <- representative_sites[i, ]
+  
+  # Rarefaction curve (interpolation)
+  rare <- rarefy(site_data, sample = 1:sum(site_data))
+  
+  plot(1:sum(site_data), rare,
+       type = "l", lwd = 2, col = "steelblue",
+       main = paste("Site", site_indices[i]),
+       xlab = "Number of Individuals",
+       ylab = "Number of Species",
+       ylim = c(1, max(rep_hills$q0_Richness)))
+  
+  # Add a point at the observed richness
+  points(sum(site_data), rep_hills$q0_Richness[i], 
+         pch = 16, col = "red", cex = 2)
+  
+  # Add reference line
+  abline(h = rep_hills$q0_Richness[i], lty = 2, col = "gray")
+}
+
+par(mfrow = c(1, 1))
+```
+
+### Species accumulation curves (interpolation)
+
+```{r}
+# Accumulation curves for the three representative sites
+par(mfrow = c(1, 3))
+
+for(i in seq_along(site_indices)) {
+  site_data <- representative_sites[i, ]
+  
+  # Get non-zero species (those actually present)
+  sp_present <- site_data[site_data > 0]
+  
+  # Create a simple accumulation by adding species one at a time
+  n_species <- length(sp_present)
+  accumulated <- cumsum(rep(1, n_species))
+  
+  plot(1:n_species, accumulated,
+       type = "s", lwd = 2, col = "darkgreen",
+       main = paste("Site", site_indices[i]),
+       xlab = "Species (ordered by abundance)",
+       ylab = "Cumulative Number of Species",
+       ylim = c(1, max(rep_hills$q0_Richness)))
+  
+  # Add final richness point
+  points(n_species, rep_hills$q0_Richness[i],
+         pch = 16, col = "red", cex = 2)
+}
+
+par(mfrow = c(1, 1))
+```
+
+### Extrapolation using Chao2
+
+```{r}
+# Estimate species richness using Chao2 estimator
+# (This estimates the true richness if sampling was complete)
+
+par(mfrow = c(1, 3))
+
+for(i in seq_along(site_indices)) {
+  site_data <- representative_sites[i, ]
+  
+  # Calculate Chao2 estimate
+  # Requires presence/absence data
+  site_pa <- ifelse(site_data > 0, 1, 0)
+  
+  # Chao2 formula: S_obs + (f1^2 / (2*f2))
+  # where f1 = number of singletons, f2 = number of doubletons
+  observed_richness <- sum(site_pa)
+  
+  # Get abundance classes
+  f1 <- sum(site_data == 1)  # Singletons (appear once)
+  f2 <- sum(site_data == 2)  # Doubletons (appear twice)
+  
+  # Chao2 estimator
+  if(f2 > 0) {
+    chao2 <- observed_richness + (f1^2) / (2 * f2)
+  } else {
+    chao2 <- observed_richness + (f1 * (f1 - 1)) / (2 * (f2 + 1))
+  }
+  
+  # Plot observed vs estimated richness
+  x_vals <- c(0, 1, 1.5)
+  y_vals <- c(observed_richness, observed_richness, chao2)
+  
+  plot(x_vals, y_vals, type = "o", lwd = 2, pch = c(16, 16, 17),
+       col = c("steelblue", "steelblue", "red"),
+       main = paste("Site", site_indices[i]),
+       xlab = "",
+       ylab = "Number of Species",
+       ylim = c(0, chao2 * 1.3),
+       xlim = c(-0.2, 1.7))
+  
+  # Add segments for extrapolation
+  segments(1, observed_richness, 1.5, chao2, 
+           lty = 2, col = "red", lwd = 1.5)
+  
+  # Labels
+  text(x_vals, y_vals, 
+       labels = c("Observed", "Observed", paste("Chao2:", round(chao2, 1))),
+       pos = c(2, 2, 4), cex = 0.8)
+  
+  axis(1, at = c(0, 1, 1.5), 
+       labels = c("", "Observed", "Extrapolated"), cex.axis = 0.7)
+}
+
+par(mfrow = c(1, 1))
+```
+
+### Compare Hill numbers across the three sites
+
+```{r}
+# Visualize the relationship between Hill numbers
+plot(rep_hills$q0_Richness, rep_hills$q2_Simpson,
+     pch = 16, col = "steelblue", cex = 2,
+     main = "Hill Number q=0 vs q=2",
+     xlab = "q=0 (Richness)",
+     ylab = "q=2 (Inverse Simpson)",
+     xlim = c(0, max(rep_hills$q0_Richness) * 1.1),
+     ylim = c(0, max(rep_hills$q0_Richness) * 1.1))
+
+# Add diagonal line (perfect evenness: q2 = q0)
+abline(0, 1, lty = 2, col = "gray", lwd = 1)
+
+# Add labels
+text(rep_hills$q0_Richness, rep_hills$q2_Simpson,
+     labels = paste("Site", site_indices),
+     pos = 3, cex = 0.8)
+
+# Add legend
+legend("bottomright", legend = "Line: q0 = q2 (perfect evenness)",
+       lty = 2, col = "gray", cex = 0.8)
+```
+
+### Summary table
+
+```{r}
+# Create a comprehensive summary
+summary_table <- data.frame(
+  Site = paste("Site", site_indices),
+  Richness_q0 = rep_hills$q0_Richness,
+  Shannon_q1 = rep_hills$q1_Shannon,
+  Simpson_q2 = rep_hills$q2_Simpson,
+  Evenness = round(rep_hills$q2_Simpson / rep_hills$q0_Richness, 3)
+)
+
+print(summary_table)
+
+cat("\nInterpretation:\n")
+cat("- q=0 increases with richness only\n")
+cat("- q=1 balances richness and evenness\n")
+cat("- q=2 is dominated by most abundant species\n")
+cat("- Evenness = q2/q0: higher = more even distribution\n")
+```
+
 ## Tips and warnings {.unnumbered}
 
 ## If you want to know more {.unnumbered}

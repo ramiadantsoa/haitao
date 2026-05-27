@@ -21,6 +21,55 @@ Probability of interspecific encounter (PIE).
 
 ## Examples {.unnumbered}
 
+### Simpson index with dune data
+
+Using the classic `dune` dataset from the `vegan` package:
+
+```{r}
+library(vegan)
+data(dune)
+
+# Calculate Simpson index (concentration) for each site
+simpson <- diversity(dune, index = "simpson")
+simpson
+```
+
+This calculates Simpson's concentration index ($\lambda$) for each of the 20 sites in the dune dataset, computed as:
+$$\lambda = \sum_{i = 1}^S p_i^2$$
+
+where $p_i$ is the proportion of species $i$ relative to all species at that site.
+
+The `vegan` package also provides the **inverse Simpson index** (also called Hill number of order 2):
+
+```{r}
+# Inverse Simpson index (recommended interpretation)
+invsimpson <- diversity(dune, index = "invsimpson")
+invsimpson
+
+# Gini-Simpson index (complement, often called Simpson's D)
+gini_simpson <- 1 - simpson
+gini_simpson
+```
+
+### Interpretation
+
+- **Simpson concentration ($\lambda$)**: ranges from 0 to 1, where higher values indicate lower diversity
+- **Inverse Simpson ($1/\lambda$)**: ranges from 1 to S (number of species), where higher values indicate greater diversity
+- **Gini-Simpson ($1 - \lambda$)**: ranges from 0 to 1, where higher values indicate greater diversity (probability of interspecific encounter)
+
+### Visualization
+
+```{r}
+# Compare diversity indices across sites
+par(mfrow = c(1, 2))
+barplot(simpson, main = "Simpson Concentration Index",
+        xlab = "Site", ylab = "λ (lower = more diverse)")
+barplot(invsimpson, main = "Inverse Simpson Index",
+        xlab = "Site", ylab = "1/λ (higher = more diverse)")
+par(mfrow = c(1, 1))
+```
+
+
 ## Tips and warnings {.unnumbered}
 
 ## If you want to know more {.unnumbered}
