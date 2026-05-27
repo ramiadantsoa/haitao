@@ -25,54 +25,54 @@ print(welch_anova)
 
 Bug here fix!!
 ```{r}
-#| echo: true
-#| message: false
+# #| echo: true
+# #| message: false
 
-# Load necessary libraries
-library(PMCMRplus)
-library(multcompView)
+# # Load necessary libraries
+# library(PMCMRplus)
+# library(multcompView)
 
-# 1. Run Games-Howell test
-gh_test <- gamesHowellTest(weight ~ group, data = PlantGrowth)
-print(gh_test)
+# # 1. Run Games-Howell test
+# gh_test <- gamesHowellTest(weight ~ group, data = PlantGrowth)
+# print(gh_test)
 
-# 2. Extract P-values to create a significance matrix
-# Games-Howell output needs to be formatted for multcompLetters
-p_values <- gh_test$p.value
+# # 2. Extract P-values to create a significance matrix
+# # Games-Howell output needs to be formatted for multcompLetters
+# p_values <- gh_test$p.value
 
-# Convert the triangular matrix to a full symmetric matrix for multcompLetters
-# This step creates a named vector of p-values for all comparisons
-p_vec <- as.vector(p_values)
-names(p_vec) <- c("trt1-ctrl", "trt2-ctrl", "trt2-trt1") # Map names to the matrix values
-p_vec <- p_vec[!is.na(p_vec)] # Remove NAs
+# # Convert the triangular matrix to a full symmetric matrix for multcompLetters
+# # This step creates a named vector of p-values for all comparisons
+# p_vec <- as.vector(p_values)
+# names(p_vec) <- c("trt1-ctrl", "trt2-ctrl", "trt2-trt1") # Map names to the matrix values
+# p_vec <- p_vec[!is.na(p_vec)] # Remove NAs
 
-# 3. Generate Letters
-gh_letters_obj <- multcompLetters(p_vec)
-gh_letters <- gh_letters_obj$Letters
+# # 3. Generate Letters
+# gh_letters_obj <- multcompLetters(p_vec)
+# gh_letters <- gh_letters_obj$Letters
 
-# 4. Reorder to match the factor levels (ctrl, trt1, trt2)
-ordered_letters <- gh_letters[levels(PlantGrowth$group)]
+# # 4. Reorder to match the factor levels (ctrl, trt1, trt2)
+# ordered_letters <- gh_letters[levels(PlantGrowth$group)]
 ```
 
 ```{r}
-#| echo: true
+# #| echo: true
 
-# Create the boxplot
-boxplot(weight ~ group, data = PlantGrowth,
-        main = "Plant Weight: Welch's ANOVA + Games-Howell",
-        col = c("#FF9999", "#99FF99", "#9999FF"),
-        ylim = c(3, 8))
+# # Create the boxplot
+# boxplot(weight ~ group, data = PlantGrowth,
+#         main = "Plant Weight: Welch's ANOVA + Games-Howell",
+#         col = c("#FF9999", "#99FF99", "#9999FF"),
+#         ylim = c(3, 8))
 
-# Calculate max positions
-max_weights <- tapply(PlantGrowth$weight, PlantGrowth$group, max)
+# # Calculate max positions
+# max_weights <- tapply(PlantGrowth$weight, PlantGrowth$group, max)
 
-# Add letters
-text(x = 1:3,
-     y = max_weights + 0.3,
-     labels = ordered_letters,
-     cex = 1.5,
-     font = 2,
-     col = "blue")
+# # Add letters
+# text(x = 1:3,
+#      y = max_weights + 0.3,
+#      labels = ordered_letters,
+#      cex = 1.5,
+#      font = 2,
+#      col = "blue")
 ```
 
 ## Tips and warnings {.unnumbered}
