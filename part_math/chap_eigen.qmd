@@ -1,6 +1,8 @@
 # Eigen decomposition {#sec-eigen}
 
 ## Concepts and intutions {.unnumbered}
+Fruit salad!
+
 Version 1: as a product of matrices
 Prime factors, one is to think of.
 To have one of the matrix as a diagonal matrix.

@@ -2,7 +2,15 @@
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
-Time: is time continuous or discrete?
+To count or to measure. Tsofa sa antsy
+In grammar, countable and uncountable.
+Division and distinction is purely based on mathematics we use.
+We use sort of different tools.
+Ironically, one can approximate the other and vice versa.
+
+See difference vs differential equation or how to treat discrete and continuous random variable in stat
+
+Discrete is a bit confusing
 
 In statistics you probably heard qualitative, quantitative, discrete, continuous, factors, integer, ordinal, and others.
 Before heading there in latter chapters, let's which is discrete and continuous in a mathematical sense.

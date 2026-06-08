@@ -2,6 +2,13 @@
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
+The earth would explode if hit by an earthquake of magnitude 18 (xkcd!)
+
+
+This is logarithmic scale.
+
+Linearization.
+
 When measuring the intensity of earthquake, the metric is Richter. Moment Magnitude
 One of the strongest earthquakes in Madagascar was 6.2 in 1950, 11 May (earthquakelist.org)
 The strongest earthquake measured measured with a Magnitude 9.5 in 1960 Great Chilean earthquake.

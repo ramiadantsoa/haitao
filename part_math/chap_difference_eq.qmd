@@ -2,7 +2,7 @@
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
-How do we document change in time?
+You go straight, left etc. and you have reached your destination.
 
 
 In an official chess tournament (probably true for no pro too), after a player move a piece, he/she will tap a clock and then write down the move they have.

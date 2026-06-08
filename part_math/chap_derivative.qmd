@@ -2,6 +2,8 @@
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
+
+
 Derivative is again one of those words that somehow rotten us.
 Most of you might remember how to calculate the derivative, study the sign of the derivative etc.
 This is not about highschool test.

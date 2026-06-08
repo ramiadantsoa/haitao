@@ -1,7 +1,7 @@
 # Matrix operation {#sec-matrix_op}
 
 ## Concepts and intutions {.unnumbered}
-James  = Marie, James + Marie = Jamie.
+James = Marie, James + Marie = Love.
 Here is an example of using mathematical notation.
 You should know by now that the equal is not really equal in mathematics, and the addition is merely a notation.
 Yet, they actually have a meaning.

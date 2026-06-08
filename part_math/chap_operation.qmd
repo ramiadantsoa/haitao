@@ -1,6 +1,8 @@
 # Operation {#sec-operation}
 
 ## Concepts and intutions {.unnumbered}
+Twitter debate! 
+
 Few years ago, there are was an intense debate on Twitter (now X) about a simple calculation.
 
 8 ÷ 2(2 + 2)

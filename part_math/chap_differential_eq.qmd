@@ -2,6 +2,8 @@
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
+
+
 How do we document change in time?
 See before about playing chess.
 In modern time, we could actually.

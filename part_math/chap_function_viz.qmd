@@ -1,6 +1,8 @@
 # Function and graphics {#sec-function_viz}
 
 ## Concepts and intuitions {.unnumbered}
+Ikotozafy ihany no Alexis!
+
 In ancient times, people have been trying to solve alegraic equations.
 E.g. what are the roots of a second degree polynomial.
 The famous delta and b2 - 4 a c and the rest.

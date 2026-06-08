@@ -1,6 +1,9 @@
 # Matrix multiplication {#sec-matrix_multi}
 
 ## Concepts and intutions {.unnumbered}
+Haddamard product, Kronecker product and others! 
+Those are examples of ways to multiply matrices but there is one that is inuitive and makes sense and also the most used product for our use.
+
 Assume we have a matrix,
 X bought 2 banana, 4 apples and 0 orange
 Y bought x banana, 4 apples and 3 orange
@@ -46,4 +49,4 @@ R can forst something, so how they implemented it.
 This is the reason why entry needs to be number otherwise, sums and product are not defined
 
 ## if you want to know more {.unnumbered}
-Linear algebra
+Linear algebra Had

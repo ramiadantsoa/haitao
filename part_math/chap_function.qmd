@@ -1,6 +1,13 @@
 # Functions {#sec-function}
 
 ## Concepts and intutions {.unnumbered}
+f(x) = palpitation!
+
+Etude des fonctions!
+fundamental approach as you have seen through we focus on the applied part.
+
+Everything we do captures the essence of function
+
 For most of us, hearing a function is traumatizing.
 Studying and is, we have a set of procedures.
 I think it is a part of the education failure.
@@ -20,8 +27,8 @@ Intuitively, we just need to that if we give an input then we get an output.
 In fact, we want to unravel the relationship, infer what kind of functions is there.
 And ironically, the most popular one is just y =  a x+ b. So secondary school map.
 
-
 ## Formal {.unnumbered}
+see also sum and product notation for dummy variable.
 We need three components to define a function, the starting and ending sets and the actual mapping.
 It is written like f: X -> Y , x, y = f(x)
 

@@ -1,6 +1,8 @@
 # Exponential function {#sec-exponential}
 {{< include ../preamble.qmd >}}
 ## Concepts and intuitions {.unnumbered}
+$\pi \sim 3.1415 \ldots$ and $e \sim 2.718 \ldots$
+
 As multiplication is generalization of addition 2 + 2 + 2 = 3 x 2, power is a condense notation of multiplication 2 x 2 x 2 = 2^3 (see also tips in notation).
 2^0 = 1
 At middle school, students started to learn about rules

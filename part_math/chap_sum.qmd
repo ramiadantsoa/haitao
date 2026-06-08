@@ -1,6 +1,8 @@
 # Sum and product {#sec-sum}
 
 ## Concepts and intutions {.unnumbered}
+Acronyms in mathematics! 
+
 Condensing is a natural, see in #c3_operation that multiplication is a condensation of addition.
 So 2 + 2 + 2 = 3 * 2, essentially created a symbol to say things are repeating.
 

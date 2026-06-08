@@ -1,6 +1,7 @@
 # Greek letters {#sec-greek}
 
 ## Concepts and intutions {.unnumbered}
+Or the one like the fish.
 
 Do you recognize this?
 
@@ -27,7 +28,7 @@ The only thing is just to learn the alphabet so here a quick summary
 There are upper and lower case.
 
 Create a
-$\alpha \beta \gamma \epsilon \nu \mu \eta \varepsilon \omega \zeta \xi \lambda \rho \delta \phi \psi \sigma$
+$\alpha \beta \gamma \epsilon \nu \mu \eta \varepsilon \omega \zeta \xi \lambda \rho \delta \phi \psi \sigma \theta $
 a b g e n m
 
 The other extension is that they are used
