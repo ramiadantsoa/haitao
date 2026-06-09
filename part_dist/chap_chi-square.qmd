@@ -1,4 +1,4 @@
-# Chi-square distribution {#sec-chi2_distrubution}
+# Chi-square distribution {#sec-chi2-dist}
 
 {{< include ../preamble.qmd >}}
 

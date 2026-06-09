@@ -1,4 +1,4 @@
-# F-distribution {#sec-f-d}
+# F-distribution {#sec-f-dist}
 
 {{< include ../preamble.qmd >}}
 

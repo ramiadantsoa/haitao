@@ -1,4 +1,4 @@
-# Qualitative variable {#sec-18_qualitative}
+# Uniform distribution {#sec-dist-uniform}
 
 {{< include ../preamble.qmd >}}
 

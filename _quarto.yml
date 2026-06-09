@@ -41,14 +41,6 @@ book:
         - part_stat/chap_quantile.qmd
         - part_stat/chap_random_variable.qmd
         - part_stat/chap_pmf_pdf_cmf_cdf.qmd
-        - part_stat/chap_uniform.qmd
-        - part_stat/chap_bernoulli.qmd
-        - part_stat/chap_binomial.qmd
-        - part_stat/chap_poisson.qmd
-        - part_stat/chap_normal.qmd
-        - part_stat/chap_chi-square.qmd
-        - part_stat/chap_f-distribution.qmd
-        - part_stat/chap_gamma.qmd
         - part_stat/chap_null-distribution.qmd
         - part_stat/chap_p-value.qmd
         - part_stat/chap_large-number.qmd
@@ -57,6 +49,16 @@ book:
         - part_stat/chap_correlation_pearson.qmd
         - part_stat/chap_correlation_spearman.qmd
         - part_stat/chap_discreteContinuous.qmd
+    - part: part_dist/part_distribution.qmd
+      chapters:
+        - part_dist/chap_uniform.qmd
+        - part_dist/chap_bernoulli.qmd
+        - part_dist/chap_binomial.qmd
+        - part_dist/chap_poisson.qmd
+        - part_dist/chap_normal.qmd
+        - part_dist/chap_chi-square.qmd
+        - part_dist/chap_f-distribution.qmd
+        - part_dist/chap_gamma.qmd
     - part: part_coding/part_coding.qmd
       chapters:
         - part_coding/chap_boolean.qmd
