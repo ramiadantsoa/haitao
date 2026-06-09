@@ -1,8 +1,10 @@
-# Qualitative variable {#sec-qualitativeCoding}
+# Strings {#sec-qualitativeCoding}
 
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
+"Hello world!"
+
 
 ## Formal {.unnumbered}
 

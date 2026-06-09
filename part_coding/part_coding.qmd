@@ -16,3 +16,5 @@ After this, stat applied becomes a collection of functions, programming can be s
 
 Pseudocode
 
+To steal physics
+

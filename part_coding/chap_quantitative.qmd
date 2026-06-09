@@ -3,6 +3,9 @@
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
+A box for continuous number!
+
+Numeric in R.
 
 ## Formal {.unnumbered}
 

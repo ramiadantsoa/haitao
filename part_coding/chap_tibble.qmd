@@ -3,6 +3,7 @@
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
+Dataframe tsara pozy!
 
 ## Formal {.unnumbered}
 

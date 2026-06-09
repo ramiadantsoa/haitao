@@ -3,6 +3,11 @@
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
+Mihoatra ny f(x) = y !
+
+
+
+Native and
 
 ## Formal {.unnumbered}
 

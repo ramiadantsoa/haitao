@@ -3,11 +3,22 @@
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
+Tsofa!
+
+The most natural type of box is used to store integer.
+They are essentially the set of natural number.
+
+This is used when certain type of variable in statistics or to encode difference equation.
+
+Memory usage too! 
+
 
 ## Formal {.unnumbered}
+this is with L in R
 
 ## Examples {.unnumbered}
 
 ## Tips and warnings {.unnumbered}
+
 
 ## If you want to know more {.unnumbered}

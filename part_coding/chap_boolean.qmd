@@ -3,6 +3,15 @@
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
+Eny na tsia!
+
+To a certain, variable outcome of a Bernouilli.
+It requires least memory.
+
+The issue with R is that is both considered as qualitative and quantiative.
+
+It can be used to encode TRUE or FALSE
+
 
 ## Formal {.unnumbered}
 

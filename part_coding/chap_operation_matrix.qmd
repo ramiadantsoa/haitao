@@ -3,6 +3,13 @@
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
+Tandremo ny operation!
+
+A common issue with coding is that human expect program to understand them! This has made stride with AI, but with basic programming is for human to know excatly the command they want!
+
+Because a matrix is a table, what does the + means!
+
+
 
 ## Formal {.unnumbered}
 

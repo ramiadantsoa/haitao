@@ -1,0 +1,27 @@
+# Assigment {#sec-asignment}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+Ataovy ao anaty tirroir!
+
+The main advantage is that you can store object.
+These object can then be modified and.
+
+We can imagine we store them in a drawer.
+Type of drawer: boolean,.
+The name of the drawer:
+
+drawer_name <- the object you want add there
+
+This is the main difference with a calculator, and things like excel etc.
+
+## Formal {.unnumbered}
+
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+Variable names convetion
+
+## If you want to know more {.unnumbered}

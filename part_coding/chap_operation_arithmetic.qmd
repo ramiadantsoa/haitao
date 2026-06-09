@@ -3,8 +3,23 @@
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
+Ny antom-pisiany!
+
+Computers to calculate so it is natural to do basic operation.
+Early computers. 
+
+Addition, This is not new, and it is the same as using calculator. Just implement here
+The basics are the same in any language.
 
 ## Formal {.unnumbered}
+
+Addition and soustraction
+
+In R, * for multiplication and / for division
+
+^ for power
+And () for parenthesis
+
 
 ## Examples {.unnumbered}
 

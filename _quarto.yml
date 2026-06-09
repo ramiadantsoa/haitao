@@ -62,7 +62,9 @@ book:
         - part_dist/chap_gamma.qmd
     - part: part_coding/part_coding.qmd
       chapters:
+        - part_coding/chap_assign.qmd
         - part_coding/chap_boolean.qmd
+        - part_coding/chap_operation_boolean.qmd
         - part_coding/chap_discrete.qmd
         - part_coding/chap_qualitative.qmd
         - part_coding/chap_quantitative.qmd

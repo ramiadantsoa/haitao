@@ -3,6 +3,7 @@
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
+Karazana ascenseur! A la queue leuleu!
 
 ## Formal {.unnumbered}
 
