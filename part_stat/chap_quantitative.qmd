@@ -1,13 +1,23 @@
-# Quantitative variable {#sec-17_quantiative}
+# Quantitative variable {#sec-quantiative-variable}
 
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
+Isao, refeso, lanjao!
+
+Yes, it is about quantity! Revisiting saw and knife.
+
+This is less problematic, it is just a number.
+the most important part is to distinguish between discrete and continuous @sec-discrete_continuous.
+
+As the mathematics for handling them is quite different.
 
 ## Formal {.unnumbered}
 
 ## Examples {.unnumbered}
 
 ## Tips and warnings {.unnumbered}
+Blurring the difference
+
 
 ## If you want to know more {.unnumbered}

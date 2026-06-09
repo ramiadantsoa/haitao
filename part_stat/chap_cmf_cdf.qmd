@@ -1,0 +1,32 @@
+# Cumulative mass and density function {#sec-pmf}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+Ikotozafy ihany no Alexis!
+
+Distribution (probability mass function pmf and probability density function pdf) are natural.
+
+For statisticans however, working on cumulative is more convenient (and there are others transformation that could be used like).
+
+Mostly for theoretical distributions
+
+Find something for cumulative relevance !!!
+
+## Formal {.unnumbered}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+Why it won't work for qualitative, because the order on x-axis is not relevant, so there won't be a single cmf and cdf
+For ordinal might be okay.
+
+If you derive
+
+
+We focus on two applications here:
+- comparing sampled
+- looking at quantiles @sec-quantile.
+
+
+## If you want to know more {.unnumbered}

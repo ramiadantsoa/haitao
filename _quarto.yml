@@ -31,24 +31,25 @@ book:
         - part_stat/chap_variable.qmd
         - part_stat/chap_qualitative.qmd
         - part_stat/chap_quantitative.qmd
+        - part_stat/chap_distribution.qmd
+        - part_stat/chap_cmf_cdf.qmd
         - part_stat/chap_statistic.qmd
-        - part_stat/chap_central_tendency.qmd
+        # - part_stat/chap_central_tendency.qmd
         - part_stat/chap_mean.qmd
         - part_stat/chap_mode.qmd
-        - part_stat/chap_median.qmd
         - part_stat/chap_dispersion.qmd
         - part_stat/chap_variance.qmd
+        - part_stat/chap_median.qmd
         - part_stat/chap_quantile.qmd
-        - part_stat/chap_random_variable.qmd
-        - part_stat/chap_pmf_pdf_cmf_cdf.qmd
-        - part_stat/chap_null-distribution.qmd
-        - part_stat/chap_p-value.qmd
-        - part_stat/chap_large-number.qmd
-        - part_stat/chap_clt.qmd
-        - part_stat/chap_correlation_kendall.qmd
-        - part_stat/chap_correlation_pearson.qmd
-        - part_stat/chap_correlation_spearman.qmd
-        - part_stat/chap_discreteContinuous.qmd
+        # - part_stat/chap_random_variable.qmd
+        # - part_stat/chap_null-distribution.qmd
+        # - part_stat/chap_p-value.qmd
+        # - part_stat/chap_large-number.qmd
+        # - part_stat/chap_clt.qmd
+        # - part_stat/chap_correlation_kendall.qmd
+        # - part_stat/chap_correlation_pearson.qmd
+        # - part_stat/chap_correlation_spearman.qmd
+        # - part_stat/chap_discreteContinuous.qmd
     - part: part_dist/part_distribution.qmd
       chapters:
         - part_dist/chap_uniform.qmd

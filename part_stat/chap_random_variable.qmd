@@ -1,4 +1,4 @@
-# Qualitative variable {#sec-18_qualitative}
+# Random variable {#sec-random-variable}
 
 {{< include ../preamble.qmd >}}
 

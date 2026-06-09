@@ -3,11 +3,25 @@
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
+Misasaka ny lalana!
+
+This is the other common statistics central tendency.
+The more theory is how we calculate it from our data.
+First we order them, and look at the middle point and that is our median.
+
+The more fundamental is whether we should use the mean or the median for a
+
+
 
 ## Formal {.unnumbered}
 
 ## Examples {.unnumbered}
 
 ## Tips and warnings {.unnumbered}
+Special case of quantile.
+Think about bimodal.
+
+They should overlap if your distribution is symetric.
+
 
 ## If you want to know more {.unnumbered}

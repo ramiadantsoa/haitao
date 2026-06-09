@@ -3,6 +3,16 @@
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
+One mode for chameau, deux mode for dromadaire.
+
+Le mode sa la mode!
+
+This is trivial if start from the distribution, it is just the one with the highest frequency.
+Isn't that why they called it mode? And to a certain extent.
+
+This naturally apply to qualitative or quantitative variables.
+
+But, be aware that it does not need to be unique.
 
 ## Formal {.unnumbered}
 

@@ -3,6 +3,22 @@
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
+Ity kosa azoko e! Sa?
+
+Among all equations, this is probably one that everyone understands.
+Just add the numbers and
+And when we add coefficient, we need to sum the coefficient.
+
+As you have seen, this is one type of statist that is a function to summarize a data.
+
+The tricky part is the separation between empirical and theoretical mean.
+
+So how to we connect them.
+The second version is instead of dividing with the sample size. Mathematically it is the same.
+
+What is nice is that, with that trick we can link it to theoretical mean. That is realized with.
+
+More on that late statistical inference part.
 
 ## Formal {.unnumbered}
 
@@ -16,5 +32,8 @@ $${#eq-mean_c}
 ## Examples {.unnumbered}
 
 ## Tips and warnings {.unnumbered}
+this is for quantitative variable because we can do operation in that
+
+Is it that useful?
 
 ## If you want to know more {.unnumbered}

@@ -1,8 +1,10 @@
-# Qualitative variable {#sec-18_qualitative}
+# Statistic {#sec-statistic}
 
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
+It is just a function!
+
 
 ## Formal {.unnumbered}
 

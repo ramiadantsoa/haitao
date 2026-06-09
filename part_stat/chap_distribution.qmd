@@ -1,0 +1,28 @@
+# Distribution {#sec-distribution}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+Ity ny an'ise, dia ity ny ana!
+
+This is a first summary of your data! The raw data is that for each individual in a population, you have.
+You can condense this.
+Among the n, how many belongs.
+
+As in Ikotozafy ihany no Alexis.
+Focus on the y-axis, which is how frequent it is.
+
+Empirical and theoretical.
+Mass and
+
+
+## Formal {.unnumbered}
+
+## Examples {.unnumbered}
+
+
+## Tips and warnings {.unnumbered}
+It could be anything but we are so used to theoretical distribution. 
+
+## If you want to know more {.unnumbered}
+Symmetric or not. There are other statistic to test for data...

@@ -3,6 +3,10 @@
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
+Acolyten'ny moyenne!
+
+
+
 
 ## Formal {.unnumbered}
 $$

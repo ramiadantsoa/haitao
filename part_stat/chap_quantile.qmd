@@ -1,8 +1,10 @@
-# Qualitative variable {#sec-18_qualitative}
+# Quantile {#sec-quantile}
 
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
+Raha fantatrao ny valiny dia anisan'ny 1% mahay indrindra ianao!
+
 
 ## Formal {.unnumbered}
 Add interqualite range

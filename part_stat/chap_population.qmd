@@ -3,6 +3,22 @@
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
+We will never know/ the holy grail! Tsy mponina!
+
+Population is, this is what we study and what you want to understand.
+This is conceptual framework that underlies everything.
+Defining it in mathematics-orriented is easy because of the degree of abstraction.
+
+When you turn to reality however, defining delimiting a population is rather complicated.
+Think of Malagasy population...
+
+At best it is a good and the extent of your results, discussion, and conclusion.
+
+However this is not our concern here but it is a good exercise. 
+
+Take home: we never know but hopefully with sufficient sampling and statistical procedures we know some of its properties.
+
+
 Population is the underlying of statistics.
 As you will see throughout this book separating understandig the differences between the same terms used in different field, science vs colloquial is one major goal of this book.
 This is a book about applied stat, and the main audience are ecologists and biologists, or at least those working with natural science.
@@ -14,7 +30,7 @@ Do you count or Malagasy living abroad as Malagasy population?
 What is a population of lemur, same species living in a
 What is an ant population? Does it make sense.
 although, it might become a philosophical that eventually.
-But this is not a book about biology, and can find in textbook the nuances among different definition.
+But this is not a book about biology, and can find in textbook the nuances among different definitions.
 
 In statistics, things are defined more precisely.
 This makes it more conceptual.

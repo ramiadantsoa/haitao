@@ -1,13 +1,25 @@
-# Qualitative variable {#sec-18_qualitative}
+# Qualitative variable {#sec-qualitative-variable}
 
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
+Tsisy idiran'ny qualité!
+
+When you take a population, a qualitative variable is a characteristic that is discrete in nature.
+In other words, they are not numbers where you can apply operation -- I dare to find a counter-example.
+So the best way is can I divided between two, if yes then it is not a qualitative variable.
+
+Why do we need this: well in real world, not everything is a number. Your nationality, your favorite food. but those and so we need a way to distinguish those variables.
+
+the other one when someone collect data is to decide what to record.
+Collapsing to qualitative often leads to loss of information.
+Your to define such trade-off.
 
 ## Formal {.unnumbered}
 
 ## Examples {.unnumbered}
 
 ## Tips and warnings {.unnumbered}
+This other misleading part is the blur between discrete and qualitative.
 
 ## If you want to know more {.unnumbered}
