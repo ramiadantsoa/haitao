@@ -60,8 +60,17 @@ book:
         - part_dist/chap_chi-square.qmd
         - part_dist/chap_f-distribution.qmd
         - part_dist/chap_gamma.qmd
+    - part: part_inference/part_inference.qmd
+      chapters:
+        - part_inference/chap_clt.qmd
+        - part_inference/chap_large-number.qmd
+        - part_inference/chap_random_variable.qmd
+        - part_inference/chap_likelihood_function.qmd
+        - part_inference/chap_null-distribution.qmd
+        - part_inference/chap_p-value.qmd
     - part: part_coding/part_coding.qmd
       chapters:
+        - part_coding/chap_console.qmd
         - part_coding/chap_assign.qmd
         - part_coding/chap_boolean.qmd
         - part_coding/chap_operation_boolean.qmd
