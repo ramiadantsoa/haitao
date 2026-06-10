@@ -3,14 +3,28 @@
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
-A box for continuous number!
+Represents real number
 
+This is again most natural.
 Numeric in R.
+
+
 
 ## Formal {.unnumbered}
 
 ## Examples {.unnumbered}
 
+```{r}
+pi
+sqrt(2)
+```
+
+
 ## Tips and warnings {.unnumbered}
+Comma is used in R.
+You can import with special stuff
+You can force to be numeric by adding a comma "2.".
+You can force to be numeric by adding a comma ".3".
+
 
 ## If you want to know more {.unnumbered}

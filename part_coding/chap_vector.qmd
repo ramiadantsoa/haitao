@@ -3,12 +3,67 @@
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
-Karazana ascenseur! A la queue leuleu!
+Bahut!
+
+So we have "boolean", "integer", "numeric", "string".
+
+A vector is simply a sequence of tirror so instead of storing number 1 2 3 4 as number1 <- 1, number2 <- 2, etc.
+So we now call the vector
+
+the primary constraint is that it has to be the same type. Think of the operation we can do with it. It has to be consistent.
+
+The inovation is that instead of we call the bahut and then tell which drawers we want.
+I hope and you can have as many drawers are you want bahut numero 234, I hope you are convinced that this is much better than number2 and enter it by hand.
+this is like at school where you were just assigned a number.
+
 
 ## Formal {.unnumbered}
+To construct a vector in R we use the function c(number1, ...)
+
+We can check the length of a vector as length (vector)
+And we can access the element with "[]" think of the order and it starts with 1. Sort of when you are at school, we use
+
+In R, it as been implement that adding -1 removes that element from the vector
 
 ## Examples {.unnumbered}
 
+```{r}
+
+# create
+c(FALSE, FALSE, TRUE)
+c(2L, 1L, 4L)
+c(2., 1L, 4L)
+c("Hello", "world")
+
+test <- c("Hello", "world")
+
+paste(test)
+
+# access
+test[1]
+
+test[2]
+
+# a vector of vector
+
+test[c(1, 2)]
+test[c(2, 1)]
+
+# combining vector
+
+c(test, 1)
+
+test[-1]
+test[-2]
+
+```
+
+
 ## Tips and warnings {.unnumbered}
+This is mostly problematic when importing data, as R will make everyting a character if one is a character.
+
+Better to fix before, know your object
+
+when you see [1] in the output you know it is the first element if it is long enough. You can see [11] moving as you resize the console.
 
 ## If you want to know more {.unnumbered}

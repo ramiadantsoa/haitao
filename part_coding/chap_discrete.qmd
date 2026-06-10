@@ -1,24 +1,47 @@
-# Discrete {#sec-discreteCoding}
+# Discrete object {#sec-discreteCoding}
 
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
 Tsofa!
 
+This type of object is to store number as defined in the discrete value, countable thing.
+
 The most natural type of box is used to store integer.
 They are essentially the set of natural number.
 
 This is used when certain type of variable in statistics or to encode difference equation.
 
-Memory usage too! 
+Memory usage too!
 
+Could use continuous called numeric see @sec-sec-quantitativeCoding
+
+R will force to be numeric
 
 ## Formal {.unnumbered}
 this is with L in R
 
 ## Examples {.unnumbered}
+```{r}
+a <- 2L
+cc <- 2
+
+str(a)
+str(cc)
+
+str(a + a)
+str(a + cc)
+```
+
 
 ## Tips and warnings {.unnumbered}
+It is mostly for memory
+Used to specify dimensions of a data
+For discrete variable in statistics, count data
 
+R again bypass that, but it might failed sometimes... come up with examples.
+
+Not really seen in excel...
+Machine limit
 
 ## If you want to know more {.unnumbered}

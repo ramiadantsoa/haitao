@@ -1,23 +1,52 @@
-# Assigment {#sec-asignment}
+# Console {#sec-console}
 
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
-The primitive way to interact with a computer
+Open RStudio!
 
-The process is simple: write a set of instruction, ask the computer to read and execute those instruction, and display the result of the instruction.
+There are two fundamental aspects - The process is simple: write a set of instructions (into the language of computer), ask the computer to read and execute those instructions, and display the result of the instruction.
 When we use a calculator, the simpler and familiar form: we type the equation, press equal, and get the result on a screen.
-In some advanced calculator (or on your smart phone), the equation is displayed 
-A coding is a more generalized form of that
+In some advanced calculator (or on your smart phone), the equation is displayed
+A coding is a more generalized form of that.
 
+Console is the calculator:
 
+But you cannot edit the input and you lose it.
+
+Improvement: write somewhere else so you can save, edit. You can then copy the code and paste it on the console and execute.
+
+Improvement 2: Invention of a IDE: link the text editor with console so instead of copy paste, you can directly send to the console in one click.
+
+If you open RStudio, you will see these two, let's ignore the other two for the moment.
+
+Script: it is a place where you can write code, the set of instructions.
+
+Execute: send those instructions for the machine to read. Beyond this the program takes over and you just wait until it ouput
+
+Console: is the front end that is mosly used to display what instructions you send to execute, and the results.
+
+We will purposefully ignore the other tabs in this part. These two are common to almost all programming language.
 
 ## Formal {.unnumbered}
 
+Google this not sure how to define
+">" at the begining
+
+Output
+[1]
+ or 
 
 ## Examples {.unnumbered}
+Show photo of RStudio
+
+
 
 ## Tips and warnings {.unnumbered}
+- Shortcut!
+- Which code chunk are sent to be execute.
+- IDE and formating and autocompletion.
+
 
 
 ## If you want to know more {.unnumbered}

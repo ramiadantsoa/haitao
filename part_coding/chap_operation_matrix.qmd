@@ -5,15 +5,39 @@
 ## Concepts and intuitions {.unnumbered}
 Tandremo ny operation!
 
-A common issue with coding is that human expect program to understand them! This has made stride with AI, but with basic programming is for human to know excatly the command they want!
+As seen, we need to be cautious about, unfortunately we could use the same R and R will do it as it interprets
 
-Because a matrix is a table, what does the + means!
+So arithmetic  between matrix and scalar.
+Matrix with the same dimension
 
+And the matrix produc @sec-matrix_multi which needs number of colum should match with number of rows. The special symbol is %*%.
 
 
 ## Formal {.unnumbered}
 
 ## Examples {.unnumbered}
+
+```{r}
+#| echo: true
+mat1 <- matrix(1:6, nrow = 3)
+mat2 <- matrix(7:2, nrow = 3)
+
+mat1 + 1
+mat1 / 2
+
+mat1 - mat2
+mat1 * mat2
+
+## Example of setting row and column names
+mdat <- matrix(c(1,2,3, 11,12,13), nrow = 2, ncol = 3, byrow = TRUE,
+               dimnames = list(c("row1", "row2"),
+                               c("C.1", "C.2", "C.3")))
+mdat
+
+
+mat1 %*% 1:2
+
+```
 
 ## Tips and warnings {.unnumbered}
 

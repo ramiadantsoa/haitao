@@ -5,11 +5,43 @@
 ## Concepts and intuitions {.unnumbered}
 "Hello world!"
 
+This is a famous expression.
+When they manage to print "Hello world" on the output of a console.
+It also shows that one has mastered one of the most basic thing and successful managed to instruct the computer.
+
+With R, print text is trivial but we need to indicate that it is a text.
+And we do that by putting in "".
+So we have numbers and text "".
+And they are called strings or charactehr
+
+Earlier operation on boolean and numbers. How to do operation with strings?
+This is for later as it is not our immediate concern and they can be strangely trick.
+The most important is that when you record qualitative variables, we type of drawer is called string.
+It is the most flexible format but be aware than the computer see this as text and thus won't interpet the meaning, now awarness
+"Magadascar" is the sequence of letters and is different from "Madagascar". As 12 is different from 21. while the latter is easy to separate, I bet you will make a typo unnatural.
 
 ## Formal {.unnumbered}
 
 ## Examples {.unnumbered}
 
+This is a example of operation where we combine two text together
+
+
+```{r}
+paste("Hello", "world", sep = " ")
+
+paste("Hello", "world", sep = " there ")
+
+paste("Hello", "world", "life", sep = " there ")
+
+word1 <- "Hello"
+word2 <- "world"
+
+paste(word1, word2)
+```
+
+
 ## Tips and warnings {.unnumbered}
+
 
 ## If you want to know more {.unnumbered}

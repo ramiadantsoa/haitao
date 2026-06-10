@@ -1,9 +1,9 @@
-# Assigment {#sec-asignment}
+# Object assigment {#sec-asignment}
 
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
-Ataovy ao anaty tirroir!
+Ataovy ao anaty tirroir! Subject
 
 The main advantage is that you can store object.
 These object can then be modified and.
@@ -14,14 +14,50 @@ The name of the drawer:
 
 drawer_name <- the object you want add there
 
-This is the main difference with a calculator, and things like excel etc.
+This is the main difference with a calculator, and things like excel etc. More than a number
+
+Instead of
 
 ## Formal {.unnumbered}
+Google
 
+Assign and output
 
 ## Examples {.unnumbered}
 
+```{r}
+# Storing a number
+a <- 2
+
+a <- a + 2
+
+# Storing a calculation
+
+out <- 2 + 123
+
+# Swapping elements between box
+
+a <- 2
+out <- 2 + 123
+
+a <- out
+out <- a
+# Did not swap because a is 125, so a = 2 is no longer in the memory.
+# when you set out <- a it means that out <- 125 because that is the value of a.
+
+temporary <- a
+a <- out
+out <- temporary
+
+# To visualize that, think of swapping cups of tea and coffee...you need a third cup.
+```
+
+
+
 ## Tips and warnings {.unnumbered}
 Variable names convetion
+they are on the right side but try to remember what you created.
+= was used and still work but it has been assigned to a different now
+Shortcut.
 
 ## If you want to know more {.unnumbered}

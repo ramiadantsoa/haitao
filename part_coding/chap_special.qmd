@@ -1,10 +1,18 @@
-# Special symbols {#sec-qualitativeCoding}
+# Miscellanous {#sec-misc}
 
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
 ",", "$", "#"
 
+But think about
+
+c, i, j, are used as coordinates,
+symbols separator etc.
+
+NULL, NA
+
+Inf 
 
 ## Formal {.unnumbered}
 

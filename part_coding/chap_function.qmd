@@ -3,16 +3,47 @@
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
-Mihoatra ny f(x) = y !
+superf(x) = y! Manao!
 
+In the simplest form, a function is like a function we used in highschool.
 
+But it is super. so first x can be anything of the fundamental object and the y can also be anything you want, and the core does not need to be mathematical expression.
+In addition, you can have more than one output.
+Argument is the input.
 
-Native and
+Function is the most powerful and you can create any function you want. In fact, a package is a collection of functions.And so is a program. the fancy AI are also functions on top of each other.
+
+For our purpose, what we need to be wary is that you need to know what kind of input it requires and what kind of output (not the value but type) you should get.
+Most of the debugging and error we get is someone copying a function, copying the input carelessly.
+
+With the ability to create own object through .
+
+Let's build function later version. For now focus on what's there, know, understand, and use.
+
 
 ## Formal {.unnumbered}
+A function in r is a name followed by parenthese (to remind you that f(x) above).
+
+Function can be defined implicity or explicity in R. And default
+the explicity matters when there are more than one input.
+
+There are called base function and there are XXX (add numbers) and most likely you won't need all of them. But mostly have the building blocks to build any function you need.
+
 
 ## Examples {.unnumbered}
 
+```{r}
+sin(1)
+
+sin(x = 1)
+```
+
 ## Tips and warnings {.unnumbered}
+Base function in R
+In general in R they are lowercase
+Long functions are bad better to do simple task
+Evocative name
+
+sqrt, abs
 
 ## If you want to know more {.unnumbered}

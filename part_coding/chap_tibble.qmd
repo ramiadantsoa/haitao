@@ -5,6 +5,8 @@
 ## Concepts and intuitions {.unnumbered}
 Dataframe tsara pozy!
 
+In practice but they created it for visualization. Does it deserve a separate chapter. Maybe move to tips in data.frame.
+
 ## Formal {.unnumbered}
 
 ## Examples {.unnumbered}

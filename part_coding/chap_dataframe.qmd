@@ -5,7 +5,24 @@
 ## Concepts and intuitions {.unnumbered}
 Tableau pratique!
 
+A dataframe is flexible matrix, you still have a rectangle but not drawers are the same type.
+But not so fast,
+this is based on practical concept, I interview 100 persons about name, age, gender, I will have one column for character, a second as integer, and a third a boolean.
+So in order words, a data.frame is a collection of **vector of same length**
+This is what you format your data.
+
+the other useful feature of a data frame is that you can name the column (also the row), and instead of getting say bahut[, 1] you use bahut$name.
+This makes the code much more usable and more orriented with
+
+
+
 ## Formal {.unnumbered}
+
+bahut["name"] # notice we use "" because it is a character not an object
+
+but we can do bahut[, c("name", "gender")] as in matrix
+
+Construction is vector based
 
 ## Examples {.unnumbered}
 

@@ -3,11 +3,22 @@
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
-Ascenseur majika!
+Tsy voatery rectangle!
+
+List is the most flexible creation to store data.
+In fact, most output is a list.
+It frees us from the rectangular structure of a data
+Furthermore, we can go at any depth.
+Because of that, not much operation on them more to store data.
 
 ## Formal {.unnumbered}
 
 ## Examples {.unnumbered}
+
+```{r}
+list(1, list(c(1, 2)), mat1)
+```
+
 
 ## Tips and warnings {.unnumbered}
 
