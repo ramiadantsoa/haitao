@@ -15,6 +15,71 @@ In fact time is continuous and we cut it in a convenient way.
 A differential equation is dx/dt = f(x).
 This is again the derivative.
 
+
+In mathematical analysis, a differential equation is a formal equation that expresses a relationship between an unknown function, its independent variables, and its derivatives. Just as algebraic equations are solved for unknown numbers, differential equations are solved for unknown functions.
+
+Here are the rigorous formal definitions of differential equations as established in foundational mathematical and analysis textbooks.
+
+1. The General Multi-Variable Definition (Implicit Form)
+Rigorously, a differential equation is defined as a relation equating a mathematical function of independent variables, a dependent variable, and its derivatives to zero.
+GeeksforGeeks
+
+Textbook Source
+Book: Ordinary Differential Equations (1985 Re-issue)
+Author: Jack K. Hale
+Publisher: Robert E. Krieger Publishing Company / John Wiley & Sons
+
+The Formal Definition
+Let Ω be an open subset of Rn+2. An ordinary differential equation (ODE) of order n is a relation of the form (mathworld.wolfram.com)
+
+$F(x, y, y', y'', \dots, y^{(n)}) = 0$
+
+where x∈R is the independent variable, y=ϕ(x) is an unknown differentiable function, y(k) = d^ky / dx^k  denotes its k-th derivative with respect to x, and F:Ω→R is a continuous mapping that depends non-trivially on the highest-order derivative term y^(n).
+
+
+2. The Explicit Vector / System Definition
+
+In advanced mathematical analysis and the study of dynamical systems, differential equations are rarely analyzed in their implicit form. Instead, they are defined explicitly by isolating the highest-order derivative, typically written as a first-order system of vectors.
+
+Textbook Source
+Book: Differential Equations, Dynamical Systems, and an Introduction to Chaos (3rd Edition, 2012)
+Elsevier
+Authors: Morris W. Hirsch, Stephen Smale, and Robert L. Devaney
+Publisher: Academic Press / Elsevier
+
+The Formal Definition
+Let W be an open subset of Rn, and let f:W→Rn be a continuous vector field. An autonomous system of differential equations is defined as:
+$\dot{x} = f(x)$
+where x(t) is a differentiable curve in R^n parameterized by time t∈R, and xdot denotes the velocity vector derivative dx/dt
+. A solution to this equation is a differentiable function ϕ:I→W defined on an interval I⊂R such that for all t∈I:
+
+$\frac{d}{dt}\phi(t) = f(\phi(t))$
+
+3. The Partial Differential Equation (PDE) Generalization
+If the unknown function depends on multiple independent variables, the derivatives must be partial derivatives, transforming the system into a Partial Differential Equation.
+
+Textbook Source
+Book: Partial Differential Equations (2nd Edition, 2010)
+Author: Lawrence C. Evans
+Publisher: American Mathematical Society (AMS)
+
+The Formal Definition
+Let U be an open subset of R^n, and let u:U→R be the unknown function where u=u(x1,x2,…,xn). A partial differential equation (PDE) of order k is an expression of the form:
+$F(D^k u(x), D^{k-1} u(x), \dots, Du(x), u(x), x) = 0 \; (x \in U)$
+
+
+where D^k u(x)={D^αu(x)∣∣α∣=k} represents the set of all partial derivatives of order k.
+
+4. The Initial Value Problem (Cauchy Problem)
+To anchor a differential equation to a singular, unique geometric path, it must be paired with initial conditions. This combination is mathematically formalized as an Initial Value Problem (IVP).
+
+The Formal Definition
+Let f:I×Ω→R^n be a continuous function, where I⊂R and Ω⊂R^n. An initial value problem consists of the differential equation paired with an initial state:
+$\frac{dx}{dt} = f(t, x), \quad x(t_0) = x_0$
+​
+By the Picard–Lindelöf Theorem, if f is locally Lipschitz continuous with respect to x, then there exists a unique, well-defined local solution x(t) satisfying this exact configuration.
+
+
 ## Examples {.unnumbered}
 
 ## Tips and warnings {.unnumbered}

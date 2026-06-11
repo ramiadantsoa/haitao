@@ -25,6 +25,66 @@ They are mainly numbers.
 
 a vector is a one line or one row matrix
 
+In linear algebra, a matrix is formally defined as a rectangular array of scalars organized into rows and columns. This array is a structured way to represent and manipulate linear transformations between vector spaces.
+
+Depending on the mathematical framework, it can be defined as a structured double-indexed set or as a formal function mapping indices to a field.
+
+1. The Standard Set-Theoretic/Double-Index Definition
+This is the standard definition found in foundational linear algebra textbooks. It constructs a matrix by organizing elements of a field into a grid defined by two structural dimensions: rows (m) and columns (n).
+
+Textbook Source
+Book: Linear Algebra (4th Edition, 2002)
+Authors: Stephen H. Friedberg, Arnold J. Insel, and Lawrence E. Spence
+Biblio
+Publisher: Pearson
+AbeBooks
+
+The Formal Definition
+In Chapter 1 ("Vector Spaces"), the authors formalize an m×n matrix over a field F (such as the real numbers R or complex numbers C):
+"An m×n matrix over a field F is a rectangular array of elements of F having m rows and n columns. It is denoted as:
+
+$A = \begin{pmatrix} a_{11} & a_{12} & \dots & a_{1n} \\ a_{21} & a_{22} & \dots & a_{2n} \\ \vdots & \vdots & & \vdots \\ a_{m1} & a_{m2} & \dots & a_{mn} \end{pmatrix}$
+
+where aij ∈F denotes the entry in the ith row and jth column of A. The domain of the row index i is {1,2,…,m} and the domain of the column index j is {1,2,…,n}."
+
+The vector space containing all such matrices is rigorously denoted as M^m×n(F) or F^m×n
+
+2. The Functional Definition (Strict Algebraic Rigor)
+
+To avoid relying on visual grids or spatial arrangements, abstract algebra and advanced linear algebra textbooks define a matrix strictly as a mathematical function mapping pairs of coordinates to scalars.
+
+Textbook Source
+Book: Advanced Linear Algebra (3rd Edition, 2008)
+Author: Steven Roman
+Publisher: Springer Graduate Texts in Mathematics
+
+The Formal Definition
+In Chapter 0 ("Preliminaries"), Roman strips away the rectangular notation to present the strict functional baseline:
+"Let S and T be finite, nonempty sets with ∣S∣=m and ∣T∣=n. A matrix of size m×n over a field F is a function:
+A:{1,2,…,m}×{1,2,…,n}→F
+
+The value of the function A at the pair (i,j) is denoted by a_ij
+​or A_i,j and is called the (i,j)-entry of the matrix."
+
+3. The Core Linear Algebraic Context
+In the broader scope of linear algebra, a matrix is rarely studied purely as a static data structure. It is rigorously tied to a linear transformation between two finite-dimensional vector spaces.
+
+
+Textbook Source
+
+Book: Linear Algebra Done Right (4th Edition, 2024)
+Sheldon Axler
+Author: Sheldon Axler
+Publisher: Springer Graduate Texts in Mathematics
+
+The Formal Definition
+In Chapter 3 ("Linear Maps"), Axler defines the matrix of a linear map T:V→W explicitly by how it tracks the coordinates of basis vectors:
+"Suppose T∈L(V,W) and v1,…,vn is a basis of V and w1,…,wm is a basis of W. The matrix of T with respect to these bases is the m×n matrix M(T) whose entries Ai,j are defined by:
+
+$T v_j = \sum_{i=1}^{m} A_{i,j} w_i$
+"
+This definition implies that every matrix corresponds exactly to a unique linear coordinate adjustment mapping elements from an n-dimensional domain to an m-dimensional codomain.
+
 ## Examples {.unnumbered}
 Diagonal matrix with a special notation
 Upper diagonal

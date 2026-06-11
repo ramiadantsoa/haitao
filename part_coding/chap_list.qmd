@@ -16,7 +16,7 @@ Because of that, not much operation on them more to store data.
 ## Examples {.unnumbered}
 
 ```{r}
-list(1, list(c(1, 2)), mat1)
+list(1, list(c(1, 2)), matrix(1:6, nrow = 2))
 ```
 
 

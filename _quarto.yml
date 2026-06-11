@@ -57,7 +57,7 @@ book:
     #     - part_inference/chap_likelihood_function.qmd
     #     - part_inference/chap_null-distribution.qmd
     #     - part_inference/chap_p-value.qmd
-    # - part: part_coding/part_coding.qmd
+    - part: part_coding/part_coding.qmd
       chapters:
         - part_coding/chap_console.qmd
         - part_coding/chap_assign.qmd

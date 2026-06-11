@@ -1,7 +1,7 @@
 # Matrix multiplication {#sec-matrix_multi}
 
 ## Concepts and intutions {.unnumbered}
-Haddamard product, Kronecker product and others! 
+Haddamard product, Kronecker product and others!
 Those are examples of ways to multiply matrices but there is one that is inuitive and makes sense and also the most used product for our use.
 
 Assume we have a matrix,
@@ -28,6 +28,57 @@ This is the neutral element in matrix multiplication.
 
 Inverse of a matrix and existence
 If determinant is not null. Refer to other to calculate that.
+
+In linear algebra, matrix multiplication is formally defined as an algebraic operation that composes two matrices to produce a third. Crucially, it is not performed element-by-element (which is instead called the Hadamard product). Rather, it is defined specifically to match the mathematical composition of linear transformations.
+Because of this, matrix multiplication is only possible if the number of columns in the first matrix matches the number of rows in the second matrix.
+Here are the rigorous definitions from two foundational textbooks in linear algebra.
+
+1. The Component-Wise Definition
+This definition explicitly defines how to calculate each individual entry of the resulting matrix using the rows of the first matrix and the columns of the second matrix.
+
+Textbook Source
+Book: Linear Algebra (4th Edition, 2002)
+Authors: Stephen H. Friedberg, Arnold J. Insel, and Lawrence E. Spence
+Publisher: Pearson
+
+The Formal Definition
+In Chapter 2 ("Linear Transformations and Matrices"), Section 2.3, the authors formalize the product of two matrices:
+Definition: "Let A be an m×n matrix and B be an n×p matrix. The product AB is an m×p matrix C whose (i,j)-entry is
+
+$C_{ij} = \sum_{k=1}^{n} A_{ik} B_{kj}$
+​
+for each 1≤i≤m and 1≤j≤p."
+
+1. The Structural Linear Map Definition (The "Why")
+To understand why matrix multiplication is defined this way, advanced textbooks define it through the lens of linear maps. Matrix multiplication is literally the coordinate-representation of functional composition.
+
+Textbook Source
+Book: Linear Algebra Done Right (4th Edition, 2024)
+Author: Sheldon Axler
+Publisher: Springer Graduate Texts in Mathematics
+
+The Formal Definition
+In Chapter 3 ("Linear Maps"), Section 3C, Axler derives the definition of matrix multiplication by composing two linear transformations, T:U→V and S:V→W:
+Definition: "Suppose A is the matrix of S (with respect to a basis of V and a basis of W) and B is the matrix of T (with respect to a basis of U and a basis of V). Then the product AB is defined to be the matrix of the product ST (with respect to the basis of U and the basis of W).
+
+[...] Setting this up algebraically: If A is an m×n matrix and B is an n×p matrix, then AB is the m×p matrix whose entry in row i, column j, is equal to
+
+$\sum_{k=1}^{n} A_{i,k} B_{k,j}$
+"
+
+
+1. Structural Constraints and Properties
+Based on these formal definitions, matrix multiplication carries unique structural properties:
+
+Compatibility Rule: If matrix A has size m×n and matrix B has size n×p, the product AB is well-defined because the inner dimensions (n) match. The resulting matrix has the dimensions of the outer terms: m×p.
+
+Non-Commutativity: Unlike scalar multiplication, matrix multiplication is generally not commutative ($AB \neq BA$). Even if both products are well-defined square matrices, they typically yield entirely different linear transformations.
+Associativity: Matrix multiplication is strictly associative, meaning $(AB)C = A(BC)$, mirroring the associativity inherent to function composition.
+LaTeX Format for Properties
+Code snippet
+
+Code snippet
+
 
 ## Examples {.unnumbered}
 In the above example, we could also use the price in different markets but the condition remains the same. Columns  = raws

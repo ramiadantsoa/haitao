@@ -54,6 +54,49 @@ ggplot(dat, aes(x = x, y = y)) +
 ```
 
 
+Here are the standard formal definitions found in foundational mathematical analysis and calculus textbooks.
+
+1. The Inverse Function Definition
+This definition builds the logarithm directly on top of the pre-established formal definition of an exponential function.
+
+Textbook Source
+Book: Principles of Mathematical Analysis (3rd Edition, 1976)
+Author: Walter Rudin
+SCIRP
+Publisher: McGraw-Hill
+SCIRP
+
+The Formal Definition
+In Chapter 8 ("Some Special Functions"), after establishing that the exponential function exp(x) is continuous, strictly increasing, and maps the real line R bijectively onto the positive real numbers (0,∞), Rudin defines its inverse:
+"The logarithmic function log is defined as the inverse of the exponential function. That is, for every y>0, x=log(y) is the unique real number such that:
+$\exp(x) = y$
+"
+For an arbitrary base a>0 (a!=1), the general logarithm function loga(y) is defined via the same inverse relationship to the base-a exponential function:
+Britannica
+$x = \log_a(y) \iff a^x = y$
+
+
+
+1. The Integral Definition (The Analytic Approach)
+In rigorous calculus courses, defining the logarithm as an inverse can lead to circular logic if the exponential function wasn't constructed cleanly. To avoid this, advanced textbooks define the natural logarithm (lnx) from scratch as the area under a hyperbola.
+
+Textbook Source
+Book: Calculus (Volume 1, 2nd Edition, 1967)
+Author: Tom M. Apostol
+Publisher: John Wiley & Sons
+
+The Formal Definition
+In Chapter 6 ("The Logarithm, the Exponential, and the Inverse Trigonometric Functions"), Apostol defines the natural logarithm function for any positive real number x using a Riemann integral:
+"For every x>0, we define the natural logarithm of x, denoted by lnx, by the formula:
+$\ln x = \int_{1}^{x} \frac{1}{t} \, dt$
+"
+From this fundamental calculus definition, all algebraic properties of logarithms are derived as theorems. For example, the product rule ln(ab)=lna+lnb is proven strictly using the additive properties of definite integrals.
+
+3. Generalization to Any Base via the Integral Definition
+Once the natural logarithm (lnx) is established analytically via the integral method above, the general logarithm function for any valid base a is formally defined using the change-of-base formula:
+
+$\log_a x = \frac{\ln x}{\ln a} \quad \text{for } x > 0, \, a > 0, \, a \neq 1$
+
 ## Examples {.unnumbered}
 
 ## Tips and warnings {.unnumbered}

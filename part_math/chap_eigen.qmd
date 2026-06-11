@@ -17,6 +17,51 @@ this is called eigen decomposition.
 If there is a square matrix M, and determinant is not zero,
 There is a diagonal matrix X
 
+In linear algebra, the eigen-decomposition (or spectral decomposition) of a matrix is a factorization that breaks a square matrix down into its constituent eigenvalues and eigenvectors. This decomposition simplifies complex matrix powers and operations by transforming the matrix into a diagonal form.
+Before defining the decomposition itself, linear algebra textbooks establish the rigorous definitions of eigenvalues and eigenvectors.
+
+1. The Definitions of Eigenvalues and Eigenvectors
+An eigenvalue and its corresponding eigenvector represent a scalar-vector pair where a matrix transformation acts purely as a scaling or stretching operation.
+
+Textbook Source
+Book: Linear Algebra and Its Applications (5th Edition, 2016)
+Authors: David C. Lay, Steven R. Lay, and Judi J. McDonald
+Publisher: Pearson
+
+The Formal Definition
+In Chapter 5 ("Eigenvalues and Eigenvectors"), Section 5.1, the authors state:
+Definition: "An eigenvector of an n×n matrix A is a nonzero vector x such that $Ax = \lambda x$ for some scalar λ. A scalar λ is called an eigenvalue of A if there is a nontrivial solution x of $Ax = \lambda x$; such an x is called an eigenvector corresponding to λ."
+
+
+2. The Formal Definition of Eigen-Decomposition
+The eigen-decomposition of a matrix unifies these individual pairs into a single matrix factorization. It relies on the concept of diagonalizability.
+
+Textbook Source
+Book: Linear Algebra (4th Edition, 2002)
+Authors: Stephen H. Friedberg, Arnold J. Insel, and Lawrence E. Spence
+Publisher: Pearson
+
+The Formal Definition
+In Chapter 5 ("Diagonalization"), Section 5.2, the matrix factorization known as the eigen-decomposition is formalized through the Diagonalization Theorem:
+
+Theorem: "Let A be an n×n matrix. A is diagonalizable if and only if A has n linearly independent eigenvectors v1,v2,…,vn.
+
+If A is diagonalizable, then
+
+$A = P D P^{-1}$
+
+where P is the n×n invertible matrix whose jth column is the eigenvector vj, and D is the n×n diagonal matrix whose diagonal entries are the eigenvalues λ1,λ2,…,λn corresponding to v1,v2,…,vn respectively."
+
+3. Structural Properties and Constraints
+From these rigorous definitions, several essential mathematical properties emerge:
+Matrix P Structure: The columns of the modal matrix P must be linearly independent. If an n×n matrix does not possess n linearly independent eigenvectors, it is called a defective matrix and cannot undergo a full eigen-decomposition.
+Matrix D Structure: The diagonal matrix D holds the eigenvalues exactly in the same column order as their corresponding eigenvectors are placed in P.
+
+$D = \begin{pmatrix} \lambda_1 & 0 & \dots & 0 \\ 0 & \lambda_2 & \dots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \dots & \lambda_n \end{pmatrix}$
+
+Geometric Transformation Interpretation: The decomposition asserts that applying the matrix A to a vector is equivalent to rotating the vector into an eigenspace coordinates system (P−1
+ ), scaling along those axes (D), and rotating back back to standard coordinates (P).
+
 ## Examples {.unnumbered}
 Version 1
 

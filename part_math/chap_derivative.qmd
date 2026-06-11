@@ -2,7 +2,7 @@
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
-
+Derive ex = ex, derive constant is zero etc.
 
 Derivative is again one of those words that somehow rotten us.
 Most of you might remember how to calculate the derivative, study the sign of the derivative etc.
@@ -45,6 +45,65 @@ You might recognize how large is the difference between the images.
 So what is the f' things that we have to learn?
 Well, it is just a shortcut so we don't have to calculate the limit.
 So yes, it is painful but it makes life easier.
+
+In calculus, the derivative of a function measures its instantaneous rate of change with respect to its independent variable. Geometrically, it represents the slope of the tangent line to the function's curve at a given point.
+Rigorously, the derivative is defined using the mathematical concept of a limit, which formalizes the process of letting a secant line approach a tangent line.
+Here are the rigorous formal definitions of the derivative from foundational calculus and mathematical analysis textbooks.
+
+1. The Standard Single-Variable Definition
+This is the standard definition found in foundational calculus. It defines the derivative at a specific point as the limit of a difference quotient.
+
+Textbook Source
+Book: Calculus (8th Edition, 2016)
+Author: James Stewart
+Publisher: Cengage Learning
+
+The Formal Definition
+In Chapter 2 ("Limits and Derivatives"), Section 2.7, Stewart defines the derivative of a function f at a specific number a:
+Definition: "The derivative of a function f at a number a, denoted by
+​$f'(a) = \lim_{h \to 0} \frac{f(a + h) - f(a)}{h}$ if this limit exists."
+
+An equivalent alternative formulation often used to emphasize the target point x approaching a is also provided:
+$f'(a) = \lim_{x \to a} \frac{f(x) - f(a)}{x - a}$
+
+
+
+1. The Differentiable Function Definition
+When the derivative exists at every point within an open interval, it defines a completely new function, f′(x).
+
+Textbook Source
+Book: Introduction to Real Analysis (4th Edition, 2011)
+Authors: Robert G. Bartle and Donald R. Sherbert
+Publisher: John Wiley & Sons
+
+The Formal Definition
+In Chapter 6 ("Differentiation"), Section 6.1, the authors formalize the derivative as a functional mapping over an interval I⊆R:
+Definition: "Let I⊆R be an interval, let f:I→R, and let c∈I. We say that a number L is the derivative of f at c if given any ε>0 there exists a δ>0 such that if x∈I satisfies 0<∣x−c∣<δ, then
+
+$\left| \frac{f(x) - f(c)}{x - c} - L \right| < \varepsilon$
+
+In this case, we write f′(c)=L. If f has a derivative at every point of a subset D⊆I, we say that f is differentiable on D, and the function f′:D→R is called the derivative of f on D."
+
+This ε-δ formulation strips away the informal vocabulary of "approaching" to establish a rigorous topological constraint.
+
+1. High-Dimensional Generalization: The Total Derivative
+In multivariable calculus and advanced mathematical analysis, the derivative cannot be defined simply as a quotient because dividing by a vector is mathematically undefined. Instead, the derivative is rigorously defined as a linear transformation that best approximates the function locally.
+
+Textbook Source
+Book: Principles of Mathematical Analysis (3rd Edition, 1976)
+Author: Walter Rudin
+Publisher: McGraw-Hill
+
+The Formal Definition
+In Chapter 9 ("Functions of Several Variables"), Rudin defines the total derivative for a mapping from R^n to R^m:
+
+Definition: "Suppose E is an open set in R^n, f maps E into R^m, and x∈E. If there exists a linear transformation A of R^n into R^m such that
+$\lim_{h \to 0} \frac{|f(x + h) - f(x) - Ah|}{|h|} = 0$
+then f is said to be differentiable at x, and we write f′(x)=A.
+
+The linear transformation A is called the differential or the total derivative of f at x."
+
+(Note: In standard coordinate bases, this unique linear transformation A is represented by the Jacobian matrix of partial derivatives).
 
 ## Examples {.unnumbered}
 To stick to intuition, imagine we have a function that is seen as horizontal line.

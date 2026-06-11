@@ -43,6 +43,58 @@ Only works with addition
 Set of continuous number
 Do we need to talk about complete corps or is that not enough.
 
+Topology..no need here?
+
+In pure mathematics, the terms "discrete" and "continuous" are defined precisely using point-set topology and metric spaces.
+While a discrete set is formalized by the absolute spatial isolation of its individual elements, a "continuous set" is rigorously referred to in mathematical literature as a continuum (or a connected space), defined by its lack of structural gaps or separations.
+
+1. The Rigorous Definition of a Discrete Set
+A set is considered discrete within a larger mathematical space if every point in the set can be insulated from all other points in that set by a small neighborhood. This means the set contains exclusively isolated points.
+
+Textbook Source
+Book: Topology (2nd Edition, 2000)
+Author: James Munkres
+Publisher: Prentice Hall
+
+The Formal Definition
+In Chapter 2 ("Topological Spaces and Continuous Functions"), Munkres formalizes a discrete subspace:
+
+"Let (X,T) be a topological space, and let A be a subset of X. The set A is said to be a discrete set (or discrete subspace) if the subspace topology inherited by A from X is the discrete topology.
+Equivalently, A is discrete if for every point x∈A, there exists an open set U∈T containing x such that:
+$U \cap A = \{x\}$
+
+That is, the intersection of U and A contains no points other than x itself."
+
+Metric Space Simplification
+If you evaluate this on a standard metric space (like the real number line R with Euclidean distance), the definition simplifies using a minimum distance buffer: A subset A is discrete if for every x∈A, there exists a radius ε>0 such that:
+$B_\varepsilon(x) \cap A = \{x\}$
+
+Example of a Discrete Set: The set of integers Z={…,−2,−1,0,1,2,…} is a discrete set on the real line because you can draw an open interval of radius ε=0.5 around any integer, and it will capture no other integers.
+
+
+
+1. The Rigorous Definition of a Continuous Set (A Continuum)
+In mathematics, there is no formal set property structurally named a "continuous set." Instead, the exact translation of an unbroken, continuous geometric object is called a continuum, which is defined rigorously using the criteria of topological connectedness and compactness.
+
+Textbook Source
+Book: General Topology (1968)
+Author: Kazimierz Kuratowski
+Publisher: Academic Press / Polish Scientific Publishers
+
+The Formal Definition
+In Chapter 4 ("Topology of Metric Spaces"), Kuratowski sets the international topological standard for a continuous space:
+"A continuum is defined as a non-empty, compact, and connected metric space (or a subspace of a metric space)."
+To break down why these two specific properties create a "continuous" space without gaps:
+
+A. Connectedness (No Separations)
+A space X is connected if it cannot be divided into two disjoint, non-empty open sets. Formally, X is connected if there do not exist two open sets U and V such that:
+
+$X = U \cup V, \quad U \cap V = \emptyset, \quad U \neq \emptyset, \quad V \neq \emptyset$
+
+B. Compactness (No Missing Limit Boundaries)
+A space is compact if every open cover has a finite subcover. In everyday standard spaces (R^n), this means the set must be completely closed and bounded (by the Heine-Borel Theorem), ensuring that it doesn't extend to infinity or drop boundary edge-points.
+Example of a Continuum: The closed interval [0,1] is a continuum because it is unbroken (connected) and contains all its boundaries (compact). Conversely, the rational numbers Q are not a continuum; they are "totally disconnected" because they are riddled with infinite gaps where the irrational numbers sit.
+
 ## Examples {.unnumbered}
 Prime numbers
 Irrational numbers

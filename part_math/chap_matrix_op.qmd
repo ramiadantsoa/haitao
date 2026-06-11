@@ -43,6 +43,86 @@ And distributive
 
 This is a desired feature where the + and * have kept their original meaning.
 
+In linear algebra and array-based computing, matrix operations are categorized by how they manipulate elements: scalar-to-matrix interactions, standard matrix vector-space transformations, and element-wise arrays.
+Here are the rigorous textbook definitions for scalar multiplication, matrix addition, element-wise multiplication (Hadamard product), and element-wise addition, along with their source material and LaTeX formats.
+
+1. Scalar Multiplication
+Scalar multiplication is an operation that takes a scalar c from a field F and an m×n matrix A, scaling every individual entry of the matrix by that scalar constant.
+
+Textbook Source
+Book: Linear Algebra (4th Edition, 2002)
+Authors: Stephen H. Friedberg, Arnold J. Insel, and Lawrence E. Spence
+Publisher: Pearson
+AbeBooks
+
+The Formal Definition
+In Chapter 1 ("Vector Spaces"), Section 1.3, the authors define scalar multiplication alongside the structural vector space properties of matrices:
+Definition: "Let A and B be m×n matrices over a field F, and let c∈F. The scalar product cA is the m×n matrix M whose entries are defined by
+
+$(cA)_{ij} = c A_{ij}$
+
+for each 1≤i≤m and 1≤j≤n."
+
+
+1. Matrix Addition
+Standard matrix addition is defined for two matrices of the exact same dimensions. It combines the matrices by summing their corresponding components. This operation acts as the vector addition component required to qualify the set of matrices Fm×n as a formal vector space.
+Khan Academy
+
+Textbook Source
+Book: Linear Algebra (4th Edition, 2002)
+Authors: Stephen H. Friedberg, Arnold J. Insel, and Lawrence E. Spence
+Publisher: Pearson
+
+The Formal Definition
+From the same structural framework in Chapter 1, Section 1.3:
+
+Definition: "Let A and B be m×n matrices over a field F. The sum A+B is the m×n matrix C whose entries are defined by
+$C_{ij} = (A + B)_{ij} = A_{ij} + B_{ij}$
+for each 1≤i≤m and 1≤j≤n."
+LaTeX Format
+Code snippet
+
+1. Element-Wise Multiplication (The Hadamard Product)
+Standard matrix multiplication (AB) is defined via row-column composition. When matrices need to be multiplied directly element-by-element instead, it is referred to rigorously in linear algebra as the Hadamard Product (or Schur product) to distinguish it from the standard matrix product.
+Wikipedia
+
+Textbook Source
+Book: Matrix Analysis (2nd Edition, 2013)
+Nick Higham
+Authors: Roger A. Horn and Charles R. Johnson
+Publisher: Cambridge University Press
+
+The Formal Definition
+In Chapter 5 ("Special Types of Matrices"), Section 5.5, the authors formalize this entry-wise multiplication:
+Definition: "Let A=[aij] and B=[bij] be m×n matrices.
+The Hadamard product of A and B is denoted by A∘B (or A⊙B), and is the m×n matrix defined by entry-wise multiplication:
+www-fourier.univ-grenoble-alpes.fr
+$A \circ B = [a_{ij} b_{ij}]$
+That is,
+$(A \circ B)_{ij} = A_{ij} B_{ij}$ for each 1≤i≤m and 1≤j≤n."
+[Image diagram showing the Hadamard product of two matrices multiplying position by position]
+LaTeX Format
+Code snippet
+Code snippet
+
+1. Element-Wise Addition
+In pure linear algebra, "matrix addition" and "element-wise addition" are identical operations. By definition, standard matrix addition is already an element-wise mapping.
+However, in computational linear algebra, applied data science, and array programming (such as NumPy or MATLAB), "element-wise addition" includes a concept called broadcasting, which allows a matrix and a single vector (or scalar) to be added together entry-by-entry across an entire dimension.
+
+Textbook Source
+Book: Introduction to Applied Linear Algebra: Vectors, Matrices, and Least Squares (2018)
+Authors: Stephen Boyd and Lieven Vandenberghe
+Publisher: Cambridge University Press
+
+The Formal Definition
+In Chapter 6 ("Matrices"), Section 6.2, the authors define standard addition and note its element-wise identity, while contextualizing its multi-dimensional computing extensions:
+
+Definition: "Two matrices of the same size can be added together. The result is a matrix of the same size obtained by adding the corresponding elements of the two matrices. [...]
+In computer science implementations, an extension called element-wise addition with broadcasting is defined when adding a matrix A∈R^m×n and a column vector b∈R^m.
+
+The resulting matrix C=A+b is an m×n matrix defined by adding the vector to every column of the matrix:
+$C_{ij} = A_{ij} + b_i$ for all 1≤i≤m and 1≤j≤n."
+
 ## Examples {.unnumbered}
 Assume we wanted to add one fruit for each person
 

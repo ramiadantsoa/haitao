@@ -35,6 +35,66 @@ ggplot(dat, aes(x = x, y = y)) +
     theme_bw()
 ```
 
+
+Here are the three standard formal definitions found in advanced calculus and mathematical analysis textbooks.
+
+1. The Power Series Definition (Most Rigorous)
+In modern mathematical analysis, the standard way to define the base-e exponential function (denoted as exp(x) or e^x) is via a uniformly convergent power series. This definition completely avoids any ambiguous geometric or intuitive definitions of exponents.
+
+Textbook Source
+Book: Principles of Mathematical Analysis (3rd Edition, 1976)
+Author: Walter Rudin
+Publisher: McGraw-Hill
+
+
+The Formal Definition
+In Chapter 8 ("Some Special Functions"), Rudin defines the exponential function as the sum of an infinite series:
+"We define exp(x) by the formula:
+$\exp(x) = \sum_{n=0}^{\infty} \frac{x^n}{n!}$
+
+This series converges absolutely for every real (and complex) number x."
+Using this definition, the mathematical constant e is formally defined as the evaluation of this series at x=1:
+$e = \exp(1) = \sum_{n=0}^{\infty} \frac{1}{n!}$
+
+
+
+1. The Differential Equation Definition
+The exponential function can be uniquely defined by its behavior under the laws of calculus—specifically, as the unique solution to a foundational initial value problem.
+
+Textbook Source
+Book: Calculus (Volume 1, 2nd Edition, 1967)
+Author: Tom M. Apostol
+Publisher: John Wiley & Sons
+
+The Formal Definition
+In Chapter 6, Apostol proves that there exists a unique, differentiable function f:R→R that is its own derivative. Formally, exp(x) is defined as the unique function satisfying the system:
+
+$\frac{dy}{dx} = y, \quad \text{subject to } y(0) = 1$
+
+From this definition, all standard algebraic properties of exponents (such as ea+b =ea⋅eb) are derived as theorems.
+
+
+1. The Inverse Function (Logarithmic) Definition
+Another rigorous classical approach constructs the natural logarithm function first via integration, and then defines the exponential function as its logical inverse.
+
+Textbook Source
+Book: Introduction to Real Analysis (4th Edition, 2011)
+Authors: Robert G. Bartle and Donald R. Sherbert
+Publisher: John Wiley & Sons
+
+The Formal Definition
+First, the natural logarithm function ln(x) is defined for x>0 as a Riemann integral:
+
+$\ln(x) = \int_{1}^{x} \frac{1}{t} \, dt$
+Because ln(x) is continuous and strictly increasing on (0,∞), it maps bijectively onto (−∞,∞). The exponential function exp:R→(0,∞) is formally defined as the inverse function of ln(x):
+
+$y = \exp(x) \iff x = \ln(y)$
+
+Generalization to Any Base (a^x)
+Once the core function exp(x) (or e^x) is formally established by any of the definitions above, the general exponential function for an arbitrary positive base a>0 (a
+!=1) is defined using the identity:
+$a^x = \exp(x \ln a) = e^{x \ln a}$
+
 ## Examples {.unnumbered}
 e^0 = 1, and e^1 = 2.71.
 
