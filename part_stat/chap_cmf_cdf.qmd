@@ -14,6 +14,90 @@ Mostly for theoretical distributions
 Find something for cumulative relevance !!!
 
 ## Formal {.unnumbered}
+In advanced mathematical statistics, textbooks clarify a common terminological distinction before providing rigorous definitions:
+Cumulative Distribution Function (CDF) is the unifying, mathematically precise term for the "cumulative density and mass distribution" of any random variable.
+Probability Mass Function (PMF) applies strictly to discrete variables.
+Probability Density Function (PDF) applies strictly to continuous variables.
+
+Here are the rigorous definitions from two universally cited textbooks in mathematical statistics.
+
+1. The Unifying Cumulative Distribution Function (CDF)
+The CDF completely determines the probability distribution of a random variable, regardless of whether it is discrete or continuous.
+
+Textbook Source
+Book: Statistical Inference (2nd Edition, 2002)
+Authors: George Casella and Roger L. Berger
+Publisher: Duxbury / Thomson Learning
+
+The Definition
+In Chapter 1 ("Probability Theory"), Casella and Berger define the cumulative distribution function of a random variable X:
+Definition 1.5.1: "The cumulative distribution function of a random variable X, denoted by FX(x), is defined by
+
+$F_X(x) = P_X(X \le x), \quad \text{for all } x.$
+
+[...] The abbreviation cdf will be used to denote cumulative distribution function."
+
+
+Rigorous Mathematical Properties of a CDF
+For FX(x) to be a valid cumulative distribution function, it must satisfy three rigorous mathematical properties:
+
+
+1.Monotonicity: It is nondecreasing; if x $x_1 < x_2 \implies F_X(x_1) \le F_X(x_2)$
+
+2. Limits: $\lim_{x \to -\infty} F_X(x) = 0 \quad \text{and} \quad \lim_{x \to \infty} F_X(x) = 1$
+
+3. Continuity: It is right-continuous; for every x $\lim_{x \to x_0^+} F_X(x) = F_X(x_0)$
+
+
+1. The Discrete Case: Probability Mass Function (PMF)
+When dealing with a discrete variable, the cumulative distribution accumulates point probabilities.
+
+Textbook Source
+Book: Introduction to Mathematical Statistics (8th Edition, 2019)
+Authors: Robert V. Hogg, Joseph W. McKean, and Allen T. Craig
+Publisher: Pearson
+
+The Definition
+In Chapter 1 ("Probability and Distributions"), Hogg, McKean, and Craig formalize the discrete case:
+"Let X be a discrete random variable with space D. The probability mass function (pmf) of X is defined by
+
+$p_X(x) = P(X = x), \quad \text{for } x \in \mathcal{D}$
+
+
+and pX(x)=0 otherwise."
+
+The Mass Distribution Relation
+The cumulative mass distribution is achieved by summing these discrete points up to a value x:
+
+$F_X(x) = \sum_{x_i \le x} p_X(x_i)$
+
+1. The Continuous Case: Probability Density Function (PDF)
+When dealing with a continuous variable, probability at a single point is zero, requiring calculus to evaluate a cumulative range.
+
+Textbook Source
+Book: Introduction to Mathematical Statistics (8th Edition, 2019) — Same Source
+
+The Definition
+Hogg, McKean, and Craig define the continuous random variable and its underlying density function:
+"We say a random variable X is a continuous random variable if its cumulative distribution function FX(x) is continuous for all x∈R. [...] The probability density function (pdf) of X is a function fX(x) such that
+
+$F_X(x) = \int_{-\infty}^{x} f_X(t) \, dt$
+for all x∈R.
+
+
+By the Fundamental Theorem of Calculus, at points where fX
+(x) is continuous,
+$f_X(x) = \frac{d}{dx}F_X(x)$."
+
+The Density Distribution Relation
+
+The cumulative density distribution is achieved by integrating the density function:
+$P(a \le X \le b) = \int_{a}^{b} f_X(x) \, dx = F_X(b) - F_X(a)$
+
+Conceptual Summary
+"Mass" (PMF): Used for countable outcomes. The cumulative mass function looks like a stair-step graph because probability jumps up only at distinct, specific numbers.
+"Density" (PDF): Used for continuous measurements. The cumulative density function is a smooth, unbroken curve because probability is spread continuously over an interval of real numbers.
+
 
 ## Examples {.unnumbered}
 

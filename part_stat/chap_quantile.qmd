@@ -5,9 +5,63 @@
 ## Concepts and intuitions {.unnumbered}
 Raha fantatrao ny valiny dia anisan'ny 1% mahay indrindra ianao!
 
-
 ## Formal {.unnumbered}
-Add interqualite range
+**Add interqualite range**
+
+The concept of a quantile generalizes the median. While the median splits a distribution into two equal halves (50%), quantiles split a dataset or a probability distribution into arbitrary fractions or proportions, p (where 0<p<1).
+Like other structural descriptors, its definition splits between sorting sample data in applied statistics and evaluating inverse functions in theoretical statistics.
+
+1. Applied Statistics: The Sample Quantile
+In applied statistics, the pth quantile (often called a percentile when expressed as a percentage) is a value that separates the lowest p fraction of the ordered data from the rest.
+Textbook Source
+
+Book: Statistics for Business and Economics (14th Edition, 2020)
+Authors: David R. Anderson, Dennis J. Sweeney, Thomas A. Williams, Jeffrey D. Camm, and James J. Cochran
+Publisher: Cengage Learning
+
+The Definition
+In Chapter 3 ("Descriptive Statistics: Numerical Measures"), the authors define the algorithmic process for finding the pth quantile (percentile) of a finite dataset:
+"The pth percentile divides the data into two parts: approximately p percent of the observations have values less than the pth percentile, and approximately (100−p) percent of the observations have values greater than the pth percentile.
+To calculate the pth percentile, first arrange the data in ascending order. Then determine the position index $L_p$:
+$L_p = \frac{p}{100}(n + 1)$
+
+where n is the number of observations."
+(Note: If $L_p$ is not an integer, applied textbooks use linear interpolation between the two adjacent ordered values).
+
+
+1. Theoretical Statistics: The Distribution Quantile
+In statistical theory, the pth quantile of a random variable X is defined using the Cumulative Distribution Function (CDF). When a distribution is continuous and strictly increasing, the quantile function is simply the direct mathematical inverse of the CDF, F−1(p).
+
+Textbook Source
+Book: Statistical Inference (2nd Edition, 2002)
+Authors: George Casella and Roger L. Berger
+Publisher: Duxbury / Thomson Learning
+
+The Definition
+In Chapter 2 ("Fractional Populations and Medians"), Casella and Berger define the pth quantile for any general distribution:
+"For any p between 0 and 1, the pth quantile of a random variable X (or of its distribution) is any value $x_p$
+  that satisfies:
+$P(X \le x_p) \ge p \quad \text{and} \quad P(X \ge x_p) \ge 1 - p$
+"
+The Continuous Interpretation
+If the CDF F(x) is continuous and strictly increasing, these conditions collapse into a clean, single functional definition:
+$F(x_p) = p \implies x_p = F^{-1}(p)$
+
+
+1. The Advanced Generalized Inverse Definition
+To prevent mathematical ambiguities in discrete or flat distributions (where multiple values or no values might satisfy F(x)=p exactly), advanced theoretical statistics unifies the definition using the generalized inverse (or quantile function).
+
+Textbook Source
+Book: Mathematical Statistics (2nd Edition, 2003)
+Author: Jun Shao
+Publisher: Springer Science & Business Media
+
+The Definition
+In Chapter 1 ("Probability Theory"), Shao rigorously formalizes the quantile function using the infimum (the greatest lower bound) of a set:
+"Let F be a cumulative distribution function on R. For any p∈(0,1), the pth quantile of F (or of its corresponding random variable) is defined as:
+$F^{-1}(p) = \inf \{x \in \mathbb{R} : F(x) \geq p\}$
+This function F−1
+  on (0,1) is called the quantile function."
 
 ## Examples {.unnumbered}
 

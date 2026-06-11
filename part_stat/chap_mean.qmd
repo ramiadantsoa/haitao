@@ -29,6 +29,49 @@ $$
     \mu = \int_{-\infty}^{\infty} x f(x)\,dx
 $${#eq-mean_c}
 
+
+When analyzing the concept of "the mean" in statistics, textbooks bifurcate the definition based on the split you noted: applied statistics (which deals with observed data from a sample) and theoretical statistics (which deals with the underlying probability distributions and expected values of a population).
+Here are the rigorous definitions for both, complete with textbook sources and raw LaTeX formatting.
+
+1. Applied Statistics: The Sample Mean
+In applied statistics, the mean is an empirical statistic computed directly from an observed sample of data. It serves as the primary measure of central tendency for a dataset.
+
+Textbook Source
+Book: Statistical Inference (2nd Edition, 2002)
+Authors: George Casella and Roger L. Berger
+Publisher: Duxbury / Thomson Learning
+
+The Definition
+In Chapter 5 ("Properties of a Random Sample"), Casella and Berger define the sample mean as a functional mapping of a finite sequence of observations:
+Definition 5.2.2: "Let X1,…,Xn be a random sample of size n from a population. The sample mean is the statistic defined by
+
+$\bar{X} = \frac{1}{n} \sum_{i=1}^{n} X_i$
+
+1. Theoretical Statistics: The Population Mean (Expected Value)
+In statistical theory, the mean of a variable is not calculated from data points. Instead, it is defined as the mathematical expected value (E[X] or μ) of its probability distribution. This represents the long-run average value if an experiment were repeated infinitely.
+
+Textbook Source
+Book: Introduction to Mathematical Statistics (8th Edition, 2019)
+Authors: Robert V. Hogg, Joseph W. McKean, and Allen T. Craig
+Publisher: Pearson
+
+The Definition
+In Chapter 1 ("Probability and Distributions"), the authors define the theoretical mean for both discrete and continuous domains under the umbrella of Mathematical Expectation.
+A. The Discrete Theoretical Mean
+"Let X be a discrete random variable with a probability mass function (pmf) p(x) and space D. If the sum converges absolutely, the mean (or expected value) of X, denoted by μ or E[X], is defined by
+$\mu = \mathbb{E}[X] = \sum_{x \in \mathcal{D}} x \cdot p(x)$
+"
+B. The Continuous Theoretical Mean
+"Let X be a continuous random variable with a probability density function (pdf) f(x). If the integral converges absolutely, the mean (or expected value) of X is defined by
+$\mu = \mathbb{E}[X] = \int_{-\infty}^{\infty} x \cdot f(x) \, dx$
+"
+
+Summary: How Theory and Application Intersect
+The relationship between applied mean and theoretical mean is the foundation of inference.
+As defined by the Weak/Strong Law of Large Numbers (LLN) in theory textbooks, if you repeatedly draw a larger and larger sample size (n→∞) from an underlying population distribution, your applied sample mean (bar(X)) is guaranteed to mathematically converge to the theoretical population mean (μ):
+
+$\lim_{n \to \infty} P(|\bar{X}_n - \mu| < \varepsilon) = 1 \quad \text{for any } \varepsilon > 0$
+
 ## Examples {.unnumbered}
 
 ## Tips and warnings {.unnumbered}

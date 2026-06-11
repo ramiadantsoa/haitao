@@ -7,8 +7,53 @@ It is just a function!
 
 
 ## Formal {.unnumbered}
+In theoretical mathematical statistics, a statistic has a very precise mathematical definition. It is not just a descriptive number, but a function mapping a sample of random variables to a new random variable or vector. Crucially, a function is only a statistic if it does not depend on any unknown parameters.
+Here are the rigorous definitions from two of the most widely used advanced textbooks in mathematical statistics, along with their raw LaTeX representations.
+
+1. The Standard Mathematical Statistics Definition
+This definition establishes a statistic as a real-valued or vector-valued function of the sample data that remains completely observable.
+
+Textbook Source
+Book: Statistical Inference (2nd Edition, 2002)
+Authors: George Casella and Roger L. Berger
+Publisher: Duxbury / Thomson Learning
+The Definition
+
+In Chapter 5 ("Properties of a Random Sample"), Casella and Berger define a statistic as follows:
+Definition 5.2.1: "Let X1,…,Xn be a random sample of size n from a population. A statistic is a real-valued or vector-valued function of the sample, $T(X_1, \dots, X_n)$."
+
+They explicitly append a vital mathematical caveat immediately following the definition:
+"Note that a statistic is a random variable (or a random vector). [...] The definition of a statistic states that a statistic is a function of the sample only. In particular, a function that depends on an unknown parameter cannot be a statistic."
+
+2. The Measure-Theoretic Definition
+In graduate-level statistics, the sample data is treated as an element of a sample space, and the statistic is defined strictly as a measurable mapping that abstracts the data.
+
+Textbook Source
+Book: Mathematical Statistics (2nd Edition, 2003)
+Author: Jun Shao
+Publisher: Springer Science & Business Media
+
+The Definition
+In Chapter 2 ("Fundamentals of Estimation"), Shao formalizes a statistic using measure theory:
+"A measurable function of the data X, say T(X), is called a statistic if T(X) does not depend on the unknown parameter θ. The range of T(X) is a subset of Rk $T(X) \in \mathbb{R}^k$ for some integer k≥1."
+He further notes that if T(X) is used to estimate θ, it is called an estimator, but its underlying mathematical classification remains a statistic.
+
+3. Visualizing a Statistic as a Function
+
+To understand this concept intuitively, a statistic acts as a mathematical bridge that collapses a high-dimensional dataset down into a single summary measure:
+Core Structural Requirements of a Statistic
+As outlined in these texts, for any expression to be rigorously classified as a statistic, it must pass two mathematical tests:
+Parameter Independence: It cannot contain unknown population terms.
+Is a Statistic: The sample mean
+$\bar{X} = \frac{1}{n}\sum_{i=1}^n X_i$. You can compute this number directly from your data.
+
+Is NOT a Statistic: The standardizing formula
+$Z = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}}$ (where μ is an unknown population mean). Because you do not know μ, you cannot compute Z directly from the sample alone; it is *a pivotal quantity*, not a statistic.
+It is a Random Variable: Because the sample observations X1,…,Xn
+​ are random variables, any function T(⋅) applied to them is itself a random variable. Consequently, a statistic always possesses its own probability distribution, rigorously known as its sampling distribution.
 
 ## Examples {.unnumbered}
+
 
 ## Tips and warnings {.unnumbered}
 

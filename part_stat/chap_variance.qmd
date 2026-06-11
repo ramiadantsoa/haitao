@@ -17,6 +17,93 @@ $$
 \mathrm{Var}(X) = \int_{-\infty}^{\infty} (x - \mu)^2 f(x)\,dx
 $$ {#eq-variance_c}
 
+
+Just like the mean, the definition of variance in statistics is strictly divided between applied statistics (the descriptive measure of spread computed from a physical sample) and theoretical statistics (the expected squared deviation of a random variable from its population mean).
+Here are the rigorous definitions for both, complete with textbook sources and raw LaTeX formatting.
+1. Applied Statistics: The Sample Variance
+In applied statistics, variance is a statistic used to measure the dispersion of an observed dataset. Crucially, the rigorous definition uses a divisor of n−1 (Bessel's correction) rather than n to ensure the sample variance is an unbiased estimator of the population variance.
+Textbook Source
+Book: Statistical Inference (2nd Edition, 2002)
+Authors: George Casella and Roger L. Berger
+Publisher: Duxbury / Thomson Learning
+The Definition
+In Chapter 5 ("Properties of a Random Sample"), Casella and Berger define the sample variance as follows:
+Definition 5.2.3: "Let X
+1
+​
+ ,…,X
+n
+​
+  be a random sample of size n from a population. The sample variance is the statistic defined by
+S
+2
+ =
+n−1
+1
+​
+
+i=1
+∑
+n
+​
+ (X
+i
+​
+ −
+X
+ˉ
+ )
+2
+
+where
+X
+ˉ
+  is the sample mean."
+LaTeX Format
+Code snippet
+S^2 = \frac{1}{n-1} \sum_{i=1}^{n} (X_i - \bar{X})^2
+2. Theoretical Statistics: The Population Variance
+In statistical theory, the variance of a random variable X is defined as the mathematical expectation of its squared distance from its theoretical mean (μ).
+Textbook Source
+Book: Introduction to Mathematical Statistics (8th Edition, 2019)
+Authors: Robert V. Hogg, Joseph W. McKean, and Allen T. Craig
+Publisher: Pearson
+The Definition
+In Chapter 1 ("Probability and Distributions"), the authors define the theoretical variance (often denoted as σ
+2
+  or Var(X)):
+"Let X be a random variable with a finite mean μ=E[X]. The variance of X, denoted by σ
+2
+  or Var(X), is defined by
+$\sigma^2 = \operatorname{Var}(X) = \mathbb{E}[(X - \mu)^2]$
+"
+
+Depending on the underlying distribution of the variable, this expectation is evaluated using two distinct mathematical operations:
+A. The Discrete Theoretical Case
+If X is discrete with space D and probability mass function p(x):
+$\sigma^2 = \sum_{x \in \mathcal{D}} (x - \mu)^2 p(x)$
+
+B. The Continuous Theoretical Case
+If X is continuous with probability density function f(x):
+$\sigma^2 = \int_{-\infty}^{\infty} (x - \mu)^2 f(x) \, dx$
+
+
+
+1. The Theoretical "Shortcut" Formula
+In textbook proofs and algebraic manipulations, the theoretical definition is frequently re-expressed using a foundational identity derived from the linearity of expectation.
+
+Textbook Source
+Book: Mathematical Statistics and Data Analysis (3rd Edition, 2007)
+Author: John A. Rice
+Publisher: Cengage Learning
+The Definition
+
+In Chapter 4 ("Expected Values"), Rice demonstrates the standard computational theorem for variance:
+"Theorem: If X has a finite mean μ, then
+$\operatorname{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2$
+
+That is, the variance is the expected value of the square minus the square of the expected value."
+
 ## Examples {.unnumbered}
 
 ## Tips and warnings {.unnumbered}

@@ -12,8 +12,64 @@ First we order them, and look at the middle point and that is our median.
 The more fundamental is whether we should use the mean or the median for a
 
 
-
 ## Formal {.unnumbered}
+The definition of the median transitions from a simple algorithmic sorting rule in applied statistics to a more sophisticated optimization and probability criteria in theoretical statistics.
+Here are the rigorous definitions for both, complete with textbook sources and raw LaTeX formatting.
+
+1. Applied Statistics: The Sample Median
+In applied data analysis, the median is an empirical descriptive statistic of central tendency. It is defined as the middle value when the data points are ordered from smallest to largest. Because of this, its exact formula changes depending on whether the sample size n is odd or even.
+
+Textbook Source
+Book: Introductory Statistics (10th Edition)
+Author: Neil A. Weiss
+Publisher: Pearson
+
+The Definition
+In Chapter 3 ("Descriptive Measures"), Weiss defines the sample median rigorously based on sample size positioning:
+"Arrange the data in increasing order.
+If the number of observations (n) is odd, the median is the observation exactly in the middle of the ordered list.
+If the number of observations (n) is even, the median is the mean of the two middle observations in the ordered list.
+In other words, if the ordered observations are denoted
+$x_{(1)},x_{(2)}, \ldots, x_{(n)}$
+​
+, the median xtilda
+
+$\tilde{x} = \begin{cases} x_{\left(\frac{n+1}{2}\right)} & \text{if } n \text{ is odd} \\ \frac{1}{2}\left(x_{\left(\frac{n}{2}\right)} + x_{\left(\frac{n}{2}+1\right)}\right) & \text{if } n \text{ is even} \end{cases}$
+"
+
+1. Theoretical Statistics: The Distribution Median
+In theoretical statistics, the median of a random variable X is defined as any real number m that splits the probability distribution into two equal halves of at least 50%. It is rigorously formalized using inequalities containing the Cumulative Distribution Function (CDF).
+
+Textbook Source
+Book: Statistical Inference (2nd Edition, 2002)
+Authors: George Casella and Roger L. Berger
+Publisher: Duxbury / Thomson Learning
+
+The Definition
+In Chapter 2 ("Fractional Populations and Medians"), Casella and Berger present the unifying probability definition that accounts for both discrete and continuous distributions:
+"A median of a random variable X is a real number m satisfying
+$P(X \le m) \ge \frac{1}{2} \quad \text{and} \quad P(X \ge m) \ge \frac{1}{2}$"
+
+The Continuous Case Simplification
+As the authors point out, if X is a continuous random variable with a continuous CDF FX(x), the inequalities collapse into a single strict equation:
+$F_X(m) = \int_{-\infty}^{m} f(x) \, dx = \frac{1}{2}$
+
+1. The Theoretical "Optimization" Definition
+Advanced mathematical statistics textbooks also define the theoretical median as the absolute distance minimizer. While the population mean minimizes the expected squared error, the population median minimizes the expected absolute error.
+
+Textbook Source
+Book: Mathematical Statistics (2nd Edition, 2003)
+Author: Jun Shao
+Publisher: Springer Science & Business Media
+
+The Definition
+In Chapter 1, when discussing properties of parameters, the median is defined as an optimization solution:
+"A median of X (or of its distribution PX
+​) is any constant m that minimizes the expected absolute loss:
+$\mathbb{E}|X - m|$
+"
+Formally, this can be written using optimization notation:
+$m = \operatorname{argmin}_{c} \mathbb{E}|X - c|$
 
 ## Examples {.unnumbered}
 

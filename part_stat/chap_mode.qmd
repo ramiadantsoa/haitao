@@ -16,6 +16,52 @@ But, be aware that it does not need to be unique.
 
 ## Formal {.unnumbered}
 
+In statistical literature, the definition of the mode splits into two distinct mathematical frameworks: applied statistics (the value that occurs with the highest frequency in an observed dataset) and theoretical mathematical statistics (the value at which the probability mass function or probability density function reaches its local or global maximum).
+Here are the rigorous definitions for both, complete with textbook sources and raw LaTeX formatting.
+
+1. Applied Statistics: The Sample Mode
+In applied data analysis, the mode is an empirical descriptive statistic used primarily for categorical or discrete data.
+
+Textbook Source
+Book: Statistical Methods for the Social Sciences (5th Edition, 2018)
+Author: Alan Agresti
+Publisher: Pearson
+
+The Definition
+In Chapter 3 ("Descriptive Statistics"), Agresti defines the mode based on empirical frequency:
+"The mode is the value that occurs most frequently. [...] The mode is more commonly used with categorical data than with quantitative data. For example, the modal choice for the most important national problem is the category with the highest frequency."
+The text notes that a dataset can be bimodal if two distinct values tie for the highest frequency, or multimodal if there are more than two.
+
+2. Theoretical Statistics: The Distribution Mode
+In mathematical statistical theory, the mode is defined rigorously as the maximizing argument (argmax) of a probability distribution function.
+
+Textbook Source
+Book: Kendall's Advanced Theory of Statistics, Volume 1: Distribution Theory (6th Edition, 2009)
+Authors: Alan Stuart and J. Keith Ord
+Publisher: Wiley
+
+The Definition
+In Chapter 3 ("Moments and Cumulants: Measures of Location and Dispersion"), Stuart and Ord formalize the mode for a continuous probability density function f(x) using differential calculus:
+"The mode is a value of the variable for which the frequency function or density function is a maximum. For a continuous distribution with a differentiable density function f(x), a mode is a solution of the equation:
+$\frac{df(x)}{dx} = 0$
+subject to the condition that the first non-vanishing derivative is of even order and negative, which for practical purposes usually means:
+$\frac{d^2f(x)}{dx^2} < 0$"
+
+
+1. The Modern Optimization Definition (Unified)
+In modern data science and mathematical statistics, the definition is often unified using optimization notation, applicable to both the Probability Mass Function (PMF) for discrete variables and the Probability Density Function (PDF) for continuous variables.
+
+Textbook Source
+Book: Mathematical Statistics and Data Analysis (3rd Edition, 2007)
+Author: John A. Rice
+Publisher: Duxbury Advanced Series / Cengage Learning
+
+The Definition
+While explaining the shapes of distributions in Chapter 2, the concept is formalized as:
+"A mode of a probability distribution with PMF or PDF f(x) is a point x0 at which f(x) achieves a local maximum. If x0 maximizes f(x) over its entire support, it is the global mode."
+Formally, the global mode m is expressed as:
+$m = \operatorname{argmax}_{x} f(x)$
+
 ## Examples {.unnumbered}
 
 ## Tips and warnings {.unnumbered}

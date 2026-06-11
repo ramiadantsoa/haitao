@@ -25,6 +25,52 @@ In programming, you will see, integer, numeric (float), and string, boolean, cha
 
 ## Formal {.unnumbered}
 
+When you move away from theoretical mathematical statistics (which strictly deals with functions and "random variables") and look at applied, descriptive, or introductory statistics textbooks, a variable is defined as a measurable property, characteristic, or attribute belonging to the subjects being studied.
+
+Here are the rigorous definitions from three foundational and widely used textbooks across different tiers of applied statistics.
+
+1. The Applied Social Sciences Definition
+In statistics applied to the social, behavioral, and medical sciences, a variable is defined by its ability to change value across different observations in a dataset.
+
+Textbook Source
+Book: Statistical Methods for the Social Sciences (5th Edition, 2018)
+Author: Alan Agresti
+Publisher: Pearson
+
+The Definition
+In Chapter 2 ("Sampling and Measurement"), Agresti provides the standard, foundational definition used in applied data analysis:
+"A variable is a characteristic that can vary in value among subjects in a sample or population. Examples of variables are number of siblings, annual income, marital status, gender, and political party affiliation. The valid values a variable can take form its measurement scale."
+
+2. The Comprehensive Biostatistics/Data Science Definition
+In biomedical and data science contexts, textbooks define a variable by contrasting it directly against a constant, framing it as an observational unit's attribute.
+
+Textbook Source
+Book: Principles of Biostatistics (2nd Edition, 2018)
+Authors: Marcello Pagano and Kimberlee Gauvreau
+Publisher: CRC Press
+
+The Definition
+In Chapter 2 ("Data Presentation"), Pagano and Gauvreau establish how real-world data points become variables:
+"A variable is a characteristic that takes on different values in different persons, places, or things. For example, heart rate is a variable because it is not the same for all individuals; it varies from person to person. A quantity that does not vary is called a constant."
+
+3. The Pure Introductory/Mathematical Context
+Even in textbooks designed for students with a calculus background, when authors introduce the data-collection phase before applying probability models, they define a "variable" as a concrete data-generating characteristic.
+
+Textbook Source
+Book: Probability and Statistics for Engineering and the Sciences (9th Edition, 2016)
+Author: Jay L. Devore
+Publisher: Cengage Learning
+
+The Definition
+In Chapter 1 ("Overview and Descriptive Statistics"), Devore defines a variable as the core operational mechanism of data creation:
+"A variable is any characteristic whose value may change from one object to another in the population. We initially denote variables by lowercase letters from the end of our alphabet, such as x, y, and z. Data results from making observations on one or more variables for a designated set of objects."
+
+Key Takeaways of a Statistical Variable
+Across all applied textbooks, a non-random "variable" is bound by three strict criteria:
+The Subject Matter: It must belong to an entity (a person, a trial, an object).
+The Variance: If every subject in your sample yields the exact same measurement (e.g., if everyone in a study is 30 years old), "Age" ceases to be a variable in that context and becomes a constant.
+The Scale: It must be classifiable into a defined measurement scale (Nominal, Ordinal, Interval, or Ratio).
+
 ## Examples {.unnumbered}
 
 ## Tips and warnings {.unnumbered}

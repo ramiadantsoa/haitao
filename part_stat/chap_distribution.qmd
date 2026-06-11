@@ -18,11 +18,75 @@ Mass and
 
 ## Formal {.unnumbered}
 
+In statistics, a distribution (or the distribution of a variable) is a foundational concept that bridges raw data with mathematical probability. Depending on whether you look at an applied context (real data) or a theoretical context (probability models), it is defined either as a summary of observed frequencies or as a mathematical function mapping probabilities to values.
+Here are the rigorous definitions from three authoritative textbooks representing these different levels of statistical analysis.
+
+1. The Applied / Data-Centric Definition
+In applied and introductory statistics, the distribution of a variable is defined as a description of what values the variable takes and how often it takes them.
+
+Textbook Source
+Book: The Practice of Statistics (6th Edition, 2018)
+Authors: Daren S. Starnes and Josh Tabor
+Publisher: W. H. Freeman / Bedford, Freeman & Worth
+
+The Definition
+In Chapter 1 ("Data Analysis"), Starnes and Tabor provide the standard, universally taught definition for the distribution of an observed variable:
+"The distribution of a variable tells us what values the variable takes and how often it takes these values. The distribution of a categorical variable lists the categories and gives either the count or the percent of individuals who fall in each category. The distribution of a quantitative variable tells us what values the variable takes and how often it takes those values."
+
+2. The Rigorous Mathematical Statistics Definition
+In theoretical statistics, when we talk about the distribution of a variable, we are referring to a Probability Distribution, which is formalized as a function (like a Cumulative Distribution Function, or CDF).
+
+Textbook Source
+Book: Introduction to Mathematical Statistics (8th Edition, 2019)
+Authors: Robert V. Hogg, Joseph W. McKean, and Allen T. Craig
+Publisher: Pearson
+
+The Definition
+In Chapter 1 ("Probability and Distributions"), the authors define the distribution of a random variable X by its cumulative distribution function FX(x), which rigorously maps out the entire probability behavior of that variable:
+"Let X be a random variable. The cumulative distribution function (cdf) of X, denoted by FX(x), is defined by
+
+FX (x)=P(X≤x)
+
+for all real numbers x. [...] The cdf completely determines the probability distribution of the random variable X."
+
+
+Under this mathematical framework:
+
+If the variable is discrete, its distribution is rigorously defined by a Probability Mass Function (PMF): p(x)=P(X=x).
+
+If the variable is continuous, its distribution is rigorously defined by a Probability Density Function (PDF), f(x), such that P(a≤X≤b)=∫ab f(x)dx.
+
+3. The Measure-Theoretic Definition
+For advanced graduate-level mathematical statistics, a distribution is rigorously defined as a "probability measure" induced by the variable on a measurable space.
+
+Textbook Source
+Book: Mathematical Statistics (2nd Edition, 2003)
+Author: Jun Shao
+Publisher: Springer Science & Business Media
+
+The Definition
+In Chapter 1, Shao strips away the informal language entirely, defining the distribution of a variable (X) as a mathematically bound probability law:
+
+"Let X be a random variable defined on a probability space (Ω,F,P). The distribution of X is defined as the probability measure P
+X on (R,B) induced by X, i.e.,
+
+P X (B)=P(X−1(B)) = P({ω∈Ω:X(ω)∈B}) for any Borel set B∈B."
+
+Summary: What does a "Distribution" encompass?
+No matter the tier of the textbook, a distribution must provide two essential components for a variable:
+
+The Values: Every possible value (or range of values) that the variable can mathematically achieve.
+
+The Frequency/Probability: The likelihood, proportion, or exact frequency with which those values occur.
+
+Visually and analytically, we evaluate the distribution of a variable by looking at its shape (e.g., symmetric, skewed, bell-shaped), its center (e.g., mean, median), and its spread (e.g., variance, standard deviation).
+
+
 ## Examples {.unnumbered}
 
 
 ## Tips and warnings {.unnumbered}
-It could be anything but we are so used to theoretical distribution. 
+It could be anything but we are so used to theoretical distribution.
 
 ## If you want to know more {.unnumbered}
 Symmetric or not. There are other statistic to test for data...

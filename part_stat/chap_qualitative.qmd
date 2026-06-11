@@ -17,6 +17,54 @@ Your to define such trade-off.
 
 ## Formal {.unnumbered}
 
+In statistics textbooks, a qualitative variable (often referred to interchangeably as a categorical variable) is defined as a variable that yields non-numerical attributes or places observational units into distinct categories based on a specific characteristic. Crucially, its defining mathematical feature is that arithmetic operations (like addition or finding an average) are meaningless.
+
+Here are the rigorous definitions from three highly respected and widely used statistics textbooks.
+
+1. The Definitive Introductory/Applied Definition
+In foundational applied statistics, a qualitative variable is defined explicitly by its inability to be measured numerically, instead serving to classify subjects.
+
+Textbook Source
+Book: Introductory Statistics (10th Edition)
+Author: Neil A. Weiss
+Publisher: Pearson
+
+The Definition
+In Chapter 1 ("The Nature of Statistics"), Weiss provides a highly structured breakdown of variable types:
+"Variables can be classified as either qualitative or quantitative. A qualitative variable (or categorical variable) is a non-numerically valued variable that classifies an attribute of each individual element of a population or sample. The values of a qualitative variable are typically words or codes, and arithmetic operations do not make sense for them."
+
+2. The Statistical Software & Business Context
+Textbooks focusing on data analysis and business statistics define qualitative variables by the types of labels or "attributes" they record, highlighting how they are categorized.
+
+Textbook Source
+Book: Statistics for Business and Economics (14th Edition, 2020)
+Authors: David R. Anderson, Dennis J. Sweeney, Thomas A. Williams, Jeffrey D. Camm, and James J. Cochran
+Publisher: Cengage Learning
+
+The Definition
+In Chapter 1 ("Data and Statistics"), the authors define qualitative data by contrasting it against quantitative scales:
+"Data can be classified as either categorical or quantitative. Categorical data (sometimes referred to as qualitative data) use labels or names to identify an attribute of each element. Categorical variables are variables with categorical data. Arithmetic operations such as addition, subtraction, multiplication, or division do not provide meaningful results for categorical variables."
+
+3. The Comprehensive "Mathematical/Applied" Hybrid Definition
+Even in engineering and hard science contexts, qualitative variables are defined strictly by the descriptive categories they generate.
+
+Textbook Source
+Book: Probability and Statistics for Engineering and the Sciences (9th Edition, 2016)
+Author: Jay L. Devore
+Publisher: Cengage Learning
+
+The Definition
+In Chapter 1, Devore explicitly separates variables by the mathematical properties of their outputs:
+"A qualitative variable is one for which the possible values are distinct categories rather than numbers. Examples include gender (male or female), method of payment (cash, check, or credit card), and type of defect. When a variable is qualitative, the resulting data is a collection of labels or category names."
+Core Structural Classifications of Qualitative Variables
+
+As outlined across these textbooks, qualitative variables are rigorously divided into sub-types based on their measurement scales:
+ -Nominal Scale: Categories have no inherent mathematical order or ranking (e.g., Blood Type: A, B, AB, O; Eye Color: Blue, Brown, Green).
+- Ordinal Scale: Categories possess a natural, logical order, but the "distance" between the categories cannot be measured numerically (e.g., Customer Satisfaction: Poor, Fair, Good, Excellent).
+- Dichotomous / Binary Scale: A special case of a qualitative variable that contains exactly two mutually exclusive categories (e.g., Pass/Fail, Yes/No).
+
+A Note on "Fake" Numbers: Textbooks frequently warn that qualitative variables can sometimes look like numbers (e.g., Zip Codes, Area Codes, or coding Male as 0 and Female as 1). They remain strictly qualitative because calculating the "average zip code" yields a mathematically meaningless result.
+
 ## Examples {.unnumbered}
 
 ## Tips and warnings {.unnumbered}

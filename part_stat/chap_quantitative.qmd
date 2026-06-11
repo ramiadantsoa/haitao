@@ -13,6 +13,59 @@ the most important part is to distinguish between discrete and continuous @sec-d
 As the mathematics for handling them is quite different.
 
 ## Formal {.unnumbered}
+In statistics textbooks, a quantitative variable is defined as a variable that measures a numerical quantity or amount. Crucially, its defining mathematical feature is that its values are actual numbers for which arithmetic operations (such as addition, subtraction, or averaging) yield meaningful, real-world interpretations.
+
+Here are the rigorous definitions from three widely recognized statistics textbooks.
+
+1. The Definitive Applied Definition
+In foundational applied statistics, a quantitative variable is defined explicitly by its numerical nature and its contrast to qualitative classification.
+
+Textbook Source
+Book: Introductory Statistics (10th Edition)
+Author: Neil A. Weiss
+Publisher: Pearson
+
+The Definition
+In Chapter 1 ("The Nature of Statistics"), Weiss provides the mathematical criteria that separate quantitative variables from qualitative ones:
+"A quantitative variable is a numerically valued variable. The values of a quantitative variable are numbers, and arithmetic operations make sense for them. Examples of quantitative variables are height, weight, number of siblings, and age."
+
+2. The Statistical Analysis & Scale Definition
+Textbooks focusing on business and data analytics define quantitative variables by the intrinsic numerical meaning of the data they record.
+
+Textbook Source
+Book: Statistics for Business and Economics (14th Edition, 2020)
+Authors: David R. Anderson, Dennis J. Sweeney, Thomas A. Williams, Jeffrey D. Camm, and James J. Cochran
+Publisher: Cengage Learning
+
+The Definition
+In Chapter 1 ("Data and Statistics"), the authors define quantitative data and the variables that generate them based on arithmetic validity:
+"Quantitative data use numeric values to indicate how much or how many. Quantitative variables are variables with quantitative data. Arithmetic operations are meaningful for quantitative variables. For example, quantitative data can be added and then divided by the number of observations to compute the average."
+
+3. The Pure Introductory/Scientific Context
+In engineering and physical science contexts, quantitative variables are defined by how they map real-world measurements onto a numerical scale.
+
+Textbook Source
+Book: Probability and Statistics for Engineering and the Sciences (9th Edition, 2016)
+Author: Jay L. Devore
+Publisher: Cengage Learning
+
+The Definition
+In Chapter 1, Devore defines a quantitative variable by its mathematical properties:
+"A quantitative variable is one for which the possible values are numbers. Examples include weight, distance, time, and number of defects. When a variable is quantitative, the resulting data is numerical, and a wide variety of arithmetic and statistical operations can be applied."
+
+The Two Sub-Classifications of Quantitative Variables
+As all of these textbooks detail, quantitative variables are rigorously split into two sub-types based on the mathematical structure of their possible values:
+
+A. Discrete Variables
+A quantitative variable is discrete if its possible values form a finite set or a countable infinite sequence (usually isolated points on a number line).
+Example: The number of cars in a parking lot (0,1,2,…). You cannot have 2.5 cars.
+
+B. Continuous Variables
+A quantitative variable is continuous if its possible values consist of an entire interval of real numbers. It can take on any value within that range, limited only by the precision of the measuring instrument.
+Example: The exact time it takes to run a marathon (2 hours, 14 minutes, 3.25 seconds).
+
+The "Arithmetic" Litmus Test: To check if a variable is truly quantitative, ask: "Does the average make sense?" For example, a Zip Code (e.g., 90210) consists of numbers, but averaging two zip codes results in a meaningless number. Therefore, Zip Code is qualitative, whereas something like Income or Temperature is quantitative.
+
 
 ## Examples {.unnumbered}
 
