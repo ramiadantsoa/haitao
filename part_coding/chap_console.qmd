@@ -3,49 +3,75 @@
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
-Open RStudio!
+Otran'ny Calculatrice .
 
-There are two fundamental aspects - The process is simple: write a set of instructions (into the language of computer), ask the computer to read and execute those instructions, and display the result of the instruction.
-When we use a calculator, the simpler and familiar form: we type the equation, press equal, and get the result on a screen.
-In some advanced calculator (or on your smart phone), the equation is displayed
-A coding is a more generalized form of that.
+Everyone knows how to use a calculator,
 
-Console is the calculator:
+1. you type an operation (prompt)
+2. you press = (evaluate)
+3. the result is displayed
 
-But you cannot edit the input and you lose it.
+With the most basic calculator, you cannot see what you typed, but in this version, you can.
 
-Improvement: write somewhere else so you can save, edit. You can then copy the code and paste it on the console and execute.
+A console functions exactly as a calculator
+1. ">" means that the program is waiting for your instruction
+2. Pressing enter/return
+3. the result is displayed under the prompt
 
-Improvement 2: Invention of a IDE: link the text editor with console so instead of copy paste, you can directly send to the console in one click.
+The additional feature is that ">" is displayed again which means waiting for the next prompt.
 
-If you open RStudio, you will see these two, let's ignore the other two for the moment.
+It is the interface that allows you to communicate with the program
 
-Script: it is a place where you can write code, the set of instructions.
+The difference is,
+- your prompt be as long,
+- there are many built-in functions ~ 1200-1400 when with the base, but most use 150-200 for their work
+- you can add more functions and make your own.
+- The input and output can be more than a number
 
-Execute: send those instructions for the machine to read. Beyond this the program takes over and you just wait until it ouput
+In general, it is also called a terminal
 
-Console: is the front end that is mosly used to display what instructions you send to execute, and the results.
-
-We will purposefully ignore the other tabs in this part. These two are common to almost all programming language.
+You cannot save the prompt you. When you close the program it is lost.
 
 ## Formal {.unnumbered}
+the console or terminal is an interface were.
+In an R console
+prompt
+evaluate
+print the result and wait for the next
 
-Google this not sure how to define
-">" at the begining
+Base function!
 
-Output
-[1]
- or 
+base: The core language syntax, math (sum, log), and logic (if, for).
+stats: Traditional statistical calculations, distributions, and models (lm, glm, sd, rnorm).
+graphics: The original plotting engine (plot, hist, barplot).
+utils: Utility tools for data import and system management (read.csv, install.packages, head).
+grDevices: Colors and font support for plotting.
 
 ## Examples {.unnumbered}
-Show photo of RStudio
+simple arithmetic
+using functions
+
+
+```{r}
+1 + 1 * 4.1
+```
+
+```{r}
+sin(123)
+```
+
+```{r}
+cat("Hello world")
+print("Hello world")
+```
 
 
 
 ## Tips and warnings {.unnumbered}
-- Shortcut!
-- Which code chunk are sent to be execute.
-- IDE and formating and autocompletion.
+Difference between script
++
+Don't write in the console
+scroll
 
 
 

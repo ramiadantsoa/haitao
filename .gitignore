@@ -12,6 +12,7 @@
 part_01_math/*
 part_02_stat/*
 part_03_code/*
+temp/
 
 # But do not ignore files directly within MyDir
 !part_01_math/*.qmd

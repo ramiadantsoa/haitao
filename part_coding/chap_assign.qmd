@@ -3,25 +3,85 @@
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
-Ataovy ao anaty tirroir! Subject
+sary_anjeva.jpeg, foza orana.mp3, Malok'ila_1.mp4
+photo_paris.jpeg, bohemian rhapsody.mp3, dune.mp4
 
-The main advantage is that you can store object.
-These object can then be modified and.
+Beyond clicking the file, have you wondered how it works?
 
-We can imagine we store them in a drawer.
-Type of drawer: boolean,.
-The name of the drawer:
+Say you rename the filename, for example: sary_anjeva.jpeg to sary_paris.jpeg. When you open that, the photo is still the photo you took in anjeva. In other words, the filename is something symbolic, a name for the user to guess what is the information/content.
 
-drawer_name <- the object you want add there
+In the most fondamental way, that information is a long sequence of 0 and 1 and the sequence stored in the computer.
+Under the hood, the filename is linked to an address that links to where the sequence is on the memory. Renaming does not change the address as it points to the same information.
 
-This is the main difference with a calculator, and things like excel etc. More than a number
+The power of R (and other alike programming language) is the ability to create object, save them in the memory, and then using the filename to access and manipulate the object. This is what differentiate with basic calculator.
 
-Instead of
+This is what is called assignment, and is done writing a code like this
+"filename <- the object"
+put the object in a the memory and call it filename.
+
+Another syntax is "the object -> filename" but it is the same idea.
 
 ## Formal {.unnumbered}
 Google
 
 Assign and output
+
+1. Programming Languages: The Value-Binding Definition
+In the study of programming language design, assignment is defined as a mechanism that dynamically changes the binding between a state storage location and a value. It introduces the foundational concept of L-values (location/address) and R-values (read/data value).
+Wikipedia
+
+Textbook Source
+Book: Concepts of Programming Languages (12th Edition, 2019)
+Author: Robert W. Sebesta
+Publisher: Pearson
+
+The Formal Definition
+In Chapter 7 ("Expressions and Assignment Statements"), Section 7.4, Sebesta defines the assignment statement structurally:
+"The assignment statement is one of the central constructs in imperative languages. It provides the mechanism by which the user can dynamically change the bindings of values to variables. [...]
+Rar Black - Medium
+The general form of an assignment statement is:
+⟨target_variable⟩=⟨expression⟩
+The text notes that the execution of an assignment statement requires the evaluation of the expression on the right-hand side (the R-value), followed by a mapping operation that copies or stores that evaluated data into the memory address space denoted by the variable on the left-hand side (the L-value), altering the current state of the program."
+Wikipedia
+
+$\langle \text{target_variable} \rangle = \langle \text{expression} \rangle$
+
+
+To deepen the formal understanding of the value-binding definition of assignment, computer science literature breaks the mechanism down into how programming languages manage memory, names, and environments.
+Here are the rigorous formal definitions that expand on value-binding from foundational textbooks in programming language theory.
+1. The Environment and Store Model (Denotational Semantics)
+In theoretical computer science, value-binding is formalized by separating a variable's name from its physical memory address. This is achieved using two distinct mathematical functions: the Environment (ρ) and the Store (σ).
+Textbook Source
+Book: Essentials of Programming Languages (3rd Edition, 2008)
+Authors: Daniel P. Friedman and Mitchell Wand
+Publisher: MIT Press
+The Formal Definition
+In Chapter 4 ("State"), the authors formalize the execution of an assignment statement by splitting value-binding into a two-step functional mapping:
+The Environment (ρ): A function that maps a variable name (an identifier) to a memory location (a reference or address).
+$\rho: \text{Identifier} \to \text{Location}$
+The Store (σ): A function that maps a memory location to its stored value.
+$\sigma: \text{Location} \to \text{Value}$
+
+Under this rigorous model, a variable expression is read by composing the two functions: σ(ρ(x)).
+
+When an assignment statement like x=expr executes, the environment ρ remains completely unchanged (the name x still points to the same memory location). Instead, the assignment binds the new value by mutating the store function σ. The store is updated to a new state σ′where the location ρ(x) maps to the new evaluated value, while all other location mappings remain identical.
+
+
+3. The Structural Mechanics: L-Values vs. R-Values
+To precisely define what is being bound during an assignment expression, language compilers rely on the strict semantic definitions of Left-values and Right-values.
+
+Textbook Source
+Book: Compilers: Principles, Techniques, and Tools (2nd Edition, 2006)
+Authors: Alfred V. Aho, Monica S. Lam, Ravi Sethi, and Jeffrey D. Ullman
+Publisher: Addison-Wesley
+
+The Formal Definition
+In Chapter 6 ("Intermediate-Code Generation"), the "Dragon Book" defines how a compiler interprets a value-binding statement based on position:
+"An assignment operator requires an L-value on its left and an R-value on its right.
+An L-value refers to a storage location (an address in memory). It represents the container that is capable of holding a value.
+An R-value refers to the data density or numerical value contained within a location. It represents the content inside a container.
+The formal semantics of the assignment statement dictates that the compiler must generate code to evaluate the R-value of the right-hand side, and then perform a value-binding operation that overwrites the contents of the memory location determined by the L-value of the left-hand side."
+This distinction explains complex operations like pointer assignment (e.g., *p = x), where the left-hand side is not a simple variable name but a complex expression that resolves to a memory address (L-value).
 
 ## Examples {.unnumbered}
 
@@ -29,11 +89,11 @@ Assign and output
 # Storing a number
 a <- 2
 
-a <- a + 2
+b <- 3
 
-# Storing a calculation
+# Storing the result a calculation
 
-out <- 2 + 123
+add <- a + b
 
 # Swapping elements between box
 
@@ -58,6 +118,7 @@ out <- temporary
 Variable names convetion
 they are on the right side but try to remember what you created.
 = was used and still work but it has been assigned to a different now
-Shortcut.
+Shortcut in RStudio
+
 
 ## If you want to know more {.unnumbered}

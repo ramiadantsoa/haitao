@@ -7,11 +7,11 @@ Eny na tsia!
 
 Boolean is the first building block of any object.
 For many this is a binary, a sequence of 0 and 1.
-But the boolean has a deeper meaning, and the better way is to say.
+But the boolean has a deeper meaning.
 We can then encode it either as 0, 1, TRUE or FALSE, or T and F.
 This is used when you have two outcomes: dead or alive, present or absent etc... it can take many forms
 
-The concern is that in that many forms, what type of variable is it? In statistics, is it a qualitative, discrete, continuous, ? Well it is supposed to be qualitative and it is about notation.
+The concern is that in that many forms, what type of variable is it? In statistics, is it a qualitative, discrete, continuous? Well it is supposed to be qualitative and it is about notation.
 But R you can add them and only add them! Why they did that, it is convenient.
 
 ## Formal {.unnumbered}

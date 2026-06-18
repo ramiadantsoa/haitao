@@ -1,0 +1,58 @@
+# IDE: Integrated Development Enviroment {#sec-ide}
+
+{{< include ../preamble.qmd >}}
+
+## Concepts and intuitions {.unnumbered}
+Open RStudio!
+
+The first is to open RStudio, and you see four windows, what are these and what to they mean?
+For our purpose, we just focus on the two on the left: the script (on top) and the console (at the bottom).
+See the console in the previous chapter.
+So what is the script?
+
+Console and a keyboard is all you need to communicate with the program: write, read, evaluate, print output.
+That is the primitive way to interact with all programs.
+
+A best practice however is not to write the prompt/code in the console, except for basic arithmetic and one line. Overall the console is not designed for code writing.
+Codes are written in a separate window called the script editor.
+
+The user can then select which part of the code they want to evaluate, copy it to the console, and then evaluate.
+But copy/paste is also slow, and so the script has been added a feature so you can send the code you want to the console while staying in the script window.
+The fludify this, a new window called script editor has been created.
+the main advantage is you can save your code, reopen it--this is important for reproductibility.
+
+To improve coding, the script editor has been infused with more feature: autcompletion and suggestion, syntax highlighting and formatting.
+
+Once your code is ready, you can select the part you want to evaluate and press command + return or click run bottom and the code will be read in the console, evaulated and printed.
+
+The brute way is to select the code, paste in but that is slow.
+
+RStudio is a dedicated IDE that is meant work with R.
+Because it is a R specialist, it includes many useful features, and why the most popular and adopted by many.
+Furthermore, it is free!
+
+
+## Formal {.unnumbered}
+
+Google this not sure how to define
+">" at the begining
+
+Output
+[1]
+ or
+
+## Examples {.unnumbered}
+Show photo of RStudio
+
+
+
+## Tips and warnings {.unnumbered}
+- Shortcut!
+- Which code chunk are sent to be execute.
+- IDE and formating and autocompletion.
+- bash (there is another way through bash but we will not address that for the moment).
+- Change appearance
+
+
+
+## If you want to know more {.unnumbered}
