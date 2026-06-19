@@ -2,8 +2,11 @@
 
 {{< include ../preamble.qmd >}}
 
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+The machine version of natural number!
+:::
+
 ## Concepts and intuitions {.unnumbered}
-Tsofa!
 
 In mathematics, statistics discrete and continuous are two types of quantitative variable. The same is also in computer programming. It is meant to accommode these differences.
 

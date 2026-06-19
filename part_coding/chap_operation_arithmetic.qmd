@@ -2,14 +2,22 @@
 
 {{< include ../preamble.qmd >}}
 
-## Concepts and intuitions {.unnumbered}
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
 Ny antom-pisiany!
+:::
 
-Computers to calculate so it is natural to do basic operation.
-Early computers.
 
-Addition, This is not new, and it is the same as using calculator. Just implement here
-The basics are the same in any language.
+## Concepts and intuitions {.unnumbered}
+
+The only reason of this chapter is to translate again the basic arithmetic operation in R. Fortunately it is the same in every language.
+
+Addition: symbol + `a + b`
+Soustraction: symbol `a - b`
+Multiplication: symbol `a * b`. This is the first we need to pause, this differs from x or . that is used in hand writing etc.
+Division: symbol /, `a / b`, this is also different from : or (Add division symbol)
+Power: symbol ^, `a^b`.
+
+It follows the order of operation @sec-operation. So be careful!
 
 ## Formal {.unnumbered}
 
@@ -34,10 +42,13 @@ And () for parenthesis
 
 (1 + 1) * 3
 ```
-
+You could use the symbols too... as in the section above.
 
 ## Tips and warnings {.unnumbered}
 Multiplication is often forgot
-Parentheses
+Parentheses, altough script editor should help
+it is a good habit to leave space around expression for easy reading. `a*b` vs `a * b`
+
+There are other operation that is considered fundamental. e,g, modulo is ... The point so any symbol has a specific meaning. It is for instance not allowed to used them in variable naming.
 
 ## If you want to know more {.unnumbered}

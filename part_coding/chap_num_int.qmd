@@ -1,0 +1,55 @@
+# Type: Integer and numeric {#sec-numeric}
+
+{{< include ../preamble.qmd >}}
+
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+The machine version of real and natural number!
+:::
+
+## Concepts and intuitions {.unnumbered}
+As an advanced calculator, the natural object that you can create, store, and manipulate are numbers. There are two types of numbers following the concepts in mathematics @sec-discrete_continuous and @sec-quantiative-variable in statistics.
+
+In R programming, a real number is called numeric. To make it universal, which is tricky for french-based norm a decimal is separated by a "." e.g. `3.14`. The convention is to use "," to separate a list of stuff @sec-vector to @sec-list.
+
+Discrete variables are represented by integer. So in numbers without digit and represent a whole. Link when we count, the index in differen, the length of a vectors, or dimensions of matrix. To force R to read a number as integer, we add L after the number e.g. `24L`
+
+While it is important to know these distinctions, in general R is very relaxed about the two types, and say smart enough that it would complain if you  mistakenly use that is supposed to be an integer. For instance, you can use numeric to specific the length of a vector, or as indexing.
+
+## Formal {.unnumbered}
+It is shown as num and int if you check it!
+
+## Examples {.unnumbered}
+
+```{r}
+#| echo: true
+
+# some constants are directly implemented/have their own notation
+pi
+
+# the square root of two is a numeric
+sqrt(2)
+
+# assign a number
+my_number <- 2.13
+
+a <- 2L
+cc <- 2
+
+# The function str here assess the type of the object
+str(a)
+str(cc)
+
+str(a + a)
+str(a + cc)
+
+```
+
+## Tips and warnings {.unnumbered}
+
+- Int uses less memory, but managing memory is beyond for this part of the handbook
+- Sometimes you don't need to write 0.2, .2 is enough.
+- Machine precision: irrational numbers reach to 16 digits, which in the most general case is enough.
+- There is also a machine limit size for both int and num
+- Infinity is not a number and is represented by Inf and -Inf
+
+## If you want to know more {.unnumbered}

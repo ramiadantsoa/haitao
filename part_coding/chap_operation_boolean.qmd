@@ -2,7 +2,12 @@
 
 {{< include ../preamble.qmd >}}
 
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+Lahy sa vavy ny zanakao? Eny
+:::
 ## Concepts and intuitions {.unnumbered}
+
+
 The most logical is hardest to understand?
 
 So we had in math numbers you can add, you also have matrix with additional operation.
