@@ -2,16 +2,19 @@
 
 {{< include ../preamble.qmd >}}
 
-## Concepts and intuitions {.unnumbered}
-Otran'ny Calculatrice .
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+Otran'ny calculatrice
+:::
 
-Everyone knows how to use a calculator,
+
+## Concepts and intuitions {.unnumbered}
+Everyone knows how to use a calculator:
 
 1. you type an operation (prompt)
-2. you press = (evaluate)
+2. you press = (to evaluate)
 3. the result is displayed
 
-With the most basic calculator, you cannot see what you typed, but in this version, you can.
+With the most basic calculator, you cannot see the prompt, but in the example below @fig-fig-calculator (a), you can. This is a useful addded feature so you can make sure you entered the correct operation.
 
 ::: {#fig-calculator layout-ncol=2}
 
@@ -19,36 +22,28 @@ With the most basic calculator, you cannot see what you typed, but in this versi
 
 ![Basic console](../fig/console_calculation.png){#fig-console}
 
-Same concept
+Same concept, different interface.
 :::
 
-A console functions exactly as a calculator
-1. ">" means that the program is waiting for your instruction so you put the prompt there
+A console functions exactly like a calculator @fig-calculator (b):
+
+1. You can type your operation after the ">" symbol. The symbol means that the program is waiting for your instruction--indicated by a blinking cursor.
 2. Press enter/return to evaluate
 3. the result is displayed under the prompt
 
-The additional feature is that ">" is displayed again which means waiting for the next prompt.
+The interface is a bit different but it is the same thing. The console however has more features.
 
-It is the interface that allows you to communicate with the program
+- The display records of  the command you add.
+- After the evaluation, the ">" appears below indicating that the console is waiting for your next prompt
+- Your prompt can be as long as you want, lisibility is the limit
+- It does more than simple arithmetic operation
 
-The difference is,
-- your prompt can be as long,
-- there are many built-in functions ~ 1200-1400 when with the base, but most use 150-200 for their work
-- you can add more functions and make your own.
-- The input and output can be more than a number
-
-In general, it is also called a terminal
-
-You cannot save the prompt you. When you close the program it is lost.
+In a conceptual way, the console is the interface that allows you to communicate with the program. This simple interface is common to almost all programs.
 
 ## Formal {.unnumbered}
-the console or terminal is an interface were.
-In an R console
-prompt
-evaluate
-print the result and wait for the next
+For a program to run, there are four components: the terminal, console, shell, and kernel
 
-Base function!
+[geeklink](https://www.geeksforgeeks.org/operating-systems/what-is-terminal-console-shell-and-kernel/)
 
 base: The core language syntax, math (sum, log), and logic (if, for).
 stats: Traditional statistical calculations, distributions, and models (lm, glm, sd, rnorm).
@@ -57,8 +52,7 @@ utils: Utility tools for data import and system management (read.csv, install.pa
 grDevices: Colors and font support for plotting.
 
 ## Examples {.unnumbered}
-Same console using base R, how the console appears in RStudio, and in VS Code (two IDE for R)
-
+See below interface of three consoles using base R,  in RStudio, and in VS Code.
 
 ::: {#fig-calculator layout-ncol=3}
 
@@ -71,6 +65,7 @@ Same console using base R, how the console appears in RStudio, and in VS Code (t
 Same concept
 :::
 
+As an exercice, you can open R or RStudio and try to input the command below
 
 ```{r}
 #| echo: true
@@ -91,17 +86,17 @@ cat("Hello world")
 print("Hello world")
 ```
 
-
-
 ## Tips and warnings {.unnumbered}
-Difference between script
-+
-Don't write in the console
-scroll
 
-- Stuck! Escape
+- You cannot modify evaluated prompt.
+- If you close the console/program, all the booking is lost. You can save it as what it is called "Workspace", but it is not recommended.
+- Your prompt can be incomplete, so the program cannot complete the evaluation. See the example in the figure below. In that case, you can
+  - complete the like adding a closed parenthesis
+  - escape the expectation by typing escape key (esc)
+- It is meant to work with keyboard
+- It is not recommended to write prompt on the console...it is simple but and a different window called script  is dedicated to writing code (see @sec-ide).
+- When you open the R, or RStudio, you can see the version of the program you are using and other licensing information.
 
-
-
+Check this: In general, it is also called a terminal on macOS, command prompt in windows, Bash/Zsh on Linux.
 
 ## If you want to know more {.unnumbered}

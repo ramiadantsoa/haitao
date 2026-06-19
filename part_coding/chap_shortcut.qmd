@@ -1,0 +1,24 @@
+# Keyboard shortcut {#sec-shortcut}
+
+{{< include ../preamble.qmd >}}
+
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+Typing is faster than clicking!
+:::
+
+## Concepts and intuitions {.unnumbered}
+The invention of mouse and touchscreen has how we interact with a computer.
+
+
+## Formal {.unnumbered}
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+- Evaluating
+- Saving
+- Scroll through tab
+- Assign
+- Piping?
+
+## If you want to know more {.unnumbered}

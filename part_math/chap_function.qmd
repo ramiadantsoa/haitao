@@ -72,8 +72,8 @@ $f(x) = y$
 or x↦y. The set A is the domain of f, and the set of all y∈B for which (x,y)∈f for some x∈A is called the range of f."
 
 
-3. The Geometric Calculus Test: The Vertical Line Test
-In the context of single-variable calculus, functions are typically evaluated by graphing them on the Cartesian coordinate plane R^2. The requirement that each input maps to exactly one output translates to a fundamental geometric axiom.
+1. The Geometric Calculus Test: The Vertical Line Test
+In the context of single-variable calculus, functions are typically evaluated by graphing them on the Cartesian coordinate plane R2. The requirement that each input maps to exactly one output translates to a fundamental geometric axiom.
 
 Textbook Source
 Book: Calculus (Volume 1, 2nd Edition, 1967)

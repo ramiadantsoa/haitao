@@ -1,0 +1,153 @@
+# Function {#sec-functionCoding}
+
+{{< include ../preamble.qmd >}}
+
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+superf(x) = y
+:::
+
+## Concepts and intuitions {.unnumbered}
+
+A function is your best friend in R, but like learning language, you need to learn the vocabulary. In R, ~ 1200 functions are loaded when you start R. Fortunately, people rarely use at mose 150-200 functions in their daily use.
+
+In the simplest form, a function in programming is like a function we are used to. You replace the x with a number, do the calculation, and you get the number. In programming, x is called the argument or input, and the results is the output. And unlike basic function, x and y does not need to be a number, and the transformation does not need to be a mathematical operation. For instance, the argument could be a dataset, and the function plot() will make a figure out of it, so the results is a plot.
+
+In r a function is always `function_name(list of arguments)`. The parenthesis nicely indicate that it could take an argument.
+
+
+## Formal {.unnumbered}
+
+In the R programming language, the definition of a function diverges sharply from standard imperative languages because R is deeply rooted in functional programming and Scheme-like semantics.
+
+In R, functions are not merely structural blocks of code or subprograms; they are first-class objects (also known as "closures") that combine an executable body with a specific lexical scope.
+Here are the rigorous textbook and documentation definitions of a function within the R paradigm.
+
+1. The Language Definition: The Three-Component Object Model
+According to R’s core language architects, a function is a specific data structure of type "closure" that is composed of three distinct, inseparable parts.
+Documentation Source
+Manual: R Language Definition (Official Core Documentation)
+Authors: R Core Team
+Publisher: R Foundation for Statistical Computing
+The Formal Definition
+In Chapter 2 ("Objects") and Chapter 4 ("Functions"), the core documentation formalizes a function:
+"R functions are first-class objects. They are of type "closure" and can be manipulated in the same way as any other object. A function object is formally defined as a list-like structure consisting of three essential components:
+The Formals: The list of formal arguments (parameters) that the function accepts, which can include default values and the special ... (ellipsis) argument.
+The Body: The expressions or code block that are executed when the function is evaluated.
+The Environment: The specific lexical environment (scope) in which the function was created. This determines how variables inside the function are resolved."
+Mathematically and structurally, R represents this object model via the primitive constructor:
+Function=⟨formals,body,environment⟩
+LaTeX Format
+Code snippet
+
+$\text{Function} = \langle \text{formals}, \, \text{body}, \, \text{environment} \rangle$
+
+2. The First-Class / Closure Definition (Lexical Scoping)
+Because R treats functions as first-class citizens, a function can be created anonymously, assigned to variables, passed as arguments to other functions, and returned from functions. This introduces the formal concept of a closure.
+
+Textbook Source
+Book: Advanced R (2nd Edition, 2019)
+Author: Hadley Wickham
+Publisher: Chapman and Hall/CRC
+
+The Formal Definition
+In Chapter 6 ("Functions") and Chapter 10 ("Functional Programming"), Wickham definitions the true nature of an R function:
+"An R function is a closure, a name that reflects the fact that the function 'encloses' its environment.
+When you define a function in R, it binds a pointer to the environment where it was born. This is why R functions can remember values from their parent scopes even after the parent function has finished executing. The process of calling a function involves creating a new execution environment that is temporarily nested inside the function's definition environment."
+
+3. The Structural Reflection Properties
+In R code, this rigorous definition is not hidden; it is entirely introspectable. If you have a function named f, R provides explicit primitives to extract the three components of its formal definition:
+formals(f) returns the list of arguments.
+body(f) returns the expression tree of the code.
+environment(f) returns the pointer to its enclosing scope.
+Because of this unique architecture, an anonymous function definition like function(x) x + 1 is an expression that evaluates directly to an object in memory, and assigning it to a variable (add_one <- function(x) x + 1) is simply binding that name to the function object—identical to how the value-binding assignment model works for numbers or matrices.
+
+
+## Examples {.unnumbered}
+
+To application:
+- What do you want to do?
+- What is the name of the function?
+- What is your argument of that function
+- What is the output of that function
+
+Example 1:
+ - I want to calculate the sinus of a number
+ - The sytnax that calls the function sinus is sin()
+ - The argument should be a number
+ - The output should also be a number.
+
+Example 2:
+ - I want to calculate the eigenvalues of a matrix
+ - The syntax for calls the function is called eigen()
+ - The argument should be a square matrix
+ - The output should give me with the same dimensions of the matrix
+
+In the case above, eigen also provides the eigen vector.
+
+Example 3:
+ - I want to do a linear regression between of height and altitude
+ - The syntax is lm(height ~ altitude)
+ - The argument should be two vectors of same length
+ - The output is a list of a bunch of things including the coefficient, p-value, R-squared, residuals etc.
+
+A good idea to The arguments are there and the values. It is the same for all help file in R.
+
+Here are examples of basic function
+```{r}
+#| echo: true
+
+# calculate the sinus of 1
+sin(1)
+
+# calculate the absolute value
+abs(-2)
+
+# calculate the square root of 25
+sqrt(25)
+
+# you can also store the result using assignment
+result <- sqrt(25) + abs(-2)
+
+```
+
+## Tips and warnings {.unnumbered}
+- By convention, functions in R are lowercase.
+- Try to read the help file if you are using a function for the first time
+- Implicity and explicit argument:  say we want to plot altitude vs number of species
+
+
+```{r}
+#| echo: true
+
+altitude <- c(500, 1000, 1500, 2000)
+richness <- c(10, 15, 16, 2)
+
+par(mfrow = c(2, 2))
+plot(altitude, richness, main = "plot(altitude, richness)" )
+plot(richness, altitude, main = "plot(richness, altitude)")
+plot(x = altitude, y = richness, main = "plot(x = altitude, y = richness)")
+plot(y = richness, x = altitude, main = "plot(y = richness, x = altitude)")
+
+```
+On the top panel, shows the implicit definitions and in the bootom are the explicit definition. The results are the same for all three except for the second implicit. Why?
+
+If we write plot(altitude, richness), how does R know what to put on the x-axis and what to put on the y-axis? R implicitly intepret that the order appear as how the function is defined plot(x, y, ) so the first argument is the x axis and the second argument is on the y-axis.
+
+In the explicit, the order is irrelevant as we explicitly tell x = altitude and y = richness. So the order does not matter.
+
+Why do you want to use the explicit.
+In simple function, sin, plot, it is almost obvious what are the first 1, 2 say the main argument.
+
+But as mentioned earlier, a function can take multiple arguments, in the case of plot, you can change the color, size, style of the points... do you know when they are. The best way is to use the explicit
+
+
+```{r}
+plot(altitude, richness, col = "blue", pch = 2, cex = 2)
+```
+col is for color, and pch is point character. No shortcut, it is a pain to remember them but after hundreds of usage it becomes innate.
+
+- Default argument value. As in plot there is over 20 arguments you can add, not only. You don't need to specify all of them. So most of the argument are assigned with a  default value eg. color, point size etc.
+
+- To reiterate: it is a good idea to read the help file
+
+## If you want to know more {.unnumbered}

@@ -2,58 +2,66 @@
 
 {{< include ../preamble.qmd >}}
 
-## Concepts and intuitions {.unnumbered}
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
 Open RStudio!
+:::
+
+## Concepts and intuitions {.unnumbered}
 
 ![Starting RStudio](../fig/RStudio.png){#fig-RStudio fig-alt="alt"}
 
-The first is to open RStudio, and you see four windows, what are these and what to they mean?
-For our purpose, we just focus on the two on the left: the script (on top) and the console (at the bottom).
+Open RStudio: this exciting step when one wants to learn to code in R. Let's go to practice.
+
+The default RStudio contains four windows: *script editor/Source* on top-left, *Console* and other tabs on the bottom-left, *Environment* and other tabs at the top-right, and *Plots* and other tabs at bottom-right.
+For our purpose, we will focus on the two on the left: the script editor and the console.
 
 In the previous chapter @sec-console, console and a keyboard is all you need to communicate with the program: write, read, evaluate, print output. That is the primitive way to interact with all programs.
 
-The recommended practice is not to write the prompt/code in the console, except for basic arithmetic and one line. The console is not designed for code writing. Codes are written in a separate window called the script editor.
+The recommended practice is **NOT** to write the prompt/code in the console. The console is not designed for code writing. Codes are written in a separate window aptly called the script editor.
 
+The script editor is infused with various features to facilitate coding and improve productivity @fig-completion.
 
-To improve coding, the script editor has been infused with more feature: autocompletion and suggestion, syntax highlighting and formatting.
+![Some features](../fig/completion_highlight.png){#fig-completion fig-alt="alt"}
 
-![Some features: autocompletion and suggestion for , syntax highlight see sin and 123 are different color, and code formating etc.](../fig/completion_highlight.png){#fig-completion fig-alt="alt"}
+**Syntax highlighting**: the type of object have different color. Text,number, function sinus are displayed differently
 
-And most importantly, you can save you code (same as saving a word doc or alike). And open it.
+**Autocompletion**: when you open a right parenthesis, it automatically add the closing one. In fact it works with square [] and curly brackets {}.
 
+**Suggestion**: you type the first few letters and it suggests based on the words present in its memory. This is a faster than typing the whole text which are prone to typos.
 
-**Evaluating your code**
-In a basic way, the user can then select which part of the code they want to evaluate, copy it to the console, and then evaluate.
-But copy/paste is also slow, and there was an added feature of the script: send the code to the console while staying in the script window.
+**Evaluating your code**: You can send your code to the console by typing command + enter or windows + enter. What it does is sort of: copy pase the selected code after >, and then evaluate and print it.
 
-Once your code is ready, you can select the part you want to evaluate and press command + return or click run bottom and the code will be read in the console, evaluated and printed.
+**Save and close**: you can save you code (like saving everytiing else). Close, and open in the future, and run. This is a great assest for sharing and reproducibility.
 
-**What is an IDE?**
-IDE is a program that is built on top of the native program (like R), that faciliates use of R.
+**Finally, what is an IDE?**
+IDE: Integrated Development Environment is a software that is built on top of the native program (like R), that faciliates use of R.
 There are many IDE such as RStudio, VS Code, Sublime Text, etc. However RStudio is the most popular IDE for R.
 Unlike the other that integrate other programming language.
 RStudio is a dedicated IDE that is meant work with R.
 Because it is a R specialist, it includes many useful features, and why the most popular and adopted by many.
 Furthermore, it is free!
+If we use a car metaphore this is away to kit your car
+
+<!-- ## Formal {.unnumbered} -->
 
 
-## Formal {.unnumbered}
+<!-- ## Examples {.unnumbered} -->
 
-
-## Examples {.unnumbered}
-![Script editor with different appearance](../fig/Idle_fingers_theme.png){#fig-dark_theme fig-alt="alt"}
 
 
 ## Tips and warnings {.unnumbered}
-- Shortcut!
-- Which code chunk are sent to be execute.
-- IDE and formating and autocompletion.
-- bash (there is another way through bash but we will not address that for the moment).
-- Change appearance
+- There are two ways to evaluating a code: by or cliking run.
+- Which code is evaluated: precendence and priority
+  - Cursor somewhere but with closed piece: the chunc
+  - Cursor on the line: evaluate the line..No need to put the cursor before or after. The program is smart enough to know you want to evaluate that line.
+  - Selected chunk ()
+- **Order matters**: line order
+- Students favorite: change appearance and customization. There is something called: Global option with cmd +, or windows + ,. You can customize anything, font size, color, syntax highlighting, rearrange pane etc.
 
 
+![Script editor with different appearance](../fig/dark_theme.png){#fig-dark_theme fig-alt="alt"}.
 
 ## If you want to know more {.unnumbered}
-There are tons of features, we stick to the basic here but
+There are tons of features, we stick to the basic here.
 
 [Documentation for RStudio](https://docs.posit.co/ide/user/)

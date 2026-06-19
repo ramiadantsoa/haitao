@@ -62,11 +62,11 @@ book:
         - part_coding/chap_console.qmd
         - part_coding/chap_ide.qmd
         - part_coding/chap_assign.qmd
-        - part_coding/chap_function.qmd
-        - part_coding/chap_quantitative.qmd
-        - part_coding/chap_discrete.qmd
+        - part_coding/chap_functionCode.qmd
+        - part_coding/chap_numeric.qmd
+        - part_coding/chap_integer.qmd
         - part_coding/chap_operation_arithmetic.qmd
-        - part_coding/chap_qualitative.qmd
+        - part_coding/chap_strings.qmd
         - part_coding/chap_boolean.qmd
         - part_coding/chap_operation_boolean.qmd
         - part_coding/chap_vector.qmd
@@ -75,6 +75,7 @@ book:
         - part_coding/chap_dataframe.qmd
         # - part_coding/chap_tibble.qmd
         - part_coding/chap_list.qmd
+        - part_coding/chap_shortcut.qmd
     # - part: part_stat_applied/part_stat_applied.qmd
     #   chapters:
     #     - part_stat_applied/chap_normality.qmd
