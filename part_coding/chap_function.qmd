@@ -71,9 +71,16 @@ Because of this unique architecture, an anonymous function definition like funct
 ## Examples {.unnumbered}
 
 ```{r}
+#| echo = true
 sin(1)
 
-sin(x = 1)
+abs(-2)
+
+sqrt(25)
+
+# you can also store the result using assignment
+
+result <- sqrt(25) + abs(-2)
 ```
 
 ## Tips and warnings {.unnumbered}
@@ -83,6 +90,8 @@ Long functions are bad better to do simple task
 Evocative name: sqrt, abs
 
 Implicit and explicit.
+
+Functions and packages
 
 
 

@@ -1,13 +1,9 @@
-# Quantitative variable {#sec-quantitativeCoding}
+# Type: numeric {#sec-numeric}
 
 {{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
-Represents real number
-
-This is again most natural.
-Numeric in R.
-
+A real number is the type of object that we are most familiar with @sec-quantiative-variable.
 
 
 ## Formal {.unnumbered}

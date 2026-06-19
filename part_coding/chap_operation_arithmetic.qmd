@@ -37,5 +37,7 @@ And () for parenthesis
 
 
 ## Tips and warnings {.unnumbered}
+Multiplication is often forgot
+Parentheses
 
 ## If you want to know more {.unnumbered}

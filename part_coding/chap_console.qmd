@@ -13,9 +13,18 @@ Everyone knows how to use a calculator,
 
 With the most basic calculator, you cannot see what you typed, but in this version, you can.
 
+::: {#fig-calculator layout-ncol=2}
+
+![Basic calculator](../fig/calculator.png){#fig-basic_cal}
+
+![Basic console](../fig/console_calculation.png){#fig-console}
+
+Same concept
+:::
+
 A console functions exactly as a calculator
-1. ">" means that the program is waiting for your instruction
-2. Pressing enter/return
+1. ">" means that the program is waiting for your instruction so you put the prompt there
+2. Press enter/return to evaluate
 3. the result is displayed under the prompt
 
 The additional feature is that ">" is displayed again which means waiting for the next prompt.
@@ -23,7 +32,7 @@ The additional feature is that ">" is displayed again which means waiting for th
 It is the interface that allows you to communicate with the program
 
 The difference is,
-- your prompt be as long,
+- your prompt can be as long,
 - there are many built-in functions ~ 1200-1400 when with the base, but most use 150-200 for their work
 - you can add more functions and make your own.
 - The input and output can be more than a number
@@ -48,19 +57,36 @@ utils: Utility tools for data import and system management (read.csv, install.pa
 grDevices: Colors and font support for plotting.
 
 ## Examples {.unnumbered}
-simple arithmetic
-using functions
+Same console using base R, how the console appears in RStudio, and in VS Code (two IDE for R)
+
+
+::: {#fig-calculator layout-ncol=3}
+
+![Console in R](../fig/console_r.png){#fig-basic_cal width=100}
+
+![Console in RStudio](../fig/console_rstudio.png){#fig-console width=100}
+
+![Console in VS Code](../fig/console_vscode.png){#fig-console width=100}
+
+Same concept
+:::
 
 
 ```{r}
+#| echo: true
+
 1 + 1 * 4.1
 ```
 
 ```{r}
+#| echo: true
+
 sin(123)
 ```
 
 ```{r}
+#| echo: true
+
 cat("Hello world")
 print("Hello world")
 ```
@@ -72,6 +98,9 @@ Difference between script
 +
 Don't write in the console
 scroll
+
+- Stuck! Escape
+
 
 
 

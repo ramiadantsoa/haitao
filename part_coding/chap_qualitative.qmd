@@ -1,4 +1,4 @@
-# Strings {#sec-qualitativeCoding}
+# Type: Strings {#sec-character}
 
 {{< include ../preamble.qmd >}}
 

@@ -1,4 +1,4 @@
-# Boolean {#sec-boolean}
+# Type: Boolean {#sec-boolean}
 
 {{< include ../preamble.qmd >}}
 

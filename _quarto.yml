@@ -63,17 +63,17 @@ book:
         - part_coding/chap_ide.qmd
         - part_coding/chap_assign.qmd
         - part_coding/chap_function.qmd
+        - part_coding/chap_quantitative.qmd
+        - part_coding/chap_discrete.qmd
+        - part_coding/chap_operation_arithmetic.qmd
+        - part_coding/chap_qualitative.qmd
         - part_coding/chap_boolean.qmd
         - part_coding/chap_operation_boolean.qmd
-        - part_coding/chap_quantitative.qmd
-        - part_coding/chap_operation_arithmetic.qmd
-        - part_coding/chap_discrete.qmd
-        - part_coding/chap_qualitative.qmd
         - part_coding/chap_vector.qmd
         - part_coding/chap_matrix.qmd
         - part_coding/chap_operation_matrix.qmd
         - part_coding/chap_dataframe.qmd
-        - part_coding/chap_tibble.qmd
+        # - part_coding/chap_tibble.qmd
         - part_coding/chap_list.qmd
     # - part: part_stat_applied/part_stat_applied.qmd
     #   chapters:
