@@ -76,6 +76,7 @@ book:
         - part_coding/chap_list.qmd
         - part_coding/chap_functionCode.qmd
         - part_coding/chap_shortcut.qmd
+        - part_coding/chap_beginners_bug.qmd
     # - part: part_stat_applied/part_stat_applied.qmd
     #   chapters:
     #     - part_stat_applied/chap_normality.qmd

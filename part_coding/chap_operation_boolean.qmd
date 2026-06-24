@@ -14,9 +14,7 @@ So we had in math numbers you can add, you also have matrix with additional oper
 But what with boolean, what do we do with it.
 And with operation, parentheses matter. There is no order.
 In the previous in R you can simply add them but that is not what it is intended to use.
-this could be in the math but it is mostly applied here.
-
-the most crucial part is that if you combine them, you can only get thsame
+It is the fundamental unit of decision-making.
 
 If you can ask Andrianompinerina you are a male and Malagasy, the answer is yes
 Now if ask Ranavalona II you are a male or Malagasy, the answer is also yes.
@@ -34,7 +32,7 @@ Proposition 2: true or false
 Proposition 1 OR Proposition 2
 Proposition 1 AND Proposition 2
 
-"&", "|",
+"&", "|", !
 
 the other way to look at it is intersection and union!
 

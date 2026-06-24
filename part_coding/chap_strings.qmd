@@ -47,11 +47,9 @@ paste(word1, word2)
 
 ## see the difference among these three
 
-sin #the name of an object
-sin() # the function sinus
+sin <- 2 #the name of an object
+sin(1) # the function sinus
 "sin" # a text composed of three letters s
-
-
 
 ```
 

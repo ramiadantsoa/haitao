@@ -2,13 +2,21 @@
 
 {{< include ../preamble.qmd >}}
 ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-Eny sa tsia!
+Eny sa tsia
 :::
 
 ## Concepts and intuitions {.unnumbered}
 
+This is the fundamental unit of decision-making.
+The first way to use it essentialy to store whether the answer is yes or no.
+
+- Is 2 < 3?
+
+
 Computer is based on sequence of 0 and 1.
-But 0 and 1 is a symbol, they are not really number or integer in the strict sense. Instead, they are picked something with two state/outcome, the answer is either yes or no. This is called boolean (also binary).
+But 0 and 1 is a symbol, they are not really number or integer in the strict sense. Instead, they are picked something with two state/outcome, the answer is either yes or no. This is called boolean or logical.
+
+Coercing strict hiearchy.
 
 For our purpose, we use this type of object when for instance, dead or alive, present or absent, true or false. To make it explicit, boolean are specifically represented by `TRUE` or `FALSE` in R (`T` and `F` are also used). So 0 and 1 are the number 0 and 1.
 
@@ -33,7 +41,7 @@ a + b
 a * b
 ```
 
-The operation above works because R reinterpets them as 0 and 1 and thus proceed forward with the calculation
+The operation above works because R reinterpets/coercre them as 0 and 1 and thus proceed forward with the calculation.
 
 ## Tips and warnings {.unnumbered}
 - It is convenient but more used for decision!

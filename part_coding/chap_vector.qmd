@@ -5,6 +5,12 @@
 ## Concepts and intuitions {.unnumbered}
 Bahut!
 
+Homogeneous! vs heterogeneous list.
+
+Attributes attr(vec, "unit") <- "Celsius"
+
+room <- c(witdh = 15, height = 12)
+
 So we have "boolean", "integer", "numeric", "string".
 
 A vector is simply a sequence of tirror so instead of storing number 1 2 3 4 as number1 <- 1, number2 <- 2, etc.
@@ -56,6 +62,11 @@ c(test, 1)
 test[-1]
 test[-2]
 
+
+room <- c(width = 15, height = 12)
+attributes(room)
+
+room["width"]
 ```
 
 

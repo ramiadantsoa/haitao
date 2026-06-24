@@ -1,0 +1,9 @@
+# here is a list of beginner's bug
+
+When you evaluate, you will see red error
+There are packages that can handle that but it is a good practice to avoid
+
+- Missing variable
+- typo
+- Unmatch parenthesis
+- 
