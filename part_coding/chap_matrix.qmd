@@ -1,10 +1,12 @@
 # Matrix {#sec-matrixCoding}
 
 {{< include ../preamble.qmd >}}
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+Tableau matematika!
+:::
+
 
 ## Concepts and intuitions {.unnumbered}
-Tableau matematika!
-
 This is a direct of matrix in mathematics.
 That is it contains one of the atomic element.
 Same type of tirror with horizontal coordinate called row and vertical coordinate called column.

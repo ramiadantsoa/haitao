@@ -2,25 +2,33 @@
 
 {{< include ../preamble.qmd >}}
 ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-Eny sa tsia
+a < b or a == b?
 :::
 
 ## Concepts and intuitions {.unnumbered}
 
-This is the fundamental unit of decision-making.
-The first way to use it essentialy to store whether the answer is yes or no.
 
-- Is 2 < 3?
+
+Of all the arithmetic that we have seen, there are two new symbols that haven't been used yet, "<" (and the related (">", ">=", "<=")) and "=" that we haven't used.
+
+Many times when we collect data, on a data sheet split man and woman. we can tick the box for woman or man. Then when we digitize the data, data entering, in table, the most natural way is to encode the text, as in the example in the previous chapter @sec-character, we could spell it out, or use codes like "M" vs "W" and fills it. Alternatively, you can ask is it a men, and fill the value of "yes" or "no", or just "Y" or "N". If we want to be simpler we could just write 1 or 0 too. As you can see, it is a matter of choice and practicality.
+
+Yey, the computer does not discriminate, but there is one encoding that we can do to explicitly say that the values have only two states. This is what it is called boolean or logical variable. In the R speaking, we `TRUE` or `FALSE` in R (`T` and `F` are also used). Those variables behave differently, unlike strings in the sense that we could make basic operation with them (see @sec-sec-boolean-operation), but they also have a fundamental role in computer programming, they are answers to question, and thus building block of decision-making because they store the answer to yes or no question.
+
+We essentially have two ways, is one number smaller than another, or is one number equal to another. In the first, we can ask if 2 < 3, the < is thus a question. In the second, is 2 == 3 (notice the double equal).
+
+If numeric and integer are to represent quantitative variable and strings are to represent qualitative, what are boolean supposed to represent. From a pure statistical, it could represent so encoding data as dead or alive is the same as naming the column alive and filling with yes or no, true or false etc.
+
+But, boolean is more unequi
 
 
 Computer is based on sequence of 0 and 1.
 But 0 and 1 is a symbol, they are not really number or integer in the strict sense. Instead, they are picked something with two state/outcome, the answer is either yes or no. This is called boolean or logical.
 
-Coercing strict hiearchy.
+
 
 For our purpose, we use this type of object when for instance, dead or alive, present or absent, true or false. To make it explicit, boolean are specifically represented by `TRUE` or `FALSE` in R (`T` and `F` are also used). So 0 and 1 are the number 0 and 1.
 
-If numeric and integer are to represent quantitative variable and strings are to represent qualitative, what are boolean supposed to represent. From a pure statistical, it could represent so encoding data as dead or alive is the same as naming the column alive and filling with yes or no, true or false etc.
 
 But in pure programming, these are used and makes more sense with operation @sec-boolean-operation
 
@@ -31,10 +39,17 @@ But in pure programming, these are used and makes more sense with operation @sec
 ```{r}
 #| echo: true
 
+# Test
+var1 <- 3^2
+var2 <- 2^3
+
+var1 == var2
+var1 != var2
+var1 < var2
+
 # Assign
 a <- TRUE
 b <- TRUE
-c <- FALSE
 
 # Arithmetic operations work
 a + b
@@ -46,5 +61,7 @@ The operation above works because R reinterpets/coercre them as 0 and 1 and thus
 ## Tips and warnings {.unnumbered}
 - It is convenient but more used for decision!
 - Compared to numeric, integer, and strings, they require the least memory to store.
+- Coercing strict hiearchy.
+- Encoding to string and convert to boolean
 
 ## If you want to know more {.unnumbered}

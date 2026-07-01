@@ -2,8 +2,13 @@
 
 {{< include ../preamble.qmd >}}
 
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+Firieme etage? Rihana faha-firy?
+:::
+
 ## Concepts and intuitions {.unnumbered}
-Bahut!
+
+
 
 Homogeneous! vs heterogeneous list.
 
@@ -24,7 +29,10 @@ this is like at school where you were just assigned a number.
 
 
 ## Formal {.unnumbered}
-To construct a vector in R we use the function c(number1, ...)
+To construct a vector in R we use the function c(object1, object2,..., objectn)
+
+c stands for concatenate.
+
 
 We can check the length of a vector as length (vector)
 And we can access the element with "[]" think of the order and it starts with 1. Sort of when you are at school, we use
@@ -76,5 +84,7 @@ This is mostly problematic when importing data, as R will make everyting a chara
 Better to fix before, know your object
 
 when you see [1] in the output you know it is the first element if it is long enough. You can see [11] moving as you resize the console.
+
+Coercing
 
 ## If you want to know more {.unnumbered}

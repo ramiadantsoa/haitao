@@ -3,47 +3,43 @@
 {{< include ../preamble.qmd >}}
 
 ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-Lahy sa vavy ny zanakao? Eny
+Q: Lahy sa vavy ny zanakao? A: Eny
 :::
 ## Concepts and intuitions {.unnumbered}
 
+The statement above is a joke between two logicians (the branch of mathematics that study boolean variables). But almost nobody laughs about it and barely grin when explained. Operations with numbers are natural, however those on logical/boolean variables @sec-boolean are less intuitive. There are essentially two operations: AND and OR.
 
-The most logical is hardest to understand?
+P1: Is Radama a male? TRUE
+P2: Is Radama Malagasy? TRUE
 
-So we had in math numbers you can add, you also have matrix with additional operation.
-But what with boolean, what do we do with it.
-And with operation, parentheses matter. There is no order.
-In the previous in R you can simply add them but that is not what it is intended to use.
-It is the fundamental unit of decision-making.
+P3: Is Ranavalona a male? FALSE
+P4: Is Ranavalone Malagasy? TRUE
 
-If you can ask Andrianompinerina you are a male and Malagasy, the answer is yes
-Now if ask Ranavalona II you are a male or Malagasy, the answer is also yes.
+The operation with boolean is when we combine P1 and P2,
 
-The confusion male or Malagasy and christian
+P5: P1 AND P2
+Is Radama a male and Is Radama a Malagasy? Is Radama a Male and Malagasy?
+P5 is True
 
-this is a master, but
+P6: P1 OR P2: Is Radama a male or Malagasy?
+P4 is True.
 
-This distinction between is suprisingly easy and yet extremely hard, or let's unintuitive.
-I actually think that grassping that is the hardest part of this book (and it is part of field of logic in mathematics). We need to fight our human nature.
+P7: Is Ranavalona a male and Malagasy? P7 is false
+P8: Is Ranavalona a male or Malagasy? P8 is true
 
-Proposition 1: true or false
-Proposition 2: true or false
+As of now, P8 is the same as the joke above. Apologies for using strange examples, but we need to exercise our mind, here are a more ecological examples. Essentially we use it to filter dataset. Imaging you ave an excel sheet and have sex in one column (male or female), height in another, and education level (with or without highschool diploma)
 
-Proposition 1 OR Proposition 2
-Proposition 1 AND Proposition 2
+We can subset the data by only looking at male with highschool diploma or male or taller. I think the and is more intuitive than the or.
 
-"&", "|", !
+(sex == "male" & education == "with") or male
 
-the other way to look at it is intersection and union!
+We use two symbols to represent such operation with.
+There is a third symbol, which is !, this negates the proposition, so if P is true then !P is false and vice versa.
+
+Maybe is the that we make illogical decision?
 
 ## Formal {.unnumbered}
-OR is as |
-and is as &
-Because of these those are special characters that is always the same.
 
-< > are also natural
-
-== is used to test for testing. They did not use. = because it is in assignment.
 
 ## Examples {.unnumbered}
 
@@ -60,9 +56,15 @@ a & cc
 
 a | (b & cc)
 (a | b) & cc
+
+# examples with negation
+!a
+
+
 ```
 
 ## Tips and warnings {.unnumbered}
-It i
+- Intersection and union
+- Why using
 
 ## If you want to know more {.unnumbered}
