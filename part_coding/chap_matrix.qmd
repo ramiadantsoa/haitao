@@ -7,20 +7,38 @@ Tableau matematika!
 
 
 ## Concepts and intuitions {.unnumbered}
-This is a direct of matrix in mathematics.
-That is it contains one of the atomic element.
-Same type of tirror with horizontal coordinate called row and vertical coordinate called column.
+This is a direct implementation of a matrix in mathematics @sec-matrix.
+That is a rectangular object that contains rows and columns.
+If four different persons bought three fruits of different quantity, then one can create a matrix with three rows and four columns to store the data
+ADD a matrix
+or a matrix of four rows and three columns to store the data.
+ADD the transposed matrix.
 
-It must be a rectangle! and the size is called dimensions.
-In its purest form, we can extract the element by they coordinate, in vector we have only the order, in matrix, we have two [row coordinate, colum coordinate].
+Notice that there is no chapter on vector in basic mathematics, that is because, mathematically, a vector is simply a "one dimensional" matrix.
 
-But it is better used for mathematical computation and not for data storing --- dataframe is more convenient
+Reusing the analogy of stacked aparment as a vector, the matrix allows for more apartments in each floor. So an apartment is now identified by the floor number and the order in that floor. And similar to a vector, a matrix needs to be homogeneous.
+In general, a matrix object it is better used for mathematical computation.
 
-In practice, a vector is just a "one dimensional" matrix
+In many cases, the data could be heterogeneous, in that case we could use data frame @sec-dataframe or @sec-list.
 
 ## Formal {.unnumbered}
-Matrix in r is constructed using mat with these arguments.
-You can give a vector and partition/ arrange them by row or column.
+To construct a matrix, we need the informations: the size of the matrix: how many rows (nrow) and columns (ncol), the list of all the elements in a form of vectors so we need a vector of length nrow x ncol, and a way to indicate how to arrange the elements.
+
+In R, to contruct a matrix we use matrix(), matrix_name <- matrix(data, nrow, ncol, byrow).
+Most of the time, ncol is not because it is inferred from length of data divided by nrow.
+byrow is argument that takes boolean telling whether it should be arranged by rows or by colums. The default is
+
+See function @sec-functionCoding for
+
+To access element, we use the same [] as in vector but with two dimensions [row position, column position].
+Be aware that the first is vertical (as in floor number and the second is horizontal, and the order in that floor).
+
+- matrix_name[1, 2] means to retrive the element in the first row (horizontal) and second column
+- matrix_name[3, ] (leaving the second dimension empty) means taking the third row
+- matrix[, 3] (leaving the first dimension empty) means taking the third column (see the output below)
+- matrix [ -2 , -3] the negative means remove that specific column, or row, or both matrix []
+
+
 
 ## Examples {.unnumbered}
 
@@ -31,5 +49,10 @@ mat[1,3]
 mat[1, c(1,10)]
 
 ## Tips and warnings {.unnumbered}
+
+Add attributes
+transpose
+coercing
+dim to extract the dimension
 
 ## If you want to know more {.unnumbered}
