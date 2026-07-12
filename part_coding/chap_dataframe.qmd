@@ -31,6 +31,9 @@ You can conveniently access with df$name1 which is the most common way, due to i
 ## Examples {.unnumbered}
 
 ```{r}
+#| echo: true
+
+
 # Construction number 1, ugly column names created
 d <- data.frame(c(1, 2, 3), c("A", "X", "B"), c(TRUE, TRUE, FALSE))
 
@@ -62,7 +65,7 @@ d$name <- c("Andry", "Feno", "Felana")
 - if a vector, it will just inherit its name
 - you can add more columns by just creating df$new_col <- vector xxx
 - coercion at the vector level
-- tibble in future chapters which is beyond, there are minor differences and 
+- tibble in future chapters which is beyond, there are minor differences and
 
 
 ## If you want to know more {.unnumbered}

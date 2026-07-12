@@ -22,6 +22,8 @@ To access element it uses double square brackets [[]] as in matrix, but if also 
 ## Examples {.unnumbered}
 
 ```{r}
+#| echo: true
+
 silly_example <- list(xx = 1, list(x = c(1, 2), y = "A"), mat = matrix(1:6, nrow = 2))
 
 silly_example[[1]]
