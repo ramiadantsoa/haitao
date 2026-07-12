@@ -7,8 +7,6 @@ a < b or a == b?
 
 ## Concepts and intuitions {.unnumbered}
 
-
-
 Of all the arithmetic that we have seen, there are two new symbols that haven't been used yet, "<" (and the related (">", ">=", "<=")) and "=" that we haven't used.
 
 Many times when we collect data, on a data sheet split man and woman. we can tick the box for woman or man. Then when we digitize the data, data entering, in table, the most natural way is to encode the text, as in the example in the previous chapter @sec-character, we could spell it out, or use codes like "M" vs "W" and fills it. Alternatively, you can ask is it a men, and fill the value of "yes" or "no", or just "Y" or "N". If we want to be simpler we could just write 1 or 0 too. As you can see, it is a matter of choice and practicality.

@@ -8,36 +8,27 @@ Firieme etage? Rihana faha-firy?
 
 ## Concepts and intuitions {.unnumbered}
 
+In the previous chapters, there were three major types of object: numbers (integer and numeric), text/strings, and boolean (logical). In the simplest form, data is often a collection of many objects of the same type, a list of the names of the president of Madagascar, or the set of grades you get at school.
+Why each element is represented by the atomic type, a collection is stored in a object called vector.
 
+In past, people live in huts in a hamlet but as space becomes a constraint, stacking houses vertically becomes an economic solution. The direct implication is that instead of having address for say ten homes, now you have the name of the building and the floor: Building X, floor #2.
 
-Homogeneous! vs heterogeneous list.
+So a vector in programming is essentially a sequence of object arranged next to each other. The arrangement means that to access, you just need to at which order (floor it occurs). As floor numbers should be whole number, so does the order. Notice that in english, the first floor is the rez-de-chaussé, so the metaphore is , in other words, 1-ere etage is already the second element.
 
-Attributes attr(vec, "unit") <- "Celsius"
+The analogy can break down! There are multistory buildings where the first floor might be a store, the second floor an office, and the third and fourth floors are for habitation. If we consider each use as different type, then that building is not a vector. In other words, a vector is homogeneous, all entry has the same type (all numbers, all logical, or all strings). If it is a heterogeneous list, another type called list is used. @sec-list.
 
-room <- c(witdh = 15, height = 12)
-
-So we have "boolean", "integer", "numeric", "string".
-
-A vector is simply a sequence of tirror so instead of storing number 1 2 3 4 as number1 <- 1, number2 <- 2, etc.
-So we now call the vector
-
-the primary constraint is that it has to be the same type. Think of the operation we can do with it. It has to be consistent.
-
-The inovation is that instead of we call the bahut and then tell which drawers we want.
-I hope and you can have as many drawers are you want bahut numero 234, I hope you are convinced that this is much better than number2 and enter it by hand.
-this is like at school where you were just assigned a number.
-
+The key point is that a vector is a object, you need to assign it, and you can retrieve based on the order they appear in the list.
 
 ## Formal {.unnumbered}
-To construct a vector in R we use the function c(object1, object2,..., objectn)
+To construct a vector in R we use the function, c() short for concatenate, and we put all the list of elements, separated by parentheses: vector_name <- c(object1, object2,..., objectn)
+The number of elements in the vector is called its length.
 
-c stands for concatenate.
+To access the p-th element of that vector, one uses the square bracket symbol "[]", so vector_name[2] will return object2. The order is called index and should be an integer, retriving the n-th element
 
+In R you can use negative index, which means take everything expect those with negative index so vector_name[-2] will remove from the output. Notice that [] retrives value but do not modify the content of vector_name
 
-We can check the length of a vector as length (vector)
-And we can access the element with "[]" think of the order and it starts with 1. Sort of when you are at school, we use
+It is possible to access the element without using their order. See in the example below, this can under specific scenarios, e.g., short vector as you need to give a specific name to each ordered element or you don't want to remember the name. This is called giving names/attributes to eache element.
 
-In R, it as been implement that adding -1 removes that element from the vector
 
 ## Examples {.unnumbered}
 
@@ -79,12 +70,11 @@ room["width"]
 
 
 ## Tips and warnings {.unnumbered}
-This is mostly problematic when importing data, as R will make everyting a character if one is a character.
-
-Better to fix before, know your object
-
-when you see [1] in the output you know it is the first element if it is long enough. You can see [11] moving as you resize the console.
-
-Coercing
+- the  [1] etc on the output is actually the order of that element.
+- when you print mant elements, you will see [1] etc on the left side of the output. It is displaying index so the one on the right is simply. Note that it depends on the size of your console, so a narrow vs wide one.
+- coercing: This is mostly problematic when importing data, as R will make everyting a character if one is a character.
+- A vector has a length l, if you try to access vector_name[n] where n is bigger than n, it will return NA.
+- You can use a vector of retrive more elements, sub_vector <- vector_name[c(1,3,5)] will retrieve the first, third, and fifth whereas sub_vector <- vector_name[c(3,5,1)] will retrieve and create a vector with the third element first, fifth second, and first third.
+- Because of R, you can actually use numeric, so vector_name[1.2] is the same as vector_name[1]. It is hard-cored in R, that it will automatical round the number to the lowest integer. In some cases, it is quite practical, in other it might be problematic.
 
 ## If you want to know more {.unnumbered}
