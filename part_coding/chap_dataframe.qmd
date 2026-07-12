@@ -1,31 +1,67 @@
 # Data frame {#sec-dataframe}
 
 {{< include ../preamble.qmd >}}
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+Tableau pratique!!
+:::
+
 
 ## Concepts and intuitions {.unnumbered}
-Tableau pratique!
 
-A dataframe is flexible matrix, you still have a rectangle but not drawers are the same type.
-But not so fast,
-this is based on practical concept, I interview 100 persons about name, age, gender, I will have one column for character, a second as integer, and a third a boolean.
-So in order words, a data.frame is a collection of **vector of same length**
-This is what you format your data.
+The previous chapters brings mathematical concepts into programming such as vector, matrix, boolean and numeric, and matrix operations. data frame was constructed to deal with the less rigid demands of data science.
 
-the other useful feature of a data frame is that you can name the column (also the row), and instead of getting say bahut[, 1] you use bahut$name.
-This makes the code much more usable and more orriented with
+A data frame is used to store multiple observations on many subjects.
+For instance, you interview 100 persons and ask about name, age, gender. The data will consist of three columns: first on name is a character, the second as integer, and a third is boolean (yes TRUE if female and FALSE if male).
+A similar case is one visits fifteen sites and record the name of the site, altitude, pH, etc.
 
+A data frame is thus a rectangle (same as a matrix @sec-sec-matrixCoding), where each column is an observation (also @sec-variable).
+
+The other practical advantage of a data frame is that there are often colum names, so instead of access that column by a number, you can call it by a name.
 
 
 ## Formal {.unnumbered}
 
-bahut["name"] # notice we use "" because it is a character not an object
+A data frame is constructed with the function df <- data.frame(name1 = vector1, name2 =  vector2, name3 = vector3, ...).
 
-but we can do bahut[, c("name", "gender")] as in matrix
+The main constraint is that length(vector1) = length(vector2) = otherwise it won't be a rectangle.
 
-Construction is vector based
+You can conveniently access with df$name1 which is the most common way, due to inheritance this is equivalent to df[,1] or df["name1"].
+
 
 ## Examples {.unnumbered}
 
+```{r}
+# Construction number 1, ugly column names created
+d <- data.frame(c(1, 2, 3), c("A", "X", "B"), c(TRUE, TRUE, FALSE))
+
+
+# Construction number 2, organized but unituitive column names
+col1 <- c(1, 2, 3)
+col2 <- c("A", "X", "B")
+col3 <-  c(TRUE, TRUE, FALSE)
+d <- data.frame(col1, col2, col3)
+
+# Construction number 3, compact and intuitive column/variable names
+d <- data.frame(id = col1, letter = col2, male = col3)
+
+
+# Extracting a column
+d$id # clean
+d[, 1] # based on matrix
+d["id"] # output is a data frame
+d[, "id"] # output is a vector
+
+# Adding a new column
+d$name <- c("Andry", "Feno", "Felana")
+
+```
+
 ## Tips and warnings {.unnumbered}
+- column names should not include space or special characters (%, etc.)
+- If a value is given for a column, the data.frame will of the number of rows.
+- if a vector, it will just inherit its name
+- you can add more columns by just creating df$new_col <- vector xxx
+- coercion at the vector level
+
 
 ## If you want to know more {.unnumbered}

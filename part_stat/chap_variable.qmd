@@ -1,4 +1,4 @@
-# Variable {#sec-16_variable}
+# Variable {#sec-variable}
 
 {{< include ../preamble.qmd >}}
 

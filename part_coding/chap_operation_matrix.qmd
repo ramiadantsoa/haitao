@@ -1,17 +1,20 @@
 # Matrix operation {#sec-matrixOperationCoding}
 
 {{< include ../preamble.qmd >}}
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+From math to coding
+:::
+
+{{< include ../preamble.qmd >}}
 
 ## Concepts and intuitions {.unnumbered}
-Tandremo ny operation!
 
-As seen, we need to be cautious about, unfortunately we could use the same R and R will do it as it interprets
+This chapter is mostly introducing how to implement matrix operation in R. This is just what syntax.
+See @sec-matrix_op and @sec-matrix_multi to see how they are defined mathematically.
 
-So arithmetic  between matrix and scalar.
-Matrix with the same dimension
+The same notation addition, subtraction, multiplication, division, and as in @sec-operation, althoug remember that is mostly for matrix and a number.
 
-And the matrix produc @sec-matrix_multi which needs number of colum should match with number of rows. The special symbol is %*%.
-
+For matrix multiplication the symbol is %*%. The star is to remember that it is still a multiplication. This is an example where is implemented differently in R, it uses different symbols in other programming language. However if one knows that (in the mathematical sense), one just needs to learn how it is implemented in that language. Learning the sytnax.
 
 ## Formal {.unnumbered}
 
@@ -40,5 +43,10 @@ mat1 %*% 1:2
 ```
 
 ## Tips and warnings {.unnumbered}
+- All the rules of matrix multiplication in mathematics apply, number of columns in the first part should match the number of rows in the second.
+- The multiplication is not commutative
+- There is no matrix division
+- A shortcut for identity matrix?
+
 
 ## If you want to know more {.unnumbered}
