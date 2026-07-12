@@ -1,25 +1,41 @@
 # List {#sec-list}
 
 {{< include ../preamble.qmd >}}
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+Tsy voatery rectangle!
+:::
 
 ## Concepts and intuitions {.unnumbered}
-Tsy voatery rectangle!
 
-List is the most flexible creation to store data.
-In fact, most output is a list.
-It frees us from the rectangular structure of a data
-Furthermore, we can go at any depth.
-Because of that, not much operation on them more to store data.
+A list is the most flexible object to store data, following the metaphor on vector and matrix, it is a multistory building, except that you can have anything you want in each floor.
+For instance, the first floor can be a swimming pool, the second floor, can be five apartments, the third floor can be two chapels, and where it gets most flexibility is that the fifth floor could also be another multistory building etc...The metaphor of course breaks, but you get the idea that a list is a flexible. Maybe like opening the door in Narnia
+
+As a consequence, it is not designed for (maybe a good thing) mathematical calculation.
+
+Another example for instance is when you will run a linear regression, the output will be a list that will give the coefficient or regression, standard error, R2, p-value, all the residuals etc..
 
 ## Formal {.unnumbered}
+To construct a list, one uses list_name <- list(x = object_you_want, ... )
+
+To access element it uses double square brackets [[]] as in matrix, but if also add names as in data.frame, then you can use $ to access that
 
 ## Examples {.unnumbered}
 
 ```{r}
-list(1, list(c(1, 2)), matrix(1:6, nrow = 2))
+silly_example <- list(xx = 1, list(x = c(1, 2), y = "A"), mat = matrix(1:6, nrow = 2))
+
+silly_example[[1]]
+silly_example$xx
+
+silly_example[[2]][1]
+silly_example[[2]]$x
+
+silly_example[[3]]
+silly_example[[3]][, 2]
 ```
 
-
 ## Tips and warnings {.unnumbered}
+- Some functions requires list?
+- One rarely construct list, unless there are specific needs, for instance when you want to build a specific object or tailormade stuff. However, knowing the construction is useful to access the output of many analyses
 
 ## If you want to know more {.unnumbered}

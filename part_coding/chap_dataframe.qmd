@@ -62,6 +62,7 @@ d$name <- c("Andry", "Feno", "Felana")
 - if a vector, it will just inherit its name
 - you can add more columns by just creating df$new_col <- vector xxx
 - coercion at the vector level
+- tibble in future chapters which is beyond, there are minor differences and 
 
 
 ## If you want to know more {.unnumbered}
