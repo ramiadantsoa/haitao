@@ -5,8 +5,6 @@
 From math to coding
 :::
 
-{{< include ../preamble.qmd >}}
-
 ## Concepts and intuitions {.unnumbered}
 
 This chapter is mostly introducing how to implement matrix operation in R. This is just what syntax.
@@ -14,7 +12,7 @@ See @sec-matrix_op and @sec-matrix_multi to see how they are defined mathematica
 
 The same notation addition, subtraction, multiplication, division, and as in @sec-operation, althoug remember that is mostly for matrix and a number.
 
-For matrix multiplication the symbol is %*%. The star is to remember that it is still a multiplication. This is an example where is implemented differently in R, it uses different symbols in other programming language. However if one knows that (in the mathematical sense), one just needs to learn how it is implemented in that language. Learning the sytnax.
+For matrix multiplication the symbol is "%*%". The star is to remember that it is still a multiplication. This is an example where is implemented differently in R, it uses different symbols in other programming language. However if one knows that (in the mathematical sense), one just needs to learn how it is implemented in that language. Learning the sytnax.
 
 ## Formal {.unnumbered}
 
@@ -22,6 +20,7 @@ For matrix multiplication the symbol is %*%. The star is to remember that it is 
 
 ```{r}
 #| echo: true
+
 mat1 <- matrix(1:6, nrow = 3)
 mat2 <- matrix(7:2, nrow = 3)
 
@@ -32,7 +31,7 @@ mat1 - mat2
 mat1 * mat2
 
 ## Example of setting row and column names
-mdat <- matrix(c(1,2,3, 11,12,13), nrow = 2, ncol = 3, byrow = TRUE,
+mdat <- matrix(c(1, 2, 3, 11, 12, 13), nrow = 2, ncol = 3, byrow = TRUE,
                dimnames = list(c("row1", "row2"),
                                c("C.1", "C.2", "C.3")))
 mdat
@@ -43,6 +42,7 @@ mat1 %*% 1:2
 ```
 
 ## Tips and warnings {.unnumbered}
+
 - All the rules of matrix multiplication in mathematics apply, number of columns in the first part should match the number of rows in the second.
 - The multiplication is not commutative
 - There is no matrix division
