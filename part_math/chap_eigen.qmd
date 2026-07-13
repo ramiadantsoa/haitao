@@ -1,12 +1,12 @@
 # Eigen decomposition {#sec-eigen}
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+Fruit salad!
+:::
 
 ## Concepts and intutions {.unnumbered}
-Fruit salad!
+This is a chapter but the concept is actually cool.
+Go back to shopping three restaurant but they want to make fruit salad.
 
-Version 1: as a product of matrices
-Prime factors, one is to think of.
-To have one of the matrix as a diagonal matrix.
-M = B* D B.
 
 Version 2: matrix as coordinate in a basis
 Think of fruits and make a combination of other.

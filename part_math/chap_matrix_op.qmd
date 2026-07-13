@@ -1,8 +1,12 @@
 # Matrix operation {#sec-matrix_op}
 
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+Andry + Fenitra = Tolotra
+:::
+
 ## Concepts and intutions {.unnumbered}
-James = Marie, James + Marie = Love.
-Here is an example of using mathematical notation.
+
+Above is an example of using mathematical notation.
 You should know by now that the equal is not really equal in mathematics, and the addition is merely a notation.
 Yet, they actually have a meaning.
 In fact, James x Marie = Jarie is another notation and might be because they multiply.
@@ -22,7 +26,11 @@ Z
 A
 
 ## Formal {.unnumbered}
-Adding a scalar
+
+Add compact notation. M = {aij}
+
+
+Adding a scalar x, M + x = {x + aij}, same with basic operation
 Adding a matrix M means M + 1 = M were each entry is added 1
 
 Multiplying a scalar means that M * 2 = where each entry is multiplied by 2
@@ -43,6 +51,24 @@ And distributive
 
 This is a desired feature where the + and * have kept their original meaning.
 
+
+## Examples {.unnumbered}
+Assume we wanted to add one fruit for each person
+
+Change kg to g
+
+Adding only at certain cases
+
+## Tips and warning {.unnumbered}
+These are well defined, essentially, define and do as it was defined.
+You might run into issues, when you apply them in coding.
+There are other, Kronecker product but essentially you come up with rules and define a symbol for it
+We have determinant too.
+Although we could define subtraction in similar way, careful with division so that we don't divide by zero in any of the entry
+
+## if you want to know more {.unnumbered}
+Linear algebra
+<!--
 In linear algebra and array-based computing, matrix operations are categorized by how they manipulate elements: scalar-to-matrix interactions, standard matrix vector-space transformations, and element-wise arrays.
 Here are the rigorous textbook definitions for scalar multiplication, matrix addition, element-wise multiplication (Hadamard product), and element-wise addition, along with their source material and LaTeX formats.
 
@@ -121,21 +147,4 @@ Definition: "Two matrices of the same size can be added together. The result is 
 In computer science implementations, an extension called element-wise addition with broadcasting is defined when adding a matrix A∈R^m×n and a column vector b∈R^m.
 
 The resulting matrix C=A+b is an m×n matrix defined by adding the vector to every column of the matrix:
-$C_{ij} = A_{ij} + b_i$ for all 1≤i≤m and 1≤j≤n."
-
-## Examples {.unnumbered}
-Assume we wanted to add one fruit for each person
-
-Change kg to g
-
-Adding only at certain cases
-
-## Tips and warning {.unnumbered}
-These are well defined, essentially, define and do as it was defined.
-You might run into issues, when you apply them in coding.
-There are other, Kronecker product but essentially you come up with rules and define a symbol for it
-We have determinant too.
-Although we could define subtraction in similar way, careful with division so that we don't divide by zero in any of the entry
-
-## if you want to know more {.unnumbered}
-Linear algebra
+$C_{ij} = A_{ij} + b_i$ for all 1≤i≤m and 1≤j≤n." -->

@@ -1,14 +1,14 @@
 # Basic mathematics
-Math is the foundation of all quantitative methods
-Math is useless, what is the use of sqrt of 25, humor.
-Mathphobia is real
-But in my experience is that you cannot race before learning to crawl
-Here are two ways: focus on the applied part, revise notation
-Text and emoji, the notation are there to simplify /compact the message
-abstract vs applied
+Math is the foundation of all quantitative methods.
+And since this is about quantitative method, it is natural that I start with that.
+The existence of this part is written so that we have a basis.
+You might even want to skip this, but when you face, notation and concept issues in later chapter, you can also go back to genesis.
 
-the problem is not prove that this or find the limit or analyses is hard, polynomial is not clear or identity remarkable, application, affine, solve equation, factories, multiplication, & addition, go to the basics
+It has become a standard materials for humorists about the uselessness of math (think about the use of sqrt of 25 or the use of a compas).
+Mathphobia is real, and these jokes probably easy the trauma some people had about that in the past.
+The goal  is not prove that this or find the limit or analyses is hard, polynomial is not clear or identity remarkable, application, affine, solve equation, factories, multiplication, & addition, go to the basics
+So, this book is applied here is to show how useful math is.
+Where it is applied in the real world, and more specifically in data analyses.
 
-Greek, notation, opertation and order,
-Function, figures, logarithm, exponential, logit,
-Discrete and continuous math
+As said above, most chapters are to support concept introduced later but I developed things that weak in people, such as operation, notations, matrix, and graphical representation and representation of few most useful fonction (such log and exponentional), I will also talk about derivative, qualitative and quantiative in a math way, and difference and differential equation.
+These are I think minimal to with applield math.

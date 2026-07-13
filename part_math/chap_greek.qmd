@@ -1,7 +1,9 @@
 # Greek letters {#sec-greek}
 
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+The one like the fish.
+:::
 ## Concepts and intutions {.unnumbered}
-Or the one like the fish.
 
 Do you recognize this?
 
@@ -56,4 +58,4 @@ Notation for birth is beta and death is delta, or mortality is mu, tau is time.
 Of course, you can but using something intuitive helps.
 
 ## if you want to know more {.unnumbered}
-See @sec-01_operation
+See @sec-operation

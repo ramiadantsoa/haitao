@@ -1,33 +1,63 @@
-# Sum and product and dummy variable{#sec-sum}
+# Sum and product and dummy variable {#sec-sum}
+
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+Acronyms in mathematics!
+:::
 
 ## Concepts and intutions {.unnumbered}
-Acronyms in mathematics!
 
-Condensing is a natural, see in #c3_operation that multiplication is a condensation of addition.
+Condensing is a natural, see in @sec-operation that multiplication is a condensation of addition.
 So 2 + 2 + 2 = 3 * 2, essentially created a symbol to say things are repeating.
+
+For compact, notation are used here.
+For instance, we had 1 is short for factorials.
+The sum ($\Sigma$) and product $\Pi$ notations have been create for repetation see @sec-greek that $\Sigma$ is S for sum and $\Pi$ is P for product.
+Sadly, in astro-polenesian group of language, words are lost.
 
 1 + 2 + 3 + 4 = 10
 when faced with enough repetition, it is convenient to create a new one to condense it.
 For sums the idea is to use the S in greek letter Sigma and have
 sigma_i = 1 ^ 4 i = 1 + 2 + 3 + 4.
 
-Likewise, we could have 1 x 2 x 3 x 4 = 12 but more famously, we have 4! factorial four.
 
-Most likely, but two main, $\sum$ and $\prod$.
 
 ## Formal {.unnumbered}
-Sigma we need to say sum, then when is the first term and what is the last term, and the moving indice.
-$\sum_i$ or $\sum_{i = i_0}^{i_n}$ with one increment
 
-the other one is using set, w in Omega. $\sum_{\omega \in \Omega}$
+$\Sum_{i = i_0}^n a_i = a_1 + a_2 + \cdot + a_n $
+Let's break down (always a good idea when looking at math notation).
+- Sum is for sum
+- i is what it is a dummy variable that is discrete @sec-discrete_continuous
+- 1 is start with and increment by one and ends when one reached n
+- the term a_i is something that depends on i, and it could be anything.
 
-We could extend it into higher
-$\sum_j \sum_i$
-with the rule that you do the interior first.
-the other one is $\prod$, this is product the same as.
-You could also use union, intersection etc.
+The product is just replacing + by *
+$\Pi_{i = i_0}^n a_i = a_1 * a_2 * \cdot * a_n $
+
+## Examples {.unnumbered}
+sum from 0 to x
+sum in the middle
+
+sum with different i
+
+infinite sum
+
+Examples of Pi.
+
+Sum and product
+
+## Tips and warning {.unnumbered}
+- This is a matter of definition
+- Just try with the first few terms
+- Those symbols are not but same concept as using a for loop in programming
+- What out when upper is infinite things might get wierd, so stay in the finite realm.
+- Another definition is using set, but it ithe other one is using set, w in Omega. $\sum_{\omega \in \Omega}$
 
 
+## if you want to know more {.unnumbered}
+xxxx
+
+
+<!--
 Yes. In formal mathematics, capital Sigma (∑) and capital Pi (∏) are not just informal shorthand notation for writing out long additions or multiplications. They are rigorously defined using finite recursion (for finite bounds) and limits of sequences (for infinite bounds).
 Here are the formal definitions from foundational textbooks in discrete mathematics and mathematical analysis.
 
@@ -94,22 +124,4 @@ The infinite product is rigorously defined as the limit of those partial product
 $\prod_{i=1}^{\infty} a_i = \lim_{N \to \infty} P_N$
 
 ​
-(Note: In advanced analysis, an infinite product is only said to converge if this limit exists and is nonzero, because a limit of zero can occur trivially if just a single term is zero).
-
-
-
-## Examples {.unnumbered}
-sigma i sigma i^2
-sigma 1/i^2 is Pi^2 over 6
-Sum 1/i! = e
-
-Examples of Pi.
-
-## Tips and warning {.unnumbered}
-This is a matter of definition
-Just try with the first few terms
-Those symbols are not but same concept as using a for loop in programming
-What out when upper is infinite things might get wierd, so stay in the finite realm.
-
-## if you want to know more {.unnumbered}
-xxxx
+(Note: In advanced analysis, an infinite product is only said to converge if this limit exists and is nonzero, because a limit of zero can occur trivially if just a single term is zero). -->

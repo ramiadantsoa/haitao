@@ -1,11 +1,14 @@
 # Operation {#sec-operation}
 
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+Twitter debate!
+:::
+
 ## Concepts and intutions {.unnumbered}
-Twitter debate! 
 
 Few years ago, there are was an intense debate on Twitter (now X) about a simple calculation.
 
-8 ÷ 2(2 + 2)
+8 ÷ 2 (2 + 2)
 
 One camp would argue that the answer is one, the other camp is convinced that it is sixteen.
 What makes it complicated is that inputing with different calculators also yield different results.
@@ -19,6 +22,7 @@ The main is when in doubt, clarify.
 Maybe this reflects on society that people make up their own rule and try to impose.
 This might foundation of society, but in mathematics...unless you want to invent a new sort of maths.
 That would be anarchy...
+So let's revise the rules here.
 
 ## Formal {.unnumbered}
 Here is a quick review
@@ -47,13 +51,10 @@ Placing parenthesis to yield different results
 
 
 ## Tips and warning {.unnumbered}
-It is generally not use in other than arithmetic.
-Just add parenthesis when in doubt.
-The rule of power over multiplication and multiplication over addition should be natural.
-In fact, multiplication by definition is a generalization of addition: 2 + 2 + 2 + 2 = 2 * 4.
-Thus if you reverse and 2 * 4 + 3 = 2 + 2 + 2 + 2 + 3.
-The same applies to power 2 ^ 3 = 2 * 2  * 2.
-This if you revers  2^3 * 3 = 2 * 2 * 2 * 3 and 2^3 + 3 = 2 * 2 * 2 + 3
+- It is generally not use in other than arithmetic.
+- Just add parenthesis when in doubt.
+- The rule of power over multiplication and multiplication over addition should be natural. In fact, multiplication by definition is a generalization of addition: 2 + 2 + 2 + 2 = 2 * 4. Thus if you reverse and 2 * 4 + 3 = 2 + 2 + 2 + 2 + 3.
+- The same applies to power 2 ^ 3 = 2 * 2  * 2. This if you revers  2^3 * 3 = 2 * 2 * 2 * 3 and 2^3 + 3 = 2 * 2 * 2 + 3
 
 ## If you want to know more {.unnumbered}
 Books on arithmetic

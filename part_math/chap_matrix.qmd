@@ -1,11 +1,15 @@
 # Matrix {#sec-matrix}
 
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+Not the movie by Keanu Reaves
+:::
+
 ## Concepts and intutions {.unnumbered}
 Matrix is the famous movie by Keanu Reaves.
 The appeal to popularity is sometimes frustrating, almost like thinking about Madagascar and people think of lions and zebra.
 
 Like Madagascar existed before, matrix since early age of mathematics.
-And in its simple form, it is just a rectangle filled with numbers.
+And in its simple form, it is just a rectangle/grid filled with numbers.
 
 The earliest might be with shopping.
 X bought 2 banana, 4 apples and 0 orange
@@ -18,12 +22,38 @@ Which one is row or column does not matter as long as we specify which one is ro
 Shifting is what is called transpose.
 
 ## Formal {.unnumbered}
+
+Add M = {aij}
+
 Matrix with row and column,
 upper case or bold dimensions, diagonal
 Entries or cells lower case
 They are mainly numbers.
 
 a vector is a one line or one row matrix
+
+
+## Examples {.unnumbered}
+Diagonal matrix with a special notation
+Upper diagonal
+Null matrix
+Square matrix.
+
+## Tips and warning {.unnumbered}
+- Matrix is a new object, crazy dimension
+- Coordinates in a new system
+- For biologist community matrix is species.
+- You choose species or sites as coordinates is up to you.
+- It is also a linear application but we might see that in intermediate level chapter
+
+<!-- Do not confuse matrix with data frame, although matrix requires same types as entries.
+Storing data vs. performing mathematical operation on it.
+there are ways to go around but not in this section of the book.
+
+1 x n  is different with n x 1
+
+## if you want to know more {.unnumbered}
+Linear algebra
 
 In linear algebra, a matrix is formally defined as a rectangular array of scalars organized into rows and columns. This array is a structured way to represent and manipulate linear transformations between vector spaces.
 
@@ -83,25 +113,4 @@ In Chapter 3 ("Linear Maps"), Axler defines the matrix of a linear map T:V→W e
 
 $T v_j = \sum_{i=1}^{m} A_{i,j} w_i$
 "
-This definition implies that every matrix corresponds exactly to a unique linear coordinate adjustment mapping elements from an n-dimensional domain to an m-dimensional codomain.
-
-## Examples {.unnumbered}
-Diagonal matrix with a special notation
-Upper diagonal
-Null matrix
-Square matrix.
-
-## Tips and warning {.unnumbered}
-Matrix is a new object,
-Coordinates in a new system
-For biologist community matrix is species.
-You choose species or sites as coordinates is up to you.
-
-Do not confuse matrix with data frame, although matrix requires same types as entries.
-Storing data vs. performing mathematical operation on it.
-there are ways to go around but not in this section of the book.
-
-1 x n  is different with n x 1
-
-## if you want to know more {.unnumbered}
-Linear algebra
+This definition implies that every matrix corresponds exactly to a unique linear coordinate adjustment mapping elements from an n-dimensional domain to an m-dimensional codomain. -->
