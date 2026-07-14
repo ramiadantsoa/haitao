@@ -1,4 +1,5 @@
 # Eigen decomposition {#sec-eigen}
+
 ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
 Fruit salad!
 :::
