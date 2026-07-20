@@ -1,31 +1,28 @@
 # Functions {#sec-function}
 
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+Fiainana andavan'andro: akora, mpanodina, vokatra
+:::
+
 ## Concepts and intutions {.unnumbered}
-f(x) = palpitation!
-
-Etude des fonctions!
-fundamental approach as you have seen through we focus on the applied part.
-
-Everything we do captures the essence of function
 
 For most of us, hearing a function is traumatizing.
-Studying and is, we have a set of procedures.
-I think it is a part of the education failure.
-1- by reducing to monkey
-2- by breaking the a function and its visulization.
+But what most of us think is domaine de définition, dérivé étude des signes et tableau de variation etc.
+To a certain extent, most of us has lost what is the meaning/role of a function.
 
+The first and most useful is the correspondance between a function and a figure, we will expand on that in @sec-function_viz.
+The second is simply a process understanding how changing something will affect its outcome. We need three component the ingredient, the transformer, and the outcome.
 
-Well, you actually use functions everyday, and it is a.
-the major difference is that we do it a less quantitative way.
-So if I take X decision, I get Y and if I take not X then I get not Y.
+Well, you actually use functions everyday but in less quantitative way.
+For instance, informally we have a map of what time to you take the bus and the queue, or
 
-If one works X hours then I get Y money, well that's the theory and so it is not as neat as in mathematics.
+Mathematics aimed to formalize that, and what we have done most is that how we can transform a number to another number. so the ingredient is a number, the transformer is a mathematical operation and the outcome is another number.
 
-Well so why the complicated functions, well, they serve another purpose.
-And that is not the purpose of this chapter nor this book.
-Intuitively, we just need to that if we give an input then we get an output.
-In fact, we want to unravel the relationship, infer what kind of functions is there.
-And ironically, the most popular one is just y =  a x+ b. So secondary school map.
+The simplest function is. y = a x  + b, if x = 1, then y = xx and if x = 2 then y = xx. And that's it...In other case, y = fancy function, you can always calculate the image.
+In other words, it creates an order pair (x, y) linked by .
+For instance, distance to destination (y) and time since departure (x).
+Function that transform the radius to its surface.
+A function that converts FMG to Ariary or
 
 ## Formal {.unnumbered}
 see also sum and product notation for dummy variable.
@@ -33,9 +30,10 @@ We need three components to define a function, the starting and ending sets and 
 It is written like f: X -> Y , x, y = f(x)
 
 And that's it. In general, there are unique so that f(x), this is called explicity.
-This is different from implicit but also stochastic stuff.
 
-Well, X could be multidimensional or qualitative etc.
+The rule is that for one x we get only one y.
+
+In calculs which we will deal here in one dimesion, we focus on X in R and Y in R.
 
 In modern calculus and mathematical analysis, a function is defined rigorously using the language of set theory. This modern definition eliminates early, ambiguous notions of a function being merely an "algebraic expression" or a "formula," establishing it instead as a precise mapping between two sets.
 Here are the rigorous formal definitions of a function as presented in foundational calculus and real analysis textbooks.
@@ -55,6 +53,32 @@ Definition: "A function f is a rule that assigns to each element x in a set D ex
 The set D is called the domain of the function. The number f(x) is the value of f at x and is read 'f of x'. The range of f is the set of all possible values of f(x) as x varies throughout the domain, that is,
 $\text{Range} = \{f(x) \mid x \in D\}$
 The symbol that represents an arbitrary number in the domain of a function f is called an independent variable. The symbol that represents a number in the range of f is called a dependent variable."
+
+## Examples {.unnumbered}
+Linear function
+
+Other more general function: for instance
+
+Using integer Cnp is a function.
+
+Baker's ratio or making a cake.
+
+But the shopping is another example: how much you spend.
+
+## Tips and warning {.unnumbered}
+Dummy variable
+
+With any programming language, you can do 2 in one line.
+
+Life is not perfect and the explicit y = f(x) is a wishful thinking.
+In fact, y = f(x1,x2,x3...)
+
+In principle, one input leads to one output
+
+
+## if you want to know more {.unnumbered}
+
+<!--
 
 2. The Set-Theoretic Definition (Strict Mathematical Rigor)
 To achieve complete logical rigor and remove the informal word "rule," advanced real analysis textbooks define a function strictly as a specific subset of a Cartesian product (a set of ordered pairs).
@@ -83,22 +107,4 @@ Publisher: John Wiley & Sons
 The Axiom
 Apostol notes that a geometric curve in the xy-plane represents a function if and only if it passes the Vertical Line Test:
 "A geometric curve in the xy-plane is the graph of a function y=f(x) if and only if no vertical line intersects the curve more than once."
-If a vertical line x=c intersects a curve at two distinct points, say (c,d) and (c,e), then the input c would map to two distinct outputs (d and e), violating the set-theoretic requirement of uniqueness (f(c)=d and f(c)=e).
-
-## Examples {.unnumbered}
-The traditional is y = a x + b.
-
-Using integer Cnp is a function.
-
-Baker's ratio or making a cake.
-
-But the shopping is another example: how much you spend.
-
-## Tips and warning {.unnumbered}
-With any programming language, you can do 2 in one line.
-Life is not perfect and the explicit y = f(x) is a wishful thinking.
-In fact, y = f(x1,x2,x3...)
-In principle, one input leads to one output
-Dummy variable
-
-## if you want to know more {.unnumbered}
+If a vertical line x=c intersects a curve at two distinct points, say (c,d) and (c,e), then the input c would map to two distinct outputs (d and e), violating the set-theoretic requirement of uniqueness (f(c)=d and f(c)=e). -->

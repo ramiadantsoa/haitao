@@ -1,7 +1,12 @@
 # Differential equations {#sec-differential}
 {{< include ../preamble.qmd >}}
 
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+Zana-bola isak'izay mijery
+:::
+
 ## Concepts and intuitions {.unnumbered}
+
 
 
 How do we document change in time?

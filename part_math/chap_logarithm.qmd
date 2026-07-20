@@ -1,13 +1,10 @@
 # Logarithm function {#sec-log}
 {{< include ../preamble.qmd >}}
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+The earth would explode if hit by an earthquake of magnitude 18 (xkcd!)
+:::
 
 ## Concepts and intuitions {.unnumbered}
-The earth would explode if hit by an earthquake of magnitude 18 (xkcd!)
-
-
-This is logarithmic scale.
-
-Linearization.
 
 When measuring the intensity of earthquake, the metric is Richter. Moment Magnitude
 One of the strongest earthquakes in Madagascar was 6.2 in 1950, 11 May (earthquakelist.org)
@@ -16,12 +13,15 @@ According to wikipedia, 6-6.9 is strong whereas, 9-9.9 is extreme near total dec
 One might then ask if it ends at 10.
 What would a say an earthquake of 12, 15, or 18?
 According to xkcd, the latter will case the earth to explode.
+Most of us would think that 6 to 12 is double and g to 18 will triple.
+The number indeed but the energy contained is increased by 10^12
+
 This is where it is important to realize that Richter is on base 10 a logarithmic scale.
 Adding one unit, will multiply the energy by 10.
 So to put it in other world. a 6 vs 9 earthquake means the latter is 1000 more powerful than the former.
 
 Logarithm scale and logarithm function.
-As function, it just takes a value and spits something.
+As function, it just takes a value and spits something @sec-function.
 One reason why it important is because of the linearization property. turns a multiplication to addition.
 log(a^2) = log(a x a) = log (a) + log(a) = 2 log a.
 So log(a^n) = n log(a).
@@ -75,8 +75,27 @@ For an arbitrary base a>0 (a!=1), the general logarithm function loga(y) is defi
 Britannica
 $x = \log_a(y) \iff a^x = y$
 
+$\log_a x = \frac{\ln x}{\ln a} \quad \text{for } x > 0, \, a > 0, \, a \neq 1$
 
+## Examples {.unnumbered}
+log(1) equals zero
+log(e) = 1
 
+log(1/x) = log(x-1) = -log(x)
+
+log(2)= ?
+## Tips and warnings {.unnumbered}
+Base 2, base e, and base 10
+
+A key thing is that x has to be positive negative values.
+
+Log is useful to convert multiplication to (see that a lot in likelihood in later part of this book)
+
+Very efficient at compressing higher value.
+
+## If you want to know more {.unnumbered}
+
+<!--
 1. The Integral Definition (The Analytic Approach)
 In rigorous calculus courses, defining the logarithm as an inverse can lead to circular logic if the exponential function wasn't constructed cleanly. To avoid this, advanced textbooks define the natural logarithm (lnx) from scratch as the area under a hyperbola.
 
@@ -93,15 +112,4 @@ $\ln x = \int_{1}^{x} \frac{1}{t} \, dt$
 From this fundamental calculus definition, all algebraic properties of logarithms are derived as theorems. For example, the product rule ln(ab)=lna+lnb is proven strictly using the additive properties of definite integrals.
 
 3. Generalization to Any Base via the Integral Definition
-Once the natural logarithm (lnx) is established analytically via the integral method above, the general logarithm function for any valid base a is formally defined using the change-of-base formula:
-
-$\log_a x = \frac{\ln x}{\ln a} \quad \text{for } x > 0, \, a > 0, \, a \neq 1$
-
-## Examples {.unnumbered}
-
-## Tips and warnings {.unnumbered}
-A key thing is that x has to be positive negative values.
-Log is useful to convert multiplication to (see that a lot in likelihood)
-It compresses higher value.
-
-## If you want to know more {.unnumbered}
+Once the natural logarithm (lnx) is established analytically via the integral method above, the general logarithm function for any valid base a is formally defined using the change-of-base formula: -->

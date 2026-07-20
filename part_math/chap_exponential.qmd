@@ -1,9 +1,13 @@
 # Exponential function {#sec-exponential}
 {{< include ../preamble.qmd >}}
-## Concepts and intuitions {.unnumbered}
-$\pi \sim 3.1415 \ldots$ and $e \sim 2.718 \ldots$
 
-As multiplication is generalization of addition 2 + 2 + 2 = 3 x 2, power is a condense notation of multiplication 2 x 2 x 2 = 2^3 (see also tips in notation).
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+$\pi \sim 3.1415 \ldots$ and $e \sim 2.718 \ldots$
+:::
+
+## Concepts and intuitions {.unnumbered}
+
+As multiplication is generalization of addition 2 + 2 + 2 = 3 x 2, power is a condense notation of multiplication 2 x 2 x 2 = 2^3 (see also @sec-operation).
 2^0 = 1
 At middle school, students started to learn about rules
 2^n x 2^m = 2^(n+m).
@@ -12,7 +16,7 @@ One could play, say 2^n x 3^n = (2 x 3)^n etc.
 
 At the end of high school, a new function is introduced which e^x or exponential of x.
 They then learn a but of properties and the famous e^x x e^y = e^(x+y).
-So essentially, the exponential function is just a power and instead of 2 we have e = 2.718...and instead of having integer, it can take any value.
+Essentially, the exponential function is just a power and instead of 2 we have e = 2.718...and instead of having integer, it can take any value.
 So e^0 = 1 and e^x should always be positive (could you get a negative value for 2^n for any reel value of n?)
 
 So why e? not, pi = 3.14 or any other numbers.
@@ -50,13 +54,25 @@ Publisher: McGraw-Hill
 The Formal Definition
 In Chapter 8 ("Some Special Functions"), Rudin defines the exponential function as the sum of an infinite series:
 "We define exp(x) by the formula:
-$\exp(x) = \sum_{n=0}^{\infty} \frac{x^n}{n!}$
+$\exp(x) = \sum_{n=0}^{\infty} \frac{x^n}{n!}$ see @sec-sum for notation.
 
 This series converges absolutely for every real (and complex) number x."
 Using this definition, the mathematical constant e is formally defined as the evaluation of this series at x=1:
 $e = \exp(1) = \sum_{n=0}^{\infty} \frac{1}{n!}$
 
+## Examples {.unnumbered}
+e^0 = 1, and e^1 = 2.71 e^-1 = 1/2.71 e^x2
 
+## Tips and warnings {.unnumbered}
+- because it is the solution of dy/dx = y @sec-differential
+- Exponential increase: slow at the beginning
+- Gaussian distribution
+- Used in interst rate too?
+- Reciprocal of a logarithm @sec-log
+
+## If you want to know more {.unnumbered}
+
+<!--
 
 1. The Differential Equation Definition
 The exponential function can be uniquely defined by its behavior under the laws of calculus—specifically, as the unique solution to a foundational initial value problem.
@@ -94,10 +110,4 @@ Generalization to Any Base (a^x)
 Once the core function exp(x) (or e^x) is formally established by any of the definitions above, the general exponential function for an arbitrary positive base a>0 (a
 !=1) is defined using the identity:
 $a^x = \exp(x \ln a) = e^{x \ln a}$
-
-## Examples {.unnumbered}
-e^0 = 1, and e^1 = 2.71.
-
-## Tips and warnings {.unnumbered}
-
-## If you want to know more {.unnumbered}
+ -->

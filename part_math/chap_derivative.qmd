@@ -1,7 +1,12 @@
 # Derivative {#sec-derivative}
 {{< include ../preamble.qmd >}}
 
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+It is just the speed!
+:::
+
 ## Concepts and intuitions {.unnumbered}
+
 Derive ex = ex, derive constant is zero etc.
 
 Derivative is again one of those words that somehow rotten us.
@@ -10,8 +15,11 @@ This is not about highschool test.
 Yet, it is a simple concept, and like function probably use that all the time.
 Derivative is essentially speed (you might remember that from physics and movement of an object).
 
+
 How do you calculate speed? Distance over the time it takes to run the distance.
 So for a same amount of time (say one minute), car 1 travels 1 km and car 2 travels 2 km, then car 2 is faster than car 1, or the speed of car 2 is higher than the speed of car 1.
+
+Interpretation from visual.
 
 Now, imagine we plot a function (see @sec-function_viz) about relationship between function and visualization.
 if x is time and y is position at a given time.
@@ -66,8 +74,36 @@ Definition: "The derivative of a function f at a number a, denoted by
 An equivalent alternative formulation often used to emphasize the target point x approaching a is also provided:
 $f'(a) = \lim_{x \to a} \frac{f(x) - f(a)}{x - a}$
 
+## Examples {.unnumbered}
+To stick to intuition, imagine we have a function that is seen as horizontal line.
+So a car is not moving and his position through time is a horizontal line.
+What is his speed? 0 correct
+Look at the steepness..it is 0 right
+Or also y2 - y1 is 0 also.
+And so that is why the derivative of a constant is always zero. There is no slope
+
+Another example is the function y =  a x + b
+...you see the derivative is just a so the higher the a the higher the speed.
+
+Finally, what if it is not a line
+This is where the tangent comes in and so we need to shrink the displacement from
+
+## Tips and warnings {.unnumbered}
+The derivative (see @sec-function) is just another function so that when you plug a number you can see the valye
+
+To further clarify any trauma.
+
+An increasing function means that the derivative is positive.
+
+The curvse go up, y2 is bigger than y1 so the difference is positive
+the same is a function is decreasing.
+
+What if the derivative is zero means that the tangent is horizontal it could mean three of the next scenario: up, down or S.
+
+## If you want to know more {.unnumbered}
 
 
+<!--
 1. The Differentiable Function Definition
 When the derivative exists at every point within an open interval, it defines a completely new function, f′(x).
 
@@ -103,27 +139,4 @@ then f is said to be differentiable at x, and we write f′(x)=A.
 
 The linear transformation A is called the differential or the total derivative of f at x."
 
-(Note: In standard coordinate bases, this unique linear transformation A is represented by the Jacobian matrix of partial derivatives).
-
-## Examples {.unnumbered}
-To stick to intuition, imagine we have a function that is seen as horizontal line.
-So a car is not moving and his position through time is a horizontal line.
-What is his speed? 0 correct
-Look at the steepness..it is 0 right
-Or also y2 - y1 is 0 also.
-And so that is why the derivative of a constant is always zero. There is no slope
-
-Another example is the function y =  a x + b
-...you see the derivative is just a so the higher the a the higher the speed.
-
-Finally, what if it is not a line
-This is where the tangent comes in and so we need to shrink the displacement from
-
-## Tips and warnings {.unnumbered}
-To further clarify any trauma.
-An increasing function means that the derivative is positive.
-The curvse go up, y2 is bigger than y1 so the difference is positive
-the same is a function is decreasing.
-What if the derivative is zero means that the tangent is horizontal it could mean three of the next scenario: up, down or S.
-
-## If you want to know more {.unnumbered}
+(Note: In standard coordinate bases, this unique linear transformation A is represented by the Jacobian matrix of partial derivatives). -->

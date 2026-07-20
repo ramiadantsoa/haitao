@@ -1,7 +1,10 @@
 # Function and graphics {#sec-function_viz}
 
-## Concepts and intuitions {.unnumbered}
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
 Ikotozafy ihany no Alexis!
+:::
+
+## Concepts and intuitions {.unnumbered}
 
 In ancient times, people have been trying to solve alegraic equations.
 E.g. what are the roots of a second degree polynomial.
@@ -35,7 +38,14 @@ Well, this means that you can give any function and I can plot it.
 With computer we can plot anything.
 
 ## Tips and warnings {.unnumbered}
-Interpreting figure could be the challenge.
+- Linear function because it plots a line
+- Don't rush, project
+- Changing scale can change quantitative visual (changin x axis)
+- x = 0 intersection with, only one
+- intersection with y = 0 are solution to f(x) = 0
+- maximum, inflexion, minimum, increasing, decreasing, you can just look at that in the figure.
+- Just plot and you are good to go.
+- You can make figures with discrete x, see @sec-difference, @sec-discrete_continuous, @sec-pmf,
 
 ## If you want to know more
 Implicit function

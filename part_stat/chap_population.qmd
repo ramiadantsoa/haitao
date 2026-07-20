@@ -2,10 +2,19 @@
 
 {{< include ../preamble.qmd >}}
 
-## Concepts and intuitions {.unnumbered}
-We will never know/ the holy grail! Tsy mponina!
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+Average of what?
+:::
 
-Population is, this is what we study and what you want to understand.
+## Concepts and intuitions {.unnumbered}
+
+What is the average age of Malagasy population?
+What is the average age of men in Madagascar?
+What is the average age of 
+
+Population is, this is what we study and what you want to understand, we want to know the characteristics.
+
+However it is formal underlying concept
 This is conceptual framework that underlies everything.
 Defining it in mathematics-orriented is easy because of the degree of abstraction.
 

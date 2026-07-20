@@ -1,7 +1,13 @@
 # Difference equations {#sec-difference}
 {{< include ../preamble.qmd >}}
 
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+Zana-bola
+:::
+
 ## Concepts and intuitions {.unnumbered}
+
+
 You go straight, left etc. and you have reached your destination.
 
 
