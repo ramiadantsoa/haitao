@@ -2,9 +2,12 @@
 
 {{< include ../preamble.qmd >}}
 
-## Concepts and intuitions {.unnumbered}
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+Average of what?
 Is it a number or a function?
+:::
 
+## Concepts and intuitions {.unnumbered}
 
 A variable is one of those terms (see also math terms) that have predominated intro stat courses.
 A qualitative variable, quantitative variables, nominal, ordinal, and latter the concept of random variable is also used.
