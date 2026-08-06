@@ -2,8 +2,12 @@
 
 {{< include ../preamble.qmd >}}
 
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+Hamaroan'ny karazany
+:::
+
+
 ## Concepts and intuitions {.unnumbered}
-Ity ny an'ise, dia ity ny ana!
 
 This is a first summary of your data! The raw data is that for each individual in a population, you have.
 You can condense this.

@@ -2,8 +2,13 @@
 
 {{< include ../preamble.qmd >}}
 
-## Concepts and intuitions {.unnumbered}
+
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
 It is just a function!
+:::
+
+## Concepts and intuitions {.unnumbered}
+
 
 
 ## Formal {.unnumbered}

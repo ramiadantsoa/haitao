@@ -2,8 +2,11 @@
 
 {{< include ../preamble.qmd >}}
 
-## Concepts and intuitions {.unnumbered}
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
 Ity kosa azoko e! Sa?
+:::
+
+## Concepts and intuitions {.unnumbered}
 
 Among all equations, this is probably one that everyone understands.
 Just add the numbers and

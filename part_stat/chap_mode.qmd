@@ -2,10 +2,12 @@
 
 {{< include ../preamble.qmd >}}
 
-## Concepts and intuitions {.unnumbered}
-One mode for chameau, deux mode for dromadaire.
-
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+Chameau unimodal, dromadaire bimodal
 Le mode sa la mode!
+:::
+
+## Concepts and intuitions {.unnumbered}
 
 This is trivial if start from the distribution, it is just the one with the highest frequency.
 Isn't that why they called it mode? And to a certain extent.

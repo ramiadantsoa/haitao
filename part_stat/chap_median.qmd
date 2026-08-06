@@ -2,8 +2,18 @@
 
 {{< include ../preamble.qmd >}}
 
-## Concepts and intuitions {.unnumbered}
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
 Misasaka ny lalana!
+:::
+
+## Concepts and intuitions {.unnumbered}
+
+Did you know that there are 7000 languages in the world.
+But there are x billion mandarin, y billion hindu, in contrast, there are z for A language and zz for B language.
+On average, a language is spoken by 100000X people, but is that informative.
+If we use the median (see later on how to compute that), the summary statistic is about 1000 speaker per langauge.
+Which number do you find more useful?
+
 
 This is the other common statistics central tendency.
 The more theory is how we calculate it from our data.

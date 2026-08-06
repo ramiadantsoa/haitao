@@ -2,9 +2,11 @@
 
 {{< include ../preamble.qmd >}}
 
-## Concepts and intuitions {.unnumbered}
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
 Tsisy idiran'ny qualité!
+:::
 
+## Concepts and intuitions {.unnumbered}
 When you take a population, a qualitative variable is a characteristic that is discrete in nature.
 In other words, they are not numbers where you can apply operation -- I dare to find a counter-example.
 So the best way is can I divided between two, if yes then it is not a qualitative variable.

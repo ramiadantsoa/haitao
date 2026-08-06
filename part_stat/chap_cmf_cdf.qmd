@@ -2,8 +2,11 @@
 
 {{< include ../preamble.qmd >}}
 
-## Concepts and intuitions {.unnumbered}
+::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
 Ikotozafy ihany no Alexis!
+:::
+
+## Concepts and intuitions {.unnumbered}
 
 Distribution (probability mass function pmf and probability density function pdf) are natural.
 
