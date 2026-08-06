@@ -7,7 +7,6 @@ Zana-bola
 
 ## Concepts and intuitions {.unnumbered}
 
-
 You go straight, left etc. and you have reached your destination.
 
 

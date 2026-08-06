@@ -12,3 +12,7 @@ Where it is applied in the real world, and more specifically in data analyses.
 
 As said above, most chapters are to support concept introduced later but I developed things that weak in people, such as operation, notations, matrix, and graphical representation and representation of few most useful fonction (such log and exponentional), I will also talk about derivative, qualitative and quantiative in a math way, and difference and differential equation.
 These are I think minimal to with applield math.
+
+Formalize concepts! We are lost in the formalization.
+
+Crawl before you walk, walk before to run

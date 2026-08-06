@@ -10,6 +10,13 @@ When measuring the intensity of earthquake, the metric is Richter. Moment Magnit
 One of the strongest earthquakes in Madagascar was 6.2 in 1950, 11 May (earthquakelist.org)
 The strongest earthquake measured measured with a Magnitude 9.5 in 1960 Great Chilean earthquake.
 According to wikipedia, 6-6.9 is strong whereas, 9-9.9 is extreme near total dectruction.
+Why going from 6-10 is such a big deal.
+It is because the scale is on a logarithm scale.
+Concretely, if an earthquake of 6 release x energy, the 9 releases 10^ 9- 6 = 10^3 that is 10^3 = 1000 more renergy, in other words, instead of throughing one grenade, you are actually throwing one thousand!!!
+
+The importance of log scale is to transform multiplication to addition, log(a b) = log a + log b. or above log(10^3) = log(10 * 10 *10) = log 10 + log 10 + log 10 = 3 log 10.
+
+
 One might then ask if it ends at 10.
 What would a say an earthquake of 12, 15, or 18?
 According to xkcd, the latter will case the earth to explode.

@@ -2,12 +2,19 @@
 {{< include ../preamble.qmd >}}
 
 ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-Zana-bola isak'izay mijery
+Zana-bola isak'izay mijery. The tool to rule them all! The only constant is change
 :::
 
 ## Concepts and intuitions {.unnumbered}
 
+How does things change in time? Back in physics, if start at location x, with an initial velocity z, then we want to document the position at any time t.
+Another example, if we put a water under the sun, how water vary with time, or
 
+It is not our goal to solve, it is how to construct them.
+Most of the diffequation we will see at this level can be solved with basic computer programming.
+
+
+The gross generalization is but it applies to how one thing vary as a function of time.
 
 How do we document change in time?
 See before about playing chess.
@@ -86,6 +93,8 @@ By the Picard–Lindelöf Theorem, if f is locally Lipschitz continuous with res
 
 
 ## Examples {.unnumbered}
+- Atomic decay
+- Instantaneous rate
 
 ## Tips and warnings {.unnumbered}
 Ironically, most differential equation are solved as a difference equation.

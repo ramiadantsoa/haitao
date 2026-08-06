@@ -20,7 +20,6 @@ For sums the idea is to use the S in greek letter Sigma and have
 sigma_i = 1 ^ 4 i = 1 + 2 + 3 + 4.
 
 
-
 ## Formal {.unnumbered}
 
 $\Sum_{i = i_0}^n a_i = a_1 + a_2 + \cdot + a_n $
@@ -46,6 +45,7 @@ Examples of Pi.
 Sum and product
 
 ## Tips and warning {.unnumbered}
+- A form of recurrence, i should be discrete @sec-discrete_continuous and won't work if continuous
 - This is a matter of definition
 - Just try with the first few terms
 - Those symbols are not but same concept as using a for loop in programming

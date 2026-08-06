@@ -5,6 +5,19 @@ To count or to measure. Tsofa sa antsy
 :::
 
 ## Concepts and intuitions {.unnumbered}
+One is the N and the other one is R.
+When one says I have 3 children, nobody asks is it a from N or from R, in fact N is included in R.
+So to a certain extent, we could just use R.
+That sort of worl conceptually.
+
+Why need distinction from a pure technical view: the type of mathematics, the type of statistics, and prgramming vary depending on your variable is in N or is in R. see @sec-variable.
+
+Why is it called discrete? Etymology of discrete not making a noise, the point of discrete here is poncutal, and thus is counting, and the tool you need is counting. Add the device?
+
+Why is it called continuous? think about time.
+
+In language, countable and uncountable so it is sort of natural.
+
 In grammar, countable and uncountable.
 Give examples.
 This is painful, but this means that grammar evolved to capture different things.
@@ -37,10 +50,13 @@ See @sec-sum for how numbers are "summed", @sec-mean on how to calculate the mea
 The formal definition is useless for our purpose (unless you want to learn about topology).
 But you can look at it in this way, a discrete is a set number that is isolated
 In constrast a continuous is well continuous, pick a number and no matter how close you look it will always have a neighbor.
+In other world, we still use continuous to define a discrete.
+We can explicitly define the next term.
 
 ## Examples {.unnumbered}
 World of discrete numbers: Odd and even, prime numbers
 World of continuous numbers: Irrational numbers
+Discrete in sum and product @sec-sum
 
 ## Tips and warnings {.unnumbered}
 - What about rational numbers, they are also discrete.
