@@ -33,7 +33,7 @@ book:
         - part_stat/chap_quantitative.qmd
         - part_stat/chap_distribution.qmd
         - part_stat/chap_cmf_cdf.qmd
-        - part_stat/chap_statistic.qmd
+        # - part_stat/chap_statistic.qmd
         - part_stat/chap_mean.qmd
         - part_stat/chap_mode.qmd
         - part_stat/chap_variance.qmd

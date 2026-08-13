@@ -4,10 +4,31 @@
 
 
 ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-It is just a function!
+It is just a function! CEPE BEPC 100%
 :::
 
 ## Concepts and intuitions {.unnumbered}
+
+School establishments proudly display when success rate of a national exam is 100% or close too that.
+For parents, it is a good argument that this is a great school.
+Of course, one wants the kid the pass the exam, but in hindsight isn't the expectation bar a bit low? to that the average grade is above 10 out of 20.
+This is an example of using a single metric to summarize complex information, it is practical and have advantage but there are also downside to it.
+
+Mean @sec-mean is the most common single metric used to summarize a list of numbers: for instance deciding the major in a cohort we compare the average grade, or even passing exams as above. And yet, at certain exam, we add an extra rule: if one gets 0 in one exam then it is an automatic fail, regardless of the mean. And when it is a bacc, some establishments will display how many mentions etc..
+
+We all have heard variance and standard deviation...but most of us (unlike calculating the mean), does not know how to compute it, and almost never computed it... have you ever calculated the variance of your grade? Yet, having 0 or showing mentions indeed are that we care about variability.
+To shift to a very different example, although climate change/global warming is primarily measured about increase in average temperature, the increase in variability, where extreme cold, extreme heat, or extreme cyclone, is a equally, if not, a more serious threat.
+
+If assume you have guessed that these stories are to show that variance/so what does it represent is important metric and should be considered and should be compared and interpreted.
+While the mean capture the central tendency (see also @sec-mode, and @sec-median for other metrics), the variance (and in a different scale standard deviation) represents dispersion of the distribution.
+So imagine these few scenarios: imagine picking two students grades on four subjects
+
+student A: 15, 15, 15, 15 , 15, 0
+student B: 10, 10, 20, 20, 15, 2
+student C: 13, 13, 17, 17, 15, 1
+student D: 12, 13, 18, 19, 16, 1.5
+
+It is just simpler to pick student D if we use the mean but student A might feel proud
 
 
 

@@ -8,13 +8,15 @@ Le mode sa la mode!
 :::
 
 ## Concepts and intuitions {.unnumbered}
-
-This is trivial if start from the distribution, it is just the one with the highest frequency.
+This is trivial if start from the distribution (@sec-distribution), it is just the one with the highest frequency.
 Isn't that why they called it mode? And to a certain extent.
 
-This naturally apply to qualitative or quantitative variables.
+It could also be seen as a measure of central tendency (@sec-mean and @sec-median).
+It is the name of descriptive statistics.
 
-But, be aware that it does not need to be unique.
+Unlike mean and median, this naturally apply to qualitative or quantitative variables and also, it does not need to be unique.
+The distribution can have two modes or more...
+
 
 ## Formal {.unnumbered}
 
@@ -65,7 +67,12 @@ Formally, the global mode m is expressed as:
 $m = \operatorname{argmax}_{x} f(x)$
 
 ## Examples {.unnumbered}
+Mode in qualitative
+Mode in discrete
+Mode in continuous?
 
 ## Tips and warnings {.unnumbered}
+- mode if histogram
+-
 
 ## If you want to know more {.unnumbered}

@@ -7,21 +7,30 @@ Ity kosa azoko e! Sa?
 :::
 
 ## Concepts and intuitions {.unnumbered}
+This concept is about data driven.
+The equation below is about exact formulation from data-driven and theoretical distribution.
 
-Among all equations, this is probably one that everyone understands.
-Just add the numbers and
-And when we add coefficient, we need to sum the coefficient.
+Among all equations, this is probably one that everyone is familiar with.
+We almost rote learning, sum all the numbers and then divide by the number of numbers.
+However, when one presents the equation for calculating the mean (see formal below @eq-mean_c and @eq-mean_d), it somehow becomes inaccessible.
 
-As you have seen, this is one type of statist that is a function to summarize a data.
+The part above is level one when calculating the mean.
+Level two is when calculating the mean with coefficient.
+Think at the baccalaureat.
+To calculate the mean, you multiply the grade with the coefficient, sum the whole thing, and then divide the total number of coefficient.
 
-The tricky part is the separation between empirical and theoretical mean.
+The variation, which becomes level 3 is to give weight to each subject, the weight is just the coefficient divided by the total coefficient.
+In other words the sum of the weight is always 1.
 
-So how to we connect them.
-The second version is instead of dividing with the sample size. Mathematically it is the same.
+That final formulation allows us to calculate the mean using the distribution @sec-distribution, that is the weight is simply the frequency.
 
-What is nice is that, with that trick we can link it to theoretical mean. That is realized with.
+Why do we calculate the mean? In statistic is a called a measure (not the measure) of central tendency, that is we want to summarise the data with one number.
+In terms of concept it is a social convention.
+For instance, during an exam, we say that if the mean is above 10 then we pass, and below we fail.
+But sometimes we don't need to mean at all.
+A rule is that if we get a zero in one test then the mean does not matter, we automatically fail, why is that? Another social convention.
+As you can see, it is convenient but only subject to some conditions.
 
-More on that late statistical inference part.
 
 ## Formal {.unnumbered}
 
@@ -81,5 +90,6 @@ $\lim_{n \to \infty} P(|\bar{X}_n - \mu| < \varepsilon) = 1 \quad \text{for any 
 this is for quantitative variable because we can do operation in that
 
 Is it that useful?
+Airline 1 over 2 if mean crass is 1 per year vs 2 per year?
 
 ## If you want to know more {.unnumbered}

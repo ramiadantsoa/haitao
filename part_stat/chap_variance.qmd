@@ -3,12 +3,26 @@
 {{< include ../preamble.qmd >}}
 
 ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-Acolyten'ny moyenne!
+Mba jereo ihany izaho!
 :::
 
 ## Concepts and intuitions {.unnumbered}
+Everyone has checked their average grade to see if one passes of fail or get a mark, but, no one has ever check the variance of their grades!
+While calculating the mean is well engrained, most probably don't remember the formula for variance or standard deviation.
+But to a certain extent, we know mean is not enough, sometimes parents will look at the range of your grade (mostly the low ones).
+And at the university, having 0 on one subject is failure.
 
+In the two examples above, one is essentially looking at extremes, but why ignore all remaining information.
+The variance is a statistic that is used to summarize the spread of the data,  most specifically, spread around the mean.
+Why the mean is called central tendency, the variance (and the standard devitation) is a measure of dispersion.
 
+Well, the variance is actually also an average, it is the average distance between your data and the mean. So if x1, x2, x3, x4, with mean xbar, then variance d1 = (x1 - xbar)^2, d2 = (x2 - xbar)^2, d3, and d4 and then variance is average of d1, d2, d3, d4.
+
+Why the square? There are many explanation but the simplest is that distance needs to be positive and so squaring the numbers makes it positive. It is also for that reason that we have standard deviation as a square root of variance, so as to bring the same scale as our orgininal x1.
+In other word, it allows us to interpret the value, for instance if grades are 0, 0, 20, 20, the variance is 100 which is not interpratable but a standard deviation of 10 around mean 10 makes sense.
+
+Most data we encounter are complex, looking at movie, hotel or restaurant, ratings.
+Mean is a convenient straighforward way to look at it but just the mean could be misleading (think about bi-modal distribution @sec-mode), alternatively one can look at the distribution (@sec-distribution), and intermediate approach is to look at mean and also the variance (or standard deviation) and such can improve comparison (between two distribution) and decision making.
 
 ## Formal {.unnumbered}
 $$

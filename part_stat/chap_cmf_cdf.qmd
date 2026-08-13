@@ -8,13 +8,20 @@ Ikotozafy ihany no Alexis!
 
 ## Concepts and intuitions {.unnumbered}
 
-Distribution (probability mass function pmf and probability density function pdf) are natural.
+A street vendor earns different amount per day, so we have (e1, ... e30).
+We can plot that data, day on x axis and value on y axis, we will have sticks with different height.
+Another way to visualize is to add daily earnings so we have stairs (of different height). day 1 is e1, day 2 is e1 + e2, day 3 is e1 + e2 + e3.
 
-For statisticans however, working on cumulative is more convenient (and there are others transformation that could be used like).
+There is no better or worse way, it is in fact the same data.
+The stair which is what is called cumulative is better to answer for instance how much one earns after one week, 2 weeks etc and eventually monthly earning.
+But it is completely useless if you want to calculate the mean daily earning or the max earning.
 
-Mostly for theoretical distributions
+The new object is simply a different way of visualizing a distribution @sec-distribution. Whereas one can reveal  @sec-mean, @sec-mode for a cumulative is mostly used to look at quantile @sec-median and @sec-quantile.
 
-Find something for cumulative relevance !!!
+This is a just a different way of looking a distribution.
+It only applies for quantitative variable.
+Think about this example,
+
 
 ## Formal {.unnumbered}
 In advanced mathematical statistics, textbooks clarify a common terminological distinction before providing rigorous definitions:
@@ -103,17 +110,20 @@ Conceptual Summary
 
 
 ## Examples {.unnumbered}
+One example of mass
+One example of density
 
 ## Tips and warnings {.unnumbered}
-Why it won't work for qualitative, because the order on x-axis is not relevant, so there won't be a single cmf and cdf
+
+- Most practical sense it for quantiles.
+- Easy for statisticians to work on increasing function
+- Why it won't work for qualitative, because the order on x-axis is not relevant, so there won't be a single cmf and cdf
 For ordinal might be okay.
 
 If you derive
 
 
-We focus on two applications here:
-- comparing sampled
-- looking at quantiles @sec-quantile.
+  others transformation that could be used like).
 
 
 ## If you want to know more {.unnumbered}
