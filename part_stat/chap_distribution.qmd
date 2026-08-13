@@ -3,27 +3,32 @@
 {{< include ../preamble.qmd >}}
 
 ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-Hamaroan'ny karazany/ Isan'ny karazany
+Maro an'isa sy vitsy an'isa
 :::
 
 
 ## Concepts and intuitions {.unnumbered}
+There two entry points to think of a distribution.
+The first one is from the theoretical perspective, thinking about normal/gaussian or like binomial or Poission distribution.
+That perspective will be addressed later in this book, when we talk about statistical inference.
 
-Approach one: in pure data-driven perspective
+The second one is from a data-driven perspective.
+Assume for now that it is qualitative variable (@sec-qualitative-variable).
+That is, imagine assess the gender of all (n) employees in a company (more generally a variable @sec-variable from a population @sec-population).
+That is mostly a sequence of male female.
+A distribution is a first entry point to summarizing your data.
+Yes, it is a summary because we are computing new numbers from the original data.
+So what are the new numbers: essentially look at the unique types of variables and count how many are males and female. So you have a pair male- nmale and female-nfemale.
+Ultimately, a distribution is a figure, the figure is simply two bars of different height.
 
-Then the theoretical perspective.
+You are most bored at this stage, this is so obvious...but what happens variable is quantitative (@sec-quantiative-variable)? How one constructs a distribution?
+Imagine you measured the height of the employees, you have a sequence of n numbers. Because numbers are likel unique, one cannot count how many have the same value (plotting that would be the same height). The work around is to arbitrarily divide the range into intervals and count the number of (as above with male-female).
+The key important word here is arbirarily because depending on the intervals, it is possible to create different distribution
+Back in the day, Excel did not have a dedicated function to create a histogram, so one has to create the intervales, computes and then use bar chart to make to plot the distribution.
+Now, it is done with a single click and the program default the interval.
 
-This is a first summary of your data! The raw data is that for each individual in a population, you have.
-You can condense this.
-Among the n, how many belongs.
 
-As in Ikotozafy ihany no Alexis.
-Focus on the y-axis, which is how frequent it is.
-
-Empirical and theoretical.
-Mass and
-
-Qualitative vs quantitative
+The take-home is that a data is a sequence of number and the distribution transform it into pair of discrete bin-and the number of that fall belong to that bin which is then plotted for visualization (@sec-function_viz). You can then see which value is most or least frequent (maro an'isa or vitsy an'isa), but also the frequency of all other values.
 
 
 ## Formal {.unnumbered}
@@ -98,6 +103,11 @@ Visually and analytically, we evaluate the distribution of a variable by looking
 ## Tips and warnings {.unnumbered}
 It could be anything but we are so used to theoretical distribution.
 Continuous is unintuitive.
+
+
+As a final point, the height can be scaled (e.g. total number of individuals or the frequency as a percentage with sums to 100 or a proportion which sums to 1)
+
+Difference between bar chart and histogram.
 
 ## If you want to know more {.unnumbered}
 Symmetric or not. There are other statistic to test for data...
