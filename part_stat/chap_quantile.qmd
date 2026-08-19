@@ -79,7 +79,13 @@ This function F−1
   on (0,1) is called the quantile function."
 
 ## Examples {.unnumbered}
+Quartile
+Interquartile range as another measure of dispersion
+Visualization distribution and cmf and cmd.
 
 ## Tips and warnings {.unnumbered}
+- median is the 50% quantile
+- the p-value is a quantile
+- Displayed with
 
 ## If you want to know more {.unnumbered}

@@ -85,11 +85,14 @@ As defined by the Weak/Strong Law of Large Numbers (LLN) in theory textbooks, if
 $\lim_{n \to \infty} P(|\bar{X}_n - \mu| < \varepsilon) = 1 \quad \text{for any } \varepsilon > 0$
 
 ## Examples {.unnumbered}
+Average of grades: calculation 1, 2, 3
 
 ## Tips and warnings {.unnumbered}
-this is for quantitative variable because we can do operation in that
+- this is for quantitative variable because we can do operation in that
+- Is it that useful? Airline 1 over 2 if mean crash is 1 per year vs 2 per year?
+- mean can be misleading if presence of large number
+- mean, average, expected value
 
-Is it that useful?
-Airline 1 over 2 if mean crass is 1 per year vs 2 per year?
 
 ## If you want to know more {.unnumbered}
+geometric and harmonic average

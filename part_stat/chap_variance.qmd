@@ -121,7 +121,13 @@ $\operatorname{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2$
 That is, the variance is the expected value of the square minus the square of the expected value."
 
 ## Examples {.unnumbered}
+Computing variance of grades and standard deviation
 
 ## Tips and warnings {.unnumbered}
+- Variance divided by n and n-1
+- squared minus mean squared
+- normal dist with two parameters, if know the mean and the variance then we know the whole distribution.
+- Do you compute the average of two numbers? Variance of three nunmbers?
+- Sample size
 
 ## If you want to know more {.unnumbered}

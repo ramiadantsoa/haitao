@@ -8,6 +8,8 @@ Average of what?
 
 ## Concepts and intuitions {.unnumbered}
 
+Abstraction of a function!
+
 A variable is one of those terms (see also math terms) that have predominated intro stat courses.
 A qualitative variable, quantitative variables, nominal, ordinal, and latter the concept of random variable is also used.
 This is an example where why do we need it.
@@ -21,7 +23,7 @@ Here I would just define/ translate variable as a trait or feature.
 Trait of feature of what (see later chapters).
 
 At this stage, you could say that a variable is just a function.
-If you take an object x from a population x, you can apply the variable (f) and obtain the value y = f(x).
+If you take an object/individual/element x from a population X, you can apply the variable (f) --sort of function. and obtain the value y = f(x). It is the property of y that gives it's  See @sec-function.
 
 In programming, you will see, integer, numeric (float), and string, boolean, characters, factors (see section programming for others)
 
@@ -75,6 +77,19 @@ The Scale: It must be classifiable into a defined measurement scale (Nominal, Or
 
 ## Examples {.unnumbered}
 
+Assume human in a classroom: sick or not, age, height, sex.
+Assuming schools: number of kids per school, sex ratio
+Assume animal: species richness per regions in all x national parks
+Assume plant: dbh, height, growth measured between two time points.
+
+
+Sex determination X Y and Y in human
+Sex determination X, Y, Z
+Sex determination temperature in turtle
+
 ## Tips and warnings {.unnumbered}
+- Is a constant variable?
+- Non-random vs random variable (see later chapters)
+- Variable types but could be transformed (see @sec-quantiative-variable and @sec-qualitative-variable)
 
 ## If you want to know more {.unnumbered}

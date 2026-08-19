@@ -29,8 +29,8 @@ book:
       chapters:
         - part_stat/chap_population.qmd
         - part_stat/chap_variable.qmd
-        - part_stat/chap_qualitative.qmd
         - part_stat/chap_quantitative.qmd
+        - part_stat/chap_qualitative.qmd
         - part_stat/chap_distribution.qmd
         - part_stat/chap_cmf_cdf.qmd
         # - part_stat/chap_statistic.qmd

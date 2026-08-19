@@ -8,13 +8,17 @@ Isao, refeso, lanjao!
 
 
 ## Concepts and intuitions {.unnumbered}
+If you undestand the variable @sec-variable, this is specific case.
+In general, working with quantative variable is quite natural, the problem usually is with qualitative (@sec-qualitative-variable).
 
-Yes, it is about quantity! Revisiting saw and knife.
+Math, you have been working with numbers. It is a quantity.
+In the simplesst form, can one calculate the averge of the number.
+However, there is two types of quantitative (ADD THE DIAGRAM SOMEWHERE): discrete and continuous @sec-discrete_continuous.
 
-This is less problematic, it is just a number.
-the most important part is to distinguish between discrete and continuous @sec-discrete_continuous.
+When you enter your data, it might not make a different at first.
+You might have a column for age, number of kids, etc.
 
-As the mathematics for handling them is quite different.
+As the mathematics for handling them is quite different but this is not our concern for now. See later on statistical inference and model fitting and predictin....
 
 ## Formal {.unnumbered}
 In statistics textbooks, a quantitative variable is defined as a variable that measures a numerical quantity or amount. Crucially, its defining mathematical feature is that its values are actual numbers for which arithmetic operations (such as addition, subtraction, or averaging) yield meaningful, real-world interpretations.
@@ -72,9 +76,22 @@ The "Arithmetic" Litmus Test: To check if a variable is truly quantitative, ask:
 
 
 ## Examples {.unnumbered}
+Ask students....
+
+Human: income,
+
+Animal:
+
+Plant:
+
+Conservation
+Biochemistry.
 
 ## Tips and warnings {.unnumbered}
-Blurring the difference
+- Sematic: quantitative, numeric, numbers,
+- Positive values or not
+- Variable transformation and scaling
+- Mapping in coding
 
 
 ## If you want to know more {.unnumbered}

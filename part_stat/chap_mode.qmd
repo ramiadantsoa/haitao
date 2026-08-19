@@ -69,10 +69,12 @@ $m = \operatorname{argmax}_{x} f(x)$
 ## Examples {.unnumbered}
 Mode in qualitative
 Mode in discrete
-Mode in continuous?
+Mode in continuous? Think about salary.
 
 ## Tips and warnings {.unnumbered}
 - mode if histogram
--
+- Central tendency
+- mode is generally different from the mean (and the median), true if ...
+- mode might not be unique or does not exist
 
 ## If you want to know more {.unnumbered}
