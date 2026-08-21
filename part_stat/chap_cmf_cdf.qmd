@@ -9,7 +9,66 @@ Ikotozafy ihany no Alexis!
 ## Concepts and intuitions {.unnumbered}
 This is just another way of visualizing a distribution (@sec-distribution) for quantitative variables.
 
-Add a figure with stacked distribution
+Cummulative for ordinal
+```{r}
+
+df_dist <- data.frame(
+        size = c("Asmall", "Bmedium", "Clarge"),
+        value = c(4, 2, 3))
+
+fig1 <- ggplot(dat = df_dist, aes(x = size,  y = value, fill = size)) +
+    geom_col()+
+    scale_fill_manual(values = c("Asmall" = "orange",
+                                "Bmedium" = "purple",
+                                "Clarge" = "#69b3a2")) +
+    ylim(c(0, 11)) +
+    theme_bw()
+
+
+ df_cumul <- data.frame(
+    cumul = c("Asmall <=", "Bmedium <=","Bmedium <=", "Clarge <=", "Clarge <=",  "Clarge <="),
+    size = c("Asmall", "Asmall", "Bmedium", "Asmall", "Bmedium", "Clarge"),
+    value = c(4, 4, 2, 4, 2, 3)
+ )
+
+fig2 <- ggplot(dat = df_cumul, aes(x = cumul, y = value, fill = size)) +
+    geom_col(position = position_stack(reverse = TRUE)) +
+    scale_fill_manual(values = c("Asmall" = "orange",
+                                "Bmedium" = "purple",
+                                "Clarge" = "#69b3a2")) +
+    ylim(c(0, 11)) +
+    theme_bw()
+
+fig <- fig1 + fig2 +
+    plot_layout(axis_titles = "collect", guides = "collect")
+fig
+```
+
+
+And add a
+
+```{r}
+# 1. Generate random sample data
+set.seed(42)
+data_values <- rnorm(100)
+
+hist(data_values, col = "lightblue" )
+
+# 2. Compute the initial histogram without plotting it
+hist_object <- hist(data_values, plot = FALSE)
+
+# 3. Replace the standard bin counts with cumulative counts
+hist_object$counts <- cumsum(hist_object$counts)
+
+# 4. Plot the cumulative histogram
+plot(hist_object,
+     main = "Cumulative Histogram (Base R)",
+     xlab = "Values",
+     ylab = "Cumulative Frequency",
+     col = "lightblue")
+
+```
+
 <!--
 A street vendor earns different amount per day, so we have (e1, ... e30).
 We can plot that data, day on x axis and value on y axis, we will have sticks with different height.

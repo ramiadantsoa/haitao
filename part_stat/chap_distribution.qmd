@@ -100,13 +100,89 @@ Visually and analytically, we evaluate the distribution of a variable by looking
 ## Examples {.unnumbered}
 We show figures here but the figures are obtained from numbers.
 
-Fig 1a: distribution of sex, or another qualitative, non-ordinal and ordinal
+Qualitative
+```{r}
+df_sex <- data.frame(
+    sex = c("male", "female"),
+    value = c(13, 16)
+)
 
-Fig 1b: an unusual but accurate for discrete quantaitative
+fig_sex <- ggplot(df_sex, aes(x = sex, y = value)) +
+    geom_col() +
+    theme_bw()
 
-Fig 1c: quantative but with different binning
+df_lemur <- data.frame(
+    species = c("indri", "catta", "mouse"),
+    value = c(10, 20, 300)
+)
 
-Fig 1d: scaling y axis (aboslute, frequency)
+fig_lemur_a <- ggplot(df_lemur, aes(x = species, y = value)) +
+    geom_col() +
+    theme_bw()
+
+fig_lemur_b <- ggplot(df_lemur, aes(x = reorder(species, value), y = value)) +
+    geom_col() +
+    theme_bw()
+
+
+fig_qual <- fig_sex + fig_lemur_a + fig_lemur_b +
+    plot_layout(axis_titles = "collect")
+
+fig_qual
+```
+
+Quantitative
+```{r}
+
+# Quantitative
+set.seed(1)
+df_discrete <- data.frame(
+    size = rpois(100, 5)) |>
+    count(size)
+
+
+fig_discrete <- ggplot(df_discrete, aes(x = size, xend = size, y = 0, yend = n)) +
+ geom_point(aes(x = size, y = n)) +
+  geom_segment() +
+  theme_bw()
+
+set.seed(1)
+df_quant <- data.frame(
+    size = rnorm(100, 10, 1)
+)
+
+fig_quant_a <- ggplot(df_quant, aes(x = size)) +
+    geom_histogram(binwidth = 1) +
+    theme_bw()
+
+fig_quant_b <- ggplot(df_quant, aes(x = size)) +
+    geom_histogram(binwidth = 0.2) +
+    theme_bw()
+
+fig_quant <- fig_discrete + fig_quant_a + fig_quant_b +
+    plot_layout(axis_titles = "collect")
+fig_quant
+```
+
+```{r}
+fig_quant_dens <- ggplot(df_quant, aes(x = size, after_stat(density))) +
+    geom_histogram(binwidth = 1) +
+    theme_bw()
+
+fig_quant_freq <- ggplot(df_quant, aes(x = size, after_stat(ncount))) +
+    geom_histogram(binwidth = 1) +
+    theme_bw()
+
+fig_y <- fig_quant_a + fig_quant_dens + fig_quant_freq
+fig_y
+```
+
+
+Play with y
+
+
+
+
 
 
 ## Tips and warnings {.unnumbered}
@@ -119,7 +195,7 @@ As a final point, the height can be scaled (e.g. total number of individuals or 
 Difference between bar chart and histogram.
 
 A figure is worth a thousand words
-Whereas one can reveal  @sec-mean, @sec-mode 
+Whereas one can reveal  @sec-mean, @sec-mode
 
 ## If you want to know more {.unnumbered}
 Symmetric or not. There are other statistic to test for data...

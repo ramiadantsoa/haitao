@@ -1,6 +1,6 @@
 # Matrix multiplication {#sec-matrix_multi}
 ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-The most useful and natural product
+Asio facture azafady!
 :::
 
 ## Concepts and intutions {.unnumbered}
