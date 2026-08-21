@@ -1,19 +1,23 @@
 # Operation {#sec-operation}
 
 ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-Twitter debate!
+The equation that broke the internet!
 :::
 
 ## Concepts and intutions {.unnumbered}
 
-Few years ago, there are was an intense debate on Twitter (now X) about a simple calculation.
+Few years ago, there was an intense debate on several social media platforms about a simple calculation
 
-8 ÷ 2 (2 + 2)
+::: {style="font-size: 100%; font-family: Courier New; color: back; text-align: center;"}
+8 ÷ 2 (2 + 2) = ?
+:::
 
 One camp would argue that the answer is one, the other camp is convinced that it is sixteen.
-What makes it complicated is that inputing with different calculators also yield different results.
+While these cliving/divide are what fuels those platforms, if there is one field where is mathematics.
 
-So who is right?
+
+So what is the correct answer?
+
 
 Obviously, the question is formulated to bring confusion.
 But this is still simple arithmetic
@@ -59,3 +63,5 @@ Placing parenthesis to yield different results
 ## If you want to know more {.unnumbered}
 Books on arithmetic
 History of arithmetic
+
+ 

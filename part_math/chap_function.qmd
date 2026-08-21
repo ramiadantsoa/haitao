@@ -1,7 +1,7 @@
 # Functions {#sec-function}
 
 ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-Fiainana andavan'andro: akora, mpanodina, vokatra
+Akora, mpanodina, vokatra, Aza mandaka rindrina fa mahafaty renibe.
 :::
 
 ## Concepts and intutions {.unnumbered}
@@ -10,7 +10,7 @@ For most of us, hearing a function is traumatizing.
 But what most of us think is domaine de définition, dérivé étude des signes et tableau de variation etc.
 To a certain extent, most of us has lost what is the meaning/role of a function.
 
-The first and most useful is the correspondance between a function and a figure, we will expand on that in @sec-function_viz. Visualizing it. 
+The first and most useful is the correspondance between a function and a figure, we will expand on that in @sec-function_viz. Visualizing it.
 The second is simply a process understanding how changing something will affect its outcome. We need three component the ingredient, the transformer, and the outcome.
 
 

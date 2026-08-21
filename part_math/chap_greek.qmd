@@ -3,59 +3,80 @@
 ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
 The one like the fish.
 :::
+
 ## Concepts and intutions {.unnumbered}
 
-Do you recognize this?
+Once, a colleague gave a lecture on Lotka-Volterra equation to undergraduate students in the biology department, when a student asked: "what is alpha?", she spent a few minutes explaining what alpha represented until another student interjected and said: "it is the one like the fish". She wake up call that understanding greek letter is a problem. And to the majority it is the case, so let's clear that out.
 
-$(\zeta  + \xi)^2 = \zeta^2 + \xi^2 + 2\zeta\xi$
+Do you recognize this? $(\zeta  + \xi)^2 = \zeta^2 + \xi^2 + 2\zeta\xi$
 
-After staring for a while, one might realize that this is identité remarquable.
-In fact it exactly the same as $(a + b) ^ 2 = a^2 + b^2 + 2ab$.
+After staring for a while, one might realize that this is identité remarquable. In fact it exactly the same as $(a + b) ^ 2 = a^2 + b^2 + 2ab$.
 
-This is the same as $13 + 9 = 22$
-But this is the same as $XIII + IX = XXII$.
+This is the same as $13 + 9 = 22$ But this is the same as $XIII + IX = XXII$.
 
 The romans were not great with math notations.
 
-One challenge is we don't know how to read.
+Eventually, it is a matter of notation, is there a reason to use roman letter in and only in the bible? Maybe because it clearly separate,
 
-In short, these are just symbols,  they function as any other notation
+Likewise, using greek letter has a convience, and as with roman numbers, you just need to learn them and understand them. Not need to use them
+
+<!-- In short, these are just symbols,  they function as any other notation
 $y = a x + b$ is $y =  \alpha x + \beta$.
 
 For some reasons, they might look more complicated, and to a certain extant more relevant. I am alpha and omega. Is less than I am a and z.
-But that is not the best way to use them.
+But that is not the best way to use them. -->
 
 ## Formal {.unnumbered}
-The only thing is just to learn the alphabet so here a quick summary
-There are upper and lower case.
 
-Create a
-$\alpha \beta \gamma \epsilon \nu \mu \eta \varepsilon \omega \zeta \xi \lambda \rho \delta \phi \psi \sigma \theta $
-a b g e n m
+The only thing is just to learn the alphabet so here a quick summary There are upper and lower case. Here is the raw Markdown table formatted with explicit LaTeX syntax for the Greek characters, exactly as requested for easy copy-pasting:
 
-The other extension is that they are used
-In physics, constants
-In math, pi is a recognizable
-In statistics, they represent something different.
-As a true parameter.
-This could facilitate
+| Lower Case | Upper Case | Latin Equivalent | Name    |
+|:-----------|:-----------|:-----------------|:--------|
+| $\alpha$   | $A$        | a                | Alpha   |
+| $\beta$    | $B$        | b                | Beta    |
+| $\gamma$   | $\Gamma$   | g                | Gamma   |
+| $\delta$   | $\Delta$   | d                | Delta   |
+| $\epsilon$ | $E$        | e                | Epsilon |
+| $\zeta$    | $Z$        | z                | Zeta    |
+| $\eta$     | $H$        | e                | Eta     |
+| $\theta$   | $\Theta$   | th               | Theta   |
+| $\iota$    | $I$        | i                | Iota    |
+| $\kappa$   | $K$        | k                | Kappa   |
+| $\lambda$  | $\Lambda$  | l                | Lambda  |
+| $\mu$      | $M$        | m                | Mu      |
+| $\nu$      | $N$        | n                | Nu      |
+| $\xi$      | $\Xi$      | x                | Xi      |
+| $\omicron$ | $O$        | o                | Omicron |
+| $\pi$      | $\Pi$      | p                | Pi      |
+| $\rho$     | $R$        | r                | Rho     |
+| $\sigma$   | $\Sigma$   | s                | Sigma   |
+| $\tau$     | $T$        | t                | Tau     |
+| $\upsilon$ | $\Upsilon$ | y                | Upsilon |
+| $\phi$     | $\Phi$     | ph               | Phi     |
+| $\chi$     | $X$        | ch               | Chi     |
+| $\psi$     | $\Psi$     | ps               | Psi     |
+| $\omega$   | $\Omega$   | o                | Omega   |
+
+: Dictionary of greek alphabet
+
+Latin browed from Greek so Greek is the original, when greek is different romans did not need them (like phi) or modified them, Delta, Lambda and sigma.
+
+
+
+The other extension is that they are used In physics, constants In math, pi is a recognizable In statistics, they represent something different. As a true parameter. This could facilitate
 
 Need more symbols
 
 ## Examples {.unnumbered}
-Famous letters
-Zeta function
-Omega for a set, small for element
-Ohm in physics
-rho is for correlation
 
+Famous letters Zeta function Omega for a set, small for element Ohm in physics rho is for correlation
 
 ## Tips and warning {.unnumbered}
-epsilon and omicron iota etc are something small
-Omega is used as a set in maths and ohm in physics
 
-Notation for birth is beta and death is delta, or mortality is mu, tau is time.
-Of course, you can but using something intuitive helps.
+epsilon and omicron iota etc are something small Omega is used as a set in maths and ohm in physics
+
+Notation for birth is beta and death is delta, or mortality is mu, tau is time. Of course, you can but using something intuitive helps.
 
 ## if you want to know more {.unnumbered}
+
 See @sec-operation
