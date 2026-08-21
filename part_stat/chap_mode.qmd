@@ -19,9 +19,9 @@ The distribution can have two modes or more...
 
 
 ## Formal {.unnumbered}
-
+<!--
 In statistical literature, the definition of the mode splits into two distinct mathematical frameworks: applied statistics (the value that occurs with the highest frequency in an observed dataset) and theoretical mathematical statistics (the value at which the probability mass function or probability density function reaches its local or global maximum).
-Here are the rigorous definitions for both, complete with textbook sources and raw LaTeX formatting.
+Here are the rigorous definitions for both, complete with textbook sources and raw LaTeX formatting. -->
 
 1. Applied Statistics: The Sample Mode
 In applied data analysis, the mode is an empirical descriptive statistic used primarily for categorical or discrete data.
@@ -35,7 +35,7 @@ The Definition
 In Chapter 3 ("Descriptive Statistics"), Agresti defines the mode based on empirical frequency:
 "The mode is the value that occurs most frequently. [...] The mode is more commonly used with categorical data than with quantitative data. For example, the modal choice for the most important national problem is the category with the highest frequency."
 The text notes that a dataset can be bimodal if two distinct values tie for the highest frequency, or multimodal if there are more than two.
-
+<!--
 2. Theoretical Statistics: The Distribution Mode
 In mathematical statistical theory, the mode is defined rigorously as the maximizing argument (argmax) of a probability distribution function.
 
@@ -64,7 +64,7 @@ The Definition
 While explaining the shapes of distributions in Chapter 2, the concept is formalized as:
 "A mode of a probability distribution with PMF or PDF f(x) is a point x0 at which f(x) achieves a local maximum. If x0 maximizes f(x) over its entire support, it is the global mode."
 Formally, the global mode m is expressed as:
-$m = \operatorname{argmax}_{x} f(x)$
+$m = \operatorname{argmax}_{x} f(x)$ -->
 
 ## Examples {.unnumbered}
 Mode in qualitative

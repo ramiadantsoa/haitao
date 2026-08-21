@@ -3,7 +3,7 @@
 {{< include ../preamble.qmd >}}
 
 ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-Maro an'isa sy vitsy an'isa
+A visual summary of your data
 :::
 
 
@@ -29,15 +29,15 @@ Now, it is done with a single click and the program default the interval.
 
 
 The take-home is that a data is a sequence of number and the distribution transform it into pair of discrete bin-and the number of that fall belong to that bin which is then plotted for visualization (@sec-function_viz). You can then see which value is most or least frequent (maro an'isa or vitsy an'isa), but also the frequency of all other values.
-
+A figure is worth a thousand words.
 
 ## Formal {.unnumbered}
-
+<!--
 In statistics, a distribution (or the distribution of a variable) is a foundational concept that bridges raw data with mathematical probability. Depending on whether you look at an applied context (real data) or a theoretical context (probability models), it is defined either as a summary of observed frequencies or as a mathematical function mapping probabilities to values.
 Here are the rigorous definitions from three authoritative textbooks representing these different levels of statistical analysis.
 
 1. The Applied / Data-Centric Definition
-In applied and introductory statistics, the distribution of a variable is defined as a description of what values the variable takes and how often it takes them.
+In applied and introductory statistics, the distribution of a variable is defined as a description of what values the variable takes and how often it takes them. -->
 
 Textbook Source
 Book: The Practice of Statistics (6th Edition, 2018)
@@ -48,6 +48,9 @@ The Definition
 In Chapter 1 ("Data Analysis"), Starnes and Tabor provide the standard, universally taught definition for the distribution of an observed variable:
 "The distribution of a variable tells us what values the variable takes and how often it takes these values. The distribution of a categorical variable lists the categories and gives either the count or the percent of individuals who fall in each category. The distribution of a quantitative variable tells us what values the variable takes and how often it takes those values."
 
+The formal mathematical can be extensive, stems in probability theory and can even go deeper into measure theory. We do not concern about that here, at least for now.
+
+<!--
 2. The Rigorous Mathematical Statistics Definition
 In theoretical statistics, when we talk about the distribution of a variable, we are referring to a Probability Distribution, which is formalized as a function (like a Cumulative Distribution Function, or CDF).
 
@@ -94,7 +97,7 @@ The Values: Every possible value (or range of values) that the variable can math
 
 The Frequency/Probability: The likelihood, proportion, or exact frequency with which those values occur.
 
-Visually and analytically, we evaluate the distribution of a variable by looking at its shape (e.g., symmetric, skewed, bell-shaped), its center (e.g., mean, median), and its spread (e.g., variance, standard deviation).
+Visually and analytically, we evaluate the distribution of a variable by looking at its shape (e.g., symmetric, skewed, bell-shaped), its center (e.g., mean, median), and its spread (e.g., variance, standard deviation). -->
 
 
 ## Examples {.unnumbered}

@@ -8,13 +8,23 @@ Average of what?
 
 ## Concepts and intuitions {.unnumbered}
 
+Population is the first thing, the set of elements we are interested in (generally persons, animals, plants, or objects). When asked the average of what (what can mean the population). Sort of pendantic approach. However, the intended meaning of average of what also means what are the values your calculating the average on. E.g. for a the same population, you can have the average of height, weight or age.
+
+However, what it boils down to is that each individual differs in so characteristics. In a usual data collect, we pick an individual, record some characteristics and do the same for all individuals.
+At the end we get a series of values/characteristics. So if we have n objects, we also have n values.
+
+So what is a variable? It is the collection of characteristics, traits or a feature? Although it will make your brain hurt a bit, the final way of thinking about a variable is to think it is a function (@sec-function if need refresher). The starting set X is the population. And the function f is the act of measuring that. For instance you can use two scales and thus have two functions, two response variables.
+
+The biggest advantage of that is when you think of a qualitative or nominal or quantitative variable, discrete or continuous, it is based on the value of the y etc. see next two chapters for different types.
+
+<!--
+
 Abstraction of a function!
 
 A variable is one of those terms (see also math terms) that have predominated intro stat courses.
 A qualitative variable, quantitative variables, nominal, ordinal, and latter the concept of random variable is also used.
 This is an example where why do we need it.
 And that question often arises when we have failed to link to reality.
-() Can also blame the instructor for failed method.
 
 The other challenge with such term is also it has a meaning in the colloquial language that linking makes it even more difficult.
 Another example is when people think that a qualitative variable is related to quality.
@@ -24,18 +34,18 @@ Trait of feature of what (see later chapters).
 
 At this stage, you could say that a variable is just a function.
 If you take an object/individual/element x from a population X, you can apply the variable (f) --sort of function. and obtain the value y = f(x). It is the property of y that gives it's  See @sec-function.
+ -->
 
-In programming, you will see, integer, numeric (float), and string, boolean, characters, factors (see section programming for others)
 
 ## Formal {.unnumbered}
 
-When you move away from theoretical mathematical statistics (which strictly deals with functions and "random variables") and look at applied, descriptive, or introductory statistics textbooks, a variable is defined as a measurable property, characteristic, or attribute belonging to the subjects being studied.
+<!-- When you move away from theoretical mathematical statistics (which strictly deals with functions and "random variables") and look at applied, descriptive, or introductory statistics textbooks, a variable is defined as a measurable property, characteristic, or attribute belonging to the subjects being studied.
 
 Here are the rigorous definitions from three foundational and widely used textbooks across different tiers of applied statistics.
 
 1. The Applied Social Sciences Definition
 In statistics applied to the social, behavioral, and medical sciences, a variable is defined by its ability to change value across different observations in a dataset.
-
+ -->
 Textbook Source
 Book: Statistical Methods for the Social Sciences (5th Edition, 2018)
 Author: Alan Agresti
@@ -45,7 +55,7 @@ The Definition
 In Chapter 2 ("Sampling and Measurement"), Agresti provides the standard, foundational definition used in applied data analysis:
 "A variable is a characteristic that can vary in value among subjects in a sample or population. Examples of variables are number of siblings, annual income, marital status, gender, and political party affiliation. The valid values a variable can take form its measurement scale."
 
-2. The Comprehensive Biostatistics/Data Science Definition
+<!-- 2. The Comprehensive Biostatistics/Data Science Definition
 In biomedical and data science contexts, textbooks define a variable by contrasting it directly against a constant, framing it as an observational unit's attribute.
 
 Textbook Source
@@ -55,10 +65,10 @@ Publisher: CRC Press
 
 The Definition
 In Chapter 2 ("Data Presentation"), Pagano and Gauvreau establish how real-world data points become variables:
-"A variable is a characteristic that takes on different values in different persons, places, or things. For example, heart rate is a variable because it is not the same for all individuals; it varies from person to person. A quantity that does not vary is called a constant."
+"A variable is a characteristic that takes on different values in different persons, places, or things. For example, heart rate is a variable because it is not the same for all individuals; it varies from person to person. A quantity that does not vary is called a constant." -->
 
-3. The Pure Introductory/Mathematical Context
-Even in textbooks designed for students with a calculus background, when authors introduce the data-collection phase before applying probability models, they define a "variable" as a concrete data-generating characteristic.
+<!-- 3. The Pure Introductory/Mathematical Context
+Even in textbooks designed for students with a calculus background, when authors introduce the data-collection phase before applying probability models, they define a "variable" as a concrete data-generating characteristic. -->
 
 Textbook Source
 Book: Probability and Statistics for Engineering and the Sciences (9th Edition, 2016)
@@ -69,19 +79,19 @@ The Definition
 In Chapter 1 ("Overview and Descriptive Statistics"), Devore defines a variable as the core operational mechanism of data creation:
 "A variable is any characteristic whose value may change from one object to another in the population. We initially denote variables by lowercase letters from the end of our alphabet, such as x, y, and z. Data results from making observations on one or more variables for a designated set of objects."
 
-Key Takeaways of a Statistical Variable
+<!-- Key Takeaways of a Statistical Variable
 Across all applied textbooks, a non-random "variable" is bound by three strict criteria:
 The Subject Matter: It must belong to an entity (a person, a trial, an object).
 The Variance: If every subject in your sample yields the exact same measurement (e.g., if everyone in a study is 30 years old), "Age" ceases to be a variable in that context and becomes a constant.
-The Scale: It must be classifiable into a defined measurement scale (Nominal, Ordinal, Interval, or Ratio).
+The Scale: It must be classifiable into a defined measurement scale (Nominal, Ordinal, Interval, or Ratio). -->
 
 ## Examples {.unnumbered}
-
-Assume human in a classroom: sick or not, age, height, sex.
-Assuming schools: number of kids per school, sex ratio
-Assume animal: species richness per regions in all x national parks
-Assume plant: dbh, height, growth measured between two time points.
-
+Examples of variables people measure, record,
+population is a collection of sites and GPS coordinates or elevation
+weather: temperature rainfall, humidity
+population a village:  age, social status, sex, etc.
+plants: dbh, height, growth measured between two time points,
+animals: weight, length, sex, age, species name
 
 Sex determination X Y and Y in human
 Sex determination X, Y, Z
@@ -91,5 +101,6 @@ Sex determination temperature in turtle
 - Is a constant variable?
 - Non-random vs random variable (see later chapters)
 - Variable types but could be transformed (see @sec-quantiative-variable and @sec-qualitative-variable)
+- As you will in section programming is developped to accommodate these different types of variable. Sadly, since applied stats and programmers had different starting point, the terminology can be different @sec-boolean, @sec-character,@sec-numeric.
 
 ## If you want to know more {.unnumbered}

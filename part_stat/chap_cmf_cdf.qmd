@@ -69,6 +69,8 @@ plot(hist_object,
 
 ```
 
+In other words instead of having f1, f2, f3, it is f1, f1 + f2, f1 + f2 + f3. Hence cumulative.
+
 <!--
 A street vendor earns different amount per day, so we have (e1, ... e30).
 We can plot that data, day on x axis and value on y axis, we will have sticks with different height.
@@ -81,9 +83,20 @@ But it is completely useless if you want to calculate the mean daily earning or 
 The new object is simply a different way of visualizing a distribution @sec-distribution. Whereas one can reveal  @sec-mean, @sec-mode for a cumulative is mostly used to look at quantile @sec-median and @sec-quantile.
 
 
-
 ## Formal {.unnumbered}
-In advanced mathematical statistics, textbooks clarify a common terminological distinction before providing rigorous definitions:
+
+In the formal definition, a cumulative is split into two cases where the variable is discrete or continuous. The discrete case is called a cumulative mass function (cmf) and the continuous case is called a cumulative density function (cdf). The two are unified under the term cumulative distribution function (cdf).
+
+To focus on the applied is simply
+$F_X(x) = \sum_{x_i \le x} f_X(x_i)$
+
+where fX is the frequency of the value xi. In other words, it is the sum of all frequency that are less than or equal to x.
+
+It has to be increasing.
+
+F_X max to 1.
+
+<!-- In advanced mathematical statistics, textbooks clarify a common terminological distinction before providing rigorous definitions:
 Cumulative Distribution Function (CDF) is the unifying, mathematically precise term for the "cumulative density and mass distribution" of any random variable.
 Probability Mass Function (PMF) applies strictly to discrete variables.
 Probability Density Function (PDF) applies strictly to continuous variables.
@@ -165,8 +178,7 @@ $P(a \le X \le b) = \int_{a}^{b} f_X(x) \, dx = F_X(b) - F_X(a)$
 
 Conceptual Summary
 "Mass" (PMF): Used for countable outcomes. The cumulative mass function looks like a stair-step graph because probability jumps up only at distinct, specific numbers.
-"Density" (PDF): Used for continuous measurements. The cumulative density function is a smooth, unbroken curve because probability is spread continuously over an interval of real numbers.
-
+"Density" (PDF): Used for continuous measurements. The cumulative density function is a smooth, unbroken curve because probability is spread continuously over an interval of real numbers. -->
 
 ## Examples {.unnumbered}
 One example of mass

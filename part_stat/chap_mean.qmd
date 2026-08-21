@@ -32,16 +32,27 @@ A rule is that if we get a zero in one test then the mean does not matter, we au
 As you can see, it is convenient but only subject to some conditions.
 
 
+
 ## Formal {.unnumbered}
 
+The mean for data is applied stat
+
+$\bar{X} = \frac{1}{n} \sum_{i=1}^{n} X_i$
 $$
-    \mu = \sum_{i} x_i \, p(x_i)
+    \mu = \frac{1}{n} \sum_{i=1}^{n} x_i
 $${#eq-mean_d}
+
+The second version is that same x_i repeats n_i times, the equation for the mean is
+
 $$
+    \mu = \sum_{i} z_i \, f(z_i)
+$${#eq-mean_d}
+where z from unique values in X, and f(z) is the frequency of z in X, that is the number of times z appears in X divided by n.
+<!-- $$
     \mu = \int_{-\infty}^{\infty} x f(x)\,dx
-$${#eq-mean_c}
+$${#eq-mean_c} -->
 
-
+<!--
 When analyzing the concept of "the mean" in statistics, textbooks bifurcate the definition based on the split you noted: applied statistics (which deals with observed data from a sample) and theoretical statistics (which deals with the underlying probability distributions and expected values of a population).
 Here are the rigorous definitions for both, complete with textbook sources and raw LaTeX formatting.
 
@@ -83,7 +94,7 @@ The relationship between applied mean and theoretical mean is the foundation of 
 As defined by the Weak/Strong Law of Large Numbers (LLN) in theory textbooks, if you repeatedly draw a larger and larger sample size (n→∞) from an underlying population distribution, your applied sample mean (bar(X)) is guaranteed to mathematically converge to the theoretical population mean (μ):
 
 $\lim_{n \to \infty} P(|\bar{X}_n - \mu| < \varepsilon) = 1 \quad \text{for any } \varepsilon > 0$
-
+ -->
 ## Examples {.unnumbered}
 Average of grades: calculation 1, 2, 3
 
