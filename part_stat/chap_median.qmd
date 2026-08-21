@@ -11,16 +11,16 @@ Misasaka ny lalana!
 Did you know that there are 7000 languages in the world.
 But there are x billion mandarin, y billion hindu, in contrast, there are z for A language and zz for B language.
 On average, a language is spoken by 100000X people, but is that informative.
-If we use the median (see later on how to compute that), the summary statistic is about 1000 speaker per langauge.
+If we use the median (see below on how to compute that), the summary statistic is about 1000 speaker per langauge.
 Which number do you find more useful?
 
+As we have seen throughout, we condensing complex information to simplify a message. First the data to distribution, and then distribution, to mean, mode, variance and standard deviation.
+As you will see, one needs to pick which one to use and we need to understand the reason and the compromise. And we wwill see as this book grows that there are more metric to choose from.
 
-This is the other common statistics central tendency.
-The more theory is how we calculate it from our data.
-First we order them, and look at the middle point and that is our median.
+Lies, lies, and statistics.
 
-The more fundamental is whether we should use the mean or the median for a
-
+The median is another measure of central tendency. When we drive, when do we say we are half way? We could say based on distance (i.e. 500 km out of 1000 km) but with road conditions in Tana, we can also define as half the time.
+In other words, half of the sample size has value below
 
 ## Formal {.unnumbered}
 The definition of the median transitions from a simple algorithmic sorting rule in applied statistics to a more sophisticated optimization and probability criteria in theoretical statistics.
@@ -82,12 +82,19 @@ Formally, this can be written using optimization notation:
 $m = \operatorname{argmin}_{c} \mathbb{E}|X - c|$
 
 ## Examples {.unnumbered}
+Median of odd:  1, 1, 3, 3, 3; 1, 2, 3, 4, 5; 1, 3, 3, 10, 1000.
+
+Median of even: drop the last number: 2, 2.5, 3
+
 
 ## Tips and warnings {.unnumbered}
-Special case of quantile.
-Think about bimodal.
-
-They should overlap if your distribution is symetric.
+- Think about bimodal.
+- They should overlap if your distribution is symetric.
+- Insensitive to extreme values
+- Special case of quantile.
+- Median as splitting the surface in half
+- Median, mode, mean skewness of a distribution
+- Compute both mean and median as an exploration
 
 
 ## If you want to know more {.unnumbered}
