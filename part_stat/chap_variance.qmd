@@ -14,17 +14,29 @@ And at the university, having 0 on one subject is failure.
 
 In the two examples above, one is essentially looking at extremes, but why ignore all remaining information.
 The variance is a statistic that is used to summarize the spread of the data,  most specifically, spread around the mean.
-Why the mean is called central tendency, the variance (and the standard devitation) is a measure of dispersion.
+The mean is called central tendency, the variance (and the standard devitation) is a measure of dispersion.
 
-Well, the variance is actually also an average, it is the average distance between your data and the mean. So if x1, x2, x3, x4, with mean xbar, then variance d1 = (x1 - xbar)^2, d2 = (x2 - xbar)^2, d3, and d4 and then variance is average of d1, d2, d3, d4.
+Data is a set of n numbers, first summary is distribution, second is mean but we lose information, adding a variance can be enough sometimes to recover the distribution
 
-Why the square? There are many explanation but the simplest is that distance needs to be positive and so squaring the numbers makes it positive. It is also for that reason that we have standard deviation as a square root of variance, so as to bring the same scale as our orgininal x1.
-In other word, it allows us to interpret the value, for instance if grades are 0, 0, 20, 20, the variance is 100 which is not interpratable but a standard deviation of 10 around mean 10 makes sense.
-
-Most data we encounter are complex, looking at movie, hotel or restaurant, ratings.
-Mean is a convenient straighforward way to look at it but just the mean could be misleading (think about bi-modal distribution @sec-mode), alternatively one can look at the distribution (@sec-distribution), and intermediate approach is to look at mean and also the variance (or standard deviation) and such can improve comparison (between two distribution) and decision making.
 
 ## Formal {.unnumbered}
+
+In the applied side, the equation for variance is
+
+$var(X) = \frac{1}{n} \sum_{i=1}^{n} (X_i - \bar{X})^2$
+
+Notice it is similar to the mean except that $X_i$ is replaced by $(X_i - \bar{X_i})^2$. If you stare long enough, it is square distance between the mean.
+In other words, the variance is the average square distance.
+
+With some algebra, you can see that
+
+$var(X) = \frac{1}{n} \sum_{i=1}^{n} (X_i)^2 - (\bar{X})^2$
+
+If you want to do by hand the latter is simpler, but with a computer it is roughly the same.
+
+The standard deviation is just variance squared
+
+<!--
 $$
 \mathrm{Var}(X) = \sum_i (x_i - \mu)^2 \, p(x_i)
 $${#eq-variance_d}
@@ -43,42 +55,11 @@ Book: Statistical Inference (2nd Edition, 2002)
 Authors: George Casella and Roger L. Berger
 Publisher: Duxbury / Thomson Learning
 The Definition
-In Chapter 5 ("Properties of a Random Sample"), Casella and Berger define the sample variance as follows:
-Definition 5.2.3: "Let X
-1
-​
- ,…,X
-n
-​
-  be a random sample of size n from a population. The sample variance is the statistic defined by
-S
-2
- =
-n−1
-1
-​
 
-i=1
-∑
-n
-​
- (X
-i
-​
- −
-X
-ˉ
- )
-2
+In Chapter 5 ("Properties of a Random Sample"), Casella and Berger
+$S^2 = \frac{1}{n-1} \sum_{i=1}^{n} (X_i - \bar{X})^2$
 
-where
-X
-ˉ
-  is the sample mean."
-LaTeX Format
-Code snippet
-S^2 = \frac{1}{n-1} \sum_{i=1}^{n} (X_i - \bar{X})^2
-2. Theoretical Statistics: The Population Variance
+1. Theoretical Statistics: The Population Variance
 In statistical theory, the variance of a random variable X is defined as the mathematical expectation of its squared distance from its theoretical mean (μ).
 Textbook Source
 Book: Introduction to Mathematical Statistics (8th Edition, 2019)
@@ -118,16 +99,23 @@ In Chapter 4 ("Expected Values"), Rice demonstrates the standard computational t
 "Theorem: If X has a finite mean μ, then
 $\operatorname{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2$
 
-That is, the variance is the expected value of the square minus the square of the expected value."
+That is, the variance is the expected value of the square minus the square of the expected value." -->
 
 ## Examples {.unnumbered}
-Computing variance of grades and standard deviation
+Variance is zero
+
+Variance between two schools.
+
+100% bepc: 
+
 
 ## Tips and warnings {.unnumbered}
 - Variance divided by n and n-1
-- squared minus mean squared
 - normal dist with two parameters, if know the mean and the variance then we know the whole distribution.
 - Do you compute the average of two numbers? Variance of three nunmbers?
 - Sample size
+- Why the square? There are many explanation but the simplest is that distance needs to be positive and so squaring the numbers makes it positive. It is also for that reason that we have standard deviation as a square root of variance, so as to bring the same scale as our orgininal x1.
+
+
 
 ## If you want to know more {.unnumbered}

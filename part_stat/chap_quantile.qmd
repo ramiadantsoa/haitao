@@ -43,7 +43,15 @@ $L_p = \frac{p}{100}(n + 1)$
 where n is the number of observations."
 (Note: If $L_p$ is not an integer, applied textbooks use linear interpolation between the two adjacent ordered values).
 
+As this is the last chapter on basic, introduce more notation.
 
+In other words, if the ordered observations are denoted
+$x_{(1)},x_{(2)}, \ldots, x_{(n)}$
+​
+
+Another definition is using CMF and CDF
+
+<!--
 1. Theoretical Statistics: The Distribution Quantile
 In statistical theory, the pth quantile of a random variable X is defined using the Cumulative Distribution Function (CDF). When a distribution is continuous and strictly increasing, the quantile function is simply the direct mathematical inverse of the CDF, F−1(p).
 
@@ -77,15 +85,17 @@ In Chapter 1 ("Probability Theory"), Shao rigorously formalizes the quantile fun
 $F^{-1}(p) = \inf \{x \in \mathbb{R} : F(x) \geq p\}$
 This function F−1
   on (0,1) is called the quantile function."
-
+ -->
 ## Examples {.unnumbered}
 Quartile
 Interquartile range as another measure of dispersion
 Visualization distribution and cmf and cmd.
 
+Median is quantile 50%
+
 ## Tips and warnings {.unnumbered}
 - median is the 50% quantile
 - the p-value is a quantile
-- Displayed with
+- It is a pair, and it is about the value of a variable.
 
 ## If you want to know more {.unnumbered}
