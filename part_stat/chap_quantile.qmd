@@ -87,6 +87,57 @@ This function F−1
   on (0,1) is called the quantile function."
  -->
 ## Examples {.unnumbered}
+
+```{r}
+# Create data
+# data_values <- rnorm(100)
+data_values <- rnorm(2000, 0 , 10)
+
+# Calculate histogram, but do not draw it
+my_hist <- hist(data_values , breaks=40  , plot=F)
+
+# Color vector
+my_color <-
+  ifelse(my_hist$breaks < -10, rgb(0.2,0.8,0.5,0.5) ,
+    ifelse (
+      my_hist$breaks >=10, "purple",
+      rgb(0.2,0.2,0.2,0.2) ))
+
+# Final plot
+plot(my_hist, col=my_color , border=F , main="" , xlab="value of the variable", xlim=c(-40,40) )
+
+```
+
+
+```{r}
+
+data_values <- rnorm(2000, 0 , 10)
+hist(data_values, col = "lightblue" )
+
+# 2. Compute the initial histogram without plotting it
+
+hist_object <- hist(data_values, breaks=40, plot = FALSE)
+
+my_color <-
+  ifelse(hist_object$breaks < -10, rgb(0.2,0.8,0.5,0.5) ,
+    ifelse (
+      hist_object$breaks >=10, "purple",
+      rgb(0.2,0.2,0.2,0.2) ))
+
+# 3. Replace the standard bin counts with cumulative counts
+hist_object$counts <- cumsum(hist_object$counts)
+
+# 4. Plot the cumulative histogram
+plot(hist_object,
+     main = "Cumulative Histogram (Base R)",
+     xlab = "Values",
+     xlim = c(-40, 40),
+     ylab = "Cumulative Frequency",
+     col =  my_color)
+
+
+```
+
 Quartile
 Interquartile range as another measure of dispersion
 Visualization distribution and cmf and cmd.
