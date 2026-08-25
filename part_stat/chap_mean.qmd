@@ -12,7 +12,7 @@ The equation below is about exact formulation from data-driven and theoretical d
 
 Among all equations, this is probably one that everyone is familiar with.
 We almost rote learning, sum all the numbers and then divide by the number of numbers.
-However, when one presents the equation for calculating the mean (see formal below @eq-mean_c and @eq-mean_d), it somehow becomes inaccessible.
+However, when one presents the equation for calculating the mean (see formal below @eq-mean_A and @eq-mean_B), it somehow becomes inaccessible.
 
 The part above is level one when calculating the mean.
 Level two is when calculating the mean with coefficient.
@@ -37,16 +37,18 @@ As you can see, it is convenient but only subject to some conditions.
 
 The mean for data is applied stat
 
-$\bar{X} = \frac{1}{n} \sum_{i=1}^{n} X_i$
+<!-- $$
+    \bar{X} = \frac{1}{n} \sum_{i=1}^{n} X_i
+$${#eq-mean-1} -->
 $$
-    \mu = \frac{1}{n} \sum_{i=1}^{n} x_i
-$${#eq-mean_d}
+   \bar{X} =  \mu = \frac{1}{n} \sum_{i=1}^{n} x_i
+$${#eq-mean_A}
 
 The second version is that same x_i repeats n_i times, the equation for the mean is
 
 $$
     \mu = \sum_{i} z_i \, f(z_i)
-$${#eq-mean_d}
+$${#eq-mean_B}
 where z from unique values in X, and f(z) is the frequency of z in X, that is the number of times z appears in X divided by n.
 <!-- $$
     \mu = \int_{-\infty}^{\infty} x f(x)\,dx

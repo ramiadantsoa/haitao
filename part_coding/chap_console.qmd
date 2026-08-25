@@ -14,7 +14,7 @@ Everyone knows how to use a calculator:
 2. you press = (to evaluate)
 3. the result is displayed
 
-With the most basic calculator, you cannot see the prompt, but in the example below @fig-fig-calculator (a), you can. This is a useful addded feature so you can make sure you entered the correct operation.
+With the most basic calculator, you cannot see the prompt, but in the example below @fig-calculator (a), you can. This is a useful addded feature so you can make sure you entered the correct operation.
 
 ::: {#fig-calculator layout-ncol=2}
 

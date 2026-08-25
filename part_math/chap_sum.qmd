@@ -22,7 +22,7 @@ sigma_i = 1 ^ 4 i = 1 + 2 + 3 + 4.
 
 ## Formal {.unnumbered}
 
-$\Sum_{i = i_0}^n a_i = a_1 + a_2 + \cdot + a_n $
+$\Sigma_{i = i_0}^n a_i = a_1 + a_2 + \cdot + a_n $
 Let's break down (always a good idea when looking at math notation).
 - Sum is for sum
 - i is what it is a dummy variable that is discrete @sec-discrete_continuous

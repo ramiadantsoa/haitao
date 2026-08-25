@@ -14,7 +14,7 @@ A data frame is used to store multiple observations on many subjects.
 For instance, you interview 100 persons and ask about name, age, gender. The data will consist of three columns: first on name is a character, the second as integer, and a third is boolean (yes TRUE if female and FALSE if male).
 A similar case is one visits fifteen sites and record the name of the site, altitude, pH, etc.
 
-A data frame is thus a rectangle (same as a matrix @sec-sec-matrixCoding), where each column is an observation (also @sec-variable).
+A data frame is thus a rectangle (same as a matrix @sec-matrixCoding), where each column is an observation (also @sec-variable).
 
 The other practical advantage of a data frame is that there are often colum names, so instead of access that column by a number, you can call it by a name.
 
