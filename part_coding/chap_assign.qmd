@@ -46,7 +46,7 @@ The general form of an assignment statement is:
 The text notes that the execution of an assignment statement requires the evaluation of the expression on the right-hand side (the R-value), followed by a mapping operation that copies or stores that evaluated data into the memory address space denoted by the variable on the left-hand side (the L-value), altering the current state of the program."
 Wikipedia
 
-$\langle \text{target_variable} \rangle = \langle \text{expression} \rangle$
+<!-- $\langle \text{target_variable} \rangle = \langle \text{expression} \rangle$ -->
 
 
 To deepen the formal understanding of the value-binding definition of assignment, computer science literature breaks the mechanism down into how programming languages manage memory, names, and environments.

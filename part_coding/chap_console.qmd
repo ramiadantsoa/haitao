@@ -14,7 +14,7 @@ Everyone knows how to use a calculator:
 2. you press = (to evaluate)
 3. the result is displayed
 
-With the most basic calculator, you cannot see the prompt, but in the example below @fig-calculator (a), you can. This is a useful addded feature so you can make sure you entered the correct operation.
+With the most basic calculator, you cannot see the prompt, but in the example below @fig-basic_cal (a), you can. This is a useful addded feature so you can make sure you entered the correct operation.
 
 ::: {#fig-calculator layout-ncol=2}
 
@@ -25,7 +25,7 @@ With the most basic calculator, you cannot see the prompt, but in the example be
 Same concept, different interface.
 :::
 
-A console functions exactly like a calculator @fig-calculator (b):
+A console functions exactly like a calculator @fig-basic_cal (b):
 
 1. You can type your operation after the ">" symbol. The symbol means that the program is waiting for your instruction--indicated by a blinking cursor.
 2. Press enter/return to evaluate
@@ -54,13 +54,13 @@ grDevices: Colors and font support for plotting.
 ## Examples {.unnumbered}
 See below interface of three consoles using base R,  in RStudio, and in VS Code.
 
-::: {#fig-calculator layout-ncol=3}
+::: {#fig-Rconsole layout-ncol=3}
 
-![Console in R](../fig/console_r.png){#fig-basic_cal width=100}
+![Console in R](../fig/console_r.png){#fig-console_default width=100}
 
-![Console in RStudio](../fig/console_rstudio.png){#fig-console width=100}
+![Console in RStudio](../fig/console_rstudio.png){#fig-console_rstudio width=100}
 
-![Console in VS Code](../fig/console_vscode.png){#fig-console width=100}
+![Console in VS Code](../fig/console_vscode.png){#fig-console_vscode width=100}
 
 Same concept
 :::

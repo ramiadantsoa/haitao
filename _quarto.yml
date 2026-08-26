@@ -137,11 +137,12 @@ format:
       - cosmo
       - brand
     html-math-method: mathjax
-  pdf:
-    documentclass: scrreprt
-  docx:
-    toc: true
-    number-sections: true
+  # pdf:
+  #   toc: true
+  #   documentclass: scrreprt
+  # docx:
+  #   toc: true
+  #   number-sections: true
 
 execute:
   echo: false
