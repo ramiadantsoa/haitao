@@ -1,11 +1,10 @@
 # Operation {#sec-operation}
 
-<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-The equation that broke the internet!
-::: -->
-**The equation that broke the internet!**
 
-## Concepts and intutions {.unnumbered}
+<!-- ## Concepts and intutions {.unnumbered} -->
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
+The equation that broke the internet!
+:::
 
 Few years ago, there was an intense debate on several social media platforms about a simple calculation
 
@@ -14,7 +13,7 @@ Few years ago, there was an intense debate on several social media platforms abo
 :::
 
 One camp would argue that the answer is one, the other camp is convinced that it is sixteen.
-While these cliving/divide are what fuels those platforms, if there is one field where is mathematics.
+It is a nice allegory of While these cliving/divide are what fuels those platforms, if there is one field where is mathematics.
 
 
 So what is the correct answer?
@@ -31,38 +30,40 @@ So let's revise the rules here.
 
 ## Formal {.unnumbered}
 Here is a quick review
-Parenthesis is priority.
-In the example above, just do 2 + 2.
-Inner parenthesis goes first: 8 div ( 2 (2 + 2))
 
-Go left to right: 2 / 2 * 2
+- Parenthesis has priority, inner to outer
 
-Power over multiplication: 3 * 2 ^4
+- Power over multiplication or division
 
-Multiplication over addition: 3 * 2 + 2
+- Multiplication and division over addition
 
-Position matter
-2 ^ 2 + 1 is different from 2 ^ (2 + 1)
+- Left to right if same $2 / 2 \times 3$ and $2 - 2 + 3$
+
 
 ## Examples {.unnumbered}
-Fractals 1/ ( x + 1/ (x + 1/(x + 1/x)))
-Power 2 ^ 2 ^ 2
-Placing parenthesis to yield different results
-11 - 6/2 x 7/5  + 8
-
-11 - 6/2 x (7/5  + 8)
-11 - (6/2) x (7/5)  + 8
-(11 - 6/2) x 7/5  + 8
-
+1. $1 + 2 \times 3^4 = 1 + 2 \times 81  = 1 + 162  = 163$
+2. $(1 + 2) \times 3^4 \neq 1 + (2 \times 3)^4 \neq (1 + 2 \times 3)^4$
+3. $2^{2^2} = 2^4 = 16$
+4. $\frac{1}{\frac{2}{3}} \neq \frac{\frac{1}{2}}{3}$
+5. Unecessary for associativity $(1 + 1) + 1 = 1 + (1 + 1)$ and $(1 \times 2) \times 3 = 1 \times (2 \times 3)$
+6. Necessary when non-communtative $1 - 2 + 3 = (1 - 2) + 3 \neq 1 - (2 + 3)$ or $ \frac{1}{2} \times 3 = (\frac{1}{2}) \times 3 \neq \frac{1}{2 \times 3}$. Notice that using $\frac{.}{.}$ clarifies things.
+7. Continued fraction:
+$$
+1 + \frac{7}{6 + \frac{5}{4 + \frac{3}{2 + 1}}}
+$$
 
 ## Tips and warning {.unnumbered}
-- It is generally not use in other than arithmetic.
-- Just add parenthesis when in doubt.
-- The rule of power over multiplication and multiplication over addition should be natural. In fact, multiplication by definition is a generalization of addition: 2 + 2 + 2 + 2 = 2 * 4. Thus if you reverse and 2 * 4 + 3 = 2 + 2 + 2 + 2 + 3.
-- The same applies to power 2 ^ 3 = 2 * 2  * 2. This if you revers  2^3 * 3 = 2 * 2 * 2 * 3 and 2^3 + 3 = 2 * 2 * 2 + 3
+- Don't jump steps
+- Just add parenthesis when in doubt even it might be unnecessary--this can be important especially when coding.
+- Associativity
+- Commutativity
+- The rule of power over multiplication and multiplication over addition should be natural. In fact, multiplication by definition is a generalization of addition: $2 + 2 + 2 + 2 = 2 \times 4$. Thus if you reverse and $2 * 4 + 3 = 2 + 2 + 2 + 2 + 3$.
+- The same applies to power $2 ^ 3 = 2 \times 2 \times 2$. This if you revers  $2^3 \times 3 = 2 \times 2 \times 2 \times 3$ and $2^3 + 3 = 2 \times 2 \times 2 + 3$
+- Notation for multiplication $2 \times 3$ or  $2 . 3$ or 2 * 3 and the "worst one is implied" as in $a b$ which is often used in notation and less in number format $2 3$ sounds weird. Same with the 8 ÷ 2 (2 + 2) = 8 ÷ 2 4 sort of pointless.
+- Notation for division $2/3$ or $\frac{2}{3}$ or 2 ÷ 3. Using the second often clarifies stuff.
 
-## If you want to know more {.unnumbered}
+<!-- ## If you want to know more {.unnumbered}
 Books on arithmetic
-History of arithmetic
+History of arithmetic -->
 
  
