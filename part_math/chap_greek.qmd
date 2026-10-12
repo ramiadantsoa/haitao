@@ -1,10 +1,14 @@
 # Greek letters {#sec-greek}
 
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
 The one like the fish.
 :::
 
-## Concepts and intutions {.unnumbered}
+## Concepts and intutions {.unnumbered} -->
+
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
+The one like the fish.
+:::
 
 Once, a colleague gave a lecture on Lotka-Volterra equation to undergraduate students in the biology department, when a student asked: "what is alpha?", she spent a few minutes explaining what alpha represented until another student interjected and said: "it is the one like the fish". She wake up call that understanding greek letter is a problem. And to the majority it is the case, so let's clear that out.
 
@@ -68,14 +72,19 @@ The other extension is that they are used In physics, constants In math, pi is a
 Need more symbols
 
 ## Examples {.unnumbered}
-
-Famous letters Zeta function Omega for a set, small for element Ohm in physics rho is for correlation
+- I am $\alpha$ and $\Omega$, probably the most famous use of greek letters to mean beginning and the end.
+- $\pi$ represents the number 3.14 etc We could also think that $\pi$ is the ratio between the circumference and diameter. So it represents a constant
+- $\sigma$ is used as the parameter for standard deviation for a normal distribution. The variance is $\sigma^2$.
+- $\Sigma$ and $\Pi$ are used for shortcut summation and product see @sec-sum.
+- $\Omega$ is usually used to represent a set, but can mean something else in physics.
+- $\zeta$ is one of famous equation that mathematicians are hoping to solove
+- $\epsilon$ and $\omicron$ $\iota$ etc are something small
 
 ## Tips and warning {.unnumbered}
+- Use of greek letter in statistics: as simple dichotomy they use greek letter for true value and roman for sampled or estimated. Notice we use $N(\mu, \sigma)$ or Poisson($\lambda$) for these distribution. And
+- Use of greek letter: they are notation, and to remind the meaning: e.g. $\delta$ is for difference, $\mu$ is for mortallity or mean,
+- Stand out, think abouve covid variants.
 
-epsilon and omicron iota etc are something small Omega is used as a set in maths and ohm in physics
-
-Notation for birth is beta and death is delta, or mortality is mu, tau is time. Of course, you can but using something intuitive helps.
 
 ## if you want to know more {.unnumbered}
 

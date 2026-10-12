@@ -46,8 +46,16 @@ Here is a quick review
 3. $2^{2^2} = 2^4 = 16$
 4. $\frac{1}{\frac{2}{3}} \neq \frac{\frac{1}{2}}{3}$
 5. Unecessary for associativity $(1 + 1) + 1 = 1 + (1 + 1)$ and $(1 \times 2) \times 3 = 1 \times (2 \times 3)$
-6. Necessary when non-communtative $1 - 2 + 3 = (1 - 2) + 3 \neq 1 - (2 + 3)$ or $ \frac{1}{2} \times 3 = (\frac{1}{2}) \times 3 \neq \frac{1}{2 \times 3}$. Notice that using $\frac{.}{.}$ clarifies things.
-7. Continued fraction:
+6. Necessary when non-communtative $1 - 2 + 3 = (1 - 2) + 3 \neq 1 - (2 + 3)$ or
+7. More examples
+
+$$
+     \frac{1}{2} \times 3 = (\frac{1}{2}) \times 3 \neq \frac{1}{2 \times 3}
+$$.
+
+Notice that using $\frac{.}{.}$ clarifies things.
+
+8. Continued fraction:
 $$
 1 + \frac{7}{6 + \frac{5}{4 + \frac{3}{2 + 1}}}
 $$

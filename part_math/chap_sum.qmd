@@ -17,12 +17,13 @@ Sadly, in astro-polenesian group of language, words are lost.
 1 + 2 + 3 + 4 = 10
 when faced with enough repetition, it is convenient to create a new one to condense it.
 For sums the idea is to use the S in greek letter Sigma and have
-sigma_i = 1 ^ 4 i = 1 + 2 + 3 + 4.
+$\sigma_{i = 1}^ 4 = 1 + 2 + 3 + 4$.
 
 
 ## Formal {.unnumbered}
 
-$\Sigma_{i = i_0}^n a_i = a_1 + a_2 + \cdot + a_n $
+$$\Sigma_{i = i_0}^n a_i = a_1 + a_2 + \cdot + a_n $$
+
 Let's break down (always a good idea when looking at math notation).
 - Sum is for sum
 - i is what it is a dummy variable that is discrete @sec-discrete_continuous
@@ -30,27 +31,31 @@ Let's break down (always a good idea when looking at math notation).
 - the term a_i is something that depends on i, and it could be anything.
 
 The product is just replacing + by *
-$\Pi_{i = i_0}^n a_i = a_1 * a_2 * \cdot * a_n $
+$$\Pi_{i = i_0}^n a_i = a_1 \times a_2 \times \cdot \times a_n $$
 
 ## Examples {.unnumbered}
-sum from 0 to x
-sum in the middle
+- $\Sigma_{i=0}^7 i = 0 + 1 + 2 + \cdots + 6 + 7$
+- $\Sigma_{i=0}^7 i^2 = 0^2 + 1^2 + 2^2 + \cdots + 6^2 + 7^2$
+-
+$$
+    \Sigma_{i=0}^7 sin(\frac{1}{i+1}) = sin(\frac{1}{1+ 0}) + sin   (\frac{1}{ 1+ 1}) + \cdots + sin(\frac{1}{7+1})
+$$
+- $\Pi_{i = 1}^n i = 1 \times 2 \times 3 \times \cdots \times (n-1) \times n = n!$ because it is used so often than it warrants another notation
+- $\Pi_{i=0}^7 i^2 = 0^2 \times 1^2 \times 2^2 \times \cdots \times 6^2 \times 7^2$
+- The summation can be infinite $\Sigma_{i = 0}^\infty \frac{1}{i!} = \frac{1}{0!} + \frac{1}{1!} +\frac{1}{2!} + \cdots = 2.71\ldots = e$
 
-sum with different i
-
-infinite sum
-
-Examples of Pi.
-
-Sum and product
 
 ## Tips and warning {.unnumbered}
-- A form of recurrence, i should be discrete @sec-discrete_continuous and won't work if continuous
-- This is a matter of definition
-- Just try with the first few terms
+- A form of recurrence, i should be discrete. @sec-discrete_continuous and won't work if continuous
+- When facing, just try with the first few terms
+- Dummy variable: the i is dummy and can be replaced by anything
+ $$
+    \Sigma_{i = 1}^n \frac{1}{i!} = \Sigma_{j = 1}^n \frac{1}{j!} = \Sigma_{banana = 1}^n \frac{1}{banana!}
+ $$
+- Another definition is using set, but it ithe other one is using set, w in Omega. $\sum_{\omega \in \Omega}$
+- $\Sigma_{j=1}^2 \Sigma_{i=1}^3 i \times j = 1 \times 1 + 2 \times 1 + 3 \times 1 + 1 \times 2  + 2 \times 2 + 3 \times 2$  do the inner loop first, for a fixed j, once it is done, replace the j, and redo the inner loop
 - Those symbols are not but same concept as using a for loop in programming
 - What out when upper is infinite things might get wierd, so stay in the finite realm.
-- Another definition is using set, but it ithe other one is using set, w in Omega. $\sum_{\omega \in \Omega}$
 
 
 ## if you want to know more {.unnumbered}

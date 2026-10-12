@@ -1,10 +1,17 @@
 # Discrete and continuous variables {#sec-discrete_continuous}
 {{< include ../preamble.qmd >}}
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+
+<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
 To count or to measure. Tsofa sa antsy
 :::
 
-## Concepts and intuitions {.unnumbered}
+## Concepts and intuitions {.unnumbered} -->
+
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
+To count or to measure. Tsofa sa antsy
+:::
+
+
 One is the N and the other one is R.
 When one says I have 3 children, nobody asks is it a from N or from R, in fact N is included in R.
 So to a certain extent, we could just use R.
@@ -54,12 +61,14 @@ In other world, we still use continuous to define a discrete.
 We can explicitly define the next term.
 
 ## Examples {.unnumbered}
-World of discrete numbers: Odd and even, prime numbers
-World of continuous numbers: Irrational numbers
+- World of discrete numbers: Odd (2, 4, 6, 8 etc) and even (3, 5, 7, 9 etc.), prime numbers (3, 5, 7, 11, etc), and also the negative mirror.
+
+- World of continuous numbers: $\pi = 3.14\ldots$, $e = 2.71\ldots$, $\sqrt(2)$ and the fractions
+
 Discrete in sum and product @sec-sum
 
 ## Tips and warnings {.unnumbered}
-- What about rational numbers, they are also discrete.
+- 
 - Adding rational leads to irrational
 - Numbers are also called scalar
 
