@@ -1,25 +1,36 @@
 # Matrix multiplication {#sec-matrix_multi}
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
 Asio facture azafady!
 :::
 
-## Concepts and intutions {.unnumbered}
-Haddamard product, Kronecker product and others!
-Those are examples of ways to multiply matrices but there is one that is inuitive and makes sense and also the most used product for our use.
+## Concepts and intutions {.unnumbered} -->
 
-Assume we have a matrix,
-X bought 2 banana, 4 apples and 0 orange
-Y bought x banana, 4 apples and 3 orange
-Z
-A
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
+Asio facture azafady!
+:::
 
-And we wanted to know how much X, Y, Z, A spent.
-We need a new information which is the cost per unit.
-we have so this is essentialy a vector [p1 p2 p3]
+Matrix multiplication is another away of doing operation with a matrix (see @sec-matrix_op for other one) and it is the most used one. Because mathematician is also called  it multiplication (using the same language) and used dot operation, and needed a sort of algorithm to compute it (doesn't derive from traditional), it is feared/cause of stress of some groups. But again, this is the most used one, the most practical.
 
-To do so we need to do a x + b y + c z = total
+Yet, matrix multiplication is something that we encounter all the time.
+If banana is 3000 Ar/kg, Melon is 5000 Ar/kg, Mango is 5000Ar/Kg and strawberries is 20000Ar/kg and Rabe bought 10 kg of banana, 5 kg of melon and 10 kg mangos and 5 kg of strawberries. The total amount is trivial to compute.
 
-This is what we define as multiplication
+In the example above, is a matrix multiplication between. a (1 x 4 = a1 a2 a3 a4) matrix with a (4 x 1 p1 p2 p3 p4) matrix and so the matrix product is a1 p1 + a2 p2 + a3 p3 + a4 p4.
+If we reuse the @sec-matrix above, with that rule, the price that each person paid is
+
+M. price =
+$$
+20 5 10 5
+1  0.5 0.5 0
+0 1 1 0.2
+$$ .
+$$
+3000
+5000
+5000
+20000
+$$
+
+One crucial, is that the number of columns should equal the number of row, but think about it for a minute and you will see that the number of item (in the column) should match the number of row in the second
 
 The condition here is that the number of columns is the same as the number of rows in the second one.
 
@@ -28,34 +39,48 @@ Define formally, for it to work, dimension should match, so the number columns o
 Spend a few and you realize that it makes sense.
 
 
-Identity matrix is one where diagonal is 1 and the rest is zero.
+Identity matrix is one where diagonal is 1 and the rest is zero, and is noted by .
+
 This is the neutral element in matrix multiplication.
 
 
-
 ## Examples {.unnumbered}
-In the above example, we could also use the price in different markets but the condition remains the same. Columns  = raws
+- Shopping in Europe, switch to Euro
+$$
+20 5 10 5
+1  0.5 0.5 0
+0 1 1 0.2
+$$ .
 
-1 + 2* M.Z
+$$
+1
+2
+3
+4
+$$
 
-anothe example is temperature, humidity etc influence x y z
+- Multiplication with identity matrix
+
+- We could create a 4 x 2 columns for the Malagasy price and Euro price and get two columns.
+
+- An ecological example. Say we now that altidude, ph and
+
+- Inverse of a matrix
+
 
 ## Tips and warning {.unnumbered}
-- Inverse instead of division.
-- It is because of that this is called linear algebra.
-- A matrix is also an application that transforms something into another thing.
-- This is at the base of linear regression
-- We could do a x x2 and x3 but this is still linear.
-- It is tedious but computer can do it faster
-- That is not the only way to compute multiplication
-- R can forst something, so how they implemented it.
-- This is the reason why entry needs to be number otherwise, sums and product are not defined
+- A linear model is essentially a A x + b = y is a matrix multiplication A times
+- It is essential to understand that multiplication, and one can do it by hand, however, R programming can do that with almost not cost (@sec-matrixOperationCoding).
+- The inverse of a matrix does not necessarily exist. Think about a null matrix, there is no second matrix to multiply with
+- There is no division, when the inverse however exist, we can multiply by the inverse.
+- This a result is a linear combination of the second one, this is also called that m atrix is a linear function
 
-## if you want to know more {.unnumbered}
+
+<!-- ## if you want to know more {.unnumbered}
 Linear algebra Had
 
 Inverse of a matrix and existence
-If determinant is not null. Refer to other to calculate that.
+If determinant is not null. Refer to other to calculate that. -->
 <!--
 In linear algebra, matrix multiplication is formally defined as an algebraic operation that composes two matrices to produce a third. Crucially, it is not performed element-by-element (which is instead called the Hadamard product). Rather, it is defined specifically to match the mathematical composition of linear transformations.
 Because of this, matrix multiplication is only possible if the number of columns in the first matrix matches the number of rows in the second matrix.

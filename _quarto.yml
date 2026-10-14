@@ -17,7 +17,7 @@ book:
         - part_math/chap_matrix.qmd
         - part_math/chap_matrix_op.qmd
         - part_math/chap_matrix_multi.qmd
-        - part_math/chap_eigen.qmd
+        # - part_math/chap_eigen.qmd
         - part_math/chap_function.qmd
         - part_math/chap_function_viz.qmd
         - part_math/chap_derivative.qmd

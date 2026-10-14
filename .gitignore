@@ -18,3 +18,4 @@ temp/
 !part_01_math/*.qmd
 !part_02_stat/*.qmd
 !part_03_code/*.qmd
+**/*.quarto_ipynb

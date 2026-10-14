@@ -1,25 +1,45 @@
 # Matrix {#sec-matrix}
-
+<!--
 ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
 Not the movie by Keanu Reaves
 :::
 
-## Concepts and intutions {.unnumbered}
+## Concepts and intutions {.unnumbered} -->
+
+
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
+Not the movie by Keanu Reaves
+:::
+
 Matrix is the famous movie by Keanu Reaves.
 The appeal to popularity is sometimes frustrating, almost like thinking about Madagascar and people think of lions and zebra.
 
 Like Madagascar existed before, matrix since early age of mathematics.
-And in its simple form, it is just a rectangle/grid filled with numbers.
+And in its simple form, it is just a rectangle/grid filled with numbers. A compact way to store  data
 
-The earliest might be with shopping.
-X bought 2 banana, 4 apples and 0 orange
-Y bought x banana, 4 apples and 3 orange
-Z
-A
 
-In short we can condense again this into a matrix
-Which one is row or column does not matter as long as we specify which one is row and column.
-Shifting is what is called transpose.
+Rabe bought 10 kg of banana, 5 kg of melon and 10 kg mangos and 5 kg of strawberries
+Rakoto bought 1 melon (0.5 kg), 1 mango (0.5kg) , 1 kg of banana
+Lala bought 1 big melon (1kg), 2 mango (1kg), and 1 toko of strawberries (~ 0.2 kg)
+
+This information is arrange in a matrix
+
+Each row represents a purchaser, and a column a fruit
+$$
+20 5 10 5
+1  0.5 0.5 0
+0 1 1 0.2
+$$
+
+Alternatively, we can arrange with a purchase, it does not matter as long as we specify what is on the row and what is on the column
+$$
+20 1 0
+5 0.5 1
+10 0.5 1
+5 0 0.2
+$$
+This is what is called a transposing a matrix.
+
 
 ## Formal {.unnumbered}
 
@@ -34,17 +54,30 @@ a vector is a one line or one row matrix
 
 
 ## Examples {.unnumbered}
-Diagonal matrix with a special notation
-Upper diagonal
-Null matrix
-Square matrix.
+Here are few examples of matrix
+
+Null is 0 everywhere
+
+A diagonal has zero for all element other than the diagonal, it is often noted diag(1,2,3) --make it compact
+
+A matrix can be triangular,
+123
+045
+006
+
+A matrix can be symmetric
+123
+245
+356
 
 ## Tips and warning {.unnumbered}
-- Matrix is a new object, crazy dimension
+- It is a mathematical object, all $a_{ij}$ should be a number. That is entries like male female, etc, is not in that realm.
+- Note a matrix by a capital letter, sometimes in bold
+- A common for biologist community matrix is species.
 - Coordinates in a new system
-- For biologist community matrix is species.
-- You choose species or sites as coordinates is up to you.
-- It is also a linear application but we might see that in intermediate level chapter
+- When we compute the distance between stuff, we get a symmetric matrix
+- From a mathematical matrix, a column matrix is different than a row matrix (1 x n) is not the same as (n x 1) although one can transpose it.
+- Matrix is more than a rectangle storing data, it is the foundation of linear algebra...and sometimes have magical properties. We will in due course.
 
 <!-- Do not confuse matrix with data frame, although matrix requires same types as entries.
 Storing data vs. performing mathematical operation on it.

@@ -1,15 +1,19 @@
 # Matrix operation {#sec-matrix_op}
 
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
 Andry + Fenitra = Tolotra
 :::
 
-## Concepts and intutions {.unnumbered}
+## Concepts and intutions {.unnumbered} -->
+
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
+Andry + Fenitra = Tolotra
+:::
 
 Above is an example of using mathematical notation.
 You should know by now that the equal is not really equal in mathematics, and the addition is merely a notation.
 Yet, they actually have a meaning.
-In fact, James x Marie = Jarie is another notation and might be because they multiply.
+
 
 So matrix is a rectangle, or a different kind of object at least in mathematics.
 As far as we know we have numbers, they are also calles scalar and they are essentially a 1 x 1 matrix.
@@ -19,11 +23,19 @@ What does it mean adding Matrix 1 + Matrix 2 or Matrix 1 per matrix 2. What is m
 In this section, we do the simplest that is Matrix 1 is just a scalar. Or combining matrices with same dimension.
 Retain the original property of
 
-The earliest might be with shopping.
-X bought 2 banana, 4 apples and 0 orange
-Y bought x banana, 4 apples and 3 orange
-Z
-A
+Let's reuse the example in the chapter before @sec-matrix
+Each row represents a purchaser, and a column a fruit
+$$
+20 5 10 5
+1  0.5 0.5 0
+0 1 1 0.2
+$$
+
+Let's call it M, if we want to convert the unit to grams we need to multiply each number by 1000.
+This is a natural definition of matrix. Notice we multiply everything by the same number, it is called a scalar multiplication
+
+In other words, a M * a number is distributiong, same with M + a,
+The most important thing is that adding is elementwise and you can think of generalization of traditional number addition, and multiplication
 
 ## Formal {.unnumbered}
 
@@ -53,18 +65,47 @@ This is a desired feature where the + and * have kept their original meaning.
 
 
 ## Examples {.unnumbered}
-Assume we wanted to add one fruit for each person
 
-Change kg to g
+What about addition, we can perform a similar addition, like before we can add a number (not sure what it means here) but each element by 10.
+If one does the same shopping the day after
 
-Adding only at certain cases
+$$
+10
+10
+20
+$$
+Put in the same coordinate, and then add elementwise.
+$$
+10 0 0 0
+10 0 0 0
+20 0 0 0
+$$
+
+$$
+20 5 10 5
+1  0.5 0.5 0
+0 1 1 0.2
+$$
+ +
+$$
+10 0 0 0
+10 0 0 0
+20 0 0 0
+$$ =
+$$
+20 + 10 5 10 5
+1 + 10  0.5 0.5 0
+0 + 10 1 1 0.2
+$$
+
+
+Hadamard  product
 
 ## Tips and warning {.unnumbered}
-These are well defined, essentially, define and do as it was defined.
-You might run into issues, when you apply them in coding.
-There are other, Kronecker product but essentially you come up with rules and define a symbol for it
-We have determinant too.
-Although we could define subtraction in similar way, careful with division so that we don't divide by zero in any of the entry
+- New object, new rule, you can come up with new rules (as long as there is a use to it).
+- There are other matrix product (e.g. Kronecker or Hadamard), leave at your discretion for now, we might need them later and will be defined
+- You might run into issues, when you apply them in coding might not be as straighforwad.
+- We could define subtraction in similar way, careful with division so that we don't divide by zero in any of the entry
 
 ## if you want to know more {.unnumbered}
 Linear algebra

@@ -1,10 +1,16 @@
 # Eigen decomposition {#sec-eigen}
 
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
 Fruit salad!
 :::
 
-## Concepts and intutions {.unnumbered}
+## Concepts and intutions {.unnumbered} -->
+
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
+Fruit salad!
+:::
+
+
 This is a chapter but the concept is actually cool.
 Go back to shopping three restaurant but they want to make fruit salad.
 
@@ -14,6 +20,26 @@ Think of fruits and make a combination of other.
 So one is fruit salad etc.
 
 ## Formal {.unnumbered}
+## Examples {.unnumbered}
+Version 1
+
+Pick a 2 x 2 matrix.
+Here are the eigenvalues and eigenvectors.
+Do the multiplication to recover the original matrix
+
+
+
+Version 2
+
+## Tips and warning {.unnumbered}
+- This is at the core of PCA.
+- Not all matrices can be decomposed
+- The eigen vectors are not unique by a factor.
+
+<!--
+## if you want to know more {.unnumbered}
+Linear algebra -->
+<!--
 this is called eigen decomposition.
 If there is a square matrix M, and determinant is not zero,
 There is a diagonal matrix X
@@ -62,27 +88,4 @@ $D = \begin{pmatrix} \lambda_1 & 0 & \dots & 0 \\ 0 & \lambda_2 & \dots & 0 \\ \
 
 Geometric Transformation Interpretation: The decomposition asserts that applying the matrix A to a vector is equivalent to rotating the vector into an eigenspace coordinates system (P−1
  ), scaling along those axes (D), and rotating back back to standard coordinates (P).
-
-## Examples {.unnumbered}
-Version 1
-
-Pick a 3 x 3 matrix.
-Here are the eigenvalues and eigenvectors.
-Do the multiplication to recover the original matrix
-
-Version 2
-
-## Tips and warning {.unnumbered}
-This is at the core of PCA.
-Hard rotation.
-Focus on square matrix.
-Basis not unique
-
-Other fun matrix
-Symetric etc.
-
-This is a huge field and goes beyond what one can imagine.
-We just end here as they are most needed for what's coming
-
-## if you want to know more {.unnumbered}
-Linear algebra
+ -->
