@@ -1,14 +1,20 @@
 # Functions {#sec-function}
 
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
 Mpanandro sandoka
 :::
 
-## Concepts and intutions {.unnumbered}
+## Concepts and intutions {.unnumbered} -->
+
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
+Mpanandro sandoka
+:::
 
 For most of us, hearing a function is traumatizing.
 But what most of us think is domaine de définition, dérivé étude des signes et tableau de variation etc.
 To a certain extent, most of us has lost what is the meaning/role of a function.
+
+What is a mpanandro sandoka? Essentially a function is three things: the ingredient Which is called indepedent variable, the outcome which is called the dependent variable, and the transformer (the mathematical expression linking the two).
 
 The first and most useful is the correspondance between a function and a figure, we will expand on that in @sec-function_viz. Visualizing it.
 The second is simply a process understanding how changing something will affect its outcome. We need three component the ingredient, the transformer, and the outcome.
@@ -56,25 +62,21 @@ $\text{Range} = \{f(x) \mid x \in D\}$
 The symbol that represents an arbitrary number in the domain of a function f is called an independent variable. The symbol that represents a number in the range of f is called a dependent variable."
 
 ## Examples {.unnumbered}
-Linear function
+- y = ax + b, is what is called a linear function, because it draws a line. x is the independent variable and y is the dependent variable.
 
-Other more general function: for instance
+- The probability density function of the normal distribution is a function that maps a real number x to the probability density at that point. The function is defined as:
+$$f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}$$
 
-Using integer Cnp is a function.
+- The combinatorial function that counts the number of ways to choose k elements from a set of n elements is defined as:
+$$C(n, k) = \frac{n!}{k!(n-k)!}$$ so we have a function that maps the pair (n, k) to the number of combinations.
 
-Baker's ratio or making a cake.
-
-But the shopping is another example: how much you spend.
+- A baker's ratio say 1:2:3 is a function that maps the amount of flour to the amount of sugar and butter. If you have 100g of flour, you will need 200g of sugar and 300g of butter. In this case, we have three indepdent variables, the amount of flour, sugar and butter and the outcome is the cake.
 
 ## Tips and warning {.unnumbered}
-Dummy variable
-
-With any programming language, you can do 2 in one line.
-
-Life is not perfect and the explicit y = f(x) is a wishful thinking.
-In fact, y = f(x1,x2,x3...)
-
-In principle, one input leads to one output
+- In general, the independent variable is also called the input, and most commonly denoted as x.
+- The dependent variable is also called the output, and most commonly denoted as y.
+- The function is often denoted as f,g, h, etc.
+- More generally,
 
 
 ## if you want to know more {.unnumbered}
