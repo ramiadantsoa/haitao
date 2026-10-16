@@ -1,10 +1,15 @@
 # Logarithm function {#sec-log}
 {{< include ../preamble.qmd >}}
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+
+<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
 The earth would explode if hit by an earthquake of magnitude 18 (xkcd!)
 :::
 
-## Concepts and intuitions {.unnumbered}
+## Concepts and intuitions {.unnumbered} -->
+
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
+The earth would explode if hit by an earthquake of magnitude 18 (xkcd!)
+:::
 
 When measuring the intensity of earthquake, the metric is Richter. Moment Magnitude
 One of the strongest earthquakes in Madagascar was 6.2 in 1950, 11 May (earthquakelist.org)
@@ -99,6 +104,8 @@ A key thing is that x has to be positive negative values.
 Log is useful to convert multiplication to (see that a lot in likelihood in later part of this book)
 
 Very efficient at compressing higher value.
+
+Reciprocal of exponential @sec-exponential
 
 ## If you want to know more {.unnumbered}
 

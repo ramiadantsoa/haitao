@@ -1,31 +1,21 @@
 # Function and graphics {#sec-function_viz}
 
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
 Ikotozafy ihany no Alexis!
 :::
 
-## Concepts and intuitions {.unnumbered}
-Three choices for outcome how much money. This is a function of time vs wealth...plot it and (assume one knows how to read a figure.)
+## Concepts and intuitions {.unnumbered} -->
 
-did you actually know that the final question, I consider that failure (tools before concept) is that if we show the, most might not be able to answer the other questions.
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
+Ikotozafy ihany no Alexis!
+:::
 
-Add. non defined, increasing, asymptote, max min, roots...
+In the math subject, the most point rewarding is about the field problem, a function is given at the begining, then a series of questions like domaine def, studying derivative, etc. which culminates with drawing a plot of that function. But do you know that with most basic program you can just enter the function and it would plot the graph. So why is it a problem?
 
-In ancient times, people have been trying to solve alegraic equations.
-E.g. what are the roots of a second degree polynomial.
-The famous delta and b2 - 4 a c and the rest.
+Obviously, there are educational purposes but by drilling too much, the pratical meaning is lost. Most, importantly, many becomes poor when a figure is presented in front of them. So for this, let's just go backward and attempt to link geometric properties to the analytical properties.
 
-In another word, they have been the geometry.
-Looking at figure, let's build a bridge, what is the arch?
+Later we will explore more general forms of functions @sec-functionCoding, but for the visualization, we will focus on the more familiar mathematical functions. A figure is the most powerful tool for to communicate ideas, improve literacy
 
-Eventually, they realize that it is one of the same thing.
-That is a figure could be represented by a mathematical function.
-And mathematical function could be replaced by a figure.
-
-The ability to plot a function is a blesssing, as long as you can read a figure but picture this.
-What if I say your monthly salary is f(year) = 10 exp(year)/ year ^2
-Would you take it?
-But if we can plot it, I am sure you will take or deny the deal looking at your salary through time.
 
 ## Formal {.unnumbered}
 For simplicity, we look at X and Y as real number.
@@ -42,15 +32,18 @@ to plot say a second degree polynomial, we could pick n values and plot each of 
 Well, this means that you can give any function and I can plot it.
 With computer we can plot anything.
 
+Come up with a fancier function, we are extracting the properties: definition, asymptote, derivative (sign), solution to equation, positive value
+
 ## Tips and warnings {.unnumbered}
-- Linear function because it plots a line
+- Linear function because it plots a line, pick two points and
+- If x is discrete, you cannot just join line.
 - Don't rush, project
-- Changing scale can change quantitative visual (changin x axis)
+- Changing scale can change quantitative visual (changing x axis)
 - x = 0 intersection with, only one
 - intersection with y = 0 are solution to f(x) = 0
 - maximum, inflexion, minimum, increasing, decreasing, you can just look at that in the figure.
 - Just plot and you are good to go.
-- You can make figures with discrete x, see @sec-difference, @sec-discrete_continuous, @sec-pmf,
+- You can make figures with discrete x, see @sec-discrete_continuous, @sec-difference, @sec-pmf
 
 ## If you want to know more
 Implicit function

@@ -1,11 +1,15 @@
 # Differential equations {#sec-differential}
 {{< include ../preamble.qmd >}}
 
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
 Zana-bola isak'izay mijery. The tool to rule them all! The only constant is change
 :::
 
-## Concepts and intuitions {.unnumbered}
+## Concepts and intuitions {.unnumbered} -->
+
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
+Zana-bola isak'izay mijery. The tool to rule them all! The only constant is change
+:::
 
 How does things change in time? Back in physics, if start at location x, with an initial velocity z, then we want to document the position at any time t.
 Another example, if we put a water under the sun, how water vary with time, or

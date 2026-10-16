@@ -1,11 +1,15 @@
 # Exponential function {#sec-exponential}
 {{< include ../preamble.qmd >}}
 
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
 $\pi \sim 3.1415 \ldots$ and $e \sim 2.718 \ldots$
 :::
 
-## Concepts and intuitions {.unnumbered}
+## Concepts and intuitions {.unnumbered} -->
+
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
+$\pi \sim 3.1415 \ldots$ and $e \sim 2.718 \ldots$
+:::
 
 As multiplication is generalization of addition 2 + 2 + 2 = 3 x 2, power is a condense notation of multiplication 2 x 2 x 2 = 2^3 (see also @sec-operation).
 2^0 = 1
@@ -61,13 +65,18 @@ Using this definition, the mathematical constant e is formally defined as the ev
 $e = \exp(1) = \sum_{n=0}^{\infty} \frac{1}{n!}$
 
 ## Examples {.unnumbered}
-e^0 = 1, and e^1 = 2.71 e^-1 = 1/2.71 e^x2
+$e^0 = 1$, and $e^1 = 2.71...$ $e^-1 = 1/2.71$ etc.
+
+Famous exponential: gaussian: and
+$$ lim n -> infinity = (1 + 1/n)^n = e $$
+
+$1 - e^-x$ is a probability that something will fail.
+
 
 ## Tips and warnings {.unnumbered}
-- because it is the solution of dy/dx = y @sec-differential
-- Exponential increase: slow at the beginning
-- Gaussian distribution
-- Used in interst rate too?
+- We can define ex as the solution of dy/dx = y, that is why ex = ex.  @sec-differential
+- Exponential increase: this is something that fears scientist, but non scientist does not care, because the intial rate of increase is slow
+- Used in many probability distribution Gaussian distribution, Exponential, Poisson.
 - Reciprocal of a logarithm @sec-log
 
 ## If you want to know more {.unnumbered}

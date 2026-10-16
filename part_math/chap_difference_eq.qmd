@@ -1,11 +1,17 @@
 # Difference equations {#sec-difference}
 {{< include ../preamble.qmd >}}
 
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
 Zana-bola
 :::
 
-## Concepts and intuitions {.unnumbered}
+## Concepts and intuitions {.unnumbered} -->
+
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
+Zana-bola
+:::
+
+The earth would explode if hit by an earthquake of magnitude 18 (xkcd!)
 
 You go straight, left etc. and you have reached your destination.
 
