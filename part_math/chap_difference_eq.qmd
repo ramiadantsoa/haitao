@@ -37,6 +37,7 @@ It is an equation so there is the defining it and there is the solving it.
 
 
 ## Formal {.unnumbered}
+
 A difference quation is an application from N to R or anything where
 u_n+1 = f(u_n). This is a recurrence
 
@@ -48,6 +49,43 @@ and time
 
 
 In mathematics, a difference equation (often referred to in modern dynamics as a recurrence relation, particularly when modeling discrete steps) is the discrete analog of a differential equation. Instead of relating a continuous function to its derivatives, a difference equation relates the terms of a discrete sequence to differences between those terms.
+
+
+2. The Shift-Operator / Recurrence Definition
+In modern applications (such as computer science, numerical analysis, and discrete dynamical systems), it is mathematically cleaner to eliminate the Δ operator and express the equation entirely using the shift operator (Eyt =yt+1). This changes the structure into a pure recurrence relation.
+
+Textbook Source
+Book: Difference Equations: From Calculation to Computation (1st Edition)
+Authors: Charles Grove Cullen
+Publisher: PWS Publishing Company
+
+The Formal Definition
+A difference equation of order k is a functional equation that can be written in the form:
+$y_{t+k} = f(t, y_t, y_{t+1}, \dots, y_{t+k-1})$
+where t belongs to a discrete domain (typically the set of non-negative integers Z+), f is a well-defined function mapping to the real or complex numbers, and the function depends non-trivially on the earliest term yt and the latest term yt+k
+​
+## Examples {.unnumbered}
+- Imaging you save 1000 ar per week and put it in the box, the amount of money you have in the box the week after is save_week + 1 = save_week + 1000 ar.
+
+- If you save money in the bank 1 million ariary in the bank with an annual 2% interest, next year it is 1 m + 2% 1 m = 1 m (1.02) = , the year after, your interst is 1. What is nice is that after 10 years, your gain is
+
+
+- For a more ecological, population size for next year is population size of this year  + number of death + number of imigrant - number of death - number of emigrant. pop_ t+1 = pop_t + B + I - D - E, if we assume that they are constant throught the year then pop_t+1 = pop_t + detla and becomes a simple aritmetic mean
+
+- The model above is unlikely as the number of birth depend on pop_t (female reproductive).
+
+
+## Tips and warnings {.unnumbered}
+- A goal is to express un, we could say it goes from recurrence to explicit. While it is a good math exercise, in practical ways, computation makes computing the recurrence easily.
+
+- Add a spider web for visualization
+
+- Convergence and divergence
+
+
+## If you want to know more {.unnumbered}
+
+<!--
 
 Here are the formal definitions broken down by their structural representations in mathematical literature.
 
@@ -75,19 +113,8 @@ $F(t, y_t, \Delta y_t, \Delta^2 y_t, \dots, \Delta^k y_t) = 0$
 
 where F is a given function, and the equation explicitly depends on both $y_t$, and $\Delta^k yt$ for all allowed values of t.
 
-2. The Shift-Operator / Recurrence Definition
-In modern applications (such as computer science, numerical analysis, and discrete dynamical systems), it is mathematically cleaner to eliminate the Δ operator and express the equation entirely using the shift operator (Eyt =yt+1). This changes the structure into a pure recurrence relation.
 
-Textbook Source
-Book: Difference Equations: From Calculation to Computation (1st Edition)
-Authors: Charles Grove Cullen
-Publisher: PWS Publishing Company
 
-The Formal Definition
-A difference equation of order k is a functional equation that can be written in the form:
-$y_{t+k} = f(t, y_t, y_{t+1}, \dots, y_{t+k-1})$
-where t belongs to a discrete domain (typically the set of non-negative integers Z+), f is a well-defined function mapping to the real or complex numbers, and the function depends non-trivially on the earliest term yt and the latest term yt+k
-​
 3. Classifications of Difference Equations
 To perform rigorous analysis, mathematicians partition difference equations based on three structural criteria:
 
@@ -112,17 +139,4 @@ Given a k-th order difference equation yt+k =f(t,yt,…,yt+k−1), if a set of k
 ​
 $y_0 = c_0, \ y_1 = c_1, \ \dots, \ y_{k-1} = c_{k-1}$
 
-Then there exists a unique sequence {yt}_t=0^∞ that satisfies the difference equation for all t≥0.
-
-## Examples {.unnumbered}
-Arithmetic and geometric
-Population size
-
-
-## Tips and warnings {.unnumbered}
-this is very fast computationally.
-It is quite intuitive.
-Convergence and divergence
-Definition
-
-## If you want to know more {.unnumbered}
+Then there exists a unique sequence {yt}_t=0^∞ that satisfies the difference equation for all t≥0. -->
