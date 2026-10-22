@@ -8,29 +8,71 @@ Zana-bola isak'izay mijery. The tool to rule them all! The only constant is chan
 ## Concepts and intuitions {.unnumbered} -->
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
-Zana-bola isak'izay mijery. The tool to rule them all! The only constant is change
+Euler formula is all you need
 :::
 
-How does things change in time? Back in physics, if start at location x, with an initial velocity z, then we want to document the position at any time t.
-Another example, if we put a water under the sun, how water vary with time, or
-
-It is not our goal to solve, it is how to construct them.
-Most of the diffequation we will see at this level can be solved with basic computer programming.
 
 
-The gross generalization is but it applies to how one thing vary as a function of time.
+There is a divide and point of confusion when, talking about different types of variables (qualitative, quantitative, etc. @sec-qualitative-variable and @sec-quantiative-variable) in data analyses and statistics. Other terms like discrete and continuous variables could throw more confusion in that. Earlier in this part, we have the difference between a discrete and continuous variables  @sec-discrete_continuous from a mathematical point of view.
 
-How do we document change in time?
-See before about playing chess.
-In modern time, we could actually.
-In this case, nothing happens between times so
-However, time keeping is also quite.
-In fact time is continuous and we cut it in a convenient way.
+The main difference essentially is the mathematics that we use to handle them and one example is in how we document changes through time.
+Using change in temperature of coffee @sec-difference, that is the temperature at time n+1 depends on the temperature a time Tn, the ambient temperature and some equalizing rate and can be described as T_n+1  = Ta + q (Tn  - Ta) or T_n+1 = T_n - q (T_n - T_a). This is an example of using discrete (difference equation), that is we take discrete time steps, what does the + 1 mean, seconds, minute, hour?
+
+Alternatively, we can check the temperature of the coffee at any time, and we could probably stick a thermometer and see a continuous change. Laws of Newton physics equation is dT/dt = -k (T- Ta). The equation above is a differential equation and use calculus to solve the equation so we have. But what matters for us is to have an intuition on how we got this equation...and in fact it is really simple.
+
+dT/dt is essentially $\frac{T_{n+dt} - T_n}/dt$ That is how temperature changes from a short interval dt. The denominator dt = n+dt - n which them matches the index in the numerator. If we stare long enough is just @sec-derivative with respect to time. So essentially, T_n+dt = T_n - k (T_n - Ta) dt.
+
+Unless you are math-inclined, we can slove using difference equation and taking small steps: T_next = T_now + time_step * relation. As time_step gets smaller we go from discrete to continuous. From difference equation to differential equation.
+
 
 ## Formal {.unnumbered}
 A differential equation is dx/dt = f(x).
 This is again the derivative.
 
+In standard introductory college textbooks (such as Dennis G. Zill’s *A First Course in Differential Equations* or James Stewart’s *Calculus*), an Ordinary Differential Equation is defined formally yet accessibly:
+
+**Textbook Definition:**
+An **ordinary differential equation (ODE)** is an equation that contains one or more derivatives of an unknown function with respect to a **single independent variable**.
+
+
+### Key Components Found in Textbooks
+
+When you open an ODE textbook, they immediately break down the anatomy of these equations into three core concepts:
+
+* **The Independent Variable:** The variable representing the input (commonly denoted as $x$ or $t$ for time).
+* **The Dependent Variable:** The unknown function we are trying to solve for (commonly denoted as $y$ or $f(x)$).
+* **Derivatives:** The rates of change (such as $\frac{dy}{dx}$, $y'$, or $y''$) showing how the dependent variable responds to changes in the independent variable.
+
+---
+
+### Standard Textbook Classifications
+
+Introductory textbooks usually categorize ODEs right away by two major properties:
+
+1. **Order:** The **highest derivative** present in the equation.
+* *First-order:* Contains only $\frac{dy}{dx}$ (e.g., $\frac{dy}{dx} + 2y = 4$).
+* *Second-order:* Contains up to $\frac{d^2y}{dx^2}$ (e.g., $\frac{d^2y}{dx^2} + 4y = 0$).
+
+2. **Linearity:** Whether the equation is **linear** (the dependent variable and its derivatives are to the power of 1 and not multiplied together) or **nonlinear**.
+## Examples {.unnumbered}
+- Atomic decay
+- Population growth
+- Law of motion
+
+## Tips and warnings {.unnumbered}
+Ironically, most differential equation are solved as a difference equation.
+Numerical solution.
+- f' x. are all different notation, sometimes y' also instead of f'(x), what's good is clear what is the independant variable
+- The linear autonomous,
+- Partial, non-autonmous, etc.
+- meaning of instataneous rate
+- Exponential exists because of these multiplications
+- Criteria for things to exist pedantic.
+
+
+## If you want to know more {.unnumbered}
+
+<!--
 
 In mathematical analysis, a differential equation is a formal equation that expresses a relationship between an unknown function, its independent variables, and its derivatives. Just as algebraic equations are solved for unknown numbers, differential equations are solved for unknown functions.
 
@@ -95,13 +137,4 @@ $\frac{dx}{dt} = f(t, x), \quad x(t_0) = x_0$
 ​
 By the Picard–Lindelöf Theorem, if f is locally Lipschitz continuous with respect to x, then there exists a unique, well-defined local solution x(t) satisfying this exact configuration.
 
-
-## Examples {.unnumbered}
-- Atomic decay
-- Instantaneous rate
-
-## Tips and warnings {.unnumbered}
-Ironically, most differential equation are solved as a difference equation.
-Numerical solution.
-
-## If you want to know more {.unnumbered}
+ -->

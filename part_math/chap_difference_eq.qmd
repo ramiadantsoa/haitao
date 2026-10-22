@@ -74,6 +74,8 @@ where t belongs to a discrete domain (typically the set of non-negative integers
 
 - The model above is unlikely as the number of birth depend on pop_t (female reproductive).
 
+- In some examples, for the coffee, the temperature T_n+1 = Ta + q (T_n - Ta) or T_n+1 = T_n - q (T_n - T_a) . We can use this. This is an example where we are using laws of physcis, we will see an equiv.
+
 
 ## Tips and warnings {.unnumbered}
 - A goal is to express un, we could say it goes from recurrence to explicit. While it is a good math exercise, in practical ways, computation makes computing the recurrence easily.
@@ -81,6 +83,8 @@ where t belongs to a discrete domain (typically the set of non-negative integers
 - Add a spider web for visualization
 
 - Convergence and divergence
+
+- Derived from first principle
 
 
 ## If you want to know more {.unnumbered}

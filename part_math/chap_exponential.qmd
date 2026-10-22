@@ -78,6 +78,7 @@ $1 - e^-x$ is a probability that something will fail.
 - Exponential increase: this is something that fears scientist, but non scientist does not care, because the intial rate of increase is slow
 - Used in many probability distribution Gaussian distribution, Exponential, Poisson.
 - Reciprocal of a logarithm @sec-log
+- Menaka maahagaga
 
 ## If you want to know more {.unnumbered}
 
