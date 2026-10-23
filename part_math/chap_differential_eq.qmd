@@ -8,8 +8,20 @@ Zana-bola isak'izay mijery. The tool to rule them all! The only constant is chan
 ## Concepts and intuitions {.unnumbered} -->
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
-Euler formula is all you need
+All you need is Euler formula
 :::
+
+Differential equation is foundational in physics at the end of highschool. It consists of constructing the laws that govern the system, and secondly, we need to solve the equation. We were engrained that solving usually find a solution (one or more number). Whereas solving a differential equation means the solution is a function. While we think, there are infinetely many numbers, these are simple, compared with space of all the functions... But the solution is something as a function of time.
+
+Fortunately, this is about applied concept, and we don't really concern of finding what is closed form solution, instead we can just visualize @sec-function_viz. So we can just plot the results and that is easlily by what it is called solving numerically. The Euler formula is the simplest. But not only, it allows us to solve the equation, it also helps to understand what is a differential equation.
+
+Let's use the simple differential equation
+
+$\frac{dy}{dt} = r$ where r is a constant. The key is to understand what is the meaning of the right hand side. The short answer is the derivative of a function y with respect to t @sec-derivative. But intuitively, $\frac{dy}{dt} = \frac{y_{t+dt} - y_t}{dt}$, we could then rewrite as
+
+$\frac{dy}{dt} = \frac{y_{t+dt} - y_t}{dt} = r$ or $y_{t+dt} = y_t + dt \times r$. And if you stare long enough, you will see that this looks like a difference equation (see @sec-difference). But as said earlier, not only it allows to us to solve it but also understand how things change through time.
+
+<!--
 
 
 
@@ -23,7 +35,7 @@ Alternatively, we can check the temperature of the coffee at any time, and we co
 dT/dt is essentially $\frac{T_{n+dt} - T_n}/dt$ That is how temperature changes from a short interval dt. The denominator dt = n+dt - n which them matches the index in the numerator. If we stare long enough is just @sec-derivative with respect to time. So essentially, T_n+dt = T_n - k (T_n - Ta) dt.
 
 Unless you are math-inclined, we can slove using difference equation and taking small steps: T_next = T_now + time_step * relation. As time_step gets smaller we go from discrete to continuous. From difference equation to differential equation.
-
+ -->
 
 ## Formal {.unnumbered}
 A differential equation is dx/dt = f(x).
@@ -60,8 +72,8 @@ Introductory textbooks usually categorize ODEs right away by two major propertie
 - Law of motion
 
 ## Tips and warnings {.unnumbered}
-Ironically, most differential equation are solved as a difference equation.
-Numerical solution.
+- Ironically, most differential equation are solved as a difference equation.
+- Numerical solution.
 - f' x. are all different notation, sometimes y' also instead of f'(x), what's good is clear what is the independant variable
 - The linear autonomous,
 - Partial, non-autonmous, etc.
