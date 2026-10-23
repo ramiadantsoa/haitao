@@ -11,29 +11,20 @@ Zana-bola
 Zana-bola
 :::
 
-The earth would explode if hit by an earthquake of magnitude 18 (xkcd!)
+The saving account in the bank has the attractive feature that if you deposit an x amount of money, and if you don't touch it. After a fixed period time t (say 3 months), that amount will generate an amount proportional to the amount you have in the bank (called interest). That is, if you deposit 1 million ariary, and the zanany is 2%, you will have 1 million + 2% of 1 million = 1 million * (1 + 0.02) = 1 million * (1.02).
 
-You go straight, left etc. and you have reached your destination.
+After another three months, the next balance is 1.02 million + 0.2 * 1.02 million. It might be clear now that the next balance $B_{n+1}$ depends on the current balance $B_n$ and the interest rate r. That is, $B_{n+1} = B_n + r \times B_n = B_n \times (1 + r)$. This is an example of a difference equation although that name does not do justice. Do we see a difference, do we see where we have a discrete time step n, and the next state of the system depends on the current state.
+
+Here are few other examples of difference equations in malagasy cultuer
+
+- Ny hazo no vanon'ko lakana, ny tany naniriana no tsara.
+- Maty aho matesa rahavako, maty rahavako etc...
+- 
 
 
-In an official chess tournament (probably true for no pro too), after a player move a piece, he/she will tap a clock and then write down the move they have.
-In this, there is a long historical database of all the games that have been played.
 
-What do you see when you read is a sequence of move, alternating each player.
 
-This is an example of using discrete variable to document changes in time.
-In step 1 you know the step of the system, in step 2, there is another change.
-
-However, if you look at move 15 you probably has now idea of how the chess board looks after move 14.
-This is the idea of a recurrence.
-
-So what is a difference equation, in short it is a mathematical stuff that record the state of something using .
-You have already seen that called .
-You could define it implicity, that is state next = f(state now) (see also Markov chain).
-
-A big step is trying to define, this only works for few (see below)
-
-It is an equation so there is the defining it and there is the solving it.
+<!-- Notice also that if you, this is where we talk about discrete time steps. That is we use discrete variables @sec-discrete_continuous to map things through time. That is time step one is n is equivalent to three months. If you check before that the balance will remain the same. -->
 
 
 ## Formal {.unnumbered}
@@ -43,15 +34,10 @@ u_n+1 = f(u_n). This is a recurrence
 
 We could of course define as u_next = f(u_n, u_n-1...).
 
-Two visual representations
-Spider
-and time
-
-
 In mathematics, a difference equation (often referred to in modern dynamics as a recurrence relation, particularly when modeling discrete steps) is the discrete analog of a differential equation. Instead of relating a continuous function to its derivatives, a difference equation relates the terms of a discrete sequence to differences between those terms.
 
 
-2. The Shift-Operator / Recurrence Definition
+1. The Shift-Operator / Recurrence Definition
 In modern applications (such as computer science, numerical analysis, and discrete dynamical systems), it is mathematically cleaner to eliminate the Δ operator and express the equation entirely using the shift operator (Eyt =yt+1). This changes the structure into a pure recurrence relation.
 
 Textbook Source
@@ -67,25 +53,26 @@ where t belongs to a discrete domain (typically the set of non-negative integers
 ## Examples {.unnumbered}
 - Imaging you save 1000 ar per week and put it in the box, the amount of money you have in the box the week after is save_week + 1 = save_week + 1000 ar.
 
-- If you save money in the bank 1 million ariary in the bank with an annual 2% interest, next year it is 1 m + 2% 1 m = 1 m (1.02) = , the year after, your interst is 1. What is nice is that after 10 years, your gain is
-
+- combing bank and saving at home so your balance is u_n+1 = u_n + (1 + r) u_n + d.
 
 - For a more ecological, population size for next year is population size of this year  + number of death + number of imigrant - number of death - number of emigrant. pop_ t+1 = pop_t + B + I - D - E, if we assume that they are constant throught the year then pop_t+1 = pop_t + detla and becomes a simple aritmetic mean
 
-- The model above is unlikely as the number of birth depend on pop_t (female reproductive).
-
-- In some examples, for the coffee, the temperature T_n+1 = Ta + q (T_n - Ta) or T_n+1 = T_n - q (T_n - T_a) . We can use this. This is an example where we are using laws of physcis, we will see an equiv.
-
+- The model above is unlikely, all those parameters is likely variable through time, and might depend on the size or density of the current population, the model becomes pop_t+1 = pop_t + B(pop_t) + I(pop_t) - D(pop_t) - E(pop_t). This is a more realistic model, and we can see that the next state of the system depends on the current state of the system. Regardless of the complication, the future state still depends on the current state and is an example of difference equation.
 
 ## Tips and warnings {.unnumbered}
-- A goal is to express un, we could say it goes from recurrence to explicit. While it is a good math exercise, in practical ways, computation makes computing the recurrence easily.
+- Difference, suite, recurrence. As stated @sec-discrete_continuous, this is where using discrete vs continuous variables to represent time. How see in the next chapter for differential equation @sec-differential for a continuous version.
 
-- Add a spider web for visualization
+- We often need to define the first state.
 
-- Convergence and divergence
+- Computation makes thing trivial. In other words, we don't really solve the equation, we just compute the next state of the system given the current state.
 
-- Derived from first principle
+- Another math curiousity is to that is as we or it approaches a limit. Computationally, we could use a spider web to visualize it, with u_n on x axis and y-axis.
 
+- The order of a difference equation is We mostly looked for dependence on the present term, this is called first order, the further back we go, depends on u_{n-1}, u_{n-2} etc. the higher od
+
+- there are more classification, like linear or non linear, homogeneous or not. Regardless, it is always trivial to do it computationally.
+-
+- In the math world,  we could classify different types of difference equation and (that is what we did in highschool for arithmetic and geometric sequence) solving the equation means finding a explicit fucntion so that $u_{n+1}$ is directly a function of n, that is we not longer need the recurrence relationship. This could be a good math exercice, although can be tricky to do. But computers do it fast, further, by we drop the essence of how the term depends on the previous ones. The law!
 
 ## If you want to know more {.unnumbered}
 
@@ -143,4 +130,29 @@ Given a k-th order difference equation yt+k =f(t,yt,…,yt+k−1), if a set of k
 ​
 $y_0 = c_0, \ y_1 = c_1, \ \dots, \ y_{k-1} = c_{k-1}$
 
-Then there exists a unique sequence {yt}_t=0^∞ that satisfies the difference equation for all t≥0. -->
+Then there exists a unique sequence {yt}_t=0^∞ that satisfies the difference equation for all t≥0.
+
+
+You go straight, left etc. and you have reached your destination.
+
+
+In an official chess tournament (probably true for no pro too), after a player move a piece, he/she will tap a clock and then write down the move they have.
+In this, there is a long historical database of all the games that have been played.
+
+What do you see when you read is a sequence of move, alternating each player.
+
+This is an example of using discrete variable to document changes in time.
+In step 1 you know the step of the system, in step 2, there is another change.
+
+However, if you look at move 15 you probably has now idea of how the chess board looks after move 14.
+This is the idea of a recurrence.
+
+So what is a difference equation, in short it is a mathematical stuff that record the state of something using .
+You have already seen that called .
+You could define it implicity, that is state next = f(state now) (see also Markov chain).
+
+A big step is trying to define, this only works for few (see below)
+
+It is an equation so there is the defining it and there is the solving it.
+
+-->
