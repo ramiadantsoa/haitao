@@ -68,3 +68,8 @@ I think it would be useful to have a first sense, and depending on time and avai
 
 
 # How to use this book@
+
+Trade-off in the definition
+
+
+The simpler the harder it is to define. 1+ 1 = 2 took Russells how many pages.

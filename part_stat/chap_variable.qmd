@@ -2,20 +2,32 @@
 
 {{< include ../preamble.qmd >}}
 
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
 Average of what?
 :::
 
 ## Concepts and intuitions {.unnumbered}
+ -->
 
-Population is the first thing, the set of elements we are interested in (generally persons, animals, plants, or objects). When asked the average of what (what can mean the population). Sort of pendantic approach. However, the intended meaning of average of what also means what are the values your calculating the average on. E.g. for a the same population, you can have the average of height, weight or age.
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
+Average of what?
+:::
 
-However, what it boils down to is that each individual differs in so characteristics. In a usual data collect, we pick an individual, record some characteristics and do the same for all individuals.
-At the end we get a series of values/characteristics. So if we have n objects, we also have n values.
+What is the average age of Malagasy population?
+What is the average height of Malagasy population?
+What is the average salary of Malagasy population?
 
-So what is a variable? It is the collection of characteristics, traits or a feature? Although it will make your brain hurt a bit, the final way of thinking about a variable is to think it is a function (@sec-function if need refresher). The starting set X is the population. And the function f is the act of measuring that. For instance you can use two scales and thus have two functions, two response variables.
+This section is supposed to complement the previous one, that is we need a pair of concept to define our statistical machinery (and our research question). We need to define the population (@sec-population) and the characteristics of the population (this chapter).
 
-The biggest advantage of that is when you think of a qualitative or nominal or quantitative variable, discrete or continuous, it is based on the value of the y etc. see next two chapters for different types.
+On the surface a variable is just the characteristics or feature, as used the textbook definition below, because the characteristic differs among each item/subject/individual in the population, hence it is a variable. When we record a data and put in a data frame (@sec-dataframe), a variable is a column. That could be straighforward for anyone who entered data in a long format
+
+But, let's hurt the brain a bit, or be a bit more critical? What is a variable, it is the name of the column (height)? It is the values in the column? Are those the same thing? How does it relate to qualitative and quantitative variable? And much later, what is a random variable?
+
+Let's say we are interested with the height of in one classroom (a well-defined population). We could collect the information by asking each individual how tall they are. We can then column with their height. Alternatively, we could use a tape and measure each individual. Since we are measuring height, is it the same variable or different ones? ... and to further complicate things, if we got exactly the same value for each pair of measurements, is it the same variable then?
+
+The simplest path is basically to tie the variable with how it is measured (that is, it is more than the just numbers in the columns). A variable is essentially a function. And for a function to make sense, we need f, x, and y (@sec-sec-function for the traditional function we are used to). In stat X is the population of sample of interest, f is and y is the set of value (that we put in the column).
+
+The immediate implication of that is when you think of a qualitative or nominal or quantitative variable, discrete or continuous, it is based on the value of the y etc. which will be the focus of next two chapters.
 
 <!--
 
@@ -85,22 +97,26 @@ The Subject Matter: It must belong to an entity (a person, a trial, an object).
 The Variance: If every subject in your sample yields the exact same measurement (e.g., if everyone in a study is 30 years old), "Age" ceases to be a variable in that context and becomes a constant.
 The Scale: It must be classifiable into a defined measurement scale (Nominal, Ordinal, Interval, or Ratio). -->
 
-## Examples {.unnumbered}
-Examples of variables people measure, record,
-population is a collection of sites and GPS coordinates or elevation
-weather: temperature rainfall, humidity
-population a village:  age, social status, sex, etc.
-plants: dbh, height, growth measured between two time points,
-animals: weight, length, sex, age, species name
+Definition of a variable as a function....
 
-Sex determination X Y and Y in human
-Sex determination X, Y, Z
-Sex determination temperature in turtle
+## Examples {.unnumbered}
+For conciseness, we ignore defining the population here and focus on examples of variables.
+
+- Population is study sites: GPS coordinates or elevation, temperature, rainfall, humidity
+
+- Population a village:  age, social status, sex, etc.
+
+- Plants: dbh, height, growth measured between two time points,
+
+<!-- - Sex determination: if human is the population then is  X Y and Y in human, for some reptiles, Sex determination X, Y, Z
+Sex determination temperature in turtle -->
 
 ## Tips and warnings {.unnumbered}
-- Is a constant variable?
-- Non-random vs random variable (see later chapters)
-- Variable types but could be transformed (see @sec-quantiative-variable and @sec-qualitative-variable)
-- As you will in section programming is developped to accommodate these different types of variable. Sadly, since applied stats and programmers had different starting point, the terminology can be different @sec-boolean, @sec-character,@sec-numeric.
+- As a function, one study is incomplete unless the variable is clearly defined: precise in the method section.
+- Precision of a variable, blame the method, not the value.
+- Is a constant variable? The practical answer is no because this is why it is called a variable in the first place. But if a priori you include as variable (say religion in a classroom) but a posterioiri are all the same religion, do we exclude them? But a constant function is still a function f(x) = 1, in principle. Of course, these are and are of sole of critically thinking about what is a variable
+- Another complication is that variable but could be transformed. For instance, we collect age, and then later decide to group them into infant, juveline, adult etc. (see @sec-quantiative-variable and @sec-qualitative-variable). But that is not an issue if one thinks a variable as a function and not just the value it take...
+- Eventually, we will need a computer to do analyses. Because programs are built by programmers and not for statisticians, the terminology used are different. There will be three major types of variables: logical, string, numeric, integer etc. (see @sec-boolean, @sec-character,@sec-numeric) which are how we represent the various types of . This book also aims to bridge that.
+- Random variable is what we really need but we need to wait for now (later version of this handbook), and presented when we actually need it.
 
 ## If you want to know more {.unnumbered}
