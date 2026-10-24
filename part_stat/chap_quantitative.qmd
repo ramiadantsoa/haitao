@@ -2,20 +2,22 @@
 
 {{< include ../preamble.qmd >}}
 
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
 Isao, refeso, lanjao!
 :::
 
 
-## Concepts and intuitions {.unnumbered}
-If you understand the variable @sec-variable, this is specific type of variable. That is the type of values that you obtain after.
-In general, working with quantative variable is quite natural for almost everyone, the problem usually is with qualitative (@sec-qualitative-variable).
+## Concepts and intuitions {.unnumbered} -->
 
-Math, you have been working with numbers. It is a quantity.
-In the simplesst form, can one calculate the averge of the number.
-However, there is two types of quantitative (ADD THE DIAGRAM SOMEWHERE): discrete and continuous @sec-discrete_continuous.
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
+Discrete or continuous?
+:::
 
-It is not utterly important at this introductory level.As the mathematics for handling them is quite different but this is not our concern for now. See later on statistical inference and model fitting and predictin....
+If you understand the variable @sec-variable, this is specific type of variable. That is the type of values that you obtain after is a number. In general, working with quantative variable is quite natural for almost everyone, the problem usually is with qualitative (@sec-qualitative-variable) and when one tries to apply tools in the quantitative worlds to qualitative worlds.
+
+The discrete and continuous. Conceptually, this just means that the value is discrete (e.g. integer) or continuous (e.g. real number, numeric, double or float etc if one is a mathematician, data scientist or computer scientist). The discinction between these two are related to the mathematics used with them (@sec-discrete_continuous) and will matter later when talking about statistical inference, model fitting etc.
+
+It is not utterly important at this introductory level and in the most practical sense, we can ignore it now. But it would be nice if we understand the difference.
 
 ## Formal {.unnumbered}
 <!-- In statistics textbooks, a quantitative variable is defined as a variable that measures a numerical quantity or amount. Crucially, its defining mathematical feature is that its values are actual numbers for which arithmetic operations (such as addition, subtraction, or averaging) yield meaningful, real-world interpretations.
@@ -85,6 +87,7 @@ Conservation
 Biochemistry.
 
 ## Tips and warnings {.unnumbered}
+- If is not a number is not enough, switch to operation.
 - Sematic: quantitative, numeric, numbers,
 - Positive values or not
 - Variable transformation and scaling
