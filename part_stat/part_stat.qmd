@@ -1,22 +1,23 @@
 # Basic statistics
-To a large majority, statistics are about choosing the correct test, and look at the p-value whether it is significant or not.
-Despite attempt from statisticians to caution with the use and misuse  of p-value and null hypotesis significant test, and alternative metric, the practice is so anchored and convenient that these correction attemp were futile.
-More failed in underresourced area
+To a large majority, statistics are about choosing the correct test, and look at the p-value whether it is significant or not. The work is then pointless if one's results is not statistically significant.
+Despite attempt from statisticians to caution with the use and misuse  of p-value and null hypotesis significant test, and alternative metric, the practice is so anchored and convenient that these correction attemp were futile. More failed in underresourced area
 
-Another famous quote is lies, big lies, and statistics. Add author.
-People use number to demonstrate an idea: give a few example.
-People with authority could easily fabricate data,
-while mathematics I a better grasp of statistics could lead to better insight and decision.
+This shortcut, reductionism probably marred the philosophy behind what statistics does and to a certain extent favor malpractice and generally the graps of the topic.
 
-In a simplified way, this is about population, variables, distribution of variables, and ways to summarize the distribution.
-As it turned out, a population is a holy grail so the whole endavor is to recover (estimate) the properties of the population.
-In other word, it is asessing how our estimated value from sampling differ from the true value (that we likely will never now).
+So how can we intuitively understand statistics...in this, we will divided into two topics: the descriptive statistics: this is about population, variables, distribution of variables, and ways to summarize the distribution. And inference statistics: the concept behind it is that most of our data is sample or subset of the true population and statistics is doing its best to recover the properties of t..in other words it provides a rigourous ways to estimate the true value (which remains unknown unless we sample all individuals which will never be done) and the confidence/ our trust on these true value.
+
 
 Because it is, we eventually need to rely on mathematical concepts and notation, in case of I hope you can find your solace in the previous part on basics of mathematics.
 But in the same vein, words (like population, average, uniform, qualitative) are borrowed from common languages, understanding that nuance in my opinion is the guarantee one actually graps the concept
 
-The overal goal here is to explain (again) p-value  to eventually prevent misuse
+XX quoted that there are lies, big lies, and statistics. Hinting about the perneciousness of statistics. At one hand if ilitterate statistically, giving numbers seemed to be a ultimate proof...at the other hand, if well versed and malicious enough, we can always show by transforming the data and nitpicking which test to use..But thing it is malicious.
+The hope is that with better grasp of statistics could lead to better insight and decision. And think critically about your data, your stat of choice... and also how one design the sampling and collect the data.
+
+<!-- The overal goal here is to explain (again) p-value  to eventually prevent misuse
 The concept is based on a statistic  and the explain distribution, its characteristic & concept of a random variable
 Minimum foundation, cannot be avoided, and mathematical notation.
 Strongly recommended to have a good grasp before using the applied part or used as a reference
-Later, test will be based on presenting the statistics and p-value
+Later, test will be based on presenting the statistics and p-value. -->
+
+
+
