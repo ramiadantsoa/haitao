@@ -2,7 +2,8 @@
 
 {{< include ../preamble.qmd >}}
 
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 Average of what?
 :::
 
@@ -10,45 +11,17 @@ Average of what?
 
 What is the average age of Malagasy population?
 What is the average age of men in Madagascar?
-What is the average age of
+What is the average age of men in Melaky region?
 
+Above are three examples of calculating the average age but based on three different "population". It should be clear that unless you specify the second part of the question (which we call population) that question is pointless. The answer then depend on which population is under study.
 
-True vs estimates. Statistical inference.
+As one can argue, the first part of the question is more important, and more interesting. For instance the crucial difference between a difference and differential equation (@sec-difference and @sec-differential) is that the is @sec-discrete_continuous. Since the starting set is skipped, hence the existence of this chapter.
 
-Population is, this is what we study and what you want to understand, we want to know the characteristics.
+One could also argue that it is the second part (i.e. the characterisation of the population) that is more interesting. Indeed, when asking people what research they are doing, they answer, I study lemurs in Ranomfana, grasslands or ants. Most of the time, these answers are also not precise enough. The one is to think/define/delimit more precisely about one means by population.
 
-However it is formal underlying concept
-This is conceptual framework that underlies everything.
-Defining it in mathematics-orriented is easy because of the degree of abstraction.
+Convince oneself, one is not more important than the other,  no need to set an order of piority and embrace the complementarity.
 
-When you turn to reality however, defining delimiting a population is rather complicated.
-Think of Malagasy population...
-
-At best it is a good and the extent of your results, discussion, and conclusion.
-
-However this is not our concern here but it is a good exercise.
-
-Take home: we never know but hopefully with sufficient sampling and statistical procedures we know some of its properties.
-
-
-Population is the underlying of statistics.
-As you will see throughout this book separating understandig the differences between the same terms used in different field, science vs colloquial is one major goal of this book.
-This is a book about applied stat, and the main audience are ecologists and biologists, or at least those working with natural science.
-Here we will attempt to link what is meant by population in natural science and population in statistics.
-
-Malagasy population is about, what does that mean.
-In its simplest form, it is a group of individual that live in Madagascar.
-Do you count or Malagasy living abroad as Malagasy population?
-What is a population of lemur, same species living in a
-What is an ant population? Does it make sense.
-although, it might become a philosophical that eventually.
-But this is not a book about biology, and can find in textbook the nuances among different definitions.
-
-In statistics, things are defined more precisely.
-This makes it more conceptual.
-The most important part is that most of statistics is not studying the whole population.
-The goal is to sample from that population so we can estimate its proriety, somehow extrapolate.
-Only rarely, we will have access to the real population.
+Beyond the rather philosophical aspect, the practical side is we almost never know the population. For the three examples of population above: no one will every collect data on age of every individuals in the population. So in principle we will never know the answers to these questions. And this is the disctintion between a population and a sample, and the difference between a true value and the estimated value. The disctinction is important enough they are distinguised by notation: the true value is represented by greek letter, while the estimated by roman letters.
 
 ## Formal {.unnumbered}
 
@@ -60,23 +33,22 @@ Publisher: McGraw-Hill
 The Definition
 Mood, Graybill, and Boes provide a highly rigorous, set-theoretic approach to defining a statistical population:
 
-"A population is a collection of items (or measurements of items) under study. A population can be finite or infinite. Formally, a population can be considered as a sample space Ω of an experiment. The characteristics of the population are then given by the probability distribution defined over this sample space."
-They split this into two rigorous sub-definitions:
+"A population is a collection of items (or measurements of items) under study...There are two rigorous sub-definitions:
+First the existent (or Tangible) Population: A concrete, finite set of existing elements, denoted by a finite index set P={1,2,…,N} (discrete: @sec-discrete_continuous). In this handbook (there are other definitions), we consider the population as the whole set and not a result of a sampling.
 
-- Existent (or Tangible) Population: A concrete, finite set of existing elements, denoted by a finite index set P={1,2,…,N}.
-- Hypothetical Population: An infinite set of all possible outcomes that could be generated by a repeatable experiment (e.g., an infinite sequence of coin tosses), which is mathematically represented entirely by its probability law, P(⋅).
+Second the hypothetical Population: An infinite set of all possible outcomes that could be generated by a repeatable experiment (e.g., an infinite sequence of coin tosses), which is mathematically represented entirely by its probability law, P(⋅). While introduced for completness, we will return to this later, mostly because it involves probability which is by order its not assumed to be understood.
 
 ## Examples {.unnumbered}
-Passenger of titanic full population
-People with disease
-Whale population
+- Passenger of titanic: this could be one of the few examples of. There is a database and one can clearly
+- In epidemiology, people with disease
+- An endangered species endemic to a lake where we could tag and know all individuals. Saima seals in Finland.
 
 ## Tips and warnings {.unnumbered}
-- population as a sample
-- colloquial term does not refer to living individuals: rolling a dice, flipping a coin... results of outcome
-- Above is related to distribution
--  Hypothetical Population: An infinite set of all possible outcomes that could be generated by a repeatable experiment (e.g., an infinite sequence of coin tosses), which is mathematically represented entirely by its probability law, P(⋅).
--  Philosophy: can age be a population?
--  Statistical inference: estimate the true population vs sample?
+- To reiterate, a population is well-defined collection of items. Knowing what is included and not included in the population is critical/ delimitation is non-trivial. Say Malagasy population: does it include people living in Madagascar (immigrants), people with, so do we exclude those in the countryside that might not a have a birth certificate? How about Malagasy living abroad?
+-  Defining the items can be non-trivial. It could be simple for animals.  For instance, for grasses, what is a population? Di we care about individual ants or colony Eusocial? This is what is an item.
+- @sec-sec-function, is defined by set if X and Y, pop is the starting set don't ignore it.
+- Unless you sample everything, one cannot  see the rare nitpick example above. Statistical inference: estimate the true population vs sample?
+- Population itself is not the end goal, it is studing the properties of that population (variables @sec-sec-variable, distribution @sec-distribution).
+- Population is a sample. While in more rigorous, foundational, the more practical is more useful for the applied scientist.
 
 ## If you want to know more {.unnumbered}
