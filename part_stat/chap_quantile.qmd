@@ -2,11 +2,10 @@
 
 {{< include ../preamble.qmd >}}
 
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-Raha fantatrao ny valiny dia anisan'ny 1% mahay indrindra ianao!
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
+You are a genius!
 :::
 
-## Concepts and intuitions {.unnumbered}
 It is quite common to see on social media about a puzzle or equation which the reward that you will be a genius if you solve it, harvard entry exam, or 99% cannot solve this problem.
 Those are meant to show that if you solve it, you are not unique but you are a member of a certain exclusive group.
 While there is no real scientific, the numbers are made up to make it sensational and grap one's attention, there is still underlying scientific/statistical reasoning behind it.

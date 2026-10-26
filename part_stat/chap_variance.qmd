@@ -5,6 +5,7 @@
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 Tokony rarahiana!
+Toko roa mahamasa-nahandro!
 :::
 
 Everyone has checked their average grade to see if one passes of fail or get a mark, but, no one has ever check the variance of their grades!
@@ -49,7 +50,7 @@ The standard deviation is the square root of the variance squared
 - In the formal definition, @eq-varB, variance is number square and the mean. The square is called moment of order 2. We can also compute X^3 and more as higher moments and represent other geometry of the distribution.
 - It is pointless to calculate the mean of one number, so does the calculation of the variance of two numbers.
 - For the more advanced,a normal distribution is fully characterized by two numbers: the mean and the variance. In many distribution, which are nomral distrinution enough, comparing the two numbers should characterize the whole distribution and thus cimpare them.
-- If you compute the variance of the data, it will divide by n-1 and not by n. While here we mostly divide by n, for most of one's life, it will divide by n-1. The division by n is called population variance (@sec-population), whereas the n-1 is sample variance. We will get back to it later but essentiallu, the n-1 is the best away to estimate the population variance which we do not know. 
+- If you compute the variance of the data, it will divide by n-1 and not by n. While here we mostly divide by n, for most of one's life, it will divide by n-1. The division by n is called population variance (@sec-population), whereas the n-1 is sample variance. We will get back to it later but essentiallu, the n-1 is the best away to estimate the population variance which we do not know.
 
 
 
