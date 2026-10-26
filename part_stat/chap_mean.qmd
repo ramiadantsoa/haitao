@@ -56,11 +56,13 @@ V3 is just V2 where we divided the coefficient by the common denominator.
 
 
 ## Tips and warnings {.unnumbered}
+- Mean is a metric that calculate captures the central tendency of the data.
 - Mean only works with a quantitative variable so that the $n_i \times x_i$ makes sense.
-- Semantic: mean and average are synonymous, expectation or expected value E[X] is also used but mostly in the theoretical world.
-- mean can be misleading if there are exceeding large number. For instance intepreting the mean of 1, 1, 1, 1, 10 million is probably meaningless.
+- Semantic: mean and average are synonymous, expectation or expected value E[X] of firest order moment but the latter is used but mostly in the theoretical world.
+- Mean can be misleading if there are exceeding large number. For instance intepreting the mean of 1, 1, 1, 1, 10 million is probably meaningless.
 - Imagine we travel from Fianarantsoa to Ambalavao, on way travel, convince yourself that the taking the average of the speed does not give you the average speed.
-- In this enteire section, we mostly talked about arithmetic mean. There are different ways of calculating the mean, namely the geometric and the harmonic mean. For instance, in the speed example above calculating the harmonic mean will give the correct/intepreatble mean.
+- In this entire section, we mostly talked about arithmetic mean. There are different ways of calculating the mean, namely the geometric and the harmonic mean. For instance, in the speed example above calculating the harmonic mean will give the correct/intepreatble mean.
+
 
 <!--
 ## If you want to know more {.unnumbered}
