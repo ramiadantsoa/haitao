@@ -2,35 +2,24 @@
 
 {{< include ../preamble.qmd >}}
 
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+:::
+
+## Concepts and intuitions {.unnumbered} -->
+
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 Ity kosa azoko e! Sa?
 :::
 
-## Concepts and intuitions {.unnumbered}
-This concept is about data driven.
-The equation below is about exact formulation from data-driven and theoretical distribution.
 
-Among all equations, this is probably one that everyone is familiar with.
-We almost rote learning, sum all the numbers and then divide by the number of numbers.
-However, when one presents the equation for calculating the mean (see formal below @eq-mean_A and @eq-mean_B), it somehow becomes inaccessible.
+Among all concepts, the mean is probably the one that everyone is familiar with a sight of relief. Everyone is capable of calculating the mean of a sequence: "the somme des nombres divisée par le nombre d'effectif". Yet, when one presents the equation for calculating the mean (see formal below @eq-mean_A and @eq-mean_B), it could appear inaccessible. Maybe with @sec-sum,  it is no longer the case.
 
-The part above is level one when calculating the mean.
-Level two is when calculating the mean with coefficient.
-Think at the baccalaureat.
-To calculate the mean, you multiply the grade with the coefficient, sum the whole thing, and then divide the total number of coefficient.
+There are three equivalent formulas to calculate the mean.
+The part above is level one when calculating the mean. The other example is related to calculating the mean when there are coefficient involved: you multiply the grade with the coefficient, sum the whole thing, and then divide the sum of all the coefficients.
 
-The variation, which becomes level 3 is to give weight to each subject, the weight is just the coefficient divided by the total coefficient.
-In other words the sum of the weight is always 1.
+The third and final formula is to multiply each value by its frequency of occurence and then add these products. Or in the example of grade, instead of multiplying by the coefficient, you multiply by the coefficient divided by the sum of all coefficient. That final formulation allows us to calculate the mean using the distribution @sec-distribution, that is the weight is simply the frequency. Whereas the first approach is the simplest to implement, the last one is a generalized version that could be extended later.
 
-That final formulation allows us to calculate the mean using the distribution @sec-distribution, that is the weight is simply the frequency.
-
-Why do we calculate the mean? In statistic is a called a measure (not the measure) of central tendency, that is we want to summarise the data with one number.
-In terms of concept it is a social convention.
-For instance, during an exam, we say that if the mean is above 10 then we pass, and below we fail.
-But sometimes we don't need to mean at all.
-A rule is that if we get a zero in one test then the mean does not matter, we automatically fail, why is that? Another social convention.
-As you can see, it is convenient but only subject to some conditions.
-
+The mean is probably the most used metric to summarize a data. However, boiling a sequence to single number means that many information (potentially valuable) are lost. If one student had 10/20 and 10/20 in two test, and another student has 5/20 and 15/20. One has to be careful to cimpare only the mean of the students. Finally, the most used one does not mean it is the best nor the only choice.
 
 
 ## Formal {.unnumbered}
@@ -44,12 +33,40 @@ $$
    \bar{X} =  \mu = \frac{1}{n} \sum_{i=1}^{n} x_i
 $${#eq-mean_A}
 
-The second version is that same x_i repeats n_i times, the equation for the mean is
+The second version is that same $x_i$ repeats $n_i$ times, and $\sum n_i  = n$ the equation for the mean is
 
 $$
-    \mu = \sum_{i} z_i \, f(z_i)
+    \mu =  \frac{1}{n}\sum_{i} n_i \, x_i
 $${#eq-mean_B}
-where z from unique values in X, and f(z) is the frequency of z in X, that is the number of times z appears in X divided by n.
+
+The third version is instead of multiplying by $n_i$ we multiply by $p_i = \frac{n_i}{n}$
+
+$$
+    \mu =  \sum_{i} p_i \, x_i
+$${#eq-mean_C}
+
+## Examples {.unnumbered}
+Assume the grade is {5, 7, 10, 10, 12, 14}.
+
+V1: $\frac{5 + 7 + 10 + 10 + 12 + 14}{6}$
+V2: $\frac{5 + 7 + 2 \times 10 + 12 + 14}{6}$
+V3: $\frac{1}{6} \times 5 + \frac{1}{6} \times 7 + \frac{2}{6} \times 10 + \frac{1}{6} \times 12 + \frac{1}{6} \times 14}$
+
+V3 is just V2 where we divided the coefficient by the common denominator.
+
+
+## Tips and warnings {.unnumbered}
+- Mean only works with a quantitative variable so that the $n_i \times x_i$ makes sense.
+- Semantic: mean and average are synonymous, expectation or expected value E[X] is also used but mostly in the theoretical world.
+- mean can be misleading if there are exceeding large number. For instance intepreting the mean of 1, 1, 1, 1, 10 million is probably meaningless.
+- Imagine we travel from Fianarantsoa to Ambalavao, on way travel, convince yourself that the taking the average of the speed does not give you the average speed.
+- In this enteire section, we mostly talked about arithmetic mean. There are different ways of calculating the mean, namely the geometric and the harmonic mean. For instance, in the speed example above calculating the harmonic mean will give the correct/intepreatble mean.
+
+<!--
+## If you want to know more {.unnumbered}
+geometric and harmonic average -->
+
+
 <!-- $$
     \mu = \int_{-\infty}^{\infty} x f(x)\,dx
 $${#eq-mean_c} -->
@@ -97,15 +114,3 @@ As defined by the Weak/Strong Law of Large Numbers (LLN) in theory textbooks, if
 
 $\lim_{n \to \infty} P(|\bar{X}_n - \mu| < \varepsilon) = 1 \quad \text{for any } \varepsilon > 0$
  -->
-## Examples {.unnumbered}
-Average of grades: calculation 1, 2, 3
-
-## Tips and warnings {.unnumbered}
-- this is for quantitative variable because we can do operation in that
-- Is it that useful? Airline 1 over 2 if mean crash is 1 per year vs 2 per year?
-- mean can be misleading if presence of large number
-- mean, average, expected value
-
-
-## If you want to know more {.unnumbered}
-geometric and harmonic average
