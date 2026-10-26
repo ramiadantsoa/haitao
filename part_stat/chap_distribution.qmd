@@ -2,56 +2,151 @@
 
 {{< include ../preamble.qmd >}}
 
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 A visual summary of your data
 :::
 
+There two entry points to think of a distribution. The first one is from the theoretical perspective, thinking about normal/gaussian or like binomial or Poission distribution. That perspective will be addressed later in this book, when we talk about statistical inference.
 
-## Concepts and intuitions {.unnumbered}
-There two entry points to think of a distribution.
-The first one is from the theoretical perspective, thinking about normal/gaussian or like binomial or Poission distribution.
-That perspective will be addressed later in this book, when we talk about statistical inference.
+The second one is from a data-driven perspective. Assume for now that it is qualitative variable (@sec-qualitative-variable). That is, imagine assess the gender of all (n) pupils in a classrom (more generally a variable @sec-variable from a population @sec-population). That is mostly a sequence of male female. A distribution is a first entry point to summarizing your data. Yes, it is a summary because we are computing new numbers from the original data.
 
-The second one is from a data-driven perspective.
-Assume for now that it is qualitative variable (@sec-qualitative-variable).
-That is, imagine assess the gender of all (n) employees in a company (more generally a variable @sec-variable from a population @sec-population).
-That is mostly a sequence of male female.
-A distribution is a first entry point to summarizing your data.
-Yes, it is a summary because we are computing new numbers from the original data.
-So what are the new numbers: essentially look at the unique types of variables and count how many are males and female. So you have a pair male- nmale and female-nfemale.
-Ultimately, a distribution is a figure, the figure is simply two bars of different height.
-
-You are most bored at this stage, this is so obvious...but what happens variable is quantitative (@sec-quantiative-variable)? How one constructs a distribution?
-Imagine you measured the height of the employees, you have a sequence of n numbers. Because numbers are likel unique, one cannot count how many have the same value (plotting that would be the same height). The work around is to arbitrarily divide the range into intervals and count the number of (as above with male-female).
-The key important word here is arbirarily because depending on the intervals, it is possible to create different distribution
-Back in the day, Excel did not have a dedicated function to create a histogram, so one has to create the intervales, computes and then use bar chart to make to plot the distribution.
-Now, it is done with a single click and the program default the interval.
+So what are the new numbers: essentially you count the number in each category. The sequence of male and female becomes a table
 
 
-The take-home is that a data is a sequence of number and the distribution transform it into pair of discrete bin-and the number of that fall belong to that bin which is then plotted for visualization (@sec-function_viz). You can then see which value is most or least frequent (maro an'isa or vitsy an'isa), but also the frequency of all other values.
-A figure is worth a thousand words.
+|      |        |
+|------|--------|
+| male | female |
+|$n_m$ | $n_f$  |
+
+: The number version of a distribution where $n = n_f + n_m$.
+
+A distribution is a figure representing the data, the figure is simply two bars of different height.
+
+Sorry if this is so obvious and boring...but what happens variable is quantitative (@sec-quantiative-variable)? How one constructs the data and the figure distribution? Imagine you measured the height of the same pupils aboave, you have a sequence of n numbers. It count based on unique value, it is quite likely that table above becomes a long column and the number in the second row is mostly one. The figure is just a plot with bar of the same height "random" spacing. Not very informative in general.
+
+Ironically, to visualize such sequence is to convert the quantitative values into an ordinal qualitative. Think about altitude into categories: the number of columns becomes manageable, and the second row is more just 1. The key point is that these categories are arbitary, and depending on the category, one will get different distribution, because your table is different. E.g. if grade is between 0 and 20, we can create 2 catergories \[0,10) (excluding 10) and \[10, 20\], or you can divide into 4 groups or equal dist \[0,5), \[5,10), \[10,15) or even \[0,5\] and \[6, 20\]. One has to explain the reason behind these choice.
+
+The take-home is that variable is a sequence of number, the distribution summarize/transform it into pair of discrete bin-and the number of that fall belong to that bin which is then plotted for visualization (@sec-function_viz). You can then see which value is most or least frequent, but also the frequency of all other values.
 
 ## Formal {.unnumbered}
+
+Textbook Source Book: The Practice of Statistics (6th Edition, 2018) Authors: Daren S. Starnes and Josh Tabor Publisher: W. H. Freeman / Bedford, Freeman & Worth
+
+The Definition In Chapter 1 ("Data Analysis"), Starnes and Tabor provide the standard, universally taught definition for the distribution of an observed variable: "The distribution of a variable tells us what values the variable takes and how often it takes these values. The distribution of a categorical variable lists the categories and gives either the count or the percent of individuals who fall in each category. The distribution of a quantitative variable tells us what values the variable takes and how often it takes those values."
+
+We will omit the formal mathematical definition of distribution, the theoretical perspective above and  will return to that in due time.
+
+## Examples {.unnumbered}
+
+We omit the raw data and the table here. The first row are based on qualitative variable. For nominal variables we can change the order of the values in the x-axis (column 2 and 3).
+
+```{r}
+df_sex <- data.frame(
+    sex = c("male", "female"),
+    value = c(13, 16)
+)
+
+fig_sex <- ggplot(df_sex, aes(x = sex, y = value)) +
+    geom_col() +
+    theme_bw()
+
+df_lemur <- data.frame(
+    species = c("indri", "catta", "mouse"),
+    value = c(10, 20, 300)
+)
+
+fig_lemur_a <- ggplot(df_lemur, aes(x = species, y = value)) +
+    geom_col() +
+    theme_bw()
+
+fig_qual <- fig_sex + fig_lemur_a
+    plot_layout(axis_titles = "collect")
+
+fig_qual
+```
+
+The first column is for a pure discrete variable, where are the second and third are for continuous with two different binning.
+
+```{r}
+
+# Quantitative
+set.seed(1)
+df_discrete <- data.frame(
+    size = rpois(100, 5)) |>
+    count(size)
+
+
+fig_discrete <- ggplot(df_discrete, aes(x = size, xend = size, y = 0, yend = n)) +
+ geom_point(aes(x = size, y = n)) +
+  geom_segment() +
+  theme_bw()
+
+set.seed(1)
+df_quant <- data.frame(
+    size = rnorm(100, 10, 1)
+)
+
+fig_quant_a <- ggplot(df_quant, aes(x = size)) +
+    geom_histogram(binwidth = 1) +
+    theme_bw()
+
+fig_quant_b <- ggplot(df_quant, aes(x = size)) +
+    geom_histogram(binwidth = 0.2) +
+    theme_bw()
+
+fig_quant <- fig_discrete + fig_quant_a + fig_quant_b +
+    plot_layout(axis_titles = "collect")
+fig_quant
+```
+
+## Tips and warnings {.unnumbered}
+
+- The distribution is the fundamental concept, whether it is theory or appplied/data driven. A variable is a map with its distribution, it has similarites as function and figure (@sec-function_viz). Except that two variables can have teh same distribution.
+
+- Barchart vs. histogram: the former is used with qualitative variable, the second one is used with quantitative. Mostly because and define the binning.
+
+- For bar chart one can reoder the values on x-axis for qualitative variable (unless it is an ordinal variable). The standard is to put them from the least frequent to the most frequent (or inversely). Generally eases the interpretation
+
+```{r}
+fig_lemur_a <- ggplot(df_lemur, aes(x = species, y = value)) +
+    geom_col() +
+    theme_bw()
+
+fig_lemur_b <- ggplot(df_lemur, aes(x = reorder(species, value), y = value)) +
+    geom_col() +
+    theme_bw()
+
+
+fig_qual_reorder <-  fig_lemur_a + fig_lemur_b +
+    plot_layout(axis_titles = "collect")
+
+fig_qual_reorder
+```
+
+- It is possible to scale the value on the y-axis by showing the absolute count, relative count, or for quantitative variable is density so that the area under the curve equals to one. More a matter of interpreration. For instance if sample size is different and one wants to compare two distribution, frequency might be better.
+
+```{r}
+fig_quant_dens <- ggplot(df_quant, aes(x = size, after_stat(density))) +
+    geom_histogram(binwidth = 1) +
+    theme_bw()
+
+fig_quant_freq <- ggplot(df_quant, aes(x = size, after_stat(ncount))) +
+    geom_histogram(binwidth = 1) +
+    theme_bw()
+
+fig_y <- fig_quant_a  + fig_quant_freq + fig_quant_dens
+fig_y
+```
+
+- A distribution summarize the raw data, thus having the distribution does not allow you to recover the raw data...
+- Looking at figure is more informative, to paraphrase: A figure is worth a thousand words, a distribution is worth a million values.
+- Some data-driven distribution can also be represented by smooth curve (think about the bell-shaped curve). This representation requires additional machinery. While informative and can be aestethically pleasing,  misused can be misleading.
+
+
+
+
 <!--
-In statistics, a distribution (or the distribution of a variable) is a foundational concept that bridges raw data with mathematical probability. Depending on whether you look at an applied context (real data) or a theoretical context (probability models), it is defined either as a summary of observed frequencies or as a mathematical function mapping probabilities to values.
-Here are the rigorous definitions from three authoritative textbooks representing these different levels of statistical analysis.
-
-1. The Applied / Data-Centric Definition
-In applied and introductory statistics, the distribution of a variable is defined as a description of what values the variable takes and how often it takes them. -->
-
-Textbook Source
-Book: The Practice of Statistics (6th Edition, 2018)
-Authors: Daren S. Starnes and Josh Tabor
-Publisher: W. H. Freeman / Bedford, Freeman & Worth
-
-The Definition
-In Chapter 1 ("Data Analysis"), Starnes and Tabor provide the standard, universally taught definition for the distribution of an observed variable:
-"The distribution of a variable tells us what values the variable takes and how often it takes these values. The distribution of a categorical variable lists the categories and gives either the count or the percent of individuals who fall in each category. The distribution of a quantitative variable tells us what values the variable takes and how often it takes those values."
-
-The formal mathematical can be extensive, stems in probability theory and can even go deeper into measure theory. We do not concern about that here, at least for now.
-
-<!--
-2. The Rigorous Mathematical Statistics Definition
+1. The Rigorous Mathematical Statistics Definition
 In theoretical statistics, when we talk about the distribution of a variable, we are referring to a Probability Distribution, which is formalized as a function (like a Cumulative Distribution Function, or CDF).
 
 Textbook Source
@@ -99,106 +194,9 @@ The Frequency/Probability: The likelihood, proportion, or exact frequency with w
 
 Visually and analytically, we evaluate the distribution of a variable by looking at its shape (e.g., symmetric, skewed, bell-shaped), its center (e.g., mean, median), and its spread (e.g., variance, standard deviation). -->
 
+<!--
+In statistics, a distribution (or the distribution of a variable) is a foundational concept that bridges raw data with mathematical probability. Depending on whether you look at an applied context (real data) or a theoretical context (probability models), it is defined either as a summary of observed frequencies or as a mathematical function mapping probabilities to values.
+Here are the rigorous definitions from three authoritative textbooks representing these different levels of statistical analysis.
 
-## Examples {.unnumbered}
-We show figures here but the figures are obtained from numbers.
-
-Qualitative
-```{r}
-df_sex <- data.frame(
-    sex = c("male", "female"),
-    value = c(13, 16)
-)
-
-fig_sex <- ggplot(df_sex, aes(x = sex, y = value)) +
-    geom_col() +
-    theme_bw()
-
-df_lemur <- data.frame(
-    species = c("indri", "catta", "mouse"),
-    value = c(10, 20, 300)
-)
-
-fig_lemur_a <- ggplot(df_lemur, aes(x = species, y = value)) +
-    geom_col() +
-    theme_bw()
-
-fig_lemur_b <- ggplot(df_lemur, aes(x = reorder(species, value), y = value)) +
-    geom_col() +
-    theme_bw()
-
-
-fig_qual <- fig_sex + fig_lemur_a + fig_lemur_b +
-    plot_layout(axis_titles = "collect")
-
-fig_qual
-```
-
-Quantitative
-```{r}
-
-# Quantitative
-set.seed(1)
-df_discrete <- data.frame(
-    size = rpois(100, 5)) |>
-    count(size)
-
-
-fig_discrete <- ggplot(df_discrete, aes(x = size, xend = size, y = 0, yend = n)) +
- geom_point(aes(x = size, y = n)) +
-  geom_segment() +
-  theme_bw()
-
-set.seed(1)
-df_quant <- data.frame(
-    size = rnorm(100, 10, 1)
-)
-
-fig_quant_a <- ggplot(df_quant, aes(x = size)) +
-    geom_histogram(binwidth = 1) +
-    theme_bw()
-
-fig_quant_b <- ggplot(df_quant, aes(x = size)) +
-    geom_histogram(binwidth = 0.2) +
-    theme_bw()
-
-fig_quant <- fig_discrete + fig_quant_a + fig_quant_b +
-    plot_layout(axis_titles = "collect")
-fig_quant
-```
-
-```{r}
-fig_quant_dens <- ggplot(df_quant, aes(x = size, after_stat(density))) +
-    geom_histogram(binwidth = 1) +
-    theme_bw()
-
-fig_quant_freq <- ggplot(df_quant, aes(x = size, after_stat(ncount))) +
-    geom_histogram(binwidth = 1) +
-    theme_bw()
-
-fig_y <- fig_quant_a + fig_quant_dens + fig_quant_freq
-fig_y
-```
-
-
-Play with y
-
-
-
-
-
-
-## Tips and warnings {.unnumbered}
-It could be anything but we are so used to theoretical distribution.
-Continuous is unintuitive.
-
-
-As a final point, the height can be scaled (e.g. total number of individuals or the frequency as a percentage with sums to 100 or a proportion which sums to 1)
-
-Difference between bar chart and histogram.
-
-A figure is worth a thousand words
-Whereas one can reveal  @sec-mean, @sec-mode
-
-## If you want to know more {.unnumbered}
-Symmetric or not. There are other statistic to test for data...
+1. The Applied / Data-Centric Definition
+In applied and introductory statistics, the distribution of a variable is defined as a description of what values the variable takes and how often it takes them. -->
