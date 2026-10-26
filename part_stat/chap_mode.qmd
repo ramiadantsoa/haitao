@@ -2,21 +2,14 @@
 
 {{< include ../preamble.qmd >}}
 
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 Chameau unimodal, dromadaire bimodal
-<!-- Le mode sa la mode! -->
 :::
 
-## Concepts and intuitions {.unnumbered}
-This is trivial if start from the distribution (@sec-distribution), it is just the one with the highest frequency.
-Isn't that why they called it mode? And to a certain extent.
+In french there is mode (feminine word) which means fashion and mode (masculine) meaning statistical mode. Inutitively, mode is just the popular category and thus very linked to its feminine definition.
+The mode is trivial intepretation if we look at the distribution (@sec-distribution), it is just the one (or those) with the highest frequency.
 
-It could also be seen as a measure of central tendency (@sec-mean and @sec-median).
-It is the name of descriptive statistics.
-
-Unlike mean and median, this naturally apply to qualitative or quantitative variables and also, it does not need to be unique.
-The distribution can have two modes or more...
-
+There are three popular metric for measuring central tendency, the mean (@sec-mean), the mode (this section) and the median (@sec-median). Unlike mean and median, this naturally apply to qualitative and quantitative variables. And best with qualitative variable. While we more or less know who to compute the mean and the median, we are not used to computing the median. Graphical is most natural.
 
 ## Formal {.unnumbered}
 <!--
@@ -35,8 +28,80 @@ The Definition
 In Chapter 3 ("Descriptive Statistics"), Agresti defines the mode based on empirical frequency:
 "The mode is the value that occurs most frequently. [...] The mode is more commonly used with categorical data than with quantitative data. For example, the modal choice for the most important national problem is the category with the highest frequency."
 The text notes that a dataset can be bimodal if two distinct values tie for the highest frequency, or multimodal if there are more than two.
+
+## Examples {.unnumbered}
+
+
+```{r}
+df_lemur <- data.frame(
+    species = c("indri", "catta", "mouse"),
+    value = c(10, 20, 300),
+    valueb = c(10, 20 , 20 )
+)
+
+fig_lemur_a <- ggplot(df_lemur, aes(x = species, y = value)) +
+    geom_col() +
+    theme_bw()
+
+fig_lemur_b <- ggplot(df_lemur, aes(x = species, y = valueb)) +
+    geom_col() +
+    theme_bw()
+
+fig_lemur_ab <- fig_lemur_a + fig_lemur_b +
+    plot_layout(axis_titles = "collect")
+fig_lemur_ab
+```
+Mouse is the modal on the left, but catta and mouse are both mode on the right.
+
+For discrete variable
+
+```{r}
+set.seed(1)
+df_discrete <- data.frame(
+    size = rpois(100, 5)) |>
+    count(size)
+
+
+fig_discrete <- ggplot(df_discrete, aes(x = size, xend = size, y = 0, yend = n)) +
+ geom_point(aes(x = size, y = n)) +
+  geom_segment() +
+  theme_bw()
+
+fig_discrete
+```
+The mode is 4 for discrete variable.
+
+
+```{r}
+set.seed(1)
+
+df_quant <- data.frame(
+    size = rnorm(100, 10, 1)
+)
+
+fig_quant_a <- ggplot(df_quant, aes(x = size)) +
+    geom_histogram(binwidth = 1) +
+    theme_bw()
+
+fig_quant_b <- ggplot(df_quant, aes(x = size)) +
+    geom_histogram(binwidth = 0.2) +
+    theme_bw()
+
+fig_quant <- fig_quant_a + fig_quant_b +
+    plot_layout(axis_titles = "collect")
+fig_quant
+```
+Careful when computing the mode for continuous quantitative variable (i.e. visual interpration from histogram). Because the binwidth are abitrary, one can choos a bin over another.
+
+
+## Tips and warnings {.unnumbered}
+- the mode is the same as the mean and median only if the distribution is symmetric and unimodal (e.g. when bell shaped curve).
+- when the distribution leans to the right or leans to left (called skewed), there is a certain order but I never found a practical way when to use that information.
+- The mode does not need to be unique but can also not exist, for instance if the distribution is flat.
+
+
 <!--
-2. Theoretical Statistics: The Distribution Mode
+1. Theoretical Statistics: The Distribution Mode
 In mathematical statistical theory, the mode is defined rigorously as the maximizing argument (argmax) of a probability distribution function.
 
 Textbook Source
@@ -65,16 +130,3 @@ While explaining the shapes of distributions in Chapter 2, the concept is formal
 "A mode of a probability distribution with PMF or PDF f(x) is a point x0 at which f(x) achieves a local maximum. If x0 maximizes f(x) over its entire support, it is the global mode."
 Formally, the global mode m is expressed as:
 $m = \operatorname{argmax}_{x} f(x)$ -->
-
-## Examples {.unnumbered}
-Mode in qualitative
-Mode in discrete
-Mode in continuous? Think about salary.
-
-## Tips and warnings {.unnumbered}
-- mode if histogram
-- Central tendency
-- mode is generally different from the mean (and the median), true if ...
-- mode might not be unique or does not exist
-
-## If you want to know more {.unnumbered}
