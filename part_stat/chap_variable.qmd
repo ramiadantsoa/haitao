@@ -50,6 +50,12 @@ If you take an object/individual/element x from a population X, you can apply th
 
 
 ## Formal {.unnumbered}
+Definition of a variable as a function, a variable is a function
+In statistics is often denoted by a capital letter X, Y, Z, and a "relaization" is denoted by a lowercase.
+
+
+In the pratical sense, it is reminiscent of the values which essentially the name of the column.
+
 
 <!-- When you move away from theoretical mathematical statistics (which strictly deals with functions and "random variables") and look at applied, descriptive, or introductory statistics textbooks, a variable is defined as a measurable property, characteristic, or attribute belonging to the subjects being studied.
 
@@ -97,14 +103,14 @@ The Subject Matter: It must belong to an entity (a person, a trial, an object).
 The Variance: If every subject in your sample yields the exact same measurement (e.g., if everyone in a study is 30 years old), "Age" ceases to be a variable in that context and becomes a constant.
 The Scale: It must be classifiable into a defined measurement scale (Nominal, Ordinal, Interval, or Ratio). -->
 
-Definition of a variable as a function....
+
 
 ## Examples {.unnumbered}
 For conciseness, we ignore defining the population here and focus on examples of variables.
 
 - Population is study sites: GPS coordinates or elevation, temperature, rainfall, humidity
 
-- Population a village:  age, social status, sex, etc.
+- Population is a village:  age, social status, sex, etc.
 
 - Plants: dbh, height, growth measured between two time points,
 
