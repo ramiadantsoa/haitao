@@ -2,12 +2,17 @@
 
 {{< include ../preamble.qmd >}}
 
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+:::
+
+## Concepts and intuitions {.unnumbered} -->
+
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 Ikotozafy ihany no Alexis!
 :::
 
-## Concepts and intuitions {.unnumbered}
-This is just another way of visualizing a distribution (@sec-distribution) for quantitative variables.
+
+In short these cumulative mass and density function (distribution but less used) is just another way of visualizing the distribution (@sec-distribution) of a quantative variable (@sec-quantitative-variable) although it could aso be used for ordinal variable (@sec-qualitative-variable). The term mass is used when talking about discrete quantative and the density for continuous density, although it stems from more theoretical, it is easier to understand from a data-driven. If f1,f2, f3 are the frequency, in the cumulative version is c1 = f1, c2 = f1 + f2, c3 = f1 + f2 + f3. To reiterate, it is the same thing, and it contains the same information. You construct the cs from the fs and recover the fs from the cs.
 
 Cummulative for ordinal
 ```{r}
@@ -45,7 +50,7 @@ fig
 ```
 
 
-And add a
+And cumulative for quantitative.
 
 ```{r}
 # 1. Generate random sample data
@@ -69,32 +74,120 @@ plot(hist_object,
 
 ```
 
-In other words instead of having f1, f2, f3, it is f1, f1 + f2, f1 + f2 + f3. Hence cumulative.
-
-<!--
-A street vendor earns different amount per day, so we have (e1, ... e30).
-We can plot that data, day on x axis and value on y axis, we will have sticks with different height.
-Another way to visualize is to add daily earnings so we have stairs (of different height). day 1 is e1, day 2 is e1 + e2, day 3 is e1 + e2 + e3. -->
-
-There is no better or worse way, it is in fact the same data.
-The stair which is what is called cumulative is better to answer for instance how much one earns after one week, 2 weeks etc and eventually monthly earning.
-But it is completely useless if you want to calculate the mean daily earning or the max earning.
-
-The new object is simply a different way of visualizing a distribution @sec-distribution. Whereas one can reveal  @sec-mean, @sec-mode for a cumulative is mostly used to look at quantile @sec-median and @sec-quantile.
 
 
 ## Formal {.unnumbered}
 
-In the formal definition, a cumulative is split into two cases where the variable is discrete or continuous. The discrete case is called a cumulative mass function (cmf) and the continuous case is called a cumulative density function (cdf). The two are unified under the term cumulative distribution function (cdf).
+For grouping, if there are b_i bins,
+$N(i) = \sum_{j = 0}^i n(b_j)$
+
+or we can use frequency
+$F(i) = \sum_{j = 0}^i f(b_j)$
+
+where x in b_j does not belong is other b_j, and y in b_j is smaller than x in b_k if k is smaller than j.
+
+<!-- In the formal definition, a cumulative is split into two cases where the variable is discrete or continuous. The discrete case is called a cumulative mass function (cmf) and the continuous case is called a cumulative density function (cdf). The two are unified under the term cumulative distribution function (cdf). -->
+
+there is an alternate definition, which does not require bining and works directly from the values.
+
+$N(x) = \sum_{x_i \le x} n(x_i)$
+
 
 To focus on the applied is simply
-$F_X(x) = \sum_{x_i \le x} f_X(x_i)$
+$F(x) = \sum_{x_i \le x} f(x_i)$
+
 
 where fX is the frequency of the value xi. In other words, it is the sum of all frequency that are less than or equal to x.
 
-It has to be increasing.
 
-F_X max to 1.
+An immediate consequence is always increasing.
+
+## Examples {.unnumbered}
+
+And example of cumulative for discrete, the scale on y-axis is changed so we can see that the one the right is the one the left that is gradualy stacked
+```{r}
+
+# Quantitative
+set.seed(1)
+df_discrete <- data.frame(
+    size = rpois(100, 5)) |>
+    count(size)
+
+fig_discrete <- ggplot(df_discrete, aes(x = size, xend = size, y = 0, yend = n)) +
+ geom_point(aes(x = size, y = n)) +
+  geom_segment() +
+  ylim(c(0, 100)) +
+  theme_bw()
+
+df_discrete_cumulative <- cumsum(df_discrete)
+fig_discrete_cumulative <- ggplot(df_discrete_cumulative, aes(x = size, xend = size, y = 0, yend = n)) +
+ geom_point(aes(x = size, y = n)) +
+  geom_segment() +
+  theme_bw()
+
+fig_cumDiscrete <- fig_discrete + fig_discrete_cumulative +
+    plot_layout(axis_titles = "collect")
+
+fig_cumDiscrete
+```
+
+Here are example of three distribution, a flat/uniform, a highly asymmetric distributiona and a symmetric
+
+Uniform
+```{r}
+
+set.seed(42)
+data_values <- runif(100)
+
+hist(data_values, col = "lightblue")
+
+# 2. Compute the initial histogram without plotting it
+hist_object <- hist(data_values, plot = FALSE)
+
+# 3. Replace the standard bin counts with cumulative counts
+hist_object$counts <- cumsum(hist_object$counts)
+
+# 4. Plot the cumulative histogram
+plot(hist_object,
+     main = "Cumulative Histogram (Base R)",
+     xlab = "Values",
+     ylab = "Cumulative Frequency",
+     col = "lightblue")
+
+```
+
+
+Exponential
+```{r}
+
+set.seed(42)
+data_values <- rexp(100, 1)
+
+hist(data_values, col = "lightblue")
+
+# 2. Compute the initial histogram without plotting it
+hist_object <- hist(data_values, plot = FALSE)
+
+# 3. Replace the standard bin counts with cumulative counts
+hist_object$counts <- cumsum(hist_object$counts)
+
+# 4. Plot the cumulative histogram
+plot(hist_object,
+     main = "Cumulative Histogram (Base R)",
+     xlab = "Values",
+     ylab = "Cumulative Frequency",
+     col = "lightblue")
+
+```
+
+## Tips and warnings {.unnumbered}
+- Cumulative distribution are very convenient when one wants to know the @sec-median and @sec-quantile of a given distribution.
+- Cumulative distribution is essential when working with distribution. For instance, if we want to compare two distribution.
+- Easy for statisticians to work on increasing function
+- Why it won't work for qualitative, because the order on x-axis is not relevant, so there won't be a unique. Although, ordinal variable is okay.
+- It is often better to work with frequency of proportion than row number so the range on the y value is from 0 to 1.
+
+
 
 <!-- In advanced mathematical statistics, textbooks clarify a common terminological distinction before providing rigorous definitions:
 Cumulative Distribution Function (CDF) is the unifying, mathematically precise term for the "cumulative density and mass distribution" of any random variable.
@@ -180,23 +273,3 @@ Conceptual Summary
 "Mass" (PMF): Used for countable outcomes. The cumulative mass function looks like a stair-step graph because probability jumps up only at distinct, specific numbers.
 "Density" (PDF): Used for continuous measurements. The cumulative density function is a smooth, unbroken curve because probability is spread continuously over an interval of real numbers. -->
 
-## Examples {.unnumbered}
-One example of mass
-One example of density
-
-Income is a good example.
-Left skew distribution
-Right skew distribution
-
-## Tips and warnings {.unnumbered}
-
-- Most practical sense it for quantiles.
-- Easy for statisticians to work on increasing function
-- Why it won't work for qualitative, because the order on x-axis is not relevant, so there won't be a single cmf and cdf
-- For ordinal might be okay.
-- Better to work with freequency of proportion so we can compare two distribution
-- Theory and quantile
--  for a cumulative is mostly used to look at quantile @sec-median and @sec-quantile.
-
-
-## If you want to know more {.unnumbered}

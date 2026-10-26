@@ -40,7 +40,7 @@ Second the hypothetical Population: An infinite set of all possible outcomes tha
 
 ## Examples {.unnumbered}
 - Passenger of titanic: this could be one of the few examples of. There is a database and one can clearly
-- In epidemiology, people with disease
+- Studying in one classroom
 - An endangered species endemic to a lake where we could tag and know all individuals. Saima seals in Finland.
 
 ## Tips and warnings {.unnumbered}
