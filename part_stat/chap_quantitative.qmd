@@ -1,4 +1,4 @@
-# Quantitative variable {#sec-quantiative-variable}
+# Quantitative variable {#sec-quantitative-variable}
 
 {{< include ../preamble.qmd >}}
 

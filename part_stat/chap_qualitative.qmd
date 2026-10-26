@@ -2,23 +2,23 @@
 
 {{< include ../preamble.qmd >}}
 
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+:::
+
+## Concepts and intuitions {.unnumbered} -->
+
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 Tsisy idiran'ny qualité!
 :::
 
-## Concepts and intuitions {.unnumbered}
-If you undestand the variable @sec-variable, and also @sec-quantiative-variable. Then this is just a variable that is not quantitative.
-One crucial challenge, let's try to define as a stand alone and common pitfall when one does not have the foundation.
-Because unlike numeric value which we learned from 1st grade until highschool, not clear what to think and do with qualitative variable.
-The paradox is between the discomfort of qualitative variable and the preclivity of our brain to categorization. In fact we handle category all the time, male female, young adult, nationality, favorite food, book, movie artist, etc.
+As we move forward, the dependence previous because more crucial, but such could also faciliate the concept.
+Here, a qualitative variable is just a a variable that is **NOT** quantitative @sec-quantitative-variable.
 
-Because it allows us to make a decision, this is good or bad person, this is cheap, normal or expensive. So technically, we record a trait, it is very nice to record is as a category.
+There is an inherent paradox with understanding and use of qualitative variables. On one hand, the preclivity of our brain to categorize stuff: male or female, good or bad, species, or even the creation of countries and boundaries. We like "qualitative" variable. On the other hand, most of the foundational mathematics and statistics we handle are about numbers, operation and etc. So we could dislike them because we don't know what kind of statistics do we do when the values are not numbers.
 
+There are some that many students get when the variable is not fuzzy: sex or eye color or species. It becomes fuzzy when the qualitative variables are derived from quantitative variables. It is fuzzy because (1) we then to ignore the underlying quantitative variables (2) because the delimitation are forgotten. Think baby, juvenile, adult the underlying is age but there is no universal distinction among then. Think that these age class also apply to any living organism. Another is low, intermediate, or high elevation where the underlying is altitude but ...so we understand what one is talking about.
 
-Main issue is that many qualitative variables are initially quantitative variables. For various reasons, they are categorized into groups. Think about egg size/price. This creates two problems: first people tend to forget the underlying quantitative variable. Have you ever weighted an egg or looked at the volume. Second, the threshold for defining this is omitted and it does not have to be the same. So makes hard to compare.
-
-The other wrong thing, it has nothing to do with quality. The other better name is categorical variable. The bottom line, it is a qualitative, if you take two values and cannot make arithmetic operation on them (@sec-arithmetic).
-
+A final misconception is that (should be obvious from the paragraphs above): qualitative variable has nothing to do with quality. If one can switch to categorical variable, life could be easier.
 
 
 ## Formal {.unnumbered}
@@ -40,7 +40,7 @@ In Chapter 1 ("The Nature of Statistics"), Weiss provides a highly structured br
 "Variables can be classified as either qualitative or quantitative. A qualitative variable (or categorical variable) is a non-numerically valued variable that classifies an attribute of each individual element of a population or sample. The values of a qualitative variable are typically words or codes, and arithmetic operations do not make sense for them."
 
 
-There can be three types: nominal, ordinal, or binary. Nominal is when the values have no inherent order, this is in contrast with ordinal where there is sense of order (baby, teenager, adult, etc.). Note however that many ordinal are obtained from binning of a quantitative variable @sec-quantiative-variable. Which likely brings the confusion. Binary is a special case of qualitative variable that has only two categories  (yes and no, 0 or 1, true or false, male or female etc.) @sec-boolean
+There can be three types: nominal, ordinal, or binary. Nominal is when the values have no inherent order, this is in contrast with ordinal where there is sense of order (baby, teenager, adult, etc.). Note that many ordinal are obtained from binning of a quantitative variable @sec-quantiative-variable. Binary is a special case of qualitative variable that has only two categories  (yes and no, 0 or 1, true or false, male or female etc.) @sec-boolean
 
 ## Examples {.unnumbered}
 
@@ -58,31 +58,27 @@ Notice in the last example, zip code is a number but it is not a quantitative va
   - Customer satisfaction (very dissatisfied, dissatisfied, neutral, satisfied, very satisfied)
   - Egg size (small, medium, large)
 
-In the example above, you don't explicity grade your satisfaction but you sort of arbirarily assign a category. It could also be 0, 1, 2, 3 etc...Does it make sense to average it? Not really. But you can say that 3 is better than 2, and 2 is better than 1. So there is a sense of order. Likewise education is based on passing an exam not a gradual number with a threshold. In most case, these ordinal is based defining a threshold (so values are binned). Egg I don't know, I never weight it but it also show flaws when you by eggs because of vague categorization.
+In the example above, you don't explicity grade your satisfaction but you sort of arbirarily assign a category. It could also be 0, 1, 2, 3 etc...Does it make sense to average it? Not really. But you can say that 3 is better than 2, and 2 is better than 1. So there is a sense of order.
 
 - Ordinal variable that has explicit numerical value behind it:
   - Age group (child, teenager, adult, senior)--age
   - Income bracket (low, medium, high) -- salary
-  - Test score category (fail, pass, excellent) --grade
-  - Elevation category (lowland, upland, highland)
+  - Test score category (fail, pass, excellent) -- grade
+  - Elevation category (lowland, upland, highland) -- altitude
 
 - Binary variable:
   - Gender (male, female)
   - Yes/No questions (e.g., "Do you own a car?")
 
 ## Tips and warnings {.unnumbered}
-- discrete vs qualitative
-- Why does it matter: visualization and stats done on qualitative are different...to not say tricky.
-- Sometimes for binary, we compare ratio (sex ratio), proportion of failure and success
-- implicit vs explicit quantitative underlying
-- Trade-off: quantitative laborious whereas, categorization is quick but stat non trivial, and . Social science methods thrives.
--  Depends on your questions
--  Binary qualitative or not? Dead of a @sec-boolean
--  When you encode it, notation is @sec-character.
--  One direction transformation
--  Fuzzy categorization and assume that it is universal. But people can make their own, think about elevation in Ranomafana is different from elevation in the himalayas.
+- Plurality of notation: a qualitative variable can take many notations: For instance, in the column of dead or alive you can choose between: dead/alive, d/a, maty/velona, yes/no, Y/N, 1/0, oui/non/. For instance, 1/0 is not quantitative. Differentiate between the notation and the value. You cannot choose for quantitative.
+- Collecting qualitative is often efficient. But this is a trade-off. When possible record the quantitative and convert to qualitative. You can't do that in reverse.
+- A natural divide is what kind of visualization uses, you cannot use a histogram for qualitative variable.
+- A binary qualitative can always be encoded as yes or no, true or false question. Variable color: Blue or red vs variable: Is it blue? : value = true or false. It is often convenient to use boolean variables as they are specifically created to two values. @sec-boolean
+- Using 0 and 1 does not make it numeric.
 
-## If you want to know more {.unnumbered}
+
+<!-- ## If you want to know more {.unnumbered} -->
 
 
 <!--
