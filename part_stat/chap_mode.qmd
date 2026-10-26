@@ -71,7 +71,6 @@ fig_discrete
 ```
 The mode is 4 for discrete variable.
 
-
 ```{r}
 set.seed(1)
 

@@ -2,21 +2,18 @@
 
 {{< include ../preamble.qmd >}}
 
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-Mba jereo ihany izaho!
+
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
+Tokony rarahiana!
 :::
 
-## Concepts and intuitions {.unnumbered}
 Everyone has checked their average grade to see if one passes of fail or get a mark, but, no one has ever check the variance of their grades!
 While calculating the mean is well engrained, most probably don't remember the formula for variance or standard deviation.
-But to a certain extent, we know mean is not enough, sometimes parents will look at the range of your grade (mostly the low ones).
-And at the university, having 0 on one subject is failure.
+And then when one performs test, we are forced to look at the variance without really understanding why. Test for homogeneity of variance or homoscedaisticy--what a fancy word. One is obviously because of lack of understanding of the test, but is the because we have been ignoring variance.
 
-In the two examples above, one is essentially looking at extremes, but why ignore all remaining information.
-The variance is a statistic that is used to summarize the spread of the data,  most specifically, spread around the mean.
-The mean is called central tendency, the variance (and the standard devitation) is a measure of dispersion.
+Due to familiarity and (usefuless) of the mean, we are comfortable comparing two numbers, and then inconsciously we assume that the distribution is the same. But a bit of thinking shold make us realize that mean is not the distribution and below is an example of three distributions with the same mean. Add uniform, normal and bimodal.
 
-Data is a set of n numbers, first summary is distribution, second is mean but we lose information, adding a variance can be enough sometimes to recover the distribution
+Likewise, if we just compare the variance, we would never assume the distribution are the same. So how can we compare distribution? a parsimonious approach is to both compare the mean and the variance. The mean gives the central tendency whereas the variance give the dispersion. For nicely behaving distribution (mostly unimodal and preferably symmetrical), those two metric is the minimum criteria (if we play long enough we can up with distribution with same mean and variance but )
 
 
 ## Formal {.unnumbered}
@@ -30,11 +27,31 @@ In other words, the variance is the average square distance.
 
 With some algebra, you can see that
 
-$var(X) = \frac{1}{n} \sum_{i=1}^{n} (X_i)^2 - (\bar{X})^2$
+$$
+  var(X) = \frac{1}{n} \sum_{i=1}^{n} (X_i)^2 - (\bar{X})^2
+$${#eq-varB}
 
 If you want to do by hand the latter is simpler, but with a computer it is roughly the same.
 
-The standard deviation is just variance squared
+The standard deviation is the square root of the variance squared
+
+## Examples {.unnumbered}
+ - data = {1,1,1,1}, mean = 1, and variance = $\frac{1}{4}\left((1 - mean)^2 + (1 - mean)^2 + (1 - mean)^2 +(1 - mean)^2 \right) = \frac{1}{4} 0^2 \times 4 = 0$
+
+- Imagine two schools: in one school all 20 students got 10/20,  in the other school, half of the students got 0/20 and the other half 20/20. While the means are the same 10/20, there is no variance in the first, and a variance of 100 in the second. Knowing the variance tells you the schools are different, while it might . You are more informed.
+
+- Add one more example of variance
+
+
+## Tips and warnings {.unnumbered}
+- Variance  represents the average dispersion around the mean. This dispersion is squared . Mostly because of distance, it has to be a positive number. But it is difficult to work with mathematically.
+- Because of the square, we take the square root to have an intepratable value. Above, the variance of 100 of grades is meaningless if grades are beween 0 and 20. However, the standard deviation (10 = sqrt(100)) allows us to interpert in the proper scale.
+- In the formal definition, @eq-varB, variance is number square and the mean. The square is called moment of order 2. We can also compute X^3 and more as higher moments and represent other geometry of the distribution.
+- It is pointless to calculate the mean of one number, so does the calculation of the variance of two numbers.
+- For the more advanced,a normal distribution is fully characterized by two numbers: the mean and the variance. In many distribution, which are nomral distrinution enough, comparing the two numbers should characterize the whole distribution and thus cimpare them.
+- If you compute the variance of the data, it will divide by n-1 and not by n. While here we mostly divide by n, for most of one's life, it will divide by n-1. The division by n is called population variance (@sec-population), whereas the n-1 is sample variance. We will get back to it later but essentiallu, the n-1 is the best away to estimate the population variance which we do not know. 
+
+
 
 <!--
 $$
@@ -101,21 +118,3 @@ $\operatorname{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2$
 
 That is, the variance is the expected value of the square minus the square of the expected value." -->
 
-## Examples {.unnumbered}
-Variance is zero
-
-Variance between two schools.
-
-100% bepc: 
-
-
-## Tips and warnings {.unnumbered}
-- Variance divided by n and n-1
-- normal dist with two parameters, if know the mean and the variance then we know the whole distribution.
-- Do you compute the average of two numbers? Variance of three nunmbers?
-- Sample size
-- Why the square? There are many explanation but the simplest is that distance needs to be positive and so squaring the numbers makes it positive. It is also for that reason that we have standard deviation as a square root of variance, so as to bring the same scale as our orgininal x1.
-
-
-
-## If you want to know more {.unnumbered}
