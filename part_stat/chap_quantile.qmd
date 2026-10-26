@@ -8,16 +8,13 @@ You are a genius!
 
 It is quite common to see on social media about a puzzle or equation which the reward that you will be a genius if you solve it, harvard entry exam, or 99% cannot solve this problem.
 Those are meant to show that if you solve it, you are not unique but you are a member of a certain exclusive group.
-While there is no real scientific, the numbers are made up to make it sensational and grap one's attention, there is still underlying scientific/statistical reasoning behind it.
+While these post on social media probably has little source on how they get those numbers, the numbers are made up to make it sensational and grap one's attention, there is still underlying scientific/statistical reasoning behind it.
 
 So how do we get the 99% cannot solve it, or equivalently, only 1% can only solve it.
-The underlying process:
-When we say, one belongs to the top 1%, this is the process: first we measure on variable (e.g. IQ) for each individual in a population (@sec-population), this is a numeric value so we can rank it from smalleset to largest.
-We can pick one IQ from that population say (110), and we can count how many has IQ higher than 110 (say 14 out of 231), and because we prefer percentage. We can then say  14/231 = percent has a IQ over 110.
+The short answer is that someone asked say 1000 persons to solve a problem and only 10 solved. That means you belong to the top 1%.
+The longer answer is that we extrapolate that your smartness (IQ) is above the 99% quantile. That is, if we order the IQ of the 100 persons from lowest to the largest, your IQ will be in the top 10 highest.
 
-So when we say 1% can solve, it means that there is threshold, say 120 IQ is needed to solve the problem, only 1% of the population has an IQ over 120, and so 1% of the population can solve it.
-
-The key concept is that the quantile represent the value of the variable below which, x% has smaller value. the trap is that it is equivalent to say 1% can solve it or 99% cannot solve it, in the first we say IQ > a given value and 1% has that, or IQ < a given value cannot solve it (99% has that).
+More generally, we can rank some values from the smallest to the largest. For any stop  you can always calculate how many is below and how many is above. What happens in general is that we pick the quantile and find the value of x where split the numbers in the given proportion. The most famous quantile is the mean, where half of the number are smaller than the median, and half of them are bigger.
 
 ## Formal {.unnumbered}
 **Add interqualite range**
@@ -49,6 +46,70 @@ $x_{(1)},x_{(2)}, \ldots, x_{(n)}$
 ​
 
 Another definition is using CMF and CDF
+
+## Examples {.unnumbered}
+- Imagine a number 100 numbers: 1 to 50 and 1001 to 1050. The 1, 2, 3 % quantile is 1, 2 and 3 respectively, the 20% quantile is 20. The mediane is (50 + 1001)/2, the 51% quantile is 1001 and the 98 and 99% quantile is 1048 and 1049.
+
+- Visualizing a quantile from distribution
+
+```{r}
+# Create data
+# data_values <- rnorm(100)
+data_values <- rnorm(2000, 0 , 10)
+
+# Calculate histogram, but do not draw it
+my_hist <- hist(data_values , breaks=40  , plot=F)
+
+# Color vector
+my_color <-
+  ifelse(my_hist$breaks < -10, rgb(0.2,0.8,0.5,0.5) ,
+    ifelse (
+      my_hist$breaks >=10, "purple",
+      rgb(0.2,0.2,0.2,0.2) ))
+
+# Final plot
+plot(my_hist, col=my_color , border=F , main="" , xlab="value of the variable", xlim=c(-40,40) )
+
+```
+The value of -10 represent x% and is the x% quantile, up to gray is x% quantile.
+These are called quartile and is the 25% and 75% respectively.
+
+```{r}
+
+data_values <- rnorm(2000, 0 , 10)
+hist(data_values, col = "lightblue" )
+
+# 2. Compute the initial histogram without plotting it
+
+hist_object <- hist(data_values, breaks=40, plot = FALSE)
+
+my_color <-
+  ifelse(hist_object$breaks < -10, rgb(0.2,0.8,0.5,0.5) ,
+    ifelse (
+      hist_object$breaks >=10, "purple",
+      rgb(0.2,0.2,0.2,0.2) ))
+
+# 3. Replace the standard bin counts with cumulative counts
+hist_object$counts <- cumsum(hist_object$counts)
+
+# 4. Plot the cumulative histogram
+plot(hist_object,
+     main = "Cumulative Histogram (Base R)",
+     xlab = "Values",
+     xlim = c(-40, 40),
+     ylab = "Cumulative Frequency",
+     col =  my_color)
+
+
+```
+To compute quantile from cumulative distribution, we just project from left values and see the interesection from x axis.
+
+## Tips and warnings {.unnumbered}
+- Computing the quantile can be ordered (see first calculation of the mean) or accumalted frequency (visualization from distribution).
+- Median is the 50% quantile
+- The interquartile range is the value between 25% and 75% and is another way of representing the dispersion of a distribution. It is used in boxplot.
+- the p-value is a quantile. For two sided test, a p-value at 5% represent values below the 2.5% and 97.5% quantile. (although we did not talk anticipate). For one side, a 5% could be 5% below that or above 95%.
+- The quantile is approximated if there is not enough data (e.g. ). Such approximation might be meaningless.
 
 <!--
 1. Theoretical Statistics: The Distribution Quantile
@@ -85,67 +146,3 @@ $F^{-1}(p) = \inf \{x \in \mathbb{R} : F(x) \geq p\}$
 This function F−1
   on (0,1) is called the quantile function."
  -->
-## Examples {.unnumbered}
-
-```{r}
-# Create data
-# data_values <- rnorm(100)
-data_values <- rnorm(2000, 0 , 10)
-
-# Calculate histogram, but do not draw it
-my_hist <- hist(data_values , breaks=40  , plot=F)
-
-# Color vector
-my_color <-
-  ifelse(my_hist$breaks < -10, rgb(0.2,0.8,0.5,0.5) ,
-    ifelse (
-      my_hist$breaks >=10, "purple",
-      rgb(0.2,0.2,0.2,0.2) ))
-
-# Final plot
-plot(my_hist, col=my_color , border=F , main="" , xlab="value of the variable", xlim=c(-40,40) )
-
-```
-
-
-```{r}
-
-data_values <- rnorm(2000, 0 , 10)
-hist(data_values, col = "lightblue" )
-
-# 2. Compute the initial histogram without plotting it
-
-hist_object <- hist(data_values, breaks=40, plot = FALSE)
-
-my_color <-
-  ifelse(hist_object$breaks < -10, rgb(0.2,0.8,0.5,0.5) ,
-    ifelse (
-      hist_object$breaks >=10, "purple",
-      rgb(0.2,0.2,0.2,0.2) ))
-
-# 3. Replace the standard bin counts with cumulative counts
-hist_object$counts <- cumsum(hist_object$counts)
-
-# 4. Plot the cumulative histogram
-plot(hist_object,
-     main = "Cumulative Histogram (Base R)",
-     xlab = "Values",
-     xlim = c(-40, 40),
-     ylab = "Cumulative Frequency",
-     col =  my_color)
-
-
-```
-
-Quartile
-Interquartile range as another measure of dispersion
-Visualization distribution and cmf and cmd.
-
-Median is quantile 50%
-
-## Tips and warnings {.unnumbered}
-- median is the 50% quantile
-- the p-value is a quantile
-- It is a pair, and it is about the value of a variable.
-
-## If you want to know more {.unnumbered}
