@@ -2,43 +2,45 @@
 
 {{< include ../preamble.qmd >}}
 
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 Q: Lahy sa vavy ny zanakao? A: Eny
 :::
-## Concepts and intuitions {.unnumbered}
 
-The statement above is a joke between two logicians (the branch of mathematics that study boolean variables). But almost nobody laughs about it and barely grin when explained. Operations with numbers are natural, however those on logical/boolean variables @sec-boolean are less intuitive. There are essentially two operations: AND and OR.
+The statement above is a joke between two logicians (the branch of mathematics that study boolean variables). But almost nobody laughs about it and barely grin when explained. Operations with numbers are natural @sec-numeric and @sec-arithmetic. However those on logical/boolean variables @sec-boolean are less intuitive. Imagine the boolean variable below (which also called statement or propositio)
 
-P1: Is Radama a male? TRUE
-P2: Is Radama Malagasy? TRUE
+A: Radama is a male --TRUE
+B: Radama is Malagasy -- TRUE
 
-P3: Is Ranavalona a male? FALSE
-P4: Is Ranavalone Malagasy? TRUE
+C: Ranavalona is a male -- FALSE
+D: Ranavalona is Malagasy -- TRUE
 
 The operation with boolean is when we combine P1 and P2,
 
-P5: P1 AND P2
-Is Radama a male and Is Radama a Malagasy? Is Radama a Male and Malagasy?
-P5 is True
+P1: A AND B means Radama is a male AND Radama is Malagasy.
+P1 is TRUE, and formally: TRUE AND TRUE = TRUE
 
-P6: P1 OR P2: Is Radama a male or Malagasy?
-P4 is True.
+P2: A OR B: Radama a male OR Radama is Malagasy
+P2 is also TRUE, Formally: TRUE OR TRUE = TRUE
 
-P7: Is Ranavalona a male and Malagasy? P7 is false
-P8: Is Ranavalona a male or Malagasy? P8 is true
+P3: C AND D: Ranavalona is male AND Ranavalona is Malagasy.
+P3 is FALSE so FALSE AND TRUE = FALSE
 
-As of now, P8 is the same as the joke above. Apologies for using strange examples, but we need to exercise our mind, here are a more ecological examples. Essentially we use it to filter dataset. Imaging you ave an excel sheet and have sex in one column (male or female), height in another, and education level (with or without highschool diploma)
+And the final combination
+P4: C OR D: Ranavalona is male OR Ranavalona is Malagasy.
+P4 is TRUE so FALSE OR TRUE = TRUE
 
-We can subset the data by only looking at male with highschool diploma or male or taller. I think the and is more intuitive than the or.
+Back to the joke above. The question could be reframed as two statement
+Statement 1: Your new born is a male
+Statement 2: Your new born is a female
+Statement 1 OR statement 2 is always TRUE because one of them must be TRUE.
 
-(sex == "male" & education == "with") or male
-
-We use two symbols to represent such operation with.
-There is a third symbol, which is !, this negates the proposition, so if P is true then !P is false and vice versa.
-
-Maybe is the that we make illogical decision?
+Boolean operation are fundamental parts of programming and can be quite unintuitive (as with the joke for the untrained). While they is reserved to logician. It is essential to become literate. Concrete examples of application are shown in the tips section below.
 
 ## Formal {.unnumbered}
+The AND is encoded as `&` in R `A & B` or `A && B`
+The OR is encoded as `|` in R as `A | B` or `A || B`
+
+A final symbol is `!` whic is used for negation. So `!A` is the opposite of `A`
 
 
 ## Examples {.unnumbered}
@@ -64,7 +66,8 @@ a | (b & cc)
 ```
 
 ## Tips and warnings {.unnumbered}
-- Intersection and union
-- Why using
-
-## If you want to know more {.unnumbered}
+- These boolean operator are also the same as intersection (AND) and union (OR).
+- Boolean operators are crucial when you want to filter data. Each statement is a criteria included in the data Imaging one survey 100 people and recored their nationality and sex. To filter data say just male and malagasy you apply boolean operator AND. If one collect tree and select of a certain dbh and and a given species dbh > 30 && species == "Dalbergia" or add a third criteria
+- One might need to use parentheses as results will differ
+- Why double or single symbol?
+- Logic is at the base of mathematics. It is the fundamental and as such it could be the most mental. We just what we need.

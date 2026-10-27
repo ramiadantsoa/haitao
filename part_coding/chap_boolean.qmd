@@ -64,6 +64,7 @@ a - b
 a / b
 
 ```
+
 - Corollary: if you have a column in your dataframe with say dead, you can just summ to get how many are alive.
 - Used also for filter value in a vector @sec-vector
 - The main use of equality and inequality is to filder data and alike.
