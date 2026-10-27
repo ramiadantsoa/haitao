@@ -1,14 +1,8 @@
-# Discrete and continuous variables {#sec-discrete_continuous}
+# Discrete and continuous number{#sec-discrete_continuous}
 {{< include ../preamble.qmd >}}
 
-<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-To count or to measure. Tsofa sa antsy
-:::
-
-## Concepts and intuitions {.unnumbered} -->
-
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
-To count or to measure. Tsofa sa antsy
+To count or to measure.
 :::
 
 
@@ -68,7 +62,7 @@ We can explicitly define the next term.
 Discrete in sum and product @sec-sum
 
 ## Tips and warnings {.unnumbered}
-- 
+-
 - Adding rational leads to irrational
 - Numbers are also called scalar
 

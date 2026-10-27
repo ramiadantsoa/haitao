@@ -15,6 +15,7 @@ In the most fundamental way, a file content is a long sequence of 0 and 1 stored
 In programming, an assignment consist of binding three elements: (1) creating an object (building a house) at the specific location (the address) and calling it whatever you like. While you can choose which object you create and how to call it is, you cannot decide about the address (where it is put in the computer.) And probably a good thing.
 
 
+
 ## Formal {.unnumbered}
 
 In R, the syntax is:
@@ -23,6 +24,8 @@ In R, the syntax is:
 In the study of programming language design, assignment is defined as a mechanism that dynamically changes the binding between a state storage location and a value. It introduces the foundational concept of L-values (location/address) and R-values (read/data value)(wikipedia)
 
 Object can be almost anything, in fact the rest of this part is about different types of fundamental objects from @sec-sec-numeric to @sec-list.
+
+The notion of variable has now appeared in three field: in mathematics, in statistics @sec-variable, and also in R. In fact the variable name is also called a variable. Obviously, it does not mean the same thing. This is inevitable in three flourishing field that have some similarities. Yet, it is a good exercise to see the nuances.
 
 ## Examples {.unnumbered}
 

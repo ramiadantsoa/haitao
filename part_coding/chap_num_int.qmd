@@ -2,21 +2,41 @@
 
 {{< include ../preamble.qmd >}}
 
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-The machine version of real and natural number!
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
+The machine version of discrete and continuous number
 :::
 
-## Concepts and intuitions {.unnumbered}
-As an advanced calculator, the natural object that you can create, store, and manipulate are numbers. There are two types of numbers following the concepts in mathematics @sec-discrete_continuous and @sec-quantiative-variable in statistics.
+Programs are to calculate, the natural object that you can create, store, and manipulate are numbers. There are two types of numbers following the concepts in mathematics @sec-discrete_continuous and in statistics @sec-quantiative-variable.
 
-In R programming, a real number is called numeric. To make it universal, which is tricky for french-based norm a decimal is separated by a "." e.g. `3.14`. The convention is to use "," to separate a list of stuff @sec-vector to @sec-list.
+Discrete variables (or whole number) are represented by integer--truenoymy (vs mysnomy) used for counting and indexing.
 
-Discrete variables are represented by integer. So in numbers without digit and represent a whole. Link when we count, the index in differen, the length of a vectors, or dimensions of matrix. To force R to read a number as integer, we add L after the number e.g. `24L`
+In R programming, a real number (continuous) is called numeric.
+
 
 While it is important to know these distinctions, in general R is very relaxed about the two types, and say smart enough that it would complain if you  mistakenly use that is supposed to be an integer. For instance, you can use numeric to specific the length of a vector, or as indexing.
 
 ## Formal {.unnumbered}
-It is shown as num and int if you check it!
+To force R to read a number as integer, we add L after the number
+
+```{r}
+my_favorite_integer <- 24L
+
+```
+
+A numeric is generally a number with decimals. The decimal separator in programming language (Excel is not a programming language) is a period "." Comma is used as a list separator (see @sec-vector, @sec-matrix, and @sec-list).
+
+
+```{r}
+a_real_number <- 24.022
+```
+
+
+If the L is not specificed, R automatically assume that the value is numeric
+
+```{r}
+my_favorite_integer <- 24
+
+```
 
 ## Examples {.unnumbered}
 
@@ -35,21 +55,20 @@ my_number <- 2.13
 a <- 2L
 cc <- 2
 
-# The function str here assess the type of the object
+# The function str here assess the type of the object. Here it is an integer
 str(a)
+
+# Here we show that the object is a numeric
 str(cc)
-
-str(a + a)
-str(a + cc)
-
 ```
 
 ## Tips and warnings {.unnumbered}
+- Concatenate: in the example below, we force R to add an integer and numeric. R chose to collapse to the more flexible format.
 
-- Int uses less memory, but managing memory is beyond for this part of the handbook
-- Sometimes you don't need to write 0.2, .2 is enough.
-- Machine precision: irrational numbers reach to 16 digits, which in the most general case is enough.
-- There is also a machine limit size for both int and num
-- Infinity is not a number and is represented by Inf and -Inf
+- An integer takes less memory in the computer. However, memory is not usually an issue and managing memory is beyond for now. We might return when one wants to optimize the code.
+-  `r a <- .234` is a shortcut instead of `r a <- 0.234`
+- Machine precision: there is a limit with the number of decimals. By default it is 16 decimal point. In data science it is extremely efficient
+- Astronomically big numbers are not allowed and again hopefully you won't need it.
+- Infinity is not a number and is represented by `Inf` and `-Inf`
 
 ## If you want to know more {.unnumbered}
