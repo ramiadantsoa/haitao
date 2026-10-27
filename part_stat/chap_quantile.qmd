@@ -78,7 +78,7 @@ These are called quartile and is the 25% and 75% respectively.
 ```{r}
 
 data_values <- rnorm(2000, 0 , 10)
-hist(data_values, col = "lightblue" )
+# hist(data_values, col = "lightblue")
 
 # 2. Compute the initial histogram without plotting it
 
