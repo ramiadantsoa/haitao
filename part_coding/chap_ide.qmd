@@ -2,30 +2,29 @@
 
 {{< include ../preamble.qmd >}}
 
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 Open RStudio!
 :::
 
-## Concepts and intuitions {.unnumbered}
+![Starting RStudio](../fig/RStudio.png){#fig-RStudio}
 
-![Starting RStudio](../fig/RStudio.png){#fig-RStudio fig-alt="alt"}
-
-Open RStudio: this exciting step when one wants to learn to code in R. Let's go to practice.
-
-The default RStudio contains four windows: *script editor/Source* on top-left, *Console* and other tabs on the bottom-left, *Environment* and other tabs at the top-right, and *Plots* and other tabs at bottom-right.
+Open RStudio: this exciting step when one wants to learn to code in R.
+The default RStudio contains four windows: *script editor/Source* on top-left, *Console* and other tabs on the bottom-left , *Environment* and other tabs at the top-right, and *Plots* and other tabs at bottom-right.
 For our purpose, we will focus on the two on the left: the script editor and the console.
 
-In the previous chapter @sec-console, console and a keyboard is all you need to communicate with the program: write, read, evaluate, print output. That is the primitive way to interact with all programs.
+In the previous chapter @sec-console, tconsole and a keyboard is all you need to communicate with the program: write, (read,) evaluate, print output. That is the primitive way to interact with all programs.
 
 The recommended practice is **NOT** to write the prompt/code in the console. The console is not designed for code writing. Codes are written in a separate window aptly called the script editor.
 
-The script editor is infused with various features to facilitate coding and improve productivity @fig-completion.
+The script editor is simply a separate window that helps you to write a code. Unlike the console, you save your code which then allows you to open and edit it in the future. Similar to saving any file.
 
-![Some features](../fig/completion_highlight.png){#fig-completion fig-alt="alt"}
+A script editor is infused with various features to facilitate coding and improve productivity @fig-completion.
+
+![Some features](../fig/completion_highlight.png){#fig-completion}
 
 **Syntax highlighting**: the type of object have different color. Text,number, function sinus are displayed differently
 
-**Autocompletion**: when you open a right parenthesis, it automatically add the closing one. In fact it works with square [] and curly brackets {}.
+**Autocompletion**: when you open a right parenthesis, it automatically add the closing one. In fact it works with square bracket [] and curly brackets {}.
 
 **Suggestion**: you type the first few letters and it suggests based on the words present in its memory. This is a faster than typing the whole text which are prone to typos.
 
@@ -33,35 +32,38 @@ The script editor is infused with various features to facilitate coding and impr
 
 **Save and close**: you can save you code (like saving everytiing else). Close, and open in the future, and run. This is a great assest for sharing and reproducibility.
 
-**Finally, what is an IDE?**
+RStudio is the most popular IDE for R
+
+## Formal {.unnumbered}
+
 IDE: Integrated Development Environment is a software that is built on top of the native program (like R), that faciliates use of R.
-There are many IDE such as RStudio, VS Code, Sublime Text, etc. However RStudio is the most popular IDE for R.
-Unlike the other that integrate other programming language.
+There are many IDE such as RStudio, VS Code, Sublime Text, etc.
 RStudio is a dedicated IDE that is meant work with R.
+Unlike the other that integrate other programming language.
 Because it is a R specialist, it includes many useful features, and why the most popular and adopted by many.
 Furthermore, it is free!
-If we use a car metaphore this is away to kit your car
 
-<!-- ## Formal {.unnumbered} -->
+## Examples {.unnumbered}
 
+Step 1: One can write all the codes in one file
 
-<!-- ## Examples {.unnumbered} -->
+![Write all the scripts in the previous section](../fig/write_script.png){#fig-simple_script}
 
+Step 2: evaluate. Two ways to evaluate: Click on the icon run after placing the cursor in the line
 
+ - line evaluation here place the cursor in line 5 not where in the line.
+![Running the line 5](../fig/run_one_line.png){#fig-oneline}
+
+- selection evaluation: select the code chunk
+![Running code from line 1 to 3](../fig/run_selection.png){#fig-selection}
 
 ## Tips and warnings {.unnumbered}
-- There are two ways to evaluating a code: by or cliking run.
-- Which code is evaluated: precendence and priority
-  - Cursor somewhere but with closed piece: the chunc
-  - Cursor on the line: evaluate the line..No need to put the cursor before or after. The program is smart enough to know you want to evaluate that line.
-  - Selected chunk ()
-- **Order matters**: line order
-- Students favorite: change appearance and customization. There is something called: Global option with cmd +, or windows + ,. You can customize anything, font size, color, syntax highlighting, rearrange pane etc.
+- A script editor is just a text editor, one can write is notepad or something alike and save it. One can just cope the script and paste it in the console. But it is slow..hence the use of IDE. The automation of sending it to the console.
+- R also have a native script editor, you can create that like you create a new document for MS Word
+- Clicking is slow, typing is fast...instead of clikcing the icon, the shortcut is control + enter. After few uses you will not notice that like control + S to save, control + A to select all.
+- What about the other two windows: these are additional functionality. Like if you make a figure it will show on the window on the bottom left. The R enviroment shows all the object your created @sec-assignment
+- Change appearance and customization. There is something called: Global option with cmd +, or windows + ,. You can customize anything, font size, color, syntax highlighting, rearrange pane etc. There pre-defined themes @fig-dark_theme.
 
+![Script editor with different theme](../fig/dark_theme.png){#fig-dark_theme}
 
-![Script editor with different appearance](../fig/dark_theme.png){#fig-dark_theme fig-alt="alt"}.
-
-## If you want to know more {.unnumbered}
-There are tons of features, we stick to the basic here.
-
-[Documentation for RStudio](https://docs.posit.co/ide/user/)
+- [Documentation for RStudio](https://docs.posit.co/ide/user/)

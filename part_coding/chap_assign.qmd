@@ -1,4 +1,4 @@
-# Object assigment {#sec-asignment}
+# Object assigment {#sec-assignment}
 
 {{< include ../preamble.qmd >}}
 
