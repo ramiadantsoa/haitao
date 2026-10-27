@@ -12,9 +12,7 @@ The mode is trivial intepretation if we look at the distribution (@sec-distribut
 There are three popular metric for measuring central tendency, the mean (@sec-mean), the mode (this section) and the median (@sec-median). Unlike mean and median, this naturally apply to qualitative and quantitative variables. And best with qualitative variable. While we more or less know who to compute the mean and the median, we are not used to computing the median. Graphical is most natural.
 
 ## Formal {.unnumbered}
-<!--
-In statistical literature, the definition of the mode splits into two distinct mathematical frameworks: applied statistics (the value that occurs with the highest frequency in an observed dataset) and theoretical mathematical statistics (the value at which the probability mass function or probability density function reaches its local or global maximum).
-Here are the rigorous definitions for both, complete with textbook sources and raw LaTeX formatting. -->
+
 
 1. Applied Statistics: The Sample Mode
 In applied data analysis, the mode is an empirical descriptive statistic used primarily for categorical or discrete data.
@@ -49,8 +47,10 @@ fig_lemur_b <- ggplot(df_lemur, aes(x = species, y = valueb)) +
 
 fig_lemur_ab <- fig_lemur_a + fig_lemur_b +
     plot_layout(axis_titles = "collect")
+
 fig_lemur_ab
 ```
+
 Mouse is the modal on the left, but catta and mouse are both mode on the right.
 
 For discrete variable
@@ -69,6 +69,7 @@ fig_discrete <- ggplot(df_discrete, aes(x = size, xend = size, y = 0, yend = n))
 
 fig_discrete
 ```
+
 The mode is 4 for discrete variable.
 
 ```{r}
@@ -90,6 +91,7 @@ fig_quant <- fig_quant_a + fig_quant_b +
     plot_layout(axis_titles = "collect")
 fig_quant
 ```
+
 Careful when computing the mode for continuous quantitative variable (i.e. visual interpration from histogram). Because the binwidth are abitrary, one can choos a bin over another.
 
 

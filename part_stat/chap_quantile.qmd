@@ -71,6 +71,7 @@ my_color <-
 plot(my_hist, col=my_color , border=F , main="" , xlab="value of the variable", xlim=c(-40,40) )
 
 ```
+
 The value of -10 represent x% and is the x% quantile, up to gray is x% quantile.
 These are called quartile and is the 25% and 75% respectively.
 
@@ -102,6 +103,7 @@ plot(hist_object,
 
 
 ```
+
 To compute quantile from cumulative distribution, we just project from left values and see the interesection from x axis.
 
 ## Tips and warnings {.unnumbered}
@@ -110,39 +112,3 @@ To compute quantile from cumulative distribution, we just project from left valu
 - The interquartile range is the value between 25% and 75% and is another way of representing the dispersion of a distribution. It is used in boxplot.
 - the p-value is a quantile. For two sided test, a p-value at 5% represent values below the 2.5% and 97.5% quantile. (although we did not talk anticipate). For one side, a 5% could be 5% below that or above 95%.
 - The quantile is approximated if there is not enough data (e.g. ). Such approximation might be meaningless.
-
-<!--
-1. Theoretical Statistics: The Distribution Quantile
-In statistical theory, the pth quantile of a random variable X is defined using the Cumulative Distribution Function (CDF). When a distribution is continuous and strictly increasing, the quantile function is simply the direct mathematical inverse of the CDF, F−1(p).
-
-Textbook Source
-Book: Statistical Inference (2nd Edition, 2002)
-Authors: George Casella and Roger L. Berger
-Publisher: Duxbury / Thomson Learning
-
-The Definition
-In Chapter 2 ("Fractional Populations and Medians"), Casella and Berger define the pth quantile for any general distribution:
-"For any p between 0 and 1, the pth quantile of a random variable X (or of its distribution) is any value $x_p$
-  that satisfies:
-$P(X \le x_p) \ge p \quad \text{and} \quad P(X \ge x_p) \ge 1 - p$
-"
-The Continuous Interpretation
-If the CDF F(x) is continuous and strictly increasing, these conditions collapse into a clean, single functional definition:
-$F(x_p) = p \implies x_p = F^{-1}(p)$
-
-
-1. The Advanced Generalized Inverse Definition
-To prevent mathematical ambiguities in discrete or flat distributions (where multiple values or no values might satisfy F(x)=p exactly), advanced theoretical statistics unifies the definition using the generalized inverse (or quantile function).
-
-Textbook Source
-Book: Mathematical Statistics (2nd Edition, 2003)
-Author: Jun Shao
-Publisher: Springer Science & Business Media
-
-The Definition
-In Chapter 1 ("Probability Theory"), Shao rigorously formalizes the quantile function using the infimum (the greatest lower bound) of a set:
-"Let F be a cumulative distribution function on R. For any p∈(0,1), the pth quantile of F (or of its corresponding random variable) is defined as:
-$F^{-1}(p) = \inf \{x \in \mathbb{R} : F(x) \geq p\}$
-This function F−1
-  on (0,1) is called the quantile function."
- -->
