@@ -2,60 +2,91 @@
 
 {{< include ../preamble.qmd >}}
 
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 "Hello world!"
-Storing qualitative variable
 :::
 
-## Concepts and intuitions {.unnumbered}
 
-<!-- This is a famous expression.
-When they manage to print "Hello world" on the output of a console.
-It also shows that one has mastered one of the most basic thing and successful managed to instruct the computer. -->
+The first exercice program is to be able to print a text on the console. This is in computer science. While this is trivial in programs like R, several concepts are need to that for programs in fortran, C, C++. And the tradition is to print "Hello world". The idea is somehow that you understand how a computer that you manage to prompt it to say hello to the world of the living.
 
-While numbers are natural (extension of a calculator), texts is a different type object. And at first it is unclear why do we need it!!! For our case, this essentially allows us to store qualitative variable. It is called strings or character
+A computer program is more than a basic calculator, it is should be obvious by now. A major difference or upgrade to computer program is that it can also handle non-number. And such object is called string and that's why printing "Hello world" string is lesson number 1.
 
-And to tell R that it is a character we wrap it within quotation marks @fig-completion.
-
-Like numbers and integers, it is natural to do operation @sec-arithmetic, for boolean type @sec-boolean, there are also specific symbol to make operation @sec-boolean-operation. However, there are no obvious way/mathematically derived of doing operation. Instead we manipulate them, combine, cut, remove letters etc... As such manipulating is more done through function @sec-functionCoding and there is no dedicated new symbols.
-
-Note that a computer is not aware of the content! So "Magadascar" is the sequence of letters and is different from "Madagascar". As 12 is different from 21. While the latter is easy to separate, it is not easy to differentiate the latter. These typos are common when you enter data or naming a variable.
+Unlike number we cannot perform a arithmetic operation, you cannot multiply or divide letters or words. Manipulating them require non-mathematical operation although human natural: e.g. delete a letter or a word, combing text, replace text etc. For most of our purpose, we use string to represent qualitative variables. In other word, when you enter the data and have text "male" or "female", they are considered string--in contrast to numbers like height or weight.
 
 ## Formal {.unnumbered}
+A string is a type of object, and is anything within quotation marks `""`
+Each character is the encoded in a binary format 0 1. There are differnt types of encoding.
 
 ## Examples {.unnumbered}
 
-This is a example of operation where we combine two text together
-
-
 ```{r}
-paste("Hello", "world", sep = " ")
+# It could be one letter
+one_letter <- "R"
 
-paste("Hello", "world", sep = " there ")
+# It could be a word
+a_word <- "Hello"
 
+# It could be anything as long as it is within a quotation mark
+long_string <- "Ny akoho tsy nanidina tsy nahandry ny andro zoma. Ny omby mahia tsy lelafin'ny namany..."
+```
+
+Here we create a string object called "sin"
+```{r}
+#| echo: true
+"sin" # a text composed of three letters s
+```
+
+Here we create a variable named sin and store the character "sin"
+```{r}
+#| echo: true
+sin <- "sin"
+```
+
+
+Using arithmetic operation on string throws an error because it is not defined
+
+```r
+string_1 <- "1" # is a character not a number
+string_2 <- "2026" # is characters a not a number
+
+string_1 + string_2
+```
+
+Combining strings with the function `paste()` and specify how they are separated by nothing `""`, by a comma, `","`, by comma and then space `", "`, or `" anything you want "`
+```{r}
+#| echo: true
+
+paste("Hello", "world", sep = "")
+
+paste("Hello", "world", sep = ",")
+
+paste("Hello", "world", sep = ", ")
+
+paste("Hello", "world", sep = " anything you want ")
+```
+
+Paste can take more words and used with variable instead of the value
+```{r}
+#| echo: true
 paste("Hello", "world", "life", sep = " there ")
 
 word1 <- "Hello"
 word2 <- "world"
 
-paste(word1, word2)
+paste(word1, word2, word1, word2)
 ```
-
-
-```{r}
-#| echo: true
-
-## see the difference among these three
-
-sin <- 2 #the name of an object
-sin(1) # the function sinus
-"sin" # a text composed of three letters s
-
-```
-
 
 
 ## Tips and warnings {.unnumbered}
-The major difference between excel for instance is that you don't see the type of object
+- Semantic: string, character, factor.
+- Unlike we can use any special character
+```{r}
+"There is problem in usin$ spécial, & < is not ! or 1 2 3"
+```
 
-## If you want to know more {.unnumbered}
+- Manipulating strings requires special function that mostly related to pattern matching, subsitution/replace, deletion, insertion adding (using `paste()` above).
+-  "Magadascar" is the sequence of letters and is different from "Madagascar". (As 12 is different from 21). While the latter is easy to separate, it is not easy to differentiate the former. Indeed typo is unavoidable. Errors and issues aries when one encode data for instance
+- Lingering space: it is common to enter data in MS Excel or GUI like that. And not only we make typos (e.g. `"male"` and `"Male"`), a sneaky typo that will not show in excel is `"male "`. It is necessary to perform some data cleaning when importing data into R. More on the latter edition of this.
+
+<!-- ## If you want to know more {.unnumbered} -->
