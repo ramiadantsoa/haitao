@@ -2,54 +2,112 @@
 
 {{< include ../preamble.qmd >}}
 
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 Toko telo
 :::
 
-## Concepts and intuitions {.unnumbered}
-`sary_anjeva.jpeg, foza orana.mp3, Malok'ila_1.mp4`
+`sary_mainitirano.jpeg, foza orana.mp3, Malok'ila_1.mp4` Beyond clicking these files on your computer, have you wondered how it works?
 
-Beyond clicking these file, have you wondered how it works?
+Say you change the filename (rename the file), for example: `sary_maintirano.jpeg` to `sary_paris.jpeg`. When you open that, the photo is still the photo you took in Maintirano. In other words, the filename is something symbolic, a label created by the user to infer the content. Isn't it frustrating to find a file where you have now idea what it's inside unless you open it!
 
-Say you rename the filename, for example: `sary_anjeva.jpeg` to `sary_paris.jpeg`. When you open that, the photo is still the photo you took in anjeva. In other words, the filename is something symbolic, a code created by the user to guess what is the content.
+In the most fundamental way, a file content is a long sequence of 0 and 1 stored in the computer's memory. To access the sequence, we need the address (coordinate of that sequence). Figuratively, the filename is like name of the house (e.g. Villa Fanomezana), it can change but the house and the address is the same and generally does not change.
 
-In the most fondamental way, that content is a long sequence of 0 and 1 stored in the computer's memory. To access the sequence, we need the address (coordinate of that sequence). Figuratively speaking, this is like the address of the house. The filename is like name of the owner, it can change but the house and the address is the same.
+In programming, an assignment consist of binding three elements: (1) creating an object (building a house) at the specific location (the address) and calling it whatever you like. While you can choose which object you create and how to call it is, you cannot decide about the address (where it is put in the computer.) And probably a good thing.
 
-In programming, assigment consist of linking/binding: the filename (called variable or object name) with, the address, and the content .
-To assign an object, the syntax is:
-`filename/variablename <- object/value` which reads put the object in a variable called filename. The assignment operator essentially creates a new filename, makes a new address and stores the created object there.
-
-Object can be almost anything, in fact the rest of this part is about different types of fundamental objects @sec-numeric-@sec-list.
-
-Another syntax is "the object -> filename" but it is the same idea.
 
 ## Formal {.unnumbered}
-Google
 
-Assign and output
+In R, the syntax is:
+`filename/variablename <- object/value` which reads put the object in a variable called filename. The assignment operator essentially creates a new filename, makes a new address and stores the created object there.
 
-1. Programming Languages: The Value-Binding Definition
-In the study of programming language design, assignment is defined as a mechanism that dynamically changes the binding between a state storage location and a value. It introduces the foundational concept of L-values (location/address) and R-values (read/data value).
-Wikipedia
+In the study of programming language design, assignment is defined as a mechanism that dynamically changes the binding between a state storage location and a value. It introduces the foundational concept of L-values (location/address) and R-values (read/data value)(wikipedia)
 
-Textbook Source
-Book: Concepts of Programming Languages (12th Edition, 2019)
-Author: Robert W. Sebesta
-Publisher: Pearson
+Object can be almost anything, in fact the rest of this part is about different types of fundamental objects from @sec-sec-numeric to @sec-list.
 
-The Formal Definition
-In Chapter 7 ("Expressions and Assignment Statements"), Section 7.4, Sebesta defines the assignment statement structurally:
-"The assignment statement is one of the central constructs in imperative languages. It provides the mechanism by which the user can dynamically change the bindings of values to variables. [...]
-Rar Black - Medium
-The general form of an assignment statement is:
-⟨target_variable⟩=⟨expression⟩
-The text notes that the execution of an assignment statement requires the evaluation of the expression on the right-hand side (the R-value), followed by a mapping operation that copies or stores that evaluated data into the memory address space denoted by the variable on the left-hand side (the L-value), altering the current state of the program."
-Wikipedia
+## Examples {.unnumbered}
 
-<!-- $\langle \text{target_variable} \rangle = \langle \text{expression} \rangle$ -->
+In the first example, one stores the number `2` in an object called `a`. If you run the that line in R, there will be no output in the console. You asked R to save the file, not to play it.
+To see the content you need to type the filename
+
+**Assignment and console output**
+
+```{r}
+#| echo: true
+a <- 2
+# no output
+
+# this will display the ouptut in a
+a
+```
+
+** Adding numbers by their name **
+
+Instead of adding `2 + 3` we can put 2 in a and 3 in b. And add `a + b` and put them in c.
+Notice again that the variable names are symbolic.
+```{r}
+#| echo: true
+
+# Storing a number
+a <- 2
+
+b <- 3
+
+# Storing the result a calculation
+
+c <- a + b
+```
 
 
+**Swapping value** A very useful exercice to understand assigment is by swapping the content inside two objects.
+
+```{r}
+#| echo: true
+
+# Swapping elements between box
+object1 <- 1
+object2 <- 2
+
+object2 <- object1
+object1 <- object2
+
+object1 # to see what is inside object1
+object2 # to see what is inside object2
+```
+
+It does not work, the value inside object1 becomes 1 (no swap), and object2 becomes 1.
+
+The solution is to think you put juice in a cup and coffee in a glass. To swap the content, you first need transfer one of the beverage in a thrid container, the proceed.
+```{r}
+#| echo: true
+
+temporary <- object1
+object1 <- object2
+object2 <- temporary
+
+```
+
+## Tips and warnings {.unnumbered}
+- In R, one can also use = as an object assignment, `a = 2` works too. However, the <- is to be explicit. So that = is used in a specific context
+- In later version of R, the symbol -> (left to right) has been added `2 -> a`.
+- Object name is case sensitive, `object <- 2`, `Object <- 2`, and `obJect <- 2` are three different objects different address and different variable names.
+- The main source of error in programing is when the variable names are misspelled.
+- In the code below, you can the crush the previous value and will be lost. See swapping above
+- It is a good idea and a good habit to make a variable evocative so you can get the content ()
+- Variable names convetion
+  - **No space** and special characters (%, $ etc.)
+  - The common choice for longer examples
+  - TelmaNumber and MadacomNumber (called xxx)
+  - telma_number and madacom_number (called XXX)
+  - telma.number and madacom.number (callled xx)
+- A short cut for <- is in RStudio on Windows.
+- The top right panel will show all the object created with the name and the value
+
+
+
+<!--
 To deepen the formal understanding of the value-binding definition of assignment, computer science literature breaks the mechanism down into how programming languages manage memory, names, and environments.
+
+
 Here are the rigorous formal definitions that expand on value-binding from foundational textbooks in programming language theory.
 1. The Environment and Store Model (Denotational Semantics)
 In theoretical computer science, value-binding is formalized by separating a variable's name from its physical memory address. This is achieved using two distinct mathematical functions: the Environment (ρ) and the Store (σ).
@@ -85,90 +143,5 @@ An R-value refers to the data density or numerical value contained within a loca
 The formal semantics of the assignment statement dictates that the compiler must generate code to evaluate the R-value of the right-hand side, and then perform a value-binding operation that overwrites the contents of the memory location determined by the L-value of the left-hand side."
 This distinction explains complex operations like pointer assignment (e.g., *p = x), where the left-hand side is not a simple variable name but a complex expression that resolves to a memory address (L-value).
 
-## Examples {.unnumbered}
 
-**Assignment and console output**
-
-```{r}
-#| echo: true
-a <- 2
-# no output
-
-# this will display the ouptut in a
-a
-```
-
-Instead of adding 2 + 3 we can put 2 in a and 3 in b. and add a + b and put them in c.
-Notice again that the variable names are symbolic.
-```{r}
-#| echo: true
-
-# Storing a number
-a <- 2
-
-b <- 3
-
-# Storing the result a calculation
-
-c <- a + b
-```
-
-
-A very useful exercice to understand assigment is by swapping the content inside two objects.
-```{r}
-#| echo: true
-
-# Swapping elements between box
-object1 <- 1
-object2 <- 2
-
-object2 <- object1
-object1 <- object2
-
-object1 # to see what is inside object1
-object2 # to see what is inside object2
-```
-It does not work, object1 becomes 1 (no swap), and object2 becomes 1.
-
-The solution.
-```{r}
-#| echo: true
-
-temporary <- object1
-object1 <- object2
-object2 <- temporary
-
-# To visualize that, think of swapping cups of tea and coffee...you need a third cup.
-```
-
-
-## Tips and warnings {.unnumbered}
-- The shortcut is? but you can change that too.
-- object name: capitalization and type
-- = is works for assignment too
-- crushing previous value.
-- Variable names convetion
-  - **No space** and special characters
-  - lowerLarger
-  - lower_larger
-  - LowerLarger
-  - lower.larger
-  -
-- make it evocative
-- You will see on the tab (Environment in RStudio a list of all the variables you create)
-= was used and still work but it has been assigned to a different now
-Shortcut in RStudio
-- not assigned to its type.
-
-<!--
-```{r}
-#| echo: true
-plot(1:3)
-
-# vs
-fig <- plot(1:3)
-fig
-#Failed because base graphics = side effect , in ggplot2, plot object and can be saved
-``` -->
-
-## If you want to know more {.unnumbered}
+ -->
