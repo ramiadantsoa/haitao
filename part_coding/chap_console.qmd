@@ -89,7 +89,8 @@ print("Hello world")
 ![Incomplete command](../fig/incomplete_command.png){#fig-incomplete width = 100}
  In that case, you can
   - complete the like adding say the number you want to multiply
-  - escape the expectation by typing escape key (esc)
+  - escape the expectation by typing escape key (Echap or Esc)
+- **Error message**: this is the worst part. While we, reading the error is very informative and allow to diagnose it.
 - Mouse is useless in the console. It is meant to work with keyboard,
 - It is not recommended to write prompt on the console...it is simple but and a different window called script  is dedicated to writing code (see @sec-ide).
 - When you open the R, or RStudio, you can see the version of the program you are using and other licensing information (see @fig-console_rstudio)

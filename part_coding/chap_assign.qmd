@@ -90,10 +90,14 @@ object2 <- temporary
 ```
 
 ## Tips and warnings {.unnumbered}
+- Object name is case sensitive, `my_object <- 2`, `my_Object <- 2`, and `my_obJect <- 2` are three different objects different address and different variable names.
+- The most common error in programing seen here @fig-object_error. While it is a source of panic, it is the easiest to solve and the main culprit are
+  - typos because it is case sensitive
+  - variable not assigned. One has typed the script but did not execute so it is not stored in the environment
+![Object not found](../fig/object_not_found.png){#fig-object_error}
+
 - In R, one can also use = as an object assignment, `a = 2` works too. However, the <- is to be explicit. So that = is used in a specific context
 - In later version of R, the symbol -> (left to right) has been added `2 -> a`.
-- Object name is case sensitive, `object <- 2`, `Object <- 2`, and `obJect <- 2` are three different objects different address and different variable names.
-- The main source of error in programing is when the variable names are misspelled.
 - In the code below, you can the crush the previous value and will be lost. See swapping above
 - It is a good idea and a good habit to make a variable evocative so you can get the content ()
 - Variable names convetion
