@@ -1,5 +1,5 @@
 # Basic coding
-Having basics in math and statistics is a prerequisite in for data-dealing scientists. This has been the norm for a while. These topics have been part of the curriculum for a while. Not that field biologist will not complain by that.  Data analyses were done with SPSS, STATA, and also EXCEL STAT. The rise of R  introduced a new paradigm on how to analyses data and visualize data. There are many benefit: it is free and it faciliate reproducibility, it keeps growing. Unlike the other, this is not at price.  The most obvious (and painful) is that unlike the softwares above, it is a programming language. And unlike stat and math, to the best of my knowledge, programing is not engrained in the curriculum.
+Having basics in math and statistics is a prerequisite in for data-dealing scientists. This has been the norm for a while. These topics have been part of the curriculum for a while. Not that field biologist will not complain by that.  Data analyses were done with SPSS, STATA, and also EXCEL STAT. The rise of R  introduced a new paradigm on how to analyses data and visualize data. There are many benefit: it is free and it faciliate reproducibility, it keeps growing. Unlike the other, this is not at price. The most obvious (and painful) is that unlike the softwares above, it is a programming language. And unlike stat and math, to the best of my knowledge, programing is not engrained in the curriculum.
 
 Learning a programming language R is mostly unlearning how to use a computer.
 With mouse, touchscreen, and even vocal commands (speech to text), using keyboard is almost obsolete.
@@ -8,7 +8,14 @@ In fact, GUI is popular is that it is friendly, and makes it as friendly as poss
 At the other end, we have those prgramming language were friendliness is not the main concerns. And it the same features as other programming languages.
 
 There are over x programming languages.
-the existence of these programming languages is as old as computer but its predominance and conveniency of R
+the existence of these programming languages is as old as computer but its predominance and conveniency of R.
+This is part is to introduce the basic concepts of programming, while examples evenutally in R, there is an effort to speak in general sense, where it applies to other language. In fact, the more general terms are used and specific to R after.
+
+This is divided into three main theme: the environment where one works with (@sec-console and @sec-ide), the atomic objects: numeric, strings and boolean as well as operation with them, and talk about molecules that constructed from the these which are vector, matrix, data frame and list. This somehow mirrors the different topics in the math part.
+
+
+
+<!--
 R is one of the many pl & as such shares the core features of them.
 In a nutshell, you write instructions called code or script, you run/excecute/compile the script.
 There are two things: the command line and console---many features of language.
@@ -19,7 +26,7 @@ Fortunately programming is introduced in the curriculum for a certain generation
 
 You could install R here (add link), it is often best to have the latest version but key to agree with your computer specification.
 
-You could also install RStudio here, see in IDE section why you really need it but also why you don't need it.
+You could also install RStudio here, see in IDE section why you really need it but also why you don't need it. -->
 
 <!--
 As languages are most similar: subject, verb, complement etc so does all languages.

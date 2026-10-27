@@ -1,80 +1,168 @@
 # Vector {#sec-vector}
 
-{{< include ../preamble.qmd >}}
+<!-- {{< include ../preamble.qmd >}}
 
 ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-Firieme etage? Rihana faha-firy?
+::: -->
+
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
+Rihana faha-firy?
 :::
+
 
 ## Concepts and intuitions {.unnumbered}
 
-In the previous chapters, there were three major types of object: numbers (integer and numeric), text/strings, and boolean (logical). In the simplest form, data is often a collection of many objects of the same type, a list of the names of the president of Madagascar, or the set of grades you get at school.
-Why each element is represented by the atomic type, a collection is stored in a object called vector.
+In past, people live in huts in a hamlet but as space becomes a constraint, stacking houses vertically becomes an economic solution. The direct implication is that instead of having address for say ten homes, now you have the address of the building and the floor number.
 
-In past, people live in huts in a hamlet but as space becomes a constraint, stacking houses vertically becomes an economic solution. The direct implication is that instead of having address for say ten homes, now you have the name of the building and the floor: Building X, floor #2.
+A vector in programming is essentially an higher level object that store sequence of object *of the same type*. To access any specific value, you just need to know the name of the building and the floor number.
 
-So a vector in programming is essentially a sequence of object arranged next to each other. The arrangement means that to access, you just need to at which order (floor it occurs). As floor numbers should be whole number, so does the order. Notice that in english, the first floor is the rez-de-chaussé, so the metaphore is , in other words, 1-ere etage is already the second element. Also the the first floor is the one from the top!!!
+This analogy only works when each floor which called entry are of the same type (all numbers, all logical, or all strings). If the entry is homogenous, a list is used @sec-list. This is also where  indexing must be a discrete number/integer @sec-discrete_continuous and @sec-numeric.
 
-The analogy can break down! There are multistory buildings where the first floor might be a store, the second floor an office, and the third and fourth floors are for habitation. If we consider each use as different type, then that building is not a vector. In other words, a vector is homogeneous, all entry has the same type (all numbers, all logical, or all strings). If it is a heterogeneous list, another type called list is used. @sec-list.
-
-The key point is that a vector is a object, you need to assign it, and you can retrieve based on the order they appear in the list.
+The key point is that a vector is a "new type" of object constructed by a sequence of atomic object. It has similar structure: variable name, assignment, and value. One can retrieve the values based on the order they appear in the list.
 
 ## Formal {.unnumbered}
-To construct a vector in R we use the function, c() short for concatenate, and we put all the list of elements, separated by parentheses: vector_name <- c(object1, object2,..., objectn)
-The number of elements in the vector is called its length.
+To construct a vector in R we use the function, `c()` short for concatenate.
 
-To access the p-th element of that vector, one uses the square bracket symbol "[]", so vector_name[2] will return object2. The order is called index and should be an integer, retriving the n-th element
+`vector_name <- c(object1, object2,..., objectn)`
 
-In R you can use negative index, which means take everything expect those with negative index so vector_name[-2] will remove from the output. Notice that [] retrives value but do not modify the content of vector_name
+- Length of a vector is the number of elements in the vector i.
 
-It is possible to access the element without using their order. See in the example below, this can under specific scenarios, e.g., short vector as you need to give a specific name to each ordered element or you don't want to remember the name. This is called giving names/attributes to eache element.
+- To access the p-th element of that vector, one uses the square bracket symbol "[]", so `vector_name[2]` will return object2. The order is also called index and should be an integer.
+
+- In R you can use negative index, which delete the entry.  Vector_name[-2] will remove object2 from the output.
+
+- It is also possible to It is possible to access the element without using their order. See in the example below, this can under specific scenarios, e.g., short vector as you need to give a specific name to each ordered element or you don't want to remember the name. This is called giving names/attributes to eache element.
 
 
 ## Examples {.unnumbered}
 
+- Contructing a vector
 ```{r}
 
 # create
 c(FALSE, FALSE, TRUE)
+
 c(2L, 1L, 4L)
-c(2., 1L, 4L)
+
 c("Hello", "world")
 
 test <- c("Hello", "world")
 
 paste(test)
+```
 
+
+
+- Accessing single values
+```{r}
 # access
 test[1]
 
 test[2]
+```
 
+- Accessing multiple index by using `vector of integer`
+
+```{r}
 # a vector of vector
 
 test[c(1, 2)]
 test[c(2, 1)]
+```
 
-# combining vector
 
+- Constructing from more vectors
+
+```{r}
 c(test, 1)
 
-test[-1]
-test[-2]
+vec1 <- c(1, 4, 5)
+vec2 <- c(10, 11, 12)
+
+vec_combined <- c(vec1, vec2)
+```
+
+- Deleting one or more element.
+
+```{r}
+# remove the first element
+vec_combined[-1]
+
+# remove the first and fourth element
+vec_combined[c(-1, -4)]
+
+vec_combined # unchanged
+```
+
+One can construct a new vector by
+
+```{r}
+sub_vector <- vec_combined[c(-1, -4)]
+sub_vector
+```
+
+One can also use the same but remember you cannot retrieve the old one (think about saving a file using the same filename)
+
+```{r}
+vec_combined <- vec_combined[c(-1, -4)]
+vec_combined
+```
 
 
+## Tips and warnings {.unnumbered}
+- Semantic: entry, element, values
+
+- Concatenation priority
+ - Boolean to integer
+
+```{r}
+#| echo: true
+
+str(c(TRUE, FALSE, 4L))
+```
+
+- Integer to numeric
+
+```{r}
+#| echo: true
+
+str(c(TRUE, FALSE, 4))
+
+str(c(1L, 2L, 4))
+```
+ - Numeric to character
+
+```{r}
+#| echo: true
+
+str(c(TRUE, TRUE, "text"))
+
+str(c(TRUE, 1.2, "text"))
+```
+
+- Atomic elements are considered as vector in R. The [1] means R displays the first element
+
+```{r}
+#| echo: true
+
+a <- 1
+a
+```
+- when you print many elements, you will see [1] [38] etc on the left side of the output. It is displaying index so the one on the right is simply. Note that it depends on the size of your console, so a narrow vs wide one.
+
+```{r}
+rpois(300, 4)
+
+```
+
+- A vector has a length l, if you try to access vector_name[n] where n is bigger than n, it will return NA.
+- In R, you can actually use numeric, so vector_name[1.2] is the same as vector_name[1]. It is hard-cored in R, that it will automatical round the number to the lowest integer. In some cases, it is quite practical, in other it might be problematic.
+- A more tedious way of constructing a vector where you can call by the name and not the index
+
+```{r}
+#| echo: true
 room <- c(width = 15, height = 12)
 attributes(room)
 
 room["width"]
 ```
-
-
-## Tips and warnings {.unnumbered}
-- the  [1] etc on the output is actually the order of that element.
-- when you print mant elements, you will see [1] etc on the left side of the output. It is displaying index so the one on the right is simply. Note that it depends on the size of your console, so a narrow vs wide one.
-- coercing: This is mostly problematic when importing data, as R will make everyting a character if one is a character.
-- A vector has a length l, if you try to access vector_name[n] where n is bigger than n, it will return NA.
-- You can use a vector of retrive more elements, sub_vector <- vector_name[c(1,3,5)] will retrieve the first, third, and fifth whereas sub_vector <- vector_name[c(3,5,1)] will retrieve and create a vector with the third element first, fifth second, and first third.
-- Because of R, you can actually use numeric, so vector_name[1.2] is the same as vector_name[1]. It is hard-cored in R, that it will automatical round the number to the lowest integer. In some cases, it is quite practical, in other it might be problematic.
-
-## If you want to know more {.unnumbered}
