@@ -1,12 +1,9 @@
 # Type: Strings {#sec-character}
-
 {{< include ../preamble.qmd >}}
-
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 "Hello world!"
 :::
-
 
 The first exercice program is to be able to print a text on the console. This is in computer science. While this is trivial in programs like R, several concepts are need to that for programs in fortran, C, C++. And the tradition is to print "Hello world". The idea is somehow that you understand how a computer that you manage to prompt it to say hello to the world of the living.
 

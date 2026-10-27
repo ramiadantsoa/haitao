@@ -69,6 +69,7 @@ str(cc)
 -  `r a <- .234` is a shortcut instead of `r a <- 0.234`
 - Machine precision: there is a limit with the number of decimals. By default it is 16 decimal point. In data science it is extremely efficient
 - Astronomically big numbers are not allowed and again hopefully you won't need it.
+- Due to precision, it is not good to multiply very small and very large number.
 - Infinity is not a number and is represented by `Inf` and `-Inf`
 
 ## If you want to know more {.unnumbered}

@@ -1,36 +1,30 @@
 # Type: Boolean {#sec-boolean}
 
 {{< include ../preamble.qmd >}}
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 a < b or a == b?
 :::
 
-## Concepts and intuitions {.unnumbered}
 
-Of all the arithmetic that we have seen, there are two new symbols that haven't been used yet, "<" (and the related (">", ">=", "<=")) and "=" that we haven't used.
+In @sec-arithmetic, is to see how we arithmetic operation for in programming language. There are noticable symbols that haven't been used yet, the inequality "<" (and the related (">", ">=", "<=")) and the equality "=" symbol.
 
-Many times when we collect data, on a data sheet split man and woman. we can tick the box for woman or man. Then when we digitize the data, data entering, in table, the most natural way is to encode the text, as in the example in the previous chapter @sec-character, we could spell it out, or use codes like "M" vs "W" and fills it. Alternatively, you can ask is it a men, and fill the value of "yes" or "no", or just "Y" or "N". If we want to be simpler we could just write 1 or 0 too. As you can see, it is a matter of choice and practicality.
-
-Yey, the computer does not discriminate, but there is one encoding that we can do to explicitly say that the values have only two states. This is what it is called boolean or logical variable. In the R speaking, we `TRUE` or `FALSE` in R (`T` and `F` are also used). Those variables behave differently, unlike strings in the sense that we could make basic operation with them (see @sec-boolean-operation), but they also have a fundamental role in computer programming, they are answers to question, and thus building block of decision-making because they store the answer to yes or no question.
-
-We essentially have two ways, is one number smaller than another, or is one number equal to another. In the first, we can ask if 2 < 3, the < is thus a question. In the second, is 2 == 3 (notice the double equal).
-
-If numeric and integer are to represent quantitative variable and strings are to represent qualitative, what are boolean supposed to represent. From a pure statistical, it could represent so encoding data as dead or alive is the same as naming the column alive and filling with yes or no, true or false etc.
-
-But, boolean is more unequi
+What does it mean if we write $2 < 3$, $2 = 3$, or $2 > 3$. I hope the you are thinking the first is a correct statement (true), and the other two are incorrect (false). That idea is conveyed also in programming. That is these symbols are or inherrently a question to compare the left and the right-hand side. **Boolean variable is a special type to store the answer to that only result into true or false.**
 
 
-Computer is based on sequence of 0 and 1.
-But 0 and 1 is a symbol, they are not really number or integer in the strict sense. Instead, they are picked something with two state/outcome, the answer is either yes or no. This is called boolean or logical.
-
-
-
-For our purpose, we use this type of object when for instance, dead or alive, present or absent, true or false. To make it explicit, boolean are specifically represented by `TRUE` or `FALSE` in R (`T` and `F` are also used). So 0 and 1 are the number 0 and 1.
-
-
-But in pure programming, these are used and makes more sense with operation @sec-boolean-operation
+For our purpose, we use this type of object to encode binary variable @sec-qualitative-variable. That is in the particular case where there are only two outcome: dead or alive, present or absent, true or false. We can still use string or even numeric or integer but boolean is more explicit (as we know there are only two values).
 
 ## Formal {.unnumbered}
+
+To make it explicit, boolean are specifically represented by `TRUE` or `FALSE` in R (`T` and `F` are also used). So 0 and 1 are the number 0 and 1.
+
+For inequality
+- Is a smaller than b, `a <= b` or stricly smaller `a < b`
+- Is a largerr than b, `a > b` or stricly larger `a >= b`
+
+For equality, because `=` is used in variable asignment and in function argument @sec-function, the convention is to use two equals `==` so asking is a equal b? is encoded as `a == b`
+
+To encode inequality, i.e. is a different from b, we encode as `a != b`.
 
 ## Examples {.unnumbered}
 
@@ -44,22 +38,33 @@ var2 <- 2^3
 var1 == var2
 var1 != var2
 var1 < var2
+var1 >= 1
 
-# Assign
-a <- TRUE
-b <- TRUE
-
-# Arithmetic operations work
-a + b
-a * b
 ```
 
 The operation above works because R reinterpets/coercre them as 0 and 1 and thus proceed forward with the calculation.
 
 ## Tips and warnings {.unnumbered}
-- It is convenient but more used for decision!
-- Compared to numeric, integer, and strings, they require the least memory to store.
-- Coercing strict hiearchy.
-- Encoding to string and convert to boolean
+- Semantic: boolean, binary, logical. Boolean is more mathematical form Boole. Binary is for just 2, and logical is true or false.
+- Link it is universal for arithmetic, the inequality and equality are also the same in any programming language
 
-## If you want to know more {.unnumbered}
+- While it is convenient to encode data as `dead` or `alive` or other symbol (`maty` and `velona`) during data entry @sec-sec-dataframe. Converting them to boolean `TRUE` and `FALSE` is generally done during the data cleaning phase. In this case the the colum name could be dead and the values are `TRUE` or `FALSE`.
+- Fundamental unit 0 and 1 and thus least memory and thus instead of integer or string.
+- In R, it is possible to perform arithmetic operation on boolean variable. This is a decision to treat them like the number 0 for `FALSE` and 1 for `TRUE`.
+
+```{r}
+# Assign
+a <- FALSE
+b <- TRUE
+
+# Arithmetic operations work
+a + b
+a * b
+a - b
+a / b
+
+```
+- Corollary: if you have a column in your dataframe with say dead, you can just summ to get how many are alive.
+- Used also for filter value in a vector @sec-vector
+- The main use of equality and inequality is to filder data and alike.
+
