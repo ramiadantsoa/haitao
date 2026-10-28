@@ -16,6 +16,36 @@ For our purpose, we use this type of object to encode binary variable @sec-quali
 
 ## Formal {.unnumbered}
 
+A **Boolean** variable type represents binary truth values used to evaluate logical conditions and control program flow.
+
+---
+
+### 1. General Computer Science Definition
+
+An **elementary (or primitive) data type** is a basic building block provided by a programming language that cannot be broken down into simpler data structures.
+
+A **Boolean variable type** (named after mathematician George Boole) is an elementary data type constrained to exactly two possible truth values:
+
+* **`True`** (often represented internally as `1`)
+* **`False`** (often represented internally as `0`)
+
+It is primarily used in conditional statements (`if/else` checks), loops, and logical comparisons (`==`, `>`, `<`).
+
+---
+
+### 2. Definition and Behavior in R
+
+In R, the Boolean concept is implemented as the **Logical** vector type (`logical`).
+
+#### Key Characteristics in R:
+
+* **Values:** Expressed using keywords **`TRUE`** and **`FALSE`** (or shorthand `T` and `F`).
+* **Three-Valued Logic:** Unlike standard binary Booleans, R's logical type supports a third state: **`NA`** (Not Available) to represent missing or unknown logical values.
+* **Vectorized Nature:** R does not have scalar primitives; a single logical value is a vector of length 1 (e.g., `typeof(TRUE)` returns `"logical"`).
+
+
+
+
 To make it explicit, boolean are specifically represented by `TRUE` or `FALSE` in R (`T` and `F` are also used). So 0 and 1 are the number 0 and 1.
 
 For inequality
@@ -68,4 +98,5 @@ a / b
 - Corollary: if you have a column in your dataframe with say dead, you can just summ to get how many are alive.
 - Used also for filter value in a vector @sec-vector
 - The main use of equality and inequality is to filder data and alike.
-
+- T and F mixed with variable, TRUE and FALSE are protected
+- NA is a thrid one...

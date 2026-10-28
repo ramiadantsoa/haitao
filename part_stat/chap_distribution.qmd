@@ -59,7 +59,7 @@ fig_lemur_a <- ggplot(df_lemur, aes(x = species, y = value)) +
     geom_col() +
     theme_bw()
 
-fig_qual <- fig_sex + fig_lemur_a
+fig_qual <- fig_sex + fig_lemur_a +
     plot_layout(axis_titles = "collect")
 
 fig_qual

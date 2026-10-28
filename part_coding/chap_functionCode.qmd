@@ -3,17 +3,151 @@
 {{< include ../preamble.qmd >}}
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
-superf(x) = y
+More than 4 250 functions and 25 000 CRAN packages
 :::
 
-A function is your best friend in R, but like learning language, you need to learn the vocabulary. In R, ~ 1200 functions are loaded when you start R. Fortunately, people rarely use at mose 150-200 functions in their daily use.
+Function is another term that is borrowed from plain language and also mathematical language. In this case, a function in programming can be seen as a generalization of functions in mathematics @sec-function. And that generalization is good thing because it is what makes programming so useful and powerful.
 
-In the simplest form, a function in programming is like a function we are used to. You replace the x with a number, do the calculation, and you get the number. In programming, x is called the argument or input, and the results is the output. And unlike basic function, x and y does not need to be a number, and the transformation does not need to be a mathematical operation. For instance, the argument could be a dataset, and the function plot() will make a figure out of it, so the results is a plot.
+In R, a function can be a simple mathematical functions (like `sin(), cos(), exp(), log()`). It could be a constructor like `c()` for `vectors, matrix(), list()`, and a statistical function like `mean()` to compute the mean and many more. As you could guess, a function exists for most statistical test one wants to do, to plot figures, manipulate data, solve equations, and imagination is the limit.
 
-In r a function is always `function_name(list of arguments)`. The parenthesis nicely indicate that it could take an argument.
+Once we install and run R, there are roughly 4250 functions that are ready to use. But because that is not sufficient for everyone's need, more functions are created. Packages are essentially a collection of functions that perform a specific task popular examples are `ggplot2` for making figures or `vegan` for community analyses. Packages are there to make one's life easier. And one of the strengh of R is that there are many packages. While there is no estimates of how many functions are "official", with say 15 functions per packages there are at least `r 4250 + 25000 * 15` functions.
 
+Functions are there to help, but functions are also the foes..how to locate the function you need, how to use a function (especially how to read the output) and why on earth it throws an error?
 
 ## Formal {.unnumbered}
+
+Here is how a function is constructed and the convention is that it is always lowercase.
+
+```r
+
+function_name <- function(argument1, argument2 = TRUE, ...){
+    "Whatever the function does with those argument"
+    return(output)
+}
+
+```
+There are several key points
+
+- Function name: this is similar to giving a variable name @sec-assignment
+- After the assignment operator, function explicitly say that the object created is a function
+- Within the parentheses are the arguments separated by comma
+- The block code that what the function is doing
+- And the ouput within the
+
+
+Explicit and implicit argument
+
+
+## Examples {.unnumbered}
+
+- Mathematical function
+Here are examples of basic function
+```{r}
+#| echo: true
+
+# calculate the sinus of 1
+sin(1)
+
+# calculate the absolute value
+abs(-2)
+
+# calculate the square root of 25
+sqrt(25)
+
+# you can also store the result using assignment
+result <- sqrt(25) + abs(-2)
+
+```
+
+- Data manipulation and construction
+
+```r
+    sort()
+    unique()
+    seq()
+```
+
+- Plot function
+
+
+
+## Tips and warnings {.unnumbered}
+- Semantic: arguments, input, parameters.
+- CRAN packages:
+- Open source you can find the exact body of the function
+
+- Meta understanding of function that could help
+  - What do you want to do?
+  - What is the name of the function?
+  - What is your argument of that function
+  - What is the output of that function
+
+Example 1:
+ - I want to calculate the sinus of a number
+ - The sytnax that calls the function sinus is sin()
+ - The argument should be a number
+ - The output should also be a number.
+
+
+Example 3:
+ - I want to do a linear regression between of height and altitude
+ - The syntax is lm(height ~ altitude)
+ - The argument should be two vectors of same length
+ - The output is a list of a bunch of things including the coefficient, p-value, R-squared, residuals etc.
+
+A good idea to The arguments are there and the values. It is the same for all help file in R.
+
+
+- Implicity and explicit argument:  say we want to plot altitude vs number of species
+
+
+```{r}
+#| echo: true
+
+altitude <- c(500, 1000, 1500, 2000)
+richness <- c(10, 15, 16, 2)
+
+par(mfrow = c(2, 2))
+plot(altitude, richness, main = "plot(altitude, richness)" )
+plot(richness, altitude, main = "plot(richness, altitude)")
+plot(x = altitude, y = richness, main = "plot(x = altitude, y = richness)")
+plot(y = richness, x = altitude, main = "plot(y = richness, x = altitude)")
+
+```
+
+On the top panel, shows the implicit definitions and in the bootom are the explicit definition. The results are the same for all three except for the second implicit. Why?
+
+If we write plot(altitude, richness), how does R know what to put on the x-axis and what to put on the y-axis? R implicitly intepret that the order appear as how the function is defined plot(x, y, ) so the first argument is the x axis and the second argument is on the y-axis.
+
+In the explicit, the order is irrelevant as we explicitly tell x = altitude and y = richness. So the order does not matter.
+
+Why do you want to use the explicit.
+In simple function, sin, plot, it is almost obvious what are the first 1, 2 say the main argument.
+
+But as mentioned earlier, a function can take multiple arguments, in the case of plot, you can change the color, size, style of the points... do you know when they are. The best way is to use the explicit
+
+
+```{r}
+plot(altitude, richness, col = "blue", pch = 2, cex = 2)
+```
+
+col is for color, and pch is point character. No shortcut, it is a pain to remember them but after hundreds of usage it becomes innate.
+
+- Default argument value. As in plot there is over 20 arguments you can add, not only. You don't need to specify all of them. So most of the argument are assigned with a  default value eg. color, point size etc.
+
+
+
+<!--
+A convention in R is that functions are lower case followed by parentheses, the arguments goes inside the parentheses, and are separated by a comma if there are more than one.
+
+Here is how to construct your own function in R,
+
+
+The Formals: The list of formal arguments (parameters) that the function accepts, which can include default values and the special ... (ellipsis) argument.
+The Body: The expressions or code block that are executed when the function is evaluated.
+The Environment: The specific lexical environment (scope) in which the function was created. This determines how variables inside the function are resolved."
+
+
 
 In the R programming language, the definition of a function diverges sharply from standard imperative languages because R is deeply rooted in functional programming and Scheme-like semantics.
 
@@ -29,9 +163,6 @@ Publisher: R Foundation for Statistical Computing
 The Formal Definition
 In Chapter 2 ("Objects") and Chapter 4 ("Functions"), the core documentation formalizes a function:
 "R functions are first-class objects. They are of type "closure" and can be manipulated in the same way as any other object. A function object is formally defined as a list-like structure consisting of three essential components:
-The Formals: The list of formal arguments (parameters) that the function accepts, which can include default values and the special ... (ellipsis) argument.
-The Body: The expressions or code block that are executed when the function is evaluated.
-The Environment: The specific lexical environment (scope) in which the function was created. This determines how variables inside the function are resolved."
 Mathematically and structurally, R represents this object model via the primitive constructor:
 Function=⟨formals,body,environment⟩
 LaTeX Format
@@ -57,95 +188,4 @@ In R code, this rigorous definition is not hidden; it is entirely introspectable
 formals(f) returns the list of arguments.
 body(f) returns the expression tree of the code.
 environment(f) returns the pointer to its enclosing scope.
-Because of this unique architecture, an anonymous function definition like function(x) x + 1 is an expression that evaluates directly to an object in memory, and assigning it to a variable (add_one <- function(x) x + 1) is simply binding that name to the function object—identical to how the value-binding assignment model works for numbers or matrices.
-
-
-## Examples {.unnumbered}
-
-To application:
-- What do you want to do?
-- What is the name of the function?
-- What is your argument of that function
-- What is the output of that function
-
-Example 1:
- - I want to calculate the sinus of a number
- - The sytnax that calls the function sinus is sin()
- - The argument should be a number
- - The output should also be a number.
-
-Example 2:
- - I want to calculate the eigenvalues of a matrix
- - The syntax for calls the function is called eigen()
- - The argument should be a square matrix
- - The output should give me with the same dimensions of the matrix
-
-In the case above, eigen also provides the eigen vector.
-
-Example 3:
- - I want to do a linear regression between of height and altitude
- - The syntax is lm(height ~ altitude)
- - The argument should be two vectors of same length
- - The output is a list of a bunch of things including the coefficient, p-value, R-squared, residuals etc.
-
-A good idea to The arguments are there and the values. It is the same for all help file in R.
-
-Here are examples of basic function
-```{r}
-#| echo: true
-
-# calculate the sinus of 1
-sin(1)
-
-# calculate the absolute value
-abs(-2)
-
-# calculate the square root of 25
-sqrt(25)
-
-# you can also store the result using assignment
-result <- sqrt(25) + abs(-2)
-
-```
-
-## Tips and warnings {.unnumbered}
-- By convention, functions in R are lowercase.
-- Try to read the help file if you are using a function for the first time
-- Implicity and explicit argument:  say we want to plot altitude vs number of species
-
-
-```{r}
-#| echo: true
-
-altitude <- c(500, 1000, 1500, 2000)
-richness <- c(10, 15, 16, 2)
-
-par(mfrow = c(2, 2))
-plot(altitude, richness, main = "plot(altitude, richness)" )
-plot(richness, altitude, main = "plot(richness, altitude)")
-plot(x = altitude, y = richness, main = "plot(x = altitude, y = richness)")
-plot(y = richness, x = altitude, main = "plot(y = richness, x = altitude)")
-
-```
-On the top panel, shows the implicit definitions and in the bootom are the explicit definition. The results are the same for all three except for the second implicit. Why?
-
-If we write plot(altitude, richness), how does R know what to put on the x-axis and what to put on the y-axis? R implicitly intepret that the order appear as how the function is defined plot(x, y, ) so the first argument is the x axis and the second argument is on the y-axis.
-
-In the explicit, the order is irrelevant as we explicitly tell x = altitude and y = richness. So the order does not matter.
-
-Why do you want to use the explicit.
-In simple function, sin, plot, it is almost obvious what are the first 1, 2 say the main argument.
-
-But as mentioned earlier, a function can take multiple arguments, in the case of plot, you can change the color, size, style of the points... do you know when they are. The best way is to use the explicit
-
-
-```{r}
-plot(altitude, richness, col = "blue", pch = 2, cex = 2)
-```
-col is for color, and pch is point character. No shortcut, it is a pain to remember them but after hundreds of usage it becomes innate.
-
-- Default argument value. As in plot there is over 20 arguments you can add, not only. You don't need to specify all of them. So most of the argument are assigned with a  default value eg. color, point size etc.
-
-- To reiterate: it is a good idea to read the help file
-
-## If you want to know more {.unnumbered}
+Because of this unique architecture, an anonymous function definition like function(x) x + 1 is an expression that evaluates directly to an object in memory, and assigning it to a variable (add_one <- function(x) x + 1) is simply binding that name to the function object—identical to how the value-binding assignment model works for numbers or matrices. -->

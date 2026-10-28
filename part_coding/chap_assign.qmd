@@ -61,7 +61,7 @@ c <- a + b
 ```
 
 
-**Swapping value** A very useful exercice to understand assigment is by swapping the content inside two objects.
+**Swapping value** A very educative exercice to understand assigment is by swapping the content inside two objects.
 
 ```{r}
 #| echo: true
@@ -90,6 +90,7 @@ object2 <- temporary
 ```
 
 ## Tips and warnings {.unnumbered}
+- Semantic: variable name, symbol, scope?
 - Object name is case sensitive, `my_object <- 2`, `my_Object <- 2`, and `my_obJect <- 2` are three different objects different address and different variable names.
 - The most common error in programing seen here @fig-object_error. While it is a source of panic, it is the easiest to solve and the main culprit are
   - typos because it is case sensitive
@@ -102,10 +103,14 @@ object2 <- temporary
 - It is a good idea and a good habit to make a variable evocative so you can get the content ()
 - Variable names convetion
   - **No space** and special characters (%, $ etc.)
-  - The common choice for longer examples
-  - TelmaNumber and MadacomNumber (called xxx)
-  - telma_number and madacom_number (called XXX)
-  - telma.number and madacom.number (callled xx)
+  - Cannot start with a number or uncerscore
+  - Multiwords:
+    - TelmaNumber and MadacomNumber (called PascalCase)
+    - Telma-Number and Madacom-Number (called Kebab Case)
+    - telmaNumber and madacomNumber (called camelCase)
+    - telma_number and madacom_number (called snake_case)
+    - TELMA_NUMBER and MADACOM_NUMBER (called screaming snake_case)
+    - telma.number and madacom.number (informal dot.case no longer used)
 - A short cut for <- is in RStudio on Windows.
 - The top right panel will show all the object created with the name and the value
 

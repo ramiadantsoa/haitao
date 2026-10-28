@@ -40,6 +40,9 @@ Boolean operation are fundamental parts of programming and can be quite unintuit
 The AND is encoded as `&` in R `A & B` or `A && B`
 The OR is encoded as `|` in R as `A | B` or `A || B`
 
+Ths double is mainly for short-circuit used in loop
+Single is for filtering.
+
 A final symbol is `!` whic is used for negation. So `!A` is the opposite of `A`
 
 

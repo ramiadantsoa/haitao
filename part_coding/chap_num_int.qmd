@@ -67,7 +67,14 @@ str(cc)
 
 - An integer takes less memory in the computer. However, memory is not usually an issue and managing memory is beyond for now. We might return when one wants to optimize the code.
 -  `r a <- .234` is a shortcut instead of `r a <- 0.234`
-- Machine precision: there is a limit with the number of decimals. By default it is 16 decimal point. In data science it is extremely efficient
+- Machine precision: there is a limit with the number of decimals. By default it is 16 decimal point. In data science it is extremely efficient.
+
+
+```{r}
+.Machine
+```
+
+
 - Astronomically big numbers are not allowed and again hopefully you won't need it.
 - Due to precision, it is not good to multiply very small and very large number.
 - Infinity is not a number and is represented by `Inf` and `-Inf`

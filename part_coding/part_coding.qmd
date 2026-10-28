@@ -13,6 +13,7 @@ This is part is to introduce the basic concepts of programming, while examples e
 
 This is divided into three main theme: the environment where one works with (@sec-console and @sec-ide), the atomic objects: numeric, strings and boolean as well as operation with them, and talk about molecules that constructed from the these which are vector, matrix, data frame and list. This somehow mirrors the different topics in the math part.
 
+MANY ARE IMPLEMENTATION OF MATH,STAT, OR DATA-SCIENCE..THAT'S WHY MATH STAT FIRST SO WE KNOW WHAT TO IMPLEMENT.
 
 
 <!--
