@@ -111,7 +111,7 @@ vec_combined
 
 ## Tips and warnings {.unnumbered}
 - Semantic: entry, element, values
-
+- It is seen as a one-dimensional object.
 - Concatenation priority
  - Boolean to integer
 

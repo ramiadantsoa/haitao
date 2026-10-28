@@ -1,11 +1,10 @@
 # List {#sec-list}
 
 {{< include ../preamble.qmd >}}
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 Tsy voatery rectangle!
 :::
-
-## Concepts and intuitions {.unnumbered}
 
 A list is the most flexible object to store data, following the metaphor on vector and matrix, it is a multistory building, except that you can have anything you want in each floor.
 For instance, the first floor can be a swimming pool, the second floor, can be five apartments, the third floor can be two chapels, and where it gets most flexibility is that the fifth floor could also be another multistory building etc...The metaphor of course breaks, but you get the idea that a list is a flexible. Maybe like opening the door in Narnia

@@ -1,12 +1,11 @@
 # Data frame {#sec-dataframe}
 
 {{< include ../preamble.qmd >}}
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 Tableau pratique!!
 :::
 
-
-## Concepts and intuitions {.unnumbered}
 
 The previous chapters brings mathematical concepts into programming such as vector, matrix, boolean and numeric, and matrix operations. data frame was constructed to deal with the less rigid demands of data science.
 

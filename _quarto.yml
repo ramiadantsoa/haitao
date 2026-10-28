@@ -60,6 +60,7 @@ book:
     - part: part_coding/part_coding.qmd
       chapters:
         - part_coding/chap_console.qmd
+        - part_coding/chap_scriptEditor.qmd
         - part_coding/chap_ide.qmd
         - part_coding/chap_assign.qmd
         - part_coding/chap_num_int.qmd

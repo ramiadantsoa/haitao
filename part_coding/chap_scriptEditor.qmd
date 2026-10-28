@@ -1,0 +1,16 @@
+# Script editor {#sec-script}
+
+{{< include ../preamble.qmd >}}
+
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
+Soraty eto
+:::
+
+## Formal {.unnumbered}
+
+
+## Examples {.unnumbered}
+
+## Tips and warnings {.unnumbered}
+
+

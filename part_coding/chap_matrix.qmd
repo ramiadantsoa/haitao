@@ -1,25 +1,18 @@
 # Matrix {#sec-matrixCoding}
 
 {{< include ../preamble.qmd >}}
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 Tableau matematika!
 :::
 
+A matrix is a machine language implementation of a matrix in mathematics @sec-matrix.
+It is a rectangular object where each entry are identified by its row and column position.
 
-## Concepts and intuitions {.unnumbered}
-This is a direct implementation of a matrix in mathematics @sec-matrix.
-That is a rectangular object that contains rows and columns.
-If four different persons bought three fruits of different quantity, then one can create a matrix with three rows and four columns to store the data
-ADD a matrix
-or a matrix of four rows and three columns to store the data.
-ADD the transposed matrix.
+Reusing the analogy of stacked apartment as a vector @sec-vector, the matrix allows multiple apartments in each floor. So an apartment is now identified by the floor number and the order in that floor. And similar to a vector, a matrix needs to be homogeneous.
 
-Notice that there is no chapter on vector in basic mathematics, that is because, mathematically, a vector is simply a "one dimensional" matrix.
-
-Reusing the analogy of stacked aparment as a vector, the matrix allows for more apartments in each floor. So an apartment is now identified by the floor number and the order in that floor. And similar to a vector, a matrix needs to be homogeneous.
+In data science, data could be heterogeneous, in that case we could use data frame @sec-dataframe or @sec-list.
 In general, a matrix object it is better used for mathematical computation.
-
-In many cases, the data could be heterogeneous, in that case we could use data frame @sec-dataframe or @sec-list.
 
 ## Formal {.unnumbered}
 To construct a matrix, we need the informations: the size of the matrix: how many rows (nrow) and columns (ncol), the list of all the elements in a form of vectors so we need a vector of length nrow x ncol, and a way to indicate how to arrange the elements.
@@ -39,21 +32,55 @@ Be aware that the first is vertical (as in floor number and the second is horizo
 - matrix [ -2 , -3] the negative means remove that specific column, or row, or both matrix []
 
 
-
-
 ## Examples {.unnumbered}
 
+Use the matrix from @sec-matrix
+
+- Construction
+```{r}
+#| echo: true
+mat <- matrix(1:12, nrow = 3, ncol = 4, byrow = TRUE)
+mat
+```
+
+- Extraction of the first row, using index 1 while leaving the second dimension empty.
+
+```{r}
 mat[1]
-mat[1,]
-mat[,1]
-mat[1,3]
-mat[1, c(1,10)]
+
+mat[1, ]
+
+```
+
+- Extraction of the first column, using index 1 while leaving the first dimension empty.
+
+```{r}
+mat[, 1]
+
+```
+
+- Extraction of a specific element, for instance the element in the first row and third column
+-
+```{r}
+
+mat[1, 3]
+
+```
+
+- Extraction of more than one element
+```{r}
+mat[1, c(1, 3)]
+
+mat[c(1, 2), ]
+
+mat[, c(1, 3)]
+
+```
 
 ## Tips and warnings {.unnumbered}
-
-Add attributes
-transpose
-coercing
-dim to extract the dimension
-
-## If you want to know more {.unnumbered}
+- matrix is used in more mathematical way, mathematical operation @sec-matrix_op and @sec-matrix_multi. It is customary to just use index integer to extract elements
+- We can also give a column name and row name to the data. However, it is not the most common way to use a matrix. It is more common to use data frame @sec-dataframe for that.
+- Coercion work here too, because it has to be homogenous, boolean < integer < numeric < character
+- Extract dimension with `dim()`
+- There are things that can be done with transpose
+-  Notice that there is no chapter on vector in basic mathematics, that is because, mathematically, a vector is simply a "one dimensional" matrix.

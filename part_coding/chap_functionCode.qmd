@@ -2,11 +2,9 @@
 
 {{< include ../preamble.qmd >}}
 
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 superf(x) = y
 :::
-
-## Concepts and intuitions {.unnumbered}
 
 A function is your best friend in R, but like learning language, you need to learn the vocabulary. In R, ~ 1200 functions are loaded when you start R. Fortunately, people rarely use at mose 150-200 functions in their daily use.
 
