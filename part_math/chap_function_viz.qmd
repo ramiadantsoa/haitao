@@ -44,7 +44,3 @@ Come up with a fancier function, we are extracting the properties: definition, a
 - maximum, inflexion, minimum, increasing, decreasing, you can just look at that in the figure.
 - Just plot and you are good to go.
 - You can make figures with discrete x, see @sec-discrete_continuous, @sec-difference, @sec-pmf
-
-## If you want to know more
-Implicit function
-parameteric plot

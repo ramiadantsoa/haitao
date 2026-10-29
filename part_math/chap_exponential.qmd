@@ -11,7 +11,7 @@ $\pi \sim 3.1415 \ldots$ and $e \sim 2.718 \ldots$
 $\pi \sim 3.1415 \ldots$ and $e \sim 2.718 \ldots$
 :::
 
-As multiplication is generalization of addition 2 + 2 + 2 = 3 x 2, power is a condense notation of multiplication 2 x 2 x 2 = 2^3 (see also @sec-operation).
+As multiplication is generalization of addition 2 + 2 + 2 = 3 x 2, power is a condense notation of multiplication 2 x 2 x 2 = 2^3 (see also @sec-matrixOperationMath).
 2^0 = 1
 At middle school, students started to learn about rules
 2^n x 2^m = 2^(n+m).

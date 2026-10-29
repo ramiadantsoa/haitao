@@ -1,11 +1,4 @@
 # Derivative {#sec-derivative}
-{{< include ../preamble.qmd >}}
-
-<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-It is just the speed!
-:::
-
-## Concepts and intuitions {.unnumbered} -->
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 It is just the speed!
@@ -33,16 +26,17 @@ Now, imagine we plot a function (see @sec-function_viz) about relationship betwe
 if x is time and y is position at a given time.
 Let's plot x0 and  x1 is one minute after x0. y0 and y1 position and y2 position after a minute
 ```{r echo = FALSE}
-dat <- data.frame(
-    car = as.factor(c(1, 1, 2, 2)),
-    time = c(0, 1, 0, 1),
-    location = c(0,1,0,2))
+# dat <- data.frame(
+#    car = as.factor(c(1, 1, 2, 2)),
+#    time = c(0, 1, 0, 1),
+#    location = c(0,1,0,2))
 
-ggplot(dat, aes(x = time, y = location, color = car)) +
-    geom_point() +
-    geom_line()+
-    theme_bw()
+#ggplot(dat, aes(x = time, y = location, color = car)) +
+#    geom_point() +
+#    geom_line()+
+#    theme_bw() -->
 ```
+
 What is then speed of car 1, 1km/minute = 60 km per hour, and the speed of car 2 is 2km/minute = 120 km per hour.
 
 Graphically, it is just yfinal - yinitial/ xfinal - xinitial.

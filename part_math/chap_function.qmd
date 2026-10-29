@@ -1,31 +1,43 @@
 # Functions {#sec-functionMath}
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
-input, transformation, output
+f(x) = y
 :::
 
-For most of us, hearing a function is traumatizing.
-But what most of us think is domaine de définition, dérivé étude des signes et tableau de variation etc.
-To a certain extent, most of us has lost what is the meaning/role of a function.
+Hearing a function is traumatizing.
+Many think of "domaine de définition, dérivé, étude des signes, et tableau de variation etc." To a certain extent, many has lost what is the true meaning of a function and its incredible use. The endgoal is the comprehend the correspondance between a function and a figure which will be expanded in [next chapter](@sec-function_viz). That is the geometric which is supposed to be intuitive.
 
-What is a mpanandro sandoka? Essentially a function is three things: the ingredient Which is called indepedent variable, the outcome which is called the dependent variable, and the transformer (the mathematical expression linking the two).
+In conjuction, the notion of function reappears through from a statistical perspective @sec-variable and programming perspective @sec-functionCoding. While they can defined it has core components: every object belonging to a specific domain (source set) and is paired to a unique object in a well defined codomain (target set). For mathematical functions, the pairing is doing via mathematical expression and the source and target set are both the set of real number.
 
-The first and most useful is the correspondance between a function and a figure, we will expand on that in @sec-function_viz. Visualizing it.
-The second is simply a process understanding how changing something will affect its outcome. We need three component the ingredient, the transformer, and the outcome.
-
-
-Well, you actually use functions everyday but in less quantitative way.
-For instance, informally we have a map of what time to you take the bus and the queue, or
-
-Mathematics aimed to formalize that, and what we have done most is that how we can transform a number to another number. so the ingredient is a number, the transformer is a mathematical operation and the outcome is another number.
-
-The simplest function is. y = a x  + b, if x = 1, then y = xx and if x = 2 then y = xx. And that's it...In other case, y = fancy function, you can always calculate the image.
-In other words, it creates an order pair (x, y) linked by .
-For instance, distance to destination (y) and time since departure (x).
-Function that transform the radius to its surface.
-A function that converts FMG to Ariary or
+A second important point that a function as a math problem, in this applied book, the intent is on the practical side and the goal is to find a function that relates two variables. For instance, change in average income as a function of age, rise in temperature as a function of CO2 emission, number of species as a function of forest size etc. While we loath the math expression, we will be thrilled if we find the expression that link the so we can choose which value to reach a desire outcome.
 
 ## Formal {.unnumbered}
+
+A function f is a rule that assigns to each element x in a set D exactly one element, called f(x), in a set E.
+The set D is called the domain of the function. The number f(x) is the value of f at x and is read 'f of x'. The range of f is the set of all possible values of f(x) as x varies throughout the domain, that is,
+$\text{Range} = \{f(x) \mid x \in D\}$
+The symbol that represents an arbitrary number in the domain of a function f is called an independent variable. The symbol that represents a number in the range of f is called a dependent variable.
+Mostly focus on R to R or N to R.
+
+## Examples {.unnumbered}
+- y = ax + b, is what is called a linear function, because it draws a line. x is the independent variable and y is the dependent variable.
+- Second degree polynomial which is used to trajectory a projectile
+- The elementary function include algebraic
+- Transendental: trigonometric, hyperbolic, and the exponential and logarithmic functions.
+- The probability density function of the normal distribution is a function that maps a real number x to the probability density at that point. The function is defined as:
+$$f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}$$
+
+
+## Tips and warning {.unnumbered}
+- Semantic: independent variable, input, covariates, x which is also the common notation x.
+- Semantic: dependent variable, output, response variable, y, most commonly denoted as y.
+- Semantic: function, application, map
+- The mathematical function is often denoted as f, g, h because they are meant to be symbolic too.
+- Functions Gamma Bessel Lambert, solution of equation
+- Implicit f(x, y) = 0, x^2 + y^2 = 0
+
+
+<!--
 see also sum and product notation for dummy variable.
 We need three components to define a function, the starting and ending sets and the actual mapping.
 It is written like f: X -> Y , x, y = f(x)
@@ -37,8 +49,9 @@ The rule is that for one x we get only one y.
 In calculs which we will deal here in one dimesion, we focus on X in R and Y in R.
 
 In modern calculus and mathematical analysis, a function is defined rigorously using the language of set theory. This modern definition eliminates early, ambiguous notions of a function being merely an "algebraic expression" or a "formula," establishing it instead as a precise mapping between two sets.
-Here are the rigorous formal definitions of a function as presented in foundational calculus and real analysis textbooks.
-
+Here are the rigorous formal definitions of a function as presented in foundational calculus and real analysis textbooks. -->
+<!--
+Citation
 1. The Standard Calculus Definition (The Mapping Approach)
 This is the standard definition found in foundational calculus textbooks. It defines a function as a rule that assigns elements between a domain and a codomain.
 
@@ -50,24 +63,4 @@ Publisher: Cengage Learning
 The Formal Definition
 In Chapter 1 ("Functions and Models"), Section 1.1, Stewart defines a function:
 
-Definition: "A function f is a rule that assigns to each element x in a set D exactly one element, called f(x), in a set E.
-The set D is called the domain of the function. The number f(x) is the value of f at x and is read 'f of x'. The range of f is the set of all possible values of f(x) as x varies throughout the domain, that is,
-$\text{Range} = \{f(x) \mid x \in D\}$
-The symbol that represents an arbitrary number in the domain of a function f is called an independent variable. The symbol that represents a number in the range of f is called a dependent variable."
-
-## Examples {.unnumbered}
-- y = ax + b, is what is called a linear function, because it draws a line. x is the independent variable and y is the dependent variable.
-
-- The probability density function of the normal distribution is a function that maps a real number x to the probability density at that point. The function is defined as:
-$$f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}$$
-
-- The combinatorial function that counts the number of ways to choose k elements from a set of n elements is defined as:
-$$C(n, k) = \frac{n!}{k!(n-k)!}$$ so we have a function that maps the pair (n, k) to the number of combinations.
-
-- A baker's ratio say 1:2:3 is a function that maps the amount of flour to the amount of sugar and butter. If you have 100g of flour, you will need 200g of sugar and 300g of butter. In this case, we have three indepdent variables, the amount of flour, sugar and butter and the outcome is the cake.
-
-## Tips and warning {.unnumbered}
-- In general, the independent variable is also called the input, and most commonly denoted as x.
-- The dependent variable is also called the output, and most commonly denoted as y.
-- The function is often denoted as f,g, h, etc.
-- More generally,
+Definition: " -->

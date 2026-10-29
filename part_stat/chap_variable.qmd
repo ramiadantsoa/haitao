@@ -1,13 +1,6 @@
-# Variable/Toetra {#sec-variable}
+# Variable {#sec-variable}
 
 {{< include ../preamble.qmd >}}
-
-<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-Average of what?
-:::
-
-## Concepts and intuitions {.unnumbered}
- -->
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 Average of what?
@@ -25,9 +18,9 @@ But, let's hurt the brain a bit, or be a bit more critical? What is a variable, 
 
 Let's say we are interested with the height of in one classroom (a well-defined population). We could collect the information by asking each individual how tall they are. We can then column with their height. Alternatively, we could use a tape and measure each individual. Since we are measuring height, is it the same variable or different ones? ... and to further complicate things, if we got exactly the same value for each pair of measurements, is it the same variable then?
 
-The simplest path is basically to tie the variable with how it is measured (that is, it is more than the just numbers in the columns). A variable is essentially a function. And for a function to make sense, we need f, x, and y (@sec-sec-function for the traditional function we are used to). In stat X is the population of sample of interest, f is and y is the set of value (that we put in the column).
+The simplest path is basically to tie the variable with how it is measured (that is, it is more than the just numbers in the columns). A variable is essentially a function. And for a function to make sense, we need f, x, and y (@sec-functionMath for the traditional function we are used to). In stat X is the population of sample of interest, f is and y is the set of value (that we put in the column).
 
-The immediate implication of that is when you think of a qualitative or nominal or quantitative variable, discrete or continuous, it is based on the value of the y etc. which will be the focus of next two chapters.
+The immediate implication of that is when you think of a qualitative or nominal or quantitative variable, discrete or continuous, it is based on the value of the codomain etc. which will be the focus of next two chapters.
 
 <!--
 
@@ -50,6 +43,10 @@ If you take an object/individual/element x from a population X, you can apply th
 
 
 ## Formal {.unnumbered}
+
+Warning, this mostly works for population...fix when sampling is involved. Full info vs distribution.
+
+
 Definition of a variable as a function, a variable is a function
 In statistics is often denoted by a capital letter X, Y, Z, and a "relaization" is denoted by a lowercase.
 
@@ -64,14 +61,14 @@ Here are the rigorous definitions from three foundational and widely used textbo
 1. The Applied Social Sciences Definition
 In statistics applied to the social, behavioral, and medical sciences, a variable is defined by its ability to change value across different observations in a dataset.
  -->
-Textbook Source
+<!-- Textbook Source
 Book: Statistical Methods for the Social Sciences (5th Edition, 2018)
 Author: Alan Agresti
 Publisher: Pearson
 
 The Definition
 In Chapter 2 ("Sampling and Measurement"), Agresti provides the standard, foundational definition used in applied data analysis:
-"A variable is a characteristic that can vary in value among subjects in a sample or population. Examples of variables are number of siblings, annual income, marital status, gender, and political party affiliation. The valid values a variable can take form its measurement scale."
+"A variable is a characteristic that can vary in value among subjects in a sample or population. Examples of variables are number of siblings, annual income, marital status, gender, and political party affiliation. The valid values a variable can take form its measurement scale." -->
 
 <!-- 2. The Comprehensive Biostatistics/Data Science Definition
 In biomedical and data science contexts, textbooks define a variable by contrasting it directly against a constant, framing it as an observational unit's attribute.
@@ -124,5 +121,3 @@ Sex determination temperature in turtle -->
 - Another complication is that variable but could be transformed. For instance, we collect age, and then later decide to group them into infant, juveline, adult etc. (see @sec-quantiative-variable and @sec-qualitative-variable). But that is not an issue if one thinks a variable as a function and not just the value it take...
 - Eventually, we will need a computer to do analyses. Because programs are built by programmers and not for statisticians, the terminology used are different. There will be three major types of variables: logical, string, numeric, integer etc. (see @sec-boolean, @sec-character,@sec-numeric) which are how we represent the various types of . This book also aims to bridge that.
 - Random variable is what we really need but we need to wait for now (later version of this handbook), and presented when we actually need it.
-
-## If you want to know more {.unnumbered}
