@@ -1,38 +1,22 @@
 # Greek letters {#sec-greek}
 
-<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-The one like the fish.
-:::
-
-## Concepts and intutions {.unnumbered} -->
-
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 The one like the fish.
 :::
 
-Once, a colleague gave a lecture on Lotka-Volterra equation to undergraduate students in the biology department, when a student asked: "what is alpha?", she spent a few minutes explaining what alpha represented until another student interjected and said: "it is the one like the fish". She wake up call that understanding greek letter is a problem. And to the majority it is the case, so let's clear that out.
+Once, a colleague gave a lecture on Lotka-Volterra equation to undergraduate students in the biology department. When a student asked: "what is alpha?", she spent a few minutes explaining what alpha represented until another student interjected and said: "it is the one like the fish". It was a wake up call that understanding greek letter is a problem. And to the majority it is the case, so let's clear that out.
 
-Do you recognize this? $(\zeta  + \xi)^2 = \zeta^2 + \xi^2 + 2\zeta\xi$
+This is unfamiliar $(\zeta  + \xi)^2 = \zeta^2 + \xi^2 + 2\zeta\xi$, yet the *identité remarquable* $(a + b) ^ 2 = a^2 + b^2 + 2ab$
 
-After staring for a while, one might realize that this is identité remarquable. In fact it exactly the same as $(a + b) ^ 2 = a^2 + b^2 + 2ab$.
+Roman notation is also impossible to do $XIII + IX = XXII$, while this $13 + 9 = 22$ is trivial
 
-This is the same as $13 + 9 = 22$ But this is the same as $XIII + IX = XXII$.
+A major barrier to is inability to go past beyond notation. While in the right context, using roman number feels normal when siting section in the bible. First because we are used to it, but second because we understand the specific choice (separete section and verse).
 
-The romans were not great with math notations.
-
-Eventually, it is a matter of notation, is there a reason to use roman letter in and only in the bible? Maybe because it clearly separate,
-
-Likewise, using greek letter has a convience, and as with roman numbers, you just need to learn them and understand them. Not need to use them
-
-<!-- In short, these are just symbols,  they function as any other notation
-$y = a x + b$ is $y =  \alpha x + \beta$.
-
-For some reasons, they might look more complicated, and to a certain extant more relevant. I am alpha and omega. Is less than I am a and z.
-But that is not the best way to use them. -->
+So as every notation: greek letter are used with convience (not a necessity), and as with roman numbers, habits, basic comprehension are elements to be comfortable with them
 
 ## Formal {.unnumbered}
 
-The only thing is just to learn the alphabet so here a quick summary There are upper and lower case. Here is the raw Markdown table formatted with explicit LaTeX syntax for the Greek characters, exactly as requested for easy copy-pasting:
+Here is dictionary of the greek alphabet in upper and lower case, the latin equivalent, and how to call them
 
 | Lower Case | Upper Case | Latin Equivalent | Name    |
 |:-----------|:-----------|:-----------------|:--------|
@@ -61,18 +45,9 @@ The only thing is just to learn the alphabet so here a quick summary There are u
 | $\psi$     | $\Psi$     | ps               | Psi     |
 | $\omega$   | $\Omega$   | o                | Omega   |
 
-: Dictionary of greek alphabet
-
-Latin browed from Greek so Greek is the original, when greek is different romans did not need them (like phi) or modified them, Delta, Lambda and sigma.
-
-
-
-The other extension is that they are used In physics, constants In math, pi is a recognizable In statistics, they represent something different. As a true parameter. This could facilitate
-
-Need more symbols
 
 ## Examples {.unnumbered}
-- I am $\alpha$ and $\Omega$, probably the most famous use of greek letters to mean beginning and the end.
+- "I am $\alpha$ and $\Omega$", probably the most famous use of greek letters to mean beginning and the end.
 - $\pi$ represents the number 3.14 etc We could also think that $\pi$ is the ratio between the circumference and diameter. So it represents a constant
 - $\sigma$ is used as the parameter for standard deviation for a normal distribution. The variance is $\sigma^2$.
 - $\Sigma$ and $\Pi$ are used for shortcut summation and product see @sec-sum.
@@ -81,11 +56,9 @@ Need more symbols
 - $\epsilon$ and $\omicron$ $\iota$ etc are something small
 
 ## Tips and warning {.unnumbered}
-- Use of greek letter in statistics: as simple dichotomy they use greek letter for true value and roman for sampled or estimated. Notice we use $N(\mu, \sigma)$ or Poisson($\lambda$) for these distribution. And
-- Use of greek letter: they are notation, and to remind the meaning: e.g. $\delta$ is for difference, $\mu$ is for mortallity or mean,
-- Stand out, think abouve covid variants.
-
-
-## if you want to know more {.unnumbered}
-
-See @sec-operation
+- Greek letters are used to show difference.
+  - In statistics, difference between true value ($\sigma$) for standard deviation of the [population](@sec-population) vs. $s$ for estimated value from the sample.
+  - In mathematics: greek could represend parameter while represent variable $\mu$ is for mortallity instead x, y, for variable and t for time.
+- Use of greek letter for paremeters in probability: $N(\mu, \sigma)$ or Poisson($\lambda$)
+- Use of greek letters for covid variants.
+- Latin browed letters from Greek. When the romans picked the letter, some of them were dropped because romans did not need them (like phi) or modified them, Delta, Lambda and sigma. while some kept the same.

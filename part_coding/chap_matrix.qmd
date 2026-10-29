@@ -6,7 +6,7 @@
 Tableau matematika!
 :::
 
-A matrix is a machine language implementation of a matrix in mathematics @sec-matrix.
+A matrix is a machine language implementation of a matrix in mathematics @sec-matrixMath.
 It is a rectangular object where each entry are identified by its row and column position.
 
 Reusing the analogy of stacked apartment as a vector @sec-vector, the matrix allows multiple apartments in each floor. So an apartment is now identified by the floor number and the order in that floor. And similar to a vector, a matrix needs to be homogeneous.

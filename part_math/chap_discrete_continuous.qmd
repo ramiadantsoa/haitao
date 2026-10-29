@@ -1,129 +1,30 @@
-# Discrete and continuous number{#sec-discrete_continuous}
-{{< include ../preamble.qmd >}}
+# Discrete and continuous number {#sec-discrete_continuous}
+
+<!-- {{< include ../preamble.qmd >}} -->
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 To count or to measure.
 :::
 
+The title of that chapter should be natural numbers $\mathbb{N}$ and real numbers $\mathbb{R}$. Those are sets that everyone are familiar with. Because the set of natural numbers is a subset of real numbers, one can basically use real number and ignore the set of natural numbers.
 
-One is the N and the other one is R.
-When one says I have 3 children, nobody asks is it a from N or from R, in fact N is included in R.
-So to a certain extent, we could just use R.
-That sort of worl conceptually.
-
-Why need distinction from a pure technical view: the type of mathematics, the type of statistics, and prgramming vary depending on your variable is in N or is in R. see @sec-variable.
-
-Why is it called discrete? Etymology of discrete not making a noise, the point of discrete here is poncutal, and thus is counting, and the tool you need is counting. Add the device?
-
-Why is it called continuous? think about time.
-
-In language, countable and uncountable so it is sort of natural.
-
-In grammar, countable and uncountable.
-Give examples.
-This is painful, but this means that grammar evolved to capture different things.
-In other words, we are somehow innate to differentiate them.
-It is only when we formalize that it becomes complicated.
-
-The world discrete aligns with the supposedly creation of mathematics.
-Counting object.
-You might use this device to count stuff. This is a discrete.
-The number you get is called an integer.
-And the set of all integer is called natural numbers (nombre entier). Related to counting.
-The problem is discrete terminology...Which translated in french could mean shy not making noise.
-
-As math advanced and we no longer need to count sheep, not everything is an integer.
-In some situations, you realize that not everything is an integer.
-Your height will rarely be exactly round.
-If you weight something it will not be an integer.
-This is related to measuring. To represent it you need a continuous line.
-
-Why do we need a disctinction? Well, in practice we could just use the set of real numbers.
-And in most cases, it might work.
-Unfortunately, we use different mathematics to work with the different set.
-
-For instance, add number from 1 to 5 in N, this is 1 + 2 + 3 + 4 + 5 = sum = 10.
-But what if I say, add number between 1 to 5 in this line? What does that mean.
-In principle, you could say, 1 + 2 + 3 + 4 + 5 = 10, and then 1.1 + 2.1 + 3.1 + 4.1  = xx. You quickly realize that if summed like that, the number will be infinite.
-See @sec-sum for how numbers are "summed", @sec-mean on how to calculate the mean and other stats, and from a math, see the difference betwen @sec-difference and @sec-differential
+So why such a title and why the distinction? The answer to the first question is because this book is about applied mathematics and more an emphasis about the properties than nomenclature. In other words, natural numbers has the properties of discrete, while real numbers is a continuous set. The difference between discrete and continuous will appear in the statistics parts (discrete and continuous variables @sec-quantitative-variable) and again implemented differently in [programming language](@sec-numeric).
 
 ## Formal {.unnumbered}
-The formal definition is useless for our purpose (unless you want to learn about topology).
-But you can look at it in this way, a discrete is a set number that is isolated
-In constrast a continuous is well continuous, pick a number and no matter how close you look it will always have a neighbor.
-In other world, we still use continuous to define a discrete.
-We can explicitly define the next term.
+The formal definition is useless in the purpose of this book (unless you want to learn about topology).
+It could describe in the following, a discrete discrete set, every number is isolated.
+In contrast, in a continuous, any number has a neighbor. And this is true no matter how close one looks.
+That is why a continuous number (real number) is represented by a continuous line where as natural number should be points.
+
 
 ## Examples {.unnumbered}
 - World of discrete numbers: Odd (2, 4, 6, 8 etc) and even (3, 5, 7, 9 etc.), prime numbers (3, 5, 7, 11, etc), and also the negative mirror.
 
 - World of continuous numbers: $\pi = 3.14\ldots$, $e = 2.71\ldots$, $\sqrt(2)$ and the fractions
 
-Discrete in sum and product @sec-sum
-
 ## Tips and warnings {.unnumbered}
--
-- Adding rational leads to irrational
-- Numbers are also called scalar
-
-## If you want to know more {.unnumbered}
-
-<!--
-Set of discrete number: number theory
-Only works with addition
-
-Set of continuous number
-Do we need to talk about complete corps or is that not enough.
-
-Topology..no need here?
-
-In pure mathematics, the terms "discrete" and "continuous" are defined precisely using point-set topology and metric spaces.
-While a discrete set is formalized by the absolute spatial isolation of its individual elements, a "continuous set" is rigorously referred to in mathematical literature as a continuum (or a connected space), defined by its lack of structural gaps or separations.
-
-1. The Rigorous Definition of a Discrete Set
-A set is considered discrete within a larger mathematical space if every point in the set can be insulated from all other points in that set by a small neighborhood. This means the set contains exclusively isolated points.
-
-Textbook Source
-Book: Topology (2nd Edition, 2000)
-Author: James Munkres
-Publisher: Prentice Hall
-
-The Formal Definition
-In Chapter 2 ("Topological Spaces and Continuous Functions"), Munkres formalizes a discrete subspace:
-
-"Let (X,T) be a topological space, and let A be a subset of X. The set A is said to be a discrete set (or discrete subspace) if the subspace topology inherited by A from X is the discrete topology.
-Equivalently, A is discrete if for every point x∈A, there exists an open set U∈T containing x such that:
-$U \cap A = \{x\}$
-
-That is, the intersection of U and A contains no points other than x itself."
-
-Metric Space Simplification
-If you evaluate this on a standard metric space (like the real number line R with Euclidean distance), the definition simplifies using a minimum distance buffer: A subset A is discrete if for every x∈A, there exists a radius ε>0 such that:
-$B_\varepsilon(x) \cap A = \{x\}$
-
-Example of a Discrete Set: The set of integers Z={…,−2,−1,0,1,2,…} is a discrete set on the real line because you can draw an open interval of radius ε=0.5 around any integer, and it will capture no other integers.
-
-
-
-1. The Rigorous Definition of a Continuous Set (A Continuum)
-In mathematics, there is no formal set property structurally named a "continuous set." Instead, the exact translation of an unbroken, continuous geometric object is called a continuum, which is defined rigorously using the criteria of topological connectedness and compactness.
-
-Textbook Source
-Book: General Topology (1968)
-Author: Kazimierz Kuratowski
-Publisher: Academic Press / Polish Scientific Publishers
-
-The Formal Definition
-In Chapter 4 ("Topology of Metric Spaces"), Kuratowski sets the international topological standard for a continuous space:
-"A continuum is defined as a non-empty, compact, and connected metric space (or a subspace of a metric space)."
-To break down why these two specific properties create a "continuous" space without gaps:
-
-A. Connectedness (No Separations)
-A space X is connected if it cannot be divided into two disjoint, non-empty open sets. Formally, X is connected if there do not exist two open sets U and V such that:
-
-$X = U \cup V, \quad U \cap V = \emptyset, \quad U \neq \emptyset, \quad V \neq \emptyset$
-
-B. Compactness (No Missing Limit Boundaries)
-A space is compact if every open cover has a finite subcover. In everyday standard spaces (R^n), this means the set must be completely closed and bounded (by the Heine-Borel Theorem), ensuring that it doesn't extend to infinity or drop boundary edge-points.
-Example of a Continuum: The closed interval [0,1] is a continuum because it is unbroken (connected) and contains all its boundaries (compact). Conversely, the rational numbers Q are not a continuum; they are "totally disconnected" because they are riddled with infinite gaps where the irrational numbers sit.
- -->
+- Semantic: whole number, natural number, integer while the later includes mirror negative
+- Discrete number is mostly used for counting and indexing (e.g. in summation and product @sec-sum)
+- Tools to are fundamentaly different.
+  -  For instance, using[difference equation](@sec-difference) to model when time is discrete and [differential equation](@sec-differential) when time is continuous.
+  -  In probabilites, a sum is used to compute the mean if the variable is discrete, an integral is used if the variable is continuous

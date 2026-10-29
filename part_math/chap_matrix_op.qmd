@@ -1,191 +1,127 @@
-# Matrix operation {#sec-matrix_op}
+# Matrix operation {#sec-matrixOperationMath}
 
-<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-Andry + Fenitra = Tolotra
-:::
-
-## Concepts and intutions {.unnumbered} -->
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 Andry + Fenitra = Tolotra
 :::
 
-Above is an example of using mathematical notation.
-You should know by now that the equal is not really equal in mathematics, and the addition is merely a notation.
-Yet, they actually have a meaning.
+A reccurent theme in this first part of the book is that symbols and terms are the same but have different meaning. A variable is used in mathematics, in [statistics](@sec-variable), or a [function](@sec-functionMath) in mathematics and a [function](@sec-functionCoding) in programming. There are similarities but also nuanced meanings.
 
+Above is an example of using mathematical notations (addition and equality) which differ from strict mathematical definition. Yet, they actually have a meaning, maybe not as rigorous as in mathematics.
 
-So matrix is a rectangle, or a different kind of object at least in mathematics.
-As far as we know we have numbers, they are also calles scalar and they are essentially a 1 x 1 matrix.
+In the previous a matrix is new kind of object, and it is worth defining what kind of operation can be done. The general idea is to generalize some of the arithmetic operation. What does it mean adding two matrices: Matrix 1 + Matrix 2 or multiplying two matrices Matrix 1 x matrix 2.
 
-What does it mean adding Matrix 1 + Matrix 2 or Matrix 1 per matrix 2. What is multiplication and addition
+This chapter focuses element wise operation.
 
-In this section, we do the simplest that is Matrix 1 is just a scalar. Or combining matrices with same dimension.
-Retain the original property of
+Let's reuse the example in [this chapter](@sec-matrixMath)
 
-Let's reuse the example in the chapter before @sec-matrix
-Each row represents a purchaser, and a column a fruit
 $$
-20 5 10 5
-1  0.5 0.5 0
-0 1 1 0.2
+A =
+\begin{pmatrix}
+    6 & 3 & 0.5 \\
+    3 & 1 & 0 \\
+    0 & 10 & 0 \\
+    1 & 0 & 2 \\
+\end{pmatrix}
+$$
+amd multiply with 2
+
+$$
+2 \times A =
+\begin{pmatrix}
+    2 \times 6 & 2 \times 3 & 2 \times 0.5 \\
+    2 \times 3 & 2 \times 1 & 2 \times 0 \\
+    2 \times 0 & 2 \times 10 & 2 \times 0 \\
+    2 \times 1 & 2 \times 0 & 2 \times 2 \\
+\end{pmatrix}
 $$
 
-Let's call it M, if we want to convert the unit to grams we need to multiply each number by 1000.
-This is a natural definition of matrix. Notice we multiply everything by the same number, it is called a scalar multiplication
-
-In other words, a M * a number is distributiong, same with M + a,
-The most important thing is that adding is elementwise and you can think of generalization of traditional number addition, and multiplication
+This element-wise work (well-defined) when we combine a matrix with scalar or matrix of same dimension wi, the element-wise operation is mostly arithemetic operation for each element of the grid. All the propreties in traditional arithmetic operation with numbers naturally apply.
 
 ## Formal {.unnumbered}
 
-Add compact notation. M = {aij}
+Consider a number $x$, a matrix $A = \{a_{i,j}\}$ and $B = \{b_{i,j}\}$ of dimensions $m$ and $n$.
+
+**The scalar operation are**
+
+- Addition a scalar $x + A =  \{x + a_{i,j}\}$ for all i and j
+- Multiplication a scalar $x \times A =  \{x \times a_{i,j}\}$ for all i and j
+- Subtract a scalar $x - A =  \{x - a_{i,j}\}$ for all i and j
+- Divide a scalar $ x / A =  \{x / a_{i,j}\}$ for all i and j
+
+It should be obvious that $A + x$, $A - x$, $A \times x$ and $A / x$ are defined in the same manner
+
+**Two matrices have the same dimensions**
+
+- Addition a scalar $A  + B =  \{a_{i,j} + b_{i,j}\}$ for all i and j
+- Subtract a scalar $ A - B =  \{a_{i,j} - b_{i,j}\}$ for all i and j
+- Divide a scalar $ x / A =  \{x / a_{i,j}\}$ for all i and j
 
 
-Adding a scalar x, M + x = {x + aij}, same with basic operation
-Adding a matrix M means M + 1 = M were each entry is added 1
+For a multiplication, a special notation is used
+$A  \circ B =  \{a_{i,j} \times b_{i,j}\}$ and is called a Hadamard product.
 
-Multiplying a scalar means that M * 2 = where each entry is multiplied by 2
-
-Adding two matrices
-This is a special case, and the simplest is matrix of same dimension, so that M + L = adding each entry
-
-Multiply two matrices (Hadamard product)
-
-The advantage is that it is commutative
-M + 1 = 1 + M
-M * 2 = 2 * M
-
-It is also associative
-M + L + K = M + K + L
-
-And distributive
-
-This is a desired feature where the + and * have kept their original meaning.
-
+The equivalent division, called Hadamard quotient, also exists and is noted: $A  \circ B^{-1} =  \{\frac{a_{i,j}}{b_{i,j}}\}$
 
 ## Examples {.unnumbered}
 
-What about addition, we can perform a similar addition, like before we can add a number (not sure what it means here) but each element by 10.
-If one does the same shopping the day after
-
+- With the example above adding 1 but in practice it does not have trivial intepretation
 $$
-10
-10
-20
-$$
-Put in the same coordinate, and then add elementwise.
-$$
-10 0 0 0
-10 0 0 0
-20 0 0 0
+A + 1 =
+\begin{pmatrix}
+    6 + 1 & 3 + 1 & 0.5 + 1\\
+    3 + 1 & 1 + 1 & 0 + 1 \\
+    0 + 1 & 10 + 1 & 0 + 1\\
+    1 + 1 & 0 + 1 & 2 + 1
+\end{pmatrix}
 $$
 
+- Notice that multiplying the matrix by 2 above is the same of having the same purchase.
+
+- Assume we want to conver the matrix A into kg. Assume 1 banana is 0.2 kg, one toko is 0.5 kg, and one kapoka is 0.3 kg. Constructing a matrix B
+
 $$
-20 5 10 5
-1  0.5 0.5 0
-0 1 1 0.2
+B =
+\begin{pmatrix}
+    0.2 & 0.5 & 0.3 \\
+    0.2 & 0.5 & 0.3 \\
+    0.2 & 0.5 & 0.3 \\
+    0.2 & 0.5 & 0.3
+\end{pmatrix}
 $$
- +
+The conversion is done by doing a Hadamard product of A and  b
+
 $$
-10 0 0 0
-10 0 0 0
-20 0 0 0
-$$ =
-$$
-20 + 10 5 10 5
-1 + 10  0.5 0.5 0
-0 + 10 1 1 0.2
+A \circ B =
+A =
+\begin{pmatrix}
+    6 & 3 & 0.5 \\
+    3 & 1 & 0 \\
+    0 & 10 & 0 \\
+    1 & 0 & 2 \\
+\end{pmatrix}
+\circ
+\begin{pmatrix}
+    0.2 & 0.5 & 0.3 \\
+    0.2 & 0.5 & 0.3 \\
+    0.2 & 0.5 & 0.3 \\
+    0.2 & 0.5 & 0.3
+\end{pmatrix}
+=
+
+\begin{pmatrix}
+    6 \times 0.2 & 3 \times 0.5 & 0.5 \times 0.3 \\
+    3 \times 0.2 & 1 \times 0.5 & 0 \times 0.3 \\
+    0 \times 0.2 & 10 \times 0.5 & 0 \times 0.3 \\
+    1 \times 0.2 & 0 \times 0.5 & 2 \times 0.3
+\end{pmatrix}
 $$
 
-
-Hadamard  product
 
 ## Tips and warning {.unnumbered}
-- New object, new rule, you can come up with new rules (as long as there is a use to it).
-- There are other matrix product (e.g. Kronecker or Hadamard), leave at your discretion for now, we might need them later and will be defined
+- Mathematics well defined.
+- Because matrix in data, these operation are and the goal is to find how they are implement in R. For instance, the $\circ$ in Hadamard product is not a standard character so a different symbol might be used.
+- There are other matrix product (e.g. Kronecker), leave at your discretion for now, we might need them later and will be defined
 - You might run into issues, when you apply them in coding might not be as straighforwad.
-- We could define subtraction in similar way, careful with division so that we don't divide by zero in any of the entry
-
-## if you want to know more {.unnumbered}
-Linear algebra
-<!--
-In linear algebra and array-based computing, matrix operations are categorized by how they manipulate elements: scalar-to-matrix interactions, standard matrix vector-space transformations, and element-wise arrays.
-Here are the rigorous textbook definitions for scalar multiplication, matrix addition, element-wise multiplication (Hadamard product), and element-wise addition, along with their source material and LaTeX formats.
-
-1. Scalar Multiplication
-Scalar multiplication is an operation that takes a scalar c from a field F and an m×n matrix A, scaling every individual entry of the matrix by that scalar constant.
-
-Textbook Source
-Book: Linear Algebra (4th Edition, 2002)
-Authors: Stephen H. Friedberg, Arnold J. Insel, and Lawrence E. Spence
-Publisher: Pearson
-AbeBooks
-
-The Formal Definition
-In Chapter 1 ("Vector Spaces"), Section 1.3, the authors define scalar multiplication alongside the structural vector space properties of matrices:
-Definition: "Let A and B be m×n matrices over a field F, and let c∈F. The scalar product cA is the m×n matrix M whose entries are defined by
-
-$(cA)_{ij} = c A_{ij}$
-
-for each 1≤i≤m and 1≤j≤n."
-
-
-1. Matrix Addition
-Standard matrix addition is defined for two matrices of the exact same dimensions. It combines the matrices by summing their corresponding components. This operation acts as the vector addition component required to qualify the set of matrices Fm×n as a formal vector space.
-Khan Academy
-
-Textbook Source
-Book: Linear Algebra (4th Edition, 2002)
-Authors: Stephen H. Friedberg, Arnold J. Insel, and Lawrence E. Spence
-Publisher: Pearson
-
-The Formal Definition
-From the same structural framework in Chapter 1, Section 1.3:
-
-Definition: "Let A and B be m×n matrices over a field F. The sum A+B is the m×n matrix C whose entries are defined by
-$C_{ij} = (A + B)_{ij} = A_{ij} + B_{ij}$
-for each 1≤i≤m and 1≤j≤n."
-LaTeX Format
-Code snippet
-
-1. Element-Wise Multiplication (The Hadamard Product)
-Standard matrix multiplication (AB) is defined via row-column composition. When matrices need to be multiplied directly element-by-element instead, it is referred to rigorously in linear algebra as the Hadamard Product (or Schur product) to distinguish it from the standard matrix product.
-Wikipedia
-
-Textbook Source
-Book: Matrix Analysis (2nd Edition, 2013)
-Nick Higham
-Authors: Roger A. Horn and Charles R. Johnson
-Publisher: Cambridge University Press
-
-The Formal Definition
-In Chapter 5 ("Special Types of Matrices"), Section 5.5, the authors formalize this entry-wise multiplication:
-Definition: "Let A=[aij] and B=[bij] be m×n matrices.
-The Hadamard product of A and B is denoted by A∘B (or A⊙B), and is the m×n matrix defined by entry-wise multiplication:
-www-fourier.univ-grenoble-alpes.fr
-$A \circ B = [a_{ij} b_{ij}]$
-That is,
-$(A \circ B)_{ij} = A_{ij} B_{ij}$ for each 1≤i≤m and 1≤j≤n."
-[Image diagram showing the Hadamard product of two matrices multiplying position by position]
-LaTeX Format
-Code snippet
-Code snippet
-
-1. Element-Wise Addition
-In pure linear algebra, "matrix addition" and "element-wise addition" are identical operations. By definition, standard matrix addition is already an element-wise mapping.
-However, in computational linear algebra, applied data science, and array programming (such as NumPy or MATLAB), "element-wise addition" includes a concept called broadcasting, which allows a matrix and a single vector (or scalar) to be added together entry-by-entry across an entire dimension.
-
-Textbook Source
-Book: Introduction to Applied Linear Algebra: Vectors, Matrices, and Least Squares (2018)
-Authors: Stephen Boyd and Lieven Vandenberghe
-Publisher: Cambridge University Press
-
-The Formal Definition
-In Chapter 6 ("Matrices"), Section 6.2, the authors define standard addition and note its element-wise identity, while contextualizing its multi-dimensional computing extensions:
-
-Definition: "Two matrices of the same size can be added together. The result is a matrix of the same size obtained by adding the corresponding elements of the two matrices. [...]
-In computer science implementations, an extension called element-wise addition with broadcasting is defined when adding a matrix A∈R^m×n and a column vector b∈R^m.
-
-The resulting matrix C=A+b is an m×n matrix defined by adding the vector to every column of the matrix:
-$C_{ij} = A_{ij} + b_i$ for all 1≤i≤m and 1≤j≤n." -->
+- Careful with division as
+- Element-wise power could also be defined in the same way.

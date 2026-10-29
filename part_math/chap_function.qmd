@@ -1,7 +1,7 @@
-# Functions {#sec-function}
+# Functions {#sec-functionMath}
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
-Mpanandro sandoka
+input, transformation, output
 :::
 
 For most of us, hearing a function is traumatizing.
@@ -71,37 +71,3 @@ $$C(n, k) = \frac{n!}{k!(n-k)!}$$ so we have a function that maps the pair (n, k
 - The dependent variable is also called the output, and most commonly denoted as y.
 - The function is often denoted as f,g, h, etc.
 - More generally,
-
-
-## if you want to know more {.unnumbered}
-
-<!--
-
-2. The Set-Theoretic Definition (Strict Mathematical Rigor)
-To achieve complete logical rigor and remove the informal word "rule," advanced real analysis textbooks define a function strictly as a specific subset of a Cartesian product (a set of ordered pairs).
-
-Textbook Source
-Book: Principles of Mathematical Analysis (3rd Edition, 1976)
-Author: Walter Rudin
-Publisher: McGraw-Hill
-
-The Formal Definition
-In Chapter 1 ("The Real and Complex Number Systems"), Rudin formalizes the definition of a function (interchangeably called a mapping):
-
-Definition: "Let A and B be two sets. A function f from A into B (denoted $f: A \to B$) is a subset of the Cartesian product A×B such that for every x∈A, there is a unique y∈B for which the ordered pair (x,y)∈f. If (x,y)∈f, we write
-$f(x) = y$
-or x↦y. The set A is the domain of f, and the set of all y∈B for which (x,y)∈f for some x∈A is called the range of f."
-
-
-1. The Geometric Calculus Test: The Vertical Line Test
-In the context of single-variable calculus, functions are typically evaluated by graphing them on the Cartesian coordinate plane R2. The requirement that each input maps to exactly one output translates to a fundamental geometric axiom.
-
-Textbook Source
-Book: Calculus (Volume 1, 2nd Edition, 1967)
-Author: Tom M. Apostol
-Publisher: John Wiley & Sons
-
-The Axiom
-Apostol notes that a geometric curve in the xy-plane represents a function if and only if it passes the Vertical Line Test:
-"A geometric curve in the xy-plane is the graph of a function y=f(x) if and only if no vertical line intersects the curve more than once."
-If a vertical line x=c intersects a curve at two distinct points, say (c,d) and (c,e), then the input c would map to two distinct outputs (d and e), violating the set-theoretic requirement of uniqueness (f(c)=d and f(c)=e). -->

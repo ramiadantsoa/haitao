@@ -1,4 +1,7 @@
 # Basic mathematics
+
+Demistify math.
+
 Math is the foundation of all quantitative methods.
 And since this is about quantitative method, it is natural that I start with that.
 The existence of this part is written so that we have a basis.

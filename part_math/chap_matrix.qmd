@@ -1,149 +1,94 @@
-# Matrix {#sec-matrix}
-<!--
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-Not the movie by Keanu Reaves
-:::
-
-## Concepts and intutions {.unnumbered} -->
-
+# Matrix {#sec-matrixMath}
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 Not the movie by Keanu Reaves
 :::
 
-Matrix is the famous movie by Keanu Reaves.
-The appeal to popularity is sometimes frustrating, almost like thinking about Madagascar and people think of lions and zebra.
+While french can be creative when translating movie titles, they kept Matrix the movie by Keanue Reaves. With the popularity of the series, when talking about matrix. The frustration is familiar to malagasy people when people first think about the animated series, lions and zebra, before their island. Matrix, a mathematical object, existed well before the movie series.
 
-Like Madagascar existed before, matrix since early age of mathematics.
-And in its simple form, it is just a rectangle/grid filled with numbers. A compact way to store  data
+A matrix could simply be a way fo storing numbers.
 
+Rabe, Rakoto, Sanda, Dora when to market and here are what they bought
+Rabe bought 6 bananas, 3 toko strawberries, and 0.5 kapoaka of voatsinefy.
+Rakoto bought 3 bananas, 1 toko of strawberries, no voatsinefy
+Sanda bought only 10 toko of strawberries.
+Finally, Dora bought 1 banana and 2 kapoaka of vaotsinefy.
 
-Rabe bought 10 kg of banana, 5 kg of melon and 10 kg mangos and 5 kg of strawberries
-Rakoto bought 1 melon (0.5 kg), 1 mango (0.5kg) , 1 kg of banana
-Lala bought 1 big melon (1kg), 2 mango (1kg), and 1 toko of strawberries (~ 0.2 kg)
-
-This information is arrange in a matrix
-
-Each row represents a purchaser, and a column a fruit
+This information is arrange in a matrix, each row represents a purchaser, and a column a fruit
 $$
-20 5 10 5
-1  0.5 0.5 0
-0 1 1 0.2
+\begin{pmatrix}
+    6 & 3 & 0.5 \\
+    3 & 1 & 0 \\
+    0 & 10 & 0 \\
+    1 & 0 & 2
+\end{pmatrix}
 $$
 
-Alternatively, we can arrange with a purchase, it does not matter as long as we specify what is on the row and what is on the column
+Alternatively, we can structure the data
 $$
-20 1 0
-5 0.5 1
-10 0.5 1
-5 0 0.2
+\begin{pmatrix}
+6 & 3 & 0 & 1 \\
+3 & 1 & 10 & 0 \\
+0.5 & 0 & 0 & 2
+\end{pmatrix}
 $$
-This is what is called a transposing a matrix.
 
+The conversion from the first matrix to the second one is called transposing.
 
 ## Formal {.unnumbered}
 
-Add M = {aij}
+An $m \times n$ matrix is a rectangular array of elements in a set $\Omega$ having m rows and n columns. It is denoted as:
 
-Matrix with row and column,
-upper case or bold dimensions, diagonal
-Entries or cells lower case
-They are mainly numbers.
+$$
+A =
+\begin{pmatrix}
+    a_{11} & a_{12} & \dots & a_{1n} \\
+    a_{21} & a_{22} & \dots & a_{2n} \\
+    \vdots & \vdots & & \vdots \\
+    a_{m1} & a_{m2} & \dots & a_{mn}
+\end{pmatrix}
+$$
 
-a vector is a one line or one row matrix
+where the element $a_{i,j} \in \Omega $ denotes the entry in the ith row and jth column of A. The domain of the row index i is {1,2,…,m} and the domain of the column index j is {1,2,…,n}. $\Omega$ could be natural or real number or anything else.
 
+In mathematics, a vector is special case of matrix, consisting of with one column.
 
 ## Examples {.unnumbered}
-Here are few examples of matrix
 
-Null is 0 everywhere
+- As square matrix is with the same number of row and column
 
-A diagonal has zero for all element other than the diagonal, it is often noted diag(1,2,3) --make it compact
+$$
+\begin{pmatrix}
+6 & 3 & 0 \\
+3 & 1 & 10 \\
+0.5 & 0 & 0
+\end{pmatrix}
+$$
 
-A matrix can be triangular,
-123
-045
-006
+- A diagonal matrix has all element of the diagonal equals to 0, it is often noted diag()
+$$
+\begin{pmatrix}
+a & 0 & 0 \\
+0 & b & 0 \\
+0 & 0 & c
+\end{pmatrix}
+$$
 
-A matrix can be symmetric
-123
-245
-356
+- A matrix can be symmetric where the values are the same the diagonal, ie $a_{i,j} = a_{j,i}$
+$$
+\begin{pmatrix}
+a & 1 & x \\
+1 & b & -1 \\
+x & -1 & c
+\end{pmatrix}
+$$
 
 ## Tips and warning {.unnumbered}
-- It is a mathematical object, all $a_{ij}$ should be a number. That is entries like male female, etc, is not in that realm.
-- Note a matrix by a capital letter, sometimes in bold
-- A common for biologist community matrix is species.
-- Coordinates in a new system
-- When we compute the distance between stuff, we get a symmetric matrix
+- Semantic: element, entry,
+- A matrix is often denoted by a capital letter, sometimes in bold to differentiate from value which are mostly lower case.
+- A community matrix for ecologist have the number of species per site
+- A distance matrix is a square and symmetric matrix computed after say community matrix. Each element is pairwise distance between two sites. Since distance between site A and site B is the same as the distance between site B and site A. The element on the diagonal is the distance between the same site and could be 0 or 1 depending on the distance represent similarity or dissimilarity.
 - From a mathematical matrix, a column matrix is different than a row matrix (1 x n) is not the same as (n x 1) although one can transpose it.
-- Matrix is more than a rectangle storing data, it is the foundation of linear algebra...and sometimes have magical properties. We will in due course.
-
-<!-- Do not confuse matrix with data frame, although matrix requires same types as entries.
-Storing data vs. performing mathematical operation on it.
-there are ways to go around but not in this section of the book.
-
-1 x n  is different with n x 1
-
-## if you want to know more {.unnumbered}
-Linear algebra
-
-In linear algebra, a matrix is formally defined as a rectangular array of scalars organized into rows and columns. This array is a structured way to represent and manipulate linear transformations between vector spaces.
-
-Depending on the mathematical framework, it can be defined as a structured double-indexed set or as a formal function mapping indices to a field.
-
-1. The Standard Set-Theoretic/Double-Index Definition
-This is the standard definition found in foundational linear algebra textbooks. It constructs a matrix by organizing elements of a field into a grid defined by two structural dimensions: rows (m) and columns (n).
-
-Textbook Source
-Book: Linear Algebra (4th Edition, 2002)
-Authors: Stephen H. Friedberg, Arnold J. Insel, and Lawrence E. Spence
-Biblio
-Publisher: Pearson
-AbeBooks
-
-The Formal Definition
-In Chapter 1 ("Vector Spaces"), the authors formalize an m×n matrix over a field F (such as the real numbers R or complex numbers C):
-"An m×n matrix over a field F is a rectangular array of elements of F having m rows and n columns. It is denoted as:
-
-$A = \begin{pmatrix} a_{11} & a_{12} & \dots & a_{1n} \\ a_{21} & a_{22} & \dots & a_{2n} \\ \vdots & \vdots & & \vdots \\ a_{m1} & a_{m2} & \dots & a_{mn} \end{pmatrix}$
-
-where aij ∈F denotes the entry in the ith row and jth column of A. The domain of the row index i is {1,2,…,m} and the domain of the column index j is {1,2,…,n}."
-
-The vector space containing all such matrices is rigorously denoted as M^m×n(F) or F^m×n
-
-2. The Functional Definition (Strict Algebraic Rigor)
-
-To avoid relying on visual grids or spatial arrangements, abstract algebra and advanced linear algebra textbooks define a matrix strictly as a mathematical function mapping pairs of coordinates to scalars.
-
-Textbook Source
-Book: Advanced Linear Algebra (3rd Edition, 2008)
-Author: Steven Roman
-Publisher: Springer Graduate Texts in Mathematics
-
-The Formal Definition
-In Chapter 0 ("Preliminaries"), Roman strips away the rectangular notation to present the strict functional baseline:
-"Let S and T be finite, nonempty sets with ∣S∣=m and ∣T∣=n. A matrix of size m×n over a field F is a function:
-A:{1,2,…,m}×{1,2,…,n}→F
-
-The value of the function A at the pair (i,j) is denoted by a_ij
-​or A_i,j and is called the (i,j)-entry of the matrix."
-
-3. The Core Linear Algebraic Context
-In the broader scope of linear algebra, a matrix is rarely studied purely as a static data structure. It is rigorously tied to a linear transformation between two finite-dimensional vector spaces.
-
-
-Textbook Source
-
-Book: Linear Algebra Done Right (4th Edition, 2024)
-Sheldon Axler
-Author: Sheldon Axler
-Publisher: Springer Graduate Texts in Mathematics
-
-The Formal Definition
-In Chapter 3 ("Linear Maps"), Axler defines the matrix of a linear map T:V→W explicitly by how it tracks the coordinates of basis vectors:
-"Suppose T∈L(V,W) and v1,…,vn is a basis of V and w1,…,wm is a basis of W. The matrix of T with respect to these bases is the m×n matrix M(T) whose entries Ai,j are defined by:
-
-$T v_j = \sum_{i=1}^{m} A_{i,j} w_i$
-"
-This definition implies that every matrix corresponds exactly to a unique linear coordinate adjustment mapping elements from an n-dimensional domain to an m-dimensional codomain. -->
+- Matrix is more than a rectangle storing data, it is the foundation of linear algebra...and sometimes have magical properties. Maybe in future chapters
+- A [data frame](@sec-dataframe) is also a rectangular object mostly used in data-science. The columns could be a different type (numbers, text, etc.). There is no equivalent of data frame in mathematics.
+- The huge field of linear algebra in mathematics is essentially understand the properties of matrix.

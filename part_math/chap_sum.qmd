@@ -1,132 +1,81 @@
 # Sum and product and dummy variable {#sec-sum}
 
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 Acronyms in mathematics!
 :::
 
-## Concepts and intutions {.unnumbered}
+When talking with people at the ministry in conservation , they are found of acronyms, PAEP etc. While they are fluent with that, they often do not realize that outsiders have no idea of what they are talking about.
 
-Condensing is a natural, see in @sec-operation that multiplication is a condensation of addition.
-So 2 + 2 + 2 = 3 * 2, essentially created a symbol to say things are repeating.
+Conversely, when mathematicians are using acronyms (symbols) to condense...it is universally unaccessible. Mathematicians (too) are found of creating new symbols to condense a repeated expression. Multiplication is a notation used so not repeat addition. So 2 + 2 + 2 = 3 * 2. Another example is `n! = 1 x 2 x 3 x ... (n - 1) x n`. And the list is long.
 
-For compact, notation are used here.
-For instance, we had 1 is short for factorials.
-The sum ($\Sigma$) and product $\Pi$ notations have been create for repetation see @sec-greek that $\Sigma$ is S for sum and $\Pi$ is P for product.
-Sadly, in astro-polenesian group of language, words are lost.
+Two fundamental notation this scare ecologits are the summation notation ($\Sigma$) and the product $\Pi$. Maybe because it is a greek notation but also because it is often followed by more expressions.
 
-1 + 2 + 3 + 4 = 10
-when faced with enough repetition, it is convenient to create a new one to condense it.
-For sums the idea is to use the S in greek letter Sigma and have
-$\sigma_{i = 1}^ 4 = 1 + 2 + 3 + 4$.
+Following the greek, one observation is that $\Sigma$ is the greek of equivalent of capital S (short of sum), and $\Pi$ is the equivalent of capital P (short for product). They are used when there is a repeating patterns in the expression that one wants to add or multiplity.
 
 
 ## Formal {.unnumbered}
+Here is one general form of a summation:
 
-$$\Sigma_{i = i_0}^n a_i = a_1 + a_2 + \cdot + a_n $$
+$$
+\sum_{i = n_0}^{n_f} a_i = a_{n_0} + a_{n_0 + 1} + \cdots + a_{n_f - 1} + a_{n_f}
+$$
 
 Let's break down (always a good idea when looking at math notation).
-- Sum is for sum
-- i is what it is a dummy variable that is discrete @sec-discrete_continuous
-- 1 is start with and increment by one and ends when one reached n
-- the term a_i is something that depends on i, and it could be anything.
 
-The product is just replacing + by *
-$$\Pi_{i = i_0}^n a_i = a_1 \times a_2 \times \cdot \times a_n $$
+- $\sum$ is summation symbol
+- $i$ is a dummy variable and is found under the summation and in the expression, here $a_i$
+- $n_0$ represent the first expression in the summation. i.e, replace $i$ in $a_i$ by $a_{n_0}$
+- $n_f$ is the last expression which ends the summation
+
+For the product, just replace $+$ by $\times$
+$$\prod_{i = n_0}^{n_f} a_i = a_{n_0} \times a_{n_0 + 1} \times \cdots \times a_n $$
+
+The hidden/implied part is that one start by $n_0$, then add 1 until the dummy variable is  equal to $n_f$. It is a sequence of discrete numbers $[ n_0, \ldots, n_f ]$.
 
 ## Examples {.unnumbered}
-- $\Sigma_{i=0}^7 i = 0 + 1 + 2 + \cdots + 6 + 7$
-- $\Sigma_{i=0}^7 i^2 = 0^2 + 1^2 + 2^2 + \cdots + 6^2 + 7^2$
+- Identifying where the dummy variable is in the expression
+  $$
+    \sum_{i = n_0}^{n_f} i^a = {n_0}^a + \cdots + {n_f}^a
+  $$
+
+- Defining a argument of a function instead of index
+  $$
+    \sum_{i = n_0}^{n_f} f(i) = f(n_0) + \cdots + f(n_f)
+  $$
+
+Concrete example OF summation
+- $$\sum_{i=0}^7 i = 0 + 1 + 2 + \cdots + 6 + 7$$
+
+- $$ \sum_{i=3}^7 i^2 =  3^2 + 4^2 + \cdots + 6^2 + 7^2 $$
 -
 $$
-    \Sigma_{i=0}^7 sin(\frac{1}{i+1}) = sin(\frac{1}{1+ 0}) + sin   (\frac{1}{ 1+ 1}) + \cdots + sin(\frac{1}{7+1})
+    \sum_{i=0}^7 sin(\frac{1}{i+1}) = sin(\frac{1}{1+ 0}) + sin   (\frac{1}{ 1+ 1}) + \cdots + sin(\frac{1}{7+1})
 $$
-- $\Pi_{i = 1}^n i = 1 \times 2 \times 3 \times \cdots \times (n-1) \times n = n!$ because it is used so often than it warrants another notation
-- $\Pi_{i=0}^7 i^2 = 0^2 \times 1^2 \times 2^2 \times \cdots \times 6^2 \times 7^2$
+
+Same example but replacing $\sum$ with $\prod$.
+
+- $\prod_{i = 1}^n i = 1 \times 2 \times 3 \times \cdots \times (n-1) \times n = n!$ because it is used so often than it warrants another notation
+- $\prod_{i=3}^7 i^2 = 3^2 \times 4^2 \times  \cdots \times 6^2 \times 7^2$
+
 - The summation can be infinite $\Sigma_{i = 0}^\infty \frac{1}{i!} = \frac{1}{0!} + \frac{1}{1!} +\frac{1}{2!} + \cdots = 2.71\ldots = e$
 
 
 ## Tips and warning {.unnumbered}
-- A form of recurrence, i should be discrete. @sec-discrete_continuous and won't work if continuous
-- When facing, just try with the first few terms
+- Whenever facing a complicated expression, break it down piece by piece.
+- Sometimes it helps to take a pen and paper and try with the first few terms
 - Dummy variable: the i is dummy and can be replaced by anything
  $$
-    \Sigma_{i = 1}^n \frac{1}{i!} = \Sigma_{j = 1}^n \frac{1}{j!} = \Sigma_{banana = 1}^n \frac{1}{banana!}
+    \sum_{i = 1}^n \frac{1}{i!} = \sum_{j = 1}^n \frac{1}{j!} = \Sigma_{k = 1}^n \frac{1}{k!}
  $$
-- Another definition is using set, but it ithe other one is using set, w in Omega. $\sum_{\omega \in \Omega}$
-- $\Sigma_{j=1}^2 \Sigma_{i=1}^3 i \times j = 1 \times 1 + 2 \times 1 + 3 \times 1 + 1 \times 2  + 2 \times 2 + 3 \times 2$  do the inner loop first, for a fixed j, once it is done, replace the j, and redo the inner loop
-- Those symbols are not but same concept as using a for loop in programming
-- What out when upper is infinite things might get wierd, so stay in the finite realm.
+- Better to denote the dummy by a single letter.
+- The sequence should also be defined by a set, in that case the set should be defined explicitly. $\Omega = [2, 9, 21, 25]$, then
+  $$
+   \sum_{\omega \in \Omega} a_\omega = a_2 + a_9 + a_{21} + a_{25}
+  $$
 
+- There could be double or more summation. First start with the inner summation while keeping the outer fixed. Then change the outer.
+  $$
+    \sum_{j \in \{a, b\}} \sum_{i=1}^3 i ^ j =
+   ( 1 ^ a + 2 ^ a + 3 ^ a )+ (1 ^ b  + 2 ^ b + 3 ^ b)
+    $$.
 
-## if you want to know more {.unnumbered}
-xxxx
-
-
-<!--
-Yes. In formal mathematics, capital Sigma (∑) and capital Pi (∏) are not just informal shorthand notation for writing out long additions or multiplications. They are rigorously defined using finite recursion (for finite bounds) and limits of sequences (for infinite bounds).
-Here are the formal definitions from foundational textbooks in discrete mathematics and mathematical analysis.
-
-1. The Finite Definition (Defined by Induction/Recursion)
-To define summation and product notation rigorously for a finite number of terms, mathematicians use mathematical induction. This approach defines the base case (usually 1 or 0 terms) and then defines every subsequent step based on the previous one.
-
-Textbook Source
-Book: Concrete Mathematics: A Foundation for Computer Science (2nd Edition, 1994)
-Authors: Ronald L. Graham, Donald E. Knuth, and Oren Patashnik
-Publisher: Addison-Wesley
-
-The Formal Definition of Summation (Σ)
-Let $a_i$ be a sequence of numbers. For an integer index i and bounds m,n∈Z where n≥m, the finite $\sum_{i=m}^{m} a_i$ is defined recursively as:
-Base Case:
-$\sum_{i=m}^{m} a_i = a_m$
-
-Inductive/Recursive Step:
-$\sum_{i=m}^{n} a_i = \left( \sum_{i=m}^{n-1} a_i \right) + a_n$
-​for n>m
-
-The Formal Definition of Product (Π)
-
-Similarly, the finite product $\prod_{i=m}^{m} a_i$ ​is defined recursively as:
-Base Case:​
-$\prod_{i=m}^{m} a_i = a_m$
-
-Inductive/Recursive Step:
-$\prod_{i=m}^{n} a_i = \left( \sum_{i=m}^{n-1} a_i \right) \cdot a_n$
-for n>m
-
-1. The Formal Definition of the "Empty" Sum and Product
-What happens if the upper bound is strictly less than the lower bound (e.g., ∑i=1^0 ai)? This is known as an empty sum or empty product, and their values are rigorously defined by the algebraic structures they operate within.
-The Formal Definition
-To preserve the recursive identities shown above for all integers, algebra establishes the following definitions:
-The Empty Sum is defined to be the additive identity:
-$\sum_{i=m}^{m−1} a_i = 0$
-
-The Empty Product is defined to be the multiplicative identity:
-$\prod_{i=m}^{m−1} a_i = 1$
-1. The Infinite Definition (Defined by Limits)
-When the upper bound of a summation or product is infinity (∞), the notation transitions from a simple arithmetic evaluation into a calculus operation. Infinite sums and products are defined strictly as the limit of a sequence of partial results.
-
-Textbook Source
-Book: Principles of Mathematical Analysis (3rd Edition, 1976)
-Author: Walter Rudin
-Publisher: McGraw-Hill
-
-Infinite Summation (Infinite Series)
-
-In Chapter 3 ("Numerical Sequences and Series"), Rudin formalizes the infinite sum. Let {an} be a sequence. We construct a new sequence of partial sums {SN} defined by:
-
-SN=∑i=1^Nai
-
-​The infinite sum is then rigorously defined as the limit of that sequence of partial sums:
-
-$\sum_{i=1}^{\infty} a_i = \lim_{N \to \infty} S_N$$
-​
-If this limit exists and equals a finite number S, the series is said to converge. If the limit does not exist, the series diverges.
-Infinite Product
-Similarly, for an infinite product, we construct a sequence of partial products {PN} defined by:
-PN=∏i=1^N ai
-
-The infinite product is rigorously defined as the limit of those partial products:
-$\prod_{i=1}^{\infty} a_i = \lim_{N \to \infty} P_N$
-
-​
-(Note: In advanced analysis, an infinite product is only said to converge if this limit exists and is nonzero, because a limit of zero can occur trivially if just a single term is zero). -->

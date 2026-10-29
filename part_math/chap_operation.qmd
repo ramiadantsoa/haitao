@@ -1,4 +1,4 @@
-# Operation {#sec-operation}
+# Arithmetic operation {#sec-arithmeticMath}
 
 
 <!-- ## Concepts and intutions {.unnumbered} -->
@@ -13,31 +13,21 @@ Few years ago, there was an intense debate on several social media platforms abo
 :::
 
 One camp would argue that the answer is one, the other camp is convinced that it is sixteen.
-It is a nice allegory of While these cliving/divide are what fuels those platforms, if there is one field where is mathematics.
+This is an example viral: simple enough to engage everyone, two possible answers to create camps and fuel discussion. The question is mostl likely formulated to confuse.
+But it is still simple arithmetic operation that a primary schooler should be able to answer.
 
-
-So what is the correct answer?
-
-
-Obviously, the question is formulated to bring confusion.
-But this is still simple arithmetic
-The main is when in doubt, clarify.
-
-Maybe this reflects on society that people make up their own rule and try to impose.
-This might foundation of society, but in mathematics...unless you want to invent a new sort of maths.
-That would be anarchy...
-So let's revise the rules here.
+So what is the correct answer? Let's review below the basic rules of arithmetic
 
 ## Formal {.unnumbered}
-Here is a quick review
+Quick review of order operation
 
-- Parenthesis has priority, inner to outer
+- Parenthesis has priority. Inner-est to outer-most
 
-- Power over multiplication or division
+- Power over multiplication and division
 
-- Multiplication and division over addition
+- Multiplication and division over addition and substraction
 
-- Left to right if same $2 / 2 \times 3$ and $2 - 2 + 3$
+- Left to right if equal priority
 
 
 ## Examples {.unnumbered}
@@ -46,32 +36,20 @@ Here is a quick review
 3. $2^{2^2} = 2^4 = 16$
 4. $\frac{1}{\frac{2}{3}} \neq \frac{\frac{1}{2}}{3}$
 5. Unecessary for associativity $(1 + 1) + 1 = 1 + (1 + 1)$ and $(1 \times 2) \times 3 = 1 \times (2 \times 3)$
-6. Necessary when non-communtative $1 - 2 + 3 = (1 - 2) + 3 \neq 1 - (2 + 3)$ or
-7. More examples
-
-$$
-     \frac{1}{2} \times 3 = (\frac{1}{2}) \times 3 \neq \frac{1}{2 \times 3}
-$$.
-
-Notice that using $\frac{.}{.}$ clarifies things.
-
-8. Continued fraction:
-$$
-1 + \frac{7}{6 + \frac{5}{4 + \frac{3}{2 + 1}}}
-$$
+6. Necessary parentheses when non-communtative $1 - 2 + 3 = (1 - 2) + 3 \neq 1 - (2 + 3)$ or
 
 ## Tips and warning {.unnumbered}
-- Don't jump steps
+- Solution to the problem is above `8 ÷ 2 (2 + 2)`
+  - re-write to `8 ÷ 2 x (2 + 2)`$,
+  - do parenthese first `8 / 2 x 2`
+  - Equal priority, so go left to right `4 x 2 = 8`. To convince yourself about priority, think of 2 - 2 + 3 (same  would you do 2 + 3 first).
+- Three notations for multiplication `x`, `.` and nothing ` ` as in `a b`. While the latter makes compact it is also a source of confusion. One classic error in coding is forgetting to explicitly add a [multiplication symbol](@sec-matrixOperationCoding)
+ - There are also three notations for division `÷`, `/` and $\frac{}{}$. The latter can clarify priority and avoid usage of parentheses. Unfortunately, that symbol is not available in R language.
+     $\frac{1}{2} \times 3 = \neq \frac{1}{2 \times 3}$ instead of $1/2 \times 3$
 - Just add parenthesis when in doubt even it might be unnecessary--this can be important especially when coding.
-- Associativity
-- Commutativity
 - The rule of power over multiplication and multiplication over addition should be natural. In fact, multiplication by definition is a generalization of addition: $2 + 2 + 2 + 2 = 2 \times 4$. Thus if you reverse and $2 * 4 + 3 = 2 + 2 + 2 + 2 + 3$.
 - The same applies to power $2 ^ 3 = 2 \times 2 \times 2$. This if you revers  $2^3 \times 3 = 2 \times 2 \times 2 \times 3$ and $2^3 + 3 = 2 \times 2 \times 2 + 3$
-- Notation for multiplication $2 \times 3$ or  $2 . 3$ or 2 * 3 and the "worst one is implied" as in $a b$ which is often used in notation and less in number format $2 3$ sounds weird. Same with the 8 ÷ 2 (2 + 2) = 8 ÷ 2 4 sort of pointless.
-- Notation for division $2/3$ or $\frac{2}{3}$ or 2 ÷ 3. Using the second often clarifies stuff.
 
-<!-- ## If you want to know more {.unnumbered}
-Books on arithmetic
-History of arithmetic -->
+
 
  

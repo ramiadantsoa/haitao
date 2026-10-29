@@ -1,133 +1,172 @@
-# Matrix multiplication {#sec-matrix_multi}
-<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-Asio facture azafady!
-:::
+# Matrix multiplication {#sec-matrixMultiplicationMath}
 
-## Concepts and intutions {.unnumbered} -->
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 Asio facture azafady!
 :::
 
-Matrix multiplication is another away of doing operation with a matrix (see @sec-matrix_op for other one) and it is the most used one. Because mathematician is also called  it multiplication (using the same language) and used dot operation, and needed a sort of algorithm to compute it (doesn't derive from traditional), it is feared/cause of stress of some groups. But again, this is the most used one, the most practical.
+Wasn't matrix multiplication defined in the previous [chapter](@sec-matrixOperationCoding)? Yes but it is specifically called Hadamard product or element-wise multiplication. But also as stated in the first sentence of that chapter, same terms and same symbols are used and meaning depends on the context. Here, another multiplication, but this is **the most used and useful matrix multiplication**.
 
-Yet, matrix multiplication is something that we encounter all the time.
-If banana is 3000 Ar/kg, Melon is 5000 Ar/kg, Mango is 5000Ar/Kg and strawberries is 20000Ar/kg and Rabe bought 10 kg of banana, 5 kg of melon and 10 kg mangos and 5 kg of strawberries. The total amount is trivial to compute.
+Matrix multiplication is something that we encounter all the time. Consider again the purchase matrix earlier. Rabe bought 6 bananas, 3 toko strawberries, and 0.5 kapoaka of voatsinefy. Rakoto bought 3 bananas, 1 toko of strawberries, no voatsinefy. Sanda bought  10 toko of strawberries. Finally, Dora bought 1 banana and 2 kapoaka of vaotsinefy.
 
-In the example above, is a matrix multiplication between. a (1 x 4 = a1 a2 a3 a4) matrix with a (4 x 1 p1 p2 p3 p4) matrix and so the matrix product is a1 p1 + a2 p2 + a3 p3 + a4 p4.
-If we reuse the @sec-matrix above, with that rule, the price that each person paid is
-
-M. price =
 $$
-20 5 10 5
-1  0.5 0.5 0
-0 1 1 0.2
-$$ .
-$$
-3000
-5000
-5000
-20000
+A = \begin{pmatrix}
+    6 & 3 & 0.5 \\
+    3 & 1 & 0 \\
+    0 & 10 & 0 \\
+    1 & 0 & 2 \\
+\end{pmatrix}
 $$
 
-One crucial, is that the number of columns should equal the number of row, but think about it for a minute and you will see that the number of item (in the column) should match the number of row in the second
+Now assume one banana is 500 Ar, a toko of strawberries is 1000, and a kapoaka of voatsinefy is 2000 Ar. To get how much Rabe paid, we do
 
-The condition here is that the number of columns is the same as the number of rows in the second one.
+$500 \times 6 + 1000 \times 3 + 2000 \times 0.5 = 7000$, for Rakoto
+$500 \times 3 + 1000 \times 1 + 2000 \times 0 = 2500$, for Rabe etc. This is a natural calculation when get ask for a check or a receipt. This is process is condensed with a matrix multiplication
+
+$$
+A \cdot P
+$$
+where
+$$
+P =
+\begin{pmatrix}
+    500 \\
+    1000 \\
+    2000
+\end{pmatrix}
+$$
+
+One important condition is that the multiplication makes sense only the the number of column in the first matrix is the same as the number of rows in the second matrix--otherwise there is no pairs to multiply.
 
 ## Formal {.unnumbered}
-Define formally, for it to work, dimension should match, so the number columns on the first (left) matrix should match the number of rows on the right(right).
-Spend a few and you realize that it makes sense.
 
+Matrix multiplication is an operation that takes two matrices and produces a single new matrix by taking the dot product of rows from the first matrix and columns from the second.
 
-Identity matrix is one where diagonal is 1 and the rest is zero, and is noted by .
+For matrix multiplication to be possible, the number of columns in the first matrix must equal the number of rows in the second matrix.
 
-This is the neutral element in matrix multiplication.
+If Matrix $A$ has dimensions $m \times n$ and Matrix $B$ has dimensions $n \times p$:
 
+Their product $C = A \cdot B$ is a matrix of dimension $m \times p$.
+Each entry  $c_{i,j}$ in the product matrix $C$ represents the dot product of the *$i$-th row of $A$* and the *$j$-th column of $B$*:
+
+$$c_{i,j} = \sum_{k=1}^{n} a_{i,k} \cdot b_{k,j} = a_{i,1}b_{1,j} + a_{i,2}b_{2,j} + \dots + a_{i,n}b_{n,j}$$
+NOTE: A good example to practice [summation notation](@sec-sum).
 
 ## Examples {.unnumbered}
-- Shopping in Europe, switch to Euro
+- The price of fruit differ among markets, in another market, the price of the fruits were and we combine both price in matrix with two columns
 $$
-20 5 10 5
-1  0.5 0.5 0
-0 1 1 0.2
-$$ .
+Q =
+\begin{pmatrix}
+    500 & 600 \\
+    1000  & 800 \\
+    2000 & 2500
+\end{pmatrix}
+$$
 
+The product $ A \cdot Q$ will give the total for each market
+$$ A \cdot Q
+\begin{pmatrix}
+    6 & 3 & 0.5 \\
+    3 & 1 & 0 \\
+    0 & 10 & 0 \\
+    1 & 0 & 2 \\
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+    500 & 600 \\
+    1000  & 800 \\
+    2000 & 2500
+\end{pmatrix} =
+\begin{pmatrix}
+  7000 & 7250 \\
+  2500 & 2600 \\
+  10000 & 8000 \\
+  4500 & 5600
+\end{pmatrix}
 $$
-1
-2
-3
-4
-$$
+
 
 - Multiplication with identity matrix
+  $$ A \cdot ID
+\begin{pmatrix}
+    6 & 3 & 0.5 \\
+    3 & 1 & 0 \\
+    0 & 10 & 0 \\
+    1 & 0 & 2
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 1
+\end{pmatrix}
+=
+\begin{pmatrix}
+    6 & 3 & 0.5 \\
+    3 & 1 & 0 \\
+    0 & 10 & 0 \\
+    1 & 0 & 2
+\end{pmatrix}
+$$
+This is like multiplying by one in the arithmetic operation.
 
-- We could create a 4 x 2 columns for the Malagasy price and Euro price and get two columns.
 
-- An ecological example. Say we now that altidude, ph and
+- An ecological example. Assume we have a species, and grow them in at three experimental settings with varies by temperature, humidity, and light. The conditions in the three sites are given by
 
-- Inverse of a matrix
+$$
+\begin{pmatrix}
+1 & 1 & 2 \\
+3 & 4 & 5 \\
+6 & 7 & 8 \\
+10 & 1 & 1
+\end{pmatrix}
+$$
 
+And species responds to
+
+$$
+\begin{pmatrix}
+1  \\
+3  \\
+6
+\end{pmatrix}
+$$
+we can get the change in biomass as
+
+$$
+\begin{pmatrix}
+1 & 1 & 2 \\
+3 & 4 & 5 \\
+6 & 7 & 8 \\
+10 & 1 & 1
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+1  \\
+3  \\
+6
+\end{pmatrix}
+\begin{pmatrix}
+0  \\
+0  \\
+0  \\
+1
+\end{pmatrix}
+$$
+
+In practice we know the A and C, and try to estimate the regression coefficient.
 
 ## Tips and warning {.unnumbered}
+
+- There is no division, when the inverse however exist, we can multiply by the inverse.
+- Inverse of a matrix
+Think about a null matrix, there is no second matrix to multiply with
 - A linear model is essentially a A x + b = y is a matrix multiplication A times
 - It is essential to understand that multiplication, and one can do it by hand, however, R programming can do that with almost not cost (@sec-matrixOperationCoding).
-- The inverse of a matrix does not necessarily exist. Think about a null matrix, there is no second matrix to multiply with
-- There is no division, when the inverse however exist, we can multiply by the inverse.
-- This a result is a linear combination of the second one, this is also called that m atrix is a linear function
 
 
-<!-- ## if you want to know more {.unnumbered}
-Linear algebra Had
+More mathematica properties
 
-Inverse of a matrix and existence
-If determinant is not null. Refer to other to calculate that. -->
-<!--
-In linear algebra, matrix multiplication is formally defined as an algebraic operation that composes two matrices to produce a third. Crucially, it is not performed element-by-element (which is instead called the Hadamard product). Rather, it is defined specifically to match the mathematical composition of linear transformations.
-Because of this, matrix multiplication is only possible if the number of columns in the first matrix matches the number of rows in the second matrix.
-Here are the rigorous definitions from two foundational textbooks in linear algebra.
-
-1. The Component-Wise Definition
-This definition explicitly defines how to calculate each individual entry of the resulting matrix using the rows of the first matrix and the columns of the second matrix.
-
-Textbook Source
-Book: Linear Algebra (4th Edition, 2002)
-Authors: Stephen H. Friedberg, Arnold J. Insel, and Lawrence E. Spence
-Publisher: Pearson
-
-The Formal Definition
-In Chapter 2 ("Linear Transformations and Matrices"), Section 2.3, the authors formalize the product of two matrices:
-Definition: "Let A be an m×n matrix and B be an n×p matrix. The product AB is an m×p matrix C whose (i,j)-entry is
-
-$C_{ij} = \sum_{k=1}^{n} A_{ik} B_{kj}$
-​
-for each 1≤i≤m and 1≤j≤p."
-
-1. The Structural Linear Map Definition (The "Why")
-To understand why matrix multiplication is defined this way, advanced textbooks define it through the lens of linear maps. Matrix multiplication is literally the coordinate-representation of functional composition.
-
-Textbook Source
-Book: Linear Algebra Done Right (4th Edition, 2024)
-Author: Sheldon Axler
-Publisher: Springer Graduate Texts in Mathematics
-
-The Formal Definition
-In Chapter 3 ("Linear Maps"), Section 3C, Axler derives the definition of matrix multiplication by composing two linear transformations, T:U→V and S:V→W:
-Definition: "Suppose A is the matrix of S (with respect to a basis of V and a basis of W) and B is the matrix of T (with respect to a basis of U and a basis of V). Then the product AB is defined to be the matrix of the product ST (with respect to the basis of U and the basis of W).
-
-[...] Setting this up algebraically: If A is an m×n matrix and B is an n×p matrix, then AB is the m×p matrix whose entry in row i, column j, is equal to
-
-$\sum_{k=1}^{n} A_{i,k} B_{k,j}$
-"
-
-
-1. Structural Constraints and Properties
-Based on these formal definitions, matrix multiplication carries unique structural properties:
-
-Compatibility Rule: If matrix A has size m×n and matrix B has size n×p, the product AB is well-defined because the inner dimensions (n) match. The resulting matrix has the dimensions of the outer terms: m×p.
-
-Non-Commutativity: Unlike scalar multiplication, matrix multiplication is generally not commutative ($AB \neq BA$). Even if both products are well-defined square matrices, they typically yield entirely different linear transformations.
-Associativity: Matrix multiplication is strictly associative, meaning $(AB)C = A(BC)$, mirroring the associativity inherent to function composition.
-LaTeX Format for Properties
-Code snippet
-
-Code snippet -->
+- **Non-Commutative:** In general, $A \cdot B \neq B \cdot A$. The order of multiplication matters.
+- **Associative:** $(A \cdot B) \cdot C = A \cdot (B \cdot C)$
+- **Distributive:** $A \cdot (B + C) = A \cdot B + A \cdot C$
