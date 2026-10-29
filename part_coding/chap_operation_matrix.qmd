@@ -88,7 +88,7 @@ vec + c(1, 2, 3, 4, 5)
 - R is a vectorial, so when applied a function, it uses an element-wise stuff.
 
 ```{r}
-another_vec <- (1, 10, 100)
+another_vec <- c(1, 10, 100)
 
 sin(another_vec)
 

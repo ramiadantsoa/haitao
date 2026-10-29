@@ -23,7 +23,7 @@ With the most basic calculator, it shows the calculation (top line) as well as t
 Same concept, different interface.
 :::
 
-A console functions exactly like a calculator @fig-console:
+A console functions exactly like the interface of a calculator @fig-console:
 
 1. Type your operation after the ">" symbol.
 2. Press enter/return to evaluate
@@ -87,8 +87,8 @@ print("Hello world")
 ```
 
 ## Tips and warnings {.unnumbered}
+- The kernel is under the hood
 - Semantic: Commandline interface, terminal, console moslty mean the same thing.
-- Semantic: script, prompt, code, commands are synonymous. It is essentially means the collection of instructions that you want the programs to evaluate
 - Unlike a calculator, you don't write your prompt in the (see next @sec-ide)
 - You cannot modify evaluated prompt.
 - Your prompt can be incomplete, the program cannot get the answer and is asking you to add more input to run the (+) as well as a blinking black cursor.
