@@ -98,7 +98,15 @@ Example 3:
 A good idea to The arguments are there and the values. It is the same for all help file in R.
 
 
-- Implicity and explicit argument:  say we want to plot altitude vs number of species
+- Implicity and explicit argument: used with matrix construction
+
+```{r}
+mdat <- matrix(c(1, 2, 3, 11, 12, 13), nrow = 2, ncol = 3, byrow = TRUE,
+               dimnames = list(c("row1", "row2"),
+                               c("C.1", "C.2", "C.3")))
+```
+
+
 
 
 ```{r}

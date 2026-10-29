@@ -1,4 +1,4 @@
-# Arithmetic operation {#sec-arithmetic}
+# Arithmetic operation {#sec-arithmeticCoding}
 
 {{< include ../preamble.qmd >}}
 

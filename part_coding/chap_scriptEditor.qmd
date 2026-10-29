@@ -3,13 +3,22 @@
 {{< include ../preamble.qmd >}}
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
-Soraty eto
+Maquillage
 :::
 
 ## Formal {.unnumbered}
+SIRI: A script editor is a specialized text interface used by programmers to write, edit, and save code files. Unlike an interactive console that runs code immediately line-by-line, a script editor allows you to write out a full sequence of instructions, review them, and save them as a permanent file before running them.
 
+GEMINI: Core Features of a Script Editor
+Syntax Highlighting: Colors keywords, variables, strings, and comments differently so code structure is easy to scan.
+Auto-Completion & Intellisense: Suggests function names, variable names, and syntax options as you type.
+Line Numbers & Indentation: Organizes code blocks visually and identifies exact lines when errors occur.
+Bracket & Parenthesis Matching: Highlights corresponding opening and closing brackets (), {}, [] to prevent syntax errors.
+Code Execution / Integration: Allows developers to highlight lines of code and send them directly to a console or terminal for immediate execution (e.g., hitting Ctrl + Enter in RStudio or VS Code).
 
 ## Examples {.unnumbered}
+
+POSITRON
 
 ## Tips and warnings {.unnumbered}
 
