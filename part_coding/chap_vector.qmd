@@ -160,6 +160,7 @@ rpois(300, 4)
 
 ```{r}
 #| echo: true
+
 room <- c(width = 15, height = 12)
 attributes(room)
 

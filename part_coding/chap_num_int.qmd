@@ -19,6 +19,7 @@ While it is important to know these distinctions, in general R is very relaxed a
 To force R to read a number as integer, we add L after the number
 
 ```{r}
+#| echo: true
 my_favorite_integer <- 24L
 
 ```
@@ -27,6 +28,7 @@ A numeric is generally a number with decimals. The decimal separator in programm
 
 
 ```{r}
+#| echo: true
 a_real_number <- 24.022
 ```
 
@@ -34,6 +36,7 @@ a_real_number <- 24.022
 If the L is not specificed, R automatically assume that the value is numeric
 
 ```{r}
+#| echo: true
 my_favorite_integer <- 24
 
 ```

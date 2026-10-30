@@ -138,9 +138,9 @@ format:
       - cosmo
       - brand
     html-math-method: mathjax
-  # pdf:
-  #   toc: true
-  #   documentclass: scrreprt
+  pdf:
+    toc: true
+    documentclass: scrreprt
   # docx:
   #   toc: true
   #   number-sections: true
