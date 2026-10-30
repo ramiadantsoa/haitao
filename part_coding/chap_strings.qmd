@@ -13,7 +13,8 @@ Unlike number we cannot perform a arithmetic operation, you cannot multiply or d
 
 ## Formal {.unnumbered}
 A string is a type of object, and is anything within quotation marks `""`
-Each character is the encoded in a binary format 0 1. There are differnt types of encoding.
+When a string is display in the terminal it shows also the quotation mark
+<!-- Each character is the encoded in a binary format 0 1. There are differnt types of encoding. -->
 
 ## Examples {.unnumbered}
 
@@ -77,6 +78,8 @@ paste(word1, word2, word1, word2)
 
 ## Tips and warnings {.unnumbered}
 - Semantic: string, character, factor.
+- `""` vs `''`
+- String vs variable
 - Unlike we can use any special character
 ```{r}
 "There is problem in usin$ spécial, & < is not ! or 1 2 3"

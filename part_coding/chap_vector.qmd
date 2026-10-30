@@ -1,16 +1,8 @@
 # Vector {#sec-vector}
 
-<!-- {{< include ../preamble.qmd >}}
-
-::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-::: -->
-
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 Rihana faha-firy?
 :::
-
-
-## Concepts and intuitions {.unnumbered}
 
 In past, people live in huts in a hamlet but as space becomes a constraint, stacking houses vertically becomes an economic solution. The direct implication is that instead of having address for say ten homes, now you have the address of the building and the floor number.
 
@@ -64,6 +56,7 @@ test[2]
 - Accessing multiple index by using `vector of integer`
 
 ```{r}
+#| echo: true
 # a vector of vector
 
 test[c(1, 2)]
@@ -74,6 +67,8 @@ test[c(2, 1)]
 - Constructing from more vectors
 
 ```{r}
+#| echo: true
+
 c(test, 1)
 
 vec1 <- c(1, 4, 5)
@@ -85,6 +80,8 @@ vec_combined <- c(vec1, vec2)
 - Deleting one or more element.
 
 ```{r}
+#| echo: true
+
 # remove the first element
 vec_combined[-1]
 
@@ -130,6 +127,7 @@ str(c(TRUE, FALSE, 4))
 
 str(c(1L, 2L, 4))
 ```
+
  - Numeric to character
 
 ```{r}
@@ -148,6 +146,7 @@ str(c(TRUE, 1.2, "text"))
 a <- 1
 a
 ```
+
 - when you print many elements, you will see [1] [38] etc on the left side of the output. It is displaying index so the one on the right is simply. Note that it depends on the size of your console, so a narrow vs wide one.
 
 ```{r}

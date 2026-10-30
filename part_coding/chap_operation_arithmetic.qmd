@@ -12,7 +12,7 @@ R is at first a calculator and the only reason of this chapter is to translate a
 
 - Addition: symbol `+`  as in `a + b`
 - Soustraction: symbol `-` as in `a - b`
-- Multiplication: symbol `* ` as in `a * b`. This is the first we need to pause, this differs from $a \times b, \; a b, \; and a.b$ which are mathematical notation not programming
+- Multiplication: symbol `* ` as in `a * b`. This is the first we need to pause, this differs from $a \times b, \; a b, \; \text{and} a.b$ which are mathematical notation not programming
 - Division: symbol `/` as in  `a / b`, this is also different from $a:b and \frac{a}{b}$ which are also math not programming
 - Power: symbol `^`, `a^b`.
 - Parenthesis: symbol `()` as in `(a + b)^2` Although careful because () is also used for function @sec-functionCoding. Also, {}  and [] are not substitute of parentheses.
@@ -20,6 +20,8 @@ R is at first a calculator and the only reason of this chapter is to translate a
 ## Examples {.unnumbered}
 
 ```{r}
+#| echo: true
+
 1 + 1
 
 1 * 2 # caution as people just do a b or a x b

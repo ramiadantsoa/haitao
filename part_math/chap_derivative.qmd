@@ -25,18 +25,157 @@ $f'(a) = \lim_{x \to a} \frac{f(x) - f(a)}{x - a}$
 
 ## Examples {.unnumbered}
 - Derivative with respect to which variable?
+
 - Derivative is zero for a constant
+
+
 - Derivative is the slope
 - Plot a function and its derivative
 
+
 ## Tips and warnings {.unnumbered}
-- Works for continuous variable, it does not make sense for discrete although we can increase.
 - Different notation: df/dt, f', f.
 - Second and more derivative
-- Sign is what matters...but could also be quantitative.
-- Partial derivative
-- Derivative equal zero: special case.
-- The derivative (see @sec-functionMath) is just another function so that when you plug a number you can see the value
+- Partial derivative: variable and parameters.
+- The derivative (see @sec-functionMath) is just another function so that when you plug a number you can see the value .Derivative as a number and derivative as a function
+- Derivative and a function
+
+```{r}
+
+#-----------------------------
+# 1. Define functions
+#-----------------------------
+
+pdf <- function(x) {
+  dnorm(x)
+}
+
+derivative <- function(x) {
+  -x * dnorm(x)
+}
+
+#-----------------------------
+# 2. Generate values
+#-----------------------------
+
+x <- seq(-4, 4, length.out = 1000)
+
+y_pdf <- pdf(x)
+y_derivative <- derivative(x)
+
+# Derivative extrema
+x_max_deriv <- -1
+x_min_deriv <- 1
+
+y_max_deriv <- derivative(x_max_deriv)
+y_min_deriv <- derivative(x_min_deriv)
+
+#-----------------------------
+# 3. Plot PDF
+#-----------------------------
+
+plot(x, y_pdf,
+     type = "l",
+     lwd = 2,
+     col = "blue",
+     xlab = "x",
+     ylab = "Density",
+     xlim = c(-4, 4),
+     ylim = c(-0.25, 0.45),
+     xaxs = "i",
+     yaxs = "i",
+     las = 1)
+
+# Add derivative
+lines(x, y_derivative,
+      lwd = 2,
+      col = "darkorange")
+
+#-----------------------------
+# 4. Reference lines
+#-----------------------------
+
+# Horizontal zero line
+abline(h = 0, col = "black")
+
+# Vertical line at x = 0
+abline(v = 0, lty = 2, col = "grey40")
+
+# Horizontal tangent to PDF at maximum
+abline(h = pdf(0), col = "blue", lty = 3)
+
+#-----------------------------
+# 5. Derivative = 0 annotation
+#-----------------------------
+
+points(0, 0, pch = 19, col = "darkorange")
+
+text(0.12, 0.035,
+     labels = "Derivative = 0",
+     pos = 4, cex = 0.8)
+
+text(0.15, pdf(0),
+     labels = "Horizontal tangent",
+     pos = 4, col = "blue", cex = 0.8)
+#-----------------------------
+# 6. Steepest parts of PDF
+#-----------------------------
+
+# Maximum derivative: steepest increasing part
+points(x_max_deriv, y_max_deriv,
+       pch = 19, col = "darkorange", cex = 1.2)
+
+segments(x_max_deriv, 0,
+         x_max_deriv, y_max_deriv,
+         col = "darkorange", lty = 2)
+
+text(x_max_deriv, y_max_deriv + 0.045,
+     labels = "Maximum derivative\nSteepest increase",
+     col = "darkorange", cex = 0.8)
+
+# Minimum derivative: steepest decreasing part
+points(x_min_deriv, y_min_deriv,
+       pch = 19, col = "darkorange", cex = 1.2)
+
+segments(x_min_deriv, 0,
+         x_min_deriv, y_min_deriv,
+         col = "darkorange", lty = 2)
+
+text(x_min_deriv, y_min_deriv - 0.055,
+     labels = "Minimum derivative\nSteepest decrease",
+     col = "darkorange", cex = 0.8)
+
+#-----------------------------
+# 7. Derivative sign on x-axis
+#-----------------------------
+
+segments(-4, -0.20, 0, -0.20,
+         col = "darkgreen", lwd = 5)
+
+segments(0, -0.20, 4, -0.20,
+         col = "red", lwd = 5)
+
+text(-2, -0.23, "Positive derivative",
+     col = "darkgreen", cex = 0.8)
+
+text(2, -0.23, "Negative derivative",
+     col = "red", cex = 0.8)
+
+#-----------------------------
+# 8. Legend
+#-----------------------------
+
+legend("topright",
+       legend = c("Standard normal PDF",
+                  "Derivative of PDF"),
+       col = c("blue", "darkorange"),
+       lty = 1,
+       lwd = 2,
+       bty = "n")
+
+```
+
+- Works for continuous variable, it does not make sense for discrete although we can increase.
 
 
 

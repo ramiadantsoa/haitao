@@ -95,7 +95,8 @@ object2 <- temporary
 - The most common error in programing seen below @fig-objectError . While it is a source of panic, it is the easiest to solve and the main culprit are
   - typos because it is case sensitive
   - variable not assigned. One has typed the script but did not execute so it is not stored in the environment
-![Object not found](../fig/object_not_found.png){#fig-objectError}
+
+![Object not found](../fig/object_not_found.png){#fig-objectError width="60%"}
 
 
 - In R, one can also use = as an object assignment, `a = 2` works too. However, the <- is to be explicit. So that = is used in a specific context

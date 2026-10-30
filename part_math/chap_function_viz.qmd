@@ -43,7 +43,7 @@ The curve is just how y vary as we continuously change x
 - As in domain, what does x and y represent
 - Linear function because it plots a line, pick two points and
 - If x is discrete, you cannot just join line.
-- Don't rush, project
+- Don't rush, project, look at the changes in the axis not the "line"
 - Transforming the response variable
 - Transforming
 - Cheating

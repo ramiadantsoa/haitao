@@ -33,6 +33,7 @@ Notice that result is displaed a bit differently (color, not after >). And also 
 
 In a conceptual way, the console is the interface that displays your communication with the program. Shows your input and displays the output. This simple interface is common to almost all programs.
 
+
 ## Formal {.unnumbered}
 
 ChatGPT: "The R Console is the interactive text interface where you communicate directly with the R programming language. It is the place where you type R commands, press Enter, and immediately see the results of your code."
@@ -87,14 +88,16 @@ print("Hello world")
 ```
 
 ## Tips and warnings {.unnumbered}
+
 - The kernel is under the hood
 - Semantic: Commandline interface, terminal, console moslty mean the same thing.
 - Unlike a calculator, you don't write your prompt in the (see next @sec-ide)
 - You cannot modify evaluated prompt.
 - Your prompt can be incomplete, the program cannot get the answer and is asking you to add more input to run the (+) as well as a blinking black cursor.
 
-![Incomplete command](../fig/incomplete_command.png){#fig-incomplete width = 100}
- In that case, you can
+![Incomplete command](../fig/incomplete_command.png){#fig-incomplete}
+
+- In that case, you can
   - complete the like adding say the number you want to multiply
   - escape the expectation by typing escape key (Echap or Esc)
 - **Error message**: this is the worst part. While we, reading the error is very informative and allow to diagnose it.
@@ -102,15 +105,3 @@ print("Hello world")
 - It is not recommended to write prompt on the console...it is simple but and a different window called script  is dedicated to writing code (see @sec-ide).
 - When you open the R, or RStudio, you can see the version of the program you are using and other licensing information (see @fig-console_rstudio)
 - If you close the console/program, all the booking is lost. You can save it as what it is called "Workspace", but it is not recommended.
-<!--
-Check this: In general, it is also called a terminal on macOS, command prompt in windows, Bash/Zsh on Linux.
-
-
-The interface is a bit different but it is the same thing. The console however has more features.
-
-- The display records of  the command you add.
-- After the evaluation, the ">" appears below indicating that the console is waiting for your next prompt
-- Your prompt can be as long as you want, lisibility is the limit
-- It does more than simple arithmetic operation -->
-
-<!-- ## If you want to know more {.unnumbered} -->
