@@ -42,3 +42,6 @@ _site/
 
 # PDF output (optional)
 *.pdf
+
+# email list number
+email_list.numbers
