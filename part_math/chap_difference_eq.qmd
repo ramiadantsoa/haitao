@@ -19,7 +19,7 @@ Here are few other examples of difference equations in malagasy cultuer
 
 - Ny hazo no vanon'ko lakana, ny tany naniriana no tsara.
 - Maty aho matesa rahavako, maty rahavako etc...
-- 
+-
 
 
 
@@ -30,14 +30,14 @@ Here are few other examples of difference equations in malagasy cultuer
 ## Formal {.unnumbered}
 
 A difference quation is an application from N to R or anything where
-u_n+1 = f(u_n). This is a recurrence
+$u_{n+1} = f(u_n)$. This is a recurrence
 
-We could of course define as u_next = f(u_n, u_n-1...).
+We could of course define as $u_{n+1} = f(u_n, u_{n-1},...)$. which is the order
 
 In mathematics, a difference equation (often referred to in modern dynamics as a recurrence relation, particularly when modeling discrete steps) is the discrete analog of a differential equation. Instead of relating a continuous function to its derivatives, a difference equation relates the terms of a discrete sequence to differences between those terms.
 
 
-1. The Shift-Operator / Recurrence Definition
+<!-- 1. The Shift-Operator / Recurrence Definition
 In modern applications (such as computer science, numerical analysis, and discrete dynamical systems), it is mathematically cleaner to eliminate the Δ operator and express the equation entirely using the shift operator (Eyt =yt+1). This changes the structure into a pure recurrence relation.
 
 Textbook Source
@@ -45,36 +45,67 @@ Book: Difference Equations: From Calculation to Computation (1st Edition)
 Authors: Charles Grove Cullen
 Publisher: PWS Publishing Company
 
-The Formal Definition
+The Formal Definition -->
+
 A difference equation of order k is a functional equation that can be written in the form:
 $y_{t+k} = f(t, y_t, y_{t+1}, \dots, y_{t+k-1})$
 where t belongs to a discrete domain (typically the set of non-negative integers Z+), f is a well-defined function mapping to the real or complex numbers, and the function depends non-trivially on the earliest term yt and the latest term yt+k
 ​
 ## Examples {.unnumbered}
-- Imaging you save 1000 ar per week and put it in the box, the amount of money you have in the box the week after is save_week + 1 = save_week + 1000 ar.
+- A arithmetic sequence: $u_{n+1} = u_n + r$ example how much money is a saving box (boatin-drakitra) at if you add a constant amount. Need to clarify if +1 is one day, one week, month or others.
+- A geometric sequence $u_{n+1} = q \times u_n$ This is the same as the example above but instead of adding, one multiply
+- We can then combine your amount by $u_{n+1} = q u_n + r$ so you get interest in the bank but also saves at home.
 
-- combing bank and saving at home so your balance is u_n+1 = u_n + (1 + r) u_n + d.
+<!--
+- Imaging you save 1000 ar per week and put it in the box, the amount of money in the saving box at the present is $\text{saving}_0 = 1000$ Ar. The week after is $\text{saving}_1 = \text{saving}_0 + 1000$ Ar. And more generally, the saving after n weeks is $\text{saving}_n = \text{saving}_{n-1} + 1000$ Ar. In that example the future state (by adding one time step) only depends on the present state. The example above is the famous arithmetic squence  by a constant increment $r$. -->
 
-- For a more ecological, population size for next year is population size of this year  + number of death + number of imigrant - number of death - number of emigrant. pop_ t+1 = pop_t + B + I - D - E, if we assume that they are constant throught the year then pop_t+1 = pop_t + detla and becomes a simple aritmetic mean
 
-- The model above is unlikely, all those parameters is likely variable through time, and might depend on the size or density of the current population, the model becomes pop_t+1 = pop_t + B(pop_t) + I(pop_t) - D(pop_t) - E(pop_t). This is a more realistic model, and we can see that the next state of the system depends on the current state of the system. Regardless of the complication, the future state still depends on the current state and is an example of difference equation.
+- For a more ecological, population size for next year is population size of this year  + number of death + number of imigrant - number of death - number of emigrant. $pop_{t+1} = pop_t + B + I - D - E$, if we assume that they are constant throught the year then $pop_{t+1} = pop_t + \delta$. If $\delta > 0 $ is positive the population increases, if $\delta < 0$  is negative it is increasing and  if $\delta = 0$  the population is at equilibrium
+
+- The model above is unlikely, all those parameters depend on multiple factors (environment, age structure, ratio of male to female, density of the population, interspecific interaction etc). Is to ask what kind of dynamic we have depending on the factors that influence these parameters (more in future chapters).
 
 ## Tips and warnings {.unnumbered}
-- Difference, suite, recurrence. As stated @sec-discrete_continuous, this is where using discrete vs continuous variables to represent time. How see in the next chapter for differential equation @sec-differential for a continuous version.
+- Semantic: Difference, suite, recurrence.
+- As stated @sec-discrete_continuous, this is where using discrete vs continuous variables to represent time. How see in the next chapter for differential equation @sec-differential for a continuous version.
+- Define the state at starting point $t = 0$ need to
 
-- We often need to define the first state.
+- Visualizing in a coweb plot, requires the intital state, then the function (blue above, the identity line). Looks complex but once you understand, it stays forever.
+  - Arithmetic sequence: $u_{n+1} = f(u_n) = u_n + 2$ with $u_0 = 0$.
+```{r}
+# Arithmetic
+r1 <- 0.2
+arithmetic_map <- function(u) {
+  return(r1 + u)
+}
+cobweb_plot_labeled(f = arithmetic_map, x0 = 0, n_iter = 5, n_labels = 5, x_max = 1)
 
-- Computation makes thing trivial. In other words, we don't really solve the equation, we just compute the next state of the system given the current state.
+```
 
-- Another math curiousity is to that is as we or it approaches a limit. Computationally, we could use a spider web to visualize it, with u_n on x axis and y-axis.
+  - Arithmetic sequence: $u_{n+1} = f(u_n) =  3/4 \times u_n$ with $u_0 = 1$
+```{r}
+r2 <- 3 / 4
+geometric_map <- function(u) {
+  return(r2 * u)
+}
+cobweb_plot_labeled(f = geometric_map, x0 = 2, n_iter = 5, n_labels = 5, x_max = 2)
 
-- The order of a difference equation is We mostly looked for dependence on the present term, this is called first order, the further back we go, depends on u_{n-1}, u_{n-2} etc. the higher od
+```
 
+- Logistic growth : $u_{n+1} = f(u_n) = 2.9 \times u_n (1- u_n)$ with $u_0 = 0.1$
+```{r}
+r3 <- 2.9
+logistic_map <- function(u) {
+  return(r3 * u * (1 - u))
+}
+cobweb_plot_labeled(f = logistic_map, x0 = 0.1, n_iter = 6, n_labels = 4, x_max = 1)
+
+```
+
+- The coweb plot allows to see that the number will increase to infinty (in the first example), goes to zero (the second example), or reach an equibrium where ($f(u_n) = u_n = u_{n+1}$). This happens when the identity crosses with the function.
+
+- In the math world,  we could classify different types of difference equation and (that is what we did in highschool for arithmetic and geometric sequence) solving the equation means finding a explicit fucntion so that $u_{n+1}$ is directly a function of n, that is we not longer need the recurrence relationship. This could be a good math exercice, although can be tricky to do. But computers do it fast, further, by we drop the essence of how the term depends on the previous ones.
 - there are more classification, like linear or non linear, homogeneous or not. Regardless, it is always trivial to do it computationally.
--
-- In the math world,  we could classify different types of difference equation and (that is what we did in highschool for arithmetic and geometric sequence) solving the equation means finding a explicit fucntion so that $u_{n+1}$ is directly a function of n, that is we not longer need the recurrence relationship. This could be a good math exercice, although can be tricky to do. But computers do it fast, further, by we drop the essence of how the term depends on the previous ones. The law!
 
-## If you want to know more {.unnumbered}
 
 <!--
 

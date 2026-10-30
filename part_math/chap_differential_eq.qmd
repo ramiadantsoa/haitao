@@ -11,49 +11,315 @@ Zana-bola isak'izay mijery. The tool to rule them all! The only constant is chan
 All you need is Euler formula
 :::
 
-Differential equation is foundational in physics at the end of highschool. It consists of constructing the laws that govern the system, and secondly, we need to solve the equation. We were engrained that solving usually find a solution (one or more number). Whereas solving a differential equation means the solution is a function. While we think, there are infinetely many numbers, these are simple, compared with space of all the functions... But the solution is something as a function of time.
+Differential equations can be the hardest problems in mathematics. One long-standing problem is called the Navier-Stokes equation as one of the seven great open mathematical problem. Some solution were recently claimed to be solved by AI. Unlike equations where the solution are number, the solution of differential equations are functions. Despite the tools mathematicians have developed, there is no closed-form solution based on elementary function @sec-functionMath. For instance, there is no function $y = f(x)$ so that $\frac{dy}{dt} = e^{-x^2}$.
 
-Fortunately, this is about applied concept, and we don't really concern of finding what is closed form solution, instead we can just visualize @sec-function_viz. So we can just plot the results and that is easlily by what it is called solving numerically. The Euler formula is the simplest. But not only, it allows us to solve the equation, it also helps to understand what is a differential equation.
+However, from an applied perspective, there is no need to find the expression of $f(x)$, it suffices to know the graph of f(x) which anyway the solution. The mathematical expression and the graph is anyway the same thing @sec-function_viz. Fortunately, for many not so complicated equation: construction the solution is a piece of cake with a method called Euler formula. The bonus is comprehending (solution), tools to understand and construct a differential equation.
+
 
 Let's use the simple differential equation
 
-$\frac{dy}{dt} = r$ where r is a constant. The key is to understand what is the meaning of the right hand side. The short answer is the derivative of a function y with respect to t @sec-derivative. But intuitively, $\frac{dy}{dt} = \frac{y_{t+dt} - y_t}{dt}$, we could then rewrite as
+$\frac{dy}{dt} = r$ where r is a constant. The key is to understand what is the meaning of the left-hand side. $\frac{dy}{dt} is just a notation for the derivative of a function $y$ with respect to $t$ @sec-derivative. But intuitively, $\frac{dy}{dt} = \frac{y_{t+dt} - y_t}{dt}$, we could then rewrite as $\frac{dy}{dt} = \frac{y_{t+dt} - y_t}{dt} = r$ or $y_{t+dt} =  dt \times r + y_t$ for small $dt$. And if you stare long enough, you will see that this looks like a [difference equation](@sec-difference).
 
-$\frac{dy}{dt} = \frac{y_{t+dt} - y_t}{dt} = r$ or $y_{t+dt} = y_t + dt \times r$. And if you stare long enough, you will see that this looks like a difference equation (see @sec-difference). But as said earlier, not only it allows to us to solve it but also understand how things change through time.
-
-<!--
-
-
-
-There is a divide and point of confusion when, talking about different types of variables (qualitative, quantitative, etc. @sec-qualitative-variable and @sec-quantiative-variable) in data analyses and statistics. Other terms like discrete and continuous variables could throw more confusion in that. Earlier in this part, we have the difference between a discrete and continuous variables  @sec-discrete_continuous from a mathematical point of view.
-
-The main difference essentially is the mathematics that we use to handle them and one example is in how we document changes through time.
-Using change in temperature of coffee @sec-difference, that is the temperature at time n+1 depends on the temperature a time Tn, the ambient temperature and some equalizing rate and can be described as T_n+1  = Ta + q (Tn  - Ta) or T_n+1 = T_n - q (T_n - T_a). This is an example of using discrete (difference equation), that is we take discrete time steps, what does the + 1 mean, seconds, minute, hour?
-
-Alternatively, we can check the temperature of the coffee at any time, and we could probably stick a thermometer and see a continuous change. Laws of Newton physics equation is dT/dt = -k (T- Ta). The equation above is a differential equation and use calculus to solve the equation so we have. But what matters for us is to have an intuition on how we got this equation...and in fact it is really simple.
-
-dT/dt is essentially $\frac{T_{n+dt} - T_n}/dt$ That is how temperature changes from a short interval dt. The denominator dt = n+dt - n which them matches the index in the numerator. If we stare long enough is just @sec-derivative with respect to time. So essentially, T_n+dt = T_n - k (T_n - Ta) dt.
-
-Unless you are math-inclined, we can slove using difference equation and taking small steps: T_next = T_now + time_step * relation. As time_step gets smaller we go from discrete to continuous. From difference equation to differential equation.
- -->
+Thus we can just calculate the next value, and if the step is small enough, we can recursively find the value of $y$ from the starting at time increment $dt$ and means that we can plot on a figure. This is an approximation but in many cases that is more than enough.
 
 ## Formal {.unnumbered}
-A differential equation is dx/dt = f(x).
-This is again the derivative.
 
-In standard introductory college textbooks (such as Dennis G. Zill’s *A First Course in Differential Equations* or James Stewart’s *Calculus*), an Ordinary Differential Equation is defined formally yet accessibly:
+An differential equation is an equation that contains one or more derivatives of an unknown function with respect to one or more independent variable.
 
-**Textbook Definition:**
-An **ordinary differential equation (ODE)** is an equation that contains one or more derivatives of an unknown function with respect to a **single independent variable**.
+It has three component:
+- The Independent Variable is commonly denoted as $x$ or $t$ for time
+- The dependent Variable: The unknown function we are trying to solve for (commonly denoted as $y$ or $f(x)$).
+- Derivatives: The rates of change (denoted by $\frac{dy}{dx}$, $y'$, or $y''$) showing how the dependent variable responds to changes in the independent variable.
 
+## Examples {.unnumbered}
+While there can be, we focus here on simple differential equation with real-world meaning but also closed form solutions:
 
-### Key Components Found in Textbooks
+- Atomic/Radioactive decay is described as $\frac{dN}{dt} = -\lambda N$ where $N$ is the number of radioactive atoms, $t$ is time,  $\lambda$ is a decay constant and depend on the element. If there $N_0$ is the number of radiocative atoms at time $t = 0$ called initial condition, then the number of radioactive atoms remaining a $t$ is time is the solution the equation above and is $N(t) = N_0 e^{-\lambda t}.
 
-When you open an ODE textbook, they immediately break down the anatomy of these equations into three core concepts:
+Raddon with lmabda = `r log(2) / 55.6`, starting with 1000 atomes and waiting time until 10% remains.
 
-* **The Independent Variable:** The variable representing the input (commonly denoted as $x$ or $t$ for time).
-* **The Dependent Variable:** The unknown function we are trying to solve for (commonly denoted as $y$ or $f(x)$).
-* **Derivatives:** The rates of change (such as $\frac{dy}{dx}$, $y'$, or $y''$) showing how the dependent variable responds to changes in the independent variable.
+```{r}
+
+#-----------------------------
+# 1. Parameters
+#-----------------------------
+
+N0 <- 1000                 # Initial number of atoms
+half_life <- 55.6          # Radon-220 half-life, in seconds
+lambda <- log(2) / half_life
+
+N_target <- 0.10 * N0      # 10% of initial atoms remain
+
+#-----------------------------
+# 2. Decay function
+#-----------------------------
+
+N <- function(t) {
+  N0 * exp(-lambda * t)
+}
+
+# Time to reach target
+t_target <- -log(N_target / N0) / lambda
+
+#-----------------------------
+# 3. Generate data
+#-----------------------------
+
+t <- seq(0, 400, by = 1)
+atoms <- N(t)
+
+#-----------------------------
+# 4. Plot
+#-----------------------------
+
+plot(t, atoms,
+     type = "l",
+     lwd = 2,
+     col = "black",
+     xlab = "Time (seconds)",
+     ylab = "Number of radioactive atoms",
+     xlim = c(0, 400),
+     ylim = c(0, 1050),
+     xaxs = "i",
+     yaxs = "i",
+     las = 1)
+
+# Target level: 10% remaining
+abline(h = N_target, col = "red", lty = 2)
+
+# Projection lines
+segments(0, N_target, t_target, N_target,
+         col = "red", lty = 2)
+
+segments(t_target, 0, t_target, N_target,
+         col = "red", lty = 2)
+
+# Intersection point
+points(t_target, N_target,
+       pch = 19, col = "red", cex = 1.2)
+
+# Label
+text(t_target, 0,
+     labels = paste0("t = ", round(t_target, 1), " s"),
+     pos = 4, offset = 0.5, col = "red")
+
+legend("topright",
+       legend = c("Radioactive decay", "10% remaining"),
+       col = c("black", "red"),
+       lty = c(1, 2),
+       lwd = c(2, 1),
+       bty = "n")
+
+# Display result
+cat("Time until 10% remains:",
+    round(t_target, 2), "seconds\n")
+
+```
+
+- Newton's law of cooling. Assume we want to know how fast a coffee cools down $\frac{dT}{dt} = -k (T - T_a)$ where
+- T is the temperature of the object
+- T_a is temperature of the room
+- k is a constant of cooling which depends on the volume of the liquid, the shape of and thermal conductance of the cup. The solution is
+
+$T(t) = T_a + (T_0 - T_a)e^{- k t}$.
+
+```{r}
+
+#--------------------------------
+# 1. Define parameters
+#--------------------------------
+
+T0 <- 90
+Ta <- 20
+k  <- 0.1
+T_target <- 37
+
+#--------------------------------
+# 2. Newton's law of cooling
+#--------------------------------
+
+T <- function(t) {
+  Ta + (T0 - Ta) * exp(-k * t)
+}
+
+#--------------------------------
+# 3. Calculate time to target
+#--------------------------------
+
+t_target <- -log((T_target - Ta) / (T0 - Ta)) / k
+
+#--------------------------------
+# 4. Generate data
+#--------------------------------
+
+t <- seq(0, 40, by = 0.1)
+temp <- T(t)
+
+#--------------------------------
+# 5. Plot
+#--------------------------------
+
+plot(t, temp,
+     type = "l",
+     lwd = 2,
+     col = "black",
+     xlab = "Time",
+     ylab = "Temperature (°C)",
+     xlim = c(0, 40),
+     ylim = c(15, 100),
+     xaxs = "i",
+     yaxs = "i",
+     las = 1)
+
+# Ambient temperature
+abline(h = Ta, col = "blue", lty = 3)
+
+# Target temperature
+abline(h = T_target, col = "red", lty = 2)
+
+# Vertical projection to target temperature
+segments(t_target, 15,
+         t_target, T_target,
+         col = "red", lty = 2)
+
+# Horizontal projection to the curve
+segments(0, T_target,
+         t_target, T_target,
+         col = "red", lty = 2)
+
+# Mark intersection
+points(t_target, T_target,
+       pch = 19, col = "red", cex = 1.2)
+
+# Annotate time
+text(t_target, 15,
+     labels = paste0("t = ", round(t_target, 2)),
+     pos = 4, col = "red")
+
+# Legend
+legend("topright",
+       legend = c("Cooling curve",
+                  "Ambient temperature",
+                  "Target temperature"),
+       col = c("black", "blue", "red"),
+       lty = c(1, 3, 2),
+       lwd = c(2, 1, 1),
+       bty = "n")
+
+# Print result
+cat("Time to reach", T_target, "°C:",
+    round(t_target, 2), "time units\n")
+
+```
+
+- A simple population growth: $\frac{dy}{dt} = r y$ where $r = \text{birth} - \text{death}$. The right hand mean that the number of new offspring is proportional the population size (more mothers mean more baby) but also that mortality is proportional to the population size. This is the same equation as above as the decay and the solution is The population will grow if birth > death (r postive) and will go extinct if $ \text{death} \text{birth} <$ (r negative like the decay above).
+
+```{r}
+
+#-----------------------------
+# 1. Parameters
+#-----------------------------
+
+N0 <- 100
+
+r_small <- -0.01  # Small negative growth rate
+r_large <- -0.05  # Large negative growth rate
+
+N_target <- 10    # Target population (10% of initial population)
+
+#-----------------------------
+# 2. Population functions
+#-----------------------------
+
+N_small <- function(t) {
+  N0 * exp(r_small * t)
+}
+
+N_large <- function(t) {
+  N0 * exp(r_large * t)
+}
+
+# Time to reach target population
+t_small <- log(N_target / N0) / r_small
+t_large <- log(N_target / N0) / r_large
+
+#-----------------------------
+# 3. Generate data
+#-----------------------------
+
+t <- seq(0, 250, by = 0.5)
+
+pop_small <- N_small(t)
+pop_large <- N_large(t)
+
+#-----------------------------
+# 4. Plot
+#-----------------------------
+
+plot(t, pop_small,
+     type = "l",
+     lwd = 2,
+     col = "blue",
+     xlab = "Time",
+     ylab = "Population size",
+     xlim = c(0, 250),
+     ylim = c(0, 105),
+     xaxs = "i",
+     yaxs = "i",
+     las = 1)
+
+lines(t, pop_large, lwd = 2, col = "darkorange")
+
+# Target population
+abline(h = N_target, col = "red", lty = 2)
+
+# Projection for small negative growth rate
+segments(t_small, 0, t_small, N_target,
+         col = "blue", lty = 2)
+points(t_small, N_target, pch = 19, col = "blue")
+
+# Projection for large negative growth rate
+segments(t_large, 0, t_large, N_target,
+         col = "darkorange", lty = 2)
+points(t_large, N_target, pch = 19, col = "darkorange")
+
+# Time labels
+text(t_small, 0,
+     labels = paste0(round(t_small, 1)),
+     pos = 4, offset = 0.5, col = "blue")
+
+text(t_large, 0,
+     labels = paste0(round(t_large, 1)),
+     pos = 4, offset = 0.5, col = "darkorange")
+
+legend("topright",
+       legend = c("Small negative growth rate (-0.01)",
+                  "Large negative growth rate (-0.05)",
+                  "Target population (10)"),
+       col = c("blue", "darkorange", "red"),
+       lty = c(1, 1, 2),
+       lwd = c(2, 2, 1),
+       bty = "n")
+
+# Display results
+cat("Small negative growth rate:", round(t_small, 2), "time units\n")
+cat("Large negative growth rate:", round(t_large, 2), "time units\n")
+
+```
+
+## Tips and warnings {.unnumbered}
+- Notation: $\frac{dy}{dt}$ is the formula. While in mathematics $y'$ is used or $f'(x)$ which implicit mean with respect to $x$. Physicists also use $\dot{y}$ which is implicity with respect to time $t$. The first one is generally better as the independent variable is explicit.
+- Higher order are denoted by $\frac{d^n y}{dt^n}$ or $y''$, or $\ddot{y}$. In ecology most equations are first order and thus involve the first derivative
+- What is a rate:
+- Most differential equations by approximating the real solution with a difference equation (e.g. Newton's formula). This approach is called solving it numerically. There are packages that solve differential equation in R, like `deSolve` which is enough for most we encounter. The examples above are closed form for illustation.
+- Exponential definition of a solution of a differential equation
+- While the differential equation allows to track one population, we could be interesting in two populations (two competing species, predator or prey) or the number healthy and infected people. In this case and we get a system of differential equation
+$$
+ \frac{dR}{dt} = f(R, P)
+ \frac{dP}{dt} = g(R, P)
+$$
+- Partial differential equation is related to partial derivative and is denoted by $\partial$
+- As stated at the begining it is a whole complex world and there are other types and classification...no need to list them but be aware it exists.
 
 ---
 
@@ -66,23 +332,6 @@ Introductory textbooks usually categorize ODEs right away by two major propertie
 * *Second-order:* Contains up to $\frac{d^2y}{dx^2}$ (e.g., $\frac{d^2y}{dx^2} + 4y = 0$).
 
 2. **Linearity:** Whether the equation is **linear** (the dependent variable and its derivatives are to the power of 1 and not multiplied together) or **nonlinear**.
-## Examples {.unnumbered}
-- Atomic decay
-- Population growth
-- Law of motion
-
-## Tips and warnings {.unnumbered}
-- Ironically, most differential equation are solved as a difference equation.
-- Numerical solution.
-- f' x. are all different notation, sometimes y' also instead of f'(x), what's good is clear what is the independant variable
-- The linear autonomous,
-- Partial, non-autonmous, etc.
-- meaning of instataneous rate
-- Exponential exists because of these multiplications
-- Criteria for things to exist pedantic.
-
-
-## If you want to know more {.unnumbered}
 
 <!--
 

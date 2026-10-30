@@ -32,12 +32,11 @@ This is where it is important to realize that Richter is on base 10 a logarithmi
 Adding one unit, will multiply the energy by 10.
 So to put it in other world. a 6 vs 9 earthquake means the latter is 1000 more powerful than the former.
 
-Logarithm scale and logarithm function.
-As function, it just takes a value and spits something @sec-function.
-One reason why it important is because of the linearization property. turns a multiplication to addition.
-log(a^2) = log(a x a) = log (a) + log(a) = 2 log a.
-So log(a^n) = n log(a).
-The n is the magnitude in the Richter scale.
+The logarithm is another function but it has two main properties:
+- Turns multiplication to addition:
+$\log(a \times b) = \log(a) + \log(b)$ and so $\log(a^2) = \log(a \times a) = \log(a) + \log(a) = 2 \times log(a)$.
+
+- Reciprocal of the exponential.
 
 Why does it have those properties, let's just say it is the miracle/genuis of mathematicians who discovered it.
 
@@ -53,17 +52,6 @@ In other words, log is the reciprocal of exponential.
 
 Logarithm and bases
 log2 = ln/log2, and log10 = ln/log10
-
-Here is plot for log
-
-```{r}
-x <- seq(0.01 , 1000, by = 0.1)
-y <- log(x)
-dat <- data.frame(x, y)
-ggplot(dat, aes(x = x, y = y)) +
-    geom_line() +
-    theme_bw()
-```
 
 
 Here are the standard formal definitions found in foundational mathematical analysis and calculus textbooks.
@@ -84,6 +72,38 @@ In Chapter 8 ("Some Special Functions"), after establishing that the exponential
 $\exp(x) = y$
 
 
+```{r}
+x <- seq(-4, 4, by = 0.0001)
+y <- exp(x)
+
+par(pty = "s")
+plot(x, y,
+     type = "l",
+     xlab = "x",
+     ylab = "y",
+     ylim = c(-4, 4),
+     xlim = c(-4, 4),
+     xaxs = "i",
+     yaxs = "i",
+     asp = 1,
+     main = "",
+     las = 1)
+# Add natural logarithm
+lines(x[x > 0], log(x[x > 0]), col = "red", lwd = 2)
+
+# Add identity line (y = x)
+abline(a = 0, b = 1, col = "blue", lty = 2, lwd = 2)
+
+# Add legend
+legend("topleft",
+       legend = c("exp(x)", "ln(x)", "y = x"),
+       col = c("black", "red", "blue"),
+       lty = c(1, 1, 2),
+       lwd = 2)
+
+```
+
+
 - For an arbitrary base a>0 (a!=1), the general logarithm function loga(y) is defined via the same inverse relationship to the base-a exponential function:
 Britannica
 $x = \log_a(y) \iff a^x = y$
@@ -93,30 +113,43 @@ $\log_a x = \frac{\ln x}{\ln a} \quad \text{for } x > 0, \, a > 0, \, a \neq 1$
 
 ## Examples {.unnumbered}
 
-Add the curve of ln(x)
 
-$log(1) = 0$
+- $log(1) = 0$ where it intersect with x.
 
-$log(e) = 1$ by definition
+- $log(e) = 1$ by definition.
 
-For x < 1, $log(1/x) = log(x-1) = - 1 \times log(x) = - log(x)$ hence log (x) is always negative.
+- For x < 1, $log(1/x) = log(x-1) = - 1 \times log(x) = - log(x)$ hence log (x) is always negative.
 
-$log(n!) = log(1 \times 2 \times 3 \times \cdots \times n) =  log (1) + log (2) + \cdots + log(n) = \sum log(i)
+- $log(n!) = log(1 \times 2 \times 3 \times \cdots \times n) =  log (1) + log (2) + \cdots + log(n) = \sum_{i = 1}^n log(i)$
 
-$log(exp{- \frac{x^2}{2}}) = - \frac{x^2}{2}$
+- $log(exp{- \frac{x^2}{2}}) = - \frac{x^2}{2}$
 
+- Linearization of a power-law i.e. of the form f(x) = c x^z
+  - Species-area relationship S = c A^z, on a log scale
+  - Metabolic scaling
 
+- Salary
 
 ## Tips and warnings {.unnumbered}
-- As seen above, the most use is to convert a multiplicative term to additive term. Log is useful to convert multiplication to (see that a lot in likelihood in later part of this book)
 
-- Why using log scale
+- By definition cannot take negative number and is not defined at 0
+- Semantic: $\ln$ and $\log$.
 
-- "For every x>0, we define the natural logarithm of x, denoted by lnx, by the formula:
+- Two log scale visualization.
+  - Ticks arrangement.
+  - Transform y log it and use normal figure. Included in existing graph that no londer used.
+
+- Orders of magnitude species abundance etc.. Excessively large value/Multiplicative.
+- Compare with square root
+
+- Used in likelihood to turn a product into sum.
+
+- Transforming  0 to something, shift to log(x + 1)
+
+- Integral defintion: For every x>0, we define the natural logarithm of x, denoted by $\ln(x)$, by the formula:
 $\ln x = \int_{1}^{x} \frac{1}{t} \, dt$ ""
 
 
-## If you want to know more {.unnumbered}
 
 <!--
 1. The Integral Definition (The Analytic Approach)

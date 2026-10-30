@@ -3,7 +3,7 @@
 {{< include ../preamble.qmd >}}
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
-+ - * / ^ ()
+`{+, -, *, /, ^, ()}`
 :::
 
 R is at first a calculator and the only reason of this chapter is to translate again the basic arithmetic operation as we have seen since primary school to their equivalent in R. Fortunately it is the same in every language, so this is not specific to R.  It follows the order of operation @sec-arithmeticMath. So be careful!

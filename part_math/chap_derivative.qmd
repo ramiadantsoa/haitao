@@ -4,53 +4,19 @@
 It is just the speed!
 :::
 
-Derive ex = ex, derive constant is zero etc.
-
-Derivative is again one of those words that somehow rotten us.
-Most of you might remember how to calculate the derivative, study the sign of the derivative etc.
-This is not about highschool test.
-Yet, it is a simple concept, and like function probably use that all the time.
-Derivative is essentially speed (you might remember that from physics and movement of an object).
-
+Most have learned a set of rules to calculate the derivate of any functions. The exercices is pattern identification, learning the follow rules but imbalance at the expense of it's significance. As we can also plug any function into a program and get the derivative.  While Isaac Netwon was famous as a physicist from its law of gravity and apple, his is likely as mathematician  for "discovering/defining" a derivative.
 
 How do you calculate speed? Distance over the time it takes to run the distance.
-So for a same amount of time (say one minute), car 1 travels 1 km and car 2 travels 2 km, then car 2 is faster than car 1, or the speed of car 2 is higher than the speed of car 1.
-To add a bit more precision, the derivative is instantenous rate of change,which is a fancier way of saying that instead of dividing by one minute, we divide by so delta time is smaller and we calculate the respecitive distance.
-And to be more general, derivative is independent and dependent @sec-functionMath, so it does not need to be time, hence a more general term of instanaeous rate of change.
+So for a same amount of time (say one minute), car 1 travels 1 km and car 2 travels 2 km, then car 2 is faster than car 1, or the speed of car 2 is higher than the speed of car 1. To add a but precision, the derivative is instantenous rate of change,which is a fancier way of saying that instead of dividing by one minute, we divide by so delta time is smaller and we calculate the respecitive distance.
 
-What is then speed of car 1, 1km/minute = 60 km per hour, and the speed of car 2 is 2km/minute = 120 km per hour.
-
-Graphically, it is just yfinal - yinitial/ xfinal - xinitial.
-So if we look at the angle in the rectangular triange with respect to the x axis, speed is coté opposé (y2 -y1) divided by coté adjacent x2 - x1.
-
-the steeper the hypothenus the faster the car is -->
+While derivative is the speed of changes in variable dependent (response) with a change in the independent @sec-functionMath.
 
 ## Formal {.unnumbered}
-Now, unfortunately, the mathematical rigourous definition is
-lim f(x + h) - f(x)/ h when h goes to zero.
-
-Well, the other definition which is similar is f(x2) - f(x1)/ x2 - x1 where x2 - x1 = h.
-
-You might recognize how large is the difference between the images.
-
-So what is the f' things that we have to learn?
-Well, it is just a shortcut so we don't have to calculate the limit.
-So yes, it is painful but it makes life easier.
 
 In calculus, the derivative of a function measures its instantaneous rate of change with respect to its independent variable. Geometrically, it represents the slope of the tangent line to the function's curve at a given point.
 Rigorously, the derivative is defined using the mathematical concept of a limit, which formalizes the process of letting a secant line approach a tangent line.
 Here are the rigorous formal definitions of the derivative from foundational calculus and mathematical analysis textbooks.
 
-1. The Standard Single-Variable Definition
-This is the standard definition found in foundational calculus. It defines the derivative at a specific point as the limit of a difference quotient.
-
-Textbook Source
-Book: Calculus (8th Edition, 2016)
-Author: James Stewart
-Publisher: Cengage Learning
-
-The Formal Definition
-In Chapter 2 ("Limits and Derivatives"), Section 2.7, Stewart defines the derivative of a function f at a specific number a:
 Definition: "The derivative of a function f at a number a, denoted by
 ​$f'(a) = \lim_{h \to 0} \frac{f(a + h) - f(a)}{h}$ if this limit exists."
 
@@ -58,32 +24,19 @@ An equivalent alternative formulation often used to emphasize the target point x
 $f'(a) = \lim_{x \to a} \frac{f(x) - f(a)}{x - a}$
 
 ## Examples {.unnumbered}
-To stick to intuition, imagine we have a function that is seen as horizontal line.
-So a car is not moving and his position through time is a horizontal line.
-What is his speed? 0 correct
-Look at the steepness..it is 0 right
-Or also y2 - y1 is 0 also.
-And so that is why the derivative of a constant is always zero. There is no slope
-
-Another example is the function y =  a x + b
-...you see the derivative is just a so the higher the a the higher the speed.
-
-What if it is not a line
-This is where the tangent comes in and so we need to shrink the displacement from
-
-Plottin the function and the derivative
+- Derivative with respect to which variable?
+- Derivative is zero for a constant
+- Derivative is the slope
+- Plot a function and its derivative
 
 ## Tips and warnings {.unnumbered}
-The derivative (see @sec-function) is just another function so that when you plug a number you can see the value
-
-To further clarify any trauma.
-
-An increasing function means that the derivative is positive.
-
-The curvse go up, y2 is bigger than y1 so the difference is positive
-the same is a function is decreasing.
-
-What if the derivative is zero means that the tangent is horizontal it could mean three of the next scenario: up, down or S.
+- Works for continuous variable, it does not make sense for discrete although we can increase.
+- Different notation: df/dt, f', f.
+- Second and more derivative
+- Sign is what matters...but could also be quantitative.
+- Partial derivative
+- Derivative equal zero: special case.
+- The derivative (see @sec-functionMath) is just another function so that when you plug a number you can see the value
 
 
 
@@ -103,4 +56,15 @@ Let's plot x0 and  x1 is one minute after x0. y0 and y1 position and y2 position
 #    geom_point() +
 #    geom_line()+
 #    theme_bw()
-``` -->
+```
+
+ 1. The Standard Single-Variable Definition
+This is the standard definition found in foundational calculus. It defines the derivative at a specific point as the limit of a difference quotient.
+
+Textbook Source
+Book: Calculus (8th Edition, 2016)
+Author: James Stewart
+Publisher: Cengage Learning
+
+The Formal Definition
+In Chapter 2 ("Limits and Derivatives"), Section 2.7, Stewart defines the derivative of a function f at a specific number a: -->

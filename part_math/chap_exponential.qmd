@@ -1,51 +1,50 @@
 # Exponential function {#sec-exponential}
 {{< include ../preamble.qmd >}}
 
-<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-$\pi \sim 3.1415 \ldots$ and $e \sim 2.718 \ldots$
-:::
-
-## Concepts and intuitions {.unnumbered} -->
-
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
-$\pi \sim 3.1415 \ldots$ and $e \sim 2.718 \ldots$
+$e \approx 2.718 \ldots$
 :::
 
-As multiplication is generalization of addition 2 + 2 + 2 = 3 x 2, power is a condense notation of multiplication 2 x 2 x 2 = 2^3 (see also @sec-matrixOperationMath).
-2^0 = 1
-At middle school, students started to learn about rules
-2^n x 2^m = 2^(n+m).
-Is there a need to learn that by heart?
-One could play, say 2^n x 3^n = (2 x 3)^n etc.
+Multiplication is condensed notation of addition $2 + 2 + 2 = 3 \times 2$, and  power is a condensed notation of multiplication $2 x 2 x 2 = 2^3$ ([see]( @sec-matrixOperationMath). Other rules that could be derived without learning by heart
+ $a^n x a^m = a^(n+m)$, because e.g. $2^3 \times 2^4= 2 \times 2 \times 2 \times 2 \times 2 \times 2 \times 2 \times = 2^7$
+A good trick is to not be distracted by the notation/dummy variable and replace with a few examples.
 
-At the end of high school, a new function is introduced which e^x or exponential of x.
-They then learn a but of properties and the famous e^x x e^y = e^(x+y).
-Essentially, the exponential function is just a power and instead of 2 we have e = 2.718...and instead of having integer, it can take any value.
-So e^0 = 1 and e^x should always be positive (could you get a negative value for 2^n for any reel value of n?)
+During the last year of high school, a new function is introduced: the exponential function denoted by $exp(x)$ or $e^x$.
+They then learn properties, limits, sign, derivative and something like $e^x x e^y = e^{x+y}$. Which is the same as what was learned earlier expect replace $a$ by e which is a number. Many properties naturally from that $e^0 = 1$ like for any number or $e^x$ should always be positive (could you get a negative value for 2^n for any reel value of n?)
 
-So why e? not, pi = 3.14 or any other numbers.
-There could be a whole book about that but to simplify, wherever mathematicians looked, that number seems to appear, and strangely appears in the solution of some equations.
+So why the number $ 2.718 \ldots$ denoted by $e$ is so special? Why not $pi^x$ or any other numbers?
+There could be a whole book about that but to simplify, that $e$ is everywhere and has interesting and useful properties.
 
 ## Formal {.unnumbered}
-The exponential function e^x is just the power of where e is mathematical constant.
 
-It is an irrational (cannot be a ratio of integer) and transcendental number (cannot be root of a polynomial).
+We define exp(x) or $e^x$ by the formula:
+$$
+    \exp(x) = \sum_{n=0}^{\infty} \frac{x^n}{n!}
+$${#eq-eTaylor} see @sec-sum for notation.
 
-Another peculiar property is that taking the derivative of e^x you still get e^x which is the only function that has such property.
+- Using this definition, the mathematical constant $e$ is formally defined as the evaluation of this series at x=1:
+$$
+    e = \exp(1) = \sum_{n=0}^{\infty} \frac{1}{n!}
+$${#eq-e1}
 
 Here is the plot for exponential of x
 ```{r}
-x <- seq(-2 , 10, by = 0.1)
+x <- seq(-2, 2, by = 0.01)
 y <- exp(x)
-dat <- data.frame(x, y)
-ggplot(dat, aes(x = x, y = y)) +
-    geom_line() +
-    theme_bw()
+# dat <- data.frame(x, y)
+
+plot(x, y,
+     type = "l",
+     xlab = "x",
+     ylab = "y",
+     main = "",
+     las = 1)
+lines(x, x^2 + 1, col = "gray")
+# Add identity line (y = x)
+abline(a = 0, b = 1, col = "blue", lty = 2, lwd = 2)
 ```
 
-
-Here are the three standard formal definitions found in advanced calculus and mathematical analysis textbooks.
-
+<!--
 1. The Power Series Definition (Most Rigorous)
 In modern mathematical analysis, the standard way to define the base-e exponential function (denoted as exp(x) or e^x) is via a uniformly convergent power series. This definition completely avoids any ambiguous geometric or intuitive definitions of exponents.
 
@@ -56,30 +55,72 @@ Publisher: McGraw-Hill
 
 
 The Formal Definition
-In Chapter 8 ("Some Special Functions"), Rudin defines the exponential function as the sum of an infinite series:
-"We define exp(x) by the formula:
-$\exp(x) = \sum_{n=0}^{\infty} \frac{x^n}{n!}$ see @sec-sum for notation.
+In Chapter 8 ("Some Special Functions"), Rudin defines the exponential function as the sum of an infinite series: -->
 
-This series converges absolutely for every real (and complex) number x."
-Using this definition, the mathematical constant e is formally defined as the evaluation of this series at x=1:
-$e = \exp(1) = \sum_{n=0}^{\infty} \frac{1}{n!}$
 
 ## Examples {.unnumbered}
-$e^0 = 1$, and $e^1 = 2.71...$ $e^-1 = 1/2.71$ etc.
+- Basic calculation
+$e^0 = 1$, and $e^1 = 2.71...$ $e^-1 = \frac{1}{2.71...}$ etc.
 
-Famous exponential: gaussian: and
-$$ lim n -> infinity = (1 + 1/n)^n = e $$
+- Example of the exponential for Gaussian
+$$
+    f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}
+$${#eq-gaussian}
 
-$1 - e^-x$ is a probability that something will fail.
+- If a car has a failing rate $\lambda$, the probability of failure at time $t$ is
+$$
+1 - e^{- \lambda t}
+$$
+.Notice that at $t = 0$, the probability is 0, and becomes closer to one as t goes to infinity.
 
+- Another unexpected appearance of e when
+$$
+    \lim_{n \to \infty } (1 + \frac{1}{n})^n = e
+$${#eq-eLimit} which represent compound interest in finance..The audience for the derivation.
 
 ## Tips and warnings {.unnumbered}
-- We can define ex as the solution of dy/dx = y, that is why ex = ex.  @sec-differential
-- Exponential increase: this is something that fears scientist, but non scientist does not care, because the intial rate of increase is slow
+- $\exp(x)$ when one does not want to write many exponents but $e^x$ is "easier" to intepret
+- We can derive the derivative of exp(x) from @eq-eTaylor,
+
+$$
+\frac{d}{dx} \frac{x^n}{n!} = n \frac{x^{n-1}}{n!} =  n \frac{x^{n-1}}{n \times (n-1)!} = \frac{x^{n-1}}{n-1}
+$$
+That is
+- $\exp(x) can also be defined as the solution of a [differential equation](@sec-differential)  $\frac{dy}{dx} = y$.
+- Exponential increase: this is something that fears scientist, but non scientist does not care, because the intial rate of increase is slow..
 - Used in many probability distribution Gaussian distribution, Exponential, Poisson.
 - Reciprocal of a logarithm @sec-log
-- Menaka maahagaga
 
+```{r}
+x <- seq(-4, 4, by = 0.0001)
+y <- exp(x)
+
+par(pty = "s")
+plot(x, y,
+     type = "l",
+     xlab = "x",
+     ylab = "y",
+     ylim = c(-4, 4),
+     xlim = c(-4, 4),
+     xaxs = "i",
+     yaxs = "i",
+     asp = 1,
+     main = "",
+     las = 1)
+# Add natural logarithm
+lines(x[x > 0], log(x[x > 0]), col = "red", lwd = 2)
+
+# Add identity line (y = x)
+abline(a = 0, b = 1, col = "blue", lty = 2, lwd = 2)
+
+# Add legend
+legend("topleft",
+       legend = c("exp(x)", "ln(x)", "y = x"),
+       col = c("black", "red", "blue"),
+       lty = c(1, 1, 2),
+       lwd = 2)
+
+```
 
 <!--
 
