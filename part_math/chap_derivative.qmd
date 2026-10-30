@@ -16,26 +16,7 @@ Derivative is essentially speed (you might remember that from physics and moveme
 How do you calculate speed? Distance over the time it takes to run the distance.
 So for a same amount of time (say one minute), car 1 travels 1 km and car 2 travels 2 km, then car 2 is faster than car 1, or the speed of car 2 is higher than the speed of car 1.
 To add a bit more precision, the derivative is instantenous rate of change,which is a fancier way of saying that instead of dividing by one minute, we divide by so delta time is smaller and we calculate the respecitive distance.
-And to be more general, derivative is independent and dependent @sec-function, so it does not need to be time, hence a more general term of instanaeous rate of change.
-
-
-<!--
-Interpretation from visual.
-
-Now, imagine we plot a function (see @sec-function_viz) about relationship between function and visualization.
-if x is time and y is position at a given time.
-Let's plot x0 and  x1 is one minute after x0. y0 and y1 position and y2 position after a minute
-```{r echo = FALSE}
-# dat <- data.frame(
-#    car = as.factor(c(1, 1, 2, 2)),
-#    time = c(0, 1, 0, 1),
-#    location = c(0,1,0,2))
-
-#ggplot(dat, aes(x = time, y = location, color = car)) +
-#    geom_point() +
-#    geom_line()+
-#    theme_bw() -->
-```
+And to be more general, derivative is independent and dependent @sec-functionMath, so it does not need to be time, hence a more general term of instanaeous rate of change.
 
 What is then speed of car 1, 1km/minute = 60 km per hour, and the speed of car 2 is 2km/minute = 120 km per hour.
 
@@ -104,43 +85,22 @@ the same is a function is decreasing.
 
 What if the derivative is zero means that the tangent is horizontal it could mean three of the next scenario: up, down or S.
 
-## If you want to know more {.unnumbered}
 
 
 <!--
-1. The Differentiable Function Definition
-When the derivative exists at every point within an open interval, it defines a completely new function, f′(x).
+Interpretation from visual.
 
-Textbook Source
-Book: Introduction to Real Analysis (4th Edition, 2011)
-Authors: Robert G. Bartle and Donald R. Sherbert
-Publisher: John Wiley & Sons
+Now, imagine we plot a function (see @sec-function_viz) about relationship between function and visualization.
+if x is time and y is position at a given time.
+Let's plot x0 and  x1 is one minute after x0. y0 and y1 position and y2 position after a minute
+```{r echo = FALSE}
+# dat <- data.frame(
+#    car = as.factor(c(1, 1, 2, 2)),
+#    time = c(0, 1, 0, 1),
+#    location = c(0,1,0,2))
 
-The Formal Definition
-In Chapter 6 ("Differentiation"), Section 6.1, the authors formalize the derivative as a functional mapping over an interval I⊆R:
-Definition: "Let I⊆R be an interval, let f:I→R, and let c∈I. We say that a number L is the derivative of f at c if given any ε>0 there exists a δ>0 such that if x∈I satisfies 0<∣x−c∣<δ, then
-
-$\left| \frac{f(x) - f(c)}{x - c} - L \right| < \varepsilon$
-
-In this case, we write f′(c)=L. If f has a derivative at every point of a subset D⊆I, we say that f is differentiable on D, and the function f′:D→R is called the derivative of f on D."
-
-This ε-δ formulation strips away the informal vocabulary of "approaching" to establish a rigorous topological constraint.
-
-1. High-Dimensional Generalization: The Total Derivative
-In multivariable calculus and advanced mathematical analysis, the derivative cannot be defined simply as a quotient because dividing by a vector is mathematically undefined. Instead, the derivative is rigorously defined as a linear transformation that best approximates the function locally.
-
-Textbook Source
-Book: Principles of Mathematical Analysis (3rd Edition, 1976)
-Author: Walter Rudin
-Publisher: McGraw-Hill
-
-The Formal Definition
-In Chapter 9 ("Functions of Several Variables"), Rudin defines the total derivative for a mapping from R^n to R^m:
-
-Definition: "Suppose E is an open set in R^n, f maps E into R^m, and x∈E. If there exists a linear transformation A of R^n into R^m such that
-$\lim_{h \to 0} \frac{|f(x + h) - f(x) - Ah|}{|h|} = 0$
-then f is said to be differentiable at x, and we write f′(x)=A.
-
-The linear transformation A is called the differential or the total derivative of f at x."
-
-(Note: In standard coordinate bases, this unique linear transformation A is represented by the Jacobian matrix of partial derivatives). -->
+#ggplot(dat, aes(x = time, y = location, color = car)) +
+#    geom_point() +
+#    geom_line()+
+#    theme_bw()
+``` -->

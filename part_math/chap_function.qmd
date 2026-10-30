@@ -5,37 +5,47 @@ f(x) = y
 :::
 
 Hearing a function is traumatizing.
-Many think of "domaine de définition, dérivé, étude des signes, et tableau de variation etc." To a certain extent, many has lost what is the true meaning of a function and its incredible use. The endgoal is the comprehend the correspondance between a function and a figure which will be expanded in [next chapter](@sec-function_viz). That is the geometric which is supposed to be intuitive.
+Many think of "domaine de définition, dérivé, étude des signes, et tableau de variation etc." To a certain extent, many has lost what is the true meaning of a function and its incredible use.
 
-In conjuction, the notion of function reappears through from a statistical perspective @sec-variable and programming perspective @sec-functionCoding. While they can defined it has core components: every object belonging to a specific domain (source set) and is paired to a unique object in a well defined codomain (target set). For mathematical functions, the pairing is doing via mathematical expression and the source and target set are both the set of real number.
+What matters the most is that mathematical "formalization" of a function.
+1- formalization, 2- significance,  and 3- the geometric. The geometric aspect will be elaborated in the next [chapter](@sec-function_viz). Formalization is below. But in short, a function is not only defined by f(x) but also the source set (domain) i.e. what are the different choices for x, and the target set (codomain) i.e. what are the outcomes are supposed to be. These concepts will reappear  also in statistics (@sec-population, @sec-variable) as well as in computer programming (@sec-functionCoding) when the domain and codomain are not necessarily numbers.
 
-A second important point that a function as a math problem, in this applied book, the intent is on the practical side and the goal is to find a function that relates two variables. For instance, change in average income as a function of age, rise in temperature as a function of CO2 emission, number of species as a function of forest size etc. While we loath the math expression, we will be thrilled if we find the expression that link the so we can choose which value to reach a desire outcome.
+A second point: significance is what brings function to life. This is mostly in acamdemic $f(x) = \frac{e^x}{sin(x) + x^2}$. In this applied book, the intent is on the practical side and the goal is to find a function that relates two variables. For instance, change in average income as a function of age, rise in temperature as a function of CO2 emission, number of species as a function of forest size etc. While we loath the math expression, we will be thrilled if we find the expression that link the so we can choose which value to reach a desire outcome. Because it then allows us to predict or control the outcome. It's life control to obtain a avoid certain outcome.
+
 
 ## Formal {.unnumbered}
 
 A function f is a rule that assigns to each element x in a set D exactly one element, called f(x), in a set E.
 The set D is called the domain of the function. The number f(x) is the value of f at x and is read 'f of x'. The range of f is the set of all possible values of f(x) as x varies throughout the domain, that is,
+
 $\text{Range} = \{f(x) \mid x \in D\}$
+
+In the classic academic, D and E are real numbers,  or N to R.
 The symbol that represents an arbitrary number in the domain of a function f is called an independent variable. The symbol that represents a number in the range of f is called a dependent variable.
-Mostly focus on R to R or N to R.
+
+This can be generalized, the domain x could multidimensional R x R as well as the output.
 
 ## Examples {.unnumbered}
 - y = ax + b, is what is called a linear function, because it draws a line. x is the independent variable and y is the dependent variable.
-- Second degree polynomial which is used to trajectory a projectile
-- The elementary function include algebraic
-- Transendental: trigonometric, hyperbolic, and the exponential and logarithmic functions.
+- y = x^2, if think about x as a positiive number, the function mostly computes the area of
 - The probability density function of the normal distribution is a function that maps a real number x to the probability density at that point. The function is defined as:
 $$f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}$$
-
+- $F(m_1, m_2, d) = \frac{m_1 \times m_2}{d^2}$ is a function of three variables that shows the attraction between two object of mass $m_1$ and $m_2$ and the distance between the two objects. Notice that it only makes sense (in the applied sense) if the R x R X R all are well-define especially the units.
 
 ## Tips and warning {.unnumbered}
-- Semantic: independent variable, input, covariates, x which is also the common notation x.
+- Semantic: independent variable, input, covariates, x which is also the common notation x. Argument, parameter
 - Semantic: dependent variable, output, response variable, y, most commonly denoted as y.
 - Semantic: function, application, map
 - The mathematical function is often denoted as f, g, h because they are meant to be symbolic too.
-- Functions Gamma Bessel Lambert, solution of equation
 - Implicit f(x, y) = 0, x^2 + y^2 = 0
+- Multiple variable
+- Find a function based on graphical point (fitting) (statistical) and  (dynamical) sense find a function that recreates a phenomenon.
 
+- Elementary function:
+  - Algebraic functions: these are functions that are constructed on the arithmetic operation and includes polynomical and quotient function. The have those that we can calculate by hand.
+  - Transendental functions: trigonometric, hyperbolic, and the exponential and logarithmic functions.
+
+- Non elementary: Functions Gamma Bessel Lambert, solution of equation but can't expressed on elementary function. In many cases, we are not concerned with closed form, more how it looks like and the ultimate is the geometric form.
 
 <!--
 see also sum and product notation for dummy variable.

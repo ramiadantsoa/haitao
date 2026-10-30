@@ -2,13 +2,6 @@
 
 {{< include ../preamble.qmd >}}
 
-<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-Isao, refeso, lanjao!
-:::
-
-
-## Concepts and intuitions {.unnumbered} -->
-
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 Discrete or continuous?
 :::
@@ -91,7 +84,7 @@ At a landscape level: *number of individuals*, density, elevation, *number of de
 
 
 ## Tips and warnings {.unnumbered}
-- A simple rule of thumb: a variable is quantitative when arithmetic operation (@sec-arithmetic) on the values are meaningful.
+- A simple rule of thumb: a variable is quantitative when arithmetic operation (@sec-arithmeticMath) on the values are meaningful.
 - Fake quantitative: Zip code, phone numbers are examples of "numbers" but are not quantitative. And to convince yourself, consider that the adding or averaging zip code (101 and 303) does not have numerical interpretation. They are convenient notation.
 - Discrete variable are integer, and most qualitative variables are discrete but , finally discrete has nothing to do with "etre discret".
 - A variable can take , it does not affect the classification above. However, variables having only positive values (or from negative to postive) are represented by different types of distribution and could be treated differently

@@ -80,7 +80,6 @@ $1 - e^-x$ is a probability that something will fail.
 - Reciprocal of a logarithm @sec-log
 - Menaka maahagaga
 
-## If you want to know more {.unnumbered}
 
 <!--
 

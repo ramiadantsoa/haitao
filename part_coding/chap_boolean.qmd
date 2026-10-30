@@ -7,7 +7,7 @@ a < b or a == b?
 :::
 
 
-In @sec-arithmetic, is to see how we arithmetic operation for in programming language. There are noticable symbols that haven't been used yet, the inequality "<" (and the related (">", ">=", "<=")) and the equality "=" symbol.
+In @sec-arithmeticMath, is to see how we arithmetic operation for in programming language. There are noticable symbols that haven't been used yet, the inequality "<" (and the related (">", ">=", "<=")) and the equality "=" symbol.
 
 What does it mean if we write $2 < 3$, $2 = 3$, or $2 > 3$. I hope the you are thinking the first is a correct statement (true), and the other two are incorrect (false). That idea is conveyed also in programming. That is these symbols are or inherrently a question to compare the left and the right-hand side. **Boolean variable is a special type to store the answer to that only result into true or false.**
 
@@ -52,7 +52,7 @@ For inequality
 - Is a smaller than b, `a <= b` or stricly smaller `a < b`
 - Is a largerr than b, `a > b` or stricly larger `a >= b`
 
-For equality, because `=` is used in variable asignment and in function argument @sec-function, the convention is to use two equals `==` so asking is a equal b? is encoded as `a == b`
+For equality, because `=` is used in variable asignment and in function argument @sec-functionMath, the convention is to use two equals `==` so asking is a equal b? is encoded as `a == b`
 
 To encode inequality, i.e. is a different from b, we encode as `a != b`.
 
@@ -78,7 +78,7 @@ The operation above works because R reinterpets/coercre them as 0 and 1 and thus
 - Semantic: boolean, binary, logical. Boolean is more mathematical form Boole. Binary is for just 2, and logical is true or false.
 - Link it is universal for arithmetic, the inequality and equality are also the same in any programming language
 
-- While it is convenient to encode data as `dead` or `alive` or other symbol (`maty` and `velona`) during data entry @sec-sec-dataframe. Converting them to boolean `TRUE` and `FALSE` is generally done during the data cleaning phase. In this case the the colum name could be dead and the values are `TRUE` or `FALSE`.
+- While it is convenient to encode data as `dead` or `alive` or other symbol (`maty` and `velona`) during data entry @sec-dataframe. Converting them to boolean `TRUE` and `FALSE` is generally done during the data cleaning phase. In this case the the colum name could be dead and the values are `TRUE` or `FALSE`.
 - Fundamental unit 0 and 1 and thus least memory and thus instead of integer or string.
 - In R, it is possible to perform arithmetic operation on boolean variable. This is a decision to treat them like the number 0 for `FALSE` and 1 for `TRUE`.
 

@@ -6,7 +6,7 @@
 The machine version of discrete and continuous number
 :::
 
-Programs are to calculate, the natural object that you can create, store, and manipulate are numbers. There are two types of numbers following the concepts in mathematics @sec-discrete_continuous and in statistics @sec-quantiative-variable.
+Programs are to calculate, the natural object that you can create, store, and manipulate are numbers. There are two types of numbers following the concepts in mathematics @sec-discrete_continuous and in statistics @sec-quantitative-variable.
 
 Discrete variables (or whole number) are represented by integer--truenoymy (vs mysnomy) used for counting and indexing.
 
@@ -23,7 +23,7 @@ my_favorite_integer <- 24L
 
 ```
 
-A numeric is generally a number with decimals. The decimal separator in programming language (Excel is not a programming language) is a period "." Comma is used as a list separator (see @sec-vector, @sec-matrix, and @sec-list).
+A numeric is generally a number with decimals. The decimal separator in programming language (Excel is not a programming language) is a period "." Comma is used as a list separator (see @sec-vector, @sec-matrixCoding, and @sec-list).
 
 
 ```{r}

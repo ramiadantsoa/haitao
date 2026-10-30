@@ -6,7 +6,7 @@
 Q: Lahy sa vavy ny zanakao? A: Eny
 :::
 
-The statement above is a joke between two logicians (the branch of mathematics that study boolean variables). But almost nobody laughs about it and barely grin when explained. Operations with numbers are natural @sec-numeric and @sec-arithmetic. However those on logical/boolean variables @sec-boolean are less intuitive. Imagine the boolean variable below (which also called statement or propositio)
+The statement above is a joke between two logicians (the branch of mathematics that study boolean variables). But almost nobody laughs about it and barely grin when explained. Operations with numbers are natural @sec-numeric and @sec-arithmeticMath. However those on logical/boolean variables @sec-boolean are less intuitive. Imagine the boolean variable below (which also called statement or propositio)
 
 A: Radama is a male --TRUE
 B: Radama is Malagasy -- TRUE

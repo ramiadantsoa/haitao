@@ -1,6 +1,8 @@
 # Basic mathematics
 
-Demistify math.
+Demistify math. Academic.
+
+Concepts
 
 Math is the foundation of all quantitative methods.
 And since this is about quantitative method, it is natural that I start with that.
