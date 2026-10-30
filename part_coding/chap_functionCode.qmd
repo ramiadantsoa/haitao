@@ -6,11 +6,11 @@
 More than 4 250 functions and 25 000 CRAN packages
 :::
 
-Function is another term that is borrowed from plain language and also mathematical language. In this case, a function in programming can be seen as a generalization of functions in mathematics @sec-function. And that generalization is good thing because it is what makes programming so useful and powerful.
+Function is another term that is borrowed from plain language and also mathematical language. In this case, a function in programming can be seen as a generalization of functions in mathematics @sec-functionMath. And that generalization is good thing because it is what makes programming so useful and powerful.
 
-In R, a function can be a simple mathematical functions (like `sin(), cos(), exp(), log()`). It could be a constructor like `c()` for `vectors, matrix(), list()`, and a statistical function like `mean()` to compute the mean and many more. As you could guess, a function exists for most statistical test one wants to do, to plot figures, manipulate data, solve equations, and imagination is the limit.
+In R, a function can be a simple mathematical functions (like `sin(), cos(), exp(), log()`{.r}). It could be a constructor like `c(), matrix(), list()`{.r}, and a statistical function like `mean()`{.r} to compute the mean and many more. As you could guess, a function exists for most statistical test one wants to do, to plot figures, manipulate data, solve equations, and imagination is the limit.
 
-Once we install and run R, there are roughly 4250 functions that are ready to use. But because that is not sufficient for everyone's need, more functions are created. Packages are essentially a collection of functions that perform a specific task popular examples are `ggplot2` for making figures or `vegan` for community analyses. Packages are there to make one's life easier. And one of the strengh of R is that there are many packages. While there is no estimates of how many functions are "official", with say 15 functions per packages there are at least `r 4250 + 25000 * 15` functions.
+Once we install and run R, there are roughly 4250 functions that are ready to use. But because that is not sufficient for everyone's need, more functions are created. Packages are essentially a collection of functions that perform a specific task popular examples are `ggplot2` for making figures or `vegan` for community analyses. Packages are there to make one's life easier. And one of the strengh of R is that there are many packages. While there is no estimates of how many functions are "official", with say 15 functions per packages there are at least `r format(4250 + 25000 * 15, scientific = FALSE)` functions.
 
 Functions are there to help, but functions are also the foes..how to locate the function you need, how to use a function (especially how to read the output) and why on earth it throws an error?
 

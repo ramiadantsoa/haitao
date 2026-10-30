@@ -7,21 +7,21 @@
 From math to coding
 :::
 
+
 This sole purpose of this chapter is to show the symbol and syntax on how matrix operation (element-wise arithmetic operation, and matrix operation) are done in R. This is implementing mathematical concept seen in @sec-matrix_op and @sec-matrix_multi.
 
 ## Formal {.unnumbered}
 
-
 - Scalar operation: when combining a number and a vector or a matrix, the same symbol notation addition `+`, subtraction `-`, multiplication `*`, division `/`.This is the same as in @sec-operationCoding.
 
-` 2 * c(a, b) = c(2 * a, 2 * b)`
+` 2 * c(a, b) = c(2 * a, 2 * b)`{.r}
 
 - Element-wise operation: when the two objects are the same dimensions (vector of same length or matrix of same dimensions), the same symbols are used.
-  `c(a, b) * c(c, d) = c(a * c, b * d)`
+  `c(a, b) * c(c, d) = c(a * c, b * d)`{.r}
 
 - Different dimension: We can still use the same operation when for vectors or matrix of different dimensions. However it throws a warning. Such operation is not defined mathematically and is a R specific implementation.
 
-- Matrix multiplication (as in @sec-matrix_multi): the R implementation symbol is "%*%". The star is to remember that it is still a multiplication. Unlike the arithmetic operation which is the same in any langauge, this syntax or symbol is specific to R.
+- Matrix multiplication (as in @sec-matrixMultiplicationMath): the R implementation symbol is `%*%`{.r}. The star is to remember that it is still a multiplication. Unlike the arithmetic operation which is the same in any langauge, this syntax or symbol is specific to R.
 
 
 ## Examples {.unnumbered}
@@ -29,6 +29,8 @@ This sole purpose of this chapter is to show the symbol and syntax on how matrix
 
 
 ```{r}
+#| echo: true
+#|
 vec <- c(2, 0 , 1)
 
 2 - vec
@@ -43,6 +45,7 @@ mat <- matrix(c(2, 3, 4, vec), nrow = 2)
 - Element-wise
 
 ```{r}
+#| echo: true
 new_vec <- c(10, 20, 30)
 
 vec + new_vec
@@ -79,6 +82,7 @@ vec * new_vec
 - A strange R case
 
 ```{r}
+#| echo: true
 vec + c(1, 2, 3, 4, 5)
 ```
 
@@ -88,11 +92,13 @@ vec + c(1, 2, 3, 4, 5)
 - R is a vectorial, so when applied a function, it uses an element-wise stuff.
 
 ```{r}
+#| echo: true
 another_vec <- c(1, 10, 100)
 
 sin(another_vec)
 
 ```
+
 - The same rules as in mathematics order of operation, parentheses and more applies. In the matrix multiplication, the number of columns in the first term and rows of the second term must be equal @sec-matrix_multi.
 - There is no matrix division, as mentioned in @sec-matrix_multi
 - one can create a diagonal matrix (all elements outside the diagonal are 0) with `diag(vec)`. Where vector is the element on the diagonal. A useful shortcut is `diag(number)`. When the argument is just a number, it creates a identity matrix, where all the element on the diagonal is 1.

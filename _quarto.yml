@@ -7,7 +7,7 @@ book:
   date: last-modified
   license: "CC BY-NC-ND"
   page-footer:
-    left: "Copyright 2026, T Ramiadantsoa"
+    left: "© 2026, Tanjona Ramiadantsoa"
     right: "This work is licensed under a [CC BY-NC-ND 4.0 International License](https://creativecommons.org/licenses/by-nc-nd/4.0/)."
   chapters:
     - index.qmd
