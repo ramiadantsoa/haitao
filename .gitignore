@@ -15,9 +15,9 @@ part_03_code/*
 temp/
 
 # But do not ignore files directly within MyDir
-!part_01_math/*.qmd
-!part_02_stat/*.qmd
-!part_03_code/*.qmd
+!part_math/*.qmd
+!part_stat/*.qmd
+!part_code/*.qmd
 **/*.quarto_ipynb
 
 
@@ -45,3 +45,6 @@ _site/
 
 # email list number
 email_list.numbers
+
+# ignore pdf and docx from rendering (**/chap_* if any depth)
+*/chap_*/

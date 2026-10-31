@@ -3,8 +3,10 @@
 {{< include ../preamble.qmd >}}
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
-Algorithm
+
 :::
+
+
 
 ## Formal {.unnumbered}
 
@@ -13,6 +15,7 @@ Algorithm
 
 
 ## Tips and warnings {.unnumbered}
+- Which package did you use?
 
 - Meta understanding of function that could help
   - What do you want to do?

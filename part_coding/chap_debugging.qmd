@@ -3,35 +3,27 @@
 {{< include ../preamble.qmd >}}
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
-Algorithm
+Soa lavo, hahay hamindra!
 :::
+
+
+Communication hard and prone of misunderstanding. This is an inherent when communicating, whether we learn spelling or mispeaking (you experience thinking one thing and saying the oppposite--only noticed when corrected by the audience). And most expressed with talking in a foreign language. There are only two solutions: practice and focus on the comprehension of the audience--placing in the seat of the audience. Malagasy is prone to say of "alaivo le zavatra ao anaty an ao".
+
+While we can manage with human mostly inconsequential, and the audience also have a responsibility miscommunication in computer results in error--there is an instruction that the computer can't understand or can't execute. That is also why it is called language.
+There is an anecdote that professional programmer every five lines. Not sure it is true but regardless of their level bugs are inevitable.
+You will make bug, your code will generate an error, the more you make, the faster you will recognize them, and the .
+This is not about aptitude, it is about experience.
+
 
 ## Formal {.unnumbered}
 
 
 ## Examples {.unnumbered}
-
+- Typo
+- Non-execultable bug
+- Improper argument
 
 ## Tips and warnings {.unnumbered}
-
-- Meta understanding of function that could help
-  - What do you want to do?
-  - What is the name of the function?
-  - What is your argument of that function
-  - What is the output of that function
-
-Example 1:
- - I want to calculate the sinus of a number
- - The sytnax that calls the function sinus is sin()
- - The argument should be a number
- - The output should also be a number.
-
-
-Example 3:
- - I want to do a linear regression between of height and altitude
- - The syntax is lm(height ~ altitude)
- - The argument should be two vectors of same length
- - The output is a list of a bunch of things including the coefficient, p-value, R-squared, residuals etc.
-
-A good idea to The arguments are there and the values. It is the same for all help file in R.
-
+- Read the error message, seriously, read it!
+- Getting rid of an error message does not mean you got the desired ouput.
+- Program for debugging.
