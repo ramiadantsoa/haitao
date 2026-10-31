@@ -13,6 +13,11 @@ But in the same vein, words (like population, average, uniform, qualitative) are
 XX quoted that there are lies, big lies, and statistics. Hinting about the perneciousness of statistics. At one hand if ilitterate statistically, giving numbers seemed to be a ultimate proof...at the other hand, if well versed and malicious enough, we can always show by transforming the data and nitpicking which test to use..But thing it is malicious.
 The hope is that with better grasp of statistics could lead to better insight and decision. And think critically about your data, your stat of choice... and also how one design the sampling and collect the data.
 
+This is divided in three parts: definition @sec-population, @sec-variable, and the different types @sec-quantitative-variable and @sec-qualitative-variable, a first way to summarize data with distribution @sec-distribution and @sec-cumulativeDist. The last part is about basic descriptive statistics which further summarise the distribution from central tendency @sec-mean, @sec-mode, @sec-median, and dispersion @sec-variance and @sec-quantile.
+
+Notes on terminology: variable, qualitative,
+Philosophical
+
 <!-- The overal goal here is to explain (again) p-value  to eventually prevent misuse
 The concept is based on a statistic  and the explain distribution, its characteristic & concept of a random variable
 Minimum foundation, cannot be avoided, and mathematical notation.

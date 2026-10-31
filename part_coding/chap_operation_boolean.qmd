@@ -1,4 +1,4 @@
-# Boolean operation {#sec-boolean-operation}
+# Boolean operation {#sec-booleanOperationCoding}
 
 {{< include ../preamble.qmd >}}
 

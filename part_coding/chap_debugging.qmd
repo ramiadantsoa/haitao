@@ -1,0 +1,37 @@
+# Debugging {#sec-debugging}
+
+{{< include ../preamble.qmd >}}
+
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
+Algorithm
+:::
+
+## Formal {.unnumbered}
+
+
+## Examples {.unnumbered}
+
+
+## Tips and warnings {.unnumbered}
+
+- Meta understanding of function that could help
+  - What do you want to do?
+  - What is the name of the function?
+  - What is your argument of that function
+  - What is the output of that function
+
+Example 1:
+ - I want to calculate the sinus of a number
+ - The sytnax that calls the function sinus is sin()
+ - The argument should be a number
+ - The output should also be a number.
+
+
+Example 3:
+ - I want to do a linear regression between of height and altitude
+ - The syntax is lm(height ~ altitude)
+ - The argument should be two vectors of same length
+ - The output is a list of a bunch of things including the coefficient, p-value, R-squared, residuals etc.
+
+A good idea to The arguments are there and the values. It is the same for all help file in R.
+

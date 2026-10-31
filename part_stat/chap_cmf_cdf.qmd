@@ -1,4 +1,4 @@
-# Cumulative mass and density function {#sec-pmf}
+# Cumulative mass and density function {#sec-cumulativeDist}
 
 {{< include ../preamble.qmd >}}
 

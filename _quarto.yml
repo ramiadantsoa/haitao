@@ -80,6 +80,8 @@ book:
         # - part_coding/chap_tibble.qmd
         - part_coding/chap_list.qmd
         - part_coding/chap_functionCode.qmd
+        - part_coding/chap_pseudocode.qmd
+        - part_coding/chap_debugging.qmd
         # - part_coding/chap_shortcut.qmd
         # - part_coding/chap_beginners_bug.qmd
     # - part: part_stat_applied/part_stat_applied.qmd

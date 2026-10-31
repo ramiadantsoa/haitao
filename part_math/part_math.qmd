@@ -1,23 +1,20 @@
 # Basic mathematics
 
-Demistify math. Academic.
-
-Concepts
-
 Math is the foundation of all quantitative methods.
-And since this is about quantitative method, it is natural that I start with that.
-The existence of this part is written so that we have a basis.
-You might even want to skip this, but when you face, notation and concept issues in later chapter, you can also go back to genesis.
+And since this is about quantitative methods, it is natural that I start with foundation.
+Many even want to skip this and only return notation and concept issues in later chapter. The dynamic nature/hyperlink means you can just click go to the math concepts.
 
 It has become a standard materials for humorists about the uselessness of math (think about the use of sqrt of 25 or the use of a compas).
 Mathphobia is real, and these jokes probably easy the trauma some people had about that in the past.
-The goal  is not prove that this or find the limit or analyses is hard, polynomial is not clear or identity remarkable, application, affine, solve equation, factories, multiplication, & addition, go to the basics
-So, this book is applied here is to show how useful math is.
-Where it is applied in the real world, and more specifically in data analyses.
+Confuse the difficulty and usefuleness.
+They are almost uncorrelated.
+Arithmetic opertion is easy and useful, proving fermat's last theorem is difficult but less usefull (in practice), partial differential equations are difficult and useful, and easy but less used.
+The idea behind here is somehow easy and useful-applied
+How do we reconcile that?
+The goal is not to do PhD in mathematics or solve, it is having the tools we need.
 
-As said above, most chapters are to support concept introduced later but I developed things that weak in people, such as operation, notations, matrix, and graphical representation and representation of few most useful fonction (such log and exponentional), I will also talk about derivative, qualitative and quantiative in a math way, and difference and differential equation.
-These are I think minimal to with applield math.
+As said above, most chapters are to support concept introduced later. This can be grouped in three parts: the notation and characterization (@sec-greek, @sec-sum, @sec-discrete_continuous), operation on number @sec-arithmeticCoding, on matrix @sec-matrixMath, on function @sec-functionMath, graphic representation @sec-functionViz, @sec-derivative. We will end by recalling what is an exponential @sec-exponential, logarithm @sec-log, and end with difference @sec-difference and differential equation @sec-differential.
+Because this is about math, there is no a priori that nor to show R code (which I used for making most of the graphs.)
 
-Formalize concepts! We are lost in the formalization.
-
-Crawl before you walk, walk before to run
+Notes on terminology..get comfortable with nuances (function)
+To reduce terminology, the most basic, math is about generalization and many of the concepts are generalized. They will be mentioned if it is cool or needed later. Philosphical
