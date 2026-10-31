@@ -20,9 +20,19 @@ The other practical advantage of a data frame is that there are often colum name
 
 ## Formal {.unnumbered}
 
-A data frame is constructed with the function df <- data.frame(name1 = vector1, name2 =  vector2, name3 = vector3, ...).
+A data frame is constructed with the function
+```{r}
+#| echo: true
+#| eval: false
+    df <- data.frame( # construct a data.frame
+        name1 = vector1, # first column and call it name1
+        name2 =  vector2, # second colum and call it name2
+        name3 = vector3,
+        ...).
+```
 
-The main constraint is that length(vector1) = length(vector2) = otherwise it won't be a rectangle.
+The main constraint is that
+ `length(vector1) = length(vector2) = `{.r} otherwise it won't be a rectangle and thus should not work
 
 You can conveniently access with df$name1 which is the most common way, due to inheritance this is equivalent to df[,1] or df["name1"].
 
@@ -59,12 +69,14 @@ d$name <- c("Andry", "Feno", "Felana")
 ```
 
 ## Tips and warnings {.unnumbered}
-- column names should not include space or special characters (%, etc.)
-- If a value is given for a column, the data.frame will of the number of rows.
+- column names are variable should not include space or special characters. Same rule as in @sec-assignment
+- If a value is given for a column, the data.frame will of the number of rows???
 - if a vector, it will just inherit its name
-- you can add more columns by just creating df$new_col <- vector xxx
-- coercion at the vector level
-- tibble in future chapters which is beyond, there are minor differences and
+- you can add more columns by just creating
+  `df$new_col <- your_vector`{.r}
 
+- `tibble` is a very common dataframe format. The popular packages `tidyverse` prefers when data is formated as tibble, but data.frame also works. The difference is subtle enough that most of the time, we can use either.
+- R shortcut: `data.frame(1, c("a", "b"))`{.r} works even if the length of vector are different, this works only when the short vector is exactly a vector of length 1. R decides to create a constant vector. It is a useful trick but need to remember that it is a specific scenario. Better to just use same length
+- Better to give name other it will create its own.
 
 ## If you want to know more {.unnumbered}

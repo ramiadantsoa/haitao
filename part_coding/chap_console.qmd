@@ -57,11 +57,11 @@ See below interface of three consoles using base R,  in RStudio, and in VS Code.
 
 ::: {#fig-Rconsole layout-nrow=3}
 
-![Console in R](../fig/console_r.png){#fig-console_default width=300}
+![Console in R](../fig/console_r.png){#fig-console_default width="80%"}
 
-![Console in RStudio](../fig/console_rstudio.png){#fig-console_rstudio width=300}
+![Console in RStudio](../fig/console_rstudio.png){#fig-console_rstudio width="80%"}
 
-![Console in VS Code](../fig/console_vscode.png){#fig-console_vscode width=300}
+![Console in VS Code](../fig/console_vscode.png){#fig-console_vscode width="80%"}
 
 Same concept
 :::
@@ -95,7 +95,7 @@ print("Hello world")
 - You cannot modify evaluated prompt.
 - Your prompt can be incomplete, the program cannot get the answer and is asking you to add more input to run the (+) as well as a blinking black cursor.
 
-![Incomplete command](../fig/incomplete_command.png){#fig-incomplete}
+![Incomplete command](../fig/incomplete_command.png){#fig-incomplete width="50%"}
 
 - In that case, you can
   - complete the like adding say the number you want to multiply

@@ -8,7 +8,7 @@ From math to coding
 :::
 
 
-This sole purpose of this chapter is to show the symbol and syntax on how matrix operation (element-wise arithmetic operation, and matrix operation) are done in R. This is implementing mathematical concept seen in @sec-matrix_op and @sec-matrix_multi.
+This sole purpose of this chapter is to show the symbol and syntax on how matrix operation (element-wise arithmetic operation, and matrix operation) are done in R. This is implementing mathematical concept seen in @sec-sec-matrixOperationMath and @sec-matrixMultiplicationMath
 
 ## Formal {.unnumbered}
 
@@ -30,7 +30,6 @@ This sole purpose of this chapter is to show the symbol and syntax on how matrix
 
 ```{r}
 #| echo: true
-#|
 vec <- c(2, 0 , 1)
 
 2 - vec
@@ -59,23 +58,24 @@ vec * new_vec
 ```{r}
 #| echo: true
 
-# mat1 <- matrix(1:6, nrow = 3)
-# mat2 <- matrix(7:2, nrow = 3)
+fruit_quantity <-
+    matrix(data = c(6, 1, 0, 3, 10, 1, 0, 0.5, 0, 3, 0, 2),
+    nrow = 4,
+    ncol = 3,
+    byrow = FALSE)
 
-# mat1 + 1
-# mat1 / 2
+fruit_quantity
 
-# mat1 - mat2
-# mat1 * mat2
+price_shops <-
+  matrix(
+    data = c(500, 1000, 2000,  600, 800, 2500),
+    nrow = 3
+)
 
-# ## Example of setting row and column names
-# mdat <- matrix(c(1, 2, 3, 11, 12, 13), nrow = 2, ncol = 3, byrow = TRUE,
-#                dimnames = list(c("row1", "row2"),
-#                                c("C.1", "C.2", "C.3")))
-# mdat
+price_shops
 
-
-# mat1 %*% 1:2
+# Conducting the multiplication
+fruit_quantity %*% price_shops
 
 ```
 

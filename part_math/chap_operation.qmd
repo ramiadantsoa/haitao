@@ -45,9 +45,9 @@ Quick review of order operation
   - Equal priority, so go left to right `4 x 2 = 8`. To convince yourself about priority, think of 2 - 2 + 3 (same  would you do 2 + 3 first).
 - Three notations for multiplication `x`, `.` and nothing ` ` as in `a b`. While the latter makes compact it is also a source of confusion. One classic error in coding is forgetting to explicitly add a [multiplication symbol](@sec-matrixOperationCoding)
  - There are also three notations for division `÷`, `/` and $\frac{}{}$. The latter can clarify priority and avoid usage of parentheses. Unfortunately, that symbol is not available in R language.
-     $\frac{1}{2} \times 3 = \neq \frac{1}{2 \times 3}$ instead of $1/2 \times 3$
+     $\frac{1}{2} \times 3 \neq \frac{1}{2 \times 3}$ instead of $1/2 \times 3$
 - Just add parenthesis when in doubt even it might be unnecessary--this can be important especially when coding.
-- The rule of power over multiplication and multiplication over addition should be natural. In fact, multiplication by definition is a generalization of addition: $2 + 2 + 2 + 2 = 2 \times 4$. Thus if you reverse and $2 * 4 + 3 = 2 + 2 + 2 + 2 + 3$.
+- The rule of power over multiplication and multiplication over addition should be natural. In fact, multiplication by definition is a generalization of addition: $2 + 2 + 2 + 2 = 2 \times 4$. Thus if you reverse and $2 \times 4 + 3 = 2 + 2 + 2 + 2 + 3$.
 - The same applies to power $2 ^ 3 = 2 \times 2 \times 2$. This if you revers  $2^3 \times 3 = 2 \times 2 \times 2 \times 3$ and $2^3 + 3 = 2 \times 2 \times 2 + 3$
 
 

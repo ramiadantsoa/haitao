@@ -13,7 +13,7 @@ All you need is Euler formula
 
 Differential equations can be the hardest problems in mathematics. One long-standing problem is called the Navier-Stokes equation as one of the seven great open mathematical problem. Some solution were recently claimed to be solved by AI. Unlike equations where the solution are number, the solution of differential equations are functions. Despite the tools mathematicians have developed, there is no closed-form solution based on elementary function @sec-functionMath. For instance, there is no function $y = f(x)$ so that $\frac{dy}{dt} = e^{-x^2}$.
 
-However, from an applied perspective, there is no need to find the expression of $f(x)$, it suffices to know the graph of f(x) which anyway the solution. The mathematical expression and the graph is anyway the same thing @sec-function_viz. Fortunately, for many not so complicated equation: construction the solution is a piece of cake with a method called Euler formula. The bonus is comprehending (solution), tools to understand and construct a differential equation.
+However, from an applied perspective, there is no need to find the expression of $f(x)$, it suffices to know the graph of f(x) which anyway the solution. The mathematical expression and the graph is anyway the same thing @sec-functionViz. Fortunately, for many not so complicated equation: construction the solution is a piece of cake with a method called Euler formula. The bonus is comprehending (solution), tools to understand and construct a differential equation.
 
 
 Let's use the simple differential equation

@@ -40,7 +40,7 @@ Explicit and implicit argument
 
 ## Examples {.unnumbered}
 
-- Mathematical function
+### Mathematical function {.unnumbered}
 Here are examples of basic function
 ```{r}
 #| echo: true
@@ -59,15 +59,59 @@ result <- sqrt(25) + abs(-2)
 
 ```
 
-- Data manipulation and construction
+### Data manipulation and construction {.unnumbered}
 
-```r
-    sort()
-    unique()
-    seq()
+```{r}
+#| echo: true
+
+# Sort in a sequence of number
+    sort(c(10, 2, 4, 2, 3.1))
+
+# Reverse the order
+    sort(c(10, 2, 4, 2, 3.1), decreasing = TRUE)
+
+# Sort also work with string
+    sort(c("jaojaoby", "tovo j'hay", "bessa", "reko"))
+
+# Extract the unique value
+    unique(c(10, 2, 4, 2, 3.1))
 ```
 
-- Plot function
+### Plot function {.unnumbered}
+
+
+```{r}
+#| echo: true
+indpt_variable <- 1:5 # shortcut to generate discrete from 1 to 5
+dpt_variable <- indpt_variable^2 # square the values in x
+
+plot(
+    x = indpt_variable, # values to put on the x-axis
+    y = dpt_variable, # values to put on the y-axis
+    col = "blue", # color of the points
+    pch = 2, # type of points
+    typ = "p") # "p" is short for points
+
+```
+
+Changing the aesthectics of the plot
+
+```{r}
+#| echo: true
+#|
+indpt_variable <- 1:5 # shortcut to generate discrete from 1 to 5
+dpt_variable <- indpt_variable^2 # square the values in x
+
+plot(
+    x = indpt_variable, # values to put on the x-axis
+    y = dpt_variable, # values to put on the y-axis
+    col = "red", # color of the points
+    typ = "l") # "l" is short for line
+
+```
+
+Examples in  derivative @fig-pdfDerivative were done in the same way by adding more and more arguments to the function
+
 
 
 ## Tips and warnings {.unnumbered}
@@ -75,7 +119,7 @@ result <- sqrt(25) + abs(-2)
 - CRAN packages:
 - Open source you can find the exact body of the function
 
-###  Implicity and explicit argument: example matrix construction
+###  Implicity and explicit argument: example matrix construction {.unnumbered}
 And here is what happens when we look for definition of `matrix`{.r} in the help file
 
 ![Usage](../fig/matrixHelp.png){#fig-matrixHelp}.
@@ -132,16 +176,20 @@ mat
 
 The rule is data is first to can be omitted but the other arguments can be tricky.
 
-### Default
+### Default {.unnumbered}
 
  - all defined
 ```{r}
 #| echo: true
 mat <-
-    matrix(data = c(6, 1, 0, 3, 10, 1, 0, 0.5, 0, 3, 0, 2),
-    nrow = 4,
-    ncol = 3,
-    byrow = FALSE)
+    matrix(
+        data = c(6, 1, 0,
+                3, 10, 1,
+                0, 0.5, 0,
+                3, 0, 2),
+        nrow = 4,
+        ncol = 3,
+        byrow = FALSE)
 mat
 ```
 
@@ -150,34 +198,13 @@ mat
 ```{r}
 #| echo: true
 mat <-
-    matrix(data = c(6, 1, 0, 3, 10, 1, 0, 0.5, 0, 3, 0, 2),
+    matrix(
+        data = c(6, 1, 0,
+                3, 10, 1,
+                0, 0.5, 0,
+                3, 0, 2),
     nrow = 4)
 mat
 ```
 
 - If one wants to make a plot, there is over 20 arguments you can add. Default is there so you don't need to specify all of them. So most of the argument are assigned with a  default value eg. color, point size etc.
-
-### Last but not least
-
-
-- Meta understanding of function that could help
-  - What do you want to do?
-  - What is the name of the function?
-  - What is your argument of that function
-  - What is the output of that function
-
-Example 1:
- - I want to calculate the sinus of a number
- - The sytnax that calls the function sinus is sin()
- - The argument should be a number
- - The output should also be a number.
-
-
-Example 3:
- - I want to do a linear regression between of height and altitude
- - The syntax is lm(height ~ altitude)
- - The argument should be two vectors of same length
- - The output is a list of a bunch of things including the coefficient, p-value, R-squared, residuals etc.
-
-A good idea to The arguments are there and the values. It is the same for all help file in R.
-

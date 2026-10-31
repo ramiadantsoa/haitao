@@ -48,9 +48,11 @@ $${#eq-mean_C}
 ## Examples {.unnumbered}
 Assume the grade is {5, 7, 10, 10, 12, 14}.
 
-V1: $\frac{5 + 7 + 10 + 10 + 12 + 14}{6}$
-V2: $\frac{5 + 7 + 2 \times 10 + 12 + 14}{6}$
-V3: $\frac{1}{6} \times 5 + \frac{1}{6} \times 7 + \frac{2}{6} \times 10 + \frac{1}{6} \times 12 + \frac{1}{6} \times 14}$
+V1: $\frac{5 + 7 + 10 + 10 + 12 + 14}{6}$ \
+
+V2: $\frac{1 \times 5 + 1 \times 7 + 2 \times 10 + 1 \times 12 + 1 \times 14}{6}$ \
+
+V3: $\dfrac{1}{6}  5 + \frac{1}{6}  7 + \frac{2}{6}  10 + \frac{1}{6}  12 + \frac{1}{6} 14$ \
 
 V3 is just V2 where we divided the coefficient by the common denominator.
 

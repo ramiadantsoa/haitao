@@ -16,37 +16,47 @@ In short these cumulative mass and density function (distribution but less used)
 
 Cummulative for ordinal
 ```{r}
-
 df_dist <- data.frame(
-        size = c("Asmall", "Bmedium", "Clarge"),
-        value = c(4, 2, 3))
+  size = c("Asmall", "Bmedium", "Clarge"),
+  value = c(4, 2, 3)
+)
 
-fig1 <- ggplot(dat = df_dist, aes(x = size,  y = value, fill = size)) +
-    geom_col()+
-    scale_fill_manual(values = c("Asmall" = "orange",
-                                "Bmedium" = "purple",
-                                "Clarge" = "#69b3a2")) +
-    ylim(c(0, 11)) +
-    theme_bw()
+df_cumul <- data.frame(
+  cumul = c("Asmall <=", "Bmedium <=", "Bmedium <=", "Clarge <=", "Clarge <=", "Clarge <="),
+  size = c("Asmall", "Asmall", "Bmedium", "Asmall", "Bmedium", "Clarge"),
+  value = c(4, 4, 2, 4, 2, 3)
+)
 
+# Colors matching scale_fill_manual
+colors <- c("Asmall" = "orange", "Bmedium" = "purple", "Clarge" = "#69b3a2")
 
- df_cumul <- data.frame(
-    cumul = c("Asmall <=", "Bmedium <=","Bmedium <=", "Clarge <=", "Clarge <=",  "Clarge <="),
-    size = c("Asmall", "Asmall", "Bmedium", "Asmall", "Bmedium", "Clarge"),
-    value = c(4, 4, 2, 4, 2, 3)
- )
+# Prepare cross-tabulation for stacked barplot (rows = fill/stack, cols = x-axis)
+cumul_matrix <- xtabs(value ~ size + cumul, data = df_cumul)
 
-fig2 <- ggplot(dat = df_cumul, aes(x = cumul, y = value, fill = size)) +
-    geom_col(position = position_stack(reverse = TRUE)) +
-    scale_fill_manual(values = c("Asmall" = "orange",
-                                "Bmedium" = "purple",
-                                "Clarge" = "#69b3a2")) +
-    ylim(c(0, 11)) +
-    theme_bw()
+# Set layout for two side-by-side plots
+par(mfrow = c(1, 2))
 
-fig <- fig1 + fig2 +
-    plot_layout(axis_titles = "collect", guides = "collect")
-fig
+# Plot 1: Standard barplot
+barplot(
+  height = df_dist$value,
+  names.arg = df_dist$size,
+  col = colors[df_dist$size],
+  ylim = c(0, 11),
+  xlab = "size",
+  ylab = "value"
+)
+
+# Plot 2: Stacked barplot
+barplot(
+  height = cumul_matrix,
+  col = colors[rownames(cumul_matrix)],
+  ylim = c(0, 11),
+  xlab = "cumul",
+  ylab = "value"
+)
+
+# Reset layout to default
+par(mfrow = c(1, 1))
 ```
 
 
@@ -106,29 +116,40 @@ An immediate consequence is always increasing.
 
 And example of cumulative for discrete, the scale on y-axis is changed so we can see that the one the right is the one the left that is gradualy stacked
 ```{r}
-
-# Quantitative
 set.seed(1)
-df_discrete <- data.frame(
-    size = rpois(100, 5)) |>
-    count(size)
 
-fig_discrete <- ggplot(df_discrete, aes(x = size, xend = size, y = 0, yend = n)) +
- geom_point(aes(x = size, y = n)) +
-  geom_segment() +
-  ylim(c(0, 100)) +
-  theme_bw()
+# Generate counts
+df_discrete <- data.frame(size = rpois(100, 5))
+df_discrete <- aggregate(n ~ size, data = transform(df_discrete, n = 1), FUN = length)
 
-df_discrete_cumulative <- cumsum(df_discrete)
-fig_discrete_cumulative <- ggplot(df_discrete_cumulative, aes(x = size, xend = size, y = 0, yend = n)) +
- geom_point(aes(x = size, y = n)) +
-  geom_segment() +
-  theme_bw()
+# Cumulative data
+df_discrete_cumulative <- transform(df_discrete, n = cumsum(n))
 
-fig_cumDiscrete <- fig_discrete + fig_discrete_cumulative +
-    plot_layout(axis_titles = "collect")
+# Set layout for two side-by-side plots
+par(mfrow = c(1, 2))
 
-fig_cumDiscrete
+# Plot 1: Discrete distribution
+plot(
+  df_discrete$size, df_discrete$n,
+  type = "h",
+  ylim = c(0, 100),
+  xlab = "size",
+  ylab = "n"
+)
+points(df_discrete$size, df_discrete$n, pch = 16)
+
+# Plot 2: Cumulative distribution
+plot(
+  df_discrete_cumulative$size, df_discrete_cumulative$n,
+  type = "h",
+  ylim = c(0, 100),
+  xlab = "size",
+  ylab = "n"
+)
+points(df_discrete_cumulative$size, df_discrete_cumulative$n, pch = 16)
+
+# Reset layout to default
+par(mfrow = c(1, 1))
 ```
 
 Here are example of three distribution, a flat/uniform, a highly asymmetric distributiona and a symmetric
@@ -137,9 +158,11 @@ Uniform
 ```{r}
 
 set.seed(42)
-data_values <- runif(100)
+data_values <- runif(1000)
 
-hist(data_values, col = "lightblue")
+par(mfrow = c(1, 2))
+
+hist(data_values, col = "lightblue", ylim = c(0, 1000))
 
 # 2. Compute the initial histogram without plotting it
 hist_object <- hist(data_values, plot = FALSE)
@@ -161,9 +184,10 @@ Exponential
 ```{r}
 
 set.seed(42)
-data_values <- rexp(100, 1)
+data_values <- rexp(1000, 2)
 
-hist(data_values, col = "lightblue")
+par(mfrow = c(1, 2))
+hist(data_values, col = "lightblue", ylim = c(0, 1000))
 
 # 2. Compute the initial histogram without plotting it
 hist_object <- hist(data_values, plot = FALSE)

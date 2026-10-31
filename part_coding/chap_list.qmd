@@ -18,20 +18,48 @@ To construct a list, one uses list_name <- list(x = object_you_want, ... )
 
 To access element it uses double square brackets [[]] as in matrix, but if also add names as in data.frame, then you can use $ to access that
 
+You can extract also [] but it will still give a list.
+
 ## Examples {.unnumbered}
 
+### Single vs double bracket {.unnumbered}
 ```{r}
 #| echo: true
 
-silly_example <- list(xx = 1, list(x = c(1, 2), y = "A"), mat = matrix(1:6, nrow = 2))
+silly_example <-
+    list(
+        xx = 1, # first element
+        list(x = c(1, 2), y = "A"), # second element
+        mat = matrix(1:6, nrow = 2)) # third element
 
+# extracting the first element
 silly_example[[1]]
+
+# extracting with single bracket
+silly_example[1]
+
+```
+When you compare the output, you see that in the first one it extracted the value, whereas in the second is extracted is a (sub)list notice the $xx above. You can explicitly check that by look at the structure with the function `str()`{.r}
+
+### Extracting differently or subsub value {.unnumbered}
+```{r}
+#| echo: true
+# extracting the first element if it has name/attributes
 silly_example$xx
 
+# extracting the second element
+silly_example[[2]]
+
+# extracting in first element in the second element
 silly_example[[2]][1]
+
+# can also use attributes
 silly_example[[2]]$x
 
-silly_example[[3]]
+# or list extraction because it is also a list
+silly_example[[2]][[1]]
+
+# extracting the second column of the matrix--the third element
 silly_example[[3]][, 2]
 ```
 

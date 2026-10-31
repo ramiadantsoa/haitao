@@ -46,57 +46,77 @@ df_sex <- data.frame(
     value = c(13, 16)
 )
 
-fig_sex <- ggplot(df_sex, aes(x = sex, y = value)) +
-    geom_col() +
-    theme_bw()
-
 df_lemur <- data.frame(
     species = c("indri", "catta", "mouse"),
     value = c(10, 20, 300)
 )
 
-fig_lemur_a <- ggplot(df_lemur, aes(x = species, y = value)) +
-    geom_col() +
-    theme_bw()
+# Set layout for two side-by-side plots
+par(mfrow = c(1, 2))
 
-fig_qual <- fig_sex + fig_lemur_a +
-    plot_layout(axis_titles = "collect")
+# Plot 1: Sex distribution
+barplot(
+  height = df_sex$value,
+  names.arg = df_sex$sex,
+  xlab = "sex",
+  ylab = "value"
+)
 
-fig_qual
+# Plot 2: Lemur species distribution
+barplot(
+  height = df_lemur$value,
+  names.arg = df_lemur$species,
+  xlab = "species",
+  ylab = "value"
+)
+
+# Reset layout to default
+par(mfrow = c(1, 1))
 ```
 
 The first column is for a pure discrete variable, where are the second and third are for continuous with two different binning.
 
 ```{r}
 
-# Quantitative
 set.seed(1)
-df_discrete <- data.frame(
-    size = rpois(100, 5)) |>
-    count(size)
 
+# Discrete data
+df_discrete <- data.frame(size = rpois(100, 5))
+df_discrete <- aggregate(n ~ size, data = transform(df_discrete, n = 1), FUN = length)
 
-fig_discrete <- ggplot(df_discrete, aes(x = size, xend = size, y = 0, yend = n)) +
- geom_point(aes(x = size, y = n)) +
-  geom_segment() +
-  theme_bw()
+# Continuous quantitative data
+df_quant <- data.frame(size = rnorm(100, 10, 1))
 
-set.seed(1)
-df_quant <- data.frame(
-    size = rnorm(100, 10, 1)
+# Set layout for three side-by-side plots
+par(mfrow = c(1, 3))
+
+# Plot 1: Discrete lollipop plot
+plot(
+  df_discrete$size, df_discrete$n,
+  type = "h",
+  xlab = "size",
+  ylab = "n"
+)
+points(df_discrete$size, df_discrete$n, pch = 16)
+
+# Plot 2: Histogram (binwidth = 1)
+hist(
+  df_quant$size,
+  breaks = seq(floor(min(df_quant$size)), ceiling(max(df_quant$size)), by = 1),
+  main = "",
+  xlab = "size"
 )
 
-fig_quant_a <- ggplot(df_quant, aes(x = size)) +
-    geom_histogram(binwidth = 1) +
-    theme_bw()
+# Plot 3: Histogram (binwidth = 0.2)
+hist(
+  df_quant$size,
+  breaks = seq(floor(min(df_quant$size)), ceiling(max(df_quant$size)), by = 0.2),
+  main = "",
+  xlab = "size"
+)
 
-fig_quant_b <- ggplot(df_quant, aes(x = size)) +
-    geom_histogram(binwidth = 0.2) +
-    theme_bw()
-
-fig_quant <- fig_discrete + fig_quant_a + fig_quant_b +
-    plot_layout(axis_titles = "collect")
-fig_quant
+# Reset layout to default
+par(mfrow = c(1, 1))
 ```
 
 ## Tips and warnings {.unnumbered}
@@ -108,34 +128,82 @@ fig_quant
 - For bar chart one can reoder the values on x-axis for qualitative variable (unless it is an ordinal variable). The standard is to put them from the least frequent to the most frequent (or inversely). Generally eases the interpretation
 
 ```{r}
-fig_lemur_a <- ggplot(df_lemur, aes(x = species, y = value)) +
-    geom_col() +
-    theme_bw()
+df_lemur <- data.frame(
+    species = c("indri", "catta", "mouse"),
+    value = c(10, 20, 300)
+)
 
-fig_lemur_b <- ggplot(df_lemur, aes(x = reorder(species, value), y = value)) +
-    geom_col() +
-    theme_bw()
+# Reorder species by value ascending
+df_lemur_reordered <- df_lemur[order(df_lemur$value), ]
 
+# Set layout for two side-by-side plots
+par(mfrow = c(1, 2))
 
-fig_qual_reorder <-  fig_lemur_a + fig_lemur_b +
-    plot_layout(axis_titles = "collect")
+# Plot A: Original order
+barplot(
+  height = df_lemur$value,
+  names.arg = df_lemur$species,
+  xlab = "species",
+  ylab = "value"
+)
 
-fig_qual_reorder
+# Plot B: Reordered by value
+barplot(
+  height = df_lemur_reordered$value,
+  names.arg = df_lemur_reordered$species,
+  xlab = "reorder(species, value)",
+  ylab = "value"
+)
+
+# Reset layout to default
+par(mfrow = c(1, 1))
 ```
 
 - It is possible to scale the value on the y-axis by showing the absolute count, relative count, or for quantitative variable is density so that the area under the curve equals to one. More a matter of interpreration. For instance if sample size is different and one wants to compare two distribution, frequency might be better.
 
 ```{r}
-fig_quant_dens <- ggplot(df_quant, aes(x = size, after_stat(density))) +
-    geom_histogram(binwidth = 1) +
-    theme_bw()
+set.seed(1)
+df_quant <- data.frame(
+    size = rnorm(100, 10, 1)
+)
 
-fig_quant_freq <- ggplot(df_quant, aes(x = size, after_stat(ncount))) +
-    geom_histogram(binwidth = 1) +
-    theme_bw()
+# Shared breaks (binwidth = 1)
+breaks_seq <- seq(floor(min(df_quant$size)), ceiling(max(df_quant$size)), by = 1)
 
-fig_y <- fig_quant_a  + fig_quant_freq + fig_quant_dens
-fig_y
+# Set layout for three side-by-side plots
+par(mfrow = c(1, 3))
+
+# Plot 1: Standard count histogram
+hist(
+  df_quant$size,
+  breaks = breaks_seq,
+  main = "",
+  xlab = "size",
+  ylab = "count"
+)
+
+# Plot 2: Scaled count histogram (max normalized to 1)
+h_obj <- hist(df_quant$size, breaks = breaks_seq, plot = FALSE)
+h_obj$counts <- h_obj$counts / max(h_obj$counts)
+plot(
+  h_obj,
+  main = "",
+  xlab = "size",
+  ylab = "ncount"
+)
+
+# Plot 3: Density histogram
+hist(
+  df_quant$size,
+  breaks = breaks_seq,
+  freq = FALSE,
+  main = "",
+  xlab = "size",
+  ylab = "density"
+)
+
+# Reset layout to default
+par(mfrow = c(1, 1))
 ```
 
 - A distribution summarize the raw data, thus having the distribution does not allow you to recover the raw data...

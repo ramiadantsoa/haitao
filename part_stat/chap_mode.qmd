@@ -34,21 +34,28 @@ The text notes that a dataset can be bimodal if two distinct values tie for the 
 df_lemur <- data.frame(
     species = c("indri", "catta", "mouse"),
     value = c(10, 20, 300),
-    valueb = c(10, 20 , 20 )
+    valueb = c(10, 20, 20)
 )
 
-fig_lemur_a <- ggplot(df_lemur, aes(x = species, y = value)) +
-    geom_col() +
-    theme_bw()
+# Set layout for two side-by-side plots
+par(mfrow = c(1, 2))
 
-fig_lemur_b <- ggplot(df_lemur, aes(x = species, y = valueb)) +
-    geom_col() +
-    theme_bw()
+# Plot A
+barplot(
+  height = df_lemur$value,
+  names.arg = df_lemur$species,
+  ylab = "value"
+)
 
-fig_lemur_ab <- fig_lemur_a + fig_lemur_b +
-    plot_layout(axis_titles = "collect")
+# Plot B
+barplot(
+  height = df_lemur$valueb,
+  names.arg = df_lemur$species,
+  ylab = "valueb"
+)
 
-fig_lemur_ab
+# Reset plotting settings back to default
+par(mfrow = c(1, 1))
 ```
 
 Mouse is the modal on the left, but catta and mouse are both mode on the right.
@@ -58,16 +65,18 @@ For discrete variable
 ```{r}
 set.seed(1)
 df_discrete <- data.frame(
-    size = rpois(100, 5)) |>
-    count(size)
+    size = rpois(100, 5)
+)
+df_discrete <- aggregate(n ~ size, data = transform(df_discrete, n = 1), FUN = length)
 
-
-fig_discrete <- ggplot(df_discrete, aes(x = size, xend = size, y = 0, yend = n)) +
- geom_point(aes(x = size, y = n)) +
-  geom_segment() +
-  theme_bw()
-
-fig_discrete
+# Create the lollipop plot in Base R
+plot(
+  df_discrete$size, df_discrete$n,
+  type = "h",
+  xlab = "size",
+  ylab = "n"
+)
+points(df_discrete$size, df_discrete$n, pch = 16)
 ```
 
 The mode is 4 for discrete variable.
@@ -79,17 +88,27 @@ df_quant <- data.frame(
     size = rnorm(100, 10, 1)
 )
 
-fig_quant_a <- ggplot(df_quant, aes(x = size)) +
-    geom_histogram(binwidth = 1) +
-    theme_bw()
+# Set layout for two side-by-side plots
+par(mfrow = c(1, 2))
 
-fig_quant_b <- ggplot(df_quant, aes(x = size)) +
-    geom_histogram(binwidth = 0.2) +
-    theme_bw()
+# Plot A: Histogram with binwidth = 1
+hist(
+  df_quant$size,
+  breaks = seq(floor(min(df_quant$size)), ceiling(max(df_quant$size)), by = 1),
+  main = "",
+  xlab = "size"
+)
 
-fig_quant <- fig_quant_a + fig_quant_b +
-    plot_layout(axis_titles = "collect")
-fig_quant
+# Plot B: Histogram with binwidth = 0.2
+hist(
+  df_quant$size,
+  breaks = seq(floor(min(df_quant$size)), ceiling(max(df_quant$size)), by = 0.2),
+  main = "",
+  xlab = "size"
+)
+
+# Reset layout to default
+par(mfrow = c(1, 1))
 ```
 
 Careful when computing the mode for continuous quantitative variable (i.e. visual interpration from histogram). Because the binwidth are abitrary, one can choos a bin over another.

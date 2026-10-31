@@ -83,6 +83,7 @@ How this book is structured
 - Examples
 - Tips and warning
   - Semantic:
+  - R behavior.
 
 This is R, and code, output.
 Don't be frustrated if repetitive,(one concept in anther chapter). This is part of learning but also, there is no expectation that you will read each chapter, so reminded as it appears

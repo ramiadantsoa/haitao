@@ -1,4 +1,4 @@
-# Matrix multiplication {#sec-matrixMultiplicationCoding}
+# Matrix multiplication {#sec-matrixMultiplicationMath}
 
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}

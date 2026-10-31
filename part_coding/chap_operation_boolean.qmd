@@ -8,30 +8,31 @@ Q: Lahy sa vavy ny zanakao? A: Eny
 
 The statement above is a joke between two logicians (the branch of mathematics that study boolean variables). But almost nobody laughs about it and barely grin when explained. Operations with numbers are natural @sec-numeric and @sec-arithmeticMath. However those on logical/boolean variables @sec-boolean are less intuitive. Imagine the boolean variable below (which also called statement or propositio)
 
-A: Radama is a male --TRUE
+A: Radama is a male --TRUE \
 B: Radama is Malagasy -- TRUE
 
-C: Ranavalona is a male -- FALSE
+
+C: Ranavalona is a male -- FALSE \
 D: Ranavalona is Malagasy -- TRUE
 
 The operation with boolean is when we combine P1 and P2,
 
-P1: A AND B means Radama is a male AND Radama is Malagasy.
+P1: A AND B means Radama is a male AND Radama is Malagasy. \
 P1 is TRUE, and formally: TRUE AND TRUE = TRUE
 
-P2: A OR B: Radama a male OR Radama is Malagasy
+P2: A OR B: Radama a male OR Radama is Malagasy \
 P2 is also TRUE, Formally: TRUE OR TRUE = TRUE
 
-P3: C AND D: Ranavalona is male AND Ranavalona is Malagasy.
+P3: C AND D: Ranavalona is male AND Ranavalona is Malagasy. \
 P3 is FALSE so FALSE AND TRUE = FALSE
 
-And the final combination
-P4: C OR D: Ranavalona is male OR Ranavalona is Malagasy.
+And the final combination \
+P4: C OR D: Ranavalona is male OR Ranavalona is Malagasy. \
 P4 is TRUE so FALSE OR TRUE = TRUE
 
 Back to the joke above. The question could be reframed as two statement
-Statement 1: Your new born is a male
-Statement 2: Your new born is a female
+Statement 1: Your new born is a male \
+Statement 2: Your new born is a female \
 Statement 1 OR statement 2 is always TRUE because one of them must be TRUE.
 
 Boolean operation are fundamental parts of programming and can be quite unintuitive (as with the joke for the untrained). While they is reserved to logician. It is essential to become literate. Concrete examples of application are shown in the tips section below.

@@ -46,9 +46,9 @@ Second the hypothetical Population: An infinite set of all possible outcomes tha
 ## Tips and warnings {.unnumbered}
 - To reiterate, a population is well-defined collection of items. Knowing what is included and not included in the population is critical/ delimitation is non-trivial. Say Malagasy population: does it include people living in Madagascar (immigrants), people with, so do we exclude those in the countryside that might not a have a birth certificate? How about Malagasy living abroad?
 -  Defining the items can be non-trivial. It could be simple for animals.  For instance, for grasses, what is a population? Di we care about individual ants or colony Eusocial? This is what is an item.
-- @sec-sec-function, is defined by set if X and Y, pop is the starting set don't ignore it.
+- @sec-functionMath, is defined by set if X and Y, pop is the starting set don't ignore it.
 - Unless you sample everything, one cannot  see the rare nitpick example above. Statistical inference: estimate the true population vs sample?
-- Population itself is not the end goal, it is studing the properties of that population (variables @sec-sec-variable, distribution @sec-distribution).
+- Population itself is not the end goal, it is studing the properties of that population (variables @sec-variable, distribution @sec-distribution).
 - Population is a sample. While in more rigorous, foundational, the more practical is more useful for the applied scientist.
 
 ## If you want to know more {.unnumbered}

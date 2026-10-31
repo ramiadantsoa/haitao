@@ -41,7 +41,8 @@ $f'(a) = \lim_{x \to a} \frac{f(x) - f(a)}{x - a}$
 - Derivative and a function
 
 ```{r}
-
+#| label: fig-pdfDerivative
+#| fig-cap: "Functions and its derivative, interpretation"
 #-----------------------------
 # 1. Define functions
 #-----------------------------

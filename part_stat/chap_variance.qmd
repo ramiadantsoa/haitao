@@ -37,12 +37,20 @@ If you want to do by hand the latter is simpler, but with a computer it is rough
 The standard deviation is the square root of the variance squared
 
 ## Examples {.unnumbered}
- - data = {1,1,1,1}, mean = 1, and variance = $\frac{1}{4}\left((1 - mean)^2 + (1 - mean)^2 + (1 - mean)^2 +(1 - mean)^2 \right) = \frac{1}{4} 0^2 \times 4 = 0$
+ - `data = {1,1,1,1}`, mean = $\mu = 1$. The variance is
+
+    $\sigma^2 = \frac{1}{4}\left((1 - \mu)^2 + (1 - \mu)^2 + (1 - \mu)^2 +(1 - \mu)^2 \right) = \frac{1}{4} 0^2 \times 4 = 0$
+Tnis makes sense, there is not variance all numners are 1 so it makes sense the variance is 0.
 
 - Imagine two schools: in one school all 20 students got 10/20,  in the other school, half of the students got 0/20 and the other half 20/20. While the means are the same 10/20, there is no variance in the first, and a variance of 100 in the second. Knowing the variance tells you the schools are different, while it might . You are more informed.
 
-- Add one more example of variance
+- In the example before
+The mean was \
+$\mu = \dfrac{1}{6}  5 + \frac{1}{6}  7 + \frac{2}{6}  10 + \frac{1}{6}  12 + \frac{1}{6} 14 = A number $ \
 
+The variance is
+
+$\sigma^2 = \dfrac{1}{6}  (5 - \mu)^2 + \frac{1}{6}  (7 - \mu)^2 + \frac{2}{6}  (10 - \mu)^2  + \frac{1}{6}  (12 - \mu)^2 + \frac{1}{6} (14 - \mu)^2 = A number$
 
 ## Tips and warnings {.unnumbered}
 - Variance  represents the average dispersion around the mean. This dispersion is squared . Mostly because of distance, it has to be a positive number. But it is difficult to work with mathematically.

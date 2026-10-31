@@ -20,7 +20,7 @@ That is why a continuous number (real number) is represented by a continuous lin
 ## Examples {.unnumbered}
 - World of discrete numbers: Odd (2, 4, 6, 8 etc) and even (3, 5, 7, 9 etc.), prime numbers (3, 5, 7, 11, etc), and also the negative mirror.
 
-- World of continuous numbers: $\pi = 3.14\ldots$, $e = 2.71\ldots$, $\sqrt(2)$ and the fractions
+- World of continuous numbers: $\pi = 3.14\ldots$, $e = 2.71\ldots$, $\sqrt{2}$ and the fractions
 
 ## Tips and warnings {.unnumbered}
 - Semantic: whole number, natural number, integer while the later includes mirror negative
