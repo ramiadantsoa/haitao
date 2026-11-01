@@ -143,6 +143,7 @@ format:
     theme:
       - cosmo
       - brand
+    css: handbook.css
     html-math-method: mathjax
   pdf:
     toc: true

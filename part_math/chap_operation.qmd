@@ -3,53 +3,68 @@
 
 <!-- ## Concepts and intutions {.unnumbered} -->
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
-The equation that broke the internet!
+The equation that broke the internet
 :::
 
 Few years ago, there was an intense debate on several social media platforms about a simple calculation
 
-::: {style="font-size: 100%; font-family: Courier New; color: back; text-align: center;"}
+::: {style="font-size: 100%; font-family: Courier New; color: back; text-align: center; font-weight: 800"}
 8 ÷ 2 (2 + 2) = ?
 :::
 
-One camp would argue that the answer is one, the other camp is convinced that it is sixteen.
-This is an example viral: simple enough to engage everyone, two possible answers to create camps and fuel discussion. The question is mostl likely formulated to confuse.
-But it is still simple arithmetic operation that a primary schooler should be able to answer.
+One camp would argue that the answer is one, the other camp is convinced that it is sixteen. The problem has ingredients for a viral debate online: a simple statement that the average person can understand, a formulation built to foster the confusion, and a binary answer to further divide. And it also illustrates how people are confident they hold the truth on social media.
 
-So what is the correct answer? Let's review below the basic rules of arithmetic
+But it is still simple arithmetic operation that a kid in primary school should be able to answer. So what is the correct answer? Let's review below the basic rules of arithmetic. Ecologist should be more mathematically literate than the average person on the internet.
 
 ## Formal {.unnumbered}
-Quick review of order operation
 
-- Parenthesis has priority. Inner-est to outer-most
+The order of operations, that is, the order in which the operations in an expression are usually performed, results from a convention adopted throughout mathematics, science, technology, and many computer programming languages. It is summarized as:
 
-- Power over multiplication and division
+1. **Parentheses**
+2. **Exponentiation**
+3. **Multiplication and division**
+4. **Addition and subtraction**
 
-- Multiplication and division over addition and substraction
+This means that to evaluate an expression, one first evaluates any sub-expression inside parentheses, working from inside to outside if there is more than one set. Whether inside parentheses or not, the operation that is higher in the above list should be applied first. Operations of the same precedence are conventionally evaluated from left to right.
 
-- Left to right if equal priority
+Parentheses and alternate symbols of grouping can be used to override the usual order of operations or to make the intended order explicit. Grouped symbols can be treated as a single expression
 
 
 ## Examples {.unnumbered}
-1. $1 + 2 \times 3^4 = 1 + 2 \times 81  = 1 + 162  = 163$
-2. $(1 + 2) \times 3^4 \neq 1 + (2 \times 3)^4 \neq (1 + 2 \times 3)^4$
-3. $2^{2^2} = 2^4 = 16$
-4. $\frac{1}{\frac{2}{3}} \neq \frac{\frac{1}{2}}{3}$
-5. Unecessary for associativity $(1 + 1) + 1 = 1 + (1 + 1)$ and $(1 \times 2) \times 3 = 1 \times (2 \times 3)$
-6. Necessary parentheses when non-communtative $1 - 2 + 3 = (1 - 2) + 3 \neq 1 - (2 + 3)$ or
+1. Exponentiation first, then multiplication, then addition \
+    $1 + 2 \times 3^4 = 1 + 2 \times 81  = 1 + 162  = 163$ \
+
+2. Always compute the expression within parentheses first \above
+    $(1 + 2) \times 3^4 \neq 1 + (2 \times 3)^4 \neq (1 + 2 \times 3)^4$ \
+
+3. The length of the division bar used to dictate priority \
+   $\frac{1}{\frac{2}{3}} \neq \frac{\frac{1}{2}}{3}$
+
+4. Uncessary use of parenthesis \
+   $(1 + 1) + 1 = 1 + (1 + 1)$ and
+   $(1 \times 2) \times 3 = 1 \times (2 \times 3),$ \
+   because of addition (and multiplication) is called associative. In case of doubt, it is always recommended to include parenthesis
+
+5. Necessary use parentheses when non-communtative \
+    $1 - 2 + 3 = (1 - 2) + 3 \neq 1 - (2 + 3)$
 
 ## Tips and warning {.unnumbered}
-- Solution to the problem is above `8 ÷ 2 (2 + 2)`
-  - re-write to `8 ÷ 2 x (2 + 2)`$,
-  - do parenthese first `8 / 2 x 2`
-  - Equal priority, so go left to right `4 x 2 = 8`. To convince yourself about priority, think of 2 - 2 + 3 (same  would you do 2 + 3 first).
-- Three notations for multiplication `x`, `.` and nothing ` ` as in `a b`. While the latter makes compact it is also a source of confusion. One classic error in coding is forgetting to explicitly add a [multiplication symbol](@sec-matrixOperationCoding)
- - There are also three notations for division `÷`, `/` and $\frac{}{}$. The latter can clarify priority and avoid usage of parentheses. Unfortunately, that symbol is not available in R language.
-     $\frac{1}{2} \times 3 \neq \frac{1}{2 \times 3}$ instead of $1/2 \times 3$
-- Just add parenthesis when in doubt even it might be unnecessary--this can be important especially when coding.
-- The rule of power over multiplication and multiplication over addition should be natural. In fact, multiplication by definition is a generalization of addition: $2 + 2 + 2 + 2 = 2 \times 4$. Thus if you reverse and $2 \times 4 + 3 = 2 + 2 + 2 + 2 + 3$.
-- The same applies to power $2 ^ 3 = 2 \times 2 \times 2$. This if you revers  $2^3 \times 3 = 2 \times 2 \times 2 \times 3$ and $2^3 + 3 = 2 \times 2 \times 2 + 3$
+- [Semantic: power vs exponentiation. They are almost used exchangebly. Although exponentiaion is the precise math term]{.highlight-semantic}
+- Three notations for multiplication $a \times b$, $a \dot b$ and nothing as in $a b$. While the latter makes the notation compact, it is also a source of confusion. One classic error in coding is forgetting to explicitly add a [multiplication symbol](@sec-matrixOperationCoding) when coding.
 
+- Solution to the problem is above `8 ÷ 2 (2 + 2)`
+  - First, include the multiplation symbol `8 ÷ 2 x (2 + 2)`$,
+  - Then do the operation within parentheses `8 / 2 x 2`
+  - Equal priority, so left then right `4 x 2 = 8`. (If unconvinced,  2 - 2 + 3 same would you do 2 + 3 first).
+
+ - There are also three notations for division $a \div$ b, $a / b$ and $\frac{a}{b}$. The latter can clarify priority and avoid usage of parentheses. Unfortunately, that symbol is not available in R language.
+     $\frac{1}{2} \times 3 \neq \frac{1}{2 \times 3}$ instead of $1/2 \times 3$
+
+- Just add parenthesis when in doubt even it might be unnecessary--this can be important especially when coding.
+
+- The rule of performing exponentiation before multiplication and multiplication before addition should be natural. Multiplication by definition is a notation for repeated addition: $2 + 2 + 2 + 2 = 2 \times 4$. If the multiplication is unwrapped, then $2 \times 4 + 3 = 2 + 2 + 2 + 2 + 3$. Should be clear that it does not make sense to add $4 + 3$ first and then multiply by 2.
+- The same applies to power $2 ^ 3 = 2 \times 2 \times 2$. This if unwrapped,  $2^3 \times 3 = 2 \times 2 \times 2 \times 3$ and $2^3 + 3 = 2 \times 2 \times 2 + 3$
+- [What is $2^{2^2}$?]{.highlight-yourTurn}
 
 
  

@@ -79,7 +79,7 @@ Fourth, philosopical...but I am not sure where it is. As this is foundational. S
 
 How this book is structured
 - Intuition (free form)
-- Definition (edited from wikipedia)
+- Definition (edited from wikipedia) condensed for lisibility. No need to reinvent the wheel
 - Examples
 - Tips and warning
   - Semantic:

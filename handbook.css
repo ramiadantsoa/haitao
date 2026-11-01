@@ -1,0 +1,14 @@
+/* custom.css */
+/* body {
+  font-family: 'Georgia', serif;
+} */
+
+.highlight-semantic {
+  color: green;
+  font-weight: bold;
+}
+
+.highlight-yourTurn {
+  color: orange;
+  font-weight: bold;
+}
