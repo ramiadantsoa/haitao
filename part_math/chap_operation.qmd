@@ -6,15 +6,15 @@
 The equation that broke the internet
 :::
 
-Few years ago, there was an intense debate on several social media platforms about a simple calculation
+A few years ago, there was an intense debate on several social media platforms about a simple calculation
 
 ::: {style="font-size: 100%; font-family: Courier New; color: back; text-align: center; font-weight: 800"}
 8 ÷ 2 (2 + 2) = ?
 :::
 
-One camp would argue that the answer is one, the other camp is convinced that it is sixteen. The problem has ingredients for a viral debate online: a simple statement that the average person can understand, a formulation built to foster the confusion, and a binary answer to further divide. And it also illustrates how people are confident they hold the truth on social media.
+One camp argues that the answer is one, while the other is convinced that it is sixteen. The problem has all the ingredients for a viral online debate: a simple statement that the average person can understand and a formulation that fosters confusion. It also has a binary answer that further divides opinions and illustrates how confidently people assert that they are right on social media.
 
-But it is still simple arithmetic operation that a kid in primary school should be able to answer. So what is the correct answer? Let's review below the basic rules of arithmetic. Ecologist should be more mathematically literate than the average person on the internet.
+Yet this is still a simple arithmetic problem that primary-school pupils should be able to solve. So, what is the correct answer? The section below reviews the basic rules of arithmetic, as ecologists should be more mathematically literate than the average person on the internet.
 
 ## Formal {.unnumbered}
 
