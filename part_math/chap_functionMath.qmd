@@ -26,16 +26,16 @@ The symbol that represents an arbitrary number in the domain of a function f is 
 This can be generalized, the domain x could multidimensional R x R as well as the output.
 
 ## Examples {.unnumbered}
-- y = ax + b, is what is called a linear function, because it draws a line. x is the independent variable and y is the dependent variable.
-- y = x^2, if think about x as a positiive number, the function mostly computes the area of
-- The probability density function of the normal distribution is a function that maps a real number x to the probability density at that point. The function is defined as:
+- $y = ax + b$, is what is called a linear function, because it draws a line. $x$ is the independent variable and $y$ is the dependent variable.
+- $y = x^2$, if think about $x$ as a positiive number, the function mostly computes the area of
+- The probability density function of the normal distribution is a function that maps a real number $x$ to the probability^[This is not mathematically accurate but let's not get distracted by the extreme rigor] that such a value will appear if drawn randomly. The function is defined as:
 $$f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}$$
 - $F(m_1, m_2, d) = \frac{m_1 \times m_2}{d^2}$ is a function of three variables that shows the attraction between two object of mass $m_1$ and $m_2$ and the distance between the two objects. Notice that it only makes sense (in the applied sense) if the R x R X R all are well-define especially the units.
 
 ## Tips and warning {.unnumbered}
-- Semantic: independent variable, input, covariates, x which is also the common notation x. Argument, parameter
-- Semantic: dependent variable, output, response variable, y, most commonly denoted as y.
-- Semantic: function, application, map
+- [Semantic: input, covariates, argument, parameter, or just x could all mean the independent variable of a function.]{.highlight-semantic}
+- [Semantic:  output, response variable, y, could all mean the dependent variable of a function ]
+- [Semantic: application, map are ways to call a function]{.highlight-semantic}
 - The mathematical function is often denoted as f, g, h because they are meant to be symbolic too.
 - Implicit f(x, y) = 0, x^2 + y^2 = 0
 - Multiple variable

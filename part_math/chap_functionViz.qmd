@@ -1,0 +1,347 @@
+# Function and graphics {#sec-functionViz}
+
+
+::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
+Ikotozafy ihany no Alexis!
+:::
+
+In the math test at in the baccalaureat, the most points goes into the section problem: this is calculus problem: a function is given at the begining, then a series of questions like *domaine définition, limites, calcul de dérivée, tableau de variations* etc.. which ends with *construire la courbe représentatif etc.*. If looking broadly the problem is to draw the figure for the given function. But this is not really a problem, I can just put the function in a program and I get the graph!
+
+Obviously there are educational purpose in draw the figure, but arguably, at the expense of the ability to read and interpret a graph. It is quite common at the Masters and PhD level that students could not intepret a scientific figure. Here is where the geometric propreties the analytical propreties. To draw the curve just take many values of $x$, calculate the $f(x)$, if enough points are place, it looks like a curve.
+
+
+```{r}
+# 1. Define the cubic function and its derivative
+f  <- function(x) (5/27)*x^3 - (5/18)*x^2 - (10/9)*x + (73/54)
+df <- function(x) (5/9)*x^2 - (5/9)*x - (10/9)
+
+# Define color scheme
+color_a <- "#2ca02c"  # Increasing / Green
+color_b <- "#d62728"  # Decreasing / Red
+color_x <- "#1f77b4"  # Positive f(x) / Blue
+color_y <- "#ff7f0e"  # Negative f(x) / Orange
+
+# Domain setup x in [-3, 3]
+x_lim <- c(-3, 3)
+x_vals <- seq(-3, 3, length.out = 1000)
+y_vals <- f(x_vals)
+y_lim <- c(-3.5, 3.5)
+
+# Calculate real roots where f(x) = 0
+roots <- polyroot(c(73/54, -10/9, -5/18, 5/27))
+real_roots <- sort(Re(roots[abs(Im(roots)) < 1e-6]))
+
+# Critical points where f'(x) = 0 (x = -1 and x = 2)
+crit_pts <- c(-1, 2)
+
+# Set up blank plot frame
+plot(NA, xlim = x_lim, ylim = y_lim,
+     xlab = "x", ylab = "f(x)", las = 1)
+
+rect(xleft = x_lim[1], ybottom = 0, xright = x_lim[2], ytop = y_lim[2],
+     col = adjustcolor("gray85", alpha.f = 0.4), border = NA)
+
+grid(col = "gray90", lty = "dotted")
+abline(h = 0, v = 0, col = "gray80", lty = 1)
+
+# 2. Color the main curve: color_a when increasing, color_b when decreasing
+for (i in 1:(length(x_vals) - 1)) {
+  mid_x <- (x_vals[i] + x_vals[i+1]) / 2
+  seg_color <- if (df(mid_x) >= 0) color_a else color_b
+  lines(x_vals[i:(i+1)], y_vals[i:(i+1)], col = seg_color, lwd = 3)
+}
+
+# 3. Add horizontal segments at the bottom for Increasing / Decreasing
+y_seg1 <- -2.7
+segments(-3, y_seg1, -1, y_seg1, col = color_a, lwd = 6)
+segments(-1, y_seg1,  2, y_seg1, col = color_b, lwd = 6)
+segments( 2, y_seg1,  3, y_seg1, col = color_a, lwd = 6)
+text(-3, y_seg1, labels = "Monotonicity: ", pos = 2, xpd = TRUE, cex = 0.8)
+
+# 4. Add horizontal segments at the bottom for Positive / Negative (color_x / color_y)
+y_seg2 <- -3.2
+segments(-3, y_seg2, real_roots[1], y_seg2, col = color_y, lwd = 6)
+segments(real_roots[1], y_seg2, real_roots[2], y_seg2, col = color_x, lwd = 6)
+segments(real_roots[2], y_seg2, real_roots[3], y_seg2, col = color_y, lwd = 6)
+segments(real_roots[3], y_seg2, 3, y_seg2, col = color_x, lwd = 6)
+text(-3, y_seg2, labels = "Sign of f(x): ", pos = 2, xpd = TRUE, cex = 0.8)
+
+# # 5. Add vertical segments on the left y-axis for Positive / Negative f(x)
+# x_left <- -3
+# segments(x_left, 0, x_left, y_lim[2], col = color_x, lwd = 6, xpd = TRUE)
+# segments(x_left, y_lim[1], x_left, 0, col = color_y, lwd = 6, xpd = TRUE)
+
+# 6. Add dashed vertical lines with labels where f(x) = 0
+for (r in real_roots) {
+  abline(v = r, col = "gray40", lty = 2, lwd = 1.2)
+  text(r, y_lim[2] - 0.2, labels = paste0("x = ", round(r, 2)),
+       col = "gray20", pos = 3, cex = 0.8, xpd = TRUE)
+}
+
+# 7. Add red point at y = f(0)
+y_0 <- f(0)
+points(0, y_0, col = "red", pch = 19, cex = 1.6)
+text(0, y_0, labels = paste0("  (0, ", round(y_0, 2), ")"), col = "red", pos = 4, font = 2)
+
+# Legend
+legend("topleft",
+       legend = c("Increasing (color_a)", "Decreasing (color_b)",
+                  "Positive f(x) (color_x)", "Negative f(x) (color_y)"),
+       col = c(color_a, color_b, color_x, color_y),
+       lwd = 4, bty = "n", cex = 0.85)
+```
+
+
+<!--
+Obviously, there are educational purposes but by drilling too much, the pratical meaning is lost. Most, importantly, many becomes poor when a figure is presented in front of them. So for this, let's just go backward and attempt to link geometric properties to the analytical properties.
+
+Later we will explore more general forms of functions @sec-functionCoding, but for the visualization, we will focus on the more familiar mathematical functions. A figure is the most powerful tool for to communicate ideas, improve literacy -->
+
+
+## Formal {.unnumbered}
+
+Add definition of a figure. We focus on real valued function
+
+For simplicity, we look at X and Y as real number.
+See for more details.
+To graphically present a function, we need a few things
+x axis to represent the value, we need a scale on that x axis.
+y axis to represent the
+The angle between x and y axis
+The curve is just how y vary as we continuously change x
+
+## Examples {.unnumbered}
+- Linear function $y = a*x + b$ and
+
+
+```{r}
+#| label: fig-linear
+#| fig-cap: "Illustration of varying the intercept (left) and the slope in y = ax + b."
+# Set up side-by-side layout (1 row, 2 columns)
+par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3, 2))
+
+# Common x domain and plot range
+x <- seq(-3, 3, length.out = 100)
+y_lim <- c(-3, 4)
+
+# ==============================================================================
+# LEFT PANEL: Varying Intercepts (Same Slope m = 0.5)
+# ==============================================================================
+plot(NA, xlim = c(-3, 3), ylim = y_lim, las = 1,
+     main = "Varying Intercepts (m = 0.5)",
+     xlab = "x", ylab = "y")
+grid(col = "gray90", lty = "dotted")
+abline(h = 0, v = 0, col = "gray80", lty = 1)
+
+# Line 1: y = 0.5x + 2
+lines(x, 0.5 * x + 2, col = "#1f77b4", lwd = 2.5)
+# text(1.8, 0.5 * 1.8 + 2, labels = "y = 0.5x + 2", col = "#1f77b4", pos = 3, srt = 14, font = 2)
+
+# Line 2: y = 0.5x + 0.5
+lines(x, 0.5 * x + 0.5, col = "#2ca02c", lwd = 2.5)
+# text(1.8, 0.5 * 1.8 + 0.5, labels = "y = 0.5x + 0.5", col = "#2ca02c", pos = 3, srt = 14, font = 2)
+
+# Line 3: y = 0.5x - 1
+lines(x, 0.5 * x - 1, col = "#d62728", lwd = 2.5)
+# text(1.8, 0.5 * 1.8 - 1, labels = "y = 0.5x - 1", col = "#d62728", pos = 3, srt = 14, font = 2)
+
+# Add Intercept Points & Labels (Left Panel)
+intercepts_left <- c(2, 0.5, -1)
+colors_left     <- c("#1f77b4", "#2ca02c", "#d62728")
+
+points(rep(0, 3), intercepts_left, col = colors_left, pch = 19, cex = 1.6)
+text(rep(0, 3), intercepts_left,
+     labels = paste0("  b = ", intercepts_left),
+     col = colors_left, pos = 4, font = 2)
+
+# Add Legend to Left Panel
+legend("topleft",
+       legend = c("y = 0.5x + 2",
+                  "y = 0.5x + 0.5",
+                  "y = 0.5x - 1"),
+       col = colors_left,
+       lty = 1, lwd = 2.5, bty = "n", cex = 0.85)
+
+# ==============================================================================
+# RIGHT PANEL: Varying Slopes (Same Intercept b = 0.5)
+# ==============================================================================
+plot(NA, xlim = c(-3, 3), ylim = y_lim, las = 1,
+     main = "Varying Slopes (b = 0.5)",
+     xlab = "x", ylab = "y")
+grid(col = "gray90", lty = "dotted")
+abline(h = 0, v = 0, col = "gray80", lty = 1)
+
+# Line 1: y = -1.5x + 0.5
+lines(x, -0.5 * x + 0.5, col = "#ff7f0e", lwd = 2.5)
+# text(-1.5, -1.5 * (-1.5) + 0.5, labels = "y = -1x + 0.5", col = "#9467bd", pos = 4, srt = -38, font = 2)
+
+# Line 2: y = 0x + 0.5
+lines(x, 0 * x + 0.5, col = "#9467bd", lwd = 2.5)
+# text(1.5, 0.5, labels = "y = 0.5", col = "#ff7f0e", pos = 3, font = 2)
+
+# Line 3: y = 1 x + 0.5
+lines(x, 1.5 * x + 0.5, col = "#2ca02c", lwd = 2.5)
+# text(1.5, 0.5 * 1.5 + 0.5, labels = "y = 1x + 0.5", col = "#2ca02c", pos = 3, srt = 14, font = 2)
+
+# Add Intercept Point & Label (Right Panel - Shared at x = 0, y = 0.5)
+#points(0, 0.5, col = "#333333", pch = 19, cex = 1.8)
+#text(0, 0.5, labels = "  b = 0.5 (shared)", col = "#333333", pos = 2, font = 2)
+
+colors_right <- c( "#ff7f0e","#9467bd", "#2ca02c")
+legend("topleft",
+       legend = c("y = -0.5x + 0.5",
+                  "y = 0.5",
+                  "y = 1.5x + 0.5"),
+       col = colors_right,
+       lty = 1, lwd = 2.5, bty = "n", cex = 0.85)
+
+# 1. Segment from y = 0.5 to y = -1 (for y = 1.5x + 0.5, slope a = -1.5)
+segments(1, 0.5, 1, 2, col = "#2ca02c", lty = 1, lwd = 3)
+# points(1, -1.0, col = "#2ca02c", pch = 19, cex = 1.2)
+text(1, 1.25, labels = " a = 1.5", col ="#2ca02c" , pos = 4, font = 2, cex = 0.85)
+
+# # 2. Horizontal base indicator from x = 0 to x = 1 along y = 0.5
+# segments(0, 0.5, 1, 0.5, col = "gray40", lty = 3, lwd = 1.5)
+
+# 3. Segment from y = 0.5 to y = 1 (for y = -0.5x + 0.5, slope a = +0.5)
+segments(1, 0.5, 1, 0, col = "#ff7f0e", lty = 1, lwd = 3)
+# points(1, 1.0, col = "#ff7f0e", pch = 19, cex = 1.2)
+text(1, 0.2, labels = " a = -0.5", col = "#ff7f0e", pos = 4, font = 2, cex = 0.85)
+
+
+# Reset plotting layout parameter
+par(mfrow = c(1, 1))
+```
+
+- Exponential and logarithm. Notice that $exp(.)$ is always postive (in the gray area). The logarithm is negative when $x \in \left(0,1 \right]$. Notice that the coordinate (x,y) although sitting on the curve are projected from x- and y-axis
+
+```{r}
+# Define the functions
+f_exp_pos <- function(x) exp(x)
+f_exp_neg <- function(x) exp(-x)
+f_log     <- function(x) log(x)
+
+# Setup plotting range and x domain
+x_lim <- c(-2.5, 3.5)
+y_lim <- c(-3, 4)
+
+# Create domain vectors
+x_full <- seq(-2.5, 3.5, length.out = 1000)
+x_pos  <- seq(0.01, 3.5, length.out = 1000)  # Domain for log(x) > 0
+
+# Color palette
+col_exp_pos <- "#1f77b4"  # Blue for exp(x)
+col_exp_neg <- "#d62728"  # Red for exp(-x)
+col_log     <- "#2ca02c"  # Green for log(x)
+col_neg_seg <- "#ff7f0e"  # Orange for log(x) negative segment
+
+# 1. Blank Plot Frame
+plot(NA, xlim = x_lim, ylim = y_lim, las = 1,
+     main = expression(paste("Functions: ", e^x, ", ", e^-x, ", and ", ln(x))),
+     xlab = "x", ylab = "y")
+
+# 2. Gray rectangle for positive quadrants (y > 0, Quadrants I & II)
+rect(xleft = x_lim[1], ybottom = 0, xright = x_lim[2], ytop = y_lim[2],
+     col = adjustcolor("gray85", alpha.f = 0.4), border = NA)
+
+# Grid and reference axes
+grid(col = "gray90", lty = "dotted")
+abline(h = 0, v = 0, col = "gray70", lty = 1)
+
+# 3. Plot Function Curves
+lines(x_full, f_exp_pos(x_full), col = col_exp_pos, lwd = 2.5)
+lines(x_full, f_exp_neg(x_full), col = col_exp_neg, lwd = 2.5)
+lines(x_pos,  f_log(x_pos),     col = col_log,     lwd = 2.5)
+
+# 4. Highlight Segment where log(x) is negative for x in (0, 1]
+x_log_neg <- seq(0.01, 1, length.out = 200)
+lines(x_log_neg, f_log(x_log_neg), col = col_neg_seg, lwd = 4)
+segments(0, 0, 1, 0, col = col_neg_seg, lty = 2, lwd = 2) # X-axis indicator
+
+# 5. Points & Labels for Exponential Functions (x = 0, x = 1)
+pts_exp_x <- c(0, 0, 1, 1)
+pts_exp_y <- c(exp(0), exp(0), exp(1), exp(-1))
+pts_exp_col <- c(col_exp_pos, col_exp_neg, col_exp_pos, col_exp_neg)
+pts_exp_lbl <- c("(0, 1)", "(0, 1)", paste0("(1, e \u2248 ", round(exp(1), 2), ")"),
+                 paste0("(1, 1/e \u2248 ", round(exp(-1), 2), ")"))
+
+points(pts_exp_x, pts_exp_y, col = pts_exp_col, pch = 19, cex = 1.4)
+text(0, exp(0) + 0.35, labels = "(0, 1)", col = "#333333", font = 2, cex = 0.85)
+text(1, exp(1),  labels = paste0("  ", pts_exp_lbl[3]), col = col_exp_pos, pos = 4, font = 2, cex = 0.8)
+text(0.5, 0.4 + exp(-1), labels = paste0("  ", pts_exp_lbl[4]), col = col_exp_neg, pos = 4, font = 2, cex = 0.8)
+
+# 6. Points & Labels for Logarithm (x = 1/e, x = 1, x = e)
+x_log_pts <- c(1/exp(1), 1, exp(1))
+y_log_pts <- log(x_log_pts)
+log_lbls  <- c("(1/e, -1)", "(1, 0)", "(e, 1)")
+
+points(x_log_pts, y_log_pts, col = col_log, pch = 19, cex = 1.4)
+text(0.45 + x_log_pts[1], y_log_pts[1] , labels = log_lbls[1], col = col_log, font = 2, cex = 0.8)
+text(x_log_pts[2] + 0.1, y_log_pts[2] - 0.3, labels = log_lbls[2], col = col_log, font = 2, cex = 0.8)
+text(x_log_pts[3], y_log_pts[3] + 0.3, labels = log_lbls[3], col = col_log, font = 2, cex = 0.8)
+
+# Legend
+legend("topleft",
+       legend = c("y > 0 Region (Quadrants I & II)",
+                  "y = exp(x)",
+                  "y = exp(-x)",
+                  "y = log(x)",
+                  "log(x) < 0 for x in (0, 1]"),
+       fill = c(adjustcolor("gray85", alpha.f = 0.4), NA, NA, NA, NA),
+       border = c("gray60", NA, NA, NA, NA),
+       col = c(NA, col_exp_pos, col_exp_neg, col_log, col_neg_seg),
+       lty = c(NA, 1, 1, 1, 1), lwd = c(NA, 2.5, 2.5, 2.5, 4),
+       bty = "n", cex = 0.8)
+```
+
+
+- Gaussian, playing with the two parameters of the gaussian distribution by shifting the mean or changing the width
+
+
+```{r}
+# Define parameter sets (mean and sd) for the 4 Gaussian PDFs
+means <- c(0, -2, 0, -2)
+sds   <- c(1, 1, 2, 0.5)
+
+# Define color palette
+colors <- c("#1f77b4", "#d62728", "#1f77b4", "#d62728")
+linetype <- c(1, 1 , 2, 3 )
+
+# Define x domain and function for evaluation
+x <- seq(-6, 6, length.out = 1000)
+
+# Set up blank plot frame
+plot(NA, xlim = c(-6, 6), ylim = c(0, 0.85), las = 1,
+     main = "Gaussian Probability Density Functions",
+     xlab = "x", ylab = "Density f(x)")
+
+grid(col = "gray90", lty = "dotted")
+abline(h = 0, v = 0, col = "gray80", lty = 1)
+
+# Plot each Gaussian curve and mark its mean with a vertical line
+for (i in 1:4) {
+  y <- dnorm(x, mean = means[i], sd = sds[i])
+  lines(x, y, col = colors[i], lwd = 2.5, lty = linetype[i])
+  abline(v = means[i], col = adjustcolor(colors[i], alpha.f = 0.4), lty = 2, lwd = 1.2)
+}
+
+# Add Legend
+legend("topright",
+       legend = c(expression(paste(mu, " = 0, ", sigma, " = 1")),
+                  expression(paste(mu, " = 0, ", sigma, " = 2")),
+                  expression(paste(mu, " = -2, ", sigma, " = 1")),
+                  expression(paste(mu, " = -2, ", sigma, " = 0.5"))),
+       col = colors[c(1, 3, 2, 4)], lty = linetype[c(1, 3, 2, 4)], lwd = 2.5, bty = "n", cex = 0.85)
+```
+
+## Tips and warnings {.unnumbered}
+- Coordinate and projection!
+- As in domain, what does x and y represent
+- Linear function because it plots a line, pick two points and
+- If x is discrete, you cannot just join line.
+- Don't rush, project, look at the changes in the axis not the "line"
+- Transforming the response variable
+- Transforming
+- Cheating
+- Just plot and you are good to go.
+<!-- - You can make figures with discrete x, see @sec-discrete_continuous, @sec-difference, @sec-pmf -->

@@ -114,15 +114,15 @@ $\log_a x = \frac{\ln x}{\ln a} \quad \text{for } x > 0, \, a > 0, \, a \neq 1$
 ## Examples {.unnumbered}
 
 
-- $log(1) = 0$ where it intersect with x.
+- $\log(1) = 0$ where it intersect with x.
 
-- $log(e) = 1$ by definition.
+- $\log(e) = 1$ by definition.
 
-- For x < 1, $log(1/x) = log(x-1) = - 1 \times log(x) = - log(x)$ hence log (x) is always negative.
+- For $0 < x < 1$, $\log(1/x) = \log(x-1) = - 1 \times \log(x) = - \log(x)$ hence $\log (x)$ is always negative.
 
-- $log(n!) = log(1 \times 2 \times 3 \times \cdots \times n) =  log (1) + log (2) + \cdots + log(n) = \sum_{i = 1}^n log(i)$
+- $\log(n!) = \log(1 \times 2 \times 3 \times \cdots \times n) =  \log (1) + \log (2) + \cdots + \log(n) = \sum_{i = 1}^n \log(i)$
 
-- $log(exp{- \frac{x^2}{2}}) = - \frac{x^2}{2}$
+- $\log(\exp{- \frac{x^2}{2}}) = - \frac{x^2}{2}$
 
 - Linearization of a power-law i.e. of the form f(x) = c x^z
   - Species-area relationship S = c A^z, on a log scale
@@ -133,23 +133,310 @@ $\log_a x = \frac{\ln x}{\ln a} \quad \text{for } x > 0, \, a > 0, \, a \neq 1$
 ## Tips and warnings {.unnumbered}
 
 - By definition cannot take negative number and is not defined at 0
-- Semantic: $\ln$ and $\log$.
-
-- Two log scale visualization.
-  - Ticks arrangement.
-  - Transform y log it and use normal figure. Included in existing graph that no londer used.
-
-- Orders of magnitude species abundance etc.. Excessively large value/Multiplicative.
-- Compare with square root
+- [Semantic: $\ln$ and $\log$]{.highlight-semantic}.
 
 - Used in likelihood to turn a product into sum.
 
 - Transforming  0 to something, shift to log(x + 1)
 
 - Integral defintion: For every x>0, we define the natural logarithm of x, denoted by $\ln(x)$, by the formula:
-$\ln x = \int_{1}^{x} \frac{1}{t} \, dt$ ""
+$\ln x = \int_{1}^{x} \frac{1}{t} \, dt$
+
+- Two ways of visualization. Classical just transforming the y-axis, or taking the log and plotting normally
 
 
+```{r}
+# 1. Dataset setup
+df_vals <- data.frame(
+  category = c("A", "B", "C", "D"),
+  value = c(60, 500, 2500, 5000)
+)
+
+# Compute log10 values for explicit transformation
+df_vals$log10_val <- log10(df_vals$value)
+
+# 2. Set up side-by-side layout (1 row, 2 columns) with top margin for labels
+par(mfrow = c(1, 2), mar = c(4.5, 4.5, 4, 2))
+
+# ==============================================================================
+# LEFT PANEL: Native Log Scale (log = "y")
+# ==============================================================================
+bp1 <- barplot(
+  height = df_vals$value,
+  names.arg = df_vals$category,
+  main = "Native Log Scale (log = 'y')",
+  ylab = "Value (Log Scale)",
+  col = "#1f77b4", border = NA,
+  log = "y",
+  ylim = c(1, max(df_vals$value) * 3),
+  las = 1
+)
+
+
+# Redraw bars over grid without repeating y-axis ticks
+barplot(df_vals$value, add = TRUE, col = "#1f77b4", border = NA, log = "y", yaxt = "n", ann = FALSE)
+
+# Value labels above bars (Raw numbers)
+text(
+  x = bp1, y = df_vals$value,
+  labels = format(df_vals$value, big.mark = ","),
+  pos = 3, cex = 0.85, col = "#333333", font = 2, xpd = TRUE
+)
+
+grid(nx = NA, ny = NULL, col = "gray90", lty = "dotted")
+
+# ==============================================================================
+# RIGHT PANEL: Converted log10 Values
+# ==============================================================================
+bp2 <- barplot(
+  height = df_vals$log10_val,
+  names.arg = df_vals$category,
+  main = expression(paste("Transformed Values (", log[10], "(y))")),
+  ylab = expression(paste(log[10], "(Value)")),
+  col = "#2ca02c", border = NA,
+  ylim = c(0, max(df_vals$log10_val) * 1.15),
+  las = 1
+)
+
+
+# Redraw bars over grid without repeating y-axis ticks
+barplot(df_vals$log10_val, add = TRUE, col = "#2ca02c", border = NA, yaxt = "n", ann = FALSE)
+
+# Value labels above bars (log10 numbers rounded to 2 decimal places)
+text(
+  x = bp2, y = df_vals$log10_val,
+  labels = round(df_vals$log10_val, 2),
+  pos = 3, cex = 0.85, col = "#333333", font = 2, xpd = TRUE
+)
+grid(nx = NA, ny = NULL, col = "gray90", lty = "dotted")
+
+# Reset plotting parameters
+par(mfrow = c(1, 1), mar = c(5, 4, 4, 2) + 0.1)
+```
+
+
+- Salary
+
+
+```{r}
+# 1. Data frame setup
+df_salary <- data.frame(
+  job = factor(
+    c("Intern", "Technician", "Senior Employee", "Team leader", "Supervisor",
+      "Manager", "Director", "Vice-president", "Chief Officer", "CEO"),
+    levels = c("Intern", "Technician", "Senior Employee", "Team leader", "Supervisor",
+               "Manager", "Director", "Vice-president", "Chief Officer", "CEO")
+  ),
+  salary = c(2, 4, 6, 12, 50, 100, 250, 600, 2000, 5000) # values in ten thousands
+)
+
+# 2. Set up side-by-side layout with bottom margin for rotated labels
+par(mfrow = c(1, 2), mar = c(8, 5, 4, 2))
+
+# ==============================================================================
+# LEFT PANEL: Linear Scale
+# ==============================================================================
+bp1 <- barplot(
+  height = df_salary$salary,
+  names.arg = FALSE,
+  main = "Linear Scale",
+  ylab = "Salary",
+  col = "#1f77b4", border = NA,
+  ylim = c(0, max(df_salary$salary) * 1.15),
+  las = 1
+)
+
+grid(nx = NA, ny = NULL, col = "gray90", lty = "dotted")
+
+# Redraw bars over grid (yaxt = "n" prevents duplicated y-axis ticks)
+barplot(df_salary$salary, add = TRUE, col = "#1f77b4", border = NA, yaxt = "n", ann = FALSE)
+
+# Custom rotated x-axis labels
+text(x = bp1, y = -max(df_salary$salary) * 0.04, labels = df_salary$job,
+     srt = 45, adj = 1, xpd = TRUE, cex = 0.8)
+
+## Raw numerical value labels above bars
+#text(x = bp1, y = df_salary$salary, labels = format(df_salary$salary, big.mark = ","),
+#     pos = 3, cex = 0.65, col = "#333333", xpd = TRUE)
+
+
+# ==============================================================================
+# RIGHT PANEL: Logarithmic Scale
+# ==============================================================================
+bp2 <- barplot(
+  height = df_salary$salary,
+  names.arg = FALSE,
+  main = "Logarithmic Scale (log10)",
+  ylab = "Salary (Log Scale)",
+  col = "#2ca02c", border = NA,
+  log = "y",
+  ylim = c(1, max(df_salary$salary) * 3),
+  las = 1
+)
+
+grid(nx = NA, ny = NULL, col = "gray90", lty = "dotted")
+
+# Redraw bars over grid without repeating axis text
+barplot(df_salary$salary, add = TRUE, col = "#2ca02c", border = NA, log = "y", yaxt = "n", ann = FALSE)
+
+# Custom rotated x-axis labels (positioned relative to log axis baseline)
+text(x = bp2, y = 0.6, labels = df_salary$job,
+     srt = 45, adj = 1, xpd = TRUE, cex = 0.8)
+
+## Raw numerical value labels above bars
+#text(x = bp2, y = df_salary$salary, labels = format(df_salary$salary, big.mark = ","),
+#     pos = 3, cex = 0.65, col = "#333333", xpd = TRUE)
+
+# Reset plotting parameters
+par(mfrow = c(1, 1), mar = c(5, 4, 4, 2) + 0.1)
+```
+
+- Convergence: is the temperature at equilibrium?
+
+
+```{r}
+# 1. Define power law function: f(x) = 1 + 10 / x^1.5
+f <- function(x) 1 + 10 / (x^1.5)
+
+# Setup x domains
+x_lin <- seq(1, 1000, length.out = 1000)
+x_log <- 10^seq(0, 3, length.out = 1000) # log-spaced vector from 10^0 to 10^3
+
+# Colors
+curve_col <- "#1f77b4"
+limit_col <- "#d62728"
+
+# 2. Set up side-by-side layout (1 row, 2 columns)
+par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3, 2))
+
+# ==============================================================================
+# LEFT PANEL: Linear Scale (Appears Almost Converged)
+# ==============================================================================
+plot(x_lin, f(x_lin), type = "l", col = curve_col, lwd = 2.5,
+     xlim = c(1, 1000), ylim = c(0.8, 11), las = 1,
+     main = "Linear Scale (Looks Converged)",
+     xlab = "x", ylab = "f(x)")
+
+grid(col = "gray90", lty = "dotted")
+abline(h = 1, col = limit_col, lty = 2, lwd = 1.8)
+
+# Highlight points
+pts_x <- c(1, 10, 100, 1000)
+pts_y <- f(pts_x)
+points(pts_x, pts_y, col = curve_col, pch = 19, cex = 1.2)
+
+# Annotation for linear convergence illusion
+text(500, 1.3, labels = "Appears flat & converged near y = 1",
+     col = curve_col, pos = 3, font = 2, cex = 0.85)
+text(800, 1.0, labels = "Asymptote y = 1", col = limit_col, pos = 3, cex = 0.8)
+
+
+# ==============================================================================
+# RIGHT PANEL: Logarithmic Scale (Reveals Ongoing Heavy-Tail Decay)
+# ==============================================================================
+plot(x_log, f(x_log), type = "l", col = curve_col, lwd = 2.5,
+     log = "x", xlim = c(1, 1000), ylim = c(0.8, 11), las = 1,
+     main = "Logarithmic Scale (Reveals Slow Tail)",
+     xlab = "x (Log Scale)", ylab = "f(x)")
+
+grid(col = "gray90", lty = "dotted")
+abline(h = 1, col = limit_col, lty = 2, lwd = 1.8)
+
+# Highlight and label exact points on log scale
+points(pts_x, pts_y, col = curve_col, pch = 19, cex = 1.2)
+text(pts_x, pts_y, labels = paste0(" f(", pts_x, ") = ", round(pts_y, 3)),
+     pos = c(4, 4, 3, 3), cex = 0.8, col = "#333333", font = 2)
+
+text(10, 1.0, labels = "Asymptote y = 1", col = limit_col, pos = 1, cex = 0.8)
+
+# Reset layout
+par(mfrow = c(1, 1), mar = c(5, 4, 4, 2) + 0.1)
+```
+
+- Data from species area relationship
+
+
+```{r}
+# 1. Dataset: Sunda Islands Land Birds (MacArthur & Wilson, 1967)
+sunda_data <- data.frame(
+  island = c("Christmas", "Enggano", "Bangka", "Bali", "Lombok",
+             "Sumba", "Flores", "Sumbawa", "Celebes (Sulawesi)", "Java", "Sumatra", "Borneo"),
+  area_sq_mi = c(60, 160, 4370, 2095, 1820,
+                 4300, 5850, 5960, 72000, 48800, 182000, 287000),
+  species = c(15, 32, 119, 133, 118,
+              112, 138, 132, 257, 340, 375, 420)
+)
+
+# Fit log10 linear model to derive power law parameters (S = c * A^z)
+fit <- lm(log10(species) ~ log10(area_sq_mi), data = sunda_data)
+z     <- coef(fit)[2]          # Slope (z ~ 0.28)
+c_val <- 10^(coef(fit)[1])     # Constant c (~ 4.8)
+
+# Smooth evaluation domain for linear curve fitting
+a_seq <- 10^seq(1.5, 5.6, length.out = 500)
+s_fit <- c_val * (a_seq^z)
+
+# Setup 2-panel layout
+par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3, 2))
+
+# ==============================================================================
+# LEFT PANEL: Normal (Linear) Scale
+# ==============================================================================
+plot(sunda_data$area_sq_mi, sunda_data$species,
+     xlim = c(0, 300000), ylim = c(0, 450), las = 1,
+     xlab = expression(paste("Island Area (mi"^2, ")")),
+     ylab = "Number of Bird Species (S)",
+     main = "Linear Scale (S = cA^z)",
+     col = "#1f77b4", pch = 19, cex = 1.3)
+
+grid(col = "gray90", lty = "dotted")
+
+# Draw fitted power-law curve
+lines(a_seq, s_fit, col = "#d62728", lwd = 2)
+
+# Redraw points over grid
+points(sunda_data$area_sq_mi, sunda_data$species, col = "#1f77b4", pch = 19, cex = 1.3)
+
+# Label key extreme islands (small islands crushed near origin; large islands at right)
+text(sunda_data$area_sq_mi[sunda_data$island %in% c("Borneo", "Sumatra", "Java", "Celebes (Sulawesi)")],
+     sunda_data$species[sunda_data$island %in% c("Borneo", "Sumatra", "Java", "Celebes (Sulawesi)")],
+     labels = sunda_data$island[sunda_data$island %in% c("Borneo", "Sumatra", "Java", "Celebes (Sulawesi)")],
+     pos = 2, cex = 0.75, col = "#333333")
+
+
+# ==============================================================================
+# RIGHT PANEL: Log-Log Scale
+# ==============================================================================
+plot(sunda_data$area_sq_mi, sunda_data$species,
+     log = "xy", las = 1,
+     xlim = c(40, 400000), ylim = c(10, 500),
+     xlab = expression(paste("Island Area (mi"^2, " - Log Scale)")),
+     ylab = "Number of Bird Species (S - Log Scale)",
+     main = expression(paste("Log-Log Scale (log S = log c + z log A)")),
+     col = "#1f77b4", pch = 19, cex = 1.3)
+
+grid(col = "gray90", lty = "dotted")
+
+# Draw linearized regression line
+abline(fit, col = "#d62728", lwd = 2)
+
+# Redraw points over grid
+points(sunda_data$area_sq_mi, sunda_data$species, col = "#1f77b4", pch = 19, cex = 1.3)
+
+# Label islands on log scale
+text(sunda_data$area_sq_mi, sunda_data$species,
+     labels = sunda_data$island, pos = 4, cex = 0.7, col = "#333333", xpd = TRUE)
+
+# Annotate fitted power law parameters
+legend("topleft",
+       legend = c(paste0("Slope (z) = ", round(z, 2)),
+                  paste0("c = ", round(c_val, 2)),
+                  paste0("R\u00b2 = ", round(summary(fit)$r.squared, 2))),
+       bty = "n", cex = 0.85, text.col = "#d62728")
+
+# Reset layout
+par(mfrow = c(1, 1), mar = c(5, 4, 4, 2) + 0.1)
+```
 
 <!--
 1. The Integral Definition (The Analytic Approach)

@@ -94,7 +94,6 @@ The conversion is done by doing a Hadamard product of A and  b
 
 $$
 A \circ B =
-A =
 \begin{pmatrix}
     6 & 3 & 0.5 \\
     3 & 1 & 0 \\
@@ -108,9 +107,7 @@ A =
     0.2 & 0.5 & 0.3 \\
     0.2 & 0.5 & 0.3
 \end{pmatrix}
-
 =
-
 \begin{pmatrix}
     6 \times 0.2 & 3 \times 0.5 & 0.5 \times 0.3 \\
     3 \times 0.2 & 1 \times 0.5 & 0 \times 0.3 \\

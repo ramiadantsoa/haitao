@@ -55,52 +55,173 @@ Another definition is using CMF and CDF
 ```{r}
 # Create data
 # data_values <- rnorm(100)
-data_values <- rnorm(2000, 0 , 10)
+# 1. Generate data
+set.seed(42)
+data_values <- rnorm(2000, 0, 10)
 
-# Calculate histogram, but do not draw it
-my_hist <- hist(data_values , breaks=40  , plot=F)
+# 2. Calculate dynamic quantiles (7% and 75%)
+q_low  <- quantile(data_values, 0.08) # ~ -13.8
+q_high <- quantile(data_values, 0.75) # ~ +6.7
 
-# Color vector
-my_color <-
-  ifelse(my_hist$breaks < -10, rgb(0.2,0.8,0.5,0.5) ,
-    ifelse (
-      my_hist$breaks >=10, "purple",
-      rgb(0.2,0.2,0.2,0.2) ))
+# 3. Calculate histogram object
+my_hist <- hist(data_values, breaks = 40, plot = FALSE)
 
-# Final plot
-plot(my_hist, col=my_color , border=F , main="" , xlab="value of the variable", xlim=c(-40,40) )
+# 4. Dynamic color vector based on quantile midpoints
+my_color <- ifelse(
+  my_hist$mids < q_low, rgb(0.2, 0.8, 0.5, 0.6),
+  ifelse(
+    my_hist$mids >= q_high, adjustcolor("purple", alpha.f = 0.6),
+    rgb(0.2, 0.2, 0.2, 0.2)
+  )
+)
 
+# Expand bottom margin (mar[1]) slightly to accommodate extra x-axis labels
+par(mar = c(6, 4.5, 4, 2))
+
+# 5. Plot Histogram
+plot(
+  my_hist,
+  col = my_color,
+  border = FALSE,
+  main = "Histogram with 8% and 75% Quantile Cutoffs",
+  xlab = "",  # Suppress default xlab to avoid overlap with quantile values
+  xlim = c(-40, 40),
+  las = 1
+)
+
+grid(col = "gray90", lty = "dotted")
+
+# Re-draw histogram bars over grid
+plot(my_hist, col = my_color, border = FALSE, add = TRUE)
+
+# 6. Add Vertical Bar Lines at Quantiles
+abline(v = q_low,  col = "#0e6b38", lty = 2, lwd = 2)
+abline(v = q_high, col = "purple",  lty = 2, lwd = 2)
+
+# 7. Add Labels at the top (Quantile names ONLY)
+y_max <- max(my_hist$counts)
+
+text(
+  x = q_low, y = y_max * 0.95,
+  labels = "Q 8%",
+  col = "#0e6b38", font = 2, pos = 2, cex = 0.85
+)
+
+text(
+  x = q_high, y = y_max * 0.95,
+  labels = "Q 75%",
+  col = "purple", font = 2, pos = 4, cex = 0.85
+)
+
+# 8. Add Quantile Numerical Values Below the X-Axis
+# Redraw custom colored tick marks & values at quantile positions
+axis(side = 1, at = round(q_low, 2), labels = round(q_low, 2),
+     col.axis = "#0e6b38", col.ticks = "#0e6b38", font = 2, cex.axis = 0.85, line = -.75)
+
+axis(side = 1, at = round(q_high, 2), labels = round(q_high, 2),
+     col.axis = "purple", col.ticks = "purple", font = 2, cex.axis = 0.85, line = -.75)
+
+# Add standard x-axis label shifted down to make space
+mtext("value of the variable", side = 1, line = 3.8, cex = 0.9)
+
+# Reset margin default
+par(mar = c(5, 4, 4, 2) + 0.1)
 ```
 
 The value of -10 represent x% and is the x% quantile, up to gray is x% quantile.
 These are called quartile and is the 25% and 75% respectively.
 
 ```{r}
+# 1. Generate data
+set.seed(42)
+N <- 2000
+data_values <- rnorm(N, 0, 10)
 
-data_values <- rnorm(2000, 0 , 10)
-# hist(data_values, col = "lightblue")
+# 2. Define Parametric Quantile Thresholds
+p_low  <- 0.08  # 8%
+p_high <- 0.75  # 75%
 
-# 2. Compute the initial histogram without plotting it
+q_low  <- quantile(data_values, p_low)   # ~ -14.05
+q_high <- quantile(data_values, p_high)  # ~ +6.70
 
-hist_object <- hist(data_values, breaks=40, plot = FALSE)
+# 3. Compute initial histogram without plotting
+hist_object <- hist(data_values, breaks = 40, plot = FALSE)
 
-my_color <-
-  ifelse(hist_object$breaks < -10, rgb(0.2,0.8,0.5,0.5) ,
-    ifelse (
-      hist_object$breaks >=10, "purple",
-      rgb(0.2,0.2,0.2,0.2) ))
+# Convert counts to cumulative percentages (%)
+hist_object$counts <- cumsum(hist_object$counts) / N * 100
 
-# 3. Replace the standard bin counts with cumulative counts
-hist_object$counts <- cumsum(hist_object$counts)
+# 4. Color vector based on bin midpoints (mids) matching cumulative thresholds
+my_color <- ifelse(
+  hist_object$mids < q_low, rgb(0.2, 0.8, 0.5, 0.6), # Below 8%
+  ifelse(
+    hist_object$mids >= q_high, adjustcolor("purple", alpha.f = 0.6), # Above 75%
+    rgb(0.2, 0.2, 0.2, 0.2) # Between 8% and 75%
+  )
+)
 
-# 4. Plot the cumulative histogram
-plot(hist_object,
-     main = "Cumulative Histogram (Base R)",
-     xlab = "Values",
-     xlim = c(-40, 40),
-     ylab = "Cumulative Frequency",
-     col =  my_color)
+# Expand bottom margin for quantile tick labels below x-axis
+par(mar = c(6, 4.5, 4, 2))
 
+# 5. Plot Base Cumulative Histogram
+plot(
+  hist_object,
+  main = paste0("Cumulative Histogram with ", p_low * 100, "% and ", p_high * 100, "% Quantiles"),
+  xlab = "",
+  ylab = "Cumulative Percentage (%)",
+  xlim = c(-40, 40),
+  ylim = c(0, 105),
+  col = my_color,
+  border = FALSE,
+  las = 1
+)
+
+grid(col = "gray90", lty = "dotted")
+
+# Re-draw bars over grid
+plot(hist_object, col = my_color, border = FALSE, add = TRUE)
+
+# Percentage y-values for intersections
+y_low_pct  <- p_low * 100
+y_high_pct <- p_high * 100
+
+# 6. Add Horizontal Segments (From left y-axis boundary at x = -40 to intersection point)
+segments(x0 = -40, y0 = y_low_pct,  x1 = q_low,  y1 = y_low_pct,  col = "#0e6b38", lty = 3, lwd = 1.8)
+segments(x0 = -40, y0 = y_high_pct, x1 = q_high, y1 = y_high_pct, col = "purple",  lty = 3, lwd = 1.8)
+
+# 7. Add Vertical Segments (From x-axis baseline at y = 0 to intersection point)
+segments(x0 = q_low,  y0 = 0, x1 = q_low,  y1 = y_low_pct,  col = "#0e6b38", lty = 2, lwd = 2)
+segments(x0 = q_high, y0 = 0, x1 = q_high, y1 = y_high_pct, col = "purple",  lty = 2, lwd = 2)
+
+# 8. Add Intersection Points & Labels
+# Draw solid points at exact intersection coordinates
+points(c(q_low, q_high), c(y_low_pct, y_high_pct),
+       col = c("#0e6b38", "purple"), pch = 19, cex = 1.2)
+
+# Quantile labels placed near intersection points
+text(
+  x = q_low, y = y_low_pct + 4,
+  labels = paste0("Q ", y_low_pct, "%"),
+  col = "#0e6b38", font = 2, pos = 2, cex = 0.85
+)
+
+text(
+  x = q_high, y = y_high_pct + 4,
+  labels = paste0("Q ", y_high_pct, "%"),
+  col = "purple", font = 2, pos = 2, cex = 0.85
+)
+
+# 9. Add Quantile Numerical Values Below X-Axis
+axis(side = 1, at = round(q_low, 2), labels = round(q_low, 2),
+     col.axis = "#0e6b38", col.ticks = "#0e6b38", font = 2, cex.axis = 0.85, line = -1.)
+
+axis(side = 1, at = round(q_high, 2), labels = round(q_high, 2),
+     col.axis = "purple", col.ticks = "purple", font = 2, cex.axis = 0.85, line = -1.)
+
+# Add main x-axis title shifted down
+mtext("Values", side = 1, line = 3.8, cex = 0.9)
+
+# Reset margin defaults
+par(mar = c(5, 4, 4, 2) + 0.1)
 
 ```
 
