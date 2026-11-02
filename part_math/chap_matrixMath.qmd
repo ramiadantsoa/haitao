@@ -4,17 +4,18 @@
 Not the movie by Keanu Reaves
 :::
 
-While french can be creative when translating movie titles, they kept Matrix the movie by Keanue Reaves. With the popularity of the series, when talking about matrix. The frustration is familiar to malagasy people when people first think about the animated series, lions and zebra, before their island. Matrix, a mathematical object, existed well before the movie series.
+The french can be creative when translating movie titles. Home Alone in french was "Maman j'ai raté l'avion". But sometimes, they kept the english title like in Matrix, the movie by Keanue Reaves. With the popularity of the series, when talking about matrix, francophone first though is the movie. The frustration is familiar to malagasy people when people first think about the animated series, lions and zebra, before their island.
 
-A matrix could simply be a way fo storing numbers.
+Matrix, a mathematical object, existed well before the movie series. A matrix is rectangular way of storing numbers.
 
-Rabe, Rakoto, Sanda, Dora when to market and here are what they bought
-Rabe bought 6 bananas, 3 toko strawberries, and 0.5 kapoaka of voatsinefy.
-Rakoto bought 3 bananas, 1 toko of strawberries, no voatsinefy
-Sanda bought only 10 toko of strawberries.
-Finally, Dora bought 1 banana and 2 kapoaka of vaotsinefy.
+Rabe, Rakoto, Sanda, and Dora when to market.
 
-This information is arrange in a matrix, each row represents a purchaser, and a column a fruit
+- Rabe bought 6 bananas, 3 toko strawberries, and 0.5 kapoaka of voatsinefy.
+- Rakoto bought 3 bananas, 1 toko of strawberries, no voatsinefy
+- Sanda bought 10 toko of strawberries.
+- Dora bought 1 banana and 2 kapoaka of vaotsinefy.
+
+This information could be arranged in a matrix, each row represents a purchaser, and a column a fruit
 $$
 \begin{pmatrix}
     6 & 3 & 0.5 \\
@@ -24,7 +25,7 @@ $$
 \end{pmatrix}
 $$
 
-Alternatively, we can structure the data
+Alternatively, the data could be arranged by putting the purchaser on the column and the fruit on the row.
 $$
 \begin{pmatrix}
 6 & 3 & 0 & 1 \\
@@ -33,11 +34,11 @@ $$
 \end{pmatrix}
 $$
 
-The conversion from the first matrix to the second one is called transposing.
+These two rectangles contains the same amount of information (provided the meaning of the rows and columns are clear). Further, the conversion from the first matrix to the second one is called transposing.
 
 ## Formal {.unnumbered}
 
-An $m \times n$ matrix is a rectangular array of elements in a set $\Omega$ having m rows and n columns. It is denoted as:
+An $m \times n$ matrix is a rectangular array of numbers having $m$ rows and $n$ columns. It is denoted as:
 
 $$
 A =
@@ -47,15 +48,29 @@ A =
     \vdots & \vdots & & \vdots \\
     a_{m1} & a_{m2} & \dots & a_{mn}
 \end{pmatrix}
+$${#eq-matrixGeneral}
+
+where the numbers $a_{\{i,j\}}$ denotes the entry in the $i^{th}$ row and $j^{th}$ column of A. The domain of the row index $i$ is $\{1,2 \ldots ,m \}$ and the domain of the column index $j$ is $\{1,2,\dots ,n\}$.
+
+In mathematics, a vector is special case of matrix as $n \times 1$ or sometimes $1 \times n$. It can always be transposed and the transpose notation is $ \top$ so
+
 $$
-
-where the element $a_{i,j} \in \Omega $ denotes the entry in the ith row and jth column of A. The domain of the row index i is {1,2,…,m} and the domain of the column index j is {1,2,…,n}. $\Omega$ could be natural or real number or anything else.
-
-In mathematics, a vector is special case of matrix, consisting of with one column.
+ V^\top =
+\begin{pmatrix}
+    a_1 & a_2 & \cdots a_n
+\end{pmatrix}^\top
+ =
+\begin{pmatrix}
+a_1 \\
+a_2 \\
+\vdots \\
+a_n
+\end{pmatrix}
+$$
 
 ## Examples {.unnumbered}
 
-- As square matrix is with the same number of row and column
+- A square matrix is with the same number of row and column
 
 $$
 \begin{pmatrix}
@@ -67,6 +82,7 @@ $$
 
 - A diagonal matrix has all element of the diagonal equals to 0, it is often noted diag()
 $$
+\text{diag}(a, b, c) =
 \begin{pmatrix}
 a & 0 & 0 \\
 0 & b & 0 \\
@@ -74,7 +90,7 @@ a & 0 & 0 \\
 \end{pmatrix}
 $$
 
-- A matrix can be symmetric where the values are the same the diagonal, ie $a_{i,j} = a_{j,i}$
+- A matrix can be symmetric where the values are the same the diagonal, i.e. $a_{\{i,j\}} = a_{\{j,i\}}$
 $$
 \begin{pmatrix}
 a & 1 & x \\
@@ -84,11 +100,15 @@ x & -1 & c
 $$
 
 ## Tips and warning {.unnumbered}
-- Semantic: element, entry,
-- A matrix is often denoted by a capital letter, sometimes in bold to differentiate from value which are mostly lower case.
-- A community matrix for ecologist have the number of species per site
-- A distance matrix is a square and symmetric matrix computed after say community matrix. Each element is pairwise distance between two sites. Since distance between site A and site B is the same as the distance between site B and site A. The element on the diagonal is the distance between the same site and could be 0 or 1 depending on the distance represent similarity or dissimilarity.
-- From a mathematical matrix, a column matrix is different than a row matrix (1 x n) is not the same as (n x 1) although one can transpose it.
+<!-- - A matrix is often denoted by a capital letter, sometimes in bold to differentiate from value which are mostly lower case. -->
+- A community matrix for ecologist is a matrix where each row represents a site and each column represents a species (could be presence-absence or abundance).
+- A design matrix is a matrix where each row represents a site and each column represents a variable (altitude, temperature etc).
+- A distance matrix is a square and symmetric matrix computed from the community matrix. Each entry represents a pairwise distance between two sites (difference in species composition) or between species (difference in species distribution). Becaue distance between site A and site B is the same as the distance between site B and site A then the matrix is symmetric.
+<!-- - From a mathematical matrix, a column matrix is different than a row matrix (1 x n) is not the same as (n x 1) although one can transpose it. -->
 - Matrix is more than a rectangle storing data, it is the foundation of linear algebra...and sometimes have magical properties. Maybe in future chapters
-- A [data frame](@sec-dataframe) is also a rectangular object mostly used in data-science. The columns could be a different type (numbers, text, etc.). There is no equivalent of data frame in mathematics.
-- The huge field of linear algebra in mathematics is essentially understand the properties of matrix.
+- A data frame (@sec-dataframe) is also a rectangular object mostly used in data-science. The columns could be a different type (numbers, text, etc.). There is no equivalent of data frame in mathematics.
+<!-- - The huge field of linear algebra in mathematics is essentially understand the properties of matrix. -->
+
+#### Semantic/Terminology/Notation
+- The $i^{th}$ and $j^{th}$ entry is also called the $i^{th}$ and $j^{th}$ element of the matrix
+- For more succinct notation, the curly brackets and comma can be ommitted, so $a_{ij}$ instead of $a_{i,j}$ or $a_{\{i, j\}}$ as in @eq-matrixGeneral.

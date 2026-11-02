@@ -4,7 +4,7 @@
 Acronyms in mathematics!
 :::
 
-People at the ministry in conservation are found of acronyms, PAEP etc. While they are fluent with that, they often do not realize that outsiders have no idea of what they are talking about. Conversely, when mathematicians are using acronyms (symbols) to condense a expression, it is universally unaccessible.
+"Blabla blabla" or "blobolo" are but unless one is, it is almost jibberish. People at the ministry in conservation are found of acronyms, PAEP etc. While they are fluent with that, they often do not realize that outsiders have no idea of what they are talking about. Conversely, when mathematicians are using acronyms (symbols) to condense a expression, it is universally unaccessible.
 
 But there is a common denominator: acronyms and notations are incredible useful as long as one is fluent in them. And to parapharase Catie in Mean Girls : mathematics has the advantage that the notations are for the whole world. Multiplication is a notation used so not repeat addition $2 + 2 + 2 = 3 \times 2$ or a factorial $n! = 1 \times 2 \times 3 \times ... (n - 1) \times n$. Some notations are more notorious than other, which depends on frequency of usage.
 
