@@ -4,15 +4,13 @@
 The one like the fish.
 :::
 
-Once, a colleague gave a lecture on Lotka-Volterra equation to undergraduate students in the biology department. When a student asked: "what is alpha?", she spent a few minutes explaining what alpha represented until another student interjected and said: "it is the one like the fish". It was a wake up call that understanding greek letter is a problem. And to the majority it is the case, so let's clear that out.
+Once, a colleague gave a lecture on Lotka-Volterra equation to undergraduate students in the biology department. When a student asked: "what is alpha?", she spent a few minutes explaining what alpha represented until another student interjected and said: "it is the one like the fish". That was an unexpected knowledge gap, but also more common that not.
 
-This is unfamiliar $(\zeta  + \xi)^2 = \zeta^2 + \xi^2 + 2\zeta\xi$, yet the *identité remarquable* $(a + b) ^ 2 = a^2 + b^2 + 2ab$
+Many should remember the "identité remarquable" $(a + b) ^ 2 = a^2 + b^2 + 2ab$, but bamboozled with $(\zeta  + \xi)^2 = \zeta^2 + \xi^2 + 2\zeta\xi$. Yet, it is the same identity. Likewise, calculting $13 + 9 = 22$ is trivial, but it requires a certain amount of brainpower to calculate $XIII + IX$ (the answer is $XXII$).
 
-Roman notation is also impossible to do $XIII + IX = XXII$, while this $13 + 9 = 22$ is trivial
+Many are comfortable to perform calculation with the Hindu-Arabic numerals, not with roman number. Yet, equally comfortable using roman numerals when refering to sections in the bible. The roman indicate one is talking about the seciont while romans are reserved for the verses.^[Could you imagine how cumbersome if it was the opposite!]
 
-A major barrier to is inability to go past beyond notation. While in the right context, using roman number feels normal when siting section in the bible. First because we are used to it, but second because we understand the specific choice (separete section and verse).
-
-So as every notation: greek letter are used with convience (not a necessity), and as with roman numbers, habits, basic comprehension are elements to be comfortable with them
+So what is the need of greek letter? It is not really needed, but it is convenient in the right context.
 
 ## Formal {.unnumbered}
 
@@ -47,18 +45,17 @@ Here is dictionary of the greek alphabet in upper and lower case, the latin equi
 
 
 ## Examples {.unnumbered}
-- "I am $\alpha$ and $\Omega$", probably the most famous use of greek letters to mean beginning and the end.
-- $\pi$ represents the number 3.14 etc We could also think that $\pi$ is the ratio between the circumference and diameter. So it represents a constant
+- "I am $\alpha$ and $\Omega$", probably the most famous use of greek letters to mean the beginning and the end.
+- $\pi$ represents the number 3.14... or geometrically as the ratio between the circumference of a circle and its diameter.
 - $\sigma$ is used as the parameter for standard deviation for a normal distribution. The variance is $\sigma^2$.
-- $\Sigma$ and $\Pi$ are used for shortcut summation and product see @sec-sum.
-- $\Omega$ is usually used to represent a set, but can mean something else in physics.
-- $\zeta$ is one of famous equation that mathematicians are hoping to solove
-- $\epsilon$ and $\omicron$ $\iota$ etc are something small
+- $\sum$ and $\prod$ are used for shortcut summation and product see @sec-sum.
+<!-- - $\Omega$ is usually used to represent a set, but can mean something else in physics. -->
+- The Riemann zeta function $\zeta(s)$ is a important function, a conjectured property called the Riemann hypothesis remained unproven so far.
+- $\epsilon$ and $\omicron$ $\iota$ for covid variants.
 
 ## Tips and warning {.unnumbered}
-- Greek letters are used to show difference.
-  - In statistics, difference between true value ($\sigma$) for standard deviation of the [population](@sec-population) vs. $s$ for estimated value from the sample.
-  - In mathematics: greek could represend parameter while represent variable $\mu$ is for mortallity instead x, y, for variable and t for time.
-- Use of greek letter for paremeters in probability: $N(\mu, \sigma)$ or Poisson($\lambda$)
-- Use of greek letters for covid variants.
-- Latin browed letters from Greek. When the romans picked the letter, some of them were dropped because romans did not need them (like phi) or modified them, Delta, Lambda and sigma. while some kept the same.
+- In mathematics: greek letter often represent parameters while latin letters represent variables, for example $x(t) = \alpha t^2 + \beta$.
+- In probability statics: greek letter for paremeters of probability distribution: $\mathcal{N}(\mu, \sigma)$ or Poisson($\lambda$).
+- $\alpha$ is used a threshold in stastistical signficance, $\beta$ for type II error, $\varepsilon$ is a random error.
+- In statistics: greek letters denote the true value, for instance ($\sigma$) for the standard deviation of the population (@sec-population) and $s$ or $$\hat{s} for the  estimated value from the sample. This will become clearer when statistical inference is addressed.^[not yet in this version]
+<!-- - Latin browed letters from Greek. When the romans picked the letter, some of them were dropped because romans did not need them (like phi) or modified them, Delta, Lambda and sigma. while some kept the same. -->
