@@ -1,4 +1,4 @@
-# Discrete and continuous number {#sec-discrete_continuous}
+# Discrete and continuous number {#sec-discreteContinuous}
 
 <!-- {{< include ../preamble.qmd >}} -->
 

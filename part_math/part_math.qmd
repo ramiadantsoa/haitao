@@ -1,20 +1,18 @@
 # Basic mathematics
 
-Math is the foundation of all quantitative methods.
-And since this is about quantitative methods, it is natural that I start with foundation.
-Many even want to skip this and only return notation and concept issues in later chapter. The dynamic nature/hyperlink means you can just click go to the math concepts.
+Mathematics is the foundation of all quantitative methods. And since this is whole book is about quantitative methods, it is natural to begin with the foundation. A certain group of reader might want to skip this section or part of it and only return to specific chapters when notation and concept issues in later chapter are unclear.
 
-It has become a standard materials for humorists about the uselessness of math (think about the use of sqrt of 25 or the use of a compas).
-Mathphobia is real, and these jokes probably easy the trauma some people had about that in the past.
-Confuse the difficulty and usefuleness.
-They are almost uncorrelated.
-Arithmetic opertion is easy and useful, proving fermat's last theorem is difficult but less usefull (in practice), partial differential equations are difficult and useful, and easy but less used.
-The idea behind here is somehow easy and useful-applied
-How do we reconcile that?
-The goal is not to do PhD in mathematics or solve, it is having the tools we need.
+The usefuleness of mathematics has become a low hanging fruit for humorists (does knowing the square root of 25 has saved you in difficult situtation?). Math phobia^[an intense, persistent feeling of tension, apprehension, or fear that interferes with a person's ability to manipulate numbers and solve math problems in daily life or academic settings] is real, and many relates to these jokes.
 
-As said above, most chapters are to support concept introduced later. This can be grouped in three parts: the notation and characterization (@sec-greek, @sec-sum, @sec-discrete_continuous), operation on number @sec-arithmeticCoding, on matrix @sec-matrixMath, on function @sec-functionMath, graphic representation @sec-functionViz, @sec-derivative. We will end by recalling what is an exponential @sec-exponential, logarithm @sec-log, and end with difference @sec-difference and differential equation @sec-differential.
-Because this is about math, there is no a priori that nor to show R code (which I used for making most of the graphs.)
+Unconciously, validate the difficulty and uselessness of mathematics. But math can be
+  - easy and useful in everyday life like arithmetic operation
+  - difficult and useless like proving Fermat's last theorem
+  - difficult and usefull like partial differential equations
+  - easy and useless like calculating $\pi = 3.14...$ up to any precision.
+The idea behind this section is to wander in the easy and useful part. Easy in the sense of simplified and useful for applied ecologist and scientist-alike.
 
-Notes on terminology..get comfortable with nuances (function)
-To reduce terminology, the most basic, math is about generalization and many of the concepts are generalized. They will be mentioned if it is cool or needed later. Philosphical
+Most chapters are to support future applied concept. The first chapters remind of the different rules in arithmetic (@sec-arithmeticMath), what are the greek letters and why are they used (@sec-greek). The difference between discrete and continuous variables (@sec-discreteContinuous) which will be used in the statistics and coding section. The notation for summation for product are explained in (@sec-sum). These compact notations will be used throughtout in the define many statistics. Matrix and operations on matrix are covered in three chapters (@sec-matrixMath, @sec-matrixOperationMath, and @sec-matrixMultiplicationMath).
+
+The rest of this section redefines what is function with an emphasis on the notion of domain and codomain (@sec-functionMath), the interpretations of a graph (@sec-functionViz) and the derivative (@sec-derivative). The exponential and logarithm functions are introduced (@sec-exponential and @sec-log). The section ends with the formulation of how to model change with difference (@sec-difference) or differential equation (@sec-differential)
+
+This section is about basic mathematics so there is no a priori use of R code. Coding are introduced in the respective section. Mathematicians might protest against the narrow definition and intuition, the goal is to find a trade-off where reduced rigor might make concept more accessible.

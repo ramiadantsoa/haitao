@@ -4,11 +4,10 @@
 
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
-Tokony rarahiana!
-Toko roa mahamasa-nahandro!
+Measuring (un)predictability
 :::
 
-Everyone has checked their average grade to see if one passes of fail or get a mark, but, no one has ever check the variance of their grades!
+Everyone has calculated their average grade to see if one passes of fail or get a mark, but, no one has ever check the variance of their grades!
 While calculating the mean is well engrained, most probably don't remember the formula for variance or standard deviation.
 And then when one performs test, we are forced to look at the variance without really understanding why. Test for homogeneity of variance or homoscedaisticy--what a fancy word. One is obviously because of lack of understanding of the test, but is the because we have been ignoring variance.
 

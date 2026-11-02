@@ -24,6 +24,12 @@ Convince oneself, one is not more important than the other,  no need to set an o
 Beyond the rather philosophical aspect, the practical side is we almost never know the population. For the three examples of population above: no one will every collect data on age of every individuals in the population. So in principle we will never know the answers to these questions. And this is the disctintion between a population and a sample, and the difference between a true value and the estimated value. The disctinction is important enough they are distinguised by notation: the true value is represented by greek letter, while the estimated by roman letters.
 
 ## Formal {.unnumbered}
+[Wikipedia](https://en.wikipedia.org/wiki/Statistical_population)
+
+In statistics, a population is a set of similar items which is of interest for some question or experiment. A statistical population can be a group of existing objects (e.g. the set of all stars within the Milky Way galaxy) or a hypothetical and potentially infinite group of objects conceived as a generalization from experience (e.g. the set of all possible hands in a game of poker).
+
+In statistical inference, the population is modelled by a probability distribution with unknown parameters. By analyzing a subset of the population, it is then possible to estimate the population parameters using the appropriate sample statistics.
+
 
 Textbook Source
 Book: Introduction to the Theory of Statistics (3rd Edition)
@@ -51,4 +57,4 @@ Second the hypothetical Population: An infinite set of all possible outcomes tha
 - Population itself is not the end goal, it is studing the properties of that population (variables @sec-variable, distribution @sec-distribution).
 - Population is a sample. While in more rigorous, foundational, the more practical is more useful for the applied scientist.
 
-## If you want to know more {.unnumbered}
+### Semantic {.unnumbered}

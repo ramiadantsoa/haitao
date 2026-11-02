@@ -55,7 +55,8 @@ The median of
 If you ever do by hand sort by smallest to largest and go halfway. Of course work for few numbers but uncessary for larger one.
 
 ## Tips and warnings {.unnumbered}
-- The major advantage of a median over a mean is that it is less to extreme values or outliers. It is up to one's judgement if that is or not.
+- Median is used in boxplot
+`- The major advantage of a median over a mean is that it is less to extreme values or outliers. It is up to one's judgement if that is or not.
 - If uncertain, maybe compute both mean and median (one line in R) as an exploration and see how much they differ and how that will affect your conclusion.
 - Another example of picking a single number, now three as measure of central tendency (mean, mode, mediane). As we progress, we are already more informed in which one to choose. But there are also more and more metrics to report our data.
 - Median is simply the 50% quantile @sec-quantile.

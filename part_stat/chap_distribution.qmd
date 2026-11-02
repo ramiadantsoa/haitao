@@ -121,11 +121,11 @@ par(mfrow = c(1, 1))
 
 ## Tips and warnings {.unnumbered}
 
-- The distribution is the fundamental concept, whether it is theory or appplied/data driven. A variable is a map with its distribution, it has similarites as function and figure (@sec-function_viz). Except that two variables can have teh same distribution.
+- The distribution is the fundamental concept, whether it is theory or appplied/data driven. A variable is a map with its distribution, it has similarites as function and figure (@sec-functionViz). Except that two variables can have teh same distribution.
 
 - Barchart vs. histogram: the former is used with qualitative variable, the second one is used with quantitative. Mostly because and define the binning.
 
-- For bar chart one can reoder the values on x-axis for qualitative variable (unless it is an ordinal variable). The standard is to put them from the least frequent to the most frequent (or inversely). Generally eases the interpretation
+- For bar chart one can reorder the values on x-axis for qualitative variable (unless it is an ordinal variable). The standard is to put them from the least frequent to the most frequent (or inversely). Generally eases the interpretation
 
 ```{r}
 df_lemur <- data.frame(

@@ -14,21 +14,21 @@ book:
     - preface.qmd
     - part: part_math/part_math.qmd
       chapters:
-        - part_math/chap_operation.qmd
+        - part_math/chap_arithmeticMath.qmd
         - part_math/chap_greek.qmd
-        - part_math/chap_discrete_continuous.qmd
+        - part_math/chap_discreteContinuous.qmd
         - part_math/chap_sum.qmd
-        - part_math/chap_matrix.qmd
-        - part_math/chap_matrix_op.qmd
-        - part_math/chap_matrix_multi.qmd
+        - part_math/chap_matrixMath.qmd
+        - part_math/chap_matrixOperationMath.qmd
+        - part_math/chap_matrixMultiplicationMath.qmd
         # - part_math/chap_eigen.qmd
         - part_math/chap_functionMath.qmd
         - part_math/chap_functionViz.qmd
         - part_math/chap_derivative.qmd
         - part_math/chap_exponential.qmd
         - part_math/chap_logarithm.qmd
-        - part_math/chap_difference_eq.qmd
-        - part_math/chap_differential_eq.qmd
+        - part_math/chap_differenceEquation.qmd
+        - part_math/chap_differentialEquation.qmd
     - part: part_stat/part_stat.qmd
       chapters:
         - part_stat/chap_population.qmd
@@ -67,19 +67,19 @@ book:
         - part_coding/chap_scriptEditor.qmd
         - part_coding/chap_ide.qmd
         - part_coding/chap_assign.qmd
-        - part_coding/chap_num_int.qmd
+        - part_coding/chap_numInt.qmd
         # - part_coding/chap_integer.qmd
-        - part_coding/chap_operation_arithmetic.qmd
+        - part_coding/chap_arithmeticCoding.qmd
         - part_coding/chap_strings.qmd
         - part_coding/chap_boolean.qmd
-        - part_coding/chap_operation_boolean.qmd
+        - part_coding/chap_booleanOperationCoding.qmd
         - part_coding/chap_vector.qmd
-        - part_coding/chap_matrix.qmd
-        - part_coding/chap_operation_matrix.qmd
+        - part_coding/chap_matrixCoding.qmd
+        - part_coding/chap_matrixOperationCoding.qmd
         - part_coding/chap_dataframe.qmd
         # - part_coding/chap_tibble.qmd
         - part_coding/chap_list.qmd
-        - part_coding/chap_functionCode.qmd
+        - part_coding/chap_functionCoding.qmd
         - part_coding/chap_pseudocode.qmd
         - part_coding/chap_debugging.qmd
         # - part_coding/chap_shortcut.qmd
@@ -133,7 +133,7 @@ book:
     #     - part_diversity/chap_ca.qmd
     #     - part_diversity/chap_nmds.qmd
     #     - part_diversity/chap_distance_sampling.qmd
-    - summary.qmd
+    # - summary.qmd
     - references.qmd
 
 bibliography: references.bib

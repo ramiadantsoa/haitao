@@ -14,11 +14,11 @@ A few years ago, there was an intense debate on several social media platforms a
 
 One camp argues that the answer is one, while the other is convinced that it is sixteen. The problem has all the ingredients for a viral online debate: a simple statement that the average person can understand and a formulation that fosters confusion. It also has a binary answer that further divides opinions and illustrates how confidently people assert that they are right on social media.
 
-Yet this is still a simple arithmetic problem that primary-school pupils should be able to solve. So, what is the correct answer? The section below reviews the basic rules of arithmetic, as ecologists should be more mathematically literate than the average person on the internet.
+Yet this is still a simple arithmetic problem that primary-school pupils should be able to solve. So, what is the correct answer? The section below reviews the basic rules of arithmetic, as ecologists and scientist alike should be have more mathematical literacy than the average person on the internet.
 
 ## Formal {.unnumbered}
 
-The order of operations, that is, the order in which the operations in an expression are usually performed, results from a convention adopted throughout mathematics, science, technology, and many computer programming languages. It is summarized as:
+^[[Wikipedia](https://en.wikipedia.org/wiki/Order_of_operations)] The order of operations, that is, the order in which the operations in an expression are usually performed, results from a convention adopted throughout mathematics, science, technology, and many computer programming languages. It is summarized as:
 
 1. **Parentheses**
 2. **Exponentiation**
@@ -31,40 +31,41 @@ Parentheses and alternate symbols of grouping can be used to override the usual 
 
 
 ## Examples {.unnumbered}
-1. Exponentiation first, then multiplication, then addition \
+
+- Exponentiation first, then multiplication, then addition \
     $1 + 2 \times 3^4 = 1 + 2 \times 81  = 1 + 162  = 163$ \
 
-2. Always compute the expression within parentheses first \above
+- Always compute the expression within parentheses first \above
     $(1 + 2) \times 3^4 \neq 1 + (2 \times 3)^4 \neq (1 + 2 \times 3)^4$ \
 
-3. The length of the division bar used to dictate priority \
-   $\frac{1}{\frac{2}{3}} \neq \frac{\frac{1}{2}}{3}$
+- The length of the division bar used to dictate priority \
+   $\dfrac{1}{\frac{2}{3}} \neq \dfrac{\frac{1}{2}}{3}$
 
-4. Uncessary use of parenthesis \
+- Uncessary use of parenthesis \
    $(1 + 1) + 1 = 1 + (1 + 1)$ and
    $(1 \times 2) \times 3 = 1 \times (2 \times 3),$ \
    because of addition (and multiplication) is called associative. In case of doubt, it is always recommended to include parenthesis
 
-5. Necessary use parentheses when non-communtative \
+- Necessary use parentheses when non-communtative \
     $1 - 2 + 3 = (1 - 2) + 3 \neq 1 - (2 + 3)$
 
 ## Tips and warning {.unnumbered}
-- [Semantic: power vs exponentiation. They are almost used exchangebly. Although exponentiaion is the precise math term]{.highlight-semantic}
-- Three notations for multiplication $a \times b$, $a \dot b$ and nothing as in $a b$. While the latter makes the notation compact, it is also a source of confusion. One classic error in coding is forgetting to explicitly add a [multiplication symbol](@sec-matrixOperationCoding) when coding.
 
-- Solution to the problem is above `8 ÷ 2 (2 + 2)`
-  - First, include the multiplation symbol `8 ÷ 2 x (2 + 2)`$,
-  - Then do the operation within parentheses `8 / 2 x 2`
-  - Equal priority, so left then right `4 x 2 = 8`. (If unconvinced,  2 - 2 + 3 same would you do 2 + 3 first).
-
- - There are also three notations for division $a \div$ b, $a / b$ and $\frac{a}{b}$. The latter can clarify priority and avoid usage of parentheses. Unfortunately, that symbol is not available in R language.
-     $\frac{1}{2} \times 3 \neq \frac{1}{2 \times 3}$ instead of $1/2 \times 3$
-
-- Just add parenthesis when in doubt even it might be unnecessary--this can be important especially when coding.
+- Solution to the problem is above $8 \div 2 \, (2 + 2)$
+  - First, include the multiplation symbol $8  \div 2 \times (2 + 2)$,
+  - Then do the operation within parentheses $8 \div 2 \times 2$
+  - Equal priority, so left then right $4 \times 2 = 8$^[If unconvinced, imagine calculating  $2 - 2 + 3$, nobody will do $2 + 3$ first.]
 
 - The rule of performing exponentiation before multiplication and multiplication before addition should be natural. Multiplication by definition is a notation for repeated addition: $2 + 2 + 2 + 2 = 2 \times 4$. If the multiplication is unwrapped, then $2 \times 4 + 3 = 2 + 2 + 2 + 2 + 3$. Should be clear that it does not make sense to add $4 + 3$ first and then multiply by 2.
 - The same applies to power $2 ^ 3 = 2 \times 2 \times 2$. This if unwrapped,  $2^3 \times 3 = 2 \times 2 \times 2 \times 3$ and $2^3 + 3 = 2 \times 2 \times 2 + 3$
-- [What is $2^{2^2}$?]{.highlight-yourTurn}
+- Add parenthesis when in doubt even it might be unnecessary--this can be important especially when coding. And do not skip calculation steps.
+<!-- - [What is $2^{2^2}$?]{.highlight-yourTurn} -->
 
 
+### Semantic/Terminology/Notation{.unnumbered}
+
+- Semantic: power vs exponentiation. They are almost used exchangebly. Although exponentiaion is the precise math term.
+- Three notations for multiplication $a \times b$, $a .b$ and $a b$. While the latter makes the notation compact, it is also a source of confusion.^[One classic error in coding is forgetting to explicitly add a multiplication symbol (@sec-matrixOperationCoding) when coding]
+- There are also three notations for division $a \div$ b, $a / b$ and $\frac{a}{b}$. The latter can clarify priority and avoid usage of parentheses. Unfortunately, that symbol is not available in R language.
+     $\frac{1}{2} \times 3 \neq \frac{1}{2 \times 3}$ instead of $1/2 \times 3$
  

@@ -37,7 +37,9 @@ $$
 \end{pmatrix}
 $$
 
+Fenitra + pineapple.  for instance does not make sense.
 This element-wise work (well-defined) when we combine a matrix with scalar or matrix of same dimension wi, the element-wise operation is mostly arithemetic operation for each element of the grid. All the propreties in traditional arithmetic operation with numbers naturally apply.
+
 
 ## Formal {.unnumbered}
 
