@@ -6,25 +6,34 @@
 To count or to measure.
 :::
 
-The title of this chapter should be natural numbers $\mathbb{N}$ and real numbers $\mathbb{R}$. Everyone is familiar with these sets. Because the set of natural numbers is a subset of real numbers, one can basically use real number and ignore the set of natural numbers.
+The title of this chapter should be natural numbers $\mathbb{N}$ and real numbers $\mathbb{R}$. Everyone is familiar with these sets. Because the set of natural numbers is a subset of real numbers (e.g. 3 is also a real number), one can basically use real number and ignore the set of natural numbers.
 
-So why such a title and why the distinction? The answer to the first question is because this book is about applied mathematics and more an emphasis about the properties than nomenclature. In other words, natural numbers has the properties of discrete, while real numbers is a continuous set. The difference between discrete and continuous will appear in the statistics parts (discrete and continuous variables @sec-quantitative-variable) and again implemented differently in [programming language](@sec-numeric).
+So why such a title and why the distinction? The answer to the first question is because this book is about applied mathematics so there is more an emphasis about the properties of the numbers than nomenclature. In other words, natural numbers has the properties of discrete, while real numbers is a continuous set. The difference between discrete and continuous will appear in the statistics parts (discrete and continuous variables @sec-quantitative-variable) and also implemented differently in coding (@sec-numeric)^[although interchangeble use is not fatal in R ].
 
 ## Formal {.unnumbered}
-The formal definition is useless in the purpose of this book (unless you want to learn about topology).
-It could describe in the following, a discrete discrete set, every number is isolated.
-In contrast, in a continuous, any number has a neighbor. And this is true no matter how close one looks.
-That is why a continuous number (real number) is represented by a continuous line where as natural number should be points.
-
+The formal definition is useless for the purpose of this book (unless you want to learn about topology).
+Intuitively, in a discrete set, every number is isolated.
+In contrast, in a continuous set, any number has a neighbor no matter how close you look.
+That is why a continuous number (real number) is represented by a continuous line where as natural number are equidistant points.
 
 ## Examples {.unnumbered}
-- World of discrete numbers: Odd (2, 4, 6, 8 etc) and even (3, 5, 7, 9 etc.), prime numbers (3, 5, 7, 11, etc), and also the negative mirror.
+- Example of discrete numbers:
+  - Even numbers: 2, 4, 6, 8,...
+  - Odd numbers: 3, 5, 7, 9 ...
+  - Prime numbers: 3, 5, 7, 11
+  - And also the opposite (negative)
 
-- World of continuous numbers: $\pi = 3.14\ldots$, $e = 2.71\ldots$, $\sqrt{2}$ and the fractions
+- Examples of continuous numbers that :
+  - Fractions: $\frac{1}{3} = 0.3333\ldots, \frac{2}{4} = 0.5$
+  - Irrational numbers^[when the patterns in the digits never repeats]
+    - $\pi = 3.14\ldots$
+    - $e = 2.71\ldots$
+    - $\sqrt{2} = 1.41 \ldots$
 
 ## Tips and warnings {.unnumbered}
-- Semantic: whole number, natural number, integer while the later includes mirror negative
-- Discrete number is mostly used for counting and indexing (e.g. in summation and product @sec-sum)
-- Tools to are fundamentaly different.
-  -  For instance, using[difference equation](@sec-difference) to model when time is discrete and [differential equation](@sec-differential) when time is continuous.
-  -  In probabilites, a sum is used to compute the mean if the variable is discrete, an integral is used if the variable is continuous
+- Discrete number is mostly used for counting and indexing (e.g. in summation and product @sec-sum, for extracting element in a vector @sec-vector)
+- Two ways of modeling evolution in time: in a difference equation (@sec-difference) time is moves in discrete time step, and and in differential equation (@sec-differential) time is continuous.
+ - In probabilites^[anticipating future chapters], a sum ($\sum$)is used to compute the mean (and all other moments) if the variable is discrete, and integral ($\int$) is used if the variable is continuous
+
+### Semantic/Terminology/Notation {.unnumbered}
+The discrete numbers are also called whole number, natural number or integer. The latter is the default term in coding.

@@ -56,6 +56,6 @@ Here is dictionary of the greek alphabet in upper and lower case, the latin equi
 ## Tips and warning {.unnumbered}
 - In mathematics: greek letter often represent parameters while latin letters represent variables, for example $x(t) = \alpha t^2 + \beta$.
 - In probability statics: greek letter for paremeters of probability distribution: $\mathcal{N}(\mu, \sigma)$ or Poisson($\lambda$).
-- $\alpha$ is used a threshold in stastistical signficance, $\beta$ for type II error, $\varepsilon$ is a random error.
+- $\alpha$ is used a threshold in stastistical signficance, $\beta$ for type II error, $\varepsilon$ or $\epsilon$^[the curly and lunate two typograph for epsilon due to historical styles] is a random error/
 - In statistics: greek letters denote the true value, for instance ($\sigma$) for the standard deviation of the population (@sec-population) and $s$ or $$\hat{s} for the  estimated value from the sample. This will become clearer when statistical inference is addressed.^[not yet in this version]
 <!-- - Latin browed letters from Greek. When the romans picked the letter, some of them were dropped because romans did not need them (like phi) or modified them, Delta, Lambda and sigma. while some kept the same. -->
