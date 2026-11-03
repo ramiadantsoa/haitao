@@ -5,91 +5,14 @@
 Ikotozafy ihany no Alexis!
 :::
 
-In the math test at in the baccalaureat, the most points goes into the section problem: this is calculus problem: a function is given at the begining, then a series of questions like *domaine définition, limites, calcul de dérivée, tableau de variations* etc.. which ends with *construire la courbe représentatif etc.*. If looking broadly the problem is to draw the figure for the given function. But this is not really a problem, I can just put the function in a program and I get the graph!
+In standard high-school mathematics curricula—such as the French *Baccalauréat* exam—the highest point allocation belongs to the comprehensive calculus problem. A function is introduced at the start, followed by a sequence of procedural steps: finding the domain of definition (*domaine de définition*), computing limits (*limites*), evaluating derivatives (*calcul de dérivée*), constructing sign and variation tables (*tableau de variations*), and ultimately sketching the representative curve (*construire la courbe représentative*).
 
-Obviously there are educational purpose in draw the figure, but arguably, at the expense of the ability to read and interpret a graph. It is quite common at the Masters and PhD level that students could not intepret a scientific figure. Here is where the geometric propreties the analytical propreties. To draw the curve just take many values of $x$, calculate the $f(x)$, if enough points are place, it looks like a curve.
+Looking at the big picture, the overarching goal of this traditional exercise is simply to plot a curve for a given function. Yet, in the modern era, this is hardly a problem: one can instantly generate the graph by entering the function into software.
 
+While there is undeniably an educational purpose in learning to sketch a curve by hand, it often comes at the expense of developing a far more critical skill: **reading and interpreting graphs**. It is surprisingly common, even at the Master's and Ph.D. levels, to encounter students who struggle to interpret scientific figures.
 
-```{r}
-# 1. Define the cubic function and its derivative
-f  <- function(x) (5/27)*x^3 - (5/18)*x^2 - (10/9)*x + (73/54)
-df <- function(x) (5/9)*x^2 - (5/9)*x - (10/9)
+This is where geometric properties bridge analytical definitions. Fundamentally, drawing a curve requires nothing more than evaluating $f(x)$ across many values of $x$; once enough points are plotted, the continuous curve emerges. The true value of mathematical analysis lies not in the mechanical rendering of points, but in understanding what the resulting geometric shape reveals about the underlying system.
 
-# Define color scheme
-color_a <- "#2ca02c"  # Increasing / Green
-color_b <- "#d62728"  # Decreasing / Red
-color_x <- "#1f77b4"  # Positive f(x) / Blue
-color_y <- "#ff7f0e"  # Negative f(x) / Orange
-
-# Domain setup x in [-3, 3]
-x_lim <- c(-3, 3)
-x_vals <- seq(-3, 3, length.out = 1000)
-y_vals <- f(x_vals)
-y_lim <- c(-3.5, 3.5)
-
-# Calculate real roots where f(x) = 0
-roots <- polyroot(c(73/54, -10/9, -5/18, 5/27))
-real_roots <- sort(Re(roots[abs(Im(roots)) < 1e-6]))
-
-# Critical points where f'(x) = 0 (x = -1 and x = 2)
-crit_pts <- c(-1, 2)
-
-# Set up blank plot frame
-plot(NA, xlim = x_lim, ylim = y_lim,
-     xlab = "x", ylab = "f(x)", las = 1)
-
-rect(xleft = x_lim[1], ybottom = 0, xright = x_lim[2], ytop = y_lim[2],
-     col = adjustcolor("gray85", alpha.f = 0.4), border = NA)
-
-grid(col = "gray90", lty = "dotted")
-abline(h = 0, v = 0, col = "gray80", lty = 1)
-
-# 2. Color the main curve: color_a when increasing, color_b when decreasing
-for (i in 1:(length(x_vals) - 1)) {
-  mid_x <- (x_vals[i] + x_vals[i+1]) / 2
-  seg_color <- if (df(mid_x) >= 0) color_a else color_b
-  lines(x_vals[i:(i+1)], y_vals[i:(i+1)], col = seg_color, lwd = 3)
-}
-
-# 3. Add horizontal segments at the bottom for Increasing / Decreasing
-y_seg1 <- -2.7
-segments(-3, y_seg1, -1, y_seg1, col = color_a, lwd = 6)
-segments(-1, y_seg1,  2, y_seg1, col = color_b, lwd = 6)
-segments( 2, y_seg1,  3, y_seg1, col = color_a, lwd = 6)
-text(-3, y_seg1, labels = "Monotonicity: ", pos = 2, xpd = TRUE, cex = 0.8)
-
-# 4. Add horizontal segments at the bottom for Positive / Negative (color_x / color_y)
-y_seg2 <- -3.2
-segments(-3, y_seg2, real_roots[1], y_seg2, col = color_y, lwd = 6)
-segments(real_roots[1], y_seg2, real_roots[2], y_seg2, col = color_x, lwd = 6)
-segments(real_roots[2], y_seg2, real_roots[3], y_seg2, col = color_y, lwd = 6)
-segments(real_roots[3], y_seg2, 3, y_seg2, col = color_x, lwd = 6)
-text(-3, y_seg2, labels = "Sign of f(x): ", pos = 2, xpd = TRUE, cex = 0.8)
-
-# # 5. Add vertical segments on the left y-axis for Positive / Negative f(x)
-# x_left <- -3
-# segments(x_left, 0, x_left, y_lim[2], col = color_x, lwd = 6, xpd = TRUE)
-# segments(x_left, y_lim[1], x_left, 0, col = color_y, lwd = 6, xpd = TRUE)
-
-# 6. Add dashed vertical lines with labels where f(x) = 0
-for (r in real_roots) {
-  abline(v = r, col = "gray40", lty = 2, lwd = 1.2)
-  text(r, y_lim[2] - 0.2, labels = paste0("x = ", round(r, 2)),
-       col = "gray20", pos = 3, cex = 0.8, xpd = TRUE)
-}
-
-# 7. Add red point at y = f(0)
-y_0 <- f(0)
-points(0, y_0, col = "red", pch = 19, cex = 1.6)
-text(0, y_0, labels = paste0("  (0, ", round(y_0, 2), ")"), col = "red", pos = 4, font = 2)
-
-# Legend
-legend("topleft",
-       legend = c("Increasing (color_a)", "Decreasing (color_b)",
-                  "Positive f(x) (color_x)", "Negative f(x) (color_y)"),
-       col = c(color_a, color_b, color_x, color_y),
-       lwd = 4, bty = "n", cex = 0.85)
-```
 
 
 <!--
@@ -100,15 +23,41 @@ Later we will explore more general forms of functions @sec-functionCoding, but f
 
 ## Formal {.unnumbered}
 
-Add definition of a figure. We focus on real valued function
+## Graphical Representation of Functions {#sec-functionViz}
 
-For simplicity, we look at X and Y as real number.
-See for more details.
-To graphically present a function, we need a few things
-x axis to represent the value, we need a scale on that x axis.
-y axis to represent the
-The angle between x and y axis
-The curve is just how y vary as we continuously change x
+In analytical geometry and applied mathematics, the **graphical representation** (or curve) of a real-valued function $f: D \subseteq \mathbb{R} \to \mathbb{R}$ is the geometric rendering of its formal mathematical graph $G \subset \mathbb{R}^2$ within a designated coordinate reference system.
+
+Formally, it maps abstract ordered pairs $(x, f(x))$ to a two-dimensional space.
+
+Let $f: D \subseteq \mathbb{R} \to \mathbb{R}$ be a real-valued function defined on domain $D$. Its graphical representation is a two-dimensional geometric structure defined by the tuple $(\mathcal{A}_x, \mathcal{A}_y, \theta, s_x, s_y, C_f)$:
+
+1. **The Coordinate Axes (Reference Frame):**
+   * *Abscissa ($\mathcal{A}_x$):* The horizontal directed axis representing the input domain $D$.
+   * *Ordinate ($\mathcal{A}_y$):* The vertical directed axis representing the output codomain $\mathbb{R}$.
+   * *Origin ($O$):* The unique point of intersection $(0,0)$ between the two axes.
+
+2. **The Intersection Angle ($\theta$):**
+   * The angle of inclination formed at the intersection of $\mathcal{A}_x$ and $\mathcal{A}_y$.
+   * *Cartesian (Orthogonal) Frame:* $\theta = \frac{\pi}{2} \text{ rad} = 90^\circ$. This standard convention ensures horizontal and vertical projections are perpendicular, preserving standard Euclidean metrics.
+   * *Oblique Frame:* $\theta \neq 90^\circ$, used in non-orthogonal vector projections or specialized linear transformations.
+
+3. **The Metric Scales ($s_x, s_y$):**
+   * The mapping functions $s_x: \mathbb{R} \to \mathbb{R}_{\ge 0}$ and $s_y: \mathbb{R} \to \mathbb{R}_{\ge 0}$ that map numerical values to physical lengths on the page or screen.
+   * *Isosceles (Equiscale):* $s_x = s_y$. A unit length along $x$ equals a unit length along $y$, preserving true geometric ratios (e.g., perpendicular lines remain visually perpendicular).
+   * *Anisotropic (Non-equiscale):* $s_x \neq s_y$. Essential when inputs and outputs represent distinct physical quantities (e.g., time in years vs. $\text{CO}_2$ concentration in ppm) or differ by orders of magnitude.
+
+4. **Point Construction via Projections:**
+   For any domain value $x_0 \in D$, the corresponding point $P(x_0, f(x_0))$ on the graph is defined as the unique geometric intersection of two projection lines:
+   * The *vertical projection line* $L_v = \{ (x, y) \in \mathbb{R}^2 \mid x = x_0 \}$, parallel to the $y$-axis.
+   * The *horizontal projection line* $L_h = \{ (x, y) \in \mathbb{R}^2 \mid y = f(x_0) \}$, parallel to the $x$-axis.
+
+   The point $P$ is formally established by:
+   $$P(x_0, f(x_0)) = L_v \cap L_h = \{ (x, y) \in \mathbb{R}^2 \mid x = x_0 \text{ and } y = f(x_0) \}$$
+
+5. **The Representative Curve ($C_f$):**
+   The continuous curve $C_f$ representing the function $f$ is the set of all such intersection
+
+
 
 ## Examples {.unnumbered}
 - Linear function $y = a*x + b$ and
@@ -335,7 +284,107 @@ legend("topright",
 ```
 
 ## Tips and warnings {.unnumbered}
-- Coordinate and projection!
+
+- A major breakthrough in mathematics occurred when René Descartes realized that geometric shapes—such as the curve of an arch or bridge—could be defined precisely by mathematical equations. This birthed analytic geometry, establishing that algebra and geometry are two perspectives of the exact same underlying reality.
+
+- In calculus, one typically begins with a known mathematical formula $f(x)$ and analyzes its geometric properties to sketch its curve. In modern data science and applied modeling, this workflow is often reversed: we start with the geometry—an empirical cloud of data points gathered from observations—and attempt to discover a mathematical function that accurately describes that shape.
+
+- A summary of the correspondence between a few key analytical properties of a function and their geometric features on a graph:
+```{r}
+# 1. Define the cubic function and its derivative
+f  <- function(x) (5/27)*x^3 - (5/18)*x^2 - (10/9)*x + (73/54)
+df <- function(x) (5/9)*x^2 - (5/9)*x - (10/9)
+
+# Define color scheme
+color_a <- "#2ca02c"  # Increasing / Green
+color_b <- "#d62728"  # Decreasing / Red
+color_x <- "#1f77b4"  # Positive f(x) / Blue
+color_y <- "#ff7f0e"  # Negative f(x) / Orange
+
+# Domain setup x in [-3, 3]
+x_lim <- c(-3, 3)
+x_vals <- seq(-3, 3, length.out = 1000)
+y_vals <- f(x_vals)
+y_lim <- c(-3.5, 3.5)
+
+# Calculate real roots where f(x) = 0
+roots <- polyroot(c(73/54, -10/9, -5/18, 5/27))
+real_roots <- sort(Re(roots[abs(Im(roots)) < 1e-6]))
+
+# Critical points where f'(x) = 0 (x = -1 and x = 2)
+crit_pts <- c(-1, 2)
+
+# Set up blank plot frame
+plot(NA, xlim = x_lim, ylim = y_lim,
+     xlab = "x", ylab = "f(x)", las = 1)
+
+rect(xleft = x_lim[1], ybottom = 0, xright = x_lim[2], ytop = y_lim[2],
+     col = adjustcolor("gray85", alpha.f = 0.4), border = NA)
+
+grid(col = "gray90", lty = "dotted")
+abline(h = 0, v = 0, col = "gray80", lty = 1)
+
+# 2. Color the main curve: color_a when increasing, color_b when decreasing
+for (i in 1:(length(x_vals) - 1)) {
+  mid_x <- (x_vals[i] + x_vals[i+1]) / 2
+  seg_color <- if (df(mid_x) >= 0) color_a else color_b
+  lines(x_vals[i:(i+1)], y_vals[i:(i+1)], col = seg_color, lwd = 3)
+}
+
+# 3. Add horizontal segments at the bottom for Increasing / Decreasing
+y_seg1 <- -2.7
+segments(-3, y_seg1, -1, y_seg1, col = color_a, lwd = 6)
+segments(-1, y_seg1,  2, y_seg1, col = color_b, lwd = 6)
+segments( 2, y_seg1,  3, y_seg1, col = color_a, lwd = 6)
+text(-3, y_seg1, labels = "Monotonicity: ", pos = 2, xpd = TRUE, cex = 0.8)
+
+# 4. Add horizontal segments at the bottom for Positive / Negative (color_x / color_y)
+y_seg2 <- -3.2
+segments(-3, y_seg2, real_roots[1], y_seg2, col = color_y, lwd = 6)
+segments(real_roots[1], y_seg2, real_roots[2], y_seg2, col = color_x, lwd = 6)
+segments(real_roots[2], y_seg2, real_roots[3], y_seg2, col = color_y, lwd = 6)
+segments(real_roots[3], y_seg2, 3, y_seg2, col = color_x, lwd = 6)
+text(-3, y_seg2, labels = "Sign of f(x): ", pos = 2, xpd = TRUE, cex = 0.8)
+
+# # 5. Add vertical segments on the left y-axis for Positive / Negative f(x)
+# x_left <- -3
+# segments(x_left, 0, x_left, y_lim[2], col = color_x, lwd = 6, xpd = TRUE)
+# segments(x_left, y_lim[1], x_left, 0, col = color_y, lwd = 6, xpd = TRUE)
+
+# 6. Add dashed vertical lines with labels where f(x) = 0
+for (r in real_roots) {
+  abline(v = r, col = "gray40", lty = 2, lwd = 1.2)
+  text(r, y_lim[2] - 0.2, labels = paste0("x = ", round(r, 2)),
+       col = "gray20", pos = 3, cex = 0.8, xpd = TRUE)
+}
+
+# 7. Add red point at y = f(0)
+y_0 <- f(0)
+points(0, y_0, col = "red", pch = 19, cex = 1.6)
+text(0, y_0, labels = paste0("  (0, ", round(y_0, 2), ")"), col = "red", pos = 4, font = 2)
+
+# Legend
+legend("topleft",
+       legend = c("Increasing (color_a)", "Decreasing (color_b)",
+                  "Positive f(x) (color_x)", "Negative f(x) (color_y)"),
+       col = c(color_a, color_b, color_x, color_y),
+       lwd = 4, bty = "n", cex = 0.85)
+```
+
+From the graphical representation of a function $f(x)$, key analytical properties can be visually interpreted directly:
+
+1. *Roots ($f(x) = 0$):* The solutions to the equation $f(x) = 0$ (called the **roots** or $x$-intercepts) correspond to the $x$-values where the curve intersects the horizontal axis. In the figure above, the roots are $x \approx -2.36$, $x \approx 1.14$, and $x \approx 2.72$.
+
+2. *$y$-Intercept ($f(0)$):* The point where the curve crosses the vertical axis is the **$y$-intercept**, which is simply the function evaluated at zero, $f(0)$. In this graph, the $y$-intercept is $1.35$.
+
+3. *Sign Analysis ($f(x) > 0$ vs. $f(x) < 0$):* The inequality $f(x) > 0$ corresponds to the portions of the curve lying within the shaded upper region ($y > 0$). The input values satisfying this condition belong to the intervals $x \in [-2.36, 1.14]$ and $x \in (2.72, \infty)$.
+
+Conversely, the negative region ($f(x) < 0$) forms the complementary set. Notice that the boundary points of these intervals are precisely the roots identified above—intuitively, to transition between the upper and lower half-planes, a continuous function must first cross the horizontal axis.
+
+4. *Monotonicity (Increasing vs. Decreasing Regions):*  A function is increasing on intervals where the curve moves upward from left to right (highlighted in green). The input values satisfying this growth define the green interval along the horizontal axis. Conversely, a function is **decreasing** on intervals where the curve falls from left to right (highlighted in red).
+
+
+<!-- - Coordinate and projection!
 - As in domain, what does x and y represent
 - Linear function because it plots a line, pick two points and
 - If x is discrete, you cannot just join line.
@@ -344,4 +393,5 @@ legend("topright",
 - Transforming
 - Cheating
 - Just plot and you are good to go.
-<!-- - You can make figures with discrete x, see @sec-discrete_continuous, @sec-difference, @sec-pmf -->
+ - You can make figures with discrete x, see @sec-discrete_continuous, @sec-difference, @sec-pmf
+ -->

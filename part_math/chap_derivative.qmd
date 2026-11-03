@@ -4,88 +4,90 @@
 Speed ~ tangent!
 :::
 
-Calculating the speed is simple, distance over time. To write that with mathematical expression is $\frac{x(t_2) - x(t_1)}{t_2 - t_1}$.
 
-A graphical representation if time is on the x-axis and position is on the y-axis. This ratio is also the definition of the tangent of the angle $\theta$.
+Average speed is defined algebraically as the ratio of distance traveled to elapsed time ($\frac{\Delta x}{\Delta t}$). Geometrically, this ratio forms the opposite and adjacent sides of a right triangle, where the slope of the hypotenuse is given precisely by the angle's tangent:
 
+$$\tan(\theta) = \frac{\Delta x}{\Delta t} = \frac{x(t_2) - x(t_1)}{t_2 - t_1}$$
 
 ```{r}
-#| fig-width: 4 # 4
-#| fig-height: 2.5 #3 * 2.5
+#| label: fig-speed-tangent-inline
+#| fig-cap: "Equivalence of average speed, rate of change, and tangent"
+#| fig-width: 6.5
+#| fig-height: 2.8
 
+par(mar = c(0.5, 0.5, 0.5, 0.5))
 
-par(mar = c(1, 1, 1, 1))
-# Set up an empty plotting area
+# Canvas set up to accommodate equations on the left (x: -5.5 to 0) and triangle on the right (x: 0 to 6)
 plot(NA,
-     xlim = c(0, 6),
-     ylim = c(-0.4, 4),
+     xlim = c(-5.5, 6.2),
+     ylim = c(-0.6, 3.5),
      xlab = "",
      ylab = "",
      axes = FALSE,
      asp = 1)
 
-# Triangle
+# --- TRIANGLE ---
+# Hypotenuse, base, and vertical height
 segments(0, 0, 5, 0, lwd = 2)
 segments(5, 0, 5, 3, lwd = 2)
-segments(0, 0, 5, 3, lwd = 2)
+segments(0, 0, 5, 3, lwd = 2, col = "steelblue")
 
 # Right-angle marker
 segments(4.7, 0, 4.7, 0.3, lwd = 1.5)
 segments(4.7, 0.3, 5, 0.3, lwd = 1.5)
 
-# Horizontal side label
-text(2.5, -0.3,
+# Horizontal side label (Delta t)
+text(2.5, -0.4,
      expression(t[2] - t[1]),
-     cex = 1.2)
+     cex = 1.0)
 
-# Vertical side label
-text(5.35, 1.5,
+# Vertical side label (Delta x)
+text(5.45, 1.5,
      expression(x(t[2]) - x(t[1])),
      srt = 90,
-     cex = 1.2)
+     cex = 1.0)
 
-# Angle arc
+# Angle arc and label
 theta <- seq(0, atan(3/5), length.out = 50)
-
-lines(
-  0.8 * cos(theta),
-  0.8 * sin(theta),
-  lwd = 1.5
-)
-
-# Angle label
-text(1.0, 0.2, expression(theta), cex = 1.2)
-
-# text(2.5, 0.5,
-#      expression(tan(theta) == frac(x(t[2]) - x(t[1]),
-#                                    t[2] - t[1])),
-#      cex = 1)
+lines(0.8 * cos(theta), 0.8 * sin(theta), lwd = 1.5)
+text(1.1, 0.25, expression(theta), cex = 1.0)
 ```
 
-This if there is curve describing the position of a car (y-axis) as a function of time (x-axis), the speed at time t = 1 and t = 3 are the vertical displacement devided by horizontal displacement
-
+More generally, if a curve describing the position of a car (y-axis) as a function of time (x-axis), the speed at time t = 1 and t = 3 are the vertical displacement divided by the horizontal displacement (black curve). In that analogy, the speed is negative when the car drives in the opposite direction.
 
 ```{r}
 #| label: fig-carMoving
 #| fig-cap: Position of a moving car (y-axis) as a function of time (x-axis)
 
-# Function
+#| label: fig-carMoving
+#| fig-cap: Position of a moving car (y-axis) as a function of time (x-axis) for increasing and decreasing functions.
+
+# Primary increasing function (concave up)
 f <- function(x) x^2 + 1
 
-# Plot function
+# Secondary decreasing function (concave down)
+g <- function(x) -x^2 + 17
+
+# Base plot
 curve(f(x),
       from = 0, to = 4,
       xlim = c(0, 4),
       ylim = c(0, 18),
-      xlab = "t",
-      ylab = "position",
+      xlab = "time elapsed",
+      ylab = "position of the car",
       lwd = 2,
       col = "black")
 
-# Triangle 1: x = 1 to x = 1.2
-x1 <- 1.
-x2 <- 1.2
+# Plot decreasing concave-down curve
+curve(g(x),
+      from = 0, to = 4,
+      add = TRUE,
+      lwd = 2,
+      col = "darkgreen")
 
+# --- TRIANGLES FOR INCREASING FUNCTION (f) ---
+x1 <- 1.0
+x2 <- 1.2
 polygon(
   c(x1, x2, x2),
   c(f(x1), f(x1), f(x2)),
@@ -94,10 +96,8 @@ polygon(
   lwd = 2
 )
 
-# Triangle 2: x = 3 to x = 3.2
-x3 <- 3
+x3 <- 3.0
 x4 <- 3.2
-
 polygon(
   c(x3, x4, x4),
   c(f(x3), f(x3), f(x4)),
@@ -106,53 +106,57 @@ polygon(
   lwd = 2
 )
 
-# Points on the curve
-points(c(x1, x2, x3, x4),
-       f(c(x1, x2, x3, x4)),
-       pch = 19)
+# --- TRIANGLES FOR DECREASING FUNCTION (g) ---
+# Triangle 3: Decreasing segment at x = 1.0 to 1.2
 
-# Horizontal labels
-text((x1 + x2)/2, f(x1) - 0.5,
-     expression(Delta*t == 0.2),
-     col = "steelblue")
+polygon(
+  c(x1, x2, x2),
+  c(g(x1), g(x1), g(x2)),
+  border = "darkorange",
+  col = NA,
+  lwd = 2
+)
 
-text((x3 + x4)/2, f(x3) - 0.8,
-     expression(Delta*t == 0.2),
-     col = "firebrick")
+# Triangle 4: Decreasing segment at x = 3.5 to 3.7
+xx3 <- 3.5
+xx4 <- 3.7
+polygon(
+  c(xx3, xx4, xx4),
+  c(g(xx3), g(xx3), g(xx4)),
+  border = "purple",
+  col = NA,
+  lwd = 2
+)
 
-# Vertical labels
-text(x2 + 0.12, (f(x1) + f(x2))/2,
-     expression(Delta*x),
-     col = "steelblue", pos = 4)
+# Points on both curves
+points(c(x1, x2, x3, x4), f(c(x1, x2, x3, x4)), pch = 19)
+points(c(x1, x2, xx3, xx4), g(c(x1, x2, xx3, xx4)), pch = 19, col = "darkgreen")
 
-text(x4 + 0.12, (f(x3) + f(x4))/2,
-     expression(Delta*x),
-     col = "firebrick", pos = 4)
+# Horizontal labels (Delta t)
+text((x1 + x2)/2, f(x1) - 0.7, expression(Delta*t == 0.2), col = "steelblue")
+text((x3 + x4)/2, f(x3) - 0.8, expression(Delta*t == 0.2), col = "firebrick")
 
-# # Derivative labels
-# text(1, 3.5, expression(f*minute(1) == 1),
-#      col = "steelblue")
+text((x1 + x2)/2, g(x1) + 0.7, expression(Delta*t == 0.2), col = "darkorange")
+text((xx3 + xx4)/2, g(xx3) + 0.8, expression(Delta*t == 0.2), col = "purple")
 
-# text(3, 13, expression(f*minute(3) == 6),
-#      col = "firebrick")
+# Vertical labels (Delta x)
+text(x2 + 0.05, (f(x1) + f(x2))/2, expression(Delta*x > 0), col = "steelblue", pos = 4)
+text(x4 + 0.02, (f(x3) + f(x4))/2, expression(Delta*x > 0), col = "firebrick", pos = 4)
 
+text(x2 + 0.05, (g(x1) + g(x2))/2, expression(Delta*x < 0), col = "darkorange", pos = 4)
+text(xx4 + 0.02, (g(xx3) + g(xx4))/2, expression(Delta*x < 0), col = "purple", pos = 4)
 ```
-As seen, finding t
 
-Most have learned a set of rules to calculate the derivate of any functions. The exercices is pattern identification, learning the follow rules but imbalance at the expense of it's significance. As we can also plug any function into a program and get the derivative.  While Isaac Netwon was famous as a physicist from its law of gravity and apple, his is likely as mathematician  for "discovering/defining" a derivative. Wolfram Alpha can calculate the derivative.
+<!-- Most have learned a set of rules to calculate the derivate of any functions. The exercices is pattern identification, learning the follow rules but imbalance at the expense of it's significance. As we can also plug any function into a program and get the derivative.  While Isaac Netwon was famous as a physicist from its law of gravity and apple, his is likely as mathematician  for "discovering/defining" a derivative. Wolfram Alpha can calculate the derivative.
 
 How do you calculate speed? Distance over the time it takes to run the distance.
-So for a same amount of time (say one minute), car 1 travels 1 km and car 2 travels 2 km, then car 2 is faster than car 1, or the speed of car 2 is higher than the speed of car 1. To add a but precision, the derivative is instantenous rate of change,which is a fancier way of saying that instead of dividing by one minute, we divide by so delta time is smaller and we calculate the respecitive distance.
+So for a same amount of time (say one minute), car 1 travels 1 km and car 2 travels 2 km, then car 2 is faster than car 1, or the speed of car 2 is higher than the speed of car 1. To add a but precision, the derivative is instantenous rate of change,which is a fancier way of saying that instead of dividing by one minute, we divide by so delta time is smaller and we calculate the respecitive distance. -->
 
-While derivative is the speed of changes in variable dependent (response) with a change in the independent @sec-functionMath.
+The derivative represents the ratio for small displacement, i.e. the ratio between the change in the response variable and the change in the driver variable.
 
 ## Formal {.unnumbered}
 
-*Source: [Wikipedia — Derivative (Definition: As a limit)](https://en.wikipedia.org/wiki/Derivative#As_a_limit)*
-
-### Definition of the Derivative
-
-Suppose $f$ is a real-valued function defined in an open neighborhood of a real number $a$. In classical geometry, the tangent line to the graph of the function $f$ at $a$ was the unique line through the point $(a, f(a))$ that did *not* meet the graph of $f$ transversally, meaning that the line did not pass straight through the graph.
+ ^[Simplified from: [Wikipedia — Derivative (Definition: As a limit)](https://en.wikipedia.org/wiki/Derivative#As_a_limit)] Suppose $f$ is a real-valued function defined around a real number $a$. In classical geometry, the tangent line to the graph of the function $f$ at $a$ was the unique line through the point $(a, f(a))$ that did *not* meet the graph of $f$ transversally, meaning that the line did not pass straight through the graph.
 
 The derivative of $y = f(x)$ with respect to $x$ at $a$ is, geometrically, the slope of the tangent line to the graph of $f$ at $(a, f(a))$. The slope of the tangent line is very close to the slope of the line through $(a, f(a))$ and a nearby point on the graph, for example $(a + h, f(a + h))$. These lines are called secant lines. A value of $h$ close to zero gives a good approximation to the slope of the tangent line, and smaller values (in absolute value) of $h$ will, in general, give better approximations.
 
@@ -181,19 +185,24 @@ An equivalent alternative formulation often used to emphasize the target point x
 $f'(a) = \lim_{x \to a} \frac{f(x) - f(a)}{x - a}$ -->
 
 ## Examples {.unnumbered}
-- Derivative of a constant function is zero. Using the same graphic concept as the figure above @fig-carMoving, a imobile car will be represented by a flat line. In this case, the numerator is always zero and the derivative is always 0.
 
-- Derivative of a line. Recalling that the equation of a line is $y = a x + b$; In secondary school, the parameter $a$ is estimated as $\frac{y(x_2) - y(x_1)}{x_2 - x_1}$ which is again the vertical displacement divided by the horizontal displacement. Notice any pair $\{x_2, x_1\}$ can be chosen. So the derivative of $\frac{d}{dx} ax +b = a$.
+- Derivative of a Constant Function: The derivative of a constant function is zero. Building on the geometric concept illustrated in @fig-carMoving, an immobile car is represented by a horizontal line ($x(t) = c$). In this case, the change in position ($\Delta x = x(t_2) - x(t_1)$) is identically zero for any time interval, yielding an instantaneous rate of change—and derivative—of zero.
 
-- Three simple intepretation of the derivative, assuming $x2 > x1$ (microscopic displacement), we always move to the right and the denominator is always positive,
-  - if $f(x_2) > f(x_1)$ then the numerator is positive and the function is increasing (for example one's height is increasing with time at young age)
-  - if $f(x_2) < f(x_1)$ then the numerator is negative and the function is decreasing (one's body fat is decreasing as a function of the intensity of the exercise)
-  - There are three scenarios when the numerator is positive (a local maximum, minimum, or an inflexion point)
+- Derivative of a Linear Function: Recall that the equation of a line is $y = ax + b$. In secondary school, the slope parameter $a$ is computed as:
+  $$a = \frac{y(x_2) - y(x_1)}{x_2 - x_1}$$
+  This is simply the vertical displacement divided by the horizontal displacement. Because the rate of change is uniform across a straight line, any arbitrary pair of points $\{x_1, x_2\}$ yields the exact same slope. Consequently, the derivative of a linear function is constant everywhere:
+  $$\frac{d}{dx}(ax + b) = a$$
 
+- Three Intuitive Interpretations of the Sign of the Derivative: Assuming $x_2 > x_1$ (a small step to the right so that the denominator $\Delta x > 0$ is strictly positive):
+  - *Positive Derivative ($f'(x) > 0$):* If $f(x_2) > f(x_1)$, the numerator is positive and the function is **increasing** (for example, a child's height increasing over time).
+  - *Negative Derivative ($f'(x) < 0$):* If $f(x_2) < f(x_1)$, the numerator is negative and the function is **decreasing** (for example, body fat percentage decreasing as exercise intensity increases).
+  - *Zero Derivative ($f'(x) = 0$):* When $f(x_2) = f(x_1)$ over an infinitesimal interval, the numerator vanishes. This critical condition occurs at three key geometric features: a local maximum, a local minimum, or a horizontal inflection point.
 
+- Below is a graphical representation of the derivative interpreted as the slope of the tangent line at different points along a curve (@fig-derivativeMaxMin).
 ```{r}
 #| label: fig-derivativeMaxMin
 #| fig-cap: Correspondance between the properity of the function and the sign of the derivative (slope of the tangent)
+
 # Define the cubic function and its derivative
 f  <- function(x) (5/27)*x^3 - (5/18)*x^2 - (10/9)*x + (73/54)
 df <- function(x) (5/9)*x^2 - (5/9)*x - (10/9)
@@ -241,8 +250,7 @@ legend("topright",
        bty = "n", cex = 0.85)
 ```
 
-- An inflexion point also called saddle point. This is however a very special case, and for most of time a derivative = 0 almost always indicate a maximum or a minimum
-
+- Horizontal Inflection Points: A horizontal inflection point is shown below. However, this is a very special case. In practice, a zero derivative ($f'(x) = 0$) almost always indicates a local maximum or a local minimum.
 
 ```{r}
 #| label: fig-derivativeSaddle
@@ -290,14 +298,23 @@ legend("topleft",
 
 
 ## Tips and warnings {.unnumbered}
-- [There are three majors notation for derivative: $\frac{df}{dt}, f', \dot{f}$. The last one is mostly used in physics to denote derivative with respect to time (called Newton's notation). The second one is called a prime notation (due to Lagrange) and the expression. The first one (Leibniz notation), although takes more character is the most explicit: it still conveys the ratio between the independent, and dependent variable, the $d$ which represent the distance or displacement, and is also explicit about which one is the independent variable in the denominator]{.highlight-semantic}
-- **Derivative with respect to which variable?** In math class, the independent variable is always $x$ and is implied behind the $f'$. There are however instances where we computing the derivative with respect to another variable is needed. For instance function $x(t, \lambda) = e^{- \lambda t}$. Using Leibniz notation \
-  $\frac{dx}{dt} = -\lambda e^{-\lambda t}$ is the derivative with respect to time ($t$)and $\frac{dx}{d\lambda} = -t e^{-\lambda t}$. is the derivative with respect to
+- **The Derivative as a Point Value vs. a Function:**
+  The derivative evaluated at a specific point $x = a$, denoted $f'(a)$, yields a single numerical value representing the instantaneous rate of change at that precise location. In contrast, the general derivative $f'(x)$ is itself a function of $x$, providing a rule to calculate the instantaneous rate of change at *any* arbitrary point $a$.
 
-- The notations for second derivative are $\frac{d^2 f}{dt^2}, f'',\ddot{f}$,
-<!-- - Partial derivative: variable and parameters. -->
-- The derivative (see @sec-functionMath) is just another function so that when you plug a number you can see the value .Derivative as a number and derivative as a function
-- Correspondance between the variation of the function and the sign of the derivative. In the range of x denoted in green, the derivative is positive (the y of the orange curve are positive) and the blue line goes up. The reverse happen in the range x noted in red. For the three orange points: the maximum value of the derivative means the steepest increase in the blue line (there reverse happen at the lowest value of the derivative). And when the derivative is 0 at $x = 0$, the function has a local maxium.
+- **Derivative with Respect to Which Variable?**
+  In standard introductory mathematics, the independent variable is almost always assumed to be $x$, which is implicitly understood when writing $f'$. However, applied modeling often involves functions of multiple parameters or variables where explicitly specifying the independent variable is essential.
+
+  For example, consider the exponential function $x(t, \lambda) = e^{-\lambda t}$. Using Leibniz notation (see below), we can explicitly specify the variable with respect to which we are differentiating:
+  - $\frac{dx}{dt} = -\lambda e^{-\lambda t}$ represents the derivative with respect to time $t$.
+  - $\frac{dx}{d\lambda} = -t e^{-\lambda t}$ represents the derivative with respect to the parameter $\lambda$.
+
+- Correspondence Between Function Behavior and the Derivative's Sign(@fig-pdfDerivative):
+
+  - **Increasing Region (Green):** On the domain highlighted in green ($x < 0$), the derivative is strictly positive ($f'(x) > 0$, orange curve above zero), causing the original function (blue line) to increase.
+  - **Decreasing Region (Red):** Conversely, on the domain highlighted in red ($x > 0$), the derivative is negative ($f'(x) < 0$, orange curve below zero), and the function decreases.
+  - **Critical & Inflection Points (Orange Highlights):**
+    - **Local Maximum:** At $x = 0$, the derivative vanishes ($f'(0) = 0$), corresponding to the peak (local maximum) of the function.
+    - **Steepest Growth & Decay:** The maximum of the derivative curve (highest orange point at $x = -1$) marks the point of steepest ascent (inflection point) for the function. The minimum of the derivative curve (lowest orange point at $x = 1$) marks the point of steepest descent.
 
 ```{r}
 #| label: fig-pdfDerivative
@@ -435,37 +452,17 @@ legend("topright",
 
 ```
 
-- The derivative makes sense for continuous function. To make is simple, when the domain is a [continuous set](@sec-discrete_continuous), mostly real number. The derivative does not make sense for discrete set, but one can still look at the slope, just that it is not a micro-displacement.
+- The concept of a derivative is strictly defined for continuous functions whose domain spans a continuous interval, typically within the real numbers $\mathbb{R}$ (see @sec-discrete_continuous). For functions defined over discrete sets, the instantaneous derivative is undefined; however, one can still evaluate discrete rates of change (slopes) between points, though these do not represent infinitesimal displacements.
 
-- If one is, there are free programs online (e.g., WolframAlpha) that calculates the derivative of any function.
+- Symbolic computation engines and free online platforms (such as WolframAlpha) can automatically calculate the exact derivative of virtually any explicit mathematical function.
 
+### Notation/Semantic/Terminology {.unnumbered}
 
+- Notational Conventions for Derivatives:
+  Common notations for the first derivative include $\frac{df}{dt}$, $f'$, and $\dot{f}$:
+  - Newton's Notation ($\dot{f}$): Uses a dot over the function symbol and is primarily used in physics and dynamics to denote differentiation with respect to time $t$.
+  - Lagrange's Notation ($f'$): Uses a prime mark to denote the derivative. While concise, it leaves the independent variable implicit.
+  - Leibniz's Notation ($\frac{df}{dt}$):Though requiring more characters, Leibniz notation is the most explicit. It visually preserves the derivative's origin as a ratio of differential displacements ($d$), while clearly identifying both the dependent variable in the numerator and the independent variable of differentiation in the denominator.
 
-<!--
-Interpretation from visual.
-
-Now, imagine we plot a function (see @sec-function_viz) about relationship between function and visualization.
-if x is time and y is position at a given time.
-Let's plot x0 and  x1 is one minute after x0. y0 and y1 position and y2 position after a minute
-```{r echo = FALSE}
-# dat <- data.frame(
-#    car = as.factor(c(1, 1, 2, 2)),
-#    time = c(0, 1, 0, 1),
-#    location = c(0,1,0,2))
-
-#ggplot(dat, aes(x = time, y = location, color = car)) +
-#    geom_point() +
-#    geom_line()+
-#    theme_bw()
-```
-
- 1. The Standard Single-Variable Definition
-This is the standard definition found in foundational calculus. It defines the derivative at a specific point as the limit of a difference quotient.
-
-Textbook Source
-Book: Calculus (8th Edition, 2016)
-Author: James Stewart
-Publisher: Cengage Learning
-
-The Formal Definition
-In Chapter 2 ("Limits and Derivatives"), Section 2.7, Stewart defines the derivative of a function f at a specific number a: -->
+- Higher-Order Derivatives:
+  The second derivative is denoted by $\frac{d^2 f}{dt^2}$ (Leibniz), $f''$ (Lagrange), or $\ddot{f}$ (Newton). Generalizing to the $n$-th derivative, the standard notations are $\frac{d^n f}{dt^n}$ (Leibniz) and $f^{(n)}$ (Lagrange, where parenthesized superscripts distinguish differentiation from exponents).
