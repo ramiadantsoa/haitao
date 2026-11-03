@@ -8,141 +8,136 @@ The earth would explode if hit by an earthquake of magnitude 18 (xkcd!)
 ## Concepts and intuitions {.unnumbered} -->
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
-The earth would explode if hit by an earthquake of magnitude 18 (xkcd!)
+The earth would explode if hit by an earthquake of magnitude 18^[[xkcd's What If](https://www.youtube.com/watch?v=e3uk7jU3RHo)]
 :::
 
-When measuring the intensity of earthquake, the metric is Richter. Moment Magnitude
-One of the strongest earthquakes in Madagascar was 6.2 in 1950, 11 May (earthquakelist.org)
-The strongest earthquake measured measured with a Magnitude 9.5 in 1960 Great Chilean earthquake.
-According to wikipedia, 6-6.9 is strong whereas, 9-9.9 is extreme near total dectruction.
-Why going from 6-10 is such a big deal.
-It is because the scale is on a logarithm scale.
-Concretely, if an earthquake of 6 release x energy, the 9 releases 10^ 9- 6 = 10^3 that is 10^3 = 1000 more renergy, in other words, instead of throughing one grenade, you are actually throwing one thousand!!!
+<!-- When measuring the intensity of natural phenomena—such as seismic energy released during an earthquake—the numerical values often span several orders of magnitude. To make these immense physical quantities manageable and intuitive to compare, we rely on logarithmic scales like the Richter magnitude scale. -->
 
-The importance of log scale is to transform multiplication to addition, log(a b) = log a + log b. or above log(10^3) = log(10 * 10 *10) = log 10 + log 10 + log 10 = 3 log 10.
+On May 11, 1950, a strong earthquake struck Madagascar with an estimated Richter magnitude of 6.2. In a comparison, in 1960, the Great Chilean earthquake—the strongest earthquake ever recorded—reached a magnitude of 9.5.
+According to standard seismic classifications, a magnitude 6.0–6.9 event is classified as "strong," whereas a magnitude 9.0–9.9 event is categorized as "extreme," resulting in near-total destruction.
 
+Why is a jump of just three magnitude units—from roughly 6 to 9—such a dramatic, catastrophic leap?
 
-One might then ask if it ends at 10.
-What would a say an earthquake of 12, 15, or 18?
-According to xkcd, the latter will case the earth to explode.
-Most of us would think that 6 to 12 is double and g to 18 will triple.
-The number indeed but the energy contained is increased by 10^12
+The answer lies in the non-linear nature of the metric: the Richter scale is a base-10 logarithmic scale. Moving up by a single integer on the scale does not *add* a fixed amount of energy; instead, it *multiplies* the amplitude of the seismic waves by a factor of 10.
 
-This is where it is important to realize that Richter is on base 10 a logarithmic scale.
-Adding one unit, will multiply the energy by 10.
-So to put it in other world. a 6 vs 9 earthquake means the latter is 1000 more powerful than the former.
+Concretely, comparing a magnitude 6 earthquake to a magnitude 9 earthquake reveals the exponential scaling: the amplitude of wave motion in a magnitude 9 earthquake is:
 
-The logarithm is another function but it has two main properties:
-- Turns multiplication to addition:
-$\log(a \times b) = \log(a) + \log(b)$ and so $\log(a^2) = \log(a \times a) = \log(a) + \log(a) = 2 \times log(a)$.
+$$10^{9 - 6} = 10^3 = 1{,}000 \text{ times greater}$$
 
-- Reciprocal of the exponential.
+In terms of total mechanical energy released, each unit increase on the Moment Magnitude Scale corresponds to approximately a $31.6$-fold multiplier, meaning a 3-unit difference releases over $31{,}600$ times more energy—the equivalent of detonating a single explosive device versus thousands simultaneously.
 
-Why does it have those properties, let's just say it is the miracle/genuis of mathematicians who discovered it.
+Because human intuition tends to think linearly, it is easy to assume that going from magnitude 6 to magnitude 12 represents a simple doubling of intensity, or that magnitude 18 is tripling it.
+
+In a base-10 logarithmic system, an increase of $+6$ units corresponds to a wave amplitude multiplier of $10^6 = 1{,}000{,}000$ (one million times larger). And an increase of $+12$ units corresponds to a multiplier of $10^{12} = 1{,}000{,}000{,}000{,}000$ (one trillion times larger). An event of such unimaginable magnitude it would theoretically fracture the Earth's crust entirely.
+
+This real-world behavior highlights the defining feature of the logarithmic function. By converting multiplicative and exponential processes into additive ones, logarithmic functions allow scientists and analysts to plot, model, and interpret phenomena that span vast ranges of magnitude.
 
 ## Formal {.unnumbered}
-A logarithm is function defined from (0, + inf) to (- inf, + inf). And is written log or ln.
 
-The actual definition is that it is the area under the curve for 1/x.
-Essentially, if you so that the area under the curve is 1.
+The natural logarithm, denoted $\ln: (0, \infty) \to \mathbb{R}$, is defined as the inverse function of $\exp(x)$:
 
-This leads to the fancy property, that is log(e) = 1.
-And this implies that log(e^x) = x log e = x.
-In other words, log is the reciprocal of exponential.
+$$\ln(x) := \exp^{-1}(x) \quad \text{for } x \in (0, \infty)$$
 
-Logarithm and bases
-log2 = ln/log2, and log10 = ln/log10
-
-
-Here are the standard formal definitions found in foundational mathematical analysis and calculus textbooks.
-
-1. The Inverse Function Definition
-This definition builds the logarithm directly on top of the pre-established formal definition of an exponential function.
-
-Textbook Source
-Book: Principles of Mathematical Analysis (3rd Edition, 1976)
-Author: Walter Rudin
-SCIRP
-Publisher: McGraw-Hill
-SCIRP
-
-The Formal Definition
-In Chapter 8 ("Some Special Functions"), after establishing that the exponential function exp(x) is continuous, strictly increasing, and maps the real line R bijectively onto the positive real numbers (0,∞), Rudin defines its inverse:
-"The logarithmic function log is defined as the inverse of the exponential function. That is, for every y>0, x=log(y) is the unique real number such that:
-$\exp(x) = y$
-
+This relationship is characterized with the visual symmetry between the two curves with respect to the identidy function $y = x$ .
 
 ```{r}
-x <- seq(-4, 4, by = 0.0001)
-y <- exp(x)
+#| label: fig-exp-log-inverse2
+#| fig-cap: "Geometric reflection of exp(x) and ln(x) across the identity line y = x"
+#| fig-width: 5.5
+#| fig-height: 5.5
 
-par(pty = "s")
-plot(x, y,
-     type = "l",
-     xlab = "x",
-     ylab = "y",
-     ylim = c(-4, 4),
-     xlim = c(-4, 4),
-     xaxs = "i",
-     yaxs = "i",
-     asp = 1,
-     main = "",
-     las = 1)
-# Add natural logarithm
-lines(x[x > 0], log(x[x > 0]), col = "red", lwd = 2)
+par(mar = c(4, 4, 1, 1), mgp = c(2.3, 0.7, 0))
 
-# Add identity line (y = x)
-abline(a = 0, b = 1, col = "blue", lty = 2, lwd = 2)
+x_pos <- seq(0.05, 3.2, length.out = 500)
+x_all <- seq(-3, 3.2, length.out = 500)
 
-# Add legend
-legend("topleft",
-       legend = c("exp(x)", "ln(x)", "y = x"),
-       col = c("black", "red", "blue"),
-       lty = c(1, 1, 2),
-       lwd = 2)
+y_exp <- exp(x_all)
+y_log <- log(x_pos)
 
+plot(NA, xlim = c(-3, 3.5), ylim = c(-3, 3.5),
+     xlab = "Input", ylab = "Output", las = 1, asp = 1, axes = FALSE)
+
+axis(1, at = -3:3)
+axis(2, at = -3:3, las = 1)
+box(bty = "l", col = "gray40")
+grid(col = "gray90", lty = "solid")
+
+# Symmetry axis y = x
+abline(a = 0, b = 1, lty = 2, col = "gray50", lwd = 1.5)
+
+# Curves
+lines(x_all, y_exp, col = "#1f77b4", lwd = 2.5) # exp(x)
+lines(x_pos, y_log, col = "#2ca02c", lwd = 2.5) # ln(x)
+
+# Inverse pairs
+points(c(0, 1), c(1, exp(1)), pch = 19, col = "#1f77b4", cex = 1.2)
+points(c(1, exp(1)), c(0, 1), pch = 19, col = "#2ca02c", cex = 1.2)
+
+# Connector lines showing reflection
+segments(0, 1, 1, 0, lty = 3, col = "#d62728")
+segments(1, exp(1), exp(1), 1, lty = 3, col = "#d62728")
+
+# Labels
+text(0.5, 2.5, expression(f(x) == e^x), col = "#1f77b4", cex = 1.1)
+text(2.5, 0.4, expression(g(x) == ln(x)), col = "#2ca02c", cex = 1.1)
+text(2.2, 2.5, "y = x", col = "gray40", cex = 0.95)
 ```
 
 
-- For an arbitrary base a>0 (a!=1), the general logarithm function loga(y) is defined via the same inverse relationship to the base-a exponential function:
-Britannica
-$x = \log_a(y) \iff a^x = y$
+- The logarithm to base $a$, denoted $\log_a: (0, \infty) \to \mathbb{R}$, is defined as the inverse function of $f_a(x) = a^x$:
 
-$\log_a x = \frac{\ln x}{\ln a} \quad \text{for } x > 0, \, a > 0, \, a \neq 1$
+$$\log_a(x) := f_a^{-1}(x) \quad \text{for } x \in (0, \infty), \; a > 0, \; a \neq 1$$
+
+$$\log_a(x) = y \iff a^y = x$$
+
+It can be proven that
+$$
+\log_a(x) = \frac{\ln(x)}{\ln(a)}
+$$
+
+Thus, all logarithms with base $a$ are simply scalar rescalings of the natural logarithm $\ln(x)$ by the constant factor $\dfrac{1}{\ln(a)}$.
+
+- Linearization property of logarithm: it allows to transform multiplication to addition
+
+$$\ln(x \cdot y) = \ln(x) + \ln(y)$$
 
 
 ## Examples {.unnumbered}
 
+- $\ln(1) = 0$ where it intersect with x.
 
-- $\log(1) = 0$ where it intersect with x.
+- $\ln(e) = 1$, by definition.
 
-- $\log(e) = 1$ by definition.
+- Any number y between 0 and 1 can be represented by a $y = \frac{1}{x}$ where $ x > 1$ this
+  - $\ln(y) = \ln(\frac{1}{x}) = \ln(x^{-1}) = - 1 \times \ln(x) = - \ln(x)$ hence $\ln (x)$ is always negative. This is also true for any base $\log_a$.
 
-- For $0 < x < 1$, $\log(1/x) = \log(x-1) = - 1 \times \log(x) = - \log(x)$ hence $\log (x)$ is always negative.
+- The logarithm of a factorial expands the product inside $n!$ into a sum of logarithms
 
-- $\log(n!) = \log(1 \times 2 \times 3 \times \cdots \times n) =  \log (1) + \log (2) + \cdots + \log(n) = \sum_{i = 1}^n \log(i)$
+$$
+  \begin{align*}
+  \log_a(n!) &= \log_a(1 \times 2 \times 3 \times \cdots \times n) \\[4pt]
+             &= \log_a(1) + \log_a(2) + \cdots + \log_a(n) \\[4pt]
+             &= \sum_{i = 1}^n \log_a(i)
+  \end{align*}
+$$
 
-- $\log(\exp{- \frac{x^2}{2}}) = - \frac{x^2}{2}$
+- Another illustration of the inverse relationship between the logarithmic and exponential functions is how the natural logarithm simplifies exponentiated expressions, undoing the exponential mapping directly:
 
-- Linearization of a power-law i.e. of the form f(x) = c x^z
-  - Species-area relationship S = c A^z, on a log scale
-  - Metabolic scaling
+$$
+  \ln\left(\exp\left(-\frac{x^2}{2}\right)\right) = \ln\left(e^{-\frac{x^2}{2}}\right) = -\frac{x^2}{2}
+$$
 
-- Salary
+This identity is frequently applied in statistics when working with normal distributions, transforming multiplicative Gaussian kernels into manageable quadratic sum forms (such as in log-likelihood calculations).
+
 
 ## Tips and warnings {.unnumbered}
+- A common practice in ecological data analysis is applying a log transformation to variables (see @sec-variable) like species abundance. However, when a species is absent, its abundance is $0$, and $\log(0)$ is mathematically undefined. A standard solution is using a $\log(x+1)$ transformation. In R, this transformation is implemented directly via the `log1p()` function, while the natural, base 2, and base 10 logarithms are available via `log()`, `log2()`, and `log10()`.
 
-- By definition cannot take negative number and is not defined at 0
-- [Semantic: $\ln$ and $\log$]{.highlight-semantic}.
+### Scaling the x and y-axis{.unnumbered}
+The logarithmic function is primarily used to rescale data for clearer visualization or to reveal hidden underlying patterns. Below are a few key applications:
 
-- Used in likelihood to turn a product into sum.
-
-- Transforming  0 to something, shift to log(x + 1)
-
-- Integral defintion: For every x>0, we define the natural logarithm of x, denoted by $\ln(x)$, by the formula:
-$\ln x = \int_{1}^{x} \frac{1}{t} \, dt$
-
-- Two ways of visualization. Classical just transforming the y-axis, or taking the log and plotting normally
+- **Transforming Plot Axes vs. Transforming Data Values:**
+  There is an important distinction between setting a plot's $y$-axis to a logarithmic scale (left) and plotting log-transformed data values on a standard linear scale (right). The left panel illustrates the modern, best-practice approach: keeping raw, un-transformed data in the dataset while adjusting the plotting scale parameters. In contrast, the right panel requires manually transforming the variable prior to plotting. Beyond adding an unnecessary data transformation step, the resulting $y$-axis values are less visually intuitive to interpret^[unless dealing with standardized logarithmic metrics, such as the Richter scale].
 
 
 ```{r}
@@ -214,8 +209,9 @@ grid(nx = NA, ny = NULL, col = "gray90", lty = "dotted")
 par(mfrow = c(1, 1), mar = c(5, 4, 4, 2) + 0.1)
 ```
 
+- **Log-Transforming the $y$-Axis to Reveal Obscured Data:**
+  Log-transforming the vertical axis helps expose trends hidden by wide numerical ranges. On the left, smaller data points are visually compressed ("squished") because the axis range is dominated by extreme high values. On the right, using a log scale spreads out lower-range data, making the relative trends in salary far more visible.
 
-- Salary
 
 
 ```{r}
@@ -291,7 +287,8 @@ text(x = bp2, y = 0.6, labels = df_salary$job,
 par(mfrow = c(1, 1), mar = c(5, 4, 4, 2) + 0.1)
 ```
 
-- Convergence: is the temperature at equilibrium?
+- **Log-Scale on the $x$-Axis:**
+  Applying a logarithmic scale to the horizontal axis is particularly useful for diagnostic visualization—for example, determining whether a curve has reached a true asymptote or continues to grow at extreme inputs.
 
 
 ```{r}
@@ -353,8 +350,7 @@ text(10, 1.0, labels = "Asymptote y = 1", col = limit_col, pos = 1, cex = 0.8)
 par(mfrow = c(1, 1), mar = c(5, 4, 4, 2) + 0.1)
 ```
 
-- Data from species area relationship
-
+- **Log-Log Scales for Power-Law Relationships:**  Transforming both the $x$- and $y$-axes to logarithmic scales converts power-law relationships of the form $y = a x^b$ into linear equations ($\log(y) = \log(a) + b \log(x)$). Below is a classic ecological example illustrating the species–area relationship (MacArthur and Wilson, 1967) with a fitted curve.
 
 ```{r}
 # 1. Dataset: Sunda Islands Land Birds (MacArthur & Wilson, 1967)
@@ -438,21 +434,18 @@ legend("topleft",
 par(mfrow = c(1, 1), mar = c(5, 4, 4, 2) + 0.1)
 ```
 
-<!--
-1. The Integral Definition (The Analytic Approach)
-In rigorous calculus courses, defining the logarithm as an inverse can lead to circular logic if the exponential function wasn't constructed cleanly. To avoid this, advanced textbooks define the natural logarithm (lnx) from scratch as the area under a hyperbola.
 
-Textbook Source
-Book: Calculus (Volume 1, 2nd Edition, 1967)
-Author: Tom M. Apostol
-Publisher: John Wiley & Sons
+### Notation/Semantic/Terminology {.unnumbered}
+- Integral defintion: For every $x>0$,  the natural logarithm of x could also be defined as
+$$
+  \ln(x) = \int_{1}^{x} \frac{1}{t} \, dt
+$$
 
-The Formal Definition
-In Chapter 6 ("The Logarithm, the Exponential, and the Inverse Trigonometric Functions"), Apostol defines the natural logarithm function for any positive real number x using a Riemann integral:
-"For every x>0, we define the natural logarithm of x, denoted by lnx, by the formula:
-$\ln x = \int_{1}^{x} \frac{1}{t} \, dt$
-"
-From this fundamental calculus definition, all algebraic properties of logarithms are derived as theorems. For example, the product rule ln(ab)=lna+lnb is proven strictly using the additive properties of definite integrals.
+- Unspecified Logarithmic Base ($\log(x)$ vs. $\ln(x)$):
+  What does $\log(x)$ represent when its base is not explicitly written? In advanced mathematics, calculus, and standard programming environments (such as R, Python, and C++), the default assumption is the natural logarithm:
 
-3. Generalization to Any Base via the Integral Definition
-Once the natural logarithm (lnx) is established analytically via the integral method above, the general logarithm function for any valid base a is formally defined using the change-of-base formula: -->
+  $$\log(x) = \log_e(x) = \ln(x)$$
+
+  However, notation varies across disciplines and software platforms.
+
+  To prevent ambiguity in technical writing, it is best practice to use $\ln(x)$ for base $e$ and explicit subscripts ($\log_{10}(x)$, $\log_2(x)$) whenever a non-natural base is intended.
