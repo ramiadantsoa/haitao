@@ -8,35 +8,86 @@ Zana-bola isak'izay mijery. The tool to rule them all! The only constant is chan
 ## Concepts and intuitions {.unnumbered} -->
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
-All you need is Euler formula
+All you need is Euler's method
 :::
 
-Differential equations can be the hardest problems in mathematics. One long-standing problem is called the Navier-Stokes equation as one of the seven great open mathematical problem. Some solution were recently claimed to be solved by AI. Unlike equations where the solution are number, the solution of differential equations are functions. Despite the tools mathematicians have developed, there is no closed-form solution based on elementary function @sec-functionMath. For instance, there is no function $y = f(x)$ so that $\frac{dy}{dt} = e^{-x^2}$.
+Differential equations are among the most challenging and fundamental topics in mathematics. One famous example is the Navier–Stokes existence and smoothness problem, one of the seven Millennium Prize Problems, for which partial computational breakthroughs have recently been claimed using artificial intelligence.
 
-However, from an applied perspective, there is no need to find the expression of $f(x)$, it suffices to know the graph of f(x) which anyway the solution. The mathematical expression and the graph is anyway the same thing @sec-functionViz. Fortunately, for many not so complicated equation: construction the solution is a piece of cake with a method called Euler formula. The bonus is comprehending (solution), tools to understand and construct a differential equation.
+Unlike algebraic equations, where the solution is a number, the solution to a differential equation is a **function**. Furthermore, most differential equations cannot be solved analytically—their solutions cannot be expressed in closed form using elementary functions (@sec-functionMath). For instance, there is no simple elementary function $y = f(t)$ whose derivative satisfies:
 
+$$\frac{dy}{dt} = e^{-t^2}$$
 
-Let's use the simple differential equation
+However, from an applied perspective, deriving an exact algebraic expression for $f(t)$ is often unnecessary. It usually suffices to construct the **graph** of $f(t)$, which visually captures all the quantitative and qualitative properties of the solution (@sec-functionViz).
 
-$\frac{dy}{dt} = r$ where r is a constant. The key is to understand what is the meaning of the left-hand side. $\frac{dy}{dt} is just a notation for the derivative of a function $y$ with respect to $t$ @sec-derivative. But intuitively, $\frac{dy}{dt} = \frac{y_{t+dt} - y_t}{dt}$, we could then rewrite as $\frac{dy}{dt} = \frac{y_{t+dt} - y_t}{dt} = r$ or $y_{t+dt} =  dt \times r + y_t$ for small $dt$. And if you stare long enough, you will see that this looks like a [difference equation](@sec-difference).
+Fortunately, for many common differential equations, constructing this visual trajectory is remarkably straightforward using **Euler's method**. Understanding this method not only provides a computational tool to solve differential equations, but also sheds light on how differential equations are constructed in the first place.
 
-Thus we can just calculate the next value, and if the step is small enough, we can recursively find the value of $y$ from the starting at time increment $dt$ and means that we can plot on a figure. This is an approximation but in many cases that is more than enough.
+Consider the simple differential equation:
+$$\frac{dy}{dt} = r$$
+
+where $r$ is a constant. The key to numerical approximation is understanding the meaning of the left-hand side.
+
+While $\frac{dy}{dt}$ denotes the instantaneous rate of change of $y$ with respect to $t$ (@sec-derivative), it can be approximated over a small time increment $\Delta t$ using the ratio:
+
+$$\frac{dy}{dt} \approx \frac{y_{t+\Delta t} - y_t}{\Delta t}$$
+
+Substituting this approximation into the differential equation yields:
+
+$$\frac{y_{t+\Delta t} - y_t}{\Delta t} = r$$
+
+Rearranging terms to solve for the future state $y_{t+\Delta t}$:
+
+$$y_{t+\Delta t} = y_t + r \cdot \Delta t$$
+
+If you inspect this equation closely, it is a first-order linear difference equation (@sec-difference).
+
+By choosing a sufficiently small step size $\Delta t$, we can compute future values recursively starting from an initial condition $y_0$:
+
+1. $y_1 = y_{\Delta t} = y_0 + r \cdot \Delta t$
+2. $y_2 = y_{2\Delta t} = y_1 + r \cdot \Delta t$
+3. $y_3 = y_{3\Delta t} = y_2 + r \cdot \Delta t$
+
+While this step-by-step update is an approximation (Euler's method), choosing a small enough time step $\Delta t$ yields an accurate numerical trajectory that can be plotted directly, making complex continuous-time systems accessible without requiring advanced symbolic integration.
+
 
 ## Formal {.unnumbered}
 
-An differential equation is an equation that contains one or more derivatives of an unknown function with respect to one or more independent variable.
+# Defining Differential Equations
 
-It has three component:
-- The Independent Variable is commonly denoted as $x$ or $t$ for time
-- The dependent Variable: The unknown function we are trying to solve for (commonly denoted as $y$ or $f(x)$).
-- Derivatives: The rates of change (denoted by $\frac{dy}{dx}$, $y'$, or $y''$) showing how the dependent variable responds to changes in the independent variable.
+At its core, a differential equation relates a function to its own rates of change. While standard algebraic equations express relationships between static quantities (such as $x^2 + 2x = 5$), differential equations describe systems in continuous motion or transformation.
+
+
+A **differential equation** is an equation that contains one or more derivatives of an unknown function with respect to one or more independent variables.
+
+
+Every differential equation is built from three essential structural components:
+
+1. **The Independent Variable:**
+   The underlying domain variable driving change, commonly denoted as $t$ (representing time in dynamical systems) or $x$ (representing spatial location).
+
+2. **The Dependent Variable (The Unknown Function):**
+   The state function we seek to solve for, commonly denoted as $y(t)$, $u(x)$, or $f(t)$. Unlike algebraic equations where the unknown object is a single number, the unknown object in a differential equation is an entire **function**.
+
+3. **The Derivatives (Rates of Change):**
+   Terms showing how the dependent variable responds instantaneously to changes in the independent variable. These are expressed using Leibniz notation ($\frac{dy}{dt}$, $\frac{d^2y}{dt^2}$) or Lagrange notation ($y'$, $y''$) (@sec-derivative).
 
 ## Examples {.unnumbered}
-While there can be, we focus here on simple differential equation with real-world meaning but also closed form solutions:
 
-- Atomic/Radioactive decay is described as $\frac{dN}{dt} = -\lambda N$ where $N$ is the number of radioactive atoms, $t$ is time,  $\lambda$ is a decay constant and depend on the element. If there $N_0$ is the number of radiocative atoms at time $t = 0$ called initial condition, then the number of radioactive atoms remaining a $t$ is time is the solution the equation above and is $N(t) = N_0 e^{-\lambda t}.
+While many complex differential equations require numerical approximations (such as Euler's method), several foundational first-order models possess exact analytical solutions expressed using the exponential function $\exp(x)$ (@sec-log). These canonical models form the bedrock of continuous-time dynamical systems across physics, biology, and finance.
 
-Raddon with lmabda = `r log(2) / 55.6`, starting with 1000 atomes and waiting time until 10% remains.
+- Radioactive decay is a fundamental physical process governed by a first-order linear differential equation. The rate at which radioactive nuclei decay is directly proportional to the quantity of radioactive material present at any given moment.
+
+Let $N(t)$ denote the number of radioactive atoms present at time $t$. The decay rate is described by the differential equation:
+
+$$\frac{dN}{dt} = -\lambda N$$
+
+where $\lambda > 0$ is the element-specific **decay constant** (measured in $\text{time}^{-1}$).
+
+
+Consider the isotope **Radon-220** ($^{220}\text{Rn}$), which has a half-life of $t_{1/2} = 55.6\text{ seconds}$. The relationship between the decay constant $\lambda$ and the half-life $t_{1/2}$ is derived from setting $N(t_{1/2}) = \frac{1}{2}N_0$:
+
+$$\lambda = \frac{\ln(2)}{t_{1/2}} \approx \frac{0.6931}{55.6 \text{ s}} \approx 0.01247 \text{ s}^{-1}$$
+
+Starting with 1000 element, the next figure models the continuous exponential decay process and visually highlights the point at which $10\%$ of the initial isotope remains:
 
 ```{r}
 
@@ -99,7 +150,7 @@ points(t_target, N_target,
        pch = 19, col = "red", cex = 1.2)
 
 # Label
-text(t_target, 0,
+text(t_target, 200,
      labels = paste0("t = ", round(t_target, 1), " s"),
      pos = 4, offset = 0.5, col = "red")
 
@@ -116,101 +167,220 @@ cat("Time until 10% remains:",
 
 ```
 
-- Newton's law of cooling. Assume we want to know how fast a coffee cools down $\frac{dT}{dt} = -k (T - T_a)$ where
-- T is the temperature of the object
-- T_a is temperature of the room
-- k is a constant of cooling which depends on the volume of the liquid, the shape of and thermal conductance of the cup. The solution is
 
-$T(t) = T_a + (T_0 - T_a)e^{- k t}$.
+- Newton's Law of Cooling models how a heated or cooled object changes temperature over time as it interacts with its surrounding environment. A classic real-world example is tracking how fast a hot cup of coffee cools down to room temperature.
+
+The rate of change of the object's temperature $T(t)$ is directly proportional to the difference between its current temperature and the ambient environmental temperature $T_a$:
+
+$$\frac{dT}{dt} = -k (T - T_a)$$
+
+where:
+- $T(t)$ is the temperature of the object (e.g., coffee) at time $t$.
+- $T_a$ is the constant ambient temperature of the surrounding room.
+- $k > 0$ is the cooling constant ($\text{time}^{-1}$), which depends on physical factors such as the volume of the liquid, the surface area and shape of the container, and the thermal conductivity of the cup material.
+- The negative sign indicates that if the object is hotter than the room ($T > T_a$), its temperature decreases over time ($\frac{dT}{dt} < 0$).
+
+
+$$T(t) = T_a + (T_0 - T_a) e^{-kt}$$
+
 
 ```{r}
+#| label: fig-newton-cooling
+#| fig-cap: "Newton's law of cooling for coffee ($T_0 = 90^\\circ\\text{C}, T_a = 20^\\circ\\text{C}$). Red dashed lines show the time to reach $37^\\circ\\text{C}$ and $25.5^\\circ\\text{C}$."
 
-#--------------------------------
-# 1. Define parameters
-#--------------------------------
+#-----------------------------
+# 1. Parameters
+#-----------------------------
+T0 <- 90         # Initial coffee temperature (°C)
+Ta <- 20         # Ambient room temperature (°C)
+k  <- 0.09       # Cooling constant (min^-1)
 
-T0 <- 90
-Ta <- 20
-k  <- 0.1
-T_target <- 37
+T_target1 <- 37    # Target 1: Body temperature (°C)
+T_target2 <- 25  # Target 2: Near-ambient equilibrium (°C)
 
-#--------------------------------
-# 2. Newton's law of cooling
-#--------------------------------
-
-T <- function(t) {
+#-----------------------------
+# 2. Cooling function & time solver
+#-----------------------------
+T_cooling <- function(t) {
   Ta + (T0 - Ta) * exp(-k * t)
 }
 
-#--------------------------------
-# 3. Calculate time to target
-#--------------------------------
+# Analytical solution for time at a given target temperature
+calc_t_target <- function(T_target, T0, Ta, k) {
+  - (1 / k) * log((T_target - Ta) / (T0 - Ta))
+}
 
-t_target <- -log((T_target - Ta) / (T0 - Ta)) / k
+t_target1 <- calc_t_target(T_target1, T0, Ta, k)
+t_target2 <- calc_t_target(T_target2, T0, Ta, k)
 
-#--------------------------------
-# 4. Generate data
-#--------------------------------
+#-----------------------------
+# 3. Generate time-series data
+#-----------------------------
+t_max <- max(t_target2 * 1.1, 100)
+t <- seq(0, t_max, length.out = 500)
+temp <- T_cooling(t)
 
-t <- seq(0, 40, by = 0.1)
-temp <- T(t)
-
-#--------------------------------
-# 5. Plot
-#--------------------------------
-
+#-----------------------------
+# 4. Plot
+#-----------------------------
 plot(t, temp,
      type = "l",
      lwd = 2,
      col = "black",
-     xlab = "Time",
+     xlab = "Time (minutes)",
      ylab = "Temperature (°C)",
-     xlim = c(0, 40),
-     ylim = c(15, 100),
+     xlim = c(0, t_max),
+     ylim = c(15, 95),
      xaxs = "i",
      yaxs = "i",
      las = 1)
 
-# Ambient temperature
-abline(h = Ta, col = "blue", lty = 3)
+# Ambient temperature baseline
+abline(h = Ta, col = "gray50", lty = 3, lwd = 1.5)
 
-# Target temperature
-abline(h = T_target, col = "red", lty = 2)
+# Target 1 projection lines (37°C)
+segments(0, T_target1, t_target1, T_target1, col = "red", lty = 2)
+segments(t_target1, 0, t_target1, T_target1, col = "red", lty = 2)
+points(t_target1, T_target1, pch = 19, col = "red", cex = 1.2)
 
-# Vertical projection to target temperature
-segments(t_target, 15,
-         t_target, T_target,
-         col = "red", lty = 2)
+# Target 2 projection lines (20.5°C)
+segments(0, T_target2, t_target2, T_target2, col = "blue", lty = 2)
+segments(t_target2, 0, t_target2, T_target2, col = "blue", lty = 2)
+points(t_target2, T_target2, pch = 19, col = "blue", cex = 1.2)
 
-# Horizontal projection to the curve
-segments(0, T_target,
-         t_target, T_target,
-         col = "red", lty = 2)
+# Dynamic labels for targets
+text(t_target1, T_target1 + 4,
+     labels = paste0("37°C at t = ", round(t_target1, 1), " min"),
+     pos = 4, col = "red", cex = 0.9)
 
-# Mark intersection
-points(t_target, T_target,
-       pch = 19, col = "red", cex = 1.2)
-
-# Annotate time
-text(t_target, 15,
-     labels = paste0("t = ", round(t_target, 2)),
-     pos = 4, col = "red")
+text(t_target2, T_target2 + 4,
+     labels = paste0("25°C at t = ", round(t_target2, 1), " min"),
+     pos = 4, col = "blue", cex = 0.9)
 
 # Legend
 legend("topright",
-       legend = c("Cooling curve",
-                  "Ambient temperature",
-                  "Target temperature"),
-       col = c("black", "blue", "red"),
-       lty = c(1, 3, 2),
-       lwd = c(2, 1, 1),
+       legend = c("Coffee temperature",
+                  paste0("Target 1 (", T_target1, "°C)"),
+                  paste0("Target 2 (", T_target2, "°C)"),
+                  "Ambient (20°C)"),
+       col = c("black", "red", "blue", "gray50"),
+       lty = c(1, 2, 2, 3),
+       lwd = c(2, 1, 1, 1.5),
        bty = "n")
-
-# Print result
-cat("Time to reach", T_target, "°C:",
-    round(t_target, 2), "time units\n")
-
 ```
+
+
+- In continuous-time ecology, the simplest model of population dynamics assumes that per-capita rates of reproduction and mortality remain constant over time. This leads to the **Malthusian growth model**.
+
+Let $N(t)$ denote the total population size at continuous time $t$. The instantaneous rate of change of the population is given by:
+
+$$\frac{dN}{dt} = (b - d)N = r N$$
+
+where:
+- $b > 0$ is the per-capita birth rate (more potential parents yield proportionally more offspring).
+- $d > 0$ is the  per-capita death rate (mortality scales proportionally with current population size).
+- $r = b - d$ is the net continuous intrinsic growth rate.
+
+Given an initial population $N(0) = N_0$ at $t = 0$, integrating $\frac{dN}{dt} = r N$ yields the continuous exponential solution:
+
+$$N(t) = N_0 e^{r t}$$
+
+The long-term trajectory of the population is determined entirely by the sign of the net intrinsic growth rate $r$:
+
+1. Exponential Growth ($r > 0 \implies b > d$):
+   Births outpace deaths. The population grows
+2. Births exactly balance deaths. The population stays completely static over time ($N(t) = N_0$).
+3. Deaths outpace births. The population declines exponentially toward zero. Mathematically identical to radioactive decay.
+
+The script below models two population decline scenarios ($r_1 = -0.02$ vs. $r_2 = -0.05$) starting from $N_0 = 100$, tracking the exact time required to reach a threshold of $10\%$ of the initial population ($N_{\text{target}} = 10$).
+
+```{r}
+#| label: fig-malthusian-decay
+#| fig-cap: "Exponential population decline for negative growth rates ($r < 0$). The plot compares slow decay ($r = -0.015$) versus rapid decay ($r = -0.05$) to reach a target threshold of 10% remaining population."
+
+#-----------------------------
+# 1. System Parameters
+#-----------------------------
+N0 <- 100                 # Initial population size
+
+r_slow <- -0.015           # Slow population decline (b < d)
+r_fast <- -0.05           # Rapid population decline (b << d)
+
+N_target <- 10            # Target population threshold (10% of N0)
+
+#-----------------------------
+# 2. Population Functions & Time Solvers
+#-----------------------------
+N_pop <- function(t, r) {
+  N0 * exp(r * t)
+}
+
+calc_t_target <- function(N_target, N0, r) {
+  log(N_target / N0) / r
+}
+
+t_slow <- calc_t_target(N_target, N0, r_slow)
+t_fast <- calc_t_target(N_target, N0, r_fast)
+
+#-----------------------------
+# 3. Generate Time-Series Data
+#-----------------------------
+t <- seq(0, 250, by = 0.5)
+
+pop_slow <- N_pop(t, r_slow)
+pop_fast <- N_pop(t, r_fast)
+
+#-----------------------------
+# 4. Plot
+#-----------------------------
+plot(t, pop_slow,
+     type = "l",
+     lwd = 2.5,
+     col = "blue",
+     xlab = "Time steps (t)",
+     ylab = "Population size N(t)",
+     xlim = c(0, 250),
+     ylim = c(0, 105),
+     xaxs = "i",
+     yaxs = "i",
+     las = 1)
+
+lines(t, pop_fast, lwd = 2.5, col = "darkorange")
+
+# Target population threshold line
+abline(h = N_target, col = "red", lty = 2)
+
+# Projection lines for slow decline (r = -0.01)
+segments(0, N_target, t_slow, N_target, col = "blue", lty = 2)
+segments(t_slow, 0, t_slow, N_target, col = "blue", lty = 2)
+points(t_slow, N_target, pch = 19, col = "blue", cex = 1.2)
+
+# Projection lines for rapid decline (r = -0.05)
+segments(0, N_target, t_fast, N_target, col = "darkorange", lty = 2)
+segments(t_fast, 0, t_fast, N_target, col = "darkorange", lty = 2)
+points(t_fast, N_target, pch = 19, col = "darkorange", cex = 1.2)
+
+# Dynamic text labels
+text(t_slow + 2, N_target + 4,
+     labels = paste0("t = ", round(t_slow, 1)),
+     pos = 4, col = "blue", cex = 0.9)
+
+text(t_fast + 2, N_target + 4,
+     labels = paste0("t = ", round(t_fast, 1)),
+     pos = 4, col = "darkorange", cex = 0.9)
+
+# Legend
+legend("topright",
+       legend = c("Slow decline (r = -0.01)",
+                  "Rapid decline (r = -0.05)",
+                  "Threshold (N = 10)"),
+       col = c("blue", "darkorange", "red"),
+       lty = c(1, 1, 2),
+       lwd = c(2.5, 2.5, 1),
+       bty = "n")
+```
+
+
 
 - A simple population growth: $\frac{dy}{dt} = r y$ where $r = \text{birth} - \text{death}$. The right hand mean that the number of new offspring is proportional the population size (more mothers mean more baby) but also that mortality is proportional to the population size. This is the same equation as above as the decay and the solution is The population will grow if birth > death (r postive) and will go extinct if $ \text{death} \text{birth} <$ (r negative like the decay above).
 
@@ -284,11 +454,11 @@ segments(t_large, 0, t_large, N_target,
 points(t_large, N_target, pch = 19, col = "darkorange")
 
 # Time labels
-text(t_small, 0,
+text(t_small - 10, 15,
      labels = paste0(round(t_small, 1)),
      pos = 4, offset = 0.5, col = "blue")
 
-text(t_large, 0,
+text(t_large - 10, 15,
      labels = paste0(round(t_large, 1)),
      pos = 4, offset = 0.5, col = "darkorange")
 
@@ -301,101 +471,19 @@ legend("topright",
        lwd = c(2, 2, 1),
        bty = "n")
 
-# Display results
-cat("Small negative growth rate:", round(t_small, 2), "time units\n")
-cat("Large negative growth rate:", round(t_large, 2), "time units\n")
+# # Display results
+# cat("Small negative growth rate:", round(t_small, 2), "time units\n")
+# cat("Large negative growth rate:", round(t_large, 2), "time units\n")
 
 ```
 
 ## Tips and warnings {.unnumbered}
-- Notation: $\frac{dy}{dt}$ is the formula. While in mathematics $y'$ is used or $f'(x)$ which implicit mean with respect to $x$. Physicists also use $\dot{y}$ which is implicity with respect to time $t$. The first one is generally better as the independent variable is explicit.
-- Higher order are denoted by $\frac{d^n y}{dt^n}$ or $y''$, or $\ddot{y}$. In ecology most equations are first order and thus involve the first derivative
-- What is a rate:
-- Most differential equations by approximating the real solution with a difference equation (e.g. Newton's formula). This approach is called solving it numerically. There are packages that solve differential equation in R, like `deSolve` which is enough for most we encounter. The examples above are closed form for illustation.
-- Exponential definition of a solution of a differential equation
-- While the differential equation allows to track one population, we could be interesting in two populations (two competing species, predator or prey) or the number healthy and infected people. In this case and we get a system of differential equation
-$$
- \frac{dR}{dt} = f(R, P)
- \frac{dP}{dt} = g(R, P)
-$$
-- Partial differential equation is related to partial derivative and is denoted by $\partial$
-- As stated at the begining it is a whole complex world and there are other types and classification...no need to list them but be aware it exists.
+- Notational Conventions for Derivatives:
+  Common notations for the first derivative include $\frac{df}{dt}$, $f'$, and $\dot{f}$:
+  - Newton's Notation ($\dot{f}$): Uses a dot over the function symbol and is primarily used in physics and dynamics to denote differentiation with respect to time $t$.
+  - Lagrange's Notation ($f'$): Uses a prime mark to denote the derivative. While concise, it leaves the independent variable implicit.
+  - Leibniz's Notation ($\frac{df}{dt}$): Though requiring more characters, Leibniz notation is the most explicit. It visually preserves the derivative's origin as a ratio of differential displacements ($d$), while clearly identifying both the dependent variable in the numerator and the independent variable of differentiation in the denominator.
 
----
+- The **order** of a differential equation is determined by the highest derivative present in the equation. Higher-order derivatives are denoted using Leibniz notation ($\frac{d^n y}{dt^n}$) or Lagrange notation ($y^{(n)}$). Note that the parentheses around the exponent in $y^{(n)}$ allow to distinguish the $n$-th derivative and taking the function to the $n$-th power, $y^n$. In biological modeling and ecology, most foundational equations are **first-order** (involving only the first derivative $\frac{dy}{dt}$), as they express rates of population change or chemical flux directly as a function of the current state.
 
-### Standard Textbook Classifications
-
-Introductory textbooks usually categorize ODEs right away by two major properties:
-
-1. **Order:** The **highest derivative** present in the equation.
-* *First-order:* Contains only $\frac{dy}{dx}$ (e.g., $\frac{dy}{dx} + 2y = 4$).
-* *Second-order:* Contains up to $\frac{d^2y}{dx^2}$ (e.g., $\frac{d^2y}{dx^2} + 4y = 0$).
-
-2. **Linearity:** Whether the equation is **linear** (the dependent variable and its derivatives are to the power of 1 and not multiplied together) or **nonlinear**.
-
-<!--
-
-In mathematical analysis, a differential equation is a formal equation that expresses a relationship between an unknown function, its independent variables, and its derivatives. Just as algebraic equations are solved for unknown numbers, differential equations are solved for unknown functions.
-
-Here are the rigorous formal definitions of differential equations as established in foundational mathematical and analysis textbooks.
-
-1. The General Multi-Variable Definition (Implicit Form)
-Rigorously, a differential equation is defined as a relation equating a mathematical function of independent variables, a dependent variable, and its derivatives to zero.
-GeeksforGeeks
-
-Textbook Source
-Book: Ordinary Differential Equations (1985 Re-issue)
-Author: Jack K. Hale
-Publisher: Robert E. Krieger Publishing Company / John Wiley & Sons
-
-The Formal Definition
-Let Ω be an open subset of Rn+2. An ordinary differential equation (ODE) of order n is a relation of the form (mathworld.wolfram.com)
-
-$F(x, y, y', y'', \dots, y^{(n)}) = 0$
-
-where x∈R is the independent variable, y=ϕ(x) is an unknown differentiable function, y(k) = d^ky / dx^k  denotes its k-th derivative with respect to x, and F:Ω→R is a continuous mapping that depends non-trivially on the highest-order derivative term y^(n).
-
-
-2. The Explicit Vector / System Definition
-
-In advanced mathematical analysis and the study of dynamical systems, differential equations are rarely analyzed in their implicit form. Instead, they are defined explicitly by isolating the highest-order derivative, typically written as a first-order system of vectors.
-
-Textbook Source
-Book: Differential Equations, Dynamical Systems, and an Introduction to Chaos (3rd Edition, 2012)
-Elsevier
-Authors: Morris W. Hirsch, Stephen Smale, and Robert L. Devaney
-Publisher: Academic Press / Elsevier
-
-The Formal Definition
-Let W be an open subset of Rn, and let f:W→Rn be a continuous vector field. An autonomous system of differential equations is defined as:
-$\dot{x} = f(x)$
-where x(t) is a differentiable curve in R^n parameterized by time t∈R, and xdot denotes the velocity vector derivative dx/dt
-. A solution to this equation is a differentiable function ϕ:I→W defined on an interval I⊂R such that for all t∈I:
-
-$\frac{d}{dt}\phi(t) = f(\phi(t))$
-
-3. The Partial Differential Equation (PDE) Generalization
-If the unknown function depends on multiple independent variables, the derivatives must be partial derivatives, transforming the system into a Partial Differential Equation.
-
-Textbook Source
-Book: Partial Differential Equations (2nd Edition, 2010)
-Author: Lawrence C. Evans
-Publisher: American Mathematical Society (AMS)
-
-The Formal Definition
-Let U be an open subset of R^n, and let u:U→R be the unknown function where u=u(x1,x2,…,xn). A partial differential equation (PDE) of order k is an expression of the form:
-$F(D^k u(x), D^{k-1} u(x), \dots, Du(x), u(x), x) = 0 \; (x \in U)$
-
-
-where D^k u(x)={D^αu(x)∣∣α∣=k} represents the set of all partial derivatives of order k.
-
-4. The Initial Value Problem (Cauchy Problem)
-To anchor a differential equation to a singular, unique geometric path, it must be paired with initial conditions. This combination is mathematically formalized as an Initial Value Problem (IVP).
-
-The Formal Definition
-Let f:I×Ω→R^n be a continuous function, where I⊂R and Ω⊂R^n. An initial value problem consists of the differential equation paired with an initial state:
-$\frac{dx}{dt} = f(t, x), \quad x(t_0) = x_0$
-​
-By the Picard–Lindelöf Theorem, if f is locally Lipschitz continuous with respect to x, then there exists a unique, well-defined local solution x(t) satisfying this exact configuration.
-
- -->
+- While the analytical solutions covered in previous sections (such as $y(t) = y_0 e^{rt}$) offer neat, exact formulas for simple models, the vast majority of real-world differential equations cannot be solved analytically. Instead, we find practical solutions **numerically** by approximating the continuous differential equation with an equivalent discrete-time difference equation—a fundamental concept demonstrated by Euler's method. In R, specialized packages such as **`deSolve`** provide methods that numerically solve differential equations with high precision.
