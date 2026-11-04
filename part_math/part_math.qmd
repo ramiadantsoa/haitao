@@ -1,18 +1,27 @@
 # Basic mathematics
 
-Mathematics is the foundation of all quantitative methods. And since this is whole book is about quantitative methods, it is natural to begin with the foundation. A certain group of reader might want to skip this section or part of it and only return to specific chapters when notation and concept issues in later chapter are unclear.
+Mathematics forms the foundation of all quantitative methods. Because this entire book focuses on quantitative applications, starting with these foundational concepts is a natural choice. Some readers may prefer to skip this chapter—or specific parts of it—and return only when notation or concepts in later chapters need clarification.
 
-The usefuleness of mathematics has become a low hanging fruit for humorists (does knowing the square root of 25 has saved you in difficult situtation?). Math phobia^[an intense, persistent feeling of tension, apprehension, or fear that interferes with a person's ability to manipulate numbers and solve math problems in daily life or academic settings] is real, and many relates to these jokes.
+The practical value of mathematics is a frequent target of humor (such as jokes asking whether knowing the square root of 25 has ever helped in a crisis). Math phobia^[an intense, persistent feeling of tension, apprehension, or fear that interferes with a person's ability to manipulate numbers and solve math problems in daily life or academic settings] is a real experience, and many people resonate with these jokes.
 
-Unconciously, validate the difficulty and uselessness of mathematics. But math can be
-  - easy and useful in everyday life like arithmetic operation
-  - difficult and useless like proving Fermat's last theorem
-  - difficult and usefull like partial differential equations
-  - easy and useless like calculating $\pi = 3.14...$ up to any precision.
-The idea behind this section is to wander in the easy and useful part. Easy in the sense of simplified and useful for applied ecologist and scientist-alike.
+These jokes often unconsciously reinforce the idea that math is either impossibly difficult or practically useless. In reality, mathematical concepts fall into four distinct categories:
+- easy and useful in everyday life, such as basic arithmetic
+- difficult and useless for daily tasks, such as proving Fermat's last theorem
+- difficult and highly useful, such as partial differential equations
+- easy and largely useless, such as manually calculating $\pi$ to arbitrary precision
 
-Most chapters are to support future applied concept. The first chapters remind of the different rules in arithmetic (@sec-arithmeticMath), what are the greek letters and why are they used (@sec-greek). The difference between discrete and continuous variables (@sec-discreteContinuous) which will be used in the statistics and coding section. The notation for summation for product are explained in (@sec-sum). These compact notations will be used throughtout in the define many statistics. Matrix and operations on matrix are covered in three chapters (@sec-matrixMath, @sec-matrixOperationMath, and @sec-matrixMultiplicationMath).
+The goal of this section is to stay firmly within the easy and useful quadrant—offering simplified concepts that are directly applicable for ecologists and scientists alike.
 
-The rest of this section redefines what is function with an emphasis on the notion of domain and codomain (@sec-functionMath), the interpretations of a graph (@sec-functionViz) and the derivative (@sec-derivative). The exponential and logarithm functions are introduced (@sec-exponential and @sec-log). The section ends with the formulation of how to model change with difference (@sec-difference) or differential equation (@sec-differential)
+Most chapters in this section are designed to support upcoming applied topics:
+- The opening chapters review fundamental rules of arithmetic (@sec-arithmeticMath) and introduce common Greek letters alongside their standard usage (@sec-greek).
+- The distinction between discrete and continuous variables is established (@sec-discreteContinuous), forming a basis for subsequent statistics and programming sections.
+- Compact notations for summations and products are explained (@sec-sum), which will be used throughout the text to define statistical estimators.
+- Matrix definitions and operations are covered across three dedicated chapters (@sec-matrixMath, @sec-matrixOperationMath, and @sec-matrixMultiplicationMath).
 
-This section is about basic mathematics so there is no a priori use of R code. Coding are introduced in the respective section. Mathematicians might protest against the narrow definition and intuition, the goal is to find a trade-off where reduced rigor might make concept more accessible.
+The remainder of the section focuses on functions and calculus:
+- Functions are formally redefined with an emphasis on domain and codomain (@sec-functionMath).
+- Visual interpretations of graphs (@sec-functionViz) and rates of change via the derivative (@sec-derivative) are explored.
+- Exponential and logarithmic functions are introduced (@sec-exponential and @sec-log).
+- The section concludes by framing dynamic change through difference equations (@sec-difference) and differential equations (@sec-differential).
+
+Because this section covers basic mathematical foundations, R code is intentionally excluded here; programming integration begins in later sections. While mathematicians might object to these simplified definitions and visual intuitions, the goal is to strike a practical balance where a slight reduction in formal rigor significantly increases accessibility.

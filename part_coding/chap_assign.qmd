@@ -116,3 +116,4 @@ object2 <- temporary
 - A short cut for <- is in RStudio on Windows.
 - The top right panel will show all the object created with the name and the value
 
+###

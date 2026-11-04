@@ -1,28 +1,27 @@
 # Basic statistics
-To a large majority, statistics are about choosing the correct test, and look at the p-value whether it is significant or not. The work is then pointless if one's results is not statistically significant.
-Despite attempt from statisticians to caution with the use and misuse  of p-value and null hypotesis significant test, and alternative metric, the practice is so anchored and convenient that these correction attemp were futile. More failed in underresourced area
 
-This shortcut, reductionism probably marred the philosophy behind what statistics does and to a certain extent favor malpractice and generally the graps of the topic.
+For a large majority of researchers, statistics is often reduced to selecting the correct statistical test and checking whether the resulting p-value meets the threshold for statistical significance. Under this mindset, an empirical study can feel fruitless if its results fail to achieve statistical significance.
 
-So how can we intuitively understand statistics...in this, we will divided into two topics: the descriptive statistics: this is about population, variables, distribution of variables, and ways to summarize the distribution. And inference statistics: the concept behind it is that most of our data is sample or subset of the true population and statistics is doing its best to recover the properties of t..in other words it provides a rigourous ways to estimate the true value (which remains unknown unless we sample all individuals which will never be done) and the confidence/ our trust on these true value.
+Despite persistent efforts by statisticians to warn against the misuse of p-values and Null Hypothesis Significance Testing (NHST), and despite the introduction of alternative metrics, standard testing practices remain deeply entrenched. This reductionist approach obscures the core philosophy of statistical thinking, fostering misunderstanding and, in some cases, methodological malpractice.
 
+To build an intuitive understanding of statistics, the discipline can be divided into two main areas:
 
-Because it is, we eventually need to rely on mathematical concepts and notation, in case of I hope you can find your solace in the previous part on basics of mathematics.
-But in the same vein, words (like population, average, uniform, qualitative) are borrowed from common languages, understanding that nuance in my opinion is the guarantee one actually graps the concept
+- Descriptive statistics, which focuses on defining populations, variables, probability distributions, and the numerical methods used to summarize data.
+- Inferential statistics, which operates on the premise that collected data represents a sample of a broader population. Inferential methods provide rigorous tools to estimate true, unknown population parameters and quantify our uncertainty about those estimates.
 
-XX quoted that there are lies, big lies, and statistics. Hinting about the perneciousness of statistics. At one hand if ilitterate statistically, giving numbers seemed to be a ultimate proof...at the other hand, if well versed and malicious enough, we can always show by transforming the data and nitpicking which test to use..But thing it is malicious.
-The hope is that with better grasp of statistics could lead to better insight and decision. And think critically about your data, your stat of choice... and also how one design the sampling and collect the data.
+This volume focuses primarily on descriptive statistics, while inferential statistics—which requires a deeper mathematical background—will be covered in a subsequent volume. Nevertheless, mathematical concepts and notation remain essential throughout this section. Readers seeking clarification on foundational notation are encouraged to review the preceding section on basic mathematics.
 
-This is divided in three parts: definition @sec-population, @sec-variable, and the different types @sec-quantitative-variable and @sec-qualitative-variable, a first way to summarize data with distribution @sec-distribution and @sec-cumulativeDist. The last part is about basic descriptive statistics which further summarise the distribution from central tendency @sec-mean, @sec-mode, @sec-median, and dispersion @sec-variance and @sec-quantile.
+To touch on a familiar perspective, Mark Twain famously popularized the phrase: "There are three kinds of lies: lies, damned lies, and statistics." This quote highlights how easily statistical presentation can be manipulated. On one end of the spectrum, individuals without statistical training may accept any presented number as absolute proof. On the other end, someone well-versed in statistics can intentionally transform data or cherry-pick tests to support a desired conclusion.
 
-Notes on terminology: variable, qualitative,
-Philosophical
+The goal of this section is to cultivate a deeper grasp of statistics, enabling researchers to gain genuine insights, make informed decisions, and think critically about data collection, sampling design, and analytical choices.
 
-<!-- The overal goal here is to explain (again) p-value  to eventually prevent misuse
-The concept is based on a statistic  and the explain distribution, its characteristic & concept of a random variable
-Minimum foundation, cannot be avoided, and mathematical notation.
-Strongly recommended to have a good grasp before using the applied part or used as a reference
-Later, test will be based on presenting the statistics and p-value. -->
+The section begins laying foundation for the statistical framework by defining a population (@sec-population) as the fundamental unit of study, and a variable (@sec-variable) as a function mapping a domain (the population) to a codomain (the observed values). From this perspective, the distinction between quantitative (@sec-quantitativeVariable) and qualitative (@sec-qualitativeVariable) variables depends directly on the mathematical properties of the codomain.
+
+The remaining chapters cover data summarization:
+
+- First-level description focuses on summarizing raw sequences of values through  distribution such as barchart and histogram (@sec-distribution) and cumulative distributions (@sec-cumulativeDist).
+- Second-level description focuses on condensing distributions into single summary metrics. The Measures of central tendency  including the mean (@sec-mean), median (@sec-median), and mode (@sec-mode); and the measures of dispersion  including variance and standard deviation (@sec-variance), as well as quantiles (@sec-quantile).
+
 
 
 

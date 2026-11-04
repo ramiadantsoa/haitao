@@ -36,4 +36,6 @@ That is why a continuous number (real number) is represented by a continuous lin
  - In probabilites^[anticipating future chapters], a sum ($\sum$)is used to compute the mean (and all other moments) if the variable is discrete, and integral ($\int$) is used if the variable is continuous
 
 ### Semantic/Terminology/Notation {.unnumbered}
-The discrete numbers are also called whole number, natural number or integer. The latter is the default term in coding.
+- The discrete numbers are also called whole number, natural number or integer. The latter is the default term in coding.
+
+- finally discrete has nothing to do with "etre discret".

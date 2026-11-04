@@ -6,118 +6,56 @@
 Average of what?
 :::
 
-What is the average age of Malagasy population?
-What is the average height of Malagasy population?
-What is the average salary of Malagasy population?
+- What is the average age of the Malagasy population?
+- What is the average height of the Malagasy population?
+- What is the average salary of the Malagasy population?
 
-This section is supposed to complement the previous one, that is we need a pair of concept to define our statistical machinery (and our research question). We need to define the population (@sec-population) and the characteristics of the population (this chapter).
+This section complements the previous one: to build our statistical framework—and formulate precise research questions—a paired set of concepts is needed. We must define both the population (@sec-population) and the specific characteristics of that population.
 
-On the surface a variable is just the characteristics or feature, as used the textbook definition below, because the characteristic differs among each item/subject/individual in the population, hence it is a variable. When we record a data and put in a data frame (@sec-dataframe), a variable is a column. That could be straighforward for anyone who entered data in a long format
+On the surface, a variable is simply a characteristic or feature of interest. Standard textbooks often define it this way because the characteristic varies from one individual or item to another within a population. When working with tabular data in a data frame, a variable typically corresponds to a single column in long-format data.
 
-But, let's hurt the brain a bit, or be a bit more critical? What is a variable, it is the name of the column (height)? It is the values in the column? Are those the same thing? How does it relate to qualitative and quantitative variable? And much later, what is a random variable?
+However, taking a more critical view raises deeper questions. What, precisely, is a variable? Is it the column header itself (such as "height"), or is it the set of values contained within that column? Are these two ideas identical?
 
-Let's say we are interested with the height of in one classroom (a well-defined population). We could collect the information by asking each individual how tall they are. We can then column with their height. Alternatively, we could use a tape and measure each individual. Since we are measuring height, is it the same variable or different ones? ... and to further complicate things, if we got exactly the same value for each pair of measurements, is it the same variable then?
+Consider measuring student heights in a single classroom. Height information could be collected by asking each student to self-report their height, or by measuring each student directly with a tape measure. Because the measurement methods differ, do these two approaches yield the same variable or two distinct ones? If both methods happen to produce identical values for every student, are the variables then considered identical?
 
-The simplest path is basically to tie the variable with how it is measured (that is, it is more than the just numbers in the columns). A variable is essentially a function. And for a function to make sense, we need f, x, and y (@sec-functionMath for the traditional function we are used to). In stat X is the population of sample of interest, f is and y is the set of value (that we put in the column).
+The clearest way to resolve these questions is to define a variable by its measurement process, rather than viewing it merely as a collection of numbers. In statistical terms, a variable is fundamentally a function (@sec-functionMath). For any mathematical function to be well-defined, it requires a domain, an assignment rule, and a codomain. In statistics, the domain $X$ represents the population (or sample) under study, the function $f$ represents the measurement method, and the codomain $Y$ represents the set of resulting values that populate the data column.
 
-The immediate implication of that is when you think of a qualitative or nominal or quantitative variable, discrete or continuous, it is based on the value of the codomain etc. which will be the focus of next two chapters.
-
-<!--
-
-Abstraction of a function!
-
-A variable is one of those terms (see also math terms) that have predominated intro stat courses.
-A qualitative variable, quantitative variables, nominal, ordinal, and latter the concept of random variable is also used.
-This is an example where why do we need it.
-And that question often arises when we have failed to link to reality.
-
-The other challenge with such term is also it has a meaning in the colloquial language that linking makes it even more difficult.
-Another example is when people think that a qualitative variable is related to quality.
-Since there are many books that go from theory to reality.
-Here I would just define/ translate variable as a trait or feature.
-Trait of feature of what (see later chapters).
-
-At this stage, you could say that a variable is just a function.
-If you take an object/individual/element x from a population X, you can apply the variable (f) --sort of function. and obtain the value y = f(x). It is the property of y that gives it's  See @sec-function.
- -->
+Viewing variables through this functional lens makes classification straightforward. Whether a variable is qualitative (@sec-qualitativeVariable), quantitative (@sec-sec-quantitativeVariable), discrete, or continuous (@sec-discreteContinuous) depends directly on the properties of its codomain.
 
 
 ## Formal {.unnumbered}
 
-Warning, this mostly works for population...fix when sampling is involved. Full info vs distribution.
+A variable in statistics is a characteristic, attribute, or property of an individual item or subject in a population that can take on different values across different observations.
 
+In formal terms, if a population or sample is represented as a set of entities $\Omega$, a variable $X$ is defined as a function:
 
-Definition of a variable as a function, a variable is a function
-In statistics is often denoted by a capital letter X, Y, Z, and a "relaization" is denoted by a lowercase.
+$$X: \Omega \rightarrow \mathcal{V}$$
 
-
-In the pratical sense, it is reminiscent of the values which essentially the name of the column.
-
-
-<!-- When you move away from theoretical mathematical statistics (which strictly deals with functions and "random variables") and look at applied, descriptive, or introductory statistics textbooks, a variable is defined as a measurable property, characteristic, or attribute belonging to the subjects being studied.
-
-Here are the rigorous definitions from three foundational and widely used textbooks across different tiers of applied statistics.
-
-1. The Applied Social Sciences Definition
-In statistics applied to the social, behavioral, and medical sciences, a variable is defined by its ability to change value across different observations in a dataset.
- -->
-<!-- Textbook Source
-Book: Statistical Methods for the Social Sciences (5th Edition, 2018)
-Author: Alan Agresti
-Publisher: Pearson
-
-The Definition
-In Chapter 2 ("Sampling and Measurement"), Agresti provides the standard, foundational definition used in applied data analysis:
-"A variable is a characteristic that can vary in value among subjects in a sample or population. Examples of variables are number of siblings, annual income, marital status, gender, and political party affiliation. The valid values a variable can take form its measurement scale." -->
-
-<!-- 2. The Comprehensive Biostatistics/Data Science Definition
-In biomedical and data science contexts, textbooks define a variable by contrasting it directly against a constant, framing it as an observational unit's attribute.
-
-Textbook Source
-Book: Principles of Biostatistics (2nd Edition, 2018)
-Authors: Marcello Pagano and Kimberlee Gauvreau
-Publisher: CRC Press
-
-The Definition
-In Chapter 2 ("Data Presentation"), Pagano and Gauvreau establish how real-world data points become variables:
-"A variable is a characteristic that takes on different values in different persons, places, or things. For example, heart rate is a variable because it is not the same for all individuals; it varies from person to person. A quantity that does not vary is called a constant." -->
-
-<!-- 3. The Pure Introductory/Mathematical Context
-Even in textbooks designed for students with a calculus background, when authors introduce the data-collection phase before applying probability models, they define a "variable" as a concrete data-generating characteristic. -->
-
-Textbook Source
-Book: Probability and Statistics for Engineering and the Sciences (9th Edition, 2016)
-Author: Jay L. Devore
-Publisher: Cengage Learning
-
-The Definition
-In Chapter 1 ("Overview and Descriptive Statistics"), Devore defines a variable as the core operational mechanism of data creation:
-"A variable is any characteristic whose value may change from one object to another in the population. We initially denote variables by lowercase letters from the end of our alphabet, such as x, y, and z. Data results from making observations on one or more variables for a designated set of objects."
-
-<!-- Key Takeaways of a Statistical Variable
-Across all applied textbooks, a non-random "variable" is bound by three strict criteria:
-The Subject Matter: It must belong to an entity (a person, a trial, an object).
-The Variance: If every subject in your sample yields the exact same measurement (e.g., if everyone in a study is 30 years old), "Age" ceases to be a variable in that context and becomes a constant.
-The Scale: It must be classifiable into a defined measurement scale (Nominal, Ordinal, Interval, or Ratio). -->
-
+where:
+- $\Omega$ is the domain, representing the set of items, subjects, or experimental units under study.
+- $\mathcal{V}$ is the codomain (or state space), representing the set of all permissible values that the variable can take.
+- $X(\omega)$ assigns a specific measured or observed value in $\mathcal{V}$ to a particular unit $\omega \in \Omega$.
 
 
 ## Examples {.unnumbered}
-For conciseness, we ignore defining the population here and focus on examples of variables.
+Below are examples of variables^[Too keep it short, the population is not precisely defined]
 
-- Population is study sites: GPS coordinates or elevation, temperature, rainfall, humidity
-
-- Population is a village:  age, social status, sex, etc.
-
-- Plants: dbh, height, growth measured between two time points,
+- When the population consists of study sites: GPS coordinates, elevation, temperature, rainfall, humidity etc.
+- When the population is a village: age, social status, and sex etc.
+- When the population is plants: diameter at breast height (dbh), height, and growth measured between two time points etc.
 
 <!-- - Sex determination: if human is the population then is  X Y and Y in human, for some reptiles, Sex determination X, Y, Z
 Sex determination temperature in turtle -->
 
 ## Tips and warnings {.unnumbered}
-- As a function, one study is incomplete unless the variable is clearly defined: precise in the method section.
-- Precision of a variable, blame the method, not the value.
-- Is a constant variable? The practical answer is no because this is why it is called a variable in the first place. But if a priori you include as variable (say religion in a classroom) but a posterioiri are all the same religion, do we exclude them? But a constant function is still a function f(x) = 1, in principle. Of course, these are and are of sole of critically thinking about what is a variable
-- Another complication is that variable but could be transformed. For instance, we collect age, and then later decide to group them into infant, juveline, adult etc. (see @sec-quantiative-variable and @sec-qualitative-variable). But that is not an issue if one thinks a variable as a function and not just the value it take...
-- Eventually, we will need a computer to do analyses. Because programs are built by programmers and not for statisticians, the terminology used are different. There will be three major types of variables: logical, string, numeric, integer etc. (see @sec-boolean, @sec-character,@sec-numeric) which are how we represent the various types of . This book also aims to bridge that.
-- Random variable is what we really need but we need to wait for now (later version of this handbook), and presented when we actually need it.
+<!-- - By considering a variable as function, it only makes sense if the function is clearly defined. It is like saying study the trigonometric function f(x) = y without giving the expression of f. In practice, this is why the methods must be (e.g. which scale one uses to weight the individual). -->
+
+- Is a constant a variable? In practical terms, no, which is precisely why the term "variable" is used in the first place. However, if you measure a characteristic—such as religion in a classroom—expecting it to vary, but discover after collecting data that every individual shares the same religion, should it still be treated as a variable? In mathematics, a constant function like $f(x) = 1$ is still a valid function. These edge cases highlight why it is essential to think critically about what defines a variable.
+- Variables are frequently transformed. For instance, a researcher might record age as a continuous numerical (@sec-quantitativeVariable) value and later categorize the data into age brackets like infant, juvenile, and adult (@sec-qualitativeVariable). Once transformed, it becomes a distinct variable with different properties.
+A central concept in inferential statistics is the random variable. Its formal treatment is deferred until additional mathematical and statistical foundations are introduced (next volume).
+
+### Notation/Semantic/Terminology {.unnumbered}
+
+Because this book navigates between three subjects—mathematics, statistics, and computer programming—terms with multiple meanings are unavoidable. "Variable" is the most critical example. In mathematics, a variable is an abstract symbol, such as $x$ or $y$, linked by a function $f$. In statistics, it is formalised as a function tied to a specific population and set of measurements. In computer programming, it represents a named reference to an object in memory via variable assignment (@sec-assignment).
+
+Whether a variable is described as independent, dependent, or a response variable relates to its role in a relationship—specifically, whether it acts as part of the domain (source set) or the codomain (target set). In contrast, classifying a variable as qualitative, quantitative, discrete, continuous, or boolean reflects the structural properties of the target set itself.

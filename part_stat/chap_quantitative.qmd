@@ -1,4 +1,4 @@
-# Quantitative variable {#sec-quantitative-variable}
+# Quantitative variable {#sec-quantitativeVariable}
 
 {{< include ../preamble.qmd >}}
 
@@ -6,89 +6,59 @@
 Discrete or continuous?
 :::
 
-If you understand the variable @sec-variable, this is specific type of variable. That is the type of values  you obtain after is a number. For almost everyone, working with quantative variable is quite natural, that's what we have done in highschool. The problem usually is with qualitative (@sec-qualitative-variable): confusing qualitative variables as quantitative, confusing discrete with qualitative, and applying tools used in the worlds of quantitative variables to that of the worlds of qualitative. These would be resolved in the next section (@sec-qualitative-variable)
+A quantitative variable is a function that maps an element of a population to a numerical value (@sec-variable). Working with quantitative variables feels natural, as it aligns with the standard mathematics and physics covered throughout secondary education. Difficulties typically arise when dealing with qualitative variables (@sec-qualitativeVariable)—specifically, confusing qualitative variables with quantitative ones, conflating discrete variables with qualitative ones, or inappropriately applying quantitative tools to qualitative data. These distinctions are addressed in the next section (@sec-qualitativeVariable).
 
-The only worth noticing is that there are two types categories of numbers discrete and continuous, (@sec-discrete_continuous) and thus there are two types of quantitative variables. Conceptually, this just means that the value is discrete (e.g. integer) or continuous (e.g. real number if you are mathematician, numeric if you are a data scientist, double or float if you are a computer scientists).
+The fundamental distinction rests on the two main categories of numbers: discrete and continuous (@sec-discreteContinuous). Consequently, there are two corresponding types of quantitative variables based on whether the codomain contains discrete values (such as integers) or continuous values.
 
-The divide between discrete and continuous variables are mostly essential when discussion about probabilty distribution, the statistical inference, model fitting (upcoming chapters), mostly because to the mathematical toolk to handle them is quite different (@sec-discrete_continuous) and see also difference and differential equation (@sec-difference & @sec-differential).
+The divide between discrete and continuous variables becomes critical when studying probability distributions, statistical inference, and model fitting, primarily because the underlying mathematical machinery required to analyze them differs significantly (@sec-discreteContinuous)—a topic deferred to a future volume.
 
-When we have data, which is a discrete sequence of number, it does not really matter to calculate the mean, variance, etc, or plot the distribution of these numbers if the variable is qualitative or quantitative.
+In basic descriptive statistics, whether a variable is discrete or continuous rarely alters the computation of summary statistics such as the mean or variance.
 
 ## Formal {.unnumbered}
 
-A quantitative variables is a variable F in $\Omega$ to Y where Y is numeric. Most generally, it is N, Z, Q, or R. Can it be generalized to $R^n$?
-<!-- In statistics textbooks, a quantitative variable is defined as a variable that measures a numerical quantity or amount. Crucially, its defining mathematical feature is that its values are actual numbers for which arithmetic operations (such as addition, subtraction, or averaging) yield meaningful, real-world interpretations.
+A quantitative variable in statistics is a characteristic of an individual unit in a population that takes on numerical values across observations^[See @sec-variable for the formal definition of a variable as a function].
 
-Here are the rigorous definitions from three widely recognized statistics textbooks. -->
+Quantitative variables are classified into two main types:
 
-<!-- 1. The Definitive Applied Definition
-In foundational applied statistics, a quantitative variable is defined explicitly by its numerical nature and its contrast to qualitative classification. -->
-<!--
-Textbook Source
-Book: Introductory Statistics (10th Edition)
-Author: Neil A. Weiss
-Publisher: Pearson
+- Discrete Variables: A quantitative variable is discrete if its set of possible values is countable, typically consisting of isolated points on a number line (@sec-discreteContinuous).
 
-The Definition
-In Chapter 1 ("The Nature of Statistics"), Weiss provides the mathematical criteria that separate quantitative variables from qualitative ones:
-"A quantitative variable is a numerically valued variable. The values of a quantitative variable are numbers, and arithmetic operations make sense for them. Examples of quantitative variables are height, weight, number of siblings, and age." -->
-
-<!-- 2. The Statistical Analysis & Scale Definition
-Textbooks focusing on business and data analytics define quantitative variables by the intrinsic numerical meaning of the data they record. -->
-
-Textbook Source
-Book: Statistics for Business and Economics (14th Edition, 2020)
-Authors: David R. Anderson, Dennis J. Sweeney, Thomas A. Williams, Jeffrey D. Camm, and James J. Cochran
-Publisher: Cengage Learning
-
-The Definition
-In Chapter 1 ("Data and Statistics"), the authors define quantitative data and the variables that generate them based on arithmetic validity:
-"Quantitative data use numeric values to indicate how much or how many. Quantitative variables are variables with quantitative data. Arithmetic operations are meaningful for quantitative variables. For example, quantitative data can be added and then divided by the number of observations to compute the average."
-<!--
-3. The Pure Introductory/Scientific Context
-In engineering and physical science contexts, quantitative variables are defined by how they map real-world measurements onto a numerical scale.
-
-Textbook Source
-Book: Probability and Statistics for Engineering and the Sciences (9th Edition, 2016)
-Author: Jay L. Devore
-Publisher: Cengage Learning
-
-The Definition
-In Chapter 1, Devore defines a quantitative variable by its mathematical properties:
-"A quantitative variable is one for which the possible values are numbers. Examples include weight, distance, time, and number of defects. When a variable is quantitative, the resulting data is numerical, and a wide variety of arithmetic and statistical operations can be applied."
-
-The Two Sub-Classifications of Quantitative Variables
-As all of these textbooks detail, quantitative variables are rigorously split into two sub-types based on the mathematical structure of their possible values: -->
-
-A. Discrete Variables
-A quantitative variable is discrete if its possible values form a finite set or a countable infinite sequence (usually isolated points on a number line). They are part of N or in some case Z.
-Example: The number of cars in a parking lot (0,1,2,…). You cannot have 2.5 cars.
-
-B. Continuous Variables
-A quantitative variable is continuous if its possible values consist of an entire interval of real numbers. It can take on any value within that range, limited only by the precision of the measuring instrument.
-Example: The exact time it takes to run a marathon (2 hours, 14 minutes, 3.25 seconds).
-
-<!-- The "Arithmetic" Litmus Test: To check if a variable is truly quantitative, ask: "Does the average make sense?" For example, a Zip Code (e.g., 90210) consists of numbers, but averaging two zip codes results in a meaningless number. Therefore, Zip Code is qualitative, whereas something like Income or Temperature is quantitative. -->
-
+- Continuous Variables: A quantitative variable is continuous if its set of possible values forms an unbroken interval of real numbers. It can take on any value within that interval, constrained only by the precision of the measuring instrument (e.g., the height of a student measured at 1.65 m).
 
 ## Examples {.unnumbered}
-Discrete are in *italic*.
-We need to define our population if we want to make sense of these variable.
 
-Animal/zoologial at the individual: morphometric measurement like weight, height, snout to vent, salary or average grade at the bacc, *number of offspring*, *number of limbs*
+Below are examples of discrete and continuous variables across different fields. In practice, the underlying population must be defined for these measurement to hold.
 
-Plant: diameter at breast hieght (dbh), height, *number of nodes or branch in soybean*, hardness, *number of chromosomes*
+Zoological^[human included] metrics:
 
-At a landscape level: *number of individuals*, density, elevation, *number of death*.
+- Continuous: weight, height, snout-to-vent length, personal income, grade point average, total surface area of an apartment owned, total land area owned.
+- Discrete: number of offspring, number of limbs, number of cows owned.
 
+Botanical metrics:
 
+- Continuous: diameter at breast height (dbh), plant height, wood hardness of a species.
+- Discrete: life stage defined by the number of nodes in maize, number of trifoliates in soybean.
+
+Landscape metrics:
+
+- Continuous: population density, elevation, landscape connectivity, distance to the nearest habitat patch.
+- Discrete: number of individuals in a fragment, number of females in a population.
 
 ## Tips and warnings {.unnumbered}
-- A simple rule of thumb: a variable is quantitative when arithmetic operation (@sec-arithmeticMath) on the values are meaningful.
-- Fake quantitative: Zip code, phone numbers are examples of "numbers" but are not quantitative. And to convince yourself, consider that the adding or averaging zip code (101 and 303) does not have numerical interpretation. They are convenient notation.
-- Discrete variable are integer, and most qualitative variables are discrete but , finally discrete has nothing to do with "etre discret".
-- A variable can take , it does not affect the classification above. However, variables having only positive values (or from negative to postive) are represented by different types of distribution and could be treated differently
-- Quantative variables are transformed, we can log transform, taking the square root, center (substract by the mean), etc.
-- Because of the origins, terms could mean different things in mathematics, statistics, and computer science. This is especially for continuous variable: real number, numeric, float or double.
 
-<!-- ## If you want to know more {.unnumbered} -->
+- A useful rule of thumb: a variable is quantitative if applying standard arithmetic operations (@sec-arithmeticMath) to its values yields a meaningful result.
+
+- Quantitative variables are frequently transformed; common transformations include log scaling, square root transformations, and centering (subtracting the mean).
+
+- Beware of "fake" quantitative variables. Identifiers such as ZIP codes or phone numbers consist of digits, but they are not quantitative. Adding or averaging two ZIP codes (e.g., Tana 101 and Ambalavao 303) produces no meaningful mathematical interpretation; the numbers serve merely as convenient categorical labels.
+
+- While discrete quantitative variables consist of integers, qualitative variables has the property of being discrete in the sense that their categories can be indexed by integers. But qualitative variable are not discrete variable
+
+- A quantitative variable can take positive, negative, or zero values; sign does not affect whether a variable is discrete or continuous. Because discrete variables are often used for counting, they are frequently non-negative.
+
+- In taxonomy, discrete count variables (such as the number of floral parts) are sometimes used to classify species. In this context, the population of interest consists of species rather than individual organisms.
+
+### Semantic/Terminology/Notation {.unnumbered}
+
+- The statistical term discrete is superficially unrelated to the French word *"être discret"*.
+
+- Terminology varies across disciplines. Continuous variables are called real numbers ($\mathbb{R}$) in mathematics, called numeric in data science, and float or double data types in computer programming.

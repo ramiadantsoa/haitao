@@ -1,4 +1,4 @@
-# Qualitative variable {#sec-qualitative-variable}
+# Qualitative variable {#sec-qualitativeVariable}
 
 {{< include ../preamble.qmd >}}
 
@@ -11,105 +11,62 @@
 Tsisy idiran'ny qualité!
 :::
 
-As we move forward, the dependence previous because more crucial, but such could also faciliate the concept.
-Here, a qualitative variable is just a a variable that is **NOT** quantitative @sec-quantitative-variable.
+This chapter builds directly on the preceding material: a qualitative variable is defined simply as any variable that is **NOT** quantitative (@sec-quantitativeVariable)
 
-There is an inherent paradox with understanding and use of qualitative variables. On one hand, the preclivity of our brain to categorize stuff: male or female, good or bad, species, or even the creation of countries and boundaries. We like "qualitative" variable. On the other hand, most of the foundational mathematics and statistics we handle are about numbers, operation and etc. So we could dislike them because we don't know what kind of statistics do we do when the values are not numbers.
+There is an inherent paradox in how we understand and use qualitative variables. On one hand, the human brain has a natural propensity to categorize the world: male or female, good or bad, species classifications, or the establishment of national borders. We naturally think in qualitative terms. On the other hand, the foundational tools of mathematics and statistics are built around numbers and arithmetic operations. This creates friction, as it is not immediately obvious what statistical operations apply when observations are non-numerical.
 
-There are some that many students get when the variable is not fuzzy: sex or eye color or species. It becomes fuzzy when the qualitative variables are derived from quantitative variables. It is fuzzy because (1) we then to ignore the underlying quantitative variables (2) because the delimitation are forgotten. Think baby, juvenile, adult the underlying is age but there is no universal distinction among then. Think that these age class also apply to any living organism. Another is low, intermediate, or high elevation where the underlying is altitude but ...so we understand what one is talking about.
+Categorical variables with clear-cut boundaries—such as sex, eye color, or species—rarely cause confusion. Ambiguity arises primarily when qualitative variables are derived from underlying quantitative variables. This fuzziness occurs for two reasons: researchers often lose sight of the original quantitative measurement, and the boundaries used to define the categories are inherently arbitrary. Consider the categories *infant*, *juvenile*, and *adult*: while the underlying variable is continuous age, there is no single universal rule for where one stage ends and the next begins, especially across different species. Similarly, classifying locations into *low*, *intermediate*, or *high* elevation relies on continuous altitude, yet the specific cutoffs chosen are largely contextual.
 
-A final misconception is that (should be obvious from the paragraphs above): qualitative variable has nothing to do with quality. If one can switch to categorical variable, life could be easier.
+A final common misconception is confusing qualitative variables with assessments of quality. In statistical practice, "qualitative" refers strictly to membership in a category, not value judgments. Replacing the term *qualitative variable* with *categorical variable* clears up this confusion.
 
 
 ## Formal {.unnumbered}
-<!--
-In statistics textbooks, a qualitative variable (often referred to interchangeably as a categorical variable) is defined as a variable that yields non-numerical attributes or places observational units into distinct categories based on a specific characteristic. Crucially, its defining mathematical feature is that arithmetic operations (like addition or finding an average) are meaningless.
 
-Here are the rigorous definitions from three highly respected and widely used statistics textbooks. -->
+A qualitative variable in statistics is a characteristic of an individual unit in a population that takes on non-numerical values across observations^[See @sec-variable for the formal definition of a variable as a function].
 
-<!-- 1. The Definitive Introductory/Applied Definition
-In foundational applied statistics, a qualitative variable is defined explicitly by its inability to be measured numerically, instead serving to classify subjects. -->
-
-<!-- Textbook Source
-Book: Introductory Statistics (10th Edition)
-Author: Neil A. Weiss
-Publisher: Pearson -->
-
-The Definition
-In Chapter 1 ("The Nature of Statistics"), Weiss provides a highly structured breakdown of variable types:
-"Variables can be classified as either qualitative or quantitative. A qualitative variable (or categorical variable) is a non-numerically valued variable that classifies an attribute of each individual element of a population or sample. The values of a qualitative variable are typically words or codes, and arithmetic operations do not make sense for them."
-
-
-There can be three types: nominal, ordinal, or binary. Nominal is when the values have no inherent order, this is in contrast with ordinal where there is sense of order (baby, teenager, adult, etc.). Note that many ordinal are obtained from binning of a quantitative variable @sec-quantiative-variable. Binary is a special case of qualitative variable that has only two categories  (yes and no, 0 or 1, true or false, male or female etc.) @sec-boolean
+Qualitative variables are divided into three main types: nominal, ordinal, and binary. A nominal variable consists of categories with no inherent ordering (e.g., eye color, species, or country of origin). In contrast, an ordinal variable possesses a natural sequence or rank among its categories (e.g., infant, juvenile, adult). Note that many ordinal variables are created by binning an underlying continuous quantitative variable (@sec-quantitativeVariable). Finally, a binary variable is a special case of a qualitative variable that contains exactly two mutually exclusive categories (e.g., yes/no, true/false, or 0/1) (@sec-boolean).
 
 ## Examples {.unnumbered}
 
-- Nominal variable:
-  - nationality (Malagasy, English, Kenyan etc.)
-  - Political party (Democrat, Republican, Independent)
-  - Eye color (blue, brown, green)
-  - Species name
-  - Zip code: 101, 102, 303 etc.
+## Examples {.unnumbered}
 
-Notice in the last example, zip code is a number but it is not a quantitative variable. You cannot do arithmetic operation on it. It is just a label.
+Below are examples illustrating the distinct categories of qualitative variables:
 
-- Ordinal variable that has intrinsic numerical value behind it:
-  - Education level (high school, bachelor's, master's, PhD)
-  - Customer satisfaction (very dissatisfied, dissatisfied, neutral, satisfied, very satisfied)
-  - Egg size (small, medium, large)
+- Nominal variables:
 
-In the example above, you don't explicity grade your satisfaction but you sort of arbirarily assign a category. It could also be 0, 1, 2, 3 etc...Does it make sense to average it? Not really. But you can say that 3 is better than 2, and 2 is better than 1. So there is a sense of order.
+  - Nationality (e.g., Malagasy, English, Kenyan)
+  - Political affiliation (e.g., Democrat, Republican, Independent)
+  - Eye color (e.g., blue, brown, green)
+  - Species name (e.g., *Lemur catta*, *Panthera leo*)
+  - ZIP code (e.g., 101, 102, 303)
 
-- Ordinal variable that has explicit numerical value behind it:
-  - Age group (child, teenager, adult, senior)--age
-  - Income bracket (low, medium, high) -- salary
-  - Test score category (fail, pass, excellent) -- grade
-  - Elevation category (lowland, upland, highland) -- altitude
+  Notice that while ZIP codes consist of numbers, a ZIP code is a nominal variable rather than a quantitative one. Applying arithmetic operations to ZIP codes yields no mathematical meaning; the numbers serve merely as categorical labels.
 
-- Binary variable:
-  - Gender (male, female)
-  - Yes/No questions (e.g., "Do you own a car?")
+- Ordinal variables with implicit ordering:
+
+  - Education level (e.g., High School, Bachelor's, Master's, PhD)
+  - Customer satisfaction (e.g., Very Dissatisfied, Dissatisfied, Neutral, Satisfied, Very Satisfied)
+  - Egg size classification (e.g., Small, Medium, Large, Extra Large)
+
+  In these cases, ratings or sizes are assigned to discrete categories without measuring an exact underlying numerical continuum. Even if numeric codes are assigned to the categories (such as 1, 2, 3, 4), computing a standard arithmetic average remains conceptually invalid. However, the sequence preserves rank: a rating of 3 reflects higher satisfaction than a 2, and 2 reflects higher satisfaction than a 1.
+
+- Ordinal variables derived from an underlying quantitative continuum:
+
+  - Age group (e.g., child, teenager, adult, senior; derived from age)
+  - Income bracket (e.g., low, medium, high; derived from salary)
+  - Academic grade category (e.g., fail, pass, distinction; derived from a numerical score)
+  - Elevation zone (e.g., lowland, mid-altitude, highland; derived from altitude)
+
+- Binary variables:
+  - Sex (e.g., male, female)
+  - Question outcomes with two options (e.g., Yes/No responses to "Do you own a car?")
 
 ## Tips and warnings {.unnumbered}
-- Plurality of notation: a qualitative variable can take many notations: For instance, in the column of dead or alive you can choose between: dead/alive, d/a, maty/velona, yes/no, Y/N, 1/0, oui/non/. For instance, 1/0 is not quantitative. Differentiate between the notation and the value. You cannot choose for quantitative.
-- Collecting qualitative is often efficient. But this is a trade-off. When possible record the quantitative and convert to qualitative. You can't do that in reverse.
-- A natural divide is what kind of visualization uses, you cannot use a histogram for qualitative variable.
-- A binary qualitative can always be encoded as yes or no, true or false question. Variable color: Blue or red vs variable: Is it blue? : value = true or false. It is often convenient to use boolean variables as they are specifically created to two values. @sec-boolean
-- Using 0 and 1 does not make it numeric.
 
+- Flexibility of notation: A qualitative variable can be recorded using many different symbolic representations. For example, a binary survival status column can be coded as `dead/alive`, `d/a`, `maty/velona`, `yes/no`, `Y/N`, `1/0`, or `oui/non`. It is crucial to distinguish between the underlying value or category and the notation used to represent it. Using numeric symbols like `1` and `0` does not make the variable quantitative; they remain shorthand representations for discrete categories. For true quantitative variables, by contrast, the numerical values are fixed by measurement and cannot be arbitrarily renamed.
 
-<!-- ## If you want to know more {.unnumbered} -->
+- Record quantitative data whenever possible: Collecting data in qualitative categories (such as age brackets) can be faster or easier in the field, but it involves a permanent loss of information. A continuous quantitative variable (like age in years) can always be binned into qualitative categories later, but qualitative categories cannot be converted back into precise quantitative measurements.
 
+- Visualization constraints: The structural nature of a variable dictates the appropriate visualization methods. For example, a histogram is strictly designed to show the continuous distribution of quantitative data, whereas qualitative data must be visualized using tools appropriate for counts across discrete categories, such as bar charts.
 
-<!--
-1. The Statistical Software & Business Context
-Textbooks focusing on data analysis and business statistics define qualitative variables by the types of labels or "attributes" they record, highlighting how they are categorized.
-
-Textbook Source
-Book: Statistics for Business and Economics (14th Edition, 2020)
-Authors: David R. Anderson, Dennis J. Sweeney, Thomas A. Williams, Jeffrey D. Camm, and James J. Cochran
-Publisher: Cengage Learning
-
-The Definition
-In Chapter 1 ("Data and Statistics"), the authors define qualitative data by contrasting it against quantitative scales:
-"Data can be classified as either categorical or quantitative. Categorical data (sometimes referred to as qualitative data) use labels or names to identify an attribute of each element. Categorical variables are variables with categorical data. Arithmetic operations such as addition, subtraction, multiplication, or division do not provide meaningful results for categorical variables." -->
-<!--
-3. The Comprehensive "Mathematical/Applied" Hybrid Definition
-Even in engineering and hard science contexts, qualitative variables are defined strictly by the descriptive categories they generate.
-
-Textbook Source
-Book: Probability and Statistics for Engineering and the Sciences (9th Edition, 2016)
-Author: Jay L. Devore
-Publisher: Cengage Learning
-
-The Definition
-In Chapter 1, Devore explicitly separates variables by the mathematical properties of their outputs:
-"A qualitative variable is one for which the possible values are distinct categories rather than numbers. Examples include gender (male or female), method of payment (cash, check, or credit card), and type of defect. When a variable is qualitative, the resulting data is a collection of labels or category names."
-Core Structural Classifications of Qualitative Variables
-
-As outlined across these textbooks, qualitative variables are rigorously divided into sub-types based on their measurement scales:
- -Nominal Scale: Categories have no inherent mathematical order or ranking (e.g., Blood Type: A, B, AB, O; Eye Color: Blue, Brown, Green).
-- Ordinal Scale: Categories possess a natural, logical order, but the "distance" between the categories cannot be measured numerically (e.g., Customer Satisfaction: Poor, Fair, Good, Excellent).
-- Dichotomous / Binary Scale: A special case of a qualitative variable that contains exactly two mutually exclusive categories (e.g., Pass/Fail, Yes/No).
-
-A Note on "Fake" Numbers: Textbooks frequently warn that qualitative variables can sometimes look like numbers (e.g., Zip Codes, Area Codes, or coding Male as 0 and Female as 1). They remain strictly qualitative because calculating the "average zip code" yields a mathematically meaningless result. -->
+- Encoding binary variables: Any binary qualitative variable can be reframed as a boolean (True/False) question. Instead of recording a variable named `color` with categories `Blue` or `Red`, one can define the variable as `Is_Blue?` with values `True` or `False`. Utilizing native boolean types is often computationally advantageous, as programming languages possess dedicated structures to handle two-state logic efficiently (@sec-boolean).
