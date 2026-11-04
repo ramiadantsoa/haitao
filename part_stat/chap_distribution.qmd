@@ -3,268 +3,286 @@
 {{< include ../preamble.qmd >}}
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
-A visual summary of your data
+Rehefa sary mazava kokoa
 :::
 
-There two entry points to think of a distribution. The first one is from the theoretical perspective, thinking about normal/gaussian or like binomial or Poission distribution. That perspective will be addressed later in this book, when we talk about statistical inference.
+There are two main entry points for understanding a statistical distribution. The first is theoretical, involving formal parametric distributions such as the Gaussian (Normal), Binomial, or Poisson distributions. That theoretical perspective will be deferred to a future volume alongside statistical inference.
 
-The second one is from a data-driven perspective. Assume for now that it is qualitative variable (@sec-qualitative-variable). That is, imagine assess the gender of all (n) pupils in a classrom (more generally a variable @sec-variable from a population @sec-population). That is mostly a sequence of male female. A distribution is a first entry point to summarizing your data. Yes, it is a summary because we are computing new numbers from the original data.
+The second entry point, descriptive statistics, is empirical or data-driven. Consider a qualitative variable (@sec-qualitativeVariable)—for example, observing the sex of all $n$ students in a classroom (where the variable $X$ maps a population $\Omega$ to a state space $\mathcal{V}$, see @sec-variable and @sec-population). The raw data is simply a sequence of observations (e.g., male, female, female, male...). A distribution serves as the primary tool for summarizing this raw data by calculating summary metrics from the original observations.
 
-So what are the new numbers: essentially you count the number in each category. The sequence of male and female becomes a table
+To construct this summary for categorical data, one counts the frequency of observations in each category. The raw sequence of categories is thereby transformed into a frequency table:
 
+| Category | Male | Female |
+| :--- | :---: | :---: |
+| **Frequency** | $n_m$ | $n_f$ |
 
-|      |        |
-|------|--------|
-| male | female |
-|$n_m$ | $n_f$  |
+: Frequency distribution for a binary qualitative variable, where the total sample size is $n = n_m + n_f$.
 
-: The number version of a distribution where $n = n_f + n_m$.
+Visually, this categorical distribution is represented as a bar plot featuring two bars whose heights correspond to $n_m$ and $n_f$.
 
-A distribution is a figure representing the data, the figure is simply two bars of different height.
+While this process is straightforward for qualitative data, a question arises: how does one construct a tabular and visual distribution for a continuous quantitative variable (@sec-quantitativeVariable)? If student heights are measured across the same classroom, the result is a sequence of $n$ real numbers. If one attempts to tabulate frequencies by unique numerical values, the resulting table becomes an unwieldy set of single-instance counts, yielding a plot of uniformly thin bars with a height of 1—offering little to no analytical insight.
 
-Sorry if this is so obvious and boring...but what happens variable is quantitative (@sec-quantiative-variable)? How one constructs the data and the figure distribution? Imagine you measured the height of the same pupils aboave, you have a sequence of n numbers. It count based on unique value, it is quite likely that table above becomes a long column and the number in the second row is mostly one. The figure is just a plot with bar of the same height "random" spacing. Not very informative in general.
+To meaningfully visualize such a continuous sequence, the quantitative values are binned into an ordinal qualitative variable. Similar to grouping continuous altitude measurements into elevation zones, binning continuous data reduces the number of table columns to a manageable set of intervals (bins) with meaningful count frequencies.
 
-Ironically, to visualize such sequence is to convert the quantitative values into an ordinal qualitative. Think about altitude into categories: the number of columns becomes manageable, and the second row is more just 1. The key point is that these categories are arbitary, and depending on the category, one will get different distribution, because your table is different. E.g. if grade is between 0 and 20, we can create 2 catergories \[0,10) (excluding 10) and \[10, 20\], or you can divide into 4 groups or equal dist \[0,5), \[5,10), \[10,15) or even \[0,5\] and \[6, 20\]. One has to explain the reason behind these choice.
+However, interval selection is inherently subjective. The resulting empirical distribution and its corresponding table depend directly on the chosen bin boundaries. For instance, if exam scores range continuously from 0 to 20, one could define two broad intervals—$[0, 10)$ and $[10, 20]$—or divide the domain into four equal intervals: $[0, 5)$, $[5, 10)$, $[10, 15)$, and $[15, 20]$. Because different binning choices alter the visual profile of the distribution, the rationale behind the chosen interval widths must always be explicitly stated.
 
-The take-home is that variable is a sequence of number, the distribution summarize/transform it into pair of discrete bin-and the number of that fall belong to that bin which is then plotted for visualization (@sec-function_viz). You can then see which value is most or least frequent, but also the frequency of all other values.
+In summary, while a raw variable consists of an observed sequence of values, its empirical distribution transforms that sequence into paired discrete bins and corresponding frequency counts. Visualizing these counts (@sec-functionViz) reveals not only the most and least frequent values, but also the overall density and dispersion of the entire dataset.
 
 ## Formal {.unnumbered}
 
-Textbook Source Book: The Practice of Statistics (6th Edition, 2018) Authors: Daren S. Starnes and Josh Tabor Publisher: W. H. Freeman / Bedford, Freeman & Worth
+A distribution is a tabular or visual summary of a variable's observed values—whether recorded as a sequence of numbers or discrete categories—constructed by counting the frequency of occurrences across the data (see @sec-functionViz for the equivalence between tabular summaries and their visual representations).
 
-The Definition In Chapter 1 ("Data Analysis"), Starnes and Tabor provide the standard, universally taught definition for the distribution of an observed variable: "The distribution of a variable tells us what values the variable takes and how often it takes these values. The distribution of a categorical variable lists the categories and gives either the count or the percent of individuals who fall in each category. The distribution of a quantitative variable tells us what values the variable takes and how often it takes those values."
-
-We will omit the formal mathematical definition of distribution, the theoretical perspective above and  will return to that in due time.
+By mapping raw observations to their respective counts or proportions, a distribution converts unstructured sequence data into a structured format that reveals central tendency, variability, and the relative frequency of different values.
 
 ## Examples {.unnumbered}
+To focus directly on the geometric representation of empirical distributions, the the raw sequence vectors and summary tables are omitted.
 
-We omit the raw data and the table here. The first row are based on qualitative variable. For nominal variables we can change the order of the values in the x-axis (column 2 and 3).
+The first figure illustrates distributions for qualitative variables. For nominal qualitative variables, the ordering of categories along the horizontal axis is arbitrary; reordering the categories (e.g., placing species in ascending or descending frequency order) alters the visual layout but leaves the underlying empirical distribution unchanged.
 
 ```{r}
+#| fig-cap: "Empirical distributions of qualitative variables. Bar plots represent discrete counts per category."
+#| fig-subcap:
+#|   - "Binary variable (sex)"
+#|   - "Nominal variable (lemur species)"
+#| layout-ncol: 2
+
+# Data frames
 df_sex <- data.frame(
-    sex = c("male", "female"),
-    value = c(13, 16)
+  sex = c("Male", "Female"),
+  count = c(13, 16)
 )
 
 df_lemur <- data.frame(
-    species = c("indri", "catta", "mouse"),
-    value = c(10, 20, 300)
+  species = c("Indri", "Ring-tailed", "Mouse lemur"),
+  count = c(10, 20, 300)
 )
 
-# Set layout for two side-by-side plots
-par(mfrow = c(1, 2))
+# Setup graphic parameters for clean presentation
+par(mar = c(4, 4.5, 2, 1), las = 1, cex.lab = 1.1, cex.axis = 0.95)
 
 # Plot 1: Sex distribution
 barplot(
-  height = df_sex$value,
+  height = df_sex$count,
   names.arg = df_sex$sex,
-  xlab = "sex",
-  ylab = "value"
+  xlab = "Sex category",
+  ylab = "Absolute frequency (n)",
+  col = "#4C72B0",
+  border = NA,
+  ylim = c(0, 20),
+  main = "Sex Distribution"
 )
+grid(nx = NA, ny = NULL, col = "gray90", lty = "solid")
 
 # Plot 2: Lemur species distribution
 barplot(
-  height = df_lemur$value,
+  height = df_lemur$count,
   names.arg = df_lemur$species,
-  xlab = "species",
-  ylab = "value"
+  xlab = "Species category",
+  ylab = "Absolute frequency (n)",
+  col = "#55A868",
+  border = NA,
+  ylim = c(0, 350),
+  main = "Lemur Species Distribution"
 )
-
-# Reset layout to default
-par(mfrow = c(1, 1))
+grid(nx = NA, ny = NULL, col = "gray90", lty = "solid")
 ```
 
-The first column is for a pure discrete variable, where are the second and third are for continuous with two different binning.
+The second set of figures illustrates distributions for quantitative variables. The first plot displays a discrete quantitative variable where count frequencies are pinned to distinct integer values using a lollipop plot. The second demonstrate continuous quantitative data summarized via histograms.
 
 ```{r}
+#| fig-cap: "Empirical distributions of quantitative variables."
+#| fig-subcap:
+#|   - "Discrete quantitative variable (count data)"
+#|   - "Continuous quantitative variable (coarse binning, bw = 1.0)"
+#| layout-ncol: 2
 
 set.seed(1)
 
-# Discrete data
-df_discrete <- data.frame(size = rpois(100, 5))
-df_discrete <- aggregate(n ~ size, data = transform(df_discrete, n = 1), FUN = length)
+# Generate synthetic quantitative data
+df_discrete <- data.frame(size = rpois(100, lambda = 5))
+df_discrete_tab <- aggregate(n ~ size, data = transform(df_discrete, n = 1), FUN = length)
 
-# Continuous quantitative data
-df_quant <- data.frame(size = rnorm(100, 10, 1))
+df_quant <- data.frame(size = rnorm(100, mean = 10, sd = 1))
 
-# Set layout for three side-by-side plots
-par(mfrow = c(1, 3))
+# Graphic adjustments for 2 panel layout
+par(mar = c(4.5, 4.5, 2.5, 1), las = 1, cex.lab = 1.05, cex.axis = 0.9)
 
-# Plot 1: Discrete lollipop plot
+# Panel 1: Discrete quantitative variable (Lollipop plot)
 plot(
-  df_discrete$size, df_discrete$n,
+  df_discrete_tab$size, df_discrete_tab$n,
   type = "h",
-  xlab = "size",
-  ylab = "n"
+  lwd = 2.5,
+  col = "#4C72B0",
+  xlab = "Observed count (size)",
+  ylab = "Frequency (n)",
+  ylim = c(0, max(df_discrete_tab$n) + 2),
+  main = "Discrete Variable"
 )
-points(df_discrete$size, df_discrete$n, pch = 16)
+points(df_discrete_tab$size, df_discrete_tab$n, pch = 19, col = "#4C72B0", cex = 1.3)
+grid(col = "gray90", lty = "solid")
 
-# Plot 2: Histogram (binwidth = 1)
+# Panel 2: Continuous quantitative variable (Coarse binning)
 hist(
   df_quant$size,
-  breaks = seq(floor(min(df_quant$size)), ceiling(max(df_quant$size)), by = 1),
-  main = "",
-  xlab = "size"
+  breaks = seq(floor(min(df_quant$size)), ceiling(max(df_quant$size)), by = 1.0),
+  main = "Continuous (bw = 1.0)",
+  xlab = "Measurement (size)",
+  ylab = "Frequency (n)",
+  col = "#8172B0",
+  border = "white"
 )
+grid(nx = NA, ny = NULL, col = "gray90", lty = "solid")
+```
+The figure below illustrates the impact of bin width selection on continuous quantitative distributions. Comparing the two histograms demonstrates how interval size alters visualization: a coarse bin width ($\Delta x = 1.0$) smooths over local variation to highlight overall shape, whereas a finer bin width ($\Delta x = 0.2$) reveals finer structural details and sampling noise.
 
-# Plot 3: Histogram (binwidth = 0.2)
+```{r}
+#| fig-cap: "Impact of bin width on continuous quantitative empirical distributions."
+
+
+set.seed(1)
+
+# Synthetic continuous quantitative data
+df_quant <- data.frame(size = rnorm(100, mean = 10, sd = 1))
+
+# Set layout for two side-by-side plots
+par(mfrow = c(1, 2), mar = c(4.5, 4.5, 2.5, 1), las = 1, cex.lab = 1.05, cex.axis = 0.95)
+
+# Panel 1: Continuous quantitative variable (Coarse binning)
+hist(
+  df_quant$size,
+  breaks = seq(floor(min(df_quant$size)), ceiling(max(df_quant$size)), by = 1.0),
+  main = "Coarse Binning (bw = 1.0)",
+  xlab = "Measurement (size)",
+  ylab = "Absolute frequency (n)",
+  col = "#8172B0",
+  border = "white"
+)
+grid(nx = NA, ny = NULL, col = "gray90", lty = "solid")
+
+# Panel 2: Continuous quantitative variable (Fine binning)
 hist(
   df_quant$size,
   breaks = seq(floor(min(df_quant$size)), ceiling(max(df_quant$size)), by = 0.2),
-  main = "",
-  xlab = "size"
+  main = "Fine Binning (bw = 0.2)",
+  xlab = "Measurement (size)",
+  ylab = "Absolute frequency (n)",
+  col = "#C44E52",
+  border = "white"
 )
+grid(nx = NA, ny = NULL, col = "gray90", lty = "solid")
 
-# Reset layout to default
+# Reset graphic parameters
 par(mfrow = c(1, 1))
 ```
 
 ## Tips and warnings {.unnumbered}
 
-- The distribution is the fundamental concept, whether it is theory or appplied/data driven. A variable is a map with its distribution, it has similarites as function and figure (@sec-functionViz). Except that two variables can have teh same distribution.
+- Bar charts vs. histograms: A bar chart is strictly designed for qualitative (categorical) variables, where discrete categories are visually separated by spaces to emphasize their independence and non-continuous nature. In contrast, a histogram is reserved for continuous quantitative variables, where adjacent bars touch to represent contiguous numerical intervals (bins). Bin selection in a histogram explicitly defines the width and boundaries of these intervals, directly shaping how continuous data is discretized for visualization.
 
-- Barchart vs. histogram: the former is used with qualitative variable, the second one is used with quantitative. Mostly because and define the binning.
 
-- For bar chart one can reorder the values on x-axis for qualitative variable (unless it is an ordinal variable). The standard is to put them from the least frequent to the most frequent (or inversely). Generally eases the interpretation
+- For nominal qualitative variables, category order along the horizontal axis is arbitrary, unless the variable is ordinal. A standard practice for nominal data is to sort categories by frequency (ascending or descending). This reordering significantly improves visual interpretation by making relative rank and magnitude differences instantly clear.
 
 ```{r}
+# Data frame for lemur species count
 df_lemur <- data.frame(
-    species = c("indri", "catta", "mouse"),
-    value = c(10, 20, 300)
+  species = c("indri", "mouse", "catta"),
+  value = c(10,  300, 20)
 )
 
-# Reorder species by value ascending
+# Reorder species by frequency in ascending order
 df_lemur_reordered <- df_lemur[order(df_lemur$value), ]
 
 # Set layout for two side-by-side plots
-par(mfrow = c(1, 2))
+par(mfrow = c(1, 2), mar = c(4.5, 4.5, 2.5, 1), las = 1, cex.lab = 1.05, cex.axis = 0.95)
 
-# Plot A: Original order
+# Plot A: Original categorical order
 barplot(
   height = df_lemur$value,
   names.arg = df_lemur$species,
-  xlab = "species",
-  ylab = "value"
+  xlab = "Species category",
+  ylab = "Absolute frequency (n)",
+  main = "Default Order",
+  col = "#4C72B0",
+  border = NA,
+  ylim = c(0, 350)
 )
+grid(nx = NA, ny = NULL, col = "gray90", lty = "solid")
 
-# Plot B: Reordered by value
+# Plot B: Reordered by frequency (ascending)
 barplot(
   height = df_lemur_reordered$value,
   names.arg = df_lemur_reordered$species,
   xlab = "reorder(species, value)",
-  ylab = "value"
+  ylab = "Absolute frequency (n)",
+  main = "Sorted by Frequency",
+  col = "#55A868",
+  border = NA,
+  ylim = c(0, 350)
 )
+grid(nx = NA, ny = NULL, col = "gray90", lty = "solid")
 
-# Reset layout to default
+# Reset graphic layout
 par(mfrow = c(1, 1))
 ```
 
-- It is possible to scale the value on the y-axis by showing the absolute count, relative count, or for quantitative variable is density so that the area under the curve equals to one. More a matter of interpreration. For instance if sample size is different and one wants to compare two distribution, frequency might be better.
+- The vertical axis of an empirical distribution can be scaled in multiple ways depending on the analytical goal. Common y-axis representations include absolute counts, relative counts (proportions), and probability density (where the total area of the bars equals 1). Selecting an appropriate vertical scaling depends primarily on the context of interpretation: for instance, when comparing distributions across groups with unequal sample sizes (n), relative frequencies or probability densities provide a common baseline that raw absolute counts fail to offer.
 
 ```{r}
 set.seed(1)
 df_quant <- data.frame(
-    size = rnorm(100, 10, 1)
+  size = rnorm(100, mean = 10, sd = 1)
 )
 
-# Shared breaks (binwidth = 1)
+# Shared binning sequence (width = 1.0)
 breaks_seq <- seq(floor(min(df_quant$size)), ceiling(max(df_quant$size)), by = 1)
 
-# Set layout for three side-by-side plots
-par(mfrow = c(1, 3))
+# Graphic parameters for side-by-side comparison
+par(mfrow = c(1, 3), mar = c(4.5, 4.5, 2.5, 1), las = 1, cex.lab = 1.05, cex.axis = 0.9)
 
-# Plot 1: Standard count histogram
+# Panel 1: Absolute frequency (counts)
 hist(
   df_quant$size,
   breaks = breaks_seq,
-  main = "",
-  xlab = "size",
-  ylab = "count"
+  main = "Absolute Count",
+  xlab = "Measurement (size)",
+  ylab = "Count (n)",
+  col = "#4C72B0",
+  border = "white"
 )
+grid(nx = NA, ny = NULL, col = "gray90", lty = "solid")
 
-# Plot 2: Scaled count histogram (max normalized to 1)
+# Panel 2: Relative frequency (proportions)
 h_obj <- hist(df_quant$size, breaks = breaks_seq, plot = FALSE)
-h_obj$counts <- h_obj$counts / max(h_obj$counts)
+h_obj$counts <- h_obj$counts / sum(h_obj$counts)
+
 plot(
   h_obj,
-  main = "",
-  xlab = "size",
-  ylab = "ncount"
+  main = "Relative Frequency",
+  xlab = "Measurement (size)",
+  ylab = "Proportion (p)",
+  col = "#55A868",
+  border = "white",
+  ylim = c(0, max(h_obj$counts) * 1.1)
 )
+grid(nx = NA, ny = NULL, col = "gray90", lty = "solid")
 
-# Plot 3: Density histogram
+# Panel 3: Probability density (Area = 1)
 hist(
   df_quant$size,
   breaks = breaks_seq,
   freq = FALSE,
-  main = "",
-  xlab = "size",
-  ylab = "density"
+  main = "Density",
+  xlab = "Measurement (size)",
+  ylab = "Density",
+  col = "#8172B0",
+  border = "white"
 )
+grid(nx = NA, ny = NULL, col = "gray90", lty = "solid")
 
-# Reset layout to default
+# Reset graphic parameters
 par(mfrow = c(1, 1))
 ```
 
-- A distribution summarize the raw data, thus having the distribution does not allow you to recover the raw data...
-- Looking at figure is more informative, to paraphrase: A figure is worth a thousand words, a distribution is worth a million values.
-- Some data-driven distribution can also be represented by smooth curve (think about the bell-shaped curve). This representation requires additional machinery. While informative and can be aestethically pleasing,  misused can be misleading.
 
-
-
-
-<!--
-1. The Rigorous Mathematical Statistics Definition
-In theoretical statistics, when we talk about the distribution of a variable, we are referring to a Probability Distribution, which is formalized as a function (like a Cumulative Distribution Function, or CDF).
-
-Textbook Source
-Book: Introduction to Mathematical Statistics (8th Edition, 2019)
-Authors: Robert V. Hogg, Joseph W. McKean, and Allen T. Craig
-Publisher: Pearson
-
-The Definition
-In Chapter 1 ("Probability and Distributions"), the authors define the distribution of a random variable X by its cumulative distribution function FX(x), which rigorously maps out the entire probability behavior of that variable:
-"Let X be a random variable. The cumulative distribution function (cdf) of X, denoted by FX(x), is defined by
-
-FX (x)=P(X≤x)
-
-for all real numbers x. [...] The cdf completely determines the probability distribution of the random variable X."
-
-
-Under this mathematical framework:
-
-If the variable is discrete, its distribution is rigorously defined by a Probability Mass Function (PMF): p(x)=P(X=x).
-
-If the variable is continuous, its distribution is rigorously defined by a Probability Density Function (PDF), f(x), such that P(a≤X≤b)=∫ab f(x)dx.
-
-3. The Measure-Theoretic Definition
-For advanced graduate-level mathematical statistics, a distribution is rigorously defined as a "probability measure" induced by the variable on a measurable space.
-
-Textbook Source
-Book: Mathematical Statistics (2nd Edition, 2003)
-Author: Jun Shao
-Publisher: Springer Science & Business Media
-
-The Definition
-In Chapter 1, Shao strips away the informal language entirely, defining the distribution of a variable (X) as a mathematically bound probability law:
-
-"Let X be a random variable defined on a probability space (Ω,F,P). The distribution of X is defined as the probability measure P
-X on (R,B) induced by X, i.e.,
-
-P X (B)=P(X−1(B)) = P({ω∈Ω:X(ω)∈B}) for any Borel set B∈B."
-
-Summary: What does a "Distribution" encompass?
-No matter the tier of the textbook, a distribution must provide two essential components for a variable:
-
-The Values: Every possible value (or range of values) that the variable can mathematically achieve.
-
-The Frequency/Probability: The likelihood, proportion, or exact frequency with which those values occur.
-
-Visually and analytically, we evaluate the distribution of a variable by looking at its shape (e.g., symmetric, skewed, bell-shaped), its center (e.g., mean, median), and its spread (e.g., variance, standard deviation). -->
-
-<!--
-In statistics, a distribution (or the distribution of a variable) is a foundational concept that bridges raw data with mathematical probability. Depending on whether you look at an applied context (real data) or a theoretical context (probability models), it is defined either as a summary of observed frequencies or as a mathematical function mapping probabilities to values.
-Here are the rigorous definitions from three authoritative textbooks representing these different levels of statistical analysis.
-
-1. The Applied / Data-Centric Definition
-In applied and introductory statistics, the distribution of a variable is defined as a description of what values the variable takes and how often it takes them. -->
+- Smooth curves—such are also used to represent empirical data-driven distributions. Constructing these continuous representations requires additional analytical machinery, such as kernel selection and bandwidth optimization. While smooth density curves provide an intuitive and aesthetically pleasing overview of continuous data, they can easily mislead if over-smoothed, masking true multimodal patterns or obscuring local variation in small samples.
+- The concept of a distribution is the fundamental cornerstone of statistics, bridging theoretical probability and empirical data analysis.

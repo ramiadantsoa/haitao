@@ -26,7 +26,6 @@ A qualitative variable in statistics is a characteristic of an individual unit i
 
 Qualitative variables are divided into three main types: nominal, ordinal, and binary. A nominal variable consists of categories with no inherent ordering (e.g., eye color, species, or country of origin). In contrast, an ordinal variable possesses a natural sequence or rank among its categories (e.g., infant, juvenile, adult). Note that many ordinal variables are created by binning an underlying continuous quantitative variable (@sec-quantitativeVariable). Finally, a binary variable is a special case of a qualitative variable that contains exactly two mutually exclusive categories (e.g., yes/no, true/false, or 0/1) (@sec-boolean).
 
-## Examples {.unnumbered}
 
 ## Examples {.unnumbered}
 
