@@ -6,51 +6,61 @@
 You are a genius!
 :::
 
-It is quite common to see on social media about a puzzle or equation which the reward that you will be a genius if you solve it, harvard entry exam, or 99% cannot solve this problem.
-Those are meant to show that if you solve it, you are not unique but you are a member of a certain exclusive group.
-While these post on social media probably has little source on how they get those numbers, the numbers are made up to make it sensational and grap one's attention, there is still underlying scientific/statistical reasoning behind it.
+Social media posts often feature puzzles claiming that solving them proves genius status or indicates that 99% of people cannot solve the problem. These claims are designed to suggest that solving the puzzle means an individual belongs to an exclusive, intellectual elite, group.
 
-So how do we get the 99% cannot solve it, or equivalently, only 1% can only solve it.
-The short answer is that someone asked say 1000 persons to solve a problem and only 10 solved. That means you belong to the top 1%.
-The longer answer is that we extrapolate that your smartness (IQ) is above the 99% quantile. That is, if we order the IQ of the 100 persons from lowest to the largest, your IQ will be in the top 10 highest.
+While the specific percentages in these viral posts are usually fabricated to grab attention, an underlying statistical principle forms the basis of such claims.
 
-More generally, we can rank some values from the smallest to the largest. For any stop  you can always calculate how many is below and how many is above. What happens in general is that we pick the quantile and find the value of x where split the numbers in the given proportion. The most famous quantile is the mean, where half of the number are smaller than the median, and half of them are bigger.
+Determining that 99% of people cannot solve a problem—or equivalently, that only 1% can—relies on relative position within a distribution. For instance: if 1,000 people attempt a problem and only 10 succeed, the success rate is 1%, placing those who solve it in the top 1%. Another approach connects puzzle-solving ability to a continuous quantitative variable (@sec-quantitativeVariable), such as IQ. Under this model, the top 1% corresponds to individuals whose IQ scores place them in the highest 1% of the distribution.
+
+More generally, data values can be ordered from smallest to largest to evaluate relative ranking. For any point in an ordered dataset, the proportion of values falling above or below that point can be calculated. A quantile identifies the specific value that splits a distribution into a given proportion. The median (@sec-median) is a special case of quantile (0.5 quantile), where half of the observations fall below the value and half fall above.
 
 ## Formal {.unnumbered}
-**Add interqualite range**
 
-The concept of a quantile generalizes the median. While the median splits a distribution into two equal halves (50%), quantiles split a dataset or a probability distribution into arbitrary fractions or proportions, p (where 0<p<1).
-Like other structural descriptors, its definition splits between sorting sample data in applied statistics and evaluating inverse functions in theoretical statistics.
+The concept of a quantile generalizes the median. While the median splits a distribution into two equal halves (the 0.50 quantile), quantiles divide an ordered dataset or a probability distribution into arbitrary proportions $p \in (0, 1)$.
 
-1. Applied Statistics: The Sample Quantile
-In applied statistics, the pth quantile (often called a percentile when expressed as a percentage) is a value that separates the lowest p fraction of the ordered data from the rest.
-Textbook Source
+Quantiles can be defined empirically using ordered  data or  using cumulative distribution.
 
-Book: Statistics for Business and Economics (14th Edition, 2020)
-Authors: David R. Anderson, Dennis J. Sweeney, Thomas A. Williams, Jeffrey D. Camm, and James J. Cochran
-Publisher: Cengage Learning
+In descriptive statistics, the $p$-quantile (often expressed as a percentile when multiplied by 100) is a value that separates the lowest fraction $p$ of the ordered data from the remaining fraction $1 - p$.
 
-The Definition
-In Chapter 3 ("Descriptive Statistics: Numerical Measures"), the authors define the algorithmic process for finding the pth quantile (percentile) of a finite dataset:
-"The pth percentile divides the data into two parts: approximately p percent of the observations have values less than the pth percentile, and approximately (100−p) percent of the observations have values greater than the pth percentile.
-To calculate the pth percentile, first arrange the data in ascending order. Then determine the position index $L_p$:
-$L_p = \frac{p}{100}(n + 1)$
+Consider a sample of $n$ observations ordered in non-decreasing sequence:
 
-where n is the number of observations."
-(Note: If $L_p$ is not an integer, applied textbooks use linear interpolation between the two adjacent ordered values).
+$$x_{(1)} \le x_{(2)} \le \dots \le x_{(n)}$$
 
-As this is the last chapter on basic, introduce more notation.
+To locate the $p$-quantile, first determine the position index $L_p$:
 
-In other words, if the ordered observations are denoted
-$x_{(1)},x_{(2)}, \ldots, x_{(n)}$
-​
+$$L_p = p(n + 1)$$
 
-Another definition is using CMF and CDF
+If $L_p$ is an integer, the $p$-quantile corresponds directly to $x_{(L_p)}$. If $L_p$ is not an integer, linear interpolation is applied between the adjacent ordered values $x_{(\lfloor L_p \rfloor)}$ and x_{(\lceil L_p \rceil)}.
+
+- Quartiles and Interquartile Range
+
+Quartiles are specific quantiles that divide an ordered dataset into four equal parts:
+
+- The first quartile ($Q_1$, or 0.25 quantile) separates the lowest 25% of the data from the upper 75%.
+- The second quartile ($Q_2$, or 0.50 quantile) corresponds to the sample median, dividing the dataset into two equal halves.
+- The third quartile ($Q_3$, or 0.75 quantile) separates the lowest 75% of the data from the upper 25%.
+
+The interquartile range ($\text{IQR}$) measures statistical dispersion by evaluating the spread of the middle 50% of the dataset. It is calculated as the difference between the third and first quartiles:
+
+$$\text{IQR} = Q_3 - Q_1$$
+
 
 ## Examples {.unnumbered}
-- Imagine a number 100 numbers: 1 to 50 and 1001 to 1050. The 1, 2, 3 % quantile is 1, 2 and 3 respectively, the 20% quantile is 20. The mediane is (50 + 1001)/2, the 51% quantile is 1001 and the 98 and 99% quantile is 1048 and 1049.
 
-- Visualizing a quantile from distribution
+- Consider a dataset containing 100 observations formed by two distinct clusters: the integers from 1 to 50 and the integers from 1001 to 1050.
+
+The $1\%$, $2\%$, and $3\%$ quantiles ($0.01$, $0.02$, and $0.03$ quantiles) correspond to 1, 2, and 3, respectively. Similarly, the $20\%$ quantile is 20.
+
+The median ($0.50$ quantile) falls directly between the two clusters:
+
+$$\text{Median} = \frac{50 + 1001}{2} = 525.5$$
+
+The $51\%$ quantile steps into the second cluster at 1001, while the $98\%$ and $99\%$ quantiles correspond to 1048 and 1049.
+
+
+- Visualizing quantiles within a distribution helps illustrate how cutoffs map directly to specific proportions of data.
+
+In a histogram (@sec-distribution), a quantile represents the boundary value along the x-axis below which a specified percentage of total observations falls. For instance, the value corresponding to the 8% quantile divides the lowest 8% of the data (green region) from the upper 92%. Similarly, the 75% quantile—also known as the third quartile (Q3)—marks the boundary below which 75% of the observations lie.
 
 ```{r}
 # Create data
@@ -128,8 +138,7 @@ mtext("value of the variable", side = 1, line = 3.8, cex = 0.9)
 par(mar = c(5, 4, 4, 2) + 0.1)
 ```
 
-The value of -10 represent x% and is the x% quantile, up to gray is x% quantile.
-These are called quartile and is the 25% and 75% respectively.
+The quantile can be seen naturally on with a cumulative distribution @sec-cumulativeDist. Pick the quantile percentage on the y-axis, projecting a horizontal line  (e.g., 8% or 75%) to where it intersects the cumulative curve, and then dropping a vertical line to the x-axis, which is the corresponding quantile value.
 
 ```{r}
 # 1. Generate data
@@ -225,11 +234,21 @@ par(mar = c(5, 4, 4, 2) + 0.1)
 
 ```
 
-To compute quantile from cumulative distribution, we just project from left values and see the interesection from x axis.
-
 ## Tips and warnings {.unnumbered}
-- Computing the quantile can be ordered (see first calculation of the mean) or accumalted frequency (visualization from distribution).
-- Median is the 50% quantile
-- The interquartile range is the value between 25% and 75% and is another way of representing the dispersion of a distribution. It is used in boxplot.
-- the p-value is a quantile. For two sided test, a p-value at 5% represent values below the 2.5% and 97.5% quantile. (although we did not talk anticipate). For one side, a 5% could be 5% below that or above 95%.
-- The quantile is approximated if there is not enough data (e.g. ). Such approximation might be meaningless.
+
+- The quantile is a pair: the and the value
+-
+- The median corresponds to the 0.50 quantile (50th percentile), dividing a dataset into two equal halves.
+
+- The interquartile range ($\text{IQR}$) measures the spread of the middle 50% of a distribution, calculated as the difference between the 75% and 25% quantiles ($Q_3 - Q_1$). It is a primary measure of dispersion used in boxplots.
+
+- Quantile estimates can become imprecise or unstable in small datasets. In such cases, linear interpolation or theoretical approximations may yield unreliable results.
+
+
+- A $p$-value of 0.06 is directly related to 0.06 quantile. Using the IQ metaphor in the introduction, this corresponds to three possible interpretations: an IQ in the top 6%, in the bottom 6%, or split between the top 3% and bottom 3%. The first two interpretations describe one-sided statistics, whereas the last applies to a two-sided statistic.
+
+- A $p$-value of 0.06 is directly related to a 0.06 (0.94, or 0.03-0.97)  quantile. Using the IQ metaphor from the introduction, this corresponds to three possible interpretations: an IQ in the top 6%, in the bottom 6%, or split between the top 3% and bottom 3%. The first two interpretations describe one-sided statistics, whereas the last applies to a two-sided statistic.
+
+### Notation/Semantic/Terminology {.unnumbered}
+
+- Percentiles and quantiles describe identical statistical cutoffs.Mathematically, the $p$-quantile corresponds directly to the $(100 \times p)$-th percentile. For example, the 0.50 quantile, the 50th percentile, and the median ($Q_2$) refer to the exact same value in a dataset.

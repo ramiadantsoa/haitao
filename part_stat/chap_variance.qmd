@@ -4,125 +4,146 @@
 
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
-Measuring (un)predictability
+Spread of the data
 :::
 
-Everyone has calculated their average grade to see if one passes of fail or get a mark, but, no one has ever check the variance of their grades!
-While calculating the mean is well engrained, most probably don't remember the formula for variance or standard deviation.
-And then when one performs test, we are forced to look at the variance without really understanding why. Test for homogeneity of variance or homoscedaisticy--what a fancy word. One is obviously because of lack of understanding of the test, but is the because we have been ignoring variance.
+Almost everyone has calculated an average grade to see whether a course was passed or if a specific mark was achieved, yet checking the variance of those grades is rarely considered. While calculating the mean is well understood, the formulas for variance and standard deviation are often forgotten.
 
-Due to familiarity and (usefuless) of the mean, we are comfortable comparing two numbers, and then inconsciously we assume that the distribution is the same. But a bit of thinking shold make us realize that mean is not the distribution and below is an example of three distributions with the same mean. Add uniform, normal and bimodal.
+When conducting statistical tests, analyzing variance becomes necessary—often without a clear understanding of why. Concepts such as homogeneity of variance or homoscedasticity can seem overly complex, largely because variance is routinely ignored in everyday calculations.
 
-Likewise, if we just compare the variance, we would never assume the distribution are the same. So how can we compare distribution? a parsimonious approach is to both compare the mean and the variance. The mean gives the central tendency whereas the variance give the dispersion. For nicely behaving distribution (mostly unimodal and preferably symmetrical), those two metric is the minimum criteria (if we play long enough we can up with distribution with same mean and variance but )
+Due to the familiarity and practical utility of the mean, comparing two single numbers is comfortable, which often leads to the implicit assumption that the underlying distributions are identical. However, a single mean does not fully describe a distribution, as demonstrated below by three distinct distributions sharing the exact same mean.
+
+
+```{r}
+
+set.seed(42)
+
+# Set target mean
+target_mean <- 10
+n_obs <- 1000
+
+# 1. Normal Distribution
+raw_norm <- rnorm(n_obs, mean = target_mean, sd = 2)
+data_norm <- raw_norm - mean(raw_norm) + target_mean
+
+# 2. Uniform Distribution
+raw_unif <- runif(n_obs, min = 5, max = 15)
+data_unif <- raw_unif - mean(raw_unif) + target_mean
+
+# 3. Bimodal Distribution (Mixture of two Gaussians)
+half_n <- n_obs / 2
+raw_bimodal <- c(rnorm(half_n, mean = 6, sd = 1.8), rnorm(half_n, mean = 14, sd = 1.8))
+data_bimodal <- raw_bimodal - mean(raw_bimodal) + target_mean
+
+# Compute histogram objects without plotting
+h1 <- hist(data_norm, breaks = 10, plot = FALSE)
+h2 <- hist(data_unif, breaks = 10, plot = FALSE)
+h3 <- hist(data_bimodal, breaks = 10, plot = FALSE)
+
+# Convert counts to proportions (relative frequencies)
+h1$counts <- h1$counts / sum(h1$counts)
+h2$counts <- h2$counts / sum(h2$counts)
+h3$counts <- h3$counts / sum(h3$counts)
+
+# Tight y-axis limit based on max peak across all 3 datasets
+max_prop <- max(c(h1$counts, h2$counts, h3$counts))
+y_limits <- c(0, max_prop * 1.05)
+
+# Layout for 3 side-by-side plots
+par(mfrow = c(1, 3), mar = c(4, 4, 3, 1))
+
+col_main <- "#3b82f6"
+col_grid <- "#e2e8f0"
+
+# Plot 1: Normal
+plot(h1, col = col_main, border = "white", main = "Normal", xlab = "Value", ylab = "Proportion", las = 1, ylim = y_limits)
+grid(nx = NA, ny = NULL, col = col_grid, lty = 1)
+plot(h1, col = col_main, border = "white", add = TRUE, las = 1)
+abline(v = mean(data_norm), col = "#e11d48", lwd = 2, lty = 2)
+
+# Plot 2: Uniform
+plot(h2, col = col_main, border = "white", main = "Uniform", xlab = "Value", ylab = "Proportion", las = 1, ylim = y_limits)
+grid(nx = NA, ny = NULL, col = col_grid, lty = 1)
+plot(h2, col = col_main, border = "white", add = TRUE, las = 1)
+abline(v = mean(data_unif), col = "#e11d48", lwd = 2, lty = 2)
+
+# Plot 3: Bimodal
+plot(h3, col = col_main, border = "white", main = "Bimodal", xlab = "Value", ylab = "Proportion", las = 1, ylim = y_limits)
+grid(nx = NA, ny = NULL, col = col_grid, lty = 1)
+plot(h3, col = col_main, border = "white", add = TRUE, las = 1)
+abline(v = mean(data_bimodal), col = "#e11d48", lwd = 2, lty = 2)
+
+# Reset layout
+par(mfrow = c(1, 1))
+
+```
+
+Conversely, no one would conclude that equal variances imply identical distributions. Comparing distributions effectively is often achieved through a parsimonious approach that examines both the mean and the variance. The mean indicates the central tendency, whereas the variance measures the dispersion. For well-behaved distributions—particularly those that are unimodal and symmetrical—these two metrics serve as the primary criteria for comparison.
 
 
 ## Formal {.unnumbered}
 
-In the applied side, the equation for variance is
-
-$var(X) = \frac{1}{n} \sum_{i=1}^{n} (X_i - \bar{X})^2$
-
-Notice it is similar to the mean except that $X_i$ is replaced by $(X_i - \bar{X_i})^2$. If you stare long enough, it is square distance between the mean.
-In other words, the variance is the average square distance.
-
-With some algebra, you can see that
+In descriptive statistics, the equation for variance is:
 
 $$
-  var(X) = \frac{1}{n} \sum_{i=1}^{n} (X_i)^2 - (\bar{X})^2
-$${#eq-varB}
+  \text{Var}(X) = \frac{1}{n} \sum_{i=1}^{n} (X_i - \bar{X})^2
+$${#eq-varianceA}
 
-If you want to do by hand the latter is simpler, but with a computer it is roughly the same.
+This formula is similar to the mean, except that $X_i$ is replaced by $(X_i - \bar{X})^2$, which represents the squared distance of each observation from the mean. Variance is therefore the average squared distance from the mean.
 
-The standard deviation is the square root of the variance squared
+Through algebraic manipulation, the equation can also be expressed as:
+
+$$
+  \text{Var}(X) = \frac{1}{n} \sum_{i=1}^{n} X_i^2 - \bar{X}^2
+$${#eq-varianceB}
+
+This alternative formula is often simpler for manual calculations, though both methods require minimal computational effort.
+
+The standard deviation is the square root of the variance:
+
+$$
+  \sigma = \sqrt{\text{Var}(X)}
+$${#eq-standardDeviation}
+
 
 ## Examples {.unnumbered}
- - `data = {1,1,1,1}`, mean = $\mu = 1$. The variance is
 
-    $\sigma^2 = \frac{1}{4}\left((1 - \mu)^2 + (1 - \mu)^2 + (1 - \mu)^2 +(1 - \mu)^2 \right) = \frac{1}{4} 0^2 \times 4 = 0$
-Tnis makes sense, there is not variance all numners are 1 so it makes sense the variance is 0.
+- For a trivial dataset $X = \{1, 1, 1, 1\}$, the mean is $\mu = 1$.
 
-- Imagine two schools: in one school all 20 students got 10/20,  in the other school, half of the students got 0/20 and the other half 20/20. While the means are the same 10/20, there is no variance in the first, and a variance of 100 in the second. Knowing the variance tells you the schools are different, while it might . You are more informed.
+The variance is:
 
-- In the example before
-The mean was \
-$\mu = \dfrac{1}{6}  5 + \frac{1}{6}  7 + \frac{2}{6}  10 + \frac{1}{6}  12 + \frac{1}{6} 14 = A number $ \
+$$
+\begin{align*}
+  \sigma^2 & = \frac{1}{4}\left((1 - \mu)^2 + (1 - \mu)^2 + (1 - \mu)^2 + (1 - \mu)^2\right) \\
+  & = \frac{1}{4} (0) \times 4 = 0
+\end{align*}
+$$
+This result is intutitive: because all values are identical, there is no dispersion, yielding a variance of zero.
 
-The variance is
+- Following the previous calculation of the mean (@sec-mean):
 
-$\sigma^2 = \dfrac{1}{6}  (5 - \mu)^2 + \frac{1}{6}  (7 - \mu)^2 + \frac{2}{6}  (10 - \mu)^2  + \frac{1}{6}  (12 - \mu)^2 + \frac{1}{6} (14 - \mu)^2 = A number$
+The mean was:
+
+$$\mu = \frac{1}{6}(5) + \frac{1}{6}(7) + \frac{2}{6}(10) + \frac{1}{6}(12) + \frac{1}{6}(14) = 9.67$$
+
+The variance is calculated as:
+
+$$
+\begin{align*}
+  \sigma^2 & = \frac{1}{6}(5 - \mu)^2 + \frac{1}{6}(7 - \mu)^2 + \frac{2}{6}(10 - \mu)^2 + \frac{1}{6}(12 - \mu)^2 + \frac{1}{6}(14 - \mu)^2 \\
+  & = 8.56
+\end{align*}
+$$
+
+- Consider two schools: in the first, all 20 students scored 10/20. In the second, half of the students scored 0/20 and the other half scored 20/20. Although both schools share an identical mean of 10/20, the first school has a variance of 0, whereas the second has a variance of 100. Evaluating the variance reveals differences between the two performance at the school that the mean alone fails to capture.
 
 ## Tips and warnings {.unnumbered}
-- Variance  represents the average dispersion around the mean. This dispersion is squared . Mostly because of distance, it has to be a positive number. But it is difficult to work with mathematically.
-- Because of the square, we take the square root to have an intepratable value. Above, the variance of 100 of grades is meaningless if grades are beween 0 and 20. However, the standard deviation (10 = sqrt(100)) allows us to interpert in the proper scale.
-- In the formal definition, @eq-varB, variance is number square and the mean. The square is called moment of order 2. We can also compute X^3 and more as higher moments and represent other geometry of the distribution.
-- It is pointless to calculate the mean of one number, so does the calculation of the variance of two numbers.
-- For the more advanced,a normal distribution is fully characterized by two numbers: the mean and the variance. In many distribution, which are nomral distrinution enough, comparing the two numbers should characterize the whole distribution and thus cimpare them.
-- If you compute the variance of the data, it will divide by n-1 and not by n. While here we mostly divide by n, for most of one's life, it will divide by n-1. The division by n is called population variance (@sec-population), whereas the n-1 is sample variance. We will get back to it later but essentiallu, the n-1 is the best away to estimate the population variance which we do not know.
+- Calculating the mean of a single number is pointless, as is calculating the variance of only two numbers.
 
+- Because variance relies on squared values, taking the square root yields a more interpretable metric. For instance, a grade variance of 100 is difficult to interpret on a 0 to 20 scale. Taking the standard deviation ($\sigma = \sqrt{100} = 10$) returns the measure of dispersion to the original scale of the data.
 
+- In the formal definition shown in @eq-varianceA, variance involves the squared distance from the mean, known as the second moment. Raising values to higher powers, such as $X^3$, yields higher moments that describe additional geometric features of the distribution.
 
-<!--
-$$
-\mathrm{Var}(X) = \sum_i (x_i - \mu)^2 \, p(x_i)
-$${#eq-variance_d}
+- A normal distribution is fully characterized by two parameters: the mean and the variance. For distributions that closely approximate normality, comparing these two metrics is sufficient to compare the entire underlying distributions.
 
-$$
-\mathrm{Var}(X) = \int_{-\infty}^{\infty} (x - \mu)^2 f(x)\,dx
-$$ {#eq-variance_c}
-
-
-Just like the mean, the definition of variance in statistics is strictly divided between applied statistics (the descriptive measure of spread computed from a physical sample) and theoretical statistics (the expected squared deviation of a random variable from its population mean).
-Here are the rigorous definitions for both, complete with textbook sources and raw LaTeX formatting.
-1. Applied Statistics: The Sample Variance
-In applied statistics, variance is a statistic used to measure the dispersion of an observed dataset. Crucially, the rigorous definition uses a divisor of n−1 (Bessel's correction) rather than n to ensure the sample variance is an unbiased estimator of the population variance.
-Textbook Source
-Book: Statistical Inference (2nd Edition, 2002)
-Authors: George Casella and Roger L. Berger
-Publisher: Duxbury / Thomson Learning
-The Definition
-
-In Chapter 5 ("Properties of a Random Sample"), Casella and Berger
-$S^2 = \frac{1}{n-1} \sum_{i=1}^{n} (X_i - \bar{X})^2$
-
-1. Theoretical Statistics: The Population Variance
-In statistical theory, the variance of a random variable X is defined as the mathematical expectation of its squared distance from its theoretical mean (μ).
-Textbook Source
-Book: Introduction to Mathematical Statistics (8th Edition, 2019)
-Authors: Robert V. Hogg, Joseph W. McKean, and Allen T. Craig
-Publisher: Pearson
-The Definition
-In Chapter 1 ("Probability and Distributions"), the authors define the theoretical variance (often denoted as σ
-2
-  or Var(X)):
-"Let X be a random variable with a finite mean μ=E[X]. The variance of X, denoted by σ
-2
-  or Var(X), is defined by
-$\sigma^2 = \operatorname{Var}(X) = \mathbb{E}[(X - \mu)^2]$
-"
-
-Depending on the underlying distribution of the variable, this expectation is evaluated using two distinct mathematical operations:
-A. The Discrete Theoretical Case
-If X is discrete with space D and probability mass function p(x):
-$\sigma^2 = \sum_{x \in \mathcal{D}} (x - \mu)^2 p(x)$
-
-B. The Continuous Theoretical Case
-If X is continuous with probability density function f(x):
-$\sigma^2 = \int_{-\infty}^{\infty} (x - \mu)^2 f(x) \, dx$
-
-
-
-1. The Theoretical "Shortcut" Formula
-In textbook proofs and algebraic manipulations, the theoretical definition is frequently re-expressed using a foundational identity derived from the linearity of expectation.
-
-Textbook Source
-Book: Mathematical Statistics and Data Analysis (3rd Edition, 2007)
-Author: John A. Rice
-Publisher: Cengage Learning
-The Definition
-
-In Chapter 4 ("Expected Values"), Rice demonstrates the standard computational theorem for variance:
-"Theorem: If X has a finite mean μ, then
-$\operatorname{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2$
-
-That is, the variance is the expected value of the square minus the square of the expected value." -->
-
+- Variance can be calculated using two main formulas: one in which the sum of squared deviations is divided by $n$ (@eq-varianceA), and another in which it is divided by $n - 1$. Standard functions in R compute variance using the $n - 1$ denominator. Division by $n$ defines the population variance (@sec-population), which represents complete population data (likely unknown). Division by $n - 1$ defines the sample variance, providing an estimate of the unknown (true) population variance. Consequently, the $n - 1$ formulation is the standard approach in empirical analysis.

@@ -6,147 +6,168 @@
 Chameau unimodal, dromadaire bimodal
 :::
 
-In french there is mode (feminine word) which means fashion and mode (masculine) meaning statistical mode. Inutitively, mode is just the popular category and thus very linked to its feminine definition.
-The mode is trivial intepretation if we look at the distribution (@sec-distribution), it is just the one (or those) with the highest frequency.
+In French, *la mode* (feminine) means fashion, while *le mode* (masculine) refers to the statistical mode.Yet, fashion is precisely the concept behind the statistical mode^[A british statistican defined the term, then french academics integrated the concept and decided that it should be masculine to fit their principles].  Conceptually, the statistical mode simply represents the most popular category, closely reflecting its everyday meaning. Looking at a distribution (@sec-distribution), its interpretation is straightforward: it is the value or category with the highest frequency.
 
-There are three popular metric for measuring central tendency, the mean (@sec-mean), the mode (this section) and the median (@sec-median). Unlike mean and median, this naturally apply to qualitative and quantitative variables. And best with qualitative variable. While we more or less know who to compute the mean and the median, we are not used to computing the median. Graphical is most natural.
+The mode is one of three main metrics used to measure central tendency, along with the mean (@sec-mean) and the median (@sec-median). Unlike the mean and median, the mode works naturally for both categorical and numerical data, and it is especially useful for categorical variables. While most people are accustomed to calculating the mean, computing the mode is less common in everyday practice. Nevertheless, it is simple to identify directly from a distribution (@sec-distribution).
 
 ## Formal {.unnumbered}
 
+The mode is the value that appears most often in a dataset. If $X$ is a qualitative or discrete variable, the mode is the value $x$ with the highest frequency of occurrence. For a continuous variable, the mode corresponds to the bin with the highest frequency, which means the exact mode depends on the choice of bin size and boundaries.
 
-1. Applied Statistics: The Sample Mode
-In applied data analysis, the mode is an empirical descriptive statistic used primarily for categorical or discrete data.
+A mode does not have to be unique. Distributions can have multiple local peak values, leading to bimodal or multimodal distributions.
 
-Textbook Source
-Book: Statistical Methods for the Social Sciences (5th Edition, 2018)
-Author: Alan Agresti
-Publisher: Pearson
-
-The Definition
-In Chapter 3 ("Descriptive Statistics"), Agresti defines the mode based on empirical frequency:
-"The mode is the value that occurs most frequently. [...] The mode is more commonly used with categorical data than with quantitative data. For example, the modal choice for the most important national problem is the category with the highest frequency."
-The text notes that a dataset can be bimodal if two distinct values tie for the highest frequency, or multimodal if there are more than two.
+Finally, in the rare case where a distribution is completely flat—meaning all values occur with the exact same frequency—the mode is undefined.
 
 ## Examples {.unnumbered}
 
+The mode is generally inferred directly from a visual distribution.
 
+- For categorical/qualitative variables:
+Mouse is the single mode (unimodal) on the left, whereas both catta and mouse are modes (bimodal) on the right.
 ```{r}
 df_lemur <- data.frame(
     species = c("indri", "catta", "mouse"),
     value = c(10, 20, 300),
-    valueb = c(10, 20, 20)
+    valueb = c(10, 30, 30)
 )
+
+# Colors
+col_base <- "#94a3b8"
+col_mode <- "#e11d48"
 
 # Set layout for two side-by-side plots
-par(mfrow = c(1, 2))
+par(mfrow = c(1, 2), mar = c(4, 4, 2, 1))
 
-# Plot A
-barplot(
+# Plot A: Unimodal
+cols_a <- c(col_base, col_base, col_mode)
+b_a <- barplot(
   height = df_lemur$value,
-  names.arg = df_lemur$species,
-  ylab = "value"
+  names.arg = rep("", 3),
+  ylab = "Count",
+  col = cols_a,
+  border = NA,
+  las = 1,
+  ylim = c(0, 320)
 )
+grid(nx = NA, ny = NULL, col = "#e2e8f0", lty = 1)
+barplot(height = df_lemur$value, col = cols_a, border = NA, add = TRUE, las = 1)
+axis(1, at = b_a[1:2], labels = df_lemur$species[1:2], tick = FALSE, col.axis = "#475569")
+axis(1, at = b_a[3], labels = df_lemur$species[3], tick = FALSE, col.axis = col_mode, font = 2)
 
-# Plot B
-barplot(
+# Plot B: Bimodal
+cols_b <- c(col_base, col_mode, col_mode)
+b_b <- barplot(
   height = df_lemur$valueb,
-  names.arg = df_lemur$species,
-  ylab = "valueb"
+  names.arg = rep("", 3),
+  ylab = "Count",
+  col = cols_b,
+  border = NA,
+  las = 1,
+  ylim = c(0, 35)
 )
+grid(nx = NA, ny = NULL, col = "#e2e8f0", lty = 1)
+barplot(height = df_lemur$valueb, col = cols_b, border = NA, add = TRUE, las = 1)
+axis(1, at = b_b[1], labels = df_lemur$species[1], tick = FALSE, col.axis = "#475569")
+axis(1, at = b_b[2:3], labels = df_lemur$species[2:3], tick = FALSE, col.axis = col_mode, font = 2)
 
-# Reset plotting settings back to default
+# Reset plotting layout
 par(mfrow = c(1, 1))
 ```
 
-Mouse is the modal on the left, but catta and mouse are both mode on the right.
 
-For discrete variable
+- For discrete variables:
+The mode is 4, as it has the highest count.
 
 ```{r}
 set.seed(1)
-df_discrete <- data.frame(
-    size = rpois(100, 5)
-)
+df_discrete <- data.frame(size = rpois(100, 5))
 df_discrete <- aggregate(n ~ size, data = transform(df_discrete, n = 1), FUN = length)
 
-# Create the lollipop plot in Base R
+# Find mode
+mode_val <- df_discrete$size[which.max(df_discrete$n)]
+col_vector <- ifelse(df_discrete$size == mode_val, "#e11d48", "#64748b")
+
+par(mar = c(4, 4, 2, 1))
 plot(
   df_discrete$size, df_discrete$n,
-  type = "h",
-  xlab = "size",
-  ylab = "n"
+  type = "n",
+  xlab = "Size",
+  ylab = "Count",
+  xaxt = "n",
+  las = 1,
+  bty = "l"
 )
-points(df_discrete$size, df_discrete$n, pch = 16)
+grid(nx = NA, ny = NULL, col = "#e2e8f0", lty = 1)
+
+# Draw stem lines and points
+segments(
+  x0 = df_discrete$size, y0 = 0,
+  x1 = df_discrete$size, y1 = df_discrete$n,
+  col = col_vector, lwd = 2
+)
+points(df_discrete$size, df_discrete$n, pch = 16, cex = 1.4, col = col_vector)
+
+# Highlighted axis labels
+non_modes <- df_discrete$size[df_discrete$size != mode_val]
+axis(1, at = non_modes, labels = non_modes, col.axis = "#475569")
+axis(1, at = mode_val, labels = mode_val, col.axis = "#e11d48", font = 2)
 ```
 
-The mode is 4 for discrete variable.
+
+- For continuous variables: Be careful when identifying the mode of a continuous variable from a histogram. Because bin widths and boundaries are arbitrary, different binning choices can alter which bin appears as the mode.
+
 
 ```{r}
-set.seed(1)
+set.seed(123)
+df_quant <- data.frame(size = rnorm(100, 10, 1))
 
-df_quant <- data.frame(
-    size = rnorm(100, 10, 1)
-)
+par(mfrow = c(1, 2), mar = c(4, 4, 2, 1))
 
-# Set layout for two side-by-side plots
-par(mfrow = c(1, 2))
+plot_hist_with_mode <- function(data, bin_width) {
+  brks <- seq(floor(min(data$size)), ceiling(max(data$size)), by = bin_width)
+  h <- hist(data$size, breaks = brks, plot = FALSE)
 
-# Plot A: Histogram with binwidth = 1
-hist(
-  df_quant$size,
-  breaks = seq(floor(min(df_quant$size)), ceiling(max(df_quant$size)), by = 1),
-  main = "",
-  xlab = "size"
-)
+  max_idx <- which.max(h$counts)
+  cols <- rep("#94a3b8", length(h$counts))
+  cols[max_idx] <- "#e11d48"
 
-# Plot B: Histogram with binwidth = 0.2
-hist(
-  df_quant$size,
-  breaks = seq(floor(min(df_quant$size)), ceiling(max(df_quant$size)), by = 0.2),
-  main = "",
-  xlab = "size"
-)
+  plot(h, col = cols, border = "white", main = "", xlab = "Size", ylab = "Frequency", las = 1, xaxt = "n")
+  grid(nx = NA, ny = NULL, col = "#e2e8f0", lty = 1)
+  plot(h, col = cols, border = "white", add = TRUE, las = 1)
 
-# Reset layout to default
+  # Standard tick marks and labels
+  axis(1, col.axis = "#475569")
+
+  # Mode midpoint value
+  mode_mid <- h$mids[max_idx]
+
+  # Y-position for the text (placed slightly higher than standard tick labels, without any tick mark)
+  y_pos <- par("usr")[3] - (diff(par("usr")[3:4]) * 0.035)
+
+  text(
+    x = mode_mid,
+    y = y_pos,
+    labels = round(mode_mid, 1),
+    col = "#e11d48",
+    font = 2,
+    xpd = TRUE,
+    adj = c(0.5, 0)
+  )
+}
+
+# Plot A: Binwidth = 1
+plot_hist_with_mode(df_quant, 1)
+
+# Plot B: Binwidth = 0.2
+plot_hist_with_mode(df_quant, 0.2)
+
+# Reset layout
 par(mfrow = c(1, 1))
 ```
-
-Careful when computing the mode for continuous quantitative variable (i.e. visual interpration from histogram). Because the binwidth are abitrary, one can choos a bin over another.
 
 
 ## Tips and warnings {.unnumbered}
-- the mode is the same as the mean and median only if the distribution is symmetric and unimodal (e.g. when bell shaped curve).
-- when the distribution leans to the right or leans to left (called skewed), there is a certain order but I never found a practical way when to use that information.
-- The mode does not need to be unique but can also not exist, for instance if the distribution is flat.
 
-
-<!--
-1. Theoretical Statistics: The Distribution Mode
-In mathematical statistical theory, the mode is defined rigorously as the maximizing argument (argmax) of a probability distribution function.
-
-Textbook Source
-Book: Kendall's Advanced Theory of Statistics, Volume 1: Distribution Theory (6th Edition, 2009)
-Authors: Alan Stuart and J. Keith Ord
-Publisher: Wiley
-
-The Definition
-In Chapter 3 ("Moments and Cumulants: Measures of Location and Dispersion"), Stuart and Ord formalize the mode for a continuous probability density function f(x) using differential calculus:
-"The mode is a value of the variable for which the frequency function or density function is a maximum. For a continuous distribution with a differentiable density function f(x), a mode is a solution of the equation:
-$\frac{df(x)}{dx} = 0$
-subject to the condition that the first non-vanishing derivative is of even order and negative, which for practical purposes usually means:
-$\frac{d^2f(x)}{dx^2} < 0$"
-
-
-1. The Modern Optimization Definition (Unified)
-In modern data science and mathematical statistics, the definition is often unified using optimization notation, applicable to both the Probability Mass Function (PMF) for discrete variables and the Probability Density Function (PDF) for continuous variables.
-
-Textbook Source
-Book: Mathematical Statistics and Data Analysis (3rd Edition, 2007)
-Author: John A. Rice
-Publisher: Duxbury Advanced Series / Cengage Learning
-
-The Definition
-While explaining the shapes of distributions in Chapter 2, the concept is formalized as:
-"A mode of a probability distribution with PMF or PDF f(x) is a point x0 at which f(x) achieves a local maximum. If x0 maximizes f(x) over its entire support, it is the global mode."
-Formally, the global mode m is expressed as:
-$m = \operatorname{argmax}_{x} f(x)$ -->
+- The mode equals the mean and median only when the distribution is symmetric and unimodal, such as in a standard bell-shaped curve.
+- There is a common rule of thumb stating that for a right-skewed distribution, mode > median > mean (and the reverse for a left-skewed distribution). While useful to know theoretically, this relationship has little practical application.
+- Always inspect the distribution before running statistical tests, as most standard tests are not designed for multimodal data. If a distribution is bimodal or multimodal, special analytical steps must be taken.

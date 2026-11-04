@@ -7,96 +7,56 @@
 Misasaka ny lalana!
 :::
 
-Linguists estimate that there are over 7,000 languages in the world. At the popular end of the spectrum, approximately 1.18 billion people speak Mandarin Chinese and 609 million speak Hindi. At the rare end of the spectrum, there are languages with as few as one known speaker, such as Taushiro in Peru and Kaixana in Brazil. Below is the distribution of language as the number of speakers.
+Linguists estimate that there are over 7,000 languages in the world. At one end of the spectrum, approximately 1.18 billion people speak^[native speakers] Mandarin Chinese and 609 million speak Hindi. At the other end, some languages have as few as one known speaker, such as Taushiro in Peru and Kaixana in Brazil.
 
-On average, a language is spoken by ~ 1 million people, but is that informative? We could look at the variance @sec-variance  and then the standard deviation and realize that it is highly variable (as seen by the two spectrum above.). If we use the median (see below on how to compute that), the summary statistic is about 8000 speaker per langauge.
-Which number do you find more useful? If you are some how wants to protect the language, you might use the median and says that about 3500 languages are spoken by less than a 1000 people. And if you want to you might use the mean.
+On average, a language is spoken by roughly 1 million people, but this metric can be misleading. The standard deviation is approximately 17.5 million, reflecting extreme variability across the dataset^[A standard deviation more than ten times greater than the mean demands on reflection on the distribution of such data]. By contrast, the median is approximately 8,000 speakers per language.
 
-The major connundrum is whether one should use the mean or the mediane to compare two distribution (as this is incomplete (see @sec-mean)). But Being more informed will allow a more informed decision.
+Which metric is more useful depends on the perspective being highlighted. An argument for language preservation might emphasize the median, noting that approximately 3,500 languages are spoken by fewer than 8,000 people. Conversely, an argument minimizing the urgency of language endangerment might cite the mean, pointing out that, on average, a language has many speakers.
+
+A central conundrum is whether to use the mean or the median when comparing distributions (see also @sec-variance). There is no single correct choice; rather, understanding the existence and behavior of a metric should lead to a more informed decision.
 
 ## Formal {.unnumbered}
-<!-- The definition of the median transitions from a simple algorithmic sorting rule in applied statistics to a more sophisticated optimization and probability criteria in theoretical statistics.
-Here are the rigorous definitions for both, complete with textbook sources and raw LaTeX formatting. -->
 
-1. Applied Statistics: The Sample Median
-<!-- In applied data analysis, the median is an empirical descriptive statistic of central tendency. It is defined as the middle value when the data points are ordered from smallest to largest. Because of this, its exact formula changes depending on whether the sample size n is odd or even.
+In descriptive statistics, the median is determined by ordering the data values in non-decreasing order:
 
-Textbook Source
-Book: Introductory Statistics (10th Edition)
-Author: Neil A. Weiss
-Publisher: Pearson -->
+$$x_{(1)} \le x_{(2)} \le \dots \le x_{(n)}$$
 
-The Definition
-In Chapter 3 ("Descriptive Measures"), Weiss defines the sample median rigorously based on sample size positioning:
-"Arrange the data in increasing order.
-If the number of observations (n) is odd, the median is the observation exactly in the middle of the ordered list.
-If the number of observations (n) is even, the median is the mean of the two middle observations in the ordered list.
-In other words, if the ordered observations are denoted
-$x_{(1)},x_{(2)}, \ldots, x_{(n)}$
-​
-, the median $\tilde{X}$ is
+If the sample size $n$ is odd, the median is the value located exactly in the middle of the ordered observations. If $n$ is even, the median is the arithmetic mean of the two central observations.
 
-$\tilde{x} = \begin{cases} x_{\left(\frac{n+1}{2}\right)} & \text{if } n \text{ is odd} \\ \frac{1}{2}\left(x_{\left(\frac{n}{2}\right)} + x_{\left(\frac{n}{2}+1\right)}\right) & \text{if } n \text{ is even} \end{cases}$
+Formally, the sample median $\tilde{x}$ is defined as:
+
+$$
+    \tilde{x} = \begin{cases} x_{\left(\frac{n+1}{2}\right)} & \text{if } n \text{ is odd} \\[8pt] \frac{1}{2}\left(x_{\left(\frac{n}{2}\right)} + x_{\left(\frac{n}{2}+1\right)}\right) & \text{if } n \text{ is even} \end{cases}
+$$
 
 ## Examples {.unnumbered}
-The same mediane for the following data
- 1.  {1, 1, **3**, 3, 3};
- 2.  {1, 2, **3**, 4, 5};
- 3.  {1, 3, **3**, 10, 1000}.
- 4.  {-100, 1, **3**, 3, 5}
 
-The median of
+The median, shown in bold, is identical for each of the following datasets:
 
- 1.  1, 1, 3, 3: **2**
- 2.  1, 2, 3, 4: **2.5**
- 3.  1, 3, 3, 10: **3**
- 4.  -100, 1, 3, 3: **2.5**
+1. $\{1, 1, \mathbf{3}, 3, 3\}$
+2. $\{1, 2, \mathbf{3}, 4, 5\}$
+3. $\{1, 3, \mathbf{3}, 10, 1000\}$
+4. $\{-100, 1, \mathbf{3}, 3, 5\}$
+5. $\{-1, -1, -1, -1, \mathbf{3}, 4, 5, 6\}$
 
-If you ever do by hand sort by smallest to largest and go halfway. Of course work for few numbers but uncessary for larger one.
+For an even number of observations, the median is calculated as the average of the two middle values:
+
+1. $\{1, 1, 3, 3\} \rightarrow \text{median} = \frac{1 + 3}{2} = 2$
+2. $\{1, 2, 3, 4\} \rightarrow \text{median} = \frac{2 + 3}{2} = 2.5$
+3. $\{1, 3, 3, 10\} \rightarrow \text{median} = \frac{3 + 3}{2} = 3$
+4. $\{-100, 1, 3, 3\} \rightarrow \text{median} = \frac{1 + 3}{2} = 2.0$
+
+The diffifult aspect of determining the median by hand is ordering the dataset.
 
 ## Tips and warnings {.unnumbered}
-- Median is used in boxplot
-`- The major advantage of a median over a mean is that it is less to extreme values or outliers. It is up to one's judgement if that is or not.
-- If uncertain, maybe compute both mean and median (one line in R) as an exploration and see how much they differ and how that will affect your conclusion.
-- Another example of picking a single number, now three as measure of central tendency (mean, mode, mediane). As we progress, we are already more informed in which one to choose. But there are also more and more metrics to report our data.
-- Median is simply the 50% quantile @sec-quantile.
-- And as we are more informed, we could also make more honest and deliberate. While it can allow to fool people (hoopefully enough consious), better it allows you to be less fooled,
+- The median is the primary measure of central tendency used in boxplots.
 
+- A major advantage of the median compared to the mean is its resistance to extreme values and outliers. Whether this property is desirable depends on the context.
 
+- If unsure, calculating both the mean and the median allows for an assessment of how much they diverge and how that difference might influence conclusions.
 
-<!--
-1. Theoretical Statistics: The Distribution Median
-In theoretical statistics, the median of a random variable X is defined as any real number m that splits the probability distribution into two equal halves of at least 50%. It is rigorously formalized using inequalities containing the Cumulative Distribution Function (CDF).
+- Part of learning statistics is understanding the behavior of various metrics. At this stage, three common measures of central tendency have been covered: the mean, the median, and the mode. More to metrics come!
 
-Textbook Source
-Book: Statistical Inference (2nd Edition, 2002)
-Authors: George Casella and Roger L. Berger
-Publisher: Duxbury / Thomson Learning
+- The median is the 50th percentile, or 0.50 quantile (@sec-quantile).
 
-The Definition
-In Chapter 2 ("Fractional Populations and Medians"), Casella and Berger present the unifying probability definition that accounts for both discrete and continuous distributions:
-"A median of a random variable X is a real number m satisfying
-$P(X \le m) \ge \frac{1}{2} \quad \text{and} \quad P(X \ge m) \ge \frac{1}{2}$"
-
-The Continuous Case Simplification
-As the authors point out, if X is a continuous random variable with a continuous CDF FX(x), the inequalities collapse into a single strict equation:
-$F_X(m) = \int_{-\infty}^{m} f(x) \, dx = \frac{1}{2}$
-
-1. The Theoretical "Optimization" Definition
-Advanced mathematical statistics textbooks also define the theoretical median as the absolute distance minimizer. While the population mean minimizes the expected squared error, the population median minimizes the expected absolute error.
-
-Textbook Source
-Book: Mathematical Statistics (2nd Edition, 2003)
-Author: Jun Shao
-Publisher: Springer Science & Business Media
-
-The Definition
-In Chapter 1, when discussing properties of parameters, the median is defined as an optimization solution:
-"A median of X (or of its distribution PX
-​) is any constant m that minimizes the expected absolute loss:
-$\mathbb{E}|X - m|$
-"
-Formally, this can be written using optimization notation:
-$m = \operatorname{argmin}_{c} \mathbb{E}|X - c|$ -->
-
-
+- There is no convential notation for the median.

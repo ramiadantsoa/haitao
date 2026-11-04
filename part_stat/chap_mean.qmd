@@ -1,4 +1,4 @@
-# Mean {#sec-mean}
+# Arithmetic mean {#sec-mean}
 
 {{< include ../preamble.qmd >}}
 
@@ -12,110 +12,64 @@ Ity kosa azoko e! Sa?
 :::
 
 
-Among all concepts, the mean is probably the one that everyone is familiar with a sight of relief. Everyone is capable of calculating the mean of a sequence: "the somme des nombres divisée par le nombre d'effectif". Yet, when one presents the equation for calculating the mean (see formal below @eq-mean_A and @eq-mean_B), it could appear inaccessible. Maybe with @sec-sum,  it is no longer the case.
+Among all statistical concepts, the mean is likely the one most familiar to people, bringing a sense of relief. Almost everyone knows how to calculate the average of a series of numbers: "the sum of all values divided by the total count." Yet, when presented with the formal mathematical equation (see @eq-mean_B and @eq-mean_C), it can look intimidating. Fortunately, these formulas become clear after reading chapter @sec-sum on mathematical notation.
 
-There are three equivalent formulas to calculate the mean.
-The part above is level one when calculating the mean. The other example is related to calculating the mean when there are coefficient involved: you multiply the grade with the coefficient, sum the whole thing, and then divide the sum of all the coefficients.
+There are three main ways to calculate the mean. The simple "sum divided by count" is the standard practical method. A second method applies when weights or coefficients are involved, such as with course grades. In that case, you multiply each grade by its coefficient, sum those products, and divide the total by the sum of all coefficients.
 
-The third and final formula is to multiply each value by its frequency of occurence and then add these products. Or in the example of grade, instead of multiplying by the coefficient, you multiply by the coefficient divided by the sum of all coefficient. That final formulation allows us to calculate the mean using the distribution @sec-distribution, that is the weight is simply the frequency. Whereas the first approach is the simplest to implement, the last one is a generalized version that could be extended later.
+The third and most general formula multiplies each value by its relative frequency of occurrence and sums the results. In the grades example, instead of dividing by the sum of coefficients at the end, you multiply each grade by its proportion of the total weight. This general approach allows you to calculate the mean directly from a frequency distribution (@sec-distribution).
 
-The mean is probably the most used metric to summarize a data. However, boiling a sequence to single number means that many information (potentially valuable) are lost. If one student had 10/20 and 10/20 in two test, and another student has 5/20 and 15/20. One has to be careful to cimpare only the mean of the students. Finally, the most used one does not mean it is the best nor the only choice.
-
+While the mean is the most common metric used to summarize data, reducing a set of numbers to a single value means losing helpful detail. For instance, a student with test scores of 10/20 and 10/20 has the exact same average as a student with 5/20 and 15/20, even though their performance patterns are completely different. Ultimately, being the most common summary metric does not make the mean the best or only option for every situation.
 
 ## Formal {.unnumbered}
 
-The mean for data is applied stat
+Here are three equations for calculating the mean. If the values are denoted by $x_i$ and there are $n$ observations, the practical one is:
 
-<!-- $$
-    \bar{X} = \frac{1}{n} \sum_{i=1}^{n} X_i
-$${#eq-mean-1} -->
 $$
-   \bar{X} =  \mu = \frac{1}{n} \sum_{i=1}^{n} x_i
+   \bar{X} = \mu = \frac{1}{n} \sum_{i=1}^{n} x_i
 $${#eq-mean_A}
 
-The second version is that same $x_i$ repeats $n_i$ times, and $\sum n_i  = n$ the equation for the mean is
+The second formula is the same; if $x_i$ repeats $n_i$ times (the frequency weight) with $\sum n_i = n$, the equation for the mean is:
 
 $$
-    \mu =  \frac{1}{n}\sum_{i} n_i \, x_i
+    \mu = \frac{1}{n} \sum_{i} n_i \, x_i
 $${#eq-mean_B}
 
-The third version is instead of multiplying by $n_i$ we multiply by $p_i = \frac{n_i}{n}$
+The general formula is obtained by multiplying each $x_i$ by $p_i = \frac{n_i}{n}$:
 
 $$
-    \mu =  \sum_{i} p_i \, x_i
+    \mu = \sum_{i} p_i \, x_i
 $${#eq-mean_C}
 
+In other words, the $n$ outside the $\sum$ in @eq-mean_B is distributed inside the $\sum$.
+
 ## Examples {.unnumbered}
-Assume the grade is {5, 7, 10, 10, 12, 14}.
 
-V1: $\dfrac{5 + 7 + 10 + 10 + 12 + 14}{6}$ \
+Assume the grades of six students in a class are: $\{5, 7, 10, 10, 12, 14\}$. Below are three formulas to calculate the mean :
 
-V2: $\dfrac{1 \times 5 + 1 \times 7 + 2 \times 10 + 1 \times 12 + 1 \times 14}{6}$ \
+1. $\dfrac{5 + 7 + 10 + 10 + 12 + 14}{6}$
 
-V3: $\dfrac{1}{6}  5 + \frac{1}{6}  7 + \frac{2}{6}  10 + \frac{1}{6}  12 + \frac{1}{6} 14$ \
+2. $\dfrac{1 \times 5 + 1 \times 7 + 2 \times 10 + 1 \times 12 + 1 \times 14}{6}$
 
-V3 is just V2 where we divided the coefficient by the common denominator.
-
+3. $\dfrac{1}{6} \times 5 + \dfrac{1}{6} \times 7 + \dfrac{2}{6} \times 10 + \dfrac{1}{6} \times 12 + \dfrac{1}{6} \times 14$
 
 ## Tips and warnings {.unnumbered}
-- Mean is a metric that calculate captures the central tendency of the data.
-- If the distribution is symmetric (left mirror right) the mean is the x value location of the vertical symmetry.
-- Mean only works with a quantitative variable so that the $n_i \times x_i$ makes sense.
-- Semantic: mean and average are synonymous, expectation or expected value E[X] of firest order moment but the latter is used but mostly in the theoretical world.
-- Mean can be misleading if there are exceeding large number. For instance intepreting the mean of 1, 1, 1, 1, 10 million is probably meaningless.
-- Imagine we travel from Fianarantsoa to Ambalavao, if 30 km/h and 60 km/h, the average speed is not (30 + 60) / 2 = 45 km/hr.
-- In this entire section, we mostly talked about arithmetic mean. There are different ways of calculating the mean, namely the geometric and the harmonic mean. For instance, in the speed example above calculating the harmonic mean will give the correct/intepreatble mean.
 
+- The mean serves as a primary summary metric designed to capture the central tendency of a dataset, it is the center of mass (or gravity) of the data.
 
-<!--
-## If you want to know more {.unnumbered}
-geometric and harmonic average -->
+- The arithmetic mean is only valid  for quantitative variables otherwise  ($n_i \times x_i$ or $\sum x_i$) is not defined (@sec-quantitativeVariable)
 
+- The mean is highly sensitive to outliers or extreme skewness. For instance, computing the mean of the sequence $(1, 1, 1, 1, 10\,000\,000)$ yields $2\,000\,000.4$, beyond the numerical value, it does not have a practical intepretation.
 
-<!-- $$
-    \mu = \int_{-\infty}^{\infty} x f(x)\,dx
-$${#eq-mean_c} -->
+- Averaging can yield incorrect conclusions when dealing with rates or ratios. For example, if you travel from Fianarantsoa to Ambalavao covering equal distances at $30\text{ km/h}$ and $60\text{ km/h}$, your overall average speed is **not**  $\frac{30 + 60}{2} = 45\text{ km/h}$.^[Left to the reader as an exercise to re-calculate the true mean spped]
 
-<!--
-When analyzing the concept of "the mean" in statistics, textbooks bifurcate the definition based on the split you noted: applied statistics (which deals with observed data from a sample) and theoretical statistics (which deals with the underlying probability distributions and expected values of a population).
-Here are the rigorous definitions for both, complete with textbook sources and raw LaTeX formatting.
+- There are alternative definitions to calculate the mean (geometric and harmonic mean)  In the speed example above, calculating the harmonic mean provides the correct average trip speed^[Left to the reader as an exercise].
 
-1. Applied Statistics: The Sample Mean
-In applied statistics, the mean is an empirical statistic computed directly from an observed sample of data. It serves as the primary measure of central tendency for a dataset.
+- When the distribution is perfectly symmetric (where the left side of the distribution mirrors the right), the mean corresponds exactly to the horizontal value ($x$) located along the vertical line of symmetry--which is the center of gravity.
 
-Textbook Source
-Book: Statistical Inference (2nd Edition, 2002)
-Authors: George Casella and Roger L. Berger
-Publisher: Duxbury / Thomson Learning
+### Notation/Semantic/Terminology {.unnumbered}
 
-The Definition
-In Chapter 5 ("Properties of a Random Sample"), Casella and Berger define the sample mean as a functional mapping of a finite sequence of observations:
-Definition 5.2.2: "Let X1,…,Xn be a random sample of size n from a population. The sample mean is the statistic defined by
+- *mean* and *average* are synonymous, referring to the arithmetic measure of central location computed from data.
 
-$\bar{X} = \frac{1}{n} \sum_{i=1}^{n} X_i$
+- In probability theory and inferential statistics, the theoretical counterpart of the empirical mean is the *expected value* or *expectation*, denoted as $\mathbb{E}[X]$. If dealing with a population @sec-population, they are the same. But when sampling is involved, the empirical mean ($\bar{x}$) is an estimate of the population mean.
 
-1. Theoretical Statistics: The Population Mean (Expected Value)
-In statistical theory, the mean of a variable is not calculated from data points. Instead, it is defined as the mathematical expected value (E[X] or μ) of its probability distribution. This represents the long-run average value if an experiment were repeated infinitely.
-
-Textbook Source
-Book: Introduction to Mathematical Statistics (8th Edition, 2019)
-Authors: Robert V. Hogg, Joseph W. McKean, and Allen T. Craig
-Publisher: Pearson
-
-The Definition
-In Chapter 1 ("Probability and Distributions"), the authors define the theoretical mean for both discrete and continuous domains under the umbrella of Mathematical Expectation.
-A. The Discrete Theoretical Mean
-"Let X be a discrete random variable with a probability mass function (pmf) p(x) and space D. If the sum converges absolutely, the mean (or expected value) of X, denoted by μ or E[X], is defined by
-$\mu = \mathbb{E}[X] = \sum_{x \in \mathcal{D}} x \cdot p(x)$
-"
-B. The Continuous Theoretical Mean
-"Let X be a continuous random variable with a probability density function (pdf) f(x). If the integral converges absolutely, the mean (or expected value) of X is defined by
-$\mu = \mathbb{E}[X] = \int_{-\infty}^{\infty} x \cdot f(x) \, dx$
-"
-
-Summary: How Theory and Application Intersect
-The relationship between applied mean and theoretical mean is the foundation of inference.
-As defined by the Weak/Strong Law of Large Numbers (LLN) in theory textbooks, if you repeatedly draw a larger and larger sample size (n→∞) from an underlying population distribution, your applied sample mean (bar(X)) is guaranteed to mathematically converge to the theoretical population mean (μ):
-
-$\lim_{n \to \infty} P(|\bar{X}_n - \mu| < \varepsilon) = 1 \quad \text{for any } \varepsilon > 0$
- -->
+- In mathematics, the mean is formalised as the **first moment** (often written as $\mu_1$ or $\mathbb{E}[X^1]$). Higher-order moments describe other structural properties of a distribution—such as variance (second central moment) and skewness (third standardized moment).
