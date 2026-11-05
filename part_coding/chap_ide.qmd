@@ -1,26 +1,27 @@
-# IDE: Integrated Development Enviroment {#sec-ide}
+# IDE: Integrated Development Environment {#sec-ide}
 
 {{< include ../preamble.qmd >}}
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
-Secretaire, comptable, avocat personel
+Secretaire, comptable, avocat(e) personel(le)
 :::
 
-The innocent and non-consequential is to confuse R and RStudio. R is a programming language whereas RStudio is a specialized IDE for R.
+A common, innocent, and inconsequential mistake is to confuse R and RStudio. R is a programming language, whereas RStudio is a specialized IDE for R.
 
-As seen a [console](@sec-console), is the minimum compenent to code. But as we write code, [script editors](@sec-script) were created to improve coding (like having a personal secretary to assist in sometasks). An IDE is the final stage of making coding  more comfortable.
+In the previous chapters, a console (@sec-console) was presented as the minimal component needed to code—the interface between the human and the computer. As more code is written, script editors (@sec-script) help improve the process (like having a personal secretary to assist with tasks). An IDE is the final stage of making coding more comfortable.
 
-To overuse metaphor : R is a car, a script editor is an ensemble of kits (wheel, leather chair, back camera etc.), and an IDE is a mix of kit shops, garage, and copilot (in racing not AI).
+To use a metaphor: R is the car, a script editor is a set of accessories (steering wheel cover, leather seats, backup camera, etc.), and an IDE is a combination of an auto shop, a garage, and a co-pilot.
 
-RStudio is the most popular IDE for R
-
+RStudio is the most popular IDE for R.
 
 ## Formal {.unnumbered}
-An IDE, or Integrated Development Environment, is a a single software application that provides and combines all the essential tools they need to write, test, and debug code in one unified interface. Using RStudio as a main example, an IDE wraps around the basic:
-  - R Console: command line interface @sec-console
-  - Script editor called Source: a script editor @sec-script
-  - Environment and history: (saves history and object created (@sec-variable) and more
-  - Output: generate figures and more
+
+An IDE, or Integrated Development Environment, is a single software application that combines the essential tools needed to write, test, and debug code in one unified interface. Using RStudio as a main example, an IDE wraps around the basics:
+
+- R Console: command-line interface (@sec-console)
+- Script editor called Source: a script editor (@sec-script)
+- Environment and history: saves history, created objects (@sec-variable), and more
+- Output: generates figures and more
 
 ![Starting RStudio](../fig/RStudio.png){#fig-RStudio}
 
@@ -29,22 +30,31 @@ Instead of writing code in a basic text editor, executing it in a separate termi
 
 ## Examples {.unnumbered}
 
-Step 1: One can write all the codes in one file
+Step 1: Write the code in the script editor [Note: "code" is an uncountable noun in this context, so "code" is preferred over "codes".]
 
-![Write all the scripts in the previous section](../fig/write_script.png){#fig-simple_script}
+![Script](../fig/write_script.png){#fig-simple_script}
 
-Step 2: evaluate. Two ways to evaluate: Click on the icon run after placing the cursor in the line
+Step 2: Execute the code: selecting the code (1) and clicking Run (2) sends the code to the console, evaluating it and printing the results in the console (3)
 
- - line evaluation here place the cursor in line 5 not where in the line.
-![Running the line 5](../fig/run_one_line.png){#fig-oneline}
+- Executing one line of code: place the cursor anywhere on line 5 (it does not need to be at the beginning or the end)
 
-- selection evaluation: select the code chunk
+![Running one line 5](../fig/run_one_line.png){#fig-oneline}
+
+- Executing a block of code: select the lines to evaluate and click Run
+
 ![Running code from line 1 to 3](../fig/run_selection.png){#fig-selection}
 
 ## Tips and warnings {.unnumbered}
-- R GUI is getting better. The native and this include script, native code running, pacakge manager etc. It could be instructive to compare the two. Sometimes, RStudio is have or have issue using native is always available
-- Underused enviromnent tab/pane: this list all the object created during R session. Quite useful for keeping track of all the object created and peak at their values.
-- Friendly bottom-left pane. While coding consists of writing, that pane allows to use more natiral mouse click to navigate folder, import file, install and load packages, look for documentation and more
-- Version control was also in RStudio
+- The native R GUI is improving. It includes a script editor, native code execution, a package manager, and other features. Comparing the two can be instructive.
+
+- While RStudio is a powerful IDE, it is heavy and may experience performance or memory issues, especially on older computers. In emergencies, the native R GUI serves as a reliable alternative.
+
+- Underused Environment tab/pane: This lists all objects created during an R session. It is quite useful for keeping track of created objects and taking a quick look at their values.
+
+- Friendly bottom-right pane: While coding primarily involves typing, this pane allows the use of natural mouse clicks to navigate folders, import files, install and load packages, search for documentation, and more.
+
+![Useful left panes: get familiar with the features for increased productivity and control](../fig/RStudio_rightpanes.png){#fig-RStudioEnvironment}
+
 - [Documentation for RStudio](https://docs.posit.co/ide/user/)
-- Positron might be next evolution of RStudio, especially if one also codes in python
+
+- Positron may be the next evolution of RStudio, especially for those who also code in Python.

@@ -6,13 +6,14 @@
 Ecran'na calculatrice
 :::
 
+
 Everyone knows how to use a calculator:
 
-1. you type an arithmetic operation (prompt)
-2. you press = (to execute)
-3. the result is displayed (output)
+1. Type an arithmetic operation (prompt).
+2. Press = (to execute).
+3. The result is displayed (output).
 
-With the most basic calculator, it shows the calculation (top line) as well as the result @fig-basic_cal. This is a useful addded feature so you can make sure you entered the correct operation.
+With most basic calculators, the display shows both the calculation (top line, this is a useful added feature to ensure the correct operation was entered) and the result @fig-basic_cal.
 
 ::: {#fig-calculator layout-ncol=2}
 
@@ -25,83 +26,89 @@ Same concept, different interface.
 
 A console functions exactly like the interface of a calculator @fig-console:
 
-1. Type your operation after the ">" symbol.
-2. Press enter/return to evaluate
+1. Type the operation after the ">" symbol.
+2. Press enter to evaluate.
 3. The result is displayed under the prompt.
 
-Notice that result is displaed a bit differently (color, not after >). And also a new > apperas indivading that it is waiting for a new
 
-In a conceptual way, the console is the interface that displays your communication with the program. Shows your input and displays the output. This simple interface is common to almost all programs.
-
+Conceptually, the console is the interface that displays communication with the program. It shows the input and displays the output. This simple interface is common to many programs.
 
 ## Formal {.unnumbered}
 
-ChatGPT: "The R Console is the interactive text interface where you communicate directly with the R programming language. It is the place where you type R commands, press Enter, and immediately see the results of your code."
+An R console is an interactive command-line interface that allows commands to be typed directly, executed immediately, and evaluated in real time. It operates on a continuous cycle known as a Read-Eval-Print Loop (REPL):
 
-
-For a program to run, there are four components: the terminal, console, shell, and kernel
-
-[geeklink](https://www.geeksforgeeks.org/operating-systems/what-is-terminal-console-shell-and-kernel/)
-
-
-An R Console is an interactive command-line interface (CLI) that allows users to type R commands directly, execute them immediately, and see instant output or error messages.
-It operates on a REPL loop (Read-Eval-Print Loop):
-
-Read: Accepts user code typed at the prompt.
-Eval: Evaluates/computes the code through the R engine.
-Print: Displays the resulting data, plot reference, or text.
-Loop: Displays the prompt again, waiting for the next command.
+1. Read: The console accepts code typed at the prompt.
+2. Eval: The R engine evaluates and computes the code.
+3. Print: The console displays the result, output, or error message.
+4. Loop: A new prompt appears, waiting for the next command.
 
 ## Examples {.unnumbered}
-See below interface of three consoles using base R,  in RStudio, and in VS Code.
+R could be used with the native R Graphic User Interface (GUI), or with specific IDE (@sec-ide) like R Studio or Visual Studio Code. The aesthetic of the console is different in each program.
 
 ::: {#fig-Rconsole layout-nrow=3}
 
-![Console in R](../fig/console_r.png){#fig-console_default width="80%"}
+![R Console in R GUI](../fig/console_RGUI.png){#fig-console_default width="80%"}
 
-![Console in RStudio](../fig/console_rstudio.png){#fig-console_rstudio width="80%"}
+![R Console in RStudio](../fig/console_rstudio.png){#fig-console_rstudio width="80%"}
 
-![Console in VS Code](../fig/console_vscode.png){#fig-console_vscode width="80%"}
+![R Console in VS Code](../fig/console_vscode2.png){#fig-console_vscode width="80%"}
 
-Same concept
+Only aesthetic differences
 :::
 
-As an exercice, you can open R or RStudio and try to input the command below, the code is in gray and you should see the output as black after you execute. While you can use copy/paste to do this. It is highly recommended that you enter the text manually. C
+As an exercise, open R or RStudio and try entering the command below. The code is shown in gray, and the output should appear in black after execution. While copy and paste can be used, entering the text manually is highly recommended.
 
 ```{r}
 #| echo: true
 
+# Compute a simple arithmetic operation
 1 + 1 * 4.1
 ```
 
 ```{r}
 #| echo: true
 
+# Cacluate the sine of the number 123
 sin(123)
 ```
 
 ```{r}
 #| echo: true
 
-cat("Hello world")
+# Print a sequence of characters
 print("Hello world")
 ```
 
 ## Tips and warnings {.unnumbered}
 
-- The kernel is under the hood
-- Semantic: Commandline interface, terminal, console moslty mean the same thing.
-- Unlike a calculator, you don't write your prompt in the (see next @sec-ide)
-- You cannot modify evaluated prompt.
-- Your prompt can be incomplete, the program cannot get the answer and is asking you to add more input to run the (+) as well as a blinking black cursor.
+- The console is just the display; the program that performs the actual calculation runs in the background.
 
-![Incomplete command](../fig/incomplete_command.png){#fig-incomplete width="50%"}
+- A displayed prompt cannot be edited.
 
-- In that case, you can
-  - complete the like adding say the number you want to multiply
-  - escape the expectation by typing escape key (Echap or Esc)
-- **Error message**: this is the worst part. While we, reading the error is very informative and allow to diagnose it.
-- Mouse is useless in the console. It is meant to work with keyboard,
-- It is not recommended to write prompt on the console...it is simple but and a different window called script  is dedicated to writing code (see @sec-ide).
-- When you open the R, or RStudio, you can see the version of the program you are using and other licensing information (see @fig-console_rstudio)
-- If you close the console/program, all the booking is lost. You can save it as what it is called "Workspace", but it is not recommended.
+- Typing directly into the console is not recommended; using a script editor (@sec-script and @sec-ide) is preferred.
+
+- Error message: This indicates that something is wrong with the code. It can be frustrating, but it is common.
+
+- The mouse is useless in the console. It is designed to work with the keyboard, hence the name command-line interface.
+
+- When opening R or RStudio for the first time, the console displays the program version, licensing information, and a few basic commands.
+
+![Welcoming message on the console](../fig/r_start.png){#fig-welcomeMessage}
+
+- The prompt can be incomplete, meaning the program cannot finish the calculation and asks for more input. In that case, the console displays an extra (+) in a new line.
+
+![The number to multiply with 1 is missing](../fig/incomplete_code.png){#fig-incomplete}
+
+To finish the evaluation, either:
+
+  - Add the rest of the code.
+  - Cancel the operation by pressing the Escape key (Echap or Esc). A prompt (>) appears on a new line, indicating that the system is waiting for a new command.
+
+### Notation/Semantic/Terminology {.unnumbered}
+- Command, code, and script are often used interchangeably to refer to the text typed for the program to evaluate.^[Curious readers may look up the precise definitions and distinct meanings of these terms.]
+
+-  A prompt is the input indicator (e.g., `>`), although in the context of modern Artificial Intelligence, "prompt" also refers to the text instruction.
+
+- Run, evaluate, and execute can be used interchangeably.
+
+- Command-line interface (CLI), terminal, and console refer to the same concept in simple terms.^[Curious readers may look up the precise definitions and distinct meanings of these terms.]

@@ -245,9 +245,7 @@ par(mar = c(5, 4, 4, 2) + 0.1)
 - Quantile estimates can become imprecise or unstable in small datasets. In such cases, linear interpolation or theoretical approximations may yield unreliable results.
 
 
-- A $p$-value of 0.06 is directly related to 0.06 quantile. Using the IQ metaphor in the introduction, this corresponds to three possible interpretations: an IQ in the top 6%, in the bottom 6%, or split between the top 3% and bottom 3%. The first two interpretations describe one-sided statistics, whereas the last applies to a two-sided statistic.
-
-- A $p$-value of 0.06 is directly related to a 0.06 (0.94, or 0.03-0.97)  quantile. Using the IQ metaphor from the introduction, this corresponds to three possible interpretations: an IQ in the top 6%, in the bottom 6%, or split between the top 3% and bottom 3%. The first two interpretations describe one-sided statistics, whereas the last applies to a two-sided statistic.
+- A $p$-value of 0.06 is directly related to a 0.06 (0.94, or 0.03-0.97)  quantile of the null distribution^[explained in the next volume]. Using the IQ metaphor from the introduction, this corresponds to three possible interpretations: an IQ in the top 6%, in the bottom 6%, or split between the top 3% and bottom 3%. The first two interpretations describe one-sided statistics, whereas the last applies to a two-sided statistic.
 
 ### Notation/Semantic/Terminology {.unnumbered}
 

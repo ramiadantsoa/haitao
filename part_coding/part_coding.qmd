@@ -1,67 +1,23 @@
 # Basic coding
-Having basics in math and statistics is a prerequisite in for data-dealing scientists. This has been the norm for a while. These topics have been part of the curriculum for a while. Not that field biologist will not complain by that.  Data analyses were done with SPSS, STATA, and also EXCEL STAT. The rise of R  introduced a new paradigm on how to analyses data and visualize data. There are many benefit: it is free and it faciliate reproducibility, it keeps growing. The catch is that  is that unlike the softwares above, it is a programming language. And unlike stat and math, to the best of my knowledge, programing is not engrained in the curriculum.
+A good background in mathematics and statistics has long been an advantage for data-driven scientists, even if field biologists often complain about it. And these topics are a standard part of university curricula. Traditionally, data analysis relied on software such as SPSS, Stata, and XLSTAT. But the rise of R introduced a new paradigm for analyzing and visualizing data. Unlike those point-and-click tools, however, R is a programming language—a subject that is rarely included in traditional science curricula.
 
-Learning a programming language R is mostly unlearning how to use a computer.
-With mouse, touchscreen, and even vocal commands (speech to text), using keyboard is almost obsolete.
-In fact, especially with AI, interacting with a computer is more and more like interacting with human.
-Monetary succes is not necessarily on practical but how friendly interface, easy of use.
-At the other end, we have those prgramming language were friendliness is not the main concerns.
+Learning a programming language like R often requires unlearning how computers are typically used. With touchscreens, mice, and voice commands, and aritificial intelligence (where human-computer interaction feel more like a standard conversation), typing commands directly into a keyboard can feel obsolete.
 
-There are over 8,945 programming languages recorded in the Online Historical Encyclopaedia of Programming Languages (HOPL).
-About 50-70 are actually actively used like C, phyton etc.
-Some are experimental or just for fun.
-Like, once you understand the basic, it is easier to go from one language to another.
-Because it is based on the same principle.
-R is one of those, and while we will look at R, I will do the best to look at the big picture. So hopefully about programing language.
+While the Online Historical Encyclopaedia of Programming Languages (HOPL) records over 8,900 languages, only about 50 to 70—such as C and Python—are actively used, with others serving experimental or recreational purposes. Because most programming languages share the same core principles, understanding the basics makes transitioning between languages much easier. Although R is the only language used in this handbook, the general principles of programming are explained using R as a concrete example.
 
-This is divided into three main themes: the environment where one works with (@sec-console and @sec-script, and @sec-ide), the atomic or elementary objects: numeric (@sec-numeric), strings (@sec-character) and boolean (@sec-boolean). The data object which are  vector @sec-vector, matrix @sec-matrixCoding, data frame @sec-dataframe and list @sec-list. Mirroring math concept on arithmetic and matrix operation equivalent @sec-arithmeticCoding @sec-matrixOperationCoding and @sec-matrixMultiplicationCoding @sec-booleanOperationCoding The last part is function in R program. Once these is just finding which function you need.
+This section covers the following core topics:
 
-Terminology and philosophy
+* An introduction to the basic framework of computer programming, describing the console (@sec-console), the script editor (@sec-script), and the Integrated Development Environment (@sec-ide), followed by the concept of variable assignment (@sec-assignment).
+* The elementary data types in programming: numbers (@sec-numeric), strings or characters (@sec-character), and booleans (@sec-boolean).
+* Data structures built from these basic types to allow more flexible storage: vectors (@sec-vector), matrices (@sec-matrixCoding), data frames (@sec-dataframe), and lists (@sec-list).
+* Practical operations for carrying out the mathematical concepts introduced in the first section of this handbook (@sec-arithmeticMath, @sec-matrixOperationMath, @sec-matrixMultiplicationMath): arithmetic (@sec-arithmeticCoding), matrix operations (@sec-matrixOperationCoding), and boolean operations (@sec-booleanOperationCoding).
+* Functions, which are among the most essential concepts in programming (@sec-functionCoding).
+* Guidance to support the learning process, including chapters on writing pseudocode (@sec-pseudocode) and identifying and fixing bugs (@sec-debugging).
 
+Unlike previous sections, this section includes code snippets and their outputs. Code appears in light gray blocks, with the output displayed underneath in a distinct font. Comments within the code start with a `#` symbol to explain what specific lines do. Practicing by copying, typing, and modifying these code examples is strongly recommended.
 
-<!--
-R is one of the many pl & as such shares the core features of them.
-In a nutshell, you write instructions called code or script, you run/excecute/compile the script.
-There are two things: the command line and console---many features of language.
-The type of the language itself. Like human language, it is different but it also shares the same feature.
-At the bottom we have object, we transform them and we get the output.
-In here, teach of basic programming (common to most language), however, we will always use R as example.
-Fortunately programming is introduced in the curriculum for a certain generation this could be obsolete.
-
-You could install R here (add link), it is often best to have the latest version but key to agree with your computer specification.
-
-You could also install RStudio here, see in IDE section why you really need it but also why you don't need it. -->
-
-<!--
-As languages are most similar: subject, verb, complement etc so does all languages.
-This section aims to look at them in that core aspect which is simplified as object & function
-What the most superficial way, what differ is the vocabulary: which is called syntax so it is like it says aov in R and it is anova.test in python
-
-
-
-Technology has advanced so much that interacting with a computer is almost like interacting with a human.
-Especially with AI, one's prompt can be vague and the computer can infer your intent.
-That first end of a spectrum means that easy is sufficient to not bother interacting with computer differently, convenient that why the struggle.
-At the other end of a spectrum, it is publicied that programmers and developpers no longer need to write lines of code, AI has become so good.
-To a certain majority, some codes in this book where generated by AI.
-This is not really with the latter group, this is not target for them.
-It is at the first where if you want to have a minimum fondation, hopefully you can find your answer here.
-
-
-
-We learn to crawl, walk, and then go from point A to point B.
-But walking can also provide other benefits!
-
-
-Fortunately, most do not need languages (sorry for those the core is similar but this is for R-perspective)
-So like learning language you need to learn vocabulary
-In the part, we will learn the most atomic elements: different types of variables & object, what kind of operation to do with and what is a function
-
-This is a simplified veresion with what is minimal.
-
-After this, stat applied becomes a collection of functions, programming can be seen as giving orders. But be aware that if, you are the practice & practice
-
-Pseudocode
-
-To steal physics -->
-
+```{r}
+#| echo: true
+# The code below calculates 1 + 2
+1 + 2
+```

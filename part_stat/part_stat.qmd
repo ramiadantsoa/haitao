@@ -13,8 +13,8 @@ This volume focuses primarily on descriptive statistics, while inferential stati
 
 To touch on a familiar perspective, Mark Twain famously popularized the phrase: "There are three kinds of lies: lies, damned lies, and statistics." This quote highlights how easily statistical presentation can be manipulated. On one end of the spectrum, individuals without statistical training may accept any presented number as absolute proof. On the other end, someone well-versed in statistics can intentionally transform data or cherry-pick tests to support a desired conclusion.
 
-The goal of this section is to cultivate a deeper grasp of statistics, enabling researchers to gain genuine insights, make informed decisions, and think critically about data collection, sampling design, and analytical choices.
-
+** Edit this: The goal of this section is to cultivate a deeper grasp of statistics, enabling researchers to gain genuine insights, make informed decisions, and think critically about data collection, sampling design, and analytical choices.
+**
 The section begins laying foundation for the statistical framework by defining a population (@sec-population) as the fundamental unit of study, and a variable (@sec-variable) as a function mapping a domain (the population) to a codomain (the observed values). From this perspective, the distinction between quantitative (@sec-quantitativeVariable) and qualitative (@sec-qualitativeVariable) variables depends directly on the mathematical properties of the codomain.
 
 The remaining chapters cover data summarization:
