@@ -4,165 +4,203 @@
 Rihana faha-firy?
 :::
 
-In past, people live in huts in a hamlet but as space becomes a constraint, stacking houses vertically becomes an economic solution. The direct implication is that instead of having address for say ten homes, now you have the address of the building and the floor number.
+Historically, people lived in huts in a hamlet, but as space became constrained, stacking houses vertically became an economical solution. The implication is that instead of having an address for ten separate homes (recycling the metaphor from variable assignment @sec-assignment), there is now one address for the building along with a floor number.
 
-A vector in programming is essentially an higher level object that store sequence of object *of the same type*. To access any specific value, you just need to know the name of the building and the floor number.
+A vector in programming is essentially a higher-level object that stores a sequence of objects *of the same type*. To access any specific value, one only needs to know the name of the building and the floor number.
 
-This analogy only works when each floor which called entry are of the same type (all numbers, all logical, or all strings). If the entry is homogenous, a list is used @sec-list. This is also where  indexing must be a discrete number/integer @sec-discrete_continuous and @sec-numeric.
+This analogy only holds when each floor—called an element—is of the same type (all numbers, all logical values, or all strings). If the elements are heterogeneous, a list is used instead (@sec-list). Vector indexing relies on integers (@sec-discreteContinuous).
 
-The key point is that a vector is a "new type" of object constructed by a sequence of atomic object. It has similar structure: variable name, assignment, and value. One can retrieve the values based on the order they appear in the list.
+The key point is that a vector is a new object type constructed from a sequence of elementary values. It shares a similar structure to basic variables: variable name, assignment operator, and value. Values can be retrieved based on their order in the sequence. And practically, vectors are used to store data corresponding to a single *variable* (@sec-variable).
 
 ## Formal {.unnumbered}
-To construct a vector in R we use the function, `c()` short for concatenate.
 
-`vector_name <- c(object1, object2,..., objectn)`
+To construct a vector in R, the `c()`{.r} function—short for concatenate—is used.
 
-- Length of a vector is the number of elements in the vector i.
+`vector_name <- c(object1, object2, ..., objectn)`{.r}
 
-- To access the p-th element of that vector, one uses the square bracket symbol "[]", so `vector_name[2]` will return object2. The order is also called index and should be an integer.
+- The length of a vector is the number of elements it contains and can be retrieved with `length()`{.r}.
 
-- In R you can use negative index, which delete the entry.  Vector_name[-2] will remove object2 from the output.
+- To access the $p^{th}$ element of a vector, square brackets `[]`{.r} are used: `vector_name[2]`{.r} returns `object2`{.r}. The positional order is called the index and must be an integer.
 
-- It is also possible to It is possible to access the element without using their order. See in the example below, this can under specific scenarios, e.g., short vector as you need to give a specific name to each ordered element or you don't want to remember the name. This is called giving names/attributes to eache element.
-
+- In R, a negative index excludes the element. For example, `vector_name[-2]`{.r} removes `object2`{.r} from the output.
 
 ## Examples {.unnumbered}
 
-- Contructing a vector
+- Constructing a vector
 ```{r}
+#| echo: true
 
-# create
+# Creating a Boolean vector
 c(FALSE, FALSE, TRUE)
 
+# Creating an integer vector
 c(2L, 1L, 4L)
 
-c("Hello", "world")
+# Creating a character vector
+c("Hello", "world", "Goodbye")
 
-test <- c("Hello", "world")
+# Assigning a vector to a variable
+my_vector <- c("Hello", "world", "Goodbye")
 
-paste(test)
 ```
 
 
 
 - Accessing single values
 ```{r}
-# access
-test[1]
-
-test[2]
-```
-
-- Accessing multiple index by using `vector of integer`
-
-```{r}
 #| echo: true
-# a vector of vector
 
-test[c(1, 2)]
-test[c(2, 1)]
+
+# Outputting the first element
+my_vector[1]
+
+# Outputting the second element
+my_vector[2]
 ```
 
-
-- Constructing from more vectors
+- Accessing multiple values by subsetting with a vector of indices
 
 ```{r}
 #| echo: true
 
-c(test, 1)
+# Outputting the first and second elements
+my_vector[c(1, 2)]
+
+# Outputting the second and first elements in reverse order
+my_vector[c(2, 1)]
+
+# Storing the indices as a vector
+vector_index <- c(2, 3)
+my_vector[vector_index]
+
+```
+
+
+- Constructing vectors from existing vectors
+
+```{r}
+#| echo: true
 
 vec1 <- c(1, 4, 5)
 vec2 <- c(10, 11, 12)
 
+# Combine the two vectors
 vec_combined <- c(vec1, vec2)
+
+# Append a single value to the existing vector
+vec_combined <- c(vec_combined, 123)
 ```
 
-- Deleting one or more element.
+- Deleting one or more elements
 
 ```{r}
 #| echo: true
 
-# remove the first element
+# Remove the first element
 vec_combined[-1]
 
-# remove the first and fourth element
+# Remove the first and fourth elements
 vec_combined[c(-1, -4)]
-
-vec_combined # unchanged
 ```
 
-One can construct a new vector by
+Notice that these operations do not modify the stored variable; they return and display the subsetted vector.
 
 ```{r}
+#| echo: true
+
+# Extract and store in a new variable
 sub_vector <- vec_combined[c(-1, -4)]
 sub_vector
 ```
 
-One can also use the same but remember you cannot retrieve the old one (think about saving a file using the same filename)
+One can overwrite the original variable by reassigning the subsetted result, but note that the previous values cannot be recovered once overwritten
 
 ```{r}
+#| echo: true
+
+# Overwrite the variable with the subsetted result
 vec_combined <- vec_combined[c(-1, -4)]
 vec_combined
 ```
 
 
 ## Tips and warnings {.unnumbered}
-- Semantic: entry, element, values
-- It is seen as a one-dimensional object.
-- Concatenation priority
- - Boolean to integer
+- A vector of length n can be seen as a n-dimensional object.
+
+- All elements in a vector must be of the same type. If different data types are combined, R automatically converts—or coerces—the values according to a strict hierarchy: Logical < Integer < Numeric < Character. Values lower in this hierarchy are converted to the higher type. The function structure is used to assess the type of vector.
+  - Booleans to Integer
 
 ```{r}
 #| echo: true
 
+# Boolean values are coerced to Integer (TRUE becomes 1L, FALSE becomes 0L)
 str(c(TRUE, FALSE, 4L))
+str(c(TRUE, FALSE, 4L))
+
 ```
 
-- Integer to numeric
-
+  - Integer to Numeric
 ```{r}
 #| echo: true
 
+# Boolean values are coerced to Numeric (TRUE becomes 1, FALSE becomes 0)
 str(c(TRUE, FALSE, 4))
 
+# Integers are coerced to Numeric (1L and 2L become floating-point numbers 1 and 2)
 str(c(1L, 2L, 4))
+
 ```
 
- - Numeric to character
+- Numeric to Character
 
 ```{r}
 #| echo: true
 
+# Boolean values are coerced to Character (TRUE becomes "TRUE")
 str(c(TRUE, TRUE, "text"))
 
+# Both Boolean and Numeric values are coerced to Character (TRUE becomes "TRUE", 1.2 becomes "1.2")
 str(c(TRUE, 1.2, "text"))
+
 ```
 
-- Atomic elements are considered as vector in R. The [1] means R displays the first element
+- This coercion can cause issues when importing data into R. If a column is supposed to be a numeric vector, but a single element cannot be parsed as numeric (e.g., the letter O instead of 0), R will convert all elements to character.
+
+
+- When printing long vectors in R, the bracketed numbers shown at the beginning of each line—such as [1], [38], or [75]—indicate the index of the first element displayed on that specific line. Because output wraps according to the width of the console window, these index markers dynamically adjust to help track element positions across multiple lines.
+
+```{r}
+rpois(100, 4)
+```
+
+- The elementary object (@sec-numeric, @sec-sec-character, @sec-boolean) are all considered as vector in R. The [1] means R displays the first element
 
 ```{r}
 #| echo: true
 
-a <- 1
-a
+# 1 is a numeric vector of length 1
+1
+# Hello is a character vector of length 1
+"Hello"
+
+# TRUE is a logical vector of length 1
+TRUE
 ```
 
-- when you print many elements, you will see [1] [38] etc on the left side of the output. It is displaying index so the one on the right is simply. Note that it depends on the size of your console, so a narrow vs wide one.
+- In R, using a numeric index—such as vector_name[1.2]—behaves identically to vector_name[1]. By design, R automatically truncates the decimal portion (rounding down toward zero) to reduce the value to an integer index. While this index behavior can be convenient, it can also mask unintended non-integer values during indexing operations.
 
-```{r}
-rpois(300, 4)
-
-```
-
-- A vector has a length l, if you try to access vector_name[n] where n is bigger than n, it will return NA.
-- In R, you can actually use numeric, so vector_name[1.2] is the same as vector_name[1]. It is hard-cored in R, that it will automatical round the number to the lowest integer. In some cases, it is quite practical, in other it might be problematic.
-- A more tedious way of constructing a vector where you can call by the name and not the index
+- Elements within a vector can also be accessed by name rather than position. This approach is useful for short vectors or specialized operations where named elements make code clearer and eliminate the need to track index positions. Assigning labels creates a named vector by attaching a names attribute to the underlying elements.
 
 ```{r}
 #| echo: true
 
+# Create a named numeric vector representing room dimensions
 room <- c(width = 15, height = 12)
+
+# Display the attributes attached to the vector
 attributes(room)
 
+# Access an element by its assigned name instead of an index position
 room["width"]
 ```
+Notice that when creating a named vector, element names are assigned using unquoted syntax similar to variable assignment (e.g., width = 15), but when subsetting by name, the name must be provided as a character string (e.g., room["width"])

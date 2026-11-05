@@ -6,94 +6,88 @@
 Tableau matematika!
 :::
 
-A matrix is a machine language implementation of a matrix in mathematics @sec-matrixMath.
-It is a rectangular object where each entry are identified by its row and column position.
+A matrix is a programming implementation of a mathematical matrix @sec-matrixMath. It is a rectangular object where each element is identified by its row and column position.
 
-Reusing the analogy of stacked apartment as a vector @sec-vector, the matrix allows multiple apartments in each floor. So an apartment is now identified by the floor number and the order in that floor. And similar to a vector, a matrix needs to be homogeneous.
+Reusing the analogy of a vector as a stacked apartment building @sec-vector, a matrix allows multiple apartments on each floor. An apartment is then identified by its floor number and its position on that floor. Similar to a vector, a matrix must be homogeneous. A matrix can therefore be described by its data type, such as an integer matrix or a numeric matrix.
 
-In data science, data could be heterogeneous, in that case we could use data frame @sec-dataframe or @sec-list.
-In general, a matrix object it is better used for mathematical computation.
+In data science, datasets are often heterogeneous, in which case a data frame @sec-dataframe or a list @sec-list is used. In general, a matrix object is best suited for mathematical computation.
 
 ## Formal {.unnumbered}
 
-### Construction {.unnumbered}
-To construct a matrix, we need the informations: the size of the matrix: how many rows (nrow) and columns (ncol), the list of all the elements in a form of vectors so we need a vector of length $nrow \times ncol$, and a way to indicate how to arrange the elements.
+To construct a matrix in R, the `matrix()`{.r} function is used.
 
-In R, to contruct a matrix we use matrix(), matrix_name <- matrix(data, nrow, ncol, byrow).
-Most of the time, ncol is not because it is inferred from length of data divided by nrow.
-byrow is argument that takes boolean telling whether it should be arranged by rows or by colums. The default is
+`matrix_name <- matrix(data, nrow = n_rows, ncol = n_cols)`{.r}
 
-See function @sec-functionCoding
+The `data` argument takes a vector of length `n_rows * n_cols` so that each entry in the matrix receives a value. By default, R fills matrices column-by-column.
 
-### Extract value {.unnumbered}
-To extract element, we use the same `[]` as in vector but with two dimensions `[row position, column position]`.
-Be aware that the first is vertical (as in floor number and the second is horizontal, and the order in that floor).
+- The dimensions of a matrix represent the number of rows and columns it contains and can be retrieved with `dim()`{.r}. Alternatively, `nrow()`{.r} and `ncol()`{.r} return the row and column counts individually.
 
-- `matrix_name[1, 2]`{.r} means to retrive the element in the first row (horizontal) and second column
-- `matrix_name[3, ]`{.r} (leaving the second dimension empty) means taking the third row
-- `matrix[, 3]`{.r} (leaving the first dimension empty) means taking the third column (see the output below)
-- `matrix [ -2 , -3]`{.r} the negative means remove that specific column, or row, or both matrix []
+- To access an element in a matrix, square brackets with a comma `[row, column]`{.r} are used: `matrix_name[2, 3]`{.r} returns the entry at the second row and third column. The positional indices must be integers.
 
+- In R, negative indices exclude specific rows or columns. For example, `matrix_name[-2, ]`{.r} excludes the second row, while `matrix_name[, -3]`{.r} excludes the third column from the output.
 
 ## Examples {.unnumbered}
 
-Use the matrix from @sec-matrixMath
+- Constructing the matrix used in @sec-matrixMath.
 
-- Construction
 ```{r}
 #| echo: true
 mat <-
-    matrix(c(6, 3, 0, 3, 1, 10, 0.5, 0, 0, 1, 0, 2),
+    matrix(c(6, 3, 0, 1, 3, 1, 10, 0, 0.5, 0, 0, 2),
     nrow = 4,
-    ncol = 3,
-    byrow = TRUE)
+    ncol = 3)
 mat
 ```
+Notice that numerical values are automatically formatted in the console output. When a matrix or vector contains at least one decimal number, R displays all numeric values in that structure with consistent decimal formatting (e.g., 6.0 or 3.0) to preserve alignment across rows and columns.
 
-- Extraction of the first row, using index 1 while leaving the second dimension empty.
 
 ```{r}
 #| echo: true
-mat[1]
 
+# Access the entire first row by specifying row index 1 and leaving the column index blank
 mat[1, ]
 
-```
-
-- Extraction of the first column, using index 1 while leaving the first dimension empty.
-
-```{r}
-#| echo: true
+# Access the entire first column by specifying column index 1 and leaving the row index blank
 mat[, 1]
 
-```
+# Access the entry at row 3, column 2
+mat[3, 2]
 
-- Extraction of a specific element, for instance the element in the first row and third column
--
-```{r}
-#| echo: true
-
-mat[1, 3]
-
-```
-
-- Extraction of more than one element
-```{r}
-# Extract the first and second element on the first row
+# Access elements in columns 1 and 2 of the first row
 mat[1, c(1, 2)]
 
-# Extract the second and fourth row
+# Access rows 2 and 4 across all columns
 mat[c(2, 4), ]
 
-# Extract the first and third column
+# Access columns 1 and 3 across all rows
 mat[, c(1, 3)]
 
 ```
 
+
 ## Tips and warnings {.unnumbered}
-- matrix is used in more mathematical way, mathematical operation @sec-matrixOperationMath and @sec-matrixMultiplicationMath. It is customary to just use index integer to extract elements
-- We can also give a column name and row name to the data. However, it is not the most common way to use a matrix. It is more common to use data frame @sec-dataframe for that.
-- Coercion work here too, because it has to be homogenous, boolean < integer < numeric < character
-- Extract dimension with `dim()`
-- There are things that can be done with transpose
--  Notice that there is no chapter on vector in basic mathematics, that is because, mathematically, a vector is simply a "one dimensional" matrix.
+
+- Indexing a matrix using `[row_index, column_index]`{.r} follows the $a_{i,j}$ notation used in mathematics to denote the entry at row $i$ and column $j$ @sec-matrixMath. Leaving one index blank selects all values along that dimension.
+
+- A matrix is typically used for mathematical operations @sec-matrixOperationMath and @sec-matrixMultiplicationMath.
+
+- Notice that there is no separate chapter on vectors in basic mathematics. This is because, mathematically, a vector is a matrix where either the number of rows or the number of columns is equal to one.
+
+- All elements in a matrix must be of the same data type. If different data types are combined, R automatically converts—or coerces—the entire matrix according to a strict hierarchy: Logical < Integer < Numeric < Character. Values lower in this hierarchy are converted to the higher type across all entries. See examples of coercion in @sec-vector.
+
+- Column and row names can also be assigned to a matrix. However, this is not the most common use of a matrix; a data frame @sec-dataframe is more commonly used for named tabular data.
+
+
+```{r}
+#| echo: true
+
+
+# Assign names to rows
+rownames(mat) <- c("Rabe", "Rakoto", "Sanda", "Dora")
+
+# Assign names to columns
+colnames(mat) <- c("Banana", "Strawberries", "Voatsinefy")
+
+# Display matrix with dimnames
+mat
+```
