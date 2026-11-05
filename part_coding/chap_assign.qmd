@@ -3,7 +3,7 @@
 {{< include ../preamble.qmd >}}
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
-Toko telo
+Trinite
 :::
 
 `sary_mainitirano.jpeg`, `foza orana.mp3`, `Malok'ila_1.mp4`. Beyond clicking these files on a computer, consider how they actually work. [Note: Replaced "foza orana.mp3" with "foza_orana.mp3" to prevent issues with spaces in filenames, and removed the second-person pronoun "you".]

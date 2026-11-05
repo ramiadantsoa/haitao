@@ -3,75 +3,104 @@
 {{< include ../preamble.qmd >}}
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
-Q: Lahy sa vavy ny zanakao? A: Eny
+Lahy sa vavy ny zanakao? Valiny: Eny
 :::
 
-The statement above is a joke between two logicians (the branch of mathematics that study boolean variables). But almost nobody laughs about it and barely grin when explained. Operations with numbers are natural @sec-numeric and @sec-arithmeticMath. However those on logical/boolean variables @sec-boolean are less intuitive. Imagine the boolean variable below (which also called statement or propositio)
-
-A: Radama is a male --TRUE \
-B: Radama is Malagasy -- TRUE
 
 
-C: Ranavalona is a male -- FALSE \
-D: Ranavalona is Malagasy -- TRUE
+The title above is a joke between two logicians^[mathematicians who specialize in the study of logic]. However, normal people never find it funny!
 
-The operation with boolean is when we combine P1 and P2,
+Operations with numbers are intuitive (@sec-arithmeticMath), whereas operations on logical or Boolean variables (@sec-boolean) are less intuitive. Consider the Boolean variables (also called statements or propositions) below:
 
-P1: A AND B means Radama is a male AND Radama is Malagasy. \
-P1 is TRUE, and formally: TRUE AND TRUE = TRUE
+A: Radama is male -- `TRUE`{.r}
 
-P2: A OR B: Radama a male OR Radama is Malagasy \
-P2 is also TRUE, Formally: TRUE OR TRUE = TRUE
+B: Radama is Malagasy -- `TRUE`{.r}
 
-P3: C AND D: Ranavalona is male AND Ranavalona is Malagasy. \
-P3 is FALSE so FALSE AND TRUE = FALSE
+C: Ranavalona is male -- `FALSE`{.r}
 
-And the final combination \
-P4: C OR D: Ranavalona is male OR Ranavalona is Malagasy. \
-P4 is TRUE so FALSE OR TRUE = TRUE
+D: Ranavalona is Malagasy -- `TRUE`{.r}
 
-Back to the joke above. The question could be reframed as two statement
-Statement 1: Your new born is a male \
-Statement 2: Your new born is a female \
-Statement 1 OR statement 2 is always TRUE because one of them must be TRUE.
+**Boolean operations combine propositions using logical operators:**
 
-Boolean operation are fundamental parts of programming and can be quite unintuitive (as with the joke for the untrained). While they is reserved to logician. It is essential to become literate. Concrete examples of application are shown in the tips section below.
+P1: A AND B: Radama is male AND Radama is Malagasy.
+
+P1 evaluates to `TRUE`{.r}. Formally: `TRUE AND TRUE = TRUE`{.r}.
+
+P2: A OR B: Radama is male OR Radama is Malagasy.
+
+P2 evaluates to `TRUE`{.r}. Formally: `TRUE OR TRUE = TRUE`{.r}.
+
+P3: C AND D: Ranavalona is male AND Ranavalona is Malagasy.
+
+P3 evaluates to `FALSE`{.r}. Formally: `FALSE AND TRUE = FALSE`{.r}.
+
+P4: C OR D: Ranavalona is male OR Ranavalona is Malagasy.
+
+P4 evaluates to `TRUE`{.r}. Formally: `FALSE OR TRUE = TRUE`{.r}.
+
+Returning to the joke, the question can be reframed as two propositions:
+
+Proposition 1: The newborn is male.
+
+Proposition 2: The newborn is female.
+
+Proposition 1 OR Proposition 2 evaluates to `TRUE`{.r} because one statement must be true.
+
+Boolean operations form a fundamental part of programming and can feel unintuitive to non-logicians. Acquiring basic proficiency in logic is essential. Concrete applications are illustrated in the tips section below.
 
 ## Formal {.unnumbered}
-The AND is encoded as `&` in R `A & B` or `A && B`
-The OR is encoded as `|` in R as `A | B` or `A || B`
 
-Ths double is mainly for short-circuit used in loop
-Single is for filtering.
+The AND operator is encoded as `&`{.r} in R (`A & B`{.r} or `A && B`{.r}).
+The OR operator is encoded as `|`{.r} in R (`A | B`{.r} or `A || B`{.r}).
 
-A final symbol is `!` whic is used for negation. So `!A` is the opposite of `A`
+The single operators (`&`{.r}, `|`{.r}) perform element-wise evaluation, which serves as the primary method for vector filtering in data analysis.
 
+The double operators (`&&`{.r}, `||`{.r}) perform short-circuit evaluation, typically used in conditional statements and loops. These are rarely used in this handbook except in specific advanced scenarios.
+
+A final symbol is `!`{.r}, which is used for negation. The expression `!A`{.r} evaluates to the logical opposite of `A`{.r}.
 
 ## Examples {.unnumbered}
 
 ```{r}
 #| echo: true
 
+#| echo: true
+
+# Assign Boolean values to variables
 a <- TRUE
 b <- TRUE
 cc <- FALSE
 
+# Logical OR: returns TRUE if at least one side is TRUE
 a | b
+
+# Logical AND: returns TRUE only if both sides are TRUE
 a & b
+
+# Logical AND with a FALSE value: evaluates to FALSE
 a & cc
 
+# Combined logical operation (AND has higher precedence than OR)
 a | (b & cc)
+
+# Grouped logical operation: parentheses force evaluation of (a | b) first
 (a | b) & cc
 
-# examples with negation
+# Negation: flips TRUE to FALSE (and vice versa)
 !a
-
 
 ```
 
 ## Tips and warnings {.unnumbered}
-- These boolean operator are also the same as intersection (AND) and union (OR).
-- Boolean operators are crucial when you want to filter data. Each statement is a criteria included in the data Imaging one survey 100 people and recored their nationality and sex. To filter data say just male and malagasy you apply boolean operator AND. If one collect tree and select of a certain dbh and and a given species dbh > 30 && species == "Dalbergia" or add a third criteria
-- One might need to use parentheses as results will differ
-- Why double or single symbol?
-- Logic is at the base of mathematics. It is the fundamental and as such it could be the most mental. We just what we need.
+
+- Although the concept of data frame is needed to full understand the example below. The example below combines and uses variable types, relational operators, and Boolean operators to filter individuals matching combined criteria:
+
+```r
+nationality == "Malagasy" & (male == TRUE | height < 1.6)
+```
+In this expression, nationality, male, and height are variable names (@sec-assignment) of character (@sec-character), logical (@sec-boolean), and numeric (@sec-numeric) types, respectively. The relational operators `==`{.r} and `<`{.r} filter within variables, whereas the Boolean operators `&`{.r} and `|`{.r} evaluate conditions across variables.
+
+- These Boolean operators correspond to the concepts of intersection (AND) and union (OR) in set theory. For example, in `nationality == "Malagasy" & male == TRUE`{.r} the operation essentialy intersect the set of malagasy and male.
+
+- Boolean operations are prone to mistakes because logical evaluation can be surprisingly counterintuitive. Extra caution is required during implementation.
+
