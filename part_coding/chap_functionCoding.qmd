@@ -6,205 +6,261 @@
 More than 4 250 functions and 25 000 CRAN packages
 :::
 
-Function is another term that is borrowed from plain language and also mathematical language. In this case, a function in programming can be seen as a generalization of functions in mathematics @sec-functionMath. And that generalization is good thing because it is what makes programming so useful and powerful.
+A function in programming can be viewed as a generalization of mathematical functions (@sec-functionMath). This generalization makes programming exceptionally useful and powerful: the input (or independent variable) can be any data type, the number of arguments can be expanded as needed, and the output follows the same flexibility.
 
-In R, a function can be a simple mathematical functions (like `sin(), cos(), exp(), log()`{.r}). It could be a constructor like `c(), matrix(), list()`{.r}, and a statistical function like `mean()`{.r} to compute the mean and many more. As you could guess, a function exists for most statistical test one wants to do, to plot figures, manipulate data, solve equations, and imagination is the limit.
+In R, a function can represent a simple mathematical operation (such as `sin()`{.r}, `cos()`{.r}, `exp()`{.r}, or `log()`{.r}), a data constructor (such as `c()`{.r}, `matrix()`{.r}, or `list()`{.r}), or a summary statistic (such as `mean()`{.r} to compute the arithmetic average). Functions exist for nearly every statistical test, figure creation, data manipulation procedure, and equation-solving task available.
 
-Once we install and run R, there are roughly 4250 functions that are ready to use. But because that is not sufficient for everyone's need, more functions are created. Packages are essentially a collection of functions that perform a specific task popular examples are `ggplot2` for making figures or `vegan` for community analyses. Packages are there to make one's life easier. And one of the strengh of R is that there are many packages. While there is no estimates of how many functions are "official", with say 15 functions per packages there are at least `r format(4250 + 25000 * 15, scientific = FALSE)` functions.
+When R is installed and launched, approximately 4,250 functions are immediately available. Because these base functions do not cover every specialized workflow, new functions are created continuously.
 
-Functions are there to help, but functions are also the foes..how to locate the function you need, how to use a function (especially how to read the output) and why on earth it throws an error?
+Packages are collections of functions designed to perform specific tasks; popular examples include `ggplot2`{.r} for plotting graphics and `vegan`{.r} for community ecological analyses. Packages streamline quantitative workflows, and the vast package ecosystem represents one of R's primary strengths.
+
+While the exact total number of functions across all repositories is unquantified, assuming an average of 15 functions per package yields at least `r format(4250 + 25000 * 15, scientific = FALSE)` functions.
+
+Functions provide powerful capabilities, but they can also present significant challenges: how to locate the required function, how to supply appropriate arguments, how to interpret output structures, and how to resolve errors.
 
 ## Formal {.unnumbered}
 
-Here is how a function is constructed and the convention is that it is always lowercase.
+A function is defined using the `function()`{.r} keyword.
 
-```r
+```{r}
+#| echo: true
+#| eval: false
 
-function_name <- function(argument1, argument2 = TRUE, ...){
-    "Whatever the function does with those argument"
-    return(output)
+# Define a function specifying its required and optional arguments
+function_name <- function(argument1, argument2 = TRUE, ...) {
+  # Code block executing operations using the provided arguments
+  output <- argument1 + 10 # Example computation
+  return(output)
 }
 
 ```
-There are several key points
 
-- Function name: this is similar to giving a variable name @sec-assignment
-- After the assignment operator, function explicitly say that the object created is a function
-- Within the parentheses are the arguments separated by comma
-- The block code that what the function is doing
-- And the ouput within the
+A function definition consists of several structural components:
 
+- Function name: An identifier assigned to the function, adhering to the standard variable naming rules outlined in @sec-assignment.
 
-Explicit and implicit argument
+- Assignment operator (`<-`{.r}) and keyword: The operator assigns the function object created by `function()`{.r} to the chosen name.
 
+- Arguments: Variables listed inside the parentheses, separated by commas. These accept input values passed when the function is called, and may include default values (e.g., `argument2 = TRUE`{.r}).
+
+- Code block: The executable statements enclosed within curly braces `{}`{.r} that perform operations on the input arguments.
+
+- Return output: The `return()`{.r} statement, which explicitly specifies the final result or object output by the function.
 
 ## Examples {.unnumbered}
+-  Here are examples of basic mathematical functions:
 
-### Mathematical function {.unnumbered}
-Here are examples of basic function
 ```{r}
 #| echo: true
 
-# calculate the sinus of 1
+# Calculate the sine of 1 radian
 sin(1)
 
-# calculate the absolute value
+# Calculate the absolute value of a negative number
 abs(-2)
 
-# calculate the square root of 25
+# Calculate the square root of 25
 sqrt(25)
 
-# you can also store the result using assignment
+# Combine function outputs and store the result using assignment
 result <- sqrt(25) + abs(-2)
+result
 
 ```
 
-### Data manipulation and construction {.unnumbered}
+
+- Data manipulation
 
 ```{r}
 #| echo: true
 
-# Sort in a sequence of number
-    sort(c(10, 2, 4, 2, 3.1))
+# Sort a numeric vector in ascending order
+sort(c(10, 2, 4, 2, 3.1))
 
-# Reverse the order
-    sort(c(10, 2, 4, 2, 3.1), decreasing = TRUE)
+# Sort a numeric vector in descending order
+sort(c(10, 2, 4, 2, 3.1), decreasing = TRUE)
 
-# Sort also work with string
-    sort(c("jaojaoby", "tovo j'hay", "bessa", "reko"))
+# Sort a character vector in alphabetical order
+sort(c("jaojoby", "tovo j'hay", "bessa", "reko"))
 
-# Extract the unique value
-    unique(c(10, 2, 4, 2, 3.1))
+# Extract unique elements from a numeric vector, removing duplicate values
+unique(c(10, 2, 4, 2, 3.1))
+
 ```
 
-### Plot function {.unnumbered}
-
+- Plotting functions {.unnumbered}
 
 ```{r}
 #| echo: true
-indpt_variable <- 1:5 # shortcut to generate discrete from 1 to 5
-dpt_variable <- indpt_variable^2 # square the values in x
 
+# Generate a discrete sequence of integer values from 1 to 5
+indpt_variable <- 1:5
+
+# Compute dependent values by squaring the independent variable
+dpt_variable <- indpt_variable^2
+
+# Create a scatter plot with blue triangle markers
 plot(
-    x = indpt_variable, # values to put on the x-axis
-    y = dpt_variable, # values to put on the y-axis
-    col = "blue", # color of the points
-    pch = 2, # type of points
-    typ = "p") # "p" is short for points
+  x = indpt_variable, # Numeric vector of x-axis values
+  y = dpt_variable,   # Numeric vector of y-axis values
+  col = "blue",        # Point color
+  pch = 2,             # Point symbol shape (2 = open triangle)
+  type = "p"           # Plot type ("p" for points)
+)
 
 ```
 
-Changing the aesthectics of the plot
+Modifying plot aesthetics and display types:^[All figures in this handbook were produced natively in R by adding graphic elements and configuring plotting arguments.]
 
 ```{r}
 #| echo: true
-#|
-indpt_variable <- 1:5 # shortcut to generate discrete from 1 to 5
-dpt_variable <- indpt_variable^2 # square the values in x
 
+# Generate a discrete sequence of integer values from 1 to 5
+indpt_variable <- 1:5
+
+# Compute dependent values by squaring the independent variable
+dpt_variable <- indpt_variable^2
+
+# Create a line plot with a red line
 plot(
-    x = indpt_variable, # values to put on the x-axis
-    y = dpt_variable, # values to put on the y-axis
-    col = "red", # color of the points
-    typ = "l") # "l" is short for line
+  x = indpt_variable, # Numeric vector of x-axis values
+  y = dpt_variable,   # Numeric vector of y-axis values
+  col = "red",         # Line color
+  type = "l"           # Plot type ("l" for lines)
+)
 
 ```
-
-Examples in  derivative @fig-pdfDerivative were done in the same way by adding more and more arguments to the function
-
 
 
 ## Tips and warnings {.unnumbered}
-- Semantic: arguments, input, parameters.
-- CRAN packages:
-- Open source you can find the exact body of the function
+- By convention, function names in R are written in lowercase. However, the naming conventions outlined in @sec-assignment are also widely applied, such as `snake_case` (e.g., `read_csv()`{.r}) or `camelCase` (e.g., `makeMatrix()`{.r}). Additionally, many foundational functions in base R utilize a `period.separated` naming style, such as `data.frame()`{.r} or `read.csv()`{.r}.
 
-###  Implicity and explicit argument: example matrix construction {.unnumbered}
-And here is what happens when we look for definition of `matrix`{.r} in the help file
+- Functions are distinguished visually and syntactically from variables by the trailing parentheses `()`{.r} that follow their name. While a variable stores an object, a function represents an executable action that accepts arguments within those parentheses.
 
-![Usage](../fig/matrixHelp.png){#fig-matrixHelp}.
+- The vast majority of R packages are hosted on CRAN (Comprehensive R Archive Network), the official repository that subjects packages to rigorous quality and installation checks. Other major public repositories include Bioconductor, which specializes in genomic and biological data analyses, and GitHub, which hosts developmental versions and user-contributed community packages.
 
-There are for expecit argument, data, nrow, ncol, and byrow
+### Bonus {.unnumbered}
 
-  - Explicit: adding the argument name in the function
+The `matrix()`{.r} function (@sec-matrixCoding) illustrates two core principles of function construction: implicit versus explicit arguments, and arguments with versus without default values.
+
+Inspecting the documentation for the `matrix()`{.r} function reveals its formal function signature and argument list:
+
+![Definition of the arguments for the function `matrix()`{.r}](../fig/matrixHelp.png){#fig-matrixHelp}
+
+The function defines four primary arguments: `data`{.r}, `nrow`{.r}, `ncol`{.r}, and `byrow`{.r}.
+
+#### Implicit vs explicit argument names {.unnumbered}
+
+Consider the fruit data used in this handbook. The matrix was constructed by specifying argument names explicitly within the function call.
+
 ```{r}
 #| echo: true
-mat <-
-    matrix(data = c(6, 1, 0, 3, 10, 1, 0, 0.5, 0, 3, 0, 2),
-    nrow = 4,
-    ncol = 3,
-    byrow = FALSE)
+
+# Define a numeric vector of fruit counts
+data_fruit <- c(6, 3, 0, 1, 3, 1, 10, 0, 0.5, 0, 0, 2)
+
+# Construct a 4x3 matrix using explicit argument names in standard order
+mat <- matrix(
+  data = data_fruit,
+  nrow = 4,
+  ncol = 3,
+  byrow = FALSE
+)
 mat
+
+```
+
+In the example below, the order of the arguments within the function call does not affect the output. It works because the argument names are explicitly supplied.
+
+```{r}
+#| echo: true
+
+# Construct a matrix using explicit argument names in arbitrary order
+mat <- matrix(
+  byrow = FALSE, # byrow is provided first
+  ncol = 3,
+  data = data_fruit,
+  nrow = 4
+)
+mat
+
+```
+
+
+In many instances, argument names are omitted in function calls. Passing values without supplying explicit names relies on implicit (positional) arguments. In positional matching, R assigns input values based strictly on the order defined in the function's formal specification.
+
+```{r}
+#| echo: true
+
+# Construct a matrix using positional matching (data, nrow, ncol, byrow)
+mat <- matrix(data_fruit, 4, 3, FALSE)
+mat
+```
+
+Reordering positional values can result in unintended behaviors or runtime errors. A frequent source of errors is a mismatch between the expected position of an argument and the position of the value provided^[Another common source of error is supplying an incorrect object class, such as passing a `data.frame`{.r} when a `matrix`{.r} is required.].
+
+```{r}
+#| echo: true
+
+# Alter dimensions by swapping positional arguments for nrow and ncol
+mat <- matrix(data_fruit, 3, 4, FALSE)
+mat
+
 ```
 
 ```{r}
 #| echo: true
-mat <-
-    matrix(
-        byrow = FALSE,
-        ncol = 3,
-        data = c(6, 1, 0, 3, 10, 1, 0, 0.5, 0, 3, 0, 2),
-        nrow = 4
-    )
-mat
-```
-In hear by adding the argument name, the order of appearance does not matter
-- Implicit: the argument are implied
-```{r}
-#| echo: true
-mat <-
-    matrix(c(6, 1, 0, 3, 10, 1, 0, 0.5, 0, 3, 0, 2), 4, 3, FALSE)
-mat
-```
- What happen in the explicit is that argument are intepreted in the order they are used. Many functions are like this but can be tricky.
- - Different matrix if argument swapped
-```{r}
-#| echo: true
-mat <-
-    matrix(
-        c(6, 1, 0, 3, 10, 1, 0, 0.5, 0, 3, 0, 2), 3, 4, FALSE)
-mat
-```
-- Or even an error
-```{r}
-#| echo: true
-mat <-
-    matrix(
-        c(6, 1, 0, 3, 10, 1, 0, 0.5, 0, 3, 0, 2), 3, 4, FALSE)
-mat
-```
+#| error: true
 
-The rule is data is first to can be omitted but the other arguments can be tricky.
-
-### Default {.unnumbered}
-
- - all defined
-```{r}
-#| echo: true
-mat <-
-    matrix(
-        data = c(6, 1, 0,
-                3, 10, 1,
-                0, 0.5, 0,
-                3, 0, 2),
-        nrow = 4,
-        ncol = 3,
-        byrow = FALSE)
+# Attempt to pass matrix dimensions before data, resulting in a strange behavior
+mat <- matrix(3, data_fruit, 4, FALSE)
 mat
-```
 
-- Other arguments omitted, so computer use the default. ncol is not defined so inferred from lenght of the vector and nrow. The default is binary is FALSE.
+```
+Using explicit argument names avoids this issue entirely or/and the challenge of remembering the order of each argument. However, in cases where the function's first argument is self-evident, it is often supplied implicitly, with subsequent parameters remaining explicit.
 
 ```{r}
 #| echo: true
-mat <-
-    matrix(
-        data = c(6, 1, 0,
-                3, 10, 1,
-                0, 0.5, 0,
-                3, 0, 2),
-    nrow = 4)
-mat
+
+# Pass the data vector implicitly while specifying remaining arguments explicitly
+mat <- matrix(data_fruit, nrow = 4, ncol = 3, byrow = FALSE)
+
 ```
 
-- If one wants to make a plot, there is over 20 arguments you can add. Default is there so you don't need to specify all of them. So most of the argument are assigned with a  default value eg. color, point size etc.
+#### Default argument values {.unnumbered}
+
+- Specifying all arguments explicitly:
+
+```{r}
+#| echo: true
+
+# Construct a matrix with all arguments defined explicitly
+mat <- matrix(
+  data = data_fruit,
+  nrow = 4,
+  ncol = 3,
+  byrow = FALSE
+)
+mat
+
+```
+
+- Omitting arguments with default values:
+
+When optional arguments are omitted, R uses their predefined default values. If `ncol`{.r} is not specified, it is automatically inferred from the length of the data vector and `nrow`{.r}. The `byrow`{.r} parameter defaults to `FALSE`{.r}.
+
+```{r}
+#| echo: true
+
+# Construct a matrix using default values for ncol and byrow
+mat <- matrix(
+  data = data_fruit,
+  nrow = 4
+)
+mat
+
+```
+
+Default argument values simplify function calls. For example, plotting functions contain over 20 optional arguments, such as point color (`col`{.r}) or character size (`cex`{.r}). Default values eliminate the need to specify every parameter explicitly when standard behavior is desired.
+
+

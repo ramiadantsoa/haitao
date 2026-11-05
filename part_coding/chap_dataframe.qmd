@@ -3,80 +3,117 @@
 {{< include ../preamble.qmd >}}
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
-Tableau pratique!!
+Tableau pratique
 :::
 
+The previous chapters introduced mathematical concepts in programming, such as vectors, matrices, logical and numeric values, and matrix operations. This chapter transitions from strict mathematical structures to the more flexible requirements of data science. The data frame was developed to meet these needs, and most data encountered in ecological practice are stored in this format.
 
-The previous chapters brings mathematical concepts into programming such as vector, matrix, boolean and numeric, and matrix operations. data frame was constructed to deal with the less rigid demands of data science.
+A data frame stores multiple variables recorded across multiple observations.
+For instance, an investigator surveys 100 individuals and records name, age, and sex. The dataset consists of three columns: the first for name as character, the second for age as integer, and the third as logical (TRUE if female and FALSE if male). Similarly, a field researcher visits fifteen sites and records site name, altitude, pH, and other variables.
 
-A data frame is used to store multiple observations on many subjects.
-For instance, you interview 100 persons and ask about name, age, gender. The data will consist of three columns: first on name is a character, the second as integer, and a third is boolean (yes TRUE if female and FALSE if male).
-A similar case is one visits fifteen sites and record the name of the site, altitude, pH, etc.
+A data frame is a rectangular structure (similar to a matrix @sec-matrixMath and @sec-matrixCoding), where each column represents a variable. However, unlike a matrix, the data type of each column can differ.
 
-A data frame is thus a rectangle (same as a matrix @sec-matrixCoding), where each column is an observation (also @sec-variable).
-
-The other practical advantage of a data frame is that there are often colum names, so instead of access that column by a number, you can call it by a name.
-
+Another practical advantage of a data frame is that columns typically have names, allowing access by column name rather than numerical index.
 
 ## Formal {.unnumbered}
 
-A data frame is constructed with the function
+A data frame is constructed with the function `data.frame()`{.r}.
+
 ```{r}
 #| echo: true
 #| eval: false
-    df <- data.frame( # construct a data.frame
-        name1 = vector1, # first column and call it name1
-        name2 =  vector2, # second colum and call it name2
-        name3 = vector3,
-        ...).
+
+# Construct a data frame where each argument defines a column name and its vector of values
+df <- data.frame(
+  name1 = vector1, # First column named name1
+  name2 = vector2, # Second column named name2
+  name3 = vector3  # Third column named name3
+)
 ```
 
-The main constraint is that
- `length(vector1) = length(vector2) = `{.r} otherwise it won't be a rectangle and thus should not work
+The constraint is that all vectors must have equal lengths; otherwise, the structure will not form a rectangle and the operation will fail.
 
-You can conveniently access with df$name1 which is the most common way, due to inheritance this is equivalent to df[,1] or df["name1"].
-
+Columns can be conveniently accessed using `df$name1`{.r}, which is the most common approach. Due to underlying data structures, this is equivalent to `df[, 1]`{.r} or `df["name1"]`{.r}.
 
 ## Examples {.unnumbered}
+
+Below are three styles for creating a data frame. The third approach represents standard best practice.
+
 
 ```{r}
 #| echo: true
 
 
-# Construction number 1, ugly column names created
-d <- data.frame(c(1, 2, 3), c("A", "X", "B"), c(TRUE, TRUE, FALSE))
+# Method 1: Data frame created without specifying column names, resulting in default, uninformative names
+my_df <- data.frame(
+  c(1, 2, 3),
+  c("A", "X", "B"),
+  c(TRUE, TRUE, FALSE))
+my_df
 
-
-# Construction number 2, organized but unituitive column names
+# Method 2: Data frame created using existing vector names as column names
 col1 <- c(1, 2, 3)
 col2 <- c("A", "X", "B")
-col3 <-  c(TRUE, TRUE, FALSE)
-d <- data.frame(col1, col2, col3)
+col3 <- c(TRUE, TRUE, FALSE)
 
-# Construction number 3, compact and intuitive column/variable names
-d <- data.frame(id = col1, letter = col2, male = col3)
+my_df <- data.frame(col1, col2, col3)
+my_df
+
+# Method 3: Data frame created with explicit, descriptive variable names
+my_df <- data.frame(
+  id = col1,
+  letter = col2,
+  male = col3)
+my_df
+```
 
 
-# Extracting a column
-d$id # clean
-d[, 1] # based on matrix
-d["id"] # output is a data frame
-d[, "id"] # output is a vector
+- Different manners to extract column. The first approach represents standard best practice but can only extract one column. The remaning approach allows to extract more columns^[With dplyr, selecting columns is done with the function select]
 
-# Adding a new column
-d$name <- c("Andry", "Feno", "Felana")
+```{r}
+#| echo: true
+
+# Extract a column using the dollar sign ($) operator (returns a vector)
+my_df$id
+
+# Extract the first column using matrix-style numerical indexing (returns a vector)
+my_df[, 1]
+
+# Subset a column by name using single brackets (returns a 1-column data frame)
+my_df["id"]
+
+# Extract a column by name using matrix-style character indexing (returns a vector)
+my_df[, "id"]
+
+# Extract two column by name using matrix-style character indexing (returns a 2-column data frame)
+my_df[, c("id", "letter")]
 
 ```
 
+- Appending a new column to a data frame
+
+```{r}
+#| echo: true
+
+# Add a new column (variable) to the data frame
+my_df$name <- c("Andry", "Feno", "Felana")
+my_df
+```
+
 ## Tips and warnings {.unnumbered}
-- column names are variable should not include space or special characters. Same rule as in @sec-assignment
-- If a value is given for a column, the data.frame will of the number of rows???
-- if a vector, it will just inherit its name
-- you can add more columns by just creating
-  `df$new_col <- your_vector`{.r}
 
-- `tibble` is a very common dataframe format. The popular packages `tidyverse` prefers when data is formated as tibble, but data.frame also works. The difference is subtle enough that most of the time, we can use either.
-- R shortcut: `data.frame(1, c("a", "b"))`{.r} works even if the length of vector are different, this works only when the short vector is exactly a vector of length 1. R decides to create a constant vector. It is a useful trick but need to remember that it is a specific scenario. Better to just use same length
-- Better to give name other it will create its own.
+- Column names are considered variables and should not include spaces or special characters; the same rules apply as in @sec-assignment.
 
-## If you want to know more {.unnumbered}
+- In principle, all input vectors when constructing a data frame should be of equal length. There is a special case where a vector of length one is provided: R creates a constant vector matching the length of the longest vector.
+
+```{r}
+#| echo: true
+
+# Construct a data frame using a scalar (recycled) and a multi-element vector
+data.frame(constant = 1, letters = c("A", "B", "C"))
+
+```
+
+- A `tibble`{.r} is a common variation of the data frame structure. The popular package ecosystem `tidyverse`{.r} prefers data formatted as a tibble, but standard data frames also work. The differences are subtle enough that either format can be used in most workflows.
+
+- The basic concepts above are useful for understanding the core structure and goals of this volume. However, manual entry is not the ideal method for entering data into R. Most often, data are entered in spreadsheet software such as Excel and subsequently imported into R as a data frame.
