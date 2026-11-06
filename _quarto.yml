@@ -2,7 +2,7 @@ project:
   type: book
 
 book:
-  title: "A pratical handbook of quantitative methods in ecology"
+  title: "A  handbook of quantitative methods for (ecological) data analyses"
   author: "Tanjona Ramiadantsoa"
   date: last-modified
   license: "CC BY-NC-ND"
@@ -11,7 +11,8 @@ book:
     right: "This work is licensed under a [CC BY-NC-ND 4.0 International License](https://creativecommons.org/licenses/by-nc-nd/4.0/)."
   chapters:
     - index.qmd
-    - preface.qmd
+    - preface_mdg.md
+    - preface_eng.qmd
     - part: part_math/part_math.qmd
       chapters:
         - part_math/chap_arithmeticMath.qmd
