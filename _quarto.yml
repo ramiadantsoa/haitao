@@ -134,9 +134,9 @@ book:
     #     - part_diversity/chap_nmds.qmd
     #     - part_diversity/chap_distance_sampling.qmd
     # - summary.qmd
-    - references.qmd
+    # - references.qmd
 
-bibliography: references.bib
+# bibliography: references.bib
 
 format:
   html:

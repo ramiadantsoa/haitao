@@ -199,7 +199,7 @@ text(2.2, 2.5, "y = x", col = "gray40", cex = 0.95)
 - Exponential growth is a phenomenon that deeply concerns scientists, yet non-scientists frequently overlook its early stages. Because the initial rate of increase appears slow and linear, the curve hides its explosive potential until it reaches a sudden, compounding inflection point.
 ![Cognitive deception of exponential growth. (Credits to Tris Sainsbury and a node to xkcd](../fig/exponential_covid.png){#fig-exponentialCovid}
 
-### Notations/Semantic/Terminology
+### Notations/Semantic/Terminology {.unnumbered}
 
 The exponential operation can be written in two distinct notations, each offering unique pedagogical and structural advantages depending on the context:
 
