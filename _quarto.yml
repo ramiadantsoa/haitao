@@ -11,7 +11,7 @@ book:
     right: "This work is licensed under a [CC BY-NC-ND 4.0 International License](https://creativecommons.org/licenses/by-nc-nd/4.0/)."
   chapters:
     - index.qmd
-    - preface_mdg.md
+    - preface_mdg.qmd
     - preface_eng.qmd
     - part: part_math/part_math.qmd
       chapters:
