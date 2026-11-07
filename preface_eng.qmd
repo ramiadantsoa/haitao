@@ -1,104 +1,73 @@
 # Preface {.unnumbered}
 
 This book should not exist.
-There are already so many free available materials online.
-Many universities have materials and open courses (examples).
-There are PDF and books available.
-There are videos on YouTube, some might be more legitimate than others.
-I also hope that there are libraries where you are and you have access to recent up-to-date physical books...if you are student do not hesitate to make a request to your advisors and acquaintances, still stay reasonable.
-As far as know, foreign researchers are not shy on bringing knowledge. Just ask!!!
+There are already many free available materials online.
+Many universities provide materials and open courses.
+Publishers have free books and PDFs available.
+Good deaders have shared teaching and tutorial on video sharing platform and social media^[some might be more legitimate than others].
+I also hope you have access to libraries where you are.
+For Malagasy scholars, in my personal experience, foreign colleagues do not mind bringing books. Just ask within reasons.
 And ultimately, I expect that the major part of what is written here are taught during undergraduate and graduate courses at your institutions.
 
-So is there a need for this book? Well, I aim and try to address superficial problems with this book.
-The first problem is **decentralized information**.
-Maybe there is a book on coding and another book on statistics.
-Maybe in some books, the basics are not covered so you need to look somewhere else.
-Maybe the levels differ.
-The first aim to gather in one place multiple informations, maybe this handbook has an encyclopedia philosophy.
-As such it is expected to grow in time.
-<!-- This early realize for instance includes basic knowledge, with beginner level. basic math vs intermediate math, descriptive statistics vs statistical inference etc. -->
+So, is there a need for this book? Well, I  try to address superficial problems with this book.
+The first problem is fragmented information.
+There are books on coding, statistics, mathematics, some are more foundational, some are applied.
+But, if you reading a statistics book and bump into an unfamiliar math concept, searching for an appropriate math book is not trivial. Likewise, if there is a specific R packages for, finding the complementary stat book is not trivial.
+In any case, there is a need to search information on a different source hoping that it would align with level and context.
+So one goal in this handbook is to gather in multiple knowledge on mathematics, statistcs, and coding in one place with an attempt to complement each other.
 
-<!--
-This cover topics that I feel are not understood (essentially basics) or most commonly used without reflection (say PCA or ANOVA).
-Starts with a basic level, maybe at most intermediate level.
-I expect it to grow and be updated overtime although I cannot guarantee the regularity of the update/release.
-Hopefully, this will also include more advanced topics in the future.
-Although as above, if you look for advanced, maybe this is not the book for you. -->
+The second problem is that many books are dense and formal.
+The main idea is to focus on the applied side whether it is mathematics, statistics or coding.
+While there is a section on formal definition^[which can always be google, there here for complementarity], most parts focus on intuition, examples, and advices.
+Each topic in short dedicated digestable chapter.
+The format is designed to promote active-learning.
 
-Second, **dense and formality**.
-This is heavy focus on practical/applied side.
-Text book and example can be dense with formal stuff. This is about inutition, examples, and code, and tips. There is section on formal definition but it is there for the most curious ones, and also a concrete bridge to the and the intuition.
-That can simply be googled.
-When add in the last section called tips and warnings: fun useful important.
-Tnis is also a compact and self-taught.
+The third problem is most books are written by non-Malagasy scholars meaning that it is based on a diffeent perspesctive and view.
+While this book is written in english^[a Malagasy version is cooking but that requires a body of work], the targeted audience are Malagasy students and researchers.
+The context and examples could be easier to grasp if it aligns with Malagasy way of thinking and experience. For instance, it is natural for Malagasy to understand traveling from Antsiranana to Toalagnaro than from New York to San Francisco. Or using a Malagasy idioms.
+Most of the intution, examples, and metaphors carry Malagasy flavor^[Madagascar is quite a diverse place, it should be more conservative and say based on my experience in environment where I grew up].
 
-Third, **western perspective** that might not align.
-For instance, using feet vs metric system. or everyday is mostly imaginary for us, taking a metro or a train.
-This is for Malagasy in mind.
-After teaching workshops for over a decade, there are many things barriers.
-Malagasy struggle with.
-This is a collection of those things.
-Also, intution is based on context in Madagascar, and examples, and metaphors with Malagasy flavor.
-Not sure because Malagasy is also a heterogenous.
-Some Malagasy terms are kept on purpose because the English translation is more confusing.
-And to be clear, shortcuting, it is my "Malagasy", I can't speak for them.
-
-The final problem is **access**.
-This is but if one finds this interesting, it is free.
-This is free book, you can download it from principally my webpage and probably other pages.
-There are two versions. I recommend html for nicer formatting.
-But if internet is an issue, a PDF also exist but and many features are lost (that is why publisher)
-Feel free to share it with anyone, use on whatever you want but this is self-edited book so you should not use it as a valid citation.
+The final problem is Malagasy cannot afford books.
+This is free book, you can download it, use it as you wish, and share it.
+Be aware that is self-edited book so you should not use it as a valid citation.
 As the proverb says, *Saonjo iray lohasa, tsy laozan'izay mamara*.
 Someone might try to make a business out of it. I am sorry for those who will pay for it and get scammed.
-
-<!--
-focus on intuition and examples. Definition  this handbook/encyclopedia is written in a compact form to combine the intuitive, the formal, and applied perspectives.
-Each topic will be divided into 5 parts although there are exceptions .
-The first part will provide the intuition for the concept, I will use metaphor etc. This book is written for Malagasy first so many concepts will be based on Malagasy culture etc.
-The second part will focus on the formal definition which could be Googled, and generally encounter in other books or teaching materials. This could be boring in the first phase as it is difficult to define concept in first principle.
-The third part will provide a practical side, how to run those things in R.
-The fourth part will provide tips and warnings which -->
 
 
 As a warning, it is worth mentioning that I am no expert in any of the topics and sections.
 I am mostly self-taught training in statistics and programming.
-There are experts in the field, and I should be the absolute reference.
+There are experts in the field and they should be the absolute reference.
 This book is based on my own experience and the way how I understand the concept, the way how I code.
-This is more a generalist approach to the concept to converse with mathematician, statisticians, programmers, data scientist. As I am not sure I failed, but I am not confident I succeeded.
-<!-- Yet, to enhance the value, I had colleagues and past advisors--the experts--that made sure that what is written is not completely nonsense.
-I am grateful and forever in dept to Otso, Tony, Guillaume, Gavin, Eva.
-However, if there is something wrong, I take full responsibility. -->
+This is more a generalist approach hoping the facilite converstation among mathematician, statisticians, programmers, especially data-driven researcher. I am not sure I failed, but I am not confident I succeeded.
 
-What about on AI: AI is another blooming stuff and seems like a obvious approach.
-First, I used AI to help polishing the book, some codes where written by AI, and even some examples.
-Second, there is chance you can simply google, that is a nice augmented value.
-Third,this is above critical thinking, altough I try to simplify. Using AI to bypass is loosing the needed training.
-Fourth, philosopical...but I am not sure where it is. As this is foundational. Several times I asked AI and checked by human so hopefully is not obsolete yet.
+The emergence of AI might also render this book obsolete. It could address most superficial problem above.I used AI to edit and format the texts, the code, and sanity check. As a sceptic, many features are useful. However, I would also poist that as I researcher, honing skills, original ideas are essential. Most crucial, over-dependence on tools unware of its own mistake is . As far as I know, learning requires doing the right but also the wrong thing, and repeat until enough experience
+
+This book is a tool, indeed trying to address superficial problems, I leave to each and everyone to address the real issue: grit.
 
 
-How this book is structured
-- Intuition (free form)
-- Definition (edited from wikipedia) condensed for lisibility. No need to reinvent the wheel
+### Structure and usage {.unnumbered}
+
+This current version contains three parts: basic mathematics, basic statistics, and basic coding. Each chapter shares the same format:
+
+- Intuition: it starts with a short quote hoping to help understand or remember the main idea and text elaborating on the topic.
+- Formal definition: this part can be found in any textbook, and is here for complementarity and formality
 - Examples
 - Tips and warning
-  - Semantic:
-  - R behavior.
+- A fifth section to explain terminology
 
 This is R, and code, output.
 Don't be frustrated if repetitive,(one concept in anther chapter). This is part of learning but also, there is no expectation that you will read each chapter, so reminded as it appears
 
+Codes are omitted on in math and stat part purpose. You need to download and install [R](https://cran.r-project.org) and [RStudio](https://posit.co/download) if you want to practice the code in the third part of this handbook
+
 ### Preface to version 0.5: beta {.unnumbered}
-Teraka ihany ambatobevohoka. This has been a long process, mostly thinking about the format, howt o structure the chapters and how to link them. This version is essentially the raw beginner version. Many will be underwhelmed to not say dissapointed, including me, by the selection of chapters, but I think it is time to publish for the following reasons
 
-- Is it going the right direction...your feedback is direly needed. It will help greatly whether it is constructive or destructive comments. This first release 0.5 is mostly about basic topics and still in english. I think it would be useful to have a first sense, and depending on time and availability, I will do the full release 1.0 in the near future.
+This has been a long process. While the idea of helping Malagasy in their data-analyses was born a while ago, it took years to find make up my mind on the topic, the format, and how to link different topics. While not satisfied, it is time to publish the first version. This version is a draft. Many will be underwhelmed to not say dissapointed by the fondational aspescts and selection of chapters, but I published it for the following reasons:
 
-- During most workshops, the first few days are crucial yet condense. So at minimum, it is basic and having a pause between digesting and learning about diversity metrics and community ecology, inferential stats, theoretical ecology.
+- Is it going in the right direction? Your constructive or destructive feedback is direly needed. You can email me directly or fill this [feedback link](placeholder). Thank you in advance for your help.
 
-- Semantic and terminology: mostly address across parts
+- It takes time to learn the basics. During most workshops I gave, the main problem is actually the basics which are squished in a couple days leaving overwhelmed. This version highlight the importance of the basics and allow sufficient time to digest.
 
-- Apologies if the text reads like AI but maybe it is good enough, this is also an experimental phase, text editing can consume and not sure if this is where time should be invested Expect when I have time to re-humanize the text.
-
-On can see this book as software version (hence version than edition). I will gradually expect to from time to time. They will be 0.5.x...hopefully it is not long until the version 1.0 is out.
+You ca see this book mimic software release, and this refer to version than edition. I will occasionaly edit some parts and these will be published as version 0.5.1, 0.5.2 etc. You will only have access to the last version online and previous version will not be archived. I sincerely hope that the wait for the first oficial version 1.0 will not be too long.
 
 
