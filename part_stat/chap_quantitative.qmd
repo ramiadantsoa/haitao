@@ -10,9 +10,9 @@ A quantitative variable is a function that maps an element of a population to a 
 
 The fundamental distinction rests on the two main categories of numbers: discrete and continuous (@sec-discreteContinuous). Consequently, there are two corresponding types of quantitative variables based on whether the codomain contains discrete values (such as integers) or continuous values.
 
-The divide between discrete and continuous variables becomes critical when studying probability distributions, statistical inference, and model fitting, primarily because the underlying mathematical machinery required to analyze them differs significantly (@sec-discreteContinuous)—a topic deferred to a future volume.
+The divide between discrete and continuous variables becomes critical when studying probability distributions, statistical inference, and model fitting, primarily because the underlying mathematical machinery required to analyze them differs significantly (@sec-discreteContinuous)—a topic deferred again to a future version.
 
-In basic descriptive statistics, whether a variable is discrete or continuous rarely alters the computation of summary statistics such as the mean or variance.
+In basic descriptive statistics, whether a variable is discrete or continuous rarely alters the computation of summary statistics such as the mean (@sec-mean) or variance (@sec-variance).
 
 ## Formal {.unnumbered}
 
@@ -20,9 +20,9 @@ A quantitative variable in statistics is a characteristic of an individual unit 
 
 Quantitative variables are classified into two main types:
 
-- Discrete Variables: A quantitative variable is discrete if its set of possible values is countable, typically consisting of isolated points on a number line (@sec-discreteContinuous).
+- A quantitative variable is discrete if its set of possible values is countable, typically consisting of isolated points on a number line (@sec-discreteContinuous).
 
-- Continuous Variables: A quantitative variable is continuous if its set of possible values forms an unbroken interval of real numbers. It can take on any value within that interval, constrained only by the precision of the measuring instrument (e.g., the height of a student measured at 1.65 m).
+- A quantitative variable is continuous if its set of possible values forms an unbroken interval of real numbers. It can take on any value within that interval, constrained only by the precision of the measuring instrument (e.g., the height of a student measured at 1.65 m).
 
 ## Examples {.unnumbered}
 
@@ -35,7 +35,7 @@ Zoological^[human included] metrics:
 
 Botanical metrics:
 
-- Continuous: diameter at breast height (dbh), plant height, wood hardness of a species.
+- Continuous: diameter at breast height (dbh), plant height, wood hardness.
 - Discrete: life stage defined by the number of nodes in maize, number of trifoliates in soybean.
 
 Landscape metrics:
@@ -47,18 +47,18 @@ Landscape metrics:
 
 - A useful rule of thumb: a variable is quantitative if applying standard arithmetic operations (@sec-arithmeticMath) to its values yields a meaningful result.
 
-- Quantitative variables are frequently transformed; common transformations include log scaling, square root transformations, and centering (subtracting the mean).
+- Quantitative variables are frequently transformed; common transformations include log scaling (@sec-log), square root transformations, and centering (subtracting each value by the mean).
 
 - Beware of "fake" quantitative variables. Identifiers such as ZIP codes or phone numbers consist of digits, but they are not quantitative. Adding or averaging two ZIP codes (e.g., Tana 101 and Ambalavao 303) produces no meaningful mathematical interpretation; the numbers serve merely as convenient categorical labels.
 
-- While discrete quantitative variables consist of integers, qualitative variables has the property of being discrete in the sense that their categories can be indexed by integers. But qualitative variable are not discrete variable
+- While discrete quantitative variables consist of integers, qualitative variables has the property of being discrete in the sense that their categories can be indexed by integers. But qualitative variable are not discrete variable.
 
 - A quantitative variable can take positive, negative, or zero values; sign does not affect whether a variable is discrete or continuous. Because discrete variables are often used for counting, they are frequently non-negative.
 
-- In taxonomy, discrete count variables (such as the number of floral parts) are sometimes used to classify species. In this context, the population of interest consists of species rather than individual organisms.
+- In taxonomy, count variables (such as the number of floral parts) are sometimes used to classify species. In this context, the population of interest consists of species rather than individual organisms.
 
 ### Semantic/Terminology/Notation {.unnumbered}
 
-- The statistical term discrete is superficially unrelated to the French word *"être discret"*.
+- The statistical term discrete is unrelated to the French term *"être discret"*.
 
 - Terminology varies across disciplines. Continuous variables are called real numbers ($\mathbb{R}$) in mathematics, called numeric in data science, and float or double data types in computer programming.

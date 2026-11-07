@@ -1,23 +1,25 @@
 # Basic coding
-A good background in mathematics and statistics has long been an advantage for data-driven scientists, even if field biologists often complain about it. And these topics are a standard part of university curricula. Traditionally, data analysis relied on software such as SPSS, Stata, and XLSTAT. But the rise of R introduced a new paradigm for analyzing and visualizing data. Unlike those point-and-click tools, however, R is a programming language—a subject that is rarely included in traditional science curricula.
+Traditionally, data analyses were conducted on software such as SPSS, Stata, and XLSTAT. But the rise of R introduced a new paradigm for analyzing and visualizing data. Unlike those point-and-click tools, however, R is a programming language—a subject that is rarely included in traditional science curriculum.
 
 Learning a programming language like R often requires unlearning how computers are typically used. With touchscreens, mice, and voice commands, and aritificial intelligence (where human-computer interaction feel more like a standard conversation), typing commands directly into a keyboard can feel obsolete.
 
-While the Online Historical Encyclopaedia of Programming Languages (HOPL) records over 8,900 languages, only about 50 to 70—such as C and Python—are actively used, with others serving experimental or recreational purposes. Because most programming languages share the same core principles, understanding the basics makes transitioning between languages much easier. Although R is the only language used in this handbook, the general principles of programming are explained using R as a concrete example.
+The Online Historical Encyclopaedia of Programming Languages (HOPL) records over 8,900 languages, only about 50 to 70—such as C and Python—are actively used, with others serving experimental or recreational purposes. Because most programming languages share the same core principles, understanding the basics makes transitioning between languages much easier. Although R is the only language used in this handbook, the general principles of programming are explained using R as a concrete example.
 
 This section covers the following core topics:
 
-* An introduction to the basic framework of computer programming, describing the console (@sec-console), the script editor (@sec-script), and the Integrated Development Environment (@sec-ide), followed by the concept of variable assignment (@sec-assignment).
+* An introduction to the basic framework of computer programming, describing the console (@sec-console), the script editor (@sec-script), the Integrated Development Environment (@sec-ide), and the concept of variable assignment (@sec-assignment).
 * The elementary data types in programming: numbers (@sec-numeric), strings or characters (@sec-character), and booleans (@sec-boolean).
 * Data structures built from these basic types to allow more flexible storage: vectors (@sec-vector), matrices (@sec-matrixCoding), data frames (@sec-dataframe), and lists (@sec-list).
-* Practical operations for carrying out the mathematical concepts introduced in the first section of this handbook (@sec-arithmeticMath, @sec-matrixOperationMath, @sec-matrixMultiplicationMath): arithmetic (@sec-arithmeticCoding), matrix operations (@sec-matrixOperationCoding), and boolean operations (@sec-booleanOperationCoding).
+* The chapters in arithmetic (@sec-arithmeticCoding), matrix operations (@sec-matrixOperationCoding), and boolean operations (@sec-booleanOperationCoding) provide the syntax to implement of the mathematical operation introduced in the first section of this handbook (@sec-arithmeticMath, @sec-matrixOperationMath, @sec-matrixMultiplicationMath) .
 * Functions, which are among the most essential concepts in programming (@sec-functionCoding).
 * Guidance to support the learning process, including chapters on writing pseudocode (@sec-pseudocode) and identifying and fixing bugs (@sec-debugging).
 
-Unlike previous sections, this section includes code snippets and their outputs. Code appears in light gray blocks, with the output displayed underneath in a distinct font. Comments within the code start with a `#` symbol to explain what specific lines do. Practicing by copying, typing, and modifying these code examples is strongly recommended.
+Unlike previous sections, this section includes code snippets and their outputs. Code appears in light gray blocks, with the output displayed underneath in a distinct black font. Comments within the code start with a `#` symbol to explain what the lines do. Here is an example:
 
 ```{r}
 #| echo: true
 # The code below calculates 1 + 2
 1 + 2
 ```
+
+Practicing by copying, typing, and modifying these code examples is strongly recommended.

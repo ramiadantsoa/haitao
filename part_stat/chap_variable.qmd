@@ -14,9 +14,9 @@ This section complements the previous one: to build our statistical framework—
 
 On the surface, a variable is simply a characteristic or feature of interest. Standard textbooks often define it this way because the characteristic varies from one individual or item to another within a population. When working with tabular data in a data frame, a variable typically corresponds to a single column in long-format data.
 
-However, taking a more critical view raises deeper questions. What, precisely, is a variable? Is it the column header itself (such as "height"), or is it the set of values contained within that column? Are these two ideas identical?
+However, taking a more critical view raises philosophical questions. What, precisely, is a variable? Is it the column header itself (such as "height"), or is it the set of values contained within that column? Are these two ideas identical?
 
-Consider measuring student heights in a single classroom. Height information could be collected by asking each student to self-report their height, or by measuring each student directly with a tape measure. Because the measurement methods differ, do these two approaches yield the same variable or two distinct ones? If both methods happen to produce identical values for every student, are the variables then considered identical?
+Consider measuring student heights in a single classroom. Height could be collected by asking each student to self-report their height, or by measuring each student directly with a tape measure. Because the measurement methods differ, do these two approaches yield the same variable or two distinct ones? If both methods happen to produce identical values for every student, are the variables then considered identical?
 
 The clearest way to resolve these questions is to define a variable by its measurement process, rather than viewing it merely as a collection of numbers. In statistical terms, a variable is fundamentally a function (@sec-functionMath). For any mathematical function to be well-defined, it requires a domain, an assignment rule, and a codomain. In statistics, the domain $X$ represents the population (or sample) under study, the function $f$ represents the measurement method, and the codomain $Y$ represents the set of resulting values that populate the data column.
 
@@ -27,11 +27,12 @@ Viewing variables through this functional lens makes classification straightforw
 
 A variable in statistics is a characteristic, attribute, or property of an individual item or subject in a population that can take on different values across different observations.
 
-In formal terms, if a population or sample is represented as a set of entities $\Omega$, a variable $X$ is defined as a function:
+In formal terms^[this might be an overkill], if a population or sample is represented as a set of entities $\Omega$, a variable $X$ is defined as a function:
 
 $$X: \Omega \rightarrow \mathcal{V}$$
 
 where:
+
 - $\Omega$ is the domain, representing the set of items, subjects, or experimental units under study.
 - $\mathcal{V}$ is the codomain (or state space), representing the set of all permissible values that the variable can take.
 - $X(\omega)$ assigns a specific measured or observed value in $\mathcal{V}$ to a particular unit $\omega \in \Omega$.
@@ -40,19 +41,17 @@ where:
 ## Examples {.unnumbered}
 Below are examples of variables^[Too keep it short, the population is not precisely defined]
 
-- When the population consists of study sites: GPS coordinates, elevation, temperature, rainfall, humidity etc.
-- When the population is a village: age, social status, and sex etc.
-- When the population is plants: diameter at breast height (dbh), height, and growth measured between two time points etc.
-
-<!-- - Sex determination: if human is the population then is  X Y and Y in human, for some reptiles, Sex determination X, Y, Z
-Sex determination temperature in turtle -->
+- When the population consists of study sites: GPS coordinates, elevation, temperature, rainfall, humidity.
+- When the population is a village: age, social status, and sex.
+- When the population is plants: diameter at breast height (dbh), height, and growth measured between two time points.
 
 ## Tips and warnings {.unnumbered}
-<!-- - By considering a variable as function, it only makes sense if the function is clearly defined. It is like saying study the trigonometric function f(x) = y without giving the expression of f. In practice, this is why the methods must be (e.g. which scale one uses to weight the individual). -->
 
-- Is a constant a variable? In practical terms, no, which is precisely why the term "variable" is used in the first place. However, if you measure a characteristic—such as religion in a classroom—expecting it to vary, but discover after collecting data that every individual shares the same religion, should it still be treated as a variable? In mathematics, a constant function like $f(x) = 1$ is still a valid function. These edge cases highlight why it is essential to think critically about what defines a variable.
+- Is a constant a variable? In practical terms, no, which is precisely why the term "variable" is used in the first place. However, if you measure a characteristic—such as religion in a classroom—expecting it to vary, but discover after collecting data that every individual shares the same religion, should it still be treated as a variable? In mathematics, a constant function like $f(x) = 1$ is still a valid function. These edge cases could serve as an exercise to think critically about what defines a variable.
+
 - Variables are frequently transformed. For instance, a researcher might record age as a continuous numerical (@sec-quantitativeVariable) value and later categorize the data into age brackets like infant, juvenile, and adult (@sec-qualitativeVariable). Once transformed, it becomes a distinct variable with different properties.
-A central concept in inferential statistics is the random variable. Its formal treatment is deferred until additional mathematical and statistical foundations are introduced (next volume).
+
+- A central concept in inferential statistics is the random variable. Its formal treatment is deferred until additional mathematical and statistical foundations are introduced (in future version).
 
 ### Notation/Semantic/Terminology {.unnumbered}
 

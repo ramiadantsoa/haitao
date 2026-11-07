@@ -3,13 +3,13 @@
 {{< include ../preamble.qmd >}}
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
-secrétaire personnel(le)
+Secrétaire personnel(le)
 :::
 
 
 Those reading this handbook will almost certainly use R. This involves writing, copying, editing, and deleting line after line of code. For such an intensive task, making the experience as pleasant, productive, and efficient as possible is essential.
 
-The core purpose of a script editor is to assist the user in every possible way. The most basic script editor available is a plain text editor (e.g., Notepad). It functions as a script editor because it allows text to be written, edited, and saved as code. In the early days of R, code was often written in Notepad or Notepad++ and then copied into the console (@sec-console) for execution.
+The core purpose of a script editor is to assist the user in every possible way. The most basic script editor available is a plain text editor (e.g., Notepad). It functions as a script editor because it allows text to be written, edited, and saved as code. In the early days of R, codes were written in Notepad or Notepad++ and then copied into the console (@sec-console) for execution.
 
 Today, many script editors exist, but most users rely on the editor included with an IDE (@sec-ide). Below are several key features that improve code writing:
 
@@ -21,7 +21,7 @@ Today, many script editors exist, but most users rely on the editor included wit
 
 - Bracket & Parenthesis Matching: Highlights corresponding pairs of (), {}, and [] to prevent syntax errors.
 
-Different script editors suit different needs (personal assistance are choose on specific skills needed to handle particular tasks). Someone programming in multiple languages—such as Python, Java, and R—might prefer a multi-language editor. For the typical R user, the script editor built into RStudio is the most popular choice.
+Different script editors suit different needs (a personal assistant is choosen on specific skills needed to handle particular tasks). A programmer using multiple languages—such as Python, Java, and R—might prefer a multi-language editor. For the typical R user, the script editor built into RStudio is the most popular choice.
 
 ## Formal {.unnumbered}
 A script editor is a specialized text interface used by programmers to write, edit, and save code files. Unlike an interactive console (@sec-console) that runs code immediately line-by-line, a script editor allows you to write out a full sequence of instructions, review them, and save them as a permanent file before running them.
@@ -31,55 +31,54 @@ A script editor is a specialized text interface used by programmers to write, ed
 - Code as it appears in the simplest text editor without syntax highlighting and indentation.
 
 
-```plain
-# Add one plus one
-1 + 1
+  ```plain
+  # Add one plus one
+  1 + 1
 
-# Import your data into R
-data <- read.csv('my_data.csv')
+  # Import your data into R
+  data <- read.csv('my_data.csv')
 
-# A ggplot code
-ggplot(data, aes(x = age, y = height)) +
-geom_point()+
-theme_bw()
+  # A ggplot code
+  ggplot(data, aes(x = age, y = height)) +
+  geom_point()+
+  theme_bw()
 
-```
+  ```
 
 - The same code with syntax highlighting for different object types: comments in gray, numbers (@sec-numeric) in red, functions (@sec-functionCoding) in blue, and characters (@sec-character) and variables (@sec-assignment) in black.
 
-```r
-# Add one plus one
-1 + 1
+  ```r
+  # Add one plus one
+  1 + 1
 
-# Import your data into R
-data <- read.csv(“my_data.csv”)
+  # Import your data into R
+  data <- read.csv(“my_data.csv”)
 
 
-# A ggplot code
-ggplot(data, aes(x = age, y = height)) +
-    geom_point()+
-    theme_bw()
+  # A ggplot code
+  ggplot(data, aes(x = age, y = height)) +
+      geom_point()+
+      theme_bw()
 
-```
+  ```
 
-- A script editor includes various features to facilitate coding and improve productivity. Here is an example showing code suggestion and auto-completion @fig-completion.
+- A script editor includes various features to facilitate coding and improve productivity. This figure (@fig-completion) is an example the script editor in RStudio displaying syntax highlighting on lines 1,2 3, and syntax suggestion and auto-completion for `log`{.r} as well as the help file (yellow rectangle).
 
-![Some features](../fig/completion_highlight.png){#fig-completion}
-
+  ![Features of script editor](../fig/completion_highlight.png){#fig-completion}
 
 ## Tips and warnings {.unnumbered}
 
-- By definition, a script is meant for writing code. To evaluate code in the console, the brute-force approach is to copy the chunks to be run. However, features now allow code to be sent directly to the console while remaining in the script editor. This is enabled by an IDE (@sec-ide).
+- By definition, a script is meant for writing code. To evaluate code in the console, the brute-force approach is to copy the chunks run. However, code can be sent directly to the console while remaining in the script editor with an IDE (@sec-ide).
 
 - Documenting code: A good habit that is easy to ignore is adding human-readable text. While code is for the machine, other people and the original author can benefit from verbal descriptions. These are called comments (see the code preceded by `#` above). They are ignored during evaluation by the computer.
 
 - An underused feature of script editors is keyboard shortcuts. Exploring available shortcuts is a good habit. For example, using a shortcut for variable assignment `<-` is very useful when certain symbols are not easily accessible on the keyboard. Custom shortcuts can even be created.
 
-- Embracing the features: Most script editors are more powerful than expected. Exploring and learning features that make coding more productive can be worth the effort.
+- Embracing the features: Most script editors are more powerful than expected. Exploring and learning features make coding more productive.
 
-- Code is written in plain text format. It can even be opened in Microsoft Word. Features like syntax highlighting belong to the script editor, not the file itself (unlike a Word document with embedded bold formatting, etc.).
+- Code is written in plain text format. It can  be opened with any text editor including Microsoft Word. However, features like syntax highlighting belong to the script editor, not the file itself (unlike a Word document with embedded bold formatting, etc.).
 
-- Because code is stored in plain text files, it can easily be tracked using a version control program.
+- Because a code is stored in plain text files, it can easily be tracked using a version control program.
 
 - Themes allow personalization. Themes can be light or dark, with bright or muted colors. This can be customized in RStudio under Tools > Global Options > Appearance.
 

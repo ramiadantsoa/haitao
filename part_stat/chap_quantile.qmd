@@ -6,13 +6,13 @@
 You are a genius!
 :::
 
-Social media posts often feature puzzles claiming that solving them proves genius status or indicates that 99% of people cannot solve the problem. These claims are designed to suggest that solving the puzzle means an individual belongs to an exclusive, intellectual elite, group.
+Social media posts often feature puzzles claiming that solving them proves genius status or indicates that 99% of people cannot solve the problem. These claims are designed to suggest that solving the puzzle means an individual belongs to an exclusive, intellectual elite group.
 
 While the specific percentages in these viral posts are usually fabricated to grab attention, an underlying statistical principle forms the basis of such claims.
 
-Determining that 99% of people cannot solve a problem—or equivalently, that only 1% can—relies on relative position within a distribution. For instance: if 1,000 people attempt a problem and only 10 succeed, the success rate is 1%, placing those who solve it in the top 1%. Another approach connects puzzle-solving ability to a continuous quantitative variable (@sec-quantitativeVariable), such as IQ. Under this model, the top 1% corresponds to individuals whose IQ scores place them in the highest 1% of the distribution.
+Determining that 99% of people cannot solve a problem—or equivalently, that only 1% can—relies on relative position within a distribution. For instance: if 1,000 people attempt a problem and only 10 succeed, the success rate is 1%, placing those who solve it in the top 1%. Another approach implicitly links the puzzle-solving ability to a continuous quantitative ability (@sec-quantitativeVariable), such as IQ. Under this model, the top 1% corresponds to individuals whose IQ scores place them in the highest 1% of the distribution.
 
-More generally, data values can be ordered from smallest to largest to evaluate relative ranking. For any point in an ordered dataset, the proportion of values falling above or below that point can be calculated. A quantile identifies the specific value that splits a distribution into a given proportion. The median (@sec-median) is a special case of quantile (0.5 quantile), where half of the observations fall below the value and half fall above.
+More generally, values can be ordered from smallest to largest to evaluate relative ranking. For any point in an ordered dataset, the proportion of values falling above or below that point can be calculated. A quantile identifies the specific value that splits a distribution into such given proportion. The median (@sec-median) is a special case of quantile (0.5 quantile), where half of the observations fall below the value and half fall above.
 
 ## Formal {.unnumbered}
 
@@ -30,17 +30,15 @@ To locate the $p$-quantile, first determine the position index $L_p$:
 
 $$L_p = p(n + 1)$$
 
-If $L_p$ is an integer, the $p$-quantile corresponds directly to $x_{(L_p)}$. If $L_p$ is not an integer, linear interpolation is applied between the adjacent ordered values $x_{(\lfloor L_p \rfloor)}$ and x_{(\lceil L_p \rceil)}.
+If $L_p$ is an integer, the $p$-quantile corresponds directly to $x_{(L_p)}$. If $L_p$ is not an integer, linear interpolation is applied between the adjacent ordered values $x_{(\lfloor L_p \rfloor)}$ and $x_{(\lceil L_p \rceil)}$.
 
-- Quartiles and Interquartile Range
+- Quartiles are specific quantiles that divide an ordered dataset into four equal parts:
 
-Quartiles are specific quantiles that divide an ordered dataset into four equal parts:
+  - The first quartile ($Q_1$, or 0.25 quantile) separates the lowest 25% of the data from the upper 75%.
+  - The second quartile ($Q_2$, or 0.50 quantile) corresponds to the sample median, dividing the dataset into two equal halves.
+  - The third quartile ($Q_3$, or 0.75 quantile) separates the lowest 75% of the data from the upper 25%.
 
-- The first quartile ($Q_1$, or 0.25 quantile) separates the lowest 25% of the data from the upper 75%.
-- The second quartile ($Q_2$, or 0.50 quantile) corresponds to the sample median, dividing the dataset into two equal halves.
-- The third quartile ($Q_3$, or 0.75 quantile) separates the lowest 75% of the data from the upper 25%.
-
-The interquartile range ($\text{IQR}$) measures statistical dispersion by evaluating the spread of the middle 50% of the dataset. It is calculated as the difference between the third and first quartiles:
+- The interquartile range ($\text{IQR}$) measures statistical dispersion by evaluating the spread of the middle 50% of the dataset. It is calculated as the difference between the third and first quartiles:
 
 $$\text{IQR} = Q_3 - Q_1$$
 
@@ -49,204 +47,203 @@ $$\text{IQR} = Q_3 - Q_1$$
 
 - Consider a dataset containing 100 observations formed by two distinct clusters: the integers from 1 to 50 and the integers from 1001 to 1050.
 
-The $1\%$, $2\%$, and $3\%$ quantiles ($0.01$, $0.02$, and $0.03$ quantiles) correspond to 1, 2, and 3, respectively. Similarly, the $20\%$ quantile is 20.
+  The $1\%$, $2\%$, and $3\%$ quantiles ($0.01$, $0.02$, and $0.03$ quantiles) correspond to 1, 2, and 3, respectively. Similarly, the $20\%$ quantile is 20.
 
-The median ($0.50$ quantile) falls directly between the two clusters:
+  The median ($0.50$ quantile) falls directly between the two clusters:
 
-$$\text{Median} = \frac{50 + 1001}{2} = 525.5$$
+  $$\text{Median} = \frac{50 + 1001}{2} = 525.5$$
 
-The $51\%$ quantile steps into the second cluster at 1001, while the $98\%$ and $99\%$ quantiles correspond to 1048 and 1049.
+  The $51\%$ quantile steps into the second cluster at 1001, while the $98\%$ and $99\%$ quantiles correspond to 1048 and 1049.
 
 
-- Visualizing quantiles within a distribution helps illustrate how cutoffs map directly to specific proportions of data.
+- Visualizing quantiles within a distribution helps to illustrate how cutoffs map directly to specific proportions of data.
 
-In a histogram (@sec-distribution), a quantile represents the boundary value along the x-axis below which a specified percentage of total observations falls. For instance, the value corresponding to the 8% quantile divides the lowest 8% of the data (green region) from the upper 92%. Similarly, the 75% quantile—also known as the third quartile (Q3)—marks the boundary below which 75% of the observations lie.
+  1. In a histogram (@sec-distribution), a quantile represents the boundary value along the x-axis below which a specified percentage of total observations falls. For instance, the value corresponding to the 8% quantile divides the lowest 8% of the data (green region) from the upper 92%. Similarly, the 75% quantile—also known as the third quartile (Q3)—marks the boundary below which 75% of the observations lie.
 
-```{r}
-# Create data
-# data_values <- rnorm(100)
-# 1. Generate data
-set.seed(42)
-data_values <- rnorm(2000, 0, 10)
+  ```{r}
+  # Create data
+  # data_values <- rnorm(100)
+  # 1. Generate data
+  set.seed(42)
+  data_values <- rnorm(2000, 0, 10)
 
-# 2. Calculate dynamic quantiles (7% and 75%)
-q_low  <- quantile(data_values, 0.08) # ~ -13.8
-q_high <- quantile(data_values, 0.75) # ~ +6.7
+  # 2. Calculate dynamic quantiles (7% and 75%)
+  q_low  <- quantile(data_values, 0.08) # ~ -13.8
+  q_high <- quantile(data_values, 0.75) # ~ +6.7
 
-# 3. Calculate histogram object
-my_hist <- hist(data_values, breaks = 40, plot = FALSE)
+  # 3. Calculate histogram object
+  my_hist <- hist(data_values, breaks = 40, plot = FALSE)
 
-# 4. Dynamic color vector based on quantile midpoints
-my_color <- ifelse(
-  my_hist$mids < q_low, rgb(0.2, 0.8, 0.5, 0.6),
-  ifelse(
-    my_hist$mids >= q_high, adjustcolor("purple", alpha.f = 0.6),
-    rgb(0.2, 0.2, 0.2, 0.2)
+  # 4. Dynamic color vector based on quantile midpoints
+  my_color <- ifelse(
+    my_hist$mids < q_low, rgb(0.2, 0.8, 0.5, 0.6),
+    ifelse(
+      my_hist$mids >= q_high, adjustcolor("purple", alpha.f = 0.6),
+      rgb(0.2, 0.2, 0.2, 0.2)
+    )
   )
-)
 
-# Expand bottom margin (mar[1]) slightly to accommodate extra x-axis labels
-par(mar = c(6, 4.5, 4, 2))
+  # Expand bottom margin (mar[1]) slightly to accommodate extra x-axis labels
+  par(mar = c(6, 4.5, 4, 2))
 
-# 5. Plot Histogram
-plot(
-  my_hist,
-  col = my_color,
-  border = FALSE,
-  main = "Histogram with 8% and 75% Quantile Cutoffs",
-  xlab = "",  # Suppress default xlab to avoid overlap with quantile values
-  xlim = c(-40, 40),
-  las = 1
-)
-
-grid(col = "gray90", lty = "dotted")
-
-# Re-draw histogram bars over grid
-plot(my_hist, col = my_color, border = FALSE, add = TRUE)
-
-# 6. Add Vertical Bar Lines at Quantiles
-abline(v = q_low,  col = "#0e6b38", lty = 2, lwd = 2)
-abline(v = q_high, col = "purple",  lty = 2, lwd = 2)
-
-# 7. Add Labels at the top (Quantile names ONLY)
-y_max <- max(my_hist$counts)
-
-text(
-  x = q_low, y = y_max * 0.95,
-  labels = "Q 8%",
-  col = "#0e6b38", font = 2, pos = 2, cex = 0.85
-)
-
-text(
-  x = q_high, y = y_max * 0.95,
-  labels = "Q 75%",
-  col = "purple", font = 2, pos = 4, cex = 0.85
-)
-
-# 8. Add Quantile Numerical Values Below the X-Axis
-# Redraw custom colored tick marks & values at quantile positions
-axis(side = 1, at = round(q_low, 2), labels = round(q_low, 2),
-     col.axis = "#0e6b38", col.ticks = "#0e6b38", font = 2, cex.axis = 0.85, line = -.75)
-
-axis(side = 1, at = round(q_high, 2), labels = round(q_high, 2),
-     col.axis = "purple", col.ticks = "purple", font = 2, cex.axis = 0.85, line = -.75)
-
-# Add standard x-axis label shifted down to make space
-mtext("value of the variable", side = 1, line = 3.8, cex = 0.9)
-
-# Reset margin default
-par(mar = c(5, 4, 4, 2) + 0.1)
-```
-
-The quantile can be seen naturally on with a cumulative distribution @sec-cumulativeDist. Pick the quantile percentage on the y-axis, projecting a horizontal line  (e.g., 8% or 75%) to where it intersects the cumulative curve, and then dropping a vertical line to the x-axis, which is the corresponding quantile value.
-
-```{r}
-# 1. Generate data
-set.seed(42)
-N <- 2000
-data_values <- rnorm(N, 0, 10)
-
-# 2. Define Parametric Quantile Thresholds
-p_low  <- 0.08  # 8%
-p_high <- 0.75  # 75%
-
-q_low  <- quantile(data_values, p_low)   # ~ -14.05
-q_high <- quantile(data_values, p_high)  # ~ +6.70
-
-# 3. Compute initial histogram without plotting
-hist_object <- hist(data_values, breaks = 40, plot = FALSE)
-
-# Convert counts to cumulative percentages (%)
-hist_object$counts <- cumsum(hist_object$counts) / N * 100
-
-# 4. Color vector based on bin midpoints (mids) matching cumulative thresholds
-my_color <- ifelse(
-  hist_object$mids < q_low, rgb(0.2, 0.8, 0.5, 0.6), # Below 8%
-  ifelse(
-    hist_object$mids >= q_high, adjustcolor("purple", alpha.f = 0.6), # Above 75%
-    rgb(0.2, 0.2, 0.2, 0.2) # Between 8% and 75%
+  # 5. Plot Histogram
+  plot(
+    my_hist,
+    col = my_color,
+    border = FALSE,
+    main = "Histogram with 8% and 75% Quantile Cutoffs",
+    font.main = 1,
+    xlab = "",  # Suppress default xlab to avoid overlap with quantile values
+    xlim = c(-40, 40),
+    las = 1
   )
-)
 
-# Expand bottom margin for quantile tick labels below x-axis
-par(mar = c(6, 4.5, 4, 2))
+  grid(col = "gray90", lty = "dotted")
 
-# 5. Plot Base Cumulative Histogram
-plot(
-  hist_object,
-  main = paste0("Cumulative Histogram with ", p_low * 100, "% and ", p_high * 100, "% Quantiles"),
-  xlab = "",
-  ylab = "Cumulative Percentage (%)",
-  xlim = c(-40, 40),
-  ylim = c(0, 105),
-  col = my_color,
-  border = FALSE,
-  las = 1
-)
+  # Re-draw histogram bars over grid
+  plot(my_hist, col = my_color, border = FALSE, add = TRUE)
 
-grid(col = "gray90", lty = "dotted")
+  # 6. Add Vertical Bar Lines at Quantiles
+  abline(v = q_low,  col = "#0e6b38", lty = 2, lwd = 2)
+  abline(v = q_high, col = "purple",  lty = 2, lwd = 2)
 
-# Re-draw bars over grid
-plot(hist_object, col = my_color, border = FALSE, add = TRUE)
+  # 7. Add Labels at the top (Quantile names ONLY)
+  y_max <- max(my_hist$counts)
 
-# Percentage y-values for intersections
-y_low_pct  <- p_low * 100
-y_high_pct <- p_high * 100
+  text(
+    x = q_low, y = y_max * 0.95,
+    labels = "Q 8%",
+    col = "#0e6b38", font = 2, pos = 2, cex = 0.85
+  )
 
-# 6. Add Horizontal Segments (From left y-axis boundary at x = -40 to intersection point)
-segments(x0 = -40, y0 = y_low_pct,  x1 = q_low,  y1 = y_low_pct,  col = "#0e6b38", lty = 3, lwd = 1.8)
-segments(x0 = -40, y0 = y_high_pct, x1 = q_high, y1 = y_high_pct, col = "purple",  lty = 3, lwd = 1.8)
+  text(
+    x = q_high, y = y_max * 0.95,
+    labels = "Q 75%",
+    col = "purple", font = 2, pos = 4, cex = 0.85
+  )
 
-# 7. Add Vertical Segments (From x-axis baseline at y = 0 to intersection point)
-segments(x0 = q_low,  y0 = 0, x1 = q_low,  y1 = y_low_pct,  col = "#0e6b38", lty = 2, lwd = 2)
-segments(x0 = q_high, y0 = 0, x1 = q_high, y1 = y_high_pct, col = "purple",  lty = 2, lwd = 2)
+  # 8. Add Quantile Numerical Values Below the X-Axis
+  # Redraw custom colored tick marks & values at quantile positions
+  axis(side = 1, at = round(q_low, 2), labels = round(q_low, 2),
+       col.axis = "#0e6b38", col.ticks = "#0e6b38", font = 2, cex.axis = 0.85, line = -.75)
 
-# 8. Add Intersection Points & Labels
-# Draw solid points at exact intersection coordinates
-points(c(q_low, q_high), c(y_low_pct, y_high_pct),
-       col = c("#0e6b38", "purple"), pch = 19, cex = 1.2)
+  axis(side = 1, at = round(q_high, 2), labels = round(q_high, 2),
+       col.axis = "purple", col.ticks = "purple", font = 2, cex.axis = 0.85, line = -.75)
 
-# Quantile labels placed near intersection points
-text(
-  x = q_low, y = y_low_pct + 4,
-  labels = paste0("Q ", y_low_pct, "%"),
-  col = "#0e6b38", font = 2, pos = 2, cex = 0.85
-)
+  # Add standard x-axis label shifted down to make space
+  mtext("Values", side = 1, line = 3.8, cex = 0.9)
 
-text(
-  x = q_high, y = y_high_pct + 4,
-  labels = paste0("Q ", y_high_pct, "%"),
-  col = "purple", font = 2, pos = 2, cex = 0.85
-)
+  # Reset margin default
+  par(mar = c(5, 4, 4, 2) + 0.1)
+  ```
 
-# 9. Add Quantile Numerical Values Below X-Axis
-axis(side = 1, at = round(q_low, 2), labels = round(q_low, 2),
-     col.axis = "#0e6b38", col.ticks = "#0e6b38", font = 2, cex.axis = 0.85, line = -1.)
+  2. The quantile can be easily inferred with a cumulative distribution (@sec-cumulativeDist). (1) Pick the quantile percentage on the y-axis, (2)project a horizontal line  (e.g., 8% or 75%) to where it intersects the cumulative curve, and then (3) drop a vertical line to the x-axis, which is the corresponding quantile value.
 
-axis(side = 1, at = round(q_high, 2), labels = round(q_high, 2),
-     col.axis = "purple", col.ticks = "purple", font = 2, cex.axis = 0.85, line = -1.)
+  ```{r}
+  # 1. Generate data
+  set.seed(42)
+  N <- 2000
+  data_values <- rnorm(N, 0, 10)
 
-# Add main x-axis title shifted down
-mtext("Values", side = 1, line = 3.8, cex = 0.9)
+  # 2. Define Parametric Quantile Thresholds
+  p_low  <- 0.08  # 8%
+  p_high <- 0.75  # 75%
 
-# Reset margin defaults
-par(mar = c(5, 4, 4, 2) + 0.1)
+  q_low  <- quantile(data_values, p_low)   # ~ -14.05
+  q_high <- quantile(data_values, p_high)  # ~ +6.70
 
-```
+  # 3. Compute initial histogram without plotting
+  hist_object <- hist(data_values, breaks = 40, plot = FALSE)
+
+  # Convert counts to cumulative percentages (%)
+  hist_object$counts <- cumsum(hist_object$counts) / N * 100
+
+  # 4. Color vector based on bin midpoints (mids) matching cumulative thresholds
+  my_color <- ifelse(
+    hist_object$mids < q_low, rgb(0.2, 0.8, 0.5, 0.6), # Below 8%
+    ifelse(
+      hist_object$mids >= q_high, adjustcolor("purple", alpha.f = 0.6), # Above 75%
+      rgb(0.2, 0.2, 0.2, 0.2) # Between 8% and 75%
+    )
+  )
+
+  # Expand bottom margin for quantile tick labels below x-axis
+  par(mar = c(6, 4.5, 4, 2))
+
+  # 5. Plot Base Cumulative Histogram
+  plot(
+    hist_object,
+    main = paste0("Cumulative Histogram with ", p_low * 100, "% and ", p_high * 100, "% Quantiles"),
+    font.main = 1,
+    xlab = "",
+    ylab = "Cumulative Percentage (%)",
+    xlim = c(-40, 40),
+    ylim = c(0, 105),
+    col = my_color,
+    border = FALSE,
+    las = 1
+  )
+
+  grid(col = "gray90", lty = "dotted")
+
+  # Re-draw bars over grid
+  plot(hist_object, col = my_color, border = FALSE, add = TRUE)
+
+  # Percentage y-values for intersections
+  y_low_pct  <- p_low * 100
+  y_high_pct <- p_high * 100
+
+  # 6. Add Horizontal Segments (From left y-axis boundary at x = -40 to intersection point)
+  segments(x0 = -40, y0 = y_low_pct,  x1 = q_low,  y1 = y_low_pct,  col = "#0e6b38", lty = 3, lwd = 1.8)
+  segments(x0 = -40, y0 = y_high_pct, x1 = q_high, y1 = y_high_pct, col = "purple",  lty = 3, lwd = 1.8)
+
+  # 7. Add Vertical Segments (From x-axis baseline at y = 0 to intersection point)
+  segments(x0 = q_low,  y0 = 0, x1 = q_low,  y1 = y_low_pct,  col = "#0e6b38", lty = 2, lwd = 2)
+  segments(x0 = q_high, y0 = 0, x1 = q_high, y1 = y_high_pct, col = "purple",  lty = 2, lwd = 2)
+
+  # 8. Add Intersection Points & Labels
+  # Draw solid points at exact intersection coordinates
+  points(c(q_low, q_high), c(y_low_pct, y_high_pct),
+         col = c("#0e6b38", "purple"), pch = 19, cex = 1.2)
+
+  # Quantile labels placed near intersection points
+  text(
+    x = q_low, y = y_low_pct + 4,
+    labels = paste0("Q ", y_low_pct, "%"),
+    col = "#0e6b38", font = 2, pos = 2, cex = 0.85
+  )
+
+  text(
+    x = q_high, y = y_high_pct + 4,
+    labels = paste0("Q ", y_high_pct, "%"),
+    col = "purple", font = 2, pos = 2, cex = 0.85
+  )
+
+  # 9. Add Quantile Numerical Values Below X-Axis
+  axis(side = 1, at = round(q_low, 2), labels = round(q_low, 2),
+       col.axis = "#0e6b38", col.ticks = "#0e6b38", font = 2, cex.axis = 0.85, line = -1.)
+
+  axis(side = 1, at = round(q_high, 2), labels = round(q_high, 2),
+       col.axis = "purple", col.ticks = "purple", font = 2, cex.axis = 0.85, line = -1.)
+
+  # Add main x-axis title shifted down
+  mtext("Values", side = 1, line = 3.8, cex = 0.9)
+
+  # Reset margin defaults
+  par(mar = c(5, 4, 4, 2) + 0.1)
+
+  ```
 
 ## Tips and warnings {.unnumbered}
 
-- The quantile is a pair: the and the value
--
-- The median corresponds to the 0.50 quantile (50th percentile), dividing a dataset into two equal halves.
+- The quantile is a pair: the proprtion $p$ and the respective $x$ value.
 
-- The interquartile range ($\text{IQR}$) measures the spread of the middle 50% of a distribution, calculated as the difference between the 75% and 25% quantiles ($Q_3 - Q_1$). It is a primary measure of dispersion used in boxplots.
+- The interquartile range ($\text{IQR}$) measures the spread of the middle 50% of a distribution, calculated as the difference between the 75% and 25% quantiles ($Q_3 - Q_1$). The rectangles in a default boxplot represent the IQR and is a measure dispersion (alternative to the standard devitation).
 
 - Quantile estimates can become imprecise or unstable in small datasets. In such cases, linear interpolation or theoretical approximations may yield unreliable results.
 
-
-- A $p$-value of 0.06 is directly related to a 0.06 (0.94, or 0.03-0.97)  quantile of the null distribution^[explained in the next volume]. Using the IQ metaphor from the introduction, this corresponds to three possible interpretations: an IQ in the top 6%, in the bottom 6%, or split between the top 3% and bottom 3%. The first two interpretations describe one-sided statistics, whereas the last applies to a two-sided statistic.
+- A $p$-value of 0.06 is directly related to a 0.06 (0.94 or 0.03-0.97)  quantile of the null distribution^[explained in the next version]. Using the IQ metaphor from the introduction, this corresponds to three possible interpretations: an IQ in the top 6%, in the bottom 6%, or split between the top 3% and bottom 3%. The first two interpretations describe one-sided statistics, whereas the last applies to a two-sided statistic.
 
 ### Notation/Semantic/Terminology {.unnumbered}
 
-- Percentiles and quantiles describe identical statistical cutoffs.Mathematically, the $p$-quantile corresponds directly to the $(100 \times p)$-th percentile. For example, the 0.50 quantile, the 50th percentile, and the median ($Q_2$) refer to the exact same value in a dataset.
+- Percentiles and quantiles describe identical statistical cutoffs. Mathematically, the $p$-quantile corresponds directly to the $(100 \times p)$-th percentile. For example, the 0.50 quantile, the 50th percentile, and the median ($Q_2$) refer to the exact same value in a dataset.

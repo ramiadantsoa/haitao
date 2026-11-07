@@ -7,11 +7,11 @@
 Spread of the data
 :::
 
-Almost everyone has calculated an average grade to see whether a course was passed or if a specific mark was achieved, yet checking the variance of those grades is rarely considered. While calculating the mean is well understood, the formulas for variance and standard deviation are often forgotten.
+Almost everyone has calculated an average grade, yet checking the variance of those grades is rarely considered. While calculating the mean is well understood, the formulas for variance and standard deviation are often forgotten.
 
 When conducting statistical tests, analyzing variance becomes necessary—often without a clear understanding of why. Concepts such as homogeneity of variance or homoscedasticity can seem overly complex, largely because variance is routinely ignored in everyday calculations.
 
-Due to the familiarity and practical utility of the mean, comparing two single numbers is comfortable, which often leads to the implicit assumption that the underlying distributions are identical. However, a single mean does not fully describe a distribution, as demonstrated below by three distinct distributions sharing the exact same mean.
+Due to the familiarity and utility of the mean, comparing two single numbers is easy, which often leads to the implicit assumption that the underlying distributions are identical. However, a single mean does not fully describe a distribution, as demonstrated below by three distinct distributions sharing the exact same mean.
 
 
 ```{r}
@@ -56,19 +56,19 @@ col_main <- "#3b82f6"
 col_grid <- "#e2e8f0"
 
 # Plot 1: Normal
-plot(h1, col = col_main, border = "white", main = "Normal", xlab = "Value", ylab = "Proportion", las = 1, ylim = y_limits)
+plot(h1, col = col_main, border = "white", main = "Normal", font.main = 1, xlab = "Value", ylab = "Proportion", las = 1, ylim = y_limits)
 grid(nx = NA, ny = NULL, col = col_grid, lty = 1)
 plot(h1, col = col_main, border = "white", add = TRUE, las = 1)
 abline(v = mean(data_norm), col = "#e11d48", lwd = 2, lty = 2)
 
 # Plot 2: Uniform
-plot(h2, col = col_main, border = "white", main = "Uniform", xlab = "Value", ylab = "Proportion", las = 1, ylim = y_limits)
+plot(h2, col = col_main, border = "white", main = "Uniform", font.main = 1, xlab = "Value", ylab = "Proportion", las = 1, ylim = y_limits)
 grid(nx = NA, ny = NULL, col = col_grid, lty = 1)
 plot(h2, col = col_main, border = "white", add = TRUE, las = 1)
 abline(v = mean(data_unif), col = "#e11d48", lwd = 2, lty = 2)
 
 # Plot 3: Bimodal
-plot(h3, col = col_main, border = "white", main = "Bimodal", xlab = "Value", ylab = "Proportion", las = 1, ylim = y_limits)
+plot(h3, col = col_main, border = "white", main = "Bimodal", font.main = 1,xlab = "Value", ylab = "Proportion", las = 1, ylim = y_limits)
 grid(nx = NA, ny = NULL, col = col_grid, lty = 1)
 plot(h3, col = col_main, border = "white", add = TRUE, las = 1)
 abline(v = mean(data_bimodal), col = "#e11d48", lwd = 2, lty = 2)
@@ -78,7 +78,7 @@ par(mfrow = c(1, 1))
 
 ```
 
-Conversely, no one would conclude that equal variances imply identical distributions. Comparing distributions effectively is often achieved through a parsimonious approach that examines both the mean and the variance. The mean indicates the central tendency, whereas the variance measures the dispersion. For well-behaved distributions—particularly those that are unimodal and symmetrical—these two metrics serve as the primary criteria for comparison.
+Conversely, no one would conclude that equal variances imply identical distributions. Comparing distributions effectively is often achieved through a parsimonious approach that examines both the mean and the variance^[comparing the cumulative distributions is more rigorous]. The mean indicates the central tendency, whereas the variance measures the dispersion. For well-behaved distributions—particularly those that are unimodal and symmetrical—these two metrics serve as the primary criteria for comparison.
 
 
 ## Formal {.unnumbered}
@@ -110,40 +110,39 @@ $${#eq-standardDeviation}
 
 - For a trivial dataset $X = \{1, 1, 1, 1\}$, the mean is $\mu = 1$.
 
-The variance is:
+  The variance is:
 
-$$
-\begin{align*}
-  \sigma^2 & = \frac{1}{4}\left((1 - \mu)^2 + (1 - \mu)^2 + (1 - \mu)^2 + (1 - \mu)^2\right) \\
-  & = \frac{1}{4} (0) \times 4 = 0
-\end{align*}
-$$
-This result is intutitive: because all values are identical, there is no dispersion, yielding a variance of zero.
+  $$
+  \begin{align*}
+    \sigma^2 & = \frac{1}{4}\left((1 - \mu)^2 + (1 - \mu)^2 + (1 - \mu)^2 + (1 - \mu)^2\right) \\
+    & = \frac{1}{4} (0) \times 4 = 0
+  \end{align*}
+  $$
+  This result is intutitive: because all values are identical, there is no dispersion, and the variance (and standard deviation) is zero.
 
-- Following the previous calculation of the mean (@sec-mean):
+- Following the previous calculation of the mean (@sec-mean): The mean was:
 
-The mean was:
+  $$\mu = \frac{1}{6} 5 + \frac{1}{6} 7 + \frac{2}{6} 10 + \frac{1}{6} 12 + \frac{1}{6} 14 = 9.67$$
 
-$$\mu = \frac{1}{6}(5) + \frac{1}{6}(7) + \frac{2}{6}(10) + \frac{1}{6}(12) + \frac{1}{6}(14) = 9.67$$
+  The variance is calculated as:
 
-The variance is calculated as:
-
-$$
-\begin{align*}
-  \sigma^2 & = \frac{1}{6}(5 - \mu)^2 + \frac{1}{6}(7 - \mu)^2 + \frac{2}{6}(10 - \mu)^2 + \frac{1}{6}(12 - \mu)^2 + \frac{1}{6}(14 - \mu)^2 \\
-  & = 8.56
-\end{align*}
-$$
+  $$
+  \begin{align*}
+    \sigma^2  = &\frac{1}{6}(5 - \mu)^2 + \frac{1}{6}(7 - \mu)^2 +  \frac{2}{6}(10 - \mu)^2 + \\
+      &  \frac{1}{6}(12 - \mu)^2 + \frac{1}{6}(14 - \mu)^2 \\
+     = & 8.56
+  \end{align*}
+  $$
 
 - Consider two schools: in the first, all 20 students scored 10/20. In the second, half of the students scored 0/20 and the other half scored 20/20. Although both schools share an identical mean of 10/20, the first school has a variance of 0, whereas the second has a variance of 100. Evaluating the variance reveals differences between the two performance at the school that the mean alone fails to capture.
 
 ## Tips and warnings {.unnumbered}
 - Calculating the mean of a single number is pointless, as is calculating the variance of only two numbers.
 
-- Because variance relies on squared values, taking the square root yields a more interpretable metric. For instance, a grade variance of 100 is difficult to interpret on a 0 to 20 scale. Taking the standard deviation ($\sigma = \sqrt{100} = 10$) returns the measure of dispersion to the original scale of the data.
+- Because variance relies on squared values, taking the square root yields a more interpretable metric. For instance, a grade variance of 100 is difficult to interpret on a 0 to 20 scale. Taking the standard deviation <br> ($\sigma = \sqrt{100} = 10$) returns the measure of dispersion to the original scale of the data.
 
 - In the formal definition shown in @eq-varianceA, variance involves the squared distance from the mean, known as the second moment. Raising values to higher powers, such as $X^3$, yields higher moments that describe additional geometric features of the distribution.
 
-- A normal distribution is fully characterized by two parameters: the mean and the variance. For distributions that closely approximate normality, comparing these two metrics is sufficient to compare the entire underlying distributions.
+- A normal distribution is fully characterized by two parameters: the mean and the variance. For distributions that are approximately normal, comparing these two metrics is sufficient to compare the entire underlying distributions.
 
 - Variance can be calculated using two main formulas: one in which the sum of squared deviations is divided by $n$ (@eq-varianceA), and another in which it is divided by $n - 1$. Standard functions in R compute variance using the $n - 1$ denominator. Division by $n$ defines the population variance (@sec-population), which represents complete population data (likely unknown). Division by $n - 1$ defines the sample variance, providing an estimate of the unknown (true) population variance. Consequently, the $n - 1$ formulation is the standard approach in empirical analysis.

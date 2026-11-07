@@ -6,9 +6,9 @@
 Chameau unimodal, dromadaire bimodal
 :::
 
-In French, *la mode* (feminine) means fashion, while *le mode* (masculine) refers to the statistical mode.Yet, fashion is precisely the concept behind the statistical mode^[A british statistican defined the term, then french academics integrated the concept and decided that it should be masculine to fit their principles].  Conceptually, the statistical mode simply represents the most popular category, closely reflecting its everyday meaning. Looking at a distribution (@sec-distribution), its interpretation is straightforward: it is the value or category with the highest frequency.
+In French, *la mode* (feminine) means fashion, while *le mode* (masculine) refers to the statistical mode. Yet, fashion is precisely the concept behind the statistical mode^[A british statistican defined the term, then french academics integrated the concept and decided that it should be masculine to fit their principles].  Conceptually, the statistical mode simply represents the most popular category, closely reflecting its everyday meaning. Looking at a distribution (@sec-distribution), its interpretation is straightforward: it is the value or category with the highest frequency.
 
-The mode is one of three main metrics used to measure central tendency, along with the mean (@sec-mean) and the median (@sec-median). Unlike the mean and median, the mode works naturally for both categorical and numerical data, and it is especially useful for categorical variables. While most people are accustomed to calculating the mean, computing the mode is less common in everyday practice. Nevertheless, it is simple to identify directly from a distribution (@sec-distribution).
+The mode is one of three main metrics used to measure central tendency, along with the mean (@sec-mean) and the median (@sec-median). Unlike the mean and median, the mode works for qualitative and quantitative variables, and it is especially useful for the former. While most people are accustomed to calculating the mean, computing the mode is less common in daily life. Nevertheless, it is easy to identify from a distribution (@sec-distribution).
 
 ## Formal {.unnumbered}
 
@@ -16,7 +16,7 @@ The mode is the value that appears most often in a dataset. If $X$ is a qualitat
 
 A mode does not have to be unique. Distributions can have multiple local peak values, leading to bimodal or multimodal distributions.
 
-Finally, in the rare case where a distribution is completely flat—meaning all values occur with the exact same frequency—the mode is undefined.
+Finally, in the rare case where a distribution is completely flat—meaning all values occur with the exact same frequency—the mode does not exist.
 
 ## Examples {.unnumbered}
 
@@ -114,7 +114,7 @@ axis(1, at = mode_val, labels = mode_val, col.axis = "#e11d48", font = 2)
 ```
 
 
-- For continuous variables: Be careful when identifying the mode of a continuous variable from a histogram. Because bin widths and boundaries are arbitrary, different binning choices can alter which bin appears as the mode.
+- More care is needed when identifying the mode of a continuous variable from a histogram. Because bin widths and boundaries are arbitrary, different binning choices can alter which bin appears as the mode.
 
 
 ```{r}

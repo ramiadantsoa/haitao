@@ -2,45 +2,41 @@
 
 {{< include ../preamble.qmd >}}
 
-<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-:::
-
-## Concepts and intuitions {.unnumbered} -->
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
-Ity kosa azoko e! Sa?
+Ity kosa mazava! Sa?
 :::
 
 
-Among all statistical concepts, the mean is likely the one most familiar to people, bringing a sense of relief. Almost everyone knows how to calculate the average of a series of numbers: "the sum of all values divided by the total count." Yet, when presented with the formal mathematical equation (see @eq-mean_B and @eq-mean_C), it can look intimidating. Fortunately, these formulas become clear after reading chapter @sec-sum on mathematical notation.
+The mean is likely the most familiar concepts in statistics. Almost everyone knows how to calculate the average of numbers: "the sum of all values divided by the total count." Yet, when presented with the formal mathematical equation (see @eq-mean_B and @eq-mean_C), the confidence is lost. Hopefully, these formulas should be less daunting after reading @sec-sum on mathematical notation.
 
 There are three main ways to calculate the mean. The simple "sum divided by count" is the standard practical method. A second method applies when weights or coefficients are involved, such as with course grades. In that case, you multiply each grade by its coefficient, sum those products, and divide the total by the sum of all coefficients.
 
-The third and most general formula multiplies each value by its relative frequency of occurrence and sums the results. In the grades example, instead of dividing by the sum of coefficients at the end, you multiply each grade by its proportion of the total weight. This general approach allows you to calculate the mean directly from a frequency distribution (@sec-distribution).
+The third and most general formula multiplies each value by its relative frequency of occurrence and sums the results. In the grades example, instead of dividing by the sum of coefficients at the end, one multiplies each grade by its proportion of the total weight. This general approach allows to calculate the mean directly from a distribution (@sec-distribution).
 
-While the mean is the most common metric used to summarize data, reducing a set of numbers to a single value means losing helpful detail. For instance, a student with test scores of 10/20 and 10/20 has the exact same average as a student with 5/20 and 15/20, even though their performance patterns are completely different. Ultimately, being the most common summary metric does not make the mean the best or only option for every situation.
+While the mean is the most common metric used to summarize data, reducing a set of numbers to a single value means losing helpful details. For instance, a student with test scores of 10/20 and 10/20 has the exact same average as a student with 5/20 and 15/20, even though their performance are completely different. Being the most common summary metric does not make the mean the best or the only option for every situation.
 
 ## Formal {.unnumbered}
 
-Here are three equations for calculating the mean. If the values are denoted by $x_i$ and there are $n$ observations, the practical one is:
+Here are three equations for calculating the mean. If the values are denoted by $x_i$ and there are $n$ observations, the familiar formula is:
 
 $$
    \bar{X} = \mu = \frac{1}{n} \sum_{i=1}^{n} x_i
 $${#eq-mean_A}
 
-The second formula is the same; if $x_i$ repeats $n_i$ times (the frequency weight) with $\sum n_i = n$, the equation for the mean is:
+The second formula is similar; if $x_i$ repeats $n_i$ times () with $\sum n_i = n$, the equation for the mean is:
 
 $$
     \mu = \frac{1}{n} \sum_{i} n_i \, x_i
 $${#eq-mean_B}
 
-The general formula is obtained by multiplying each $x_i$ by $p_i = \frac{n_i}{n}$:
+The third and general formula is obtained by multiplying each $x_i$ by $p_i = \pfrac{n_i}{n}$:
 
 $$
     \mu = \sum_{i} p_i \, x_i
 $${#eq-mean_C}
 
-In other words, the $n$ outside the $\sum$ in @eq-mean_B is distributed inside the $\sum$.
+In other words, the $n$ outside the $\sum$ in @eq-mean_B is distributed inside the summation symbol $\sum$.
 
 ## Examples {.unnumbered}
 
@@ -56,20 +52,20 @@ Assume the grades of six students in a class are: $\{5, 7, 10, 10, 12, 14\}$. Be
 
 - The mean serves as a primary summary metric designed to capture the central tendency of a dataset, it is the center of mass (or gravity) of the data.
 
-- The arithmetic mean is only valid  for quantitative variables otherwise  ($n_i \times x_i$ or $\sum x_i$) is not defined (@sec-quantitativeVariable)
+- The arithmetic mean is only valid  for quantitative variables otherwise <br> ($n_i \times x_i$ or $\sum x_i$) is not defined (@sec-quantitativeVariable)
 
 - The mean is highly sensitive to outliers or extreme skewness. For instance, computing the mean of the sequence $(1, 1, 1, 1, 10\,000\,000)$ yields $2\,000\,000.4$, beyond the numerical value, it does not have a practical intepretation.
 
 - Averaging can yield incorrect conclusions when dealing with rates or ratios. For example, if you travel from Fianarantsoa to Ambalavao covering equal distances at $30\text{ km/h}$ and $60\text{ km/h}$, your overall average speed is **not**  $\frac{30 + 60}{2} = 45\text{ km/h}$.^[Left to the reader as an exercise to re-calculate the true mean spped]
 
-- There are alternative definitions to calculate the mean (geometric and harmonic mean)  In the speed example above, calculating the harmonic mean provides the correct average trip speed^[Left to the reader as an exercise].
+- There are alternative definitions to calculate the mean (geometric and harmonic mean). In the speed example above, calculating the harmonic mean provides the correct average speed^[Left to the reader as an exercise].
 
-- When the distribution is perfectly symmetric (where the left side of the distribution mirrors the right), the mean corresponds exactly to the horizontal value ($x$) located along the vertical line of symmetry--which is the center of gravity.
+- When the distribution is perfectly symmetric (where the left side of the distribution mirrors the right), the center of gravity of the point symmetry is thus is the mean.
 
 ### Notation/Semantic/Terminology {.unnumbered}
 
-- *mean* and *average* are synonymous, referring to the arithmetic measure of central location computed from data.
+- *mean* and *average* are synonymous, referring to the arithmetic measure of central location .
 
-- In probability theory and inferential statistics, the theoretical counterpart of the empirical mean is the *expected value* or *expectation*, denoted as $\mathbb{E}[X]$. If dealing with a population @sec-population, they are the same. But when sampling is involved, the empirical mean ($\bar{x}$) is an estimate of the population mean.
+- In probability theory and inferential statistics, the theoretical counterpart of the empirical mean is the *expected value* or *expectation*, denoted as $\mathbb{E}[X]$. If dealing with a population @sec-population, they are the same. But when sampling is involved, the empirical mean ($\bar{X}$) is an estimate of the population mean.
 
-- In mathematics, the mean is formalised as the **first moment** (often written as $\mu_1$ or $\mathbb{E}[X^1]$). Higher-order moments describe other structural properties of a distribution—such as variance (second central moment) and skewness (third standardized moment).
+- In mathematics, the mean is formalised as the first moment (often written as $\mu_1$ or $\mathbb{E}[X^1]$). Higher-order moments describe other structural properties of a distribution—such as variance (second central moment) and skewness (third standardized moment).

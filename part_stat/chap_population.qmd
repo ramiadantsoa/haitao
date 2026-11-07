@@ -9,11 +9,11 @@ Average of what?
 - What is the average age of men in Madagascar?
 - What is the average age of men in Melaky region?
 
-The three questions above illustrate how calculating an average age depends entirely on the specific population being analyzed. Without a clearly defined population, the question becomes meaningless, as the answer hinges on who is being studied. When researchers describe their work, they often mention the species and location—such as lemurs in Ranomafana or chameleons in Ambohitantely—which effectively identifies their population of interest.
+The three questions above illustrate how calculating an average age depends on the specific population being studied. Without a clearly defined population, the question becomes meaningless, as the answer hinges on who is being studied. When researchers describe their work, they often mention the species and location—such as lemurs in Ranomafana or chameleons in Ambohitantely—which effectively identifies their population of interest.
 
 In practice, the exact answers to these questions cannot be determined because it is practically impossible to collect age data from every single individual in a population. Instead, researchers select a sample from the population, calculate its mean, and use that result to approximate the average of the entire group.
 
-Many terms used in statistics are borrowed from everyday language, and population is one of them. A holy aim of this book is to highlight the subtle differences between how these terms are used in common speech versus how they are defined scientifically. To state the obvious, a population does not refer only to humans; and to state the less obvious, a sample is not the population.
+Many terms used in statistics are borrowed from everyday language, and population is one of them. A subtle aim of this book is to highlight the subtle differences between how these terms are used in common speech versus how they are defined scientifically. To state the obvious, a population does not refer only to humans; and to state the less obvious, a sample is not the population.
 
 ## Formal {.unnumbered}
 
@@ -25,13 +25,13 @@ A population is a collection of items under study. It can be categorized using t
 While both types are introduced here for completeness^[a sample could be defined by mixing the two definitions: finite from repeatable experiement], this section focuses on the first sub-definition. The second will be revisited later in the context of more advanced concepts.
 
 ## Examples {.unnumbered}
-- Passengers of the Titanic: This is one of the few examples where a complete database exists, allowing us to account for every individual.
+- Passengers of the Titanic: One of the few examples where a complete database exists, allowing us to "know" every individual.
 - Students in a single classroom: the average grade is known, not need to estimate.
-- An endangered species endemic to where every individual can be tagged and tracked. E.g. the Saimaa ringed seals in Finland.
+- An endangered species endemic to a single location where every individual can be tagged and tracked. E.g., the endangered Saimaa ringed seals in Finland^[this is not a Malagasy example but i it is clean example because its distribution is contrainted in a single lake and there are few enough individuals that it is possible to track them].
 
 ## Tips and warnings {.unnumbered}
 
-- A population is a well-defined collection of items but knowing precisely what is included and excluded is critical, though establishing these boundaries can be non-trivial. For example, when defining the Malagasy population, does it include foreign residents living in Madagascar? Do we exclude individuals in rural areas who lack birth certificates? And should Malagasy citizens living abroad be counted?
-- Defining what constitutes an element can also be complex. While straightforward for many animals, it becomes less obvious in other cases. For instance, in grasses, what defines a single unit of population? Similarly, when studying eusocial insects like ants, is the individual ant the individual, or is it the entire colony?
+- A population is a well-defined collection of items but knowing precisely what is included and excluded is non-trivial. For example, when defining the Malagasy population, does it include foreign residents living in Madagascar? Do we exclude individuals in rural areas who lack birth certificates? And should Malagasy citizens living abroad be counted?
+- Defining what constitutes an single unit can also be complex. While straightforward for some many animals, it becomes less obvious in other cases. For instance, in grasses, what defines a single unit of population? Similarly, when studying eusocial insects like ants, is the individual ant the individual, or is it the entire colony?
 - In mathematics, a function is defined with respect to a domain and a codomain. For statistical rigor, the population serves a role similar to the domain.
 - Ultimately, defining a population is not the final goal; rather, it provides the framework required to study the characteristics of that population, such as its variables and distributions.

@@ -11,9 +11,11 @@
 Ikotozafy ihany no Alexis!
 :::
 
-Cumulative mass and density functions offer an alternative, complementary representation of the empirical distribution (@sec-distribution) for quantitative variables (@sec-quantitativeVariable) and ordinal qualitative variables (@sec-qualitativeVariable). While the terms *cumulative mass function* (CMF) and *cumulative density function* (CDF) originate from theoretical probability, their empirical data-driven logic is straightforward: given absolute bin frequencies $f_1, f_2, f_3, \dots, f_K$, the corresponding cumulative frequencies are computed sequentially as $c_1 = f_1$, $c_2 = f_1 + f_2$, and $c_k = \sum_{i=1}^k f_i$. A cumulative distribution contains identical information to its standard frequency counterpart; the cumulative values $c_k$ are derived by summing frequencies $f_i$, and the original frequencies $f_i$ can be fully recovered via successive differencing ($f_k = c_k - c_{k-1}$).
+Cumulative mass and density functions offer an alternative, complementary representation of the empirical distribution (@sec-distribution) for quantitative variables (@sec-quantitativeVariable) and ordinal qualitative variables (@sec-qualitativeVariable). While the terms *cumulative mass function* (CMF) and *cumulative density function* (CDF) originate from theoretical probability, their empirical data-driven logic is straightforward.
 
-For an ordinal variable, cumulative frequencies reflect the total count of observations falling at or below a given ordered category. The side-by-side bar plots below compare a standard frequency distribution with its cumulative stacked representation. Clean category labels clarify the progression along the ordered scale.
+For a given absolute bin frequencies $$f_1, f_2, f_3, \dots, f_n,$$ the corresponding cumulative frequencies are computed sequentially as $c_1 = f_1$, $c_2 = f_1 + f_2$, more generally $$c_k = \sum_{i=1}^k f_i.$$ A cumulative distribution contains identical information to its standard frequency counterpart; the cumulative values $c_k$ are derived by summing frequencies $f_i$, and the original frequencies $f_i$ can be fully recovered via successive differencing ($f_i = c_i - c_{i-1}$).
+
+For an ordinal variable, cumulative frequencies reflect the total count of observations falling at or below a given ordered category. The side-by-side bar plots below compare a standard frequency distribution with its cumulative stacked representation.
 
 ```{r}
 # Data setup for ordinal variable
@@ -50,7 +52,8 @@ barplot(
   ylim = c(0, 10),
   xlab = "Ordinal category",
   ylab = "Absolute frequency (n)",
-  main = "Frequency Distribution"
+  main = "Frequency Distribution",
+  font.main = 1
 )
 grid(nx = NA, ny = NULL, col = "gray90", lty = "solid")
 
@@ -62,7 +65,8 @@ barplot(
   ylim = c(0, 10),
   xlab = "Cumulative threshold",
   ylab = "Cumulative frequency (c)",
-  main = "Cumulative Distribution"
+  main = "Cumulative Distribution",
+  font.main = 1
 )
 grid(nx = NA, ny = NULL, col = "gray90", lty = "solid")
 legend(
@@ -79,7 +83,7 @@ par(mfrow = c(1, 1))
 ```
 
 
-For continuous quantitative variables, the cumulative empirical distribution tracks the running tally of observations accumulated across contiguous measurement intervals. Side-by-side comparison demonstrates how individual bin frequencies map directly to the monotonically increasing profile of the cumulative histogram.
+For continuous quantitative variables, the cumulative empirical distribution tracks the running tally of observations accumulated across contiguous measurement intervals. Side-by-side comparison demonstrates how individual bin frequencies map directly to the monotonically increasing shape of the cumulative histogram.
 
 ```{r}
 set.seed(42)
@@ -97,8 +101,10 @@ plot(
   col = "#4C72B0",
   border = "white",
   main = "Standard Histogram",
+  font.main = 1,
   xlab = "Measurement value",
-  ylab = "Absolute frequency (n)"
+  ylab = "Absolute frequency (n)",
+  ylim = c(0,100)
 )
 grid(nx = NA, ny = NULL, col = "gray90", lty = "solid")
 
@@ -111,6 +117,7 @@ plot(
   col = "#8172B0",
   border = "white",
   main = "Cumulative Histogram",
+  font.main = 1,
   xlab = "Measurement value",
   ylab = "Cumulative frequency (c)"
 )
@@ -160,56 +167,60 @@ $$x_a \le x_b \implies F(x_a) \le F(x_b)$$
 
 ## Examples {.unnumbered}
 
-For discrete quantitative variables, a cumulative distribution is visualized using a lollipop plot with cumulative counts. Aligning the y-axis scales ($0$ to $n$) highlights how frequencies accumulate step-by-step across discrete values until reaching the total sample size.
+1. For discrete quantitative variables, a cumulative distribution is visualized using a lollipop plot with cumulative counts. Aligning the y-axis scales ($0$ to $n$) highlights how frequencies accumulate step-by-step across discrete values until reaching the total sample size.
+
 
 ```{r}
-set.seed(1)
+  set.seed(1)
 
-# Generate discrete count data
-df_discrete <- data.frame(size = rpois(100, lambda = 5))
-df_discrete_tab <- aggregate(n ~ size, data = transform(df_discrete, n = 1), FUN = length)
+  # Generate discrete count data
+  df_discrete <- data.frame(size = rpois(100, lambda = 5))
+  df_discrete_tab <- aggregate(n ~ size, data = transform(df_discrete, n = 1), FUN = length)
 
-# Compute cumulative frequencies
-df_discrete_cumul <- transform(df_discrete_tab, n_cum = cumsum(n))
+  # Compute cumulative frequencies
+  df_discrete_cumul <- transform(df_discrete_tab, n_cum = cumsum(n))
 
-# Graphic adjustments for side-by-side comparison
-par(mfrow = c(1, 2), mar = c(4.5, 4.5, 2.5, 1), las = 1, cex.lab = 1.05, cex.axis = 0.95)
+  # Graphic adjustments for side-by-side comparison
+  par(mfrow = c(1, 2), mar = c(4.5, 4.5, 2.5, 1), las = 1, cex.lab = 1.05, cex.axis = 0.95)
 
-# Panel 1: Standard frequency distribution (Lollipop plot)
-plot(
-  df_discrete_tab$size, df_discrete_tab$n,
-  type = "h",
-  lwd = 2.5,
-  col = "#4C72B0",
-  xlab = "Observed value (size)",
-  ylab = "Absolute frequency (n)",
-  ylim = c(0, 100),
-  main = "Frequency Distribution"
-)
-points(df_discrete_tab$size, df_discrete_tab$n, pch = 19, col = "#4C72B0", cex = 1.3)
-grid(col = "gray90", lty = "solid")
+  # Panel 1: Standard frequency distribution (Lollipop plot)
+  plot(
+    df_discrete_tab$size, df_discrete_tab$n,
+    type = "h",
+    lwd = 2.5,
+    col = "#4C72B0",
+    xlab = "Observed value (size)",
+    ylab = "Absolute frequency (n)",
+    ylim = c(0, 100),
+    main = "Frequency Distribution",
+    font.main = 1
+  )
+  points(df_discrete_tab$size, df_discrete_tab$n, pch = 19, col = "#4C72B0", cex = 1.3)
+  grid(col = "gray90", lty = "solid")
 
-# Panel 2: Cumulative frequency distribution (Lollipop plot)
-plot(
-  df_discrete_cumul$size, df_discrete_cumul$n_cum,
-  type = "h",
-  lwd = 2.5,
-  col = "#8172B0",
-  xlab = "Observed value (size)",
-  ylab = "Cumulative frequency (c)",
-  ylim = c(0, 100),
-  main = "Cumulative Distribution"
-)
-points(df_discrete_cumul$size, df_discrete_cumul$n_cum, pch = 19, col = "#8172B0", cex = 1.3)
-grid(col = "gray90", lty = "solid")
+  # Panel 2: Cumulative frequency distribution (Lollipop plot)
+  plot(
+    df_discrete_cumul$size, df_discrete_cumul$n_cum,
+    type = "h",
+    lwd = 2.5,
+    col = "#8172B0",
+    xlab = "Observed value (size)",
+    ylab = "Cumulative frequency (c)",
+    ylim = c(0, 100),
+    main = "Cumulative Distribution",
+    font.main = 1
+  )
+  points(df_discrete_cumul$size, df_discrete_cumul$n_cum, pch = 19, col = "#8172B0", cex = 1.3)
+  grid(col = "gray90", lty = "solid")
 
-# Reset graphic layout
-par(mfrow = c(1, 1))
+  # Reset graphic layout
+  par(mfrow = c(1, 1))
+
 ```
 
-The geometric profile of a cumulative histogram directly reflects the shape of its underlying frequency distribution:
 
--  Because observations are spread evenly across all bins, the cumulative histogram rises at a constant rate, producing a straight linear slope.
+
+2. For a uniform flat distribution, the frequency of observations are spread evenly across all bins, the cumulative histogram rises at a constant rate, producing a straight linear slope.
 
 ```{r}
 set.seed(42)
@@ -233,6 +244,7 @@ plot(
   border = "white",
   ylim = c(0, 1000),
   main = "Uniform Histogram",
+  font.main = 1,
   xlab = "Values",
   ylab = "Absolute frequency (n)"
 )
@@ -245,6 +257,7 @@ plot(
   border = "white",
   ylim = c(0, 1000),
   main = "Cumulative Uniform",
+  font.main = 1,
   xlab = "Values",
   ylab = "Cumulative frequency (c)"
 )
@@ -254,8 +267,7 @@ grid(nx = NA, ny = NULL, col = "gray90", lty = "solid")
 par(mfrow = c(1, 1))
 ```
 
-
-- When data is concentrated near smaller values, cumulative counts rise steeply early on before flattening out as values become sparse.
+3. When data is concentrated near smaller values, cumulative counts rise steeply early on before flattening out as values become sparse.
 
 ```{r}
 set.seed(42)
@@ -274,25 +286,27 @@ h_exp_cumul$counts <- cumsum(h_exp_cumul$counts)
 
 # Panel 1: Standard Histogram (Exponential)
 plot(
-  h_exp,
-  col = "#4C72B0",
-  border = "white",
-  ylim = c(0, 1000),
-  main = "Exponential Histogram",
-  xlab = "Values",
-  ylab = "Absolute frequency (n)"
+ h_exp,
+ col = "#4C72B0",
+ border = "white",
+ ylim = c(0, 1000),
+ main = "Exponential Histogram",
+ font.main = 1,
+ xlab = "Values",
+ ylab = "Absolute frequency (n)"
 )
 grid(nx = NA, ny = NULL, col = "gray90", lty = "solid")
 
 # Panel 2: Cumulative Histogram (Exponential)
 plot(
-  h_exp_cumul,
-  col = "#8172B0",
-  border = "white",
-  ylim = c(0, 1000),
-  main = "Cumulative Exponential",
-  xlab = "Values",
-  ylab = "Cumulative frequency (c)"
+ h_exp_cumul,
+ col = "#8172B0",
+ border = "white",
+ ylim = c(0, 1000),
+ main = "Cumulative Exponential",
+ font.main = 1,
+ xlab = "Values",
+ ylab = "Cumulative frequency (c)"
 )
 grid(nx = NA, ny = NULL, col = "gray90", lty = "solid")
 
@@ -307,8 +321,8 @@ par(mfrow = c(1, 1))
 
 - Expressing cumulative distributions in terms of relative frequencies or proportions rather than raw counts scales the vertical axis strictly from $0$ to $1$. This normalization eliminates dependence on sample size ($n$), permitting direct comparisons between datasets of different sizes.
 
-- Cumulative distributions provide a straightforward visual and numerical mechanism for locating quantiles, such as the median (@sec-median) or arbitrary quantiles (@sec-quantile). By drawing a horizontal line from the vertical axis (e.g., at $0.5$ or $50\%$) to the cumulative curve and projecting down to the horizontal axis, the corresponding quantile value can be identified immediately.
+- Cumulative distributions provide a straightforward visual and numerical mechanism for locating quantiles, such as the median (@sec-median) or arbitrary quantiles (@sec-quantile). By drawing a horizontal line from the vertical axis (e.g., at $0.5$ or $50\%$) to the cumulative curve and projecting down to the horizontal axis, the corresponding quantile value can be identified.
 
 <!-- - The cumulative representation is essential when comparing two or more empirical distributions, such as assessing differences in central tendency or dispersion across experimental groups. Comparing cumulative profiles avoids the visual clutter and overlap common when layering multiple standard histograms. -->
 
-- From a theoretical perspective, cumulative functions are monotonically non-decreasing, bounded functions. This structural regularity makes them far easier for statisticians to manipulate mathematically, prove asymptotic properties for, and utilize in non-parametric testing frameworks (e.g., the Kolmogorov-Smirnov test).
+- From a theoretical perspective, cumulative functions are monotonically non-decreasing, bounded functions. This structural regularity makes them far easier for statisticians to manipulate mathematically, prove asymptotic properties, and utilize in non-parametric testing frameworks (e.g., the Kolmogorov-Smirnov test).

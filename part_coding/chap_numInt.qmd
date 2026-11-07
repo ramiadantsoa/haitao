@@ -10,61 +10,38 @@ The primary function of a program is to perform calculations. The most obvious o
 
  A whole number (discrete variables) are represented by integers and are used for counting and indexing. In R programming, real numbers (continuous variables) are called numeric.
 
-While knowing these distinctions is important, R is generally very flexible regarding the two types. It handles conversions automatically without failing or issuing errors if a numeric is used where an integer is expected. For instance, attempting to use the numeric 2.3 instead of the integer 2 to specify the length of a vector (@sec-vector) will be handled internally.^[The drawback is that one must either trust R to manage the mistake or understand how it handles implicit coercion to use it efficiently.]
+While knowing these distinctions is important, R is generally very flexible regarding the two types. It handles conversions automatically without failing or issuing errors if a numeric is used where an integer is expected. For instance, attempting to use the numeric 2.3 instead of the integer 2 to specify the length of a vector (@sec-vector) are handled internally.^[The drawback is that one must either trust R to manage the mistake or understand how it handles implicit coercion to use it efficiently.]
 
 ## Formal {.unnumbered}
 
 - Assigning an integer value to a variable: to force R to interpret a number as an integer, append `L` after the number.
 
-```{r}
-#| echo: true
+  ```{r}
+  #| echo: true
 
-# Storing the integer 24 in the variable my_favorite_integer
-my_favorite_integer <- 24L
+  # Storing the integer 24 in the variable my_favorite_integer
+  my_favorite_integer <- 24L
 
-```
+  ```
 
-<!--
-A function (@sec-functionCoding) called structure `str()`{.r} allows checking the type of a variable.
+- Assigning a numeric value to a variable: numeric generally refers to numbers with decimals. The decimal separator in programming languages is a period `.`.  A comma `,` is used as a list separator (see @sec-vector, @sec-matrixCoding, and @sec-list).
 
-```{r}
-#| echo: true
+  ```{r}
+  #| echo: true
 
-# checking the type of the variable
-str(my_favorite_integer)
-```
-Here, it shows the type as int, short for integer. -->
+  # Storing the number 24.022
+  a_real_number <- 24.022
+  ```
 
 
-- Assigning a numeric value to a variable: numeric generally refers to numbers with decimals. The decimal separator in programming languages (Excel is not a programming language) is a period `.`.  A comma `,` is used as a list separator (see @sec-vector, @sec-matrixCoding, and @sec-list).
+  If L is not specified, R automatically assumes that the value is numeric.
 
-```{r}
-#| echo: true
+  ```{r}
+  #| echo: true
 
-# Storing the number 24.022
-a_real_number <- 24.022
-```
+  my_fake_integer <- 24
 
-
-If L is not specified, R automatically assumes that the value is numeric.
-
-```{r}
-#| echo: true
-
-my_fake_integer <- 24
-
-```
-
-
-<!--
-```{r}
-#| echo: true
-
-# checking the type of the variable
-str(my_fake_integer)
-```
-Above, it is listed as num, short for numeric -->
-
+  ```
 
 
 ## Examples {.unnumbered}
@@ -94,14 +71,19 @@ str(a)
 str(cc)
 ```
 
+The type of object is shown on the left, above int for integer and num for numeric.
+
+
 ## Tips and warnings {.unnumbered}
 
-- An integer requires less computer memory. However, memory is usually not an issue, and memory management is beyond the scope of this volume.
+- An integer requires less computer memory. However, memory is usually not an issue, and memory management is beyond the scope of this handbook.
 
 -  As a shortcut, the leading zero before a decimal point can be omitted:
 ```{r}
-   # Instead of 0.234, type .234
-    a <- .234
+#| echo: tue
+
+# Instead of 0.234, entre .234
+a <- .234
 ```
 
 - Machine vs. mathematics: there are limits on the number of decimals and the maximum value a computer can store and compute.

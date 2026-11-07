@@ -3,12 +3,12 @@
 {{< include ../preamble.qmd >}}
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
-Secretaire, comptable, avocat(e) personel(le)
+Secrétaire, comptable, avocat(e) personel(le)
 :::
 
 A common, innocent, and inconsequential mistake is to confuse R and RStudio. R is a programming language, whereas RStudio is a specialized IDE for R.
 
-In the previous chapters, a console (@sec-console) was presented as the minimal component needed to code—the interface between the human and the computer. As more code is written, script editors (@sec-script) help improve the process (like having a personal secretary to assist with tasks). An IDE is the final stage of making coding more comfortable.
+In the previous chapters, a console (@sec-console) was presented as the minimal component needed to code—the interface between the human and the computer. As more is written, script editors assist the process of code writing (@sec-script) (like having a personal assistant to assist with tasks). An IDE is the final stage of making coding more comfortable.
 
 To use a metaphor: R is the car, a script editor is a set of accessories (steering wheel cover, leather seats, backup camera, etc.), and an IDE is a combination of an auto shop, a garage, and a co-pilot.
 
@@ -23,14 +23,14 @@ An IDE, or Integrated Development Environment, is a single software application 
 - Environment and history: saves history, created objects (@sec-variable), and more
 - Output: generates figures and more
 
-![Starting RStudio](../fig/RStudio.png){#fig-RStudio}
+![Interace of RStudio with the four panes](../fig/RStudio.png){#fig-RStudio}
 
 Instead of writing code in a basic text editor, executing it in a separate terminal, and opening another window to view graphs, an IDE consolidates these workflow components under a single workspace.
 
 
 ## Examples {.unnumbered}
 
-Step 1: Write the code in the script editor [Note: "code" is an uncountable noun in this context, so "code" is preferred over "codes".]
+Step 1: Write the code in the script editor
 
 ![Script](../fig/write_script.png){#fig-simple_script}
 
@@ -38,11 +38,11 @@ Step 2: Execute the code: selecting the code (1) and clicking Run (2) sends the 
 
 - Executing one line of code: place the cursor anywhere on line 5 (it does not need to be at the beginning or the end)
 
-![Running one line 5](../fig/run_one_line.png){#fig-oneline}
+  ![Running one line 5](../fig/run_one_line.png){#fig-oneline}
 
 - Executing a block of code: select the lines to evaluate and click Run
 
-![Running code from line 1 to 3](../fig/run_selection.png){#fig-selection}
+  ![Running code from line 1 to 3](../fig/run_selection.png){#fig-selection}
 
 ## Tips and warnings {.unnumbered}
 - The native R GUI is improving. It includes a script editor, native code execution, a package manager, and other features. Comparing the two can be instructive.

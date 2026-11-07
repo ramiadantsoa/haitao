@@ -13,7 +13,7 @@ Everyone knows how to use a calculator:
 2. Press = (to execute).
 3. The result is displayed (output).
 
-With most basic calculators, the display shows both the calculation (top line, this is a useful added feature to ensure the correct operation was entered) and the result @fig-basic_cal.
+With most basic calculators, the display shows both the calculation (top line: this is a useful added feature to ensure the correct operation was entered) and the result on the bottom line @fig-basic_cal.
 
 ::: {#fig-calculator layout-ncol=2}
 
@@ -43,7 +43,7 @@ An R console is an interactive command-line interface that allows commands to be
 4. Loop: A new prompt appears, waiting for the next command.
 
 ## Examples {.unnumbered}
-R could be used with the native R Graphic User Interface (GUI), or with specific IDE (@sec-ide) like R Studio or Visual Studio Code. The aesthetic of the console is different in each program.
+R could be used with the native R Graphic User Interface (GUI), or with specific IDE (@sec-ide) like RStudio or Visual Studio Code. The aesthetic of the console is different in each program.
 
 ::: {#fig-Rconsole layout-nrow=3}
 
@@ -87,9 +87,9 @@ print("Hello world")
 
 - Typing directly into the console is not recommended; using a script editor (@sec-script and @sec-ide) is preferred.
 
-- Error message: This indicates that something is wrong with the code. It can be frustrating, but it is common.
+- Error message: This indicates that something is wrong with the code. It can be frustrating, but it is common (@sec-debugging).
 
-- The mouse is useless in the console. It is designed to work with the keyboard, hence the name command-line interface.
+- The mouse is useless in the console. It is designed to work with commands type on the keyboard, hence the name command-line interface.
 
 - When opening R or RStudio for the first time, the console displays the program version, licensing information, and a few basic commands.
 

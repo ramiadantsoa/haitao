@@ -15,16 +15,20 @@ This chapter builds directly on the preceding material: a qualitative variable i
 
 There is an inherent paradox in how we understand and use qualitative variables. On one hand, the human brain has a natural propensity to categorize the world: male or female, good or bad, species classifications, or the establishment of national borders. We naturally think in qualitative terms. On the other hand, the foundational tools of mathematics and statistics are built around numbers and arithmetic operations. This creates friction, as it is not immediately obvious what statistical operations apply when observations are non-numerical.
 
-Categorical variables with clear-cut boundaries—such as sex, eye color, or species—rarely cause confusion. Ambiguity arises primarily when qualitative variables are derived from underlying quantitative variables. This fuzziness occurs for two reasons: researchers often lose sight of the original quantitative measurement, and the boundaries used to define the categories are inherently arbitrary. Consider the categories *infant*, *juvenile*, and *adult*: while the underlying variable is continuous age, there is no single universal rule for where one stage ends and the next begins, especially across different species. Similarly, classifying locations into *low*, *intermediate*, or *high* elevation relies on continuous altitude, yet the specific cutoffs chosen are largely contextual.
+Categorical variables with clear-cut boundaries—such as sex, eye color, or species—rarely cause confusion. Ambiguity arises primarily when qualitative variables are derived from underlying quantitative variables. This fuzziness occurs for two reasons: researchers often lose sight of the original quantitative measurement, and the boundaries used to define the categories are inherently arbitrary. Consider the categories *infant*, *juvenile*, and *adult*: while the underlying variable is continuous age, there is no single universal rule for where one stage ends and the next begins^[not only on human]. Similarly, classifying locations into *low*, *intermediate*, or *high* elevation relies on continuous altitude, yet the specific cutoffs chosen are largely contextual.
 
-A final common misconception is confusing qualitative variables with assessments of quality. In statistical practice, "qualitative" refers strictly to membership in a category, not value judgments. Replacing the term *qualitative variable* with *categorical variable* clears up this confusion.
+A final common misconception is confusing qualitative variables with assessments of quality. In statistical practice, "qualitative" refers strictly to membership in a category, not value judgments. Replacing the term *qualitative variable* with *categorical variable* clears up this confusion^[choosing to use the more confusing popular term in this handbook so not to distance too much to materials at the university].
 
 
 ## Formal {.unnumbered}
 
 A qualitative variable in statistics is a characteristic of an individual unit in a population that takes on non-numerical values across observations^[See @sec-variable for the formal definition of a variable as a function].
 
-Qualitative variables are divided into three main types: nominal, ordinal, and binary. A nominal variable consists of categories with no inherent ordering (e.g., eye color, species, or country of origin). In contrast, an ordinal variable possesses a natural sequence or rank among its categories (e.g., infant, juvenile, adult). Note that many ordinal variables are created by binning an underlying continuous quantitative variable (@sec-quantitativeVariable). Finally, a binary variable is a special case of a qualitative variable that contains exactly two mutually exclusive categories (e.g., yes/no, true/false, or 0/1) (@sec-boolean).
+Qualitative variables are divided into three main types: nominal, ordinal, and binary.
+
+- A nominal variable consists of categories with no inherent ordering (e.g., eye color, species, or country of origin).
+- An ordinal variable possesses a natural sequence or rank among its categories (e.g., infant, juvenile, adult). Note that many ordinal variables are created by binning an underlying continuous quantitative variable (@sec-quantitativeVariable).
+-  A binary variable is a special case of a qualitative variable that contains exactly two mutually exclusive categories (e.g., yes/no, true/false, or 0/1) (@sec-boolean).
 
 
 ## Examples {.unnumbered}
@@ -34,12 +38,12 @@ Below are examples illustrating the distinct categories of qualitative variables
 - Nominal variables:
 
   - Nationality (e.g., Malagasy, English, Kenyan)
-  - Political affiliation (e.g., Democrat, Republican, Independent)
+  - Political affiliation (e.g. TGV, TIM, AREMA, MONIMA)
   - Eye color (e.g., blue, brown, green)
   - Species name (e.g., *Lemur catta*, *Panthera leo*)
   - ZIP code (e.g., 101, 102, 303)
 
-  Notice that while ZIP codes consist of numbers, a ZIP code is a nominal variable rather than a quantitative one. Applying arithmetic operations to ZIP codes yields no mathematical meaning; the numbers serve merely as categorical labels.
+    Notice that while ZIP codes consist of numbers, a ZIP code is a nominal variable rather than a quantitative one. Applying arithmetic operations to ZIP codes yields no mathematical meaning; the numbers serve merely as categorical labels.
 
 - Ordinal variables with implicit ordering:
 
@@ -57,6 +61,7 @@ Below are examples illustrating the distinct categories of qualitative variables
   - Elevation zone (e.g., lowland, mid-altitude, highland; derived from altitude)
 
 - Binary variables:
+  - Academic grade category (e.g., fail, pass, distinction; derived from a numerical score)
   - Sex (e.g., male, female)
   - Question outcomes with two options (e.g., Yes/No responses to "Do you own a car?")
 
@@ -69,3 +74,5 @@ Below are examples illustrating the distinct categories of qualitative variables
 - Visualization constraints: The structural nature of a variable dictates the appropriate visualization methods. For example, a histogram is strictly designed to show the continuous distribution of quantitative data, whereas qualitative data must be visualized using tools appropriate for counts across discrete categories, such as bar charts.
 
 - Encoding binary variables: Any binary qualitative variable can be reframed as a boolean (True/False) question. Instead of recording a variable named `color` with categories `Blue` or `Red`, one can define the variable as `Is_Blue?` with values `True` or `False`. Utilizing native boolean types is often computationally advantageous, as programming languages possess dedicated structures to handle two-state logic efficiently (@sec-boolean).
+
+- These variables are not mutually exclusive. Ordinal variables can always be coerced into or considered as a nominal variable by ignoring the order. Whereas the reverse is not possible. It is not possible to order eye color *per se*. And any variable can always be coerced into a binary variable (blue eye and not blue eye). Binary variable can also be considered as nominal variable.
