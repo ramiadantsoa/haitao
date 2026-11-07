@@ -1,20 +1,14 @@
 # Difference equations {#sec-difference}
 {{< include ../preamble.qmd >}}
 
-<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-Zana-bola
-:::
-
-## Concepts and intuitions {.unnumbered} -->
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 Zana-bola
 :::
 
+A traditional bank savings account provides an intuitive real-world introduction to discrete-time dynamical systems. When you deposit an initial amount of money and leave it untouched for a fixed period $t$ (such as three months), an additional amount proportional to the current balance is added. In Madagascar, this earned yield is known as *zanany*.
 
-A traditional bank savings account provides an intuitive real-world introduction to discrete-time dynamical systems. When you deposit an initial amount of money and leave it untouched for a fixed compounding period $t$ (such as three months), the account accrues earnings proportional to the current balance. In Madagascar, this earned yield is known as *zanany* (interest).
-
-For instance, if you deposit 1,000,000 Ariary at a quarterly interest rate $r = 2\%$ ($0.02$), your balance at the end of the first period is:
+For instance, for a deposit of 1,000,000 Ariary at a quarterly interest rate $r = 2\%$ ($0.02$), the balance at the end of the first period is:
 
 $$
 \begin{align*}
@@ -30,7 +24,7 @@ $$
 \begin{align*}
 \text{Balance}_2 & = 1{,}020{,}000 + (0.02 \times 1{,}020{,}000) \\
 & = 1{,}020{,}000 \times 1.02 \\
-& = 1{,}000{,}000 \times (1.02)^2
+& = \text{Balance}_1 \times 1.02
 \end{align*}
 $$
 
@@ -39,12 +33,13 @@ Generalizing this process, the next balance $B_{n+1}$ depends directly on the cu
 
 $$B_{n+1} = B_n + r \cdot B_n = B_n (1 + r)$$
 
-This relationship is a classic example of a **difference equation** (or recurrence relation). In such systems, time advances in discrete steps $n \to n+1$, and the future state of the system is entirely determined by its present state.
+This relationship is a classic example of a difference equation (or recurrence relation). In such systems, time advances in discrete steps $n \to n+1$, and the future state of the system is entirely determined by its present state.
 
 The concept of a next state depending sequentially on the current state is not limited to financial mathematics; it is deeply embedded in cultural proverbs (*ohabolana*) that reflect recursive processes and dependence on previous state:
 
 - Ny hazo no vanon-ko lakana, ny tany naniriana no tsara.
-- Maty aho matesa rahavako..."
+- Raha maty aho, matesa rahavako; raha maty rahavako, matesa ny omby
+-
 
 
 ## Formal {.unnumbered}
@@ -82,208 +77,133 @@ To illustrate how discrete-time dynamical systems behave, we examine three forms
 
 1. An **arithmetic sequence** describes a system that grows or decays by a constant fixed amount at each step:
 
-$$u_{n+1} = u_n + r$$
+   $$u_{n+1} = u_n + r$$
 
-where $r \in \mathbb{R}$ is the constant difference. Consider a traditional piggy bank (*boatin-drakitra*). If you deposit a fixed sum of money $r$ at regular intervals, $u_n$ represents your total savings at step $n$.
+   where $r \in \mathbb{R}$ is the constant difference. Consider a traditional piggy bank (*boatin-drakitra*). If you deposit a fixed sum of money $r$ at regular intervals, $u_n$ represents your total savings at step $n$.
 
-In discrete modeling, specifying the time unit of the index step $+1$ is crucial. Depending on your saving schedule, an increment of $n \to n+1$ could represent a single day, one week, or one month. Without defining this period, the rate of change remains ambiguous.
+   In discrete modeling, specifying the time unit of the index step $+1$ is crucial. Depending on your saving schedule, an increment of $n \to n+1$ could represent a single day, one week, or one month. Without defining this period, the rate of change remains ambiguous.
 
 2. A **geometric sequence** models multiplicative growth or decay over discrete intervals:
 
-$$u_{n+1} = q \cdot u_n$$
+   $$u_{n+1} = q \cdot u_n$$
 
-where $q > 0$ is the constant growth factor.
+   where $q > 0$ is the constant growth factor.
 
-Unlike the arithmetic model—where a fixed quantity is added—the update in a geometric system is proportional to the current state $u_n$. As seen with bank interest (*zanany*), when $q = 1 + r$, the balance scales geometrically at each step.
+   Unlike the arithmetic model—where a fixed quantity is added—the update in a geometric system is proportional to the current state $u_n$. As seen with bank interest (*zanany*), when $q = 1 + r$, the balance scales geometrically at each step.
 
-Notice that if we apply a logarithmic transformation (@sec-log), the geometric sequence simplifies into an equivalent arithmetic sequence:
+   Notice that if we apply a logarithmic transformation (@sec-log), the geometric sequence simplifies into an equivalent arithmetic sequence:
 
-$$v_{n+1} = v_n + s$$
+   $$v_{n+1} = v_n + s = $$
 
-where:
+   where:
 
-- $v_{n+1} = \log(u_{n+1})$
-- $v_n = \log(u_n)$
-- $s = \log(q)$
+   - $v_{n+1} = \log(u_{n+1})$
+   - $v_n = \log(u_n)$
+   - $s = \log(q)$
 
-This transformation demonstrates another fundamental property of logarithms: converting multiplicative growth models into linear additive ones.
+   This transformation demonstrates another fundamental property of logarithms: converting multiplicative growth models into linear additive ones.
 
 3. Combining constant proportional growth with a fixed additive input yields a first-order linear difference equation:
 
-$$u_{n+1} = q \cdot u_n + r$$
+   $$u_{n+1} = q \cdot u_n + r$$
 
-This models a hybrid savings strategy where your money in a bank account earns interest at rate $q = 1 + \text{interest}$, while you simultaneously make a fixed manual deposit $r$ (from your *boatin-drakitra*) into the account at each time step.
-
-
-4. In ecology, the total population size at time step $t+1$ depends on four fundamental demographic processes occurring during interval $t$:
-
-$$\text{Pop}_{t+1} = \text{Pop}_t + B + I - D - E$$
-
-where:
-
-- $B$ = Number of births
-- $I$ = Number of immigrants
-- $D$ = Number of deaths
-- $E$ = Number of emigrants
+   This models a hybrid savings strategy where the total saving is the sum of money in a bank account with interest at rate $q = 1 + \text{interest}$, and the sum in from the *boatin-drakitra* with fixed manual deposit $r$.
 
 
-If we assume that the net demographic change remains constant across intervals, we can collapse these four terms into a single net change parameter $\delta = (B + I) - (D + E)$:
+4. In ecology, the total population size at time step $t+1$ depends on four fundamental demographic processes occurring during interval $t$ (generally one year):
 
-$$\text{Pop}_{t+1} = \text{Pop}_t + \delta$$
+   $$\text{Pop}_{t+1} = \text{Pop}_t + B + I - D - E$$
 
-The long-term trajectory of the population depends entirely on the sign of $\delta$:
+   where:
 
-- **$\delta > 0$ (Positive Net Growth):** The population increases linearly over time.
-- **$\delta < 0$ (Negative Net Growth):** The population declines linearly over time.
-- **$\delta = 0$ (Dynamic Equilibrium):** Births and immigration exactly balance deaths and emigration ($\text{Pop}_{t+1} = \text{Pop}_t$), keeping the population perfectly stable.
+   - $B$ = Number of births
+   - $I$ = Number of immigrants
+   - $D$ = Number of deaths
+   - $E$ = Number of emigrants
 
-In real ecological systems, assuming $\delta$ is constant is rarely realistic. Demographic parameters ($B, I, D, E$) fluctuate based on numerous interconnected factors:
+   Assuming that the net demographic change remains constant across intervals, these four terms collapse into a single net change parameter $\delta = (B + I) - (D + E)$:
 
-- **Environmental conditions** (resource availability, rainfall, seasonal variations)
-- **Population structure** (age distributions, sex ratios)
-- **Density dependence** (crowding, competition for food)
-- **Inter-specific interactions** (predation, mutualism, disease dynamics)
+   $$\text{Pop}_{t+1} = \text{Pop}_t + \delta$$
 
-When these parameters depend directly on the current population size itself ($\delta = f(\text{Pop}_t)$), the system becomes **non-linear**, giving rise to rich and complex dynamic behaviors (such as stable cycles or deterministic chaos), which we explore in subsequent chapters.
+   The long-term trajectory of the population depends entirely on the sign of $\delta$:
+
+     - **$\delta > 0$ (Positive Net Growth):** The population increases over time.
+     - **$\delta < 0$ (Negative Net Growth):** The population decreases over time.
+     - **$\delta = 0$ (Dynamic Equilibrium):** Births and immigration exactly balance deaths and emigration ($\text{Pop}_{t+1} = \text{Pop}_t$), the population is stable.
+
+   When $\delta$ is a fixed constant, population size is described by an arithmetic sequence $$\text{Pop}_{t+1} = \text{Pop}_t + \delta.$$
+   Conversely, when demographic rates are proportional to population size <br>($\delta = r \times \text{Pop}_t$), population is described by a geometric sequence
+    $$\text{Pop}_{t+1} = \text{Pop}_t + \text{Pop}_t \times r = \text{Pop}_t \cdot (1 + r)$$
+
+   However, in real ecological systems, $\delta$ is rarely constant. Demographic parameters ($B, I, D, E$) fluctuate based on numerous interconnected factors:
+
+     - Environmental conditions (resource availability, rainfall, seasonal variations)
+     - Population structure (age distributions, sex ratios)
+     - Density dependence (crowding, competition for food)
+     - Inter-specific interactions (predation, mutualism, disease dynamics)
+
+   When these parameters depend directly on the current population size <br>($\delta = f(\text{Pop}_t)$), the system becomes non-linear, giving rise to complex dynamic behaviors such as stable cycles or deterministic chaos.
 
 ## Tips and warnings {.unnumbered}
 
-<!-- As introduced in @sec-discrete-continuous, the choice between modeling time as discrete or continuous represents a fundamental structural decision:
-
-- **Discrete Time ($t \in \mathbb{Z}_{\ge 0}$):** Time advances in distinct, separate intervals ($t \to t+1 \to t+2$). State changes occur in step-by-step leaps, making discrete models ideal for systems with seasonal breeding cycles, periodic financial transactions, or data measured at fixed sampling intervals. (see next for continuous time)
- -->
-
-- In discrete-time systems, state changes are modeled with **difference equations** ($y_{t+1} = f(y_t)$). In the next chapter, we will transition to continuous-time systems governed by **differential equations** ($\frac{dy}{dt} = f(y)$), where rates of change are defined instantaneously at every infinitely small slice of time. This is an example where difference between discrete and continuous variables leads to different mathematical approach @sec-discreteContinuous
-
-<!-- - Define the state at starting point $t = 0$ need to -->
-
 - A cobweb plot is a powerful visual tool for tracking the step-by-step trajectory of a discrete recurrence equation. While it may look intricate at first, the underlying geometric logic is straightforward:
 
-1.  Begin by graphing the update function $y = f(u)$ alongside the identity line $y = u$ (@sec-functionViz).
-2. Starting at a current state $u_n$ on the horizontal axis, move vertically to intersect the function curve $y = f(u)$. The height of this intersection gives the next state, $u_{n+1}$.
-3. To find the subsequent state $u_{n+2}$, we must first move $u_{n+1}$ onto the horizontal axis. This is accomplished visually by moving horizontally from the curve to intersect the identity line $y = u$.
-4. **Iterate:** From this point on the diagonal line, move vertically back to the function curve to determine $u_{n+2}$, and repeat the process recursively.
+  1.  Begin by graphing the update function $y = f(u)$ (blue curve below) alongside the identity line $y = u$ (black dashed-line below) (@sec-functionViz).
+  2. Starting at a current state $u_n$ on the horizontal axis, move vertically to intersect the function curve $y = f(u)$. The height of this intersection gives the next state, $u_{n+1}$.
+  3. To find the subsequent state $u_{n+2}$, first move $u_{n+1}$ onto the horizontal axis. This is accomplished visually by moving horizontally from the curve to intersect the identity line $y = u$.
+  4. Iterate: From this point on the diagonal line, move vertically back to the function curve to determine $u_{n+2}$, and repeat the process recursively.
 
-Below are three examples illustrating how this simple visual algorithm reveals diverse dynamic behaviors. Notice that the values are on the x-axis.
+  Below are three examples illustrating how this simple visual algorithm reveals diverse dynamic behaviors. Notice that the values are on the x-axis.
 
   - Arithmetic sequence: $u_{n+1} = f(u_n) = u_n + 2$ with $u_0 = 0$.
-```{r}
-# Arithmetic
-r1 <- 0.2
-arithmetic_map <- function(u) {
-  return(r1 + u)
-}
-cobweb_plot_labeled(f = arithmetic_map, x0 = 0, n_iter = 5, n_labels = 5, x_max = 1)
+  ```{r}
+  # Arithmetic
+  r1 <- 0.2
+  arithmetic_map <- function(u) {
+    return(r1 + u)
+  }
+  cobweb_plot_labeled(
+    f = arithmetic_map, x0 = 0,
+    n_iter = 5, n_labels = 5, x_max = 1,
+    main = "Cobweb Plot of an Arithmetic Sequence")
 
-```
+  ```
 
   - Geometric sequence: $u_{n+1} = f(u_n) =  3/4 \times u_n$ with $u_0 = 1$
-```{r}
-r2 <- 3 / 4
-geometric_map <- function(u) {
-  return(r2 * u)
-}
-cobweb_plot_labeled(f = geometric_map, x0 = 2, n_iter = 5, n_labels = 5, x_max = 2)
+  ```{r}
+  r2 <- 3 / 4
+  geometric_map <- function(u) {
+    return(r2 * u)
+  }
+  cobweb_plot_labeled(
+    f = geometric_map,
+    x0 = 2, n_iter = 5, n_labels = 5, x_max = 2,
+    main = "Cobweb Plot of a Geometric Sequence"
+    )
 
-```
+  ```
 
-- Logistic growth : $u_{n+1} = f(u_n) = 2.9 \times u_n (1- u_n)$ with $u_0 = 0.1$
-```{r}
-r3 <- 2.9
-logistic_map <- function(u) {
-  return(r3 * u * (1 - u))
-}
-cobweb_plot_labeled(f = logistic_map, x0 = 0.1, n_iter = 6, n_labels = 4, x_max = 1)
+  - Logistic growth : $u_{n+1} = f(u_n) = 2.9 \times u_n (1- u_n)$ with $u_0 = 0.1$
+  ```{r}
+  r3 <- 2.9
+  logistic_map <- function(u) {
+    return(r3 * u * (1 - u))
+  }
+  cobweb_plot_labeled(
+    f = logistic_map,
+    x0 = 0.1, n_iter = 6, n_labels = 4, x_max = 1,
+    main = "Cobweb Plot of a Logistic Growth")
 
-```
+  ```
 
-- The coweb plot allows to see that the number will increase to infinty (in the first example), goes to zero (the second example), or reach an equibrium where ($f(u_n) = u_n = u_{n+1}$). This happens when the identity crosses with the function.
+  The coweb plot allows to see that the number will increase to infinty (in the first example), goes to zero (the second example), or reach an equibrium where ($f(u_n) = u_n = u_{n+1}$). This happens when the identity line intersects the curve representing the function.
 
-- In classical mathematics, a primary goal when studying difference equations—such as the arithmetic and geometric sequences introduced in high school—is finding an **explicit solution**. Solving a recurrence relation analytically means deriving a closed-form formula $u_n = g(n)$ that expresses $u_n$ directly as a function of the time step $n$, eliminating the need to evaluate prior terms recursively.
+- In classical mathematics, a primary goal when studying difference equations—such as the arithmetic and geometric sequences introduced in high school—is finding an explicit solution. Solving a recurrence relation analytically means deriving a closed-form formula $u_n = g(n)$ that expresses $u_n$ directly as a function of the time step $n$, eliminating the need to evaluate prior terms recursively.
 
-While deriving these analytical formulas is a standard mathematical exercise, deriving exact closed-form solutions for complex systems is often difficult or impossible. In practice, modern computational tools allow us to evaluate discrete iterations almost instantaneously. As a result, visualizing trajectories directly—using tools like cobweb plots—often suffices to uncover the complete qualitative behavior of a dynamical system without requiring an explicit algebraic solution.
+  While deriving these analytical formulas is a standard mathematical exercise, deriving exact closed-form solutions for complex systems is often difficult or impossible. In practice, modern computational tools allow us to evaluate discrete iterations almost instantaneously. As a result, visualizing trajectories directly—using tools like cobweb plots—often suffices to uncover the complete qualitative behavior of a dynamical system (@sec-functionViz) without requiring an explicit algebraic solution .
 
+- In discrete-time systems, state changes are modeled with difference equations <br>($y_{t+1} = f(y_t)$). In the next chapter, we will transition to continuous-time systems governed by differential equations $\dfrac{dy}{dt} = f(y)$, where rates of change are defined instantaneously at every infinitely small slice of time. This is an example where difference between discrete and continuous variables leads to different mathematical approach @sec-discreteContinuous.
 
 
 ### Notation/Semantic/Terminology {.unnumbered}
-A difference equation is called recurrence equation or  suite in french.
-<!--
-
-Here are the formal definitions broken down by their structural representations in mathematical literature.
-
-1. The Definitive Difference-Operator Definition
-Classically, a difference equation is defined using the forward difference operator (Δ). This formulation highlights its exact mathematical parallel to continuous calculus.
-
-Textbook Source
-Book: An Introduction to Difference Equations (3rd Edition, 2005)
-ResearchGate
-Author: Saber N. Elaydi
-Publisher: Springer Science+Business Media
-SCIRP
-
-The Formal Definition
-Let yt be a sequence defined for discrete steps t∈{0,1,2,…}. The first forward difference operator Δyt is defined as:
-$\Delta y_t = y_{t+1} - y_t$
-​
-
-Higher-order differences are defined recursively by Δ^kyt =Δ(Δ^k−1yt).
-
-Rigorously, a difference equation of order k is an equation of the form:
-Wikipedia
-
-$F(t, y_t, \Delta y_t, \Delta^2 y_t, \dots, \Delta^k y_t) = 0$
-
-where F is a given function, and the equation explicitly depends on both $y_t$, and $\Delta^k yt$ for all allowed values of t.
-
-
-
-3. Classifications of Difference Equations
-To perform rigorous analysis, mathematicians partition difference equations based on three structural criteria:
-
-A. Linear vs. Nonlinear
-A $k$-th order difference equation is linear if it can be written in the form:
-
-$a_k(t)y_{t+k} + a_{k-1}(t)y_{t+k-1} + \dots + a_0(t)y_t = g(t)$
-
-If any term $yt+i$ is raised to a power, inside another function (like sin(yt)), or multiplied by another term of the sequence (like yt yt+1), the equation is nonlinear.
-
-B. Homogeneous vs. Non-homogeneous
-For a linear equation, if the forcing function g(t)=0 for all t, the equation is homogeneous. If g(t) !=0, it is non-homogeneous.
-
-C. Autonomous vs. Non-autonomous
-If the coefficients ai(t) or the governing function f do not explicitly depend on the time-step index t (meaning they are constants), the equation is autonomous (or time-invariant).
-
-4. The Existence and Uniqueness Theorem
-For a k-th order difference equation to yield a well-defined mathematical trajectory, it requires a specific number of initial boundary conditions.
-
-The Theorem
-Given a k-th order difference equation yt+k =f(t,yt,…,yt+k−1), if a set of k initial values are specified:
-​
-$y_0 = c_0, \ y_1 = c_1, \ \dots, \ y_{k-1} = c_{k-1}$
-
-Then there exists a unique sequence {yt}_t=0^∞ that satisfies the difference equation for all t≥0.
-
-
-You go straight, left etc. and you have reached your destination.
-
-
-In an official chess tournament (probably true for no pro too), after a player move a piece, he/she will tap a clock and then write down the move they have.
-In this, there is a long historical database of all the games that have been played.
-
-What do you see when you read is a sequence of move, alternating each player.
-
-This is an example of using discrete variable to document changes in time.
-In step 1 you know the step of the system, in step 2, there is another change.
-
-However, if you look at move 15 you probably has now idea of how the chess board looks after move 14.
-This is the idea of a recurrence.
-
-So what is a difference equation, in short it is a mathematical stuff that record the state of something using .
-You have already seen that called .
-You could define it implicity, that is state next = f(state now) (see also Markov chain).
-
-A big step is trying to define, this only works for few (see below)
-
-It is an equation so there is the defining it and there is the solving it.
-
--->
+A difference equation is called recurrence equation or suite in French.

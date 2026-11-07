@@ -7,11 +7,13 @@ Ikotozafy ihany no Alexis!
 
 In standard high-school mathematics curricula—such as the French *Baccalauréat* exam—the highest point allocation belongs to the comprehensive calculus problem. A function is introduced at the start, followed by a sequence of procedural steps: finding the domain of definition (*domaine de définition*), computing limits (*limites*), evaluating derivatives (*calcul de dérivée*), constructing sign and variation tables (*tableau de variations*), and ultimately sketching the representative curve (*construire la courbe représentative*).
 
-Looking at the big picture, the overarching goal of this traditional exercise is simply to plot a curve for a given function. Yet, in the modern era, this is hardly a problem: one can instantly generate the graph by entering the function into software.
+Looking at the big picture, the overarching goal of the exercise is simply to plot a curve for a given function. Yet, in the modern era, this is hardly a problem: there are applications that transform a handwritten function into a curve.
 
 While there is undeniably an educational purpose in learning to sketch a curve by hand, it often comes at the expense of developing a far more critical skill: reading and interpreting graphs. It is surprisingly common, even at the Master's and Ph.D. levels, to encounter students who struggle to interpret scientific figures.
 
-This is where geometric properties bridge analytical definitions. Fundamentally, drawing a curve requires nothing more than evaluating $f(x)$ across many values of $x$; once enough points are plotted, the continuous curve emerges. The true value of mathematical analysis lies not in the mechanical rendering of points, but in understanding what the resulting geometric shape reveals about the underlying system.
+A major breakthrough in mathematics occurred when René Descartes realized that geometric shapes—such as the curve of an arch or bridge—could be defined precisely by mathematical equations. This birthed analytic geometry, establishing that algebra and geometry are two perspectives of the exact same underlying reality.
+
+Fundamentally, drawing a curve requires nothing more than evaluating $f(x)$ across many values of $x$; once enough points are plotted, the continuous curve emerges. The true value of mathematical analysis lies not in the mechanical rendering of points, but in understanding what the resulting geometric shape reveals about the underlying system.
 
 ## Formal {.unnumbered}
 
@@ -49,7 +51,7 @@ Let $f: D \subseteq \mathbb{R} \to \mathbb{R}$ be a real-valued function defined
 
 
 ## Examples {.unnumbered}
-- Linear function $y = a*x + b$ and
+- Linear function: $y = a \times x + b$. The intercept represents the value of $y$ at $x = 0$, which is $b$. This is where the curve intersects the y-axis in the left panel. The slope is represented by the length of the vertical segments in the right panel, indicating how many units $y$ increases as $x$ increases by one unit.
 
 ```{r}
 #| label: fig-linear
@@ -62,9 +64,10 @@ x <- seq(-3, 3, length.out = 100)
 y_lim <- c(-3, 4)
 
 # ==============================================================================
-# LEFT PANEL: Varying Intercepts 
+# LEFT PANEL: Varying Intercepts
 # ==============================================================================
 plot(NA, xlim = c(-3, 3), ylim = y_lim, las = 1,
+     font.main = 1,
      main = "Varying Intercepts",
      xlab = "x", ylab = "y")
 grid(col = "gray90", lty = "dotted")
@@ -103,6 +106,7 @@ legend("topleft",
 # RIGHT PANEL: Varying Slopes (Same Intercept b = 0.5)
 # ==============================================================================
 plot(NA, xlim = c(-3, 3), ylim = y_lim, las = 1,
+     font.main = 1,
      main = "Varying Slopes",
      xlab = "x", ylab = "y")
 grid(col = "gray90", lty = "dotted")
@@ -132,25 +136,27 @@ legend("topleft",
        col = colors_right,
        lty = 1, lwd = 2.5, bty = "n", cex = 0.85)
 
-# 1. Segment from y = 0.5 to y = -1 (for y = 1.5x + 0.5, slope a = -1.5)
-segments(1, 0.5, 1, 2, col = "#2ca02c", lty = 1, lwd = 3)
+# 1. Segment from y = 0.5 to y = 2 (for y = 1.5x + 0.5, slope a = -1.5)
+segments(1, 0.5, 1, 2, col = "#2ca02c", lty = 1, lwd = 1)
 # points(1, -1.0, col = "#2ca02c", pch = 19, cex = 1.2)
 text(1, 1.25, labels = " a = 1.5", col ="#2ca02c" , pos = 4, font = 2, cex = 0.85)
-
+# Add a double-headed segment delimiter (from x=6 to x=9 at y=3)
+arrows(x0 = 1, y0 = 0.5, x1 = 1, y1 = 2, code = 3, angle = 45, length = 0.1, col = "#2ca02c", lwd = 2)
 # # 2. Horizontal base indicator from x = 0 to x = 1 along y = 0.5
 # segments(0, 0.5, 1, 0.5, col = "gray40", lty = 3, lwd = 1.5)
 
 # 3. Segment from y = 0.5 to y = 1 (for y = -0.5x + 0.5, slope a = +0.5)
-segments(1, 0.5, 1, 0, col = "#ff7f0e", lty = 1, lwd = 3)
+segments(1, 0.5, 1, 0, col = "#ff7f0e", lty = 1, lwd = 1)
 # points(1, 1.0, col = "#ff7f0e", pch = 19, cex = 1.2)
 text(1, 0.2, labels = " a = -0.5", col = "#ff7f0e", pos = 4, font = 2, cex = 0.85)
+arrows(x0 = 1, y0 = 0.5, x1 = 1, y1 = 0, code = 3, angle = 45, length = 0.1, col =  "#ff7f0e", lwd = 2)
 
 
 # Reset plotting layout parameter
 par(mfrow = c(1, 1))
 ```
 
-- Exponential and logarithm. Notice that $exp(.)$ is always postive (in the gray area). The logarithm is negative when $x \in \left(0,1 \right]$. Notice that the coordinate (x,y) although sitting on the curve are projected from x- and y-axis
+- Exponential and logarithmic functions. Notice that $\exp(\cdot)$ is always positive (represented in the gray area). The logarithm is negative when $x \in (0,1)$. Notice that any point, such as $(0,1)$, is the intersection of a vertical line at $x = 0$ and a horizontal line at $y = 1$.
 
 ```{r}
 # Define the functions
@@ -219,7 +225,7 @@ text(x_log_pts[3], y_log_pts[3] + 0.3, labels = log_lbls[3], col = col_log, font
 
 # Legend
 legend("topleft",
-       legend = c("y > 0 Region (Quadrants I & II)",
+       legend = c("y > 0",
                   "y = exp(x)",
                   "y = exp(-x)",
                   "y = log(x)",
@@ -232,7 +238,7 @@ legend("topleft",
 ```
 
 
-- Gaussian, playing with the two parameters of the gaussian distribution by shifting the mean or changing the width
+- Gaussian or normal distribution: adjusting the two parameters of the Gaussian distribution by shifting the mean ($\mu$) or changing the distribution width ($\sigma$).
 
 ```{r}
 # Define parameter sets (mean and sd) for the 4 Gaussian PDFs
@@ -248,6 +254,7 @@ x <- seq(-6, 6, length.out = 1000)
 
 # Set up blank plot frame
 plot(NA, xlim = c(-6, 6), ylim = c(0, 0.85), las = 1,
+     font.main = 1,
      main = "Normal distributions",
      xlab = "x", ylab = "Density f(x)")
 
@@ -272,8 +279,6 @@ legend("topright",
 
 ## Tips and warnings {.unnumbered}
 
-- A major breakthrough in mathematics occurred when René Descartes realized that geometric shapes—such as the curve of an arch or bridge—could be defined precisely by mathematical equations. This birthed analytic geometry, establishing that algebra and geometry are two perspectives of the exact same underlying reality.
-
 - In calculus, one typically begins with a known mathematical formula $f(x)$ and analyzes its geometric properties to sketch its curve. In modern data science and applied modeling, this workflow is often reversed: we start with the geometry—an empirical cloud of data points gathered from observations—and attempt to discover a mathematical function that accurately describes that shape.
 
 - A summary of the correspondence between a few key analytical properties of a function and their geometric features on a graph:
@@ -292,7 +297,7 @@ color_y <- "#ff7f0e"  # Negative f(x) / Orange
 x_lim <- c(-3, 3)
 x_vals <- seq(-3, 3, length.out = 1000)
 y_vals <- f(x_vals)
-y_lim <- c(-3.5, 3.5)
+y_lim <- c(-5, 5.5)
 
 # Calculate real roots where f(x) = 0
 roots <- polyroot(c(73/54, -10/9, -5/18, 5/27))
@@ -319,19 +324,19 @@ for (i in 1:(length(x_vals) - 1)) {
 }
 
 # 3. Add horizontal segments at the bottom for Increasing / Decreasing
-y_seg1 <- -2.7
-segments(-3, y_seg1, -1, y_seg1, col = color_a, lwd = 6)
-segments(-1, y_seg1,  2, y_seg1, col = color_b, lwd = 6)
-segments( 2, y_seg1,  3, y_seg1, col = color_a, lwd = 6)
-text(-3, y_seg1, labels = "Monotonicity: ", pos = 2, xpd = TRUE, cex = 0.8)
+y_seg1 <- -3
+segments(-3, y_seg1, -1, y_seg1, col = color_a, lwd = 4)
+segments(-1, y_seg1,  2, y_seg1, col = color_b, lwd = 4)
+segments( 2, y_seg1,  3, y_seg1, col = color_a, lwd = 4)
+text(-1, y_seg1 + 0.3, labels = "Monotonicity: ", pos = 2, xpd = TRUE, cex = 0.8)
 
 # 4. Add horizontal segments at the bottom for Positive / Negative (color_x / color_y)
-y_seg2 <- -3.2
-segments(-3, y_seg2, real_roots[1], y_seg2, col = color_y, lwd = 6)
-segments(real_roots[1], y_seg2, real_roots[2], y_seg2, col = color_x, lwd = 6)
-segments(real_roots[2], y_seg2, real_roots[3], y_seg2, col = color_y, lwd = 6)
-segments(real_roots[3], y_seg2, 3, y_seg2, col = color_x, lwd = 6)
-text(-3, y_seg2, labels = "Sign of f(x): ", pos = 2, xpd = TRUE, cex = 0.8)
+y_seg2 <- -4.2
+segments(-3, y_seg2, real_roots[1], y_seg2, col = color_y, lwd = 4)
+segments(real_roots[1], y_seg2, real_roots[2], y_seg2, col = color_x, lwd = 4)
+segments(real_roots[2], y_seg2, real_roots[3], y_seg2, col = color_y, lwd = 4)
+segments(real_roots[3], y_seg2, 3, y_seg2, col = color_x, lwd = 4)
+text(-1, y_seg2 + 0.3, labels = "Sign of f(x): ", pos = 2, xpd = TRUE, cex = 0.8)
 
 # # 5. Add vertical segments on the left y-axis for Positive / Negative f(x)
 # x_left <- -3
@@ -341,7 +346,7 @@ text(-3, y_seg2, labels = "Sign of f(x): ", pos = 2, xpd = TRUE, cex = 0.8)
 # 6. Add dashed vertical lines with labels where f(x) = 0
 for (r in real_roots) {
   abline(v = r, col = "gray40", lty = 2, lwd = 1.2)
-  text(r, y_lim[2] - 0.2, labels = paste0("x = ", round(r, 2)),
+  text(r + 0.1, -1.5, labels = paste0("x = ", round(r, 2)),
        col = "gray20", pos = 3, cex = 0.8, xpd = TRUE)
 }
 
@@ -364,8 +369,8 @@ From the graphical representation of a function $f(x)$, key analytical propertie
 
 2. *$y$-Intercept ($f(0)$):* The point where the curve crosses the vertical axis is the $y$-intercept, which is simply the function evaluated at zero, $f(0)$. In this graph, the $y$-intercept is $1.35$.
 
-3. *Sign Analysis ($f(x) > 0$ vs. $f(x) < 0$):* The inequality $f(x) > 0$ corresponds to the portions of the curve lying within the shaded upper region ($y > 0$). The input values satisfying this condition belong to the intervals $x \in [-2.36, 1.14]$ and $x \in (2.72, \infty)$.
+3. *Sign Analysis ($f(x) > 0$ vs. $f(x) < 0$):* The inequality $f(x) > 0$ corresponds to the portions of the curve lying within the shaded upper region ($y > 0$). The input values satisfying this condition belong to the intervals $x \in [-2.36, 1.14]$ and $x \in (2.72, \infty)$, represented by the orange horizontal segments.
 
-Conversely, the negative region ($f(x) < 0$) forms the complementary set. Notice that the boundary points of these intervals are precisely the roots identified above—intuitively, to transition between the upper and lower half-planes, a continuous function must first cross the horizontal axis.
+4. Conversely, the negative region ($f(x) < 0$) forms the complementary set, represented by the blue horizontal segments. Notice that the boundary points of these intervals are precisely the roots identified above—intuitively, to transition between the upper and lower half-planes, a continuous function must first cross the horizontal axis.
 
-4. *Monotonicity (Increasing vs. Decreasing Regions):*  A function is increasing on intervals where the curve moves upward from left to right (highlighted in green). The input values satisfying this growth define the green interval along the horizontal axis. Conversely, a function is decreasing on intervals where the curve falls from left to right (highlighted in red).
+5. *Monotonicity (Increasing vs. Decreasing Regions):*  A function is increasing on intervals where the curve moves upward from left to right (highlighted in green). The input values satisfying this growth define the green segments along the horizontal axis. Conversely, a function is decreasing on intervals where the curve falls from left to right (highlighted in red).

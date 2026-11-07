@@ -1,24 +1,16 @@
 # Logarithm function {#sec-log}
 {{< include ../preamble.qmd >}}
 
-<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-The earth would explode if hit by an earthquake of magnitude 18 (xkcd!)
-:::
-
-## Concepts and intuitions {.unnumbered} -->
-
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 The earth would explode if hit by an earthquake of magnitude 18^[[xkcd's What If](https://www.youtube.com/watch?v=e3uk7jU3RHo)]
 :::
 
-<!-- When measuring the intensity of natural phenomena—such as seismic energy released during an earthquake—the numerical values often span several orders of magnitude. To make these immense physical quantities manageable and intuitive to compare, we rely on logarithmic scales like the Richter magnitude scale. -->
-
-On May 11, 1950, a strong earthquake struck Madagascar with an estimated Richter magnitude of 6.2. In a comparison, in 1960, the Great Chilean earthquake—the strongest earthquake ever recorded—reached a magnitude of 9.5.
+On May 11, 1950, a strong earthquake struck Madagascar with an estimated Richter magnitude of 6.2. In 1960, the Great Chilean earthquake—the strongest earthquake ever recorded—reached a magnitude of 9.5.
 According to standard seismic classifications, a magnitude 6.0–6.9 event is classified as "strong," whereas a magnitude 9.0–9.9 event is categorized as "extreme," resulting in near-total destruction.
 
-Why is a jump of just three magnitude units—from roughly 6 to 9—such a dramatic, catastrophic leap?
+Why is a jump of just three units—from roughly 6 to 9—such a dramatic, catastrophic leap?
 
-The answer lies in the non-linear nature of the metric: the Richter scale is a base-10 logarithmic scale. Moving up by a single integer on the scale does not *add* a fixed amount of energy; instead, it *multiplies* the amplitude of the seismic waves by a factor of 10.
+The answer lies in the non-linear nature of the metric: the Richter scale is a base-10 logarithmic scale. Moving up by a single integer on the scale does not add a fixed amount of energy; instead, it multiplies the amplitude of the seismic waves by a factor of 10.
 
 Concretely, comparing a magnitude 6 earthquake to a magnitude 9 earthquake reveals the exponential scaling: the amplitude of wave motion in a magnitude 9 earthquake is:
 
@@ -28,7 +20,7 @@ In terms of total mechanical energy released, each unit increase on the Moment M
 
 Because human intuition tends to think linearly, it is easy to assume that going from magnitude 6 to magnitude 12 represents a simple doubling of intensity, or that magnitude 18 is tripling it.
 
-In a base-10 logarithmic system, an increase of $+6$ units corresponds to a wave amplitude multiplier of $10^6 = 1{,}000{,}000$ (one million times larger). And an increase of $+12$ units corresponds to a multiplier of $10^{12} = 1{,}000{,}000{,}000{,}000$ (one trillion times larger). An event of such unimaginable magnitude it would theoretically fracture the Earth's crust entirely.
+In a base-10 logarithmic system, an increase of $6$ units corresponds to a wave amplitude multiplier of $10^6 = 1{,}000{,}000$ (one million times larger). And an increase of $12$ units corresponds to a multiplier of $10^{12} = 1{,}000{,}000{,}000{,}000$ (one trillion times larger). An event of such unimaginable magnitude it would theoretically fracture the Earth's crust entirely.
 
 This real-world behavior highlights the defining feature of the logarithmic function. By converting multiplicative and exponential processes into additive ones, logarithmic functions allow scientists and analysts to plot, model, and interpret phenomena that span vast ranges of magnitude.
 
@@ -55,7 +47,7 @@ y_exp <- exp(x_all)
 y_log <- log(x_pos)
 
 plot(NA, xlim = c(-3, 3.5), ylim = c(-3, 3.5),
-     xlab = "Input", ylab = "Output", las = 1, asp = 1, axes = FALSE)
+     xlab = "x", ylab = "f(x) and g(x)", las = 1, asp = 1, axes = FALSE)
 
 axis(1, at = -3:3)
 axis(2, at = -3:3, las = 1)
@@ -78,7 +70,7 @@ segments(0, 1, 1, 0, lty = 3, col = "#d62728")
 segments(1, exp(1), exp(1), 1, lty = 3, col = "#d62728")
 
 # Labels
-text(0.5, 2.5, expression(f(x) == e^x), col = "#1f77b4", cex = 1.1)
+text(0., 2.1, expression(f(x) == e^x), col = "#1f77b4", cex = 1.1)
 text(2.5, 0.4, expression(g(x) == ln(x)), col = "#2ca02c", cex = 1.1)
 text(2.2, 2.5, "y = x", col = "gray40", cex = 0.95)
 ```
@@ -86,16 +78,16 @@ text(2.2, 2.5, "y = x", col = "gray40", cex = 0.95)
 
 - The logarithm to base $a$, denoted $\log_a: (0, \infty) \to \mathbb{R}$, is defined as the inverse function of $f_a(x) = a^x$:
 
-$$\log_a(x) := f_a^{-1}(x) \quad \text{for } x \in (0, \infty), \; a > 0, \; a \neq 1$$
+  $$\log_a(x) := f_a^{-1}(x) \quad \text{for } x \in (0, \infty), \; a > 0, \; a \neq 1$$
 
-$$\log_a(x) = y \iff a^y = x$$
+  $$\log_a(x) = y \iff a^y = x$$
 
-It can be proven that
-$$
-\log_a(x) = \frac{\ln(x)}{\ln(a)}
-$$
+  It can be proven that
+  $$
+  \log_a(x) = \frac{\ln(x)}{\ln(a)}
+  $$
 
-Thus, all logarithms with base $a$ are simply scalar rescalings of the natural logarithm $\ln(x)$ by the constant factor $\dfrac{1}{\ln(a)}$.
+  Thus, all logarithms with base $a$ are simply scalar rescalings of the natural logarithm $\ln(x)$ by the constant factor $\dfrac{1}{\ln(a)}$.
 
 - Linearization property of logarithm: it allows to transform multiplication to addition
 
@@ -104,12 +96,15 @@ $$\ln(x \cdot y) = \ln(x) + \ln(y)$$
 
 ## Examples {.unnumbered}
 
-- $\ln(1) = 0$ where it intersect with x.
+- $\ln(1) = 0$ where the curve intersect with x-axis.
 
-- $\ln(e) = 1$, by definition.
+- $\ln(e) = 1$ by definition.
 
-- Any number y between 0 and 1 can be represented by a $y = \frac{1}{x}$ where $ x > 1$ this
-  - $\ln(y) = \ln(\frac{1}{x}) = \ln(x^{-1}) = - 1 \times \ln(x) = - \ln(x)$ hence $\ln (x)$ is always negative. This is also true for any base $\log_a$.
+- Any number $y$ between $0$ and $1$ can be represented by $y = \dfrac{1}{x}$ where $x > 1$ then
+  $$
+    \ln(y) = \ln\left(\dfrac{1}{x}\right) = \ln\left(x^{-1}\right) = - 1 \times \ln(x) = - \ln(x)
+  $$
+  so $\ln (y)$ is always negative. This is also true for any base $\log_a$.
 
 - The logarithm of a factorial expands the product inside $n!$ into a sum of logarithms
 
@@ -123,21 +118,19 @@ $$
 
 - Another illustration of the inverse relationship between the logarithmic and exponential functions is how the natural logarithm simplifies exponentiated expressions, undoing the exponential mapping directly:
 
-$$
-  \ln\left(\exp\left(-\frac{x^2}{2}\right)\right) = \ln\left(e^{-\frac{x^2}{2}}\right) = -\frac{x^2}{2}
-$$
+  $$
+    \ln\left(\exp\left(-\frac{x^2}{2}\right)\right) = \ln\left(e^{-\frac{x^2}{2}}\right) = -\frac{x^2}{2}
+  $$
 
-This identity is frequently applied in statistics when working with normal distributions, transforming multiplicative Gaussian kernels into manageable quadratic sum forms (such as in log-likelihood calculations).
+  This identity is frequently applied in statistics when working with normal distributions, transforming multiplicative Gaussian kernels into manageable quadratic sum forms (such as in log-likelihood calculations).
 
 
 ## Tips and warnings {.unnumbered}
-- A common practice in ecological data analysis is applying a log transformation to variables (see @sec-variable) like species abundance. However, when a species is absent, its abundance is $0$, and $\log(0)$ is mathematically undefined. A standard solution is using a $\log(x+1)$ transformation. In R, this transformation is implemented directly via the `log1p()` function, while the natural, base 2, and base 10 logarithms are available via `log()`, `log2()`, and `log10()`.
 
-### Scaling the x and y-axis{.unnumbered}
 The logarithmic function is primarily used to rescale data for clearer visualization or to reveal hidden underlying patterns. Below are a few key applications:
 
 - **Transforming Plot Axes vs. Transforming Data Values:**
-  There is an important distinction between setting a plot's $y$-axis to a logarithmic scale (left) and plotting log-transformed data values on a standard linear scale (right). The left panel illustrates the modern, best-practice approach: keeping raw, un-transformed data in the dataset while adjusting the plotting scale parameters. In contrast, the right panel requires manually transforming the variable prior to plotting. Beyond adding an unnecessary data transformation step, the resulting $y$-axis values are less visually intuitive to interpret^[unless dealing with standardized logarithmic metrics, such as the Richter scale].
+  There is an important distinction between setting a plot's axis to a logarithmic scale (left) and plotting log-transformed data values on a standard linear scale (right). The left panel illustrates the modern, best-practice approach: keeping raw, un-transformed data in the dataset while adjusting the plotting scale parameters. In contrast, the right panel requires manually transforming the variable prior to plotting. Beyond adding an unnecessary data transformation step, the resulting $y$-axis values are less visually intuitive to interpret^[unless dealing with standardized logarithmic metrics, such as the Richter scale].
 
 
 ```{r}
@@ -159,6 +152,7 @@ par(mfrow = c(1, 2), mar = c(4.5, 4.5, 4, 2))
 bp1 <- barplot(
   height = df_vals$value,
   names.arg = df_vals$category,
+  font.main = 1,
   main = "Native Log Scale (log = 'y')",
   ylab = "Value (Log Scale)",
   col = "#1f77b4", border = NA,
@@ -212,228 +206,270 @@ par(mfrow = c(1, 1), mar = c(5, 4, 4, 2) + 0.1)
 - **Log-Transforming the $y$-Axis to Reveal Obscured Data:**
   Log-transforming the vertical axis helps expose trends hidden by wide numerical ranges. On the left, smaller data points are visually compressed ("squished") because the axis range is dominated by extreme high values. On the right, using a log scale spreads out lower-range data, making the relative trends in salary far more visible.
 
+  ```{r}
+  # 1. Data frame setup
+  df_salary <- data.frame(
+    job = factor(
+      c("Intern", "Technician", "Senior Employee", "Team leader", "Supervisor",
+        "Manager", "Director", "Vice-president", "Chief Officer", "CEO"),
+      levels = c("Intern", "Technician", "Senior Employee", "Team leader", "Supervisor",
+                 "Manager", "Director", "Vice-president", "Chief Officer", "CEO")
+    ),
+    salary = c(2, 4, 6, 12, 50, 100, 250, 600, 2000, 5000) # values in ten thousands
+  )
+
+  # 2. Set up side-by-side layout with bottom margin for rotated labels
+  par(mfrow = c(1, 2), mar = c(8, 5, 4, 2))
+
+  # ==============================================================================
+  # LEFT PANEL: Linear Scale
+  # ==============================================================================
+  bp1 <- barplot(
+    height = df_salary$salary,
+    names.arg = FALSE,
+    font.main = 1,
+    main = "Linear Scale",
+    ylab = "Salary Ar x 10000",
+    col = "#1f77b4", border = NA,
+    ylim = c(0, max(df_salary$salary) * 1.15),
+    las = 1
+  )
+
+  grid(nx = NA, ny = NULL, col = "gray90", lty = "dotted")
+
+  # Redraw bars over grid (yaxt = "n" prevents duplicated y-axis ticks)
+  barplot(df_salary$salary, add = TRUE, col = "#1f77b4", border = NA, yaxt = "n", ann = FALSE)
+
+  # Custom rotated x-axis labels
+  text(x = bp1, y = -max(df_salary$salary) * 0.04, labels = df_salary$job,
+       srt = 45, adj = 1, xpd = TRUE, cex = 0.8)
+
+  ## Raw numerical value labels above bars
+  #text(x = bp1, y = df_salary$salary, labels = format(df_salary$salary, big.mark = ","),
+  #     pos = 3, cex = 0.65, col = "#333333", xpd = TRUE)
 
 
-```{r}
-# 1. Data frame setup
-df_salary <- data.frame(
-  job = factor(
-    c("Intern", "Technician", "Senior Employee", "Team leader", "Supervisor",
-      "Manager", "Director", "Vice-president", "Chief Officer", "CEO"),
-    levels = c("Intern", "Technician", "Senior Employee", "Team leader", "Supervisor",
-               "Manager", "Director", "Vice-president", "Chief Officer", "CEO")
-  ),
-  salary = c(2, 4, 6, 12, 50, 100, 250, 600, 2000, 5000) # values in ten thousands
-)
+  # ==============================================================================
+  # RIGHT PANEL: Logarithmic Scale
+  # ==============================================================================
+  bp2 <- barplot(
+    height = df_salary$salary,
+    names.arg = FALSE,
+    font.main = 1,
+    main = "Logarithmic Scale (log10)",
+    ylab = "Salary (Log Scale) Ar x 10000",
+    col = "#2ca02c", border = NA,
+    log = "y",
+    ylim = c(1, max(df_salary$salary) * 3),
+    las = 1
+  )
 
-# 2. Set up side-by-side layout with bottom margin for rotated labels
-par(mfrow = c(1, 2), mar = c(8, 5, 4, 2))
+  grid(nx = NA, ny = NULL, col = "gray90", lty = "dotted")
 
-# ==============================================================================
-# LEFT PANEL: Linear Scale
-# ==============================================================================
-bp1 <- barplot(
-  height = df_salary$salary,
-  names.arg = FALSE,
-  main = "Linear Scale",
-  ylab = "Salary",
-  col = "#1f77b4", border = NA,
-  ylim = c(0, max(df_salary$salary) * 1.15),
-  las = 1
-)
+  # Redraw bars over grid without repeating axis text
+  barplot(df_salary$salary, add = TRUE, col = "#2ca02c", border = NA, log = "y", yaxt = "n", ann = FALSE)
 
-grid(nx = NA, ny = NULL, col = "gray90", lty = "dotted")
+  # Custom rotated x-axis labels (positioned relative to log axis baseline)
+  text(x = bp2, y = 0.6, labels = df_salary$job,
+       srt = 45, adj = 1, xpd = TRUE, cex = 0.8)
 
-# Redraw bars over grid (yaxt = "n" prevents duplicated y-axis ticks)
-barplot(df_salary$salary, add = TRUE, col = "#1f77b4", border = NA, yaxt = "n", ann = FALSE)
+  ## Raw numerical value labels above bars
+  #text(x = bp2, y = df_salary$salary, labels = format(df_salary$salary, big.mark = ","),
+  #     pos = 3, cex = 0.65, col = "#333333", xpd = TRUE)
 
-# Custom rotated x-axis labels
-text(x = bp1, y = -max(df_salary$salary) * 0.04, labels = df_salary$job,
-     srt = 45, adj = 1, xpd = TRUE, cex = 0.8)
-
-## Raw numerical value labels above bars
-#text(x = bp1, y = df_salary$salary, labels = format(df_salary$salary, big.mark = ","),
-#     pos = 3, cex = 0.65, col = "#333333", xpd = TRUE)
-
-
-# ==============================================================================
-# RIGHT PANEL: Logarithmic Scale
-# ==============================================================================
-bp2 <- barplot(
-  height = df_salary$salary,
-  names.arg = FALSE,
-  main = "Logarithmic Scale (log10)",
-  ylab = "Salary (Log Scale)",
-  col = "#2ca02c", border = NA,
-  log = "y",
-  ylim = c(1, max(df_salary$salary) * 3),
-  las = 1
-)
-
-grid(nx = NA, ny = NULL, col = "gray90", lty = "dotted")
-
-# Redraw bars over grid without repeating axis text
-barplot(df_salary$salary, add = TRUE, col = "#2ca02c", border = NA, log = "y", yaxt = "n", ann = FALSE)
-
-# Custom rotated x-axis labels (positioned relative to log axis baseline)
-text(x = bp2, y = 0.6, labels = df_salary$job,
-     srt = 45, adj = 1, xpd = TRUE, cex = 0.8)
-
-## Raw numerical value labels above bars
-#text(x = bp2, y = df_salary$salary, labels = format(df_salary$salary, big.mark = ","),
-#     pos = 3, cex = 0.65, col = "#333333", xpd = TRUE)
-
-# Reset plotting parameters
-par(mfrow = c(1, 1), mar = c(5, 4, 4, 2) + 0.1)
-```
+  # Reset plotting parameters
+  par(mfrow = c(1, 1), mar = c(5, 4, 4, 2) + 0.1)
+  ```
 
 - **Log-Scale on the $x$-Axis:**
   Applying a logarithmic scale to the horizontal axis is particularly useful for diagnostic visualization—for example, determining whether a curve has reached a true asymptote or continues to grow at extreme inputs.
 
+  ```{r}
+  # 1. Define power law function: f(x) = 1 + 10 / x^1.5
+  f <- function(x) 1 + 10 / (x^1.5)
 
-```{r}
-# 1. Define power law function: f(x) = 1 + 10 / x^1.5
-f <- function(x) 1 + 10 / (x^1.5)
+  # Setup x domains
+  x_lin <- seq(1, 1000, length.out = 1000)
+  x_log <- 10^seq(0, 3, length.out = 1000) # log-spaced vector from 10^0 to 10^3
 
-# Setup x domains
-x_lin <- seq(1, 1000, length.out = 1000)
-x_log <- 10^seq(0, 3, length.out = 1000) # log-spaced vector from 10^0 to 10^3
+  # Colors
+  curve_col <- "#1f77b4"
+  limit_col <- "#d62728"
 
-# Colors
-curve_col <- "#1f77b4"
-limit_col <- "#d62728"
+  # 2. Set up side-by-side layout (1 row, 2 columns)
+  par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3, 2))
 
-# 2. Set up side-by-side layout (1 row, 2 columns)
-par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3, 2))
+  # ==============================================================================
+  # LEFT PANEL: Linear Scale (Appears Almost Converged)
+  # ==============================================================================
+  plot(x_lin, f(x_lin), type = "l", col = curve_col, lwd = 2.5,
+       xlim = c(1, 1000), ylim = c(0., 11), las = 1,
+       font.main = 1,
+       main = "Linear Scale",
+       xlab = "x", ylab = "f(x)")
 
-# ==============================================================================
-# LEFT PANEL: Linear Scale (Appears Almost Converged)
-# ==============================================================================
-plot(x_lin, f(x_lin), type = "l", col = curve_col, lwd = 2.5,
-     xlim = c(1, 1000), ylim = c(0.8, 11), las = 1,
-     main = "Linear Scale (Looks Converged)",
-     xlab = "x", ylab = "f(x)")
+  grid(col = "gray90", lty = "dotted")
+  abline(h = 1, col = limit_col, lty = 2, lwd = 1.8)
 
-grid(col = "gray90", lty = "dotted")
-abline(h = 1, col = limit_col, lty = 2, lwd = 1.8)
+  # Highlight points
+  pts_x <- c(1, 10, 100, 1000)
+  pts_y <- f(pts_x)
+  pts_y_pos <-  c(10, 2, 3, 4)
+  points(pts_x, pts_y, col = curve_col, pch = 19, cex = 1.2)
 
-# Highlight points
-pts_x <- c(1, 10, 100, 1000)
-pts_y <- f(pts_x)
-points(pts_x, pts_y, col = curve_col, pch = 19, cex = 1.2)
-
-# Annotation for linear convergence illusion
-text(500, 1.3, labels = "Appears flat & converged near y = 1",
-     col = curve_col, pos = 3, font = 2, cex = 0.85)
-text(800, 1.0, labels = "Asymptote y = 1", col = limit_col, pos = 3, cex = 0.8)
+  # Annotation for linear convergence illusion
+  text(500, 1.2, labels = "Appears flat &\n converged near y = 1",
+       col = curve_col, pos = 3, font = 2, cex = 0.85)
+  text(600, .1, labels = "Asymptote y = 1", col = limit_col, pos = 3, cex = 0.8)
 
 
-# ==============================================================================
-# RIGHT PANEL: Logarithmic Scale (Reveals Ongoing Heavy-Tail Decay)
-# ==============================================================================
-plot(x_log, f(x_log), type = "l", col = curve_col, lwd = 2.5,
-     log = "x", xlim = c(1, 1000), ylim = c(0.8, 11), las = 1,
-     main = "Logarithmic Scale (Reveals Slow Tail)",
-     xlab = "x (Log Scale)", ylab = "f(x)")
+  # ==============================================================================
+  # RIGHT PANEL: Logarithmic Scale (Reveals Ongoing Heavy-Tail Decay)
+  # ==============================================================================
+  #-----------------------------
+  # 1. Logarithmic Plot
+  #-----------------------------
 
-grid(col = "gray90", lty = "dotted")
-abline(h = 1, col = limit_col, lty = 2, lwd = 1.8)
+  # Plot log-scale curve with customized limits and axes
+  plot(x_log, f(x_log), type = "l", col = curve_col, lwd = 2.5,
+       log = "x", xlim = c(1, 1000), ylim = c(0, 11), las = 1,
+       font.main = 1,
+       main = "Logarithmic Scale",
+       xlab = "x (Log Scale)", ylab = "f(x)")
 
-# Highlight and label exact points on log scale
-points(pts_x, pts_y, col = curve_col, pch = 19, cex = 1.2)
-text(pts_x, pts_y, labels = paste0(" f(", pts_x, ") = ", round(pts_y, 3)),
-     pos = c(4, 4, 3, 3), cex = 0.8, col = "#333333", font = 2)
+  # Add background grid and horizontal asymptote baseline
+  grid(col = "gray90", lty = "dotted")
+  abline(h = 1, col = limit_col, lty = 2, lwd = 1.8)
 
-text(10, 1.0, labels = "Asymptote y = 1", col = limit_col, pos = 1, cex = 0.8)
+  # Highlight exact points on the log-scale curve
+  points(pts_x, pts_y, col = curve_col, pch = 19, cex = 1.2)
 
-# Reset layout
-par(mfrow = c(1, 1), mar = c(5, 4, 4, 2) + 0.1)
-```
+  # Label horizontal asymptote below the reference line
+  text(10, 1.0, labels = "Asymptote y = 1", col = limit_col, pos = 1, cex = 0.8)
+
+  #-----------------------------
+  # 2. Combined Top-Right Legend
+  #-----------------------------
+
+  # Construct point values labels for the legend
+  legend_labels <- paste0("f(", pts_x, ") = ", round(pts_y, 3))
+
+  # Display point values in a clean top-right legend box
+  legend("topright",
+         legend = legend_labels,
+         col = curve_col,
+         pch = 19,
+         pt.cex = 1.2,
+         cex = 0.8,
+         bg = "white",
+         box.col = "gray80")
+
+  # Reset layout
+  par(mfrow = c(1, 1), mar = c(5, 4, 4, 2) + 0.1)
+  ```
 
 - **Log-Log Scales for Power-Law Relationships:**  Transforming both the $x$- and $y$-axes to logarithmic scales converts power-law relationships of the form $y = a x^b$ into linear equations ($\log(y) = \log(a) + b \log(x)$). Below is a classic ecological example illustrating the species–area relationship (MacArthur and Wilson, 1967) with a fitted curve.
 
-```{r}
-# 1. Dataset: Sunda Islands Land Birds (MacArthur & Wilson, 1967)
-sunda_data <- data.frame(
-  island = c("Christmas", "Enggano", "Bangka", "Bali", "Lombok",
-             "Sumba", "Flores", "Sumbawa", "Celebes (Sulawesi)", "Java", "Sumatra", "Borneo"),
-  area_sq_mi = c(60, 160, 4370, 2095, 1820,
-                 4300, 5850, 5960, 72000, 48800, 182000, 287000),
-  species = c(15, 32, 119, 133, 118,
-              112, 138, 132, 257, 340, 375, 420)
-)
 
-# Fit log10 linear model to derive power law parameters (S = c * A^z)
-fit <- lm(log10(species) ~ log10(area_sq_mi), data = sunda_data)
-z     <- coef(fit)[2]          # Slope (z ~ 0.28)
-c_val <- 10^(coef(fit)[1])     # Constant c (~ 4.8)
+  ```{r}
+  # 1. Dataset: Sunda Islands Land Birds (MacArthur & Wilson, 1967)
+  # Convert area from square miles to thousands of square kilometers (1 sq mi ≈ 2.58999 km²)
+  sunda_data <- data.frame(
+    island = c("Christmas", "Enggano", "Bangka", "Bali", "Lombok",
+               "Sumba", "Flores", "Sumbawa", "Celebes (Sulawesi)", "Java", "Sumatra", "Borneo"),
+    area_sq_mi = c(60, 160, 4370, 2095, 1820,
+                   4300, 5850, 5960, 72000, 48800, 182000, 287000),
+    species = c(15, 32, 119, 133, 118,
+                112, 138, 132, 257, 340, 375, 420)
+  )
 
-# Smooth evaluation domain for linear curve fitting
-a_seq <- 10^seq(1.5, 5.6, length.out = 500)
-s_fit <- c_val * (a_seq^z)
+  # Area conversion: sq mi to x10^3 km^2
+  sunda_data$area_10k_sq_km <- (sunda_data$area_sq_mi * 2.58999) / 1000
 
-# Setup 2-panel layout
-par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3, 2))
+  # Fit log10 linear model to derive power law parameters (S = c * A^z)
+  fit <- lm(log10(species) ~ log10(area_10k_sq_km), data = sunda_data)
+  z     <- coef(fit)[2]          # Slope parameter z
+  c_val <- 10^(coef(fit)[1])     # Constant parameter c
 
-# ==============================================================================
-# LEFT PANEL: Normal (Linear) Scale
-# ==============================================================================
-plot(sunda_data$area_sq_mi, sunda_data$species,
-     xlim = c(0, 300000), ylim = c(0, 450), las = 1,
-     xlab = expression(paste("Island Area (mi"^2, ")")),
-     ylab = "Number of Bird Species (S)",
-     main = "Linear Scale (S = cA^z)",
-     col = "#1f77b4", pch = 19, cex = 1.3)
+  # Smooth evaluation domain for linear curve fitting
+  a_seq <- 10^seq(-1, 3, length.out = 500)
+  s_fit <- c_val * (a_seq^z)
 
-grid(col = "gray90", lty = "dotted")
+  # Setup 2-panel layout
+  par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3, 2))
 
-# Draw fitted power-law curve
-lines(a_seq, s_fit, col = "#d62728", lwd = 2)
+  # Disable scientific notation for plot labels
+  opt_old <- options(scipen = 10)
 
-# Redraw points over grid
-points(sunda_data$area_sq_mi, sunda_data$species, col = "#1f77b4", pch = 19, cex = 1.3)
+  # ==============================================================================
+  # LEFT PANEL: Normal (Linear) Scale
+  # ==============================================================================
+  plot(sunda_data$area_10k_sq_km, sunda_data$species,
+       xlim = c(0, 800), ylim = c(0, 450), las = 1,
+       xlab = expression(paste("Island Area (10"^3, " km"^2, ")")),
+       ylab = "Number of Bird Species (S)",
+       main = "Linear Scale",
+       col = "#1f77b4", pch = 19, cex = 1.3)
 
-# Label key extreme islands (small islands crushed near origin; large islands at right)
-text(sunda_data$area_sq_mi[sunda_data$island %in% c("Borneo", "Sumatra", "Java", "Celebes (Sulawesi)")],
-     sunda_data$species[sunda_data$island %in% c("Borneo", "Sumatra", "Java", "Celebes (Sulawesi)")],
-     labels = sunda_data$island[sunda_data$island %in% c("Borneo", "Sumatra", "Java", "Celebes (Sulawesi)")],
-     pos = 2, cex = 0.75, col = "#333333")
+  grid(col = "gray90", lty = "dotted")
+
+  # Draw fitted power-law curve
+  lines(a_seq, s_fit, col = "#d62728", lwd = 2)
+
+  # Redraw points over grid
+  points(sunda_data$area_10k_sq_km, sunda_data$species, col = "#1f77b4", pch = 19, cex = 1.3)
+
+  # Label key extreme islands
+  text(sunda_data$area_10k_sq_km[sunda_data$island %in% c("Borneo", "Sumatra", "Java", "Celebes (Sulawesi)")],
+       sunda_data$species[sunda_data$island %in% c("Borneo", "Sumatra", "Java", "Celebes (Sulawesi)")],
+       labels = sunda_data$island[sunda_data$island %in% c("Borneo", "Sumatra", "Java", "Celebes (Sulawesi)")],
+       pos = 2, cex = 0.75, col = "#333333")
+
+  # ==============================================================================
+  # RIGHT PANEL: Log-Log Scale
+  # ==============================================================================
+  # Suppress default x-axis using xaxt = "n" to provide custom non-scientific tick marks
+  plot(sunda_data$area_10k_sq_km, sunda_data$species,
+       log = "xy", las = 1, xaxt = "n",
+       xlim = c(0.1, 1000), ylim = c(10, 500),
+       xlab = expression(paste("Island Area (10"^3, " km"^2, " - Log Scale)")),
+       ylab = "Number of Bird Species (S - Log Scale)",
+       font.main = 1,
+       main = expression(paste("Log-Log Scale")),
+       col = "#1f77b4", pch = 19, cex = 1.3)
+
+  # Add custom non-scientific x-axis ticks
+  x_ticks <- c(0.1, 1, 10, 100, 1000)
+  axis(1, at = x_ticks, labels = c("0.1", "1", "10", "100", "1000"))
+
+  grid(col = "gray90", lty = "dotted")
+
+  # Draw linearized regression line
+  abline(fit, col = "#d62728", lwd = 2)
+
+  # Redraw points over grid
+  points(sunda_data$area_10k_sq_km, sunda_data$species, col = "#1f77b4", pch = 19, cex = 1.3)
+
+  # Label islands on log scale
+  # text(sunda_data$area_10k_sq_km, sunda_data$species,
+  #      labels = sunda_data$island, pos = 4, cex = 0.7, col = "#333333", xpd = TRUE)
+
+  # Label key extreme islands
+  text(sunda_data$area_10k_sq_km[sunda_data$island %in% c("Borneo", "Sumatra", "Java", "Celebes (Sulawesi)")],
+       sunda_data$species[sunda_data$island %in% c("Borneo", "Sumatra", "Java", "Celebes (Sulawesi)")],
+       labels = sunda_data$island[sunda_data$island %in% c("Borneo", "Sumatra", "Java", "Celebes (Sulawesi)")],
+       pos = 2, cex = 0.75, col = "#333333")
+
+  # Restore global settings and reset layout
+  options(opt_old)
+  par(mfrow = c(1, 1), mar = c(5, 4, 4, 2) + 0.1)
+
+  # Reset layout
+  par(mfrow = c(1, 1), mar = c(5, 4, 4, 2) + 0.1)
+  ```
 
 
-# ==============================================================================
-# RIGHT PANEL: Log-Log Scale
-# ==============================================================================
-plot(sunda_data$area_sq_mi, sunda_data$species,
-     log = "xy", las = 1,
-     xlim = c(40, 400000), ylim = c(10, 500),
-     xlab = expression(paste("Island Area (mi"^2, " - Log Scale)")),
-     ylab = "Number of Bird Species (S - Log Scale)",
-     main = expression(paste("Log-Log Scale (log S = log c + z log A)")),
-     col = "#1f77b4", pch = 19, cex = 1.3)
-
-grid(col = "gray90", lty = "dotted")
-
-# Draw linearized regression line
-abline(fit, col = "#d62728", lwd = 2)
-
-# Redraw points over grid
-points(sunda_data$area_sq_mi, sunda_data$species, col = "#1f77b4", pch = 19, cex = 1.3)
-
-# Label islands on log scale
-text(sunda_data$area_sq_mi, sunda_data$species,
-     labels = sunda_data$island, pos = 4, cex = 0.7, col = "#333333", xpd = TRUE)
-
-# Annotate fitted power law parameters
-legend("topleft",
-       legend = c(paste0("Slope (z) = ", round(z, 2)),
-                  paste0("c = ", round(c_val, 2)),
-                  paste0("R\u00b2 = ", round(summary(fit)$r.squared, 2))),
-       bty = "n", cex = 0.85, text.col = "#d62728")
-
-# Reset layout
-par(mfrow = c(1, 1), mar = c(5, 4, 4, 2) + 0.1)
-```
-
+- A common practice in ecological data analysis is applying a log transformation to variables (see @sec-variable) like species abundance. However, when a species is absent, its abundance is $0$, and $\log(0)$ is mathematically undefined. A standard solution is using a $\log(x+1)$ transformation. In R, this transformation is implemented directly via the `log1p()` function, while the natural, base 2, and base 10 logarithms are available via `log()`, `log2()`, and `log10()`.
 
 ### Notation/Semantic/Terminology {.unnumbered}
 - Integral defintion: For every $x>0$,  the natural logarithm of x could also be defined as
@@ -446,6 +482,4 @@ $$
 
   $$\log(x) = \log_e(x) = \ln(x)$$
 
-  However, notation varies across disciplines and software platforms.
-
-  To prevent ambiguity in technical writing, it is best practice to use $\ln(x)$ for base $e$ and explicit subscripts ($\log_{10}(x)$, $\log_2(x)$) whenever a non-natural base is intended.
+  However, notation varies across disciplines and software platforms. To prevent ambiguity in technical writing, it is best practice to use $\ln(x)$ for base $e$ and explicit subscripts ($\log_{10}(x)$, $\log_2(x)$) whenever a non-natural base is intended.

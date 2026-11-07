@@ -1,25 +1,20 @@
 # Differential equations {#sec-differential}
 {{< include ../preamble.qmd >}}
 
-<!-- ::: {style="font-size: 150%; font-family: Courier New; color: red; text-align: center;"}
-Zana-bola isak'izay mijery. The tool to rule them all! The only constant is change
-:::
-
-## Concepts and intuitions {.unnumbered} -->
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
 All you need is Euler's method
 :::
 
-Differential equations are among the most challenging and fundamental topics in mathematics. One famous example is the Navier–Stokes existence and smoothness problem, one of the seven Millennium Prize Problems, for which partial computational breakthroughs have recently been claimed using artificial intelligence.
+Differential equations are among the most challenging and fundamental topics in mathematics. One famous example is the Navier–Stokes problem, one of the seven Millennium Prize Problems, for which partial computational breakthroughs have recently been claimed using artificial intelligence.
 
-Unlike algebraic equations, where the solution is a number, the solution to a differential equation is a **function**. Furthermore, most differential equations cannot be solved analytically—their solutions cannot be expressed in closed form using elementary functions (@sec-functionMath). For instance, there is no simple elementary function $y = f(t)$ whose derivative satisfies:
+Unlike algebraic equations, where the solution is a number, the solution to a differential equation is a function. Yet, most differential equations cannot be solved analytically—their solutions cannot be expressed in closed form using elementary functions (@sec-functionMath). For instance, there is no simple elementary function $y = f(t)$ whose derivative satisfies:
 
 $$\frac{dy}{dt} = e^{-t^2}$$
 
-However, from an applied perspective, deriving an exact algebraic expression for $f(t)$ is often unnecessary. It usually suffices to construct the **graph** of $f(t)$, which visually captures all the quantitative and qualitative properties of the solution (@sec-functionViz).
+However, from an applied perspective, deriving an exact algebraic expression for $f(t)$ is often unnecessary. It usually suffices to construct the graph of $f(t)$, which visually uncover the complete qualitative behavior of a dynamical system (@sec-functionViz).
 
-Fortunately, for many common differential equations, constructing this visual trajectory is remarkably straightforward using **Euler's method**. Understanding this method not only provides a computational tool to solve differential equations, but also sheds light on how differential equations are constructed in the first place.
+Fortunately, for many common differential equations, constructing this graph of $f(x)$ is straightforward using Euler's method. Understanding this method not only provides a computational tool to solve differential equations, but also sheds light on how differential equations are constructed in the first place.
 
 Consider the simple differential equation:
 $$\frac{dy}{dt} = r$$
@@ -38,34 +33,34 @@ Rearranging terms to solve for the future state $y_{t+\Delta t}$:
 
 $$y_{t+\Delta t} = y_t + r \cdot \Delta t$$
 
-If you inspect this equation closely, it is a first-order linear difference equation (@sec-difference).
+Inspecting this equation closely, it is a first-order linear difference equation (@sec-difference).
 
-By choosing a sufficiently small step size $\Delta t$, we can compute future values recursively starting from an initial condition $y_0$:
+By choosing a sufficiently small step size $\Delta t$,future values can be computed recursively starting from an initial condition $y_0$:
 
 1. $y_1 = y_{\Delta t} = y_0 + r \cdot \Delta t$
 2. $y_2 = y_{2\Delta t} = y_1 + r \cdot \Delta t$
 3. $y_3 = y_{3\Delta t} = y_2 + r \cdot \Delta t$
 
-While this step-by-step update is an approximation (Euler's method), choosing a small enough time step $\Delta t$ yields an accurate numerical trajectory that can be plotted directly, making complex continuous-time systems accessible without requiring advanced symbolic integration.
+While this step-by-step update is an approximation (Euler's method), choosing a small enough time step $\Delta t$ yields an accurate numerical trajectory that can be plotted directly, making complex continuous-time systems accessible without requiring integration.
 
 
 ## Formal {.unnumbered}
 
 At its core, a differential equation relates a function to its own rates of change. While standard algebraic equations express relationships between static quantities (such as $x^2 + 2x = 5$), differential equations describe systems in continuous motion or transformation.
 
-A **differential equation** is an equation that contains one or more derivatives of an unknown function with respect to one or more independent variables.
+A differential equation is an equation that contains one or more derivatives of an unknown function with respect to one or more independent variables.
 
 
 Every differential equation is built from three essential structural components:
 
-1. **The Independent Variable:**
+1. The Independent Variable:
    The underlying domain variable driving change, commonly denoted as $t$ (representing time in dynamical systems) or $x$ (representing spatial location).
 
-2. **The Dependent Variable (The Unknown Function):**
-   The state function we seek to solve for, commonly denoted as $y(t)$, $u(x)$, or $f(t)$. Unlike algebraic equations where the unknown object is a single number, the unknown object in a differential equation is an entire **function**.
+2. The Dependent Variable (The Unknown Function):
+   The state function we seek to solve, commonly denoted as $y(t)$, $u(x)$, or $f(t)$. Unlike algebraic equations where the unknown object is a single number, the unknown object in a differential equation is an entire function.
 
-3. **The Derivatives (Rates of Change):**
-   Terms showing how the dependent variable responds instantaneously to changes in the independent variable. These are expressed using Leibniz notation ($\frac{dy}{dt}$, $\frac{d^2y}{dt^2}$) or Lagrange notation ($y'$, $y''$) (@sec-derivative).
+3. The Derivatives (Rates of Change):
+   Terms showing how the dependent variable responds instantaneously to changes in the independent variable. These are expressed using Leibniz notation ($\dfrac{dy}{dt}$, $\dfrac{d^2y}{dt^2}$) or Lagrange notation ($y'$, $y''$) (@sec-derivative).
 
 ## Examples {.unnumbered}
 
@@ -73,406 +68,301 @@ While many complex differential equations require numerical approximations (such
 
 - Radioactive decay is a fundamental physical process governed by a first-order linear differential equation. The rate at which radioactive nuclei decay is directly proportional to the quantity of radioactive material present at any given moment.
 
-Let $N(t)$ denote the number of radioactive atoms present at time $t$. The decay rate is described by the differential equation:
+  Let $N(t)$ denote the number of radioactive atoms present at time $t$. The decay rate is described by the differential equation:
 
-$$\frac{dN}{dt} = -\lambda N$$
+  $$\frac{dN}{dt} = -\lambda N$$
 
-where $\lambda > 0$ is the element-specific **decay constant** (measured in $\text{time}^{-1}$).
+  where $\lambda > 0$ is the element-specific decay constant (measured in $\text{time}^{-1}$).
 
 
-Consider the isotope Radon-220 ($^{220}\text{Rn}$), which has a half-life of $t_{1/2} = 55.6\text{ seconds}$. The relationship between the decay constant $\lambda$ and the half-life $t_{1/2}$ is derived from setting $N(t_{1/2}) = \frac{1}{2}N_0$:
+  Consider the isotope Radon-220 ($^{220}\text{Rn}$) where the decay constant^[calculated from the half-life] $\lambda = 0.01247 \text{ s}^{-1}.$
 
-$$\lambda = \frac{\ln(2)}{t_{1/2}} \approx \frac{0.6931}{55.6 \text{ s}} \approx 0.01247 \text{ s}^{-1}$$
+  Starting with 1000 elements, the next figure models the continuous exponential decay process and highlights the point at which $10\%$ of the initial isotope remains:
 
-Starting with 1000 element, the next figure models the continuous exponential decay process and visually highlights the point at which $10\%$ of the initial isotope remains:
+  ```{r}
+  #| label: fig-atomicDecay
+  #| fig-cap: Atomic decay of Radon-220
 
-```{r}
+    #-----------------------------
+    # 1. Parameters
+    #-----------------------------
 
-#-----------------------------
-# 1. Parameters
-#-----------------------------
+    N0 <- 1000                 # Initial number of atoms
+    half_life <- 55.6          # Radon-220 half-life, in seconds
+    lambda <- log(2) / half_life
 
-N0 <- 1000                 # Initial number of atoms
-half_life <- 55.6          # Radon-220 half-life, in seconds
-lambda <- log(2) / half_life
+    N_target <- 0.10 * N0      # 10% of initial atoms remain
 
-N_target <- 0.10 * N0      # 10% of initial atoms remain
+    #-----------------------------
+    # 2. Decay function
+    #-----------------------------
 
-#-----------------------------
-# 2. Decay function
-#-----------------------------
+    N <- function(t) {
+      N0 * exp(-lambda * t)
+    }
 
-N <- function(t) {
-  N0 * exp(-lambda * t)
-}
+    # Time to reach target
+    t_target <- -log(N_target / N0) / lambda
 
-# Time to reach target
-t_target <- -log(N_target / N0) / lambda
+    #-----------------------------
+    # 3. Generate data
+    #-----------------------------
 
-#-----------------------------
-# 3. Generate data
-#-----------------------------
+    t <- seq(0, 400, by = 1)
+    atoms <- N(t)
 
-t <- seq(0, 400, by = 1)
-atoms <- N(t)
+    #-----------------------------
+    # 4. Plot
+    #-----------------------------
 
-#-----------------------------
-# 4. Plot
-#-----------------------------
+    plot(t, atoms,
+         type = "l",
+         lwd = 2,
+         col = "black",
+         xlab = "Time (seconds)",
+         ylab = "Number of radioactive atoms",
+         xlim = c(0, 400),
+         ylim = c(0, 1050),
+         xaxs = "i",
+         yaxs = "i",
+         las = 1)
 
-plot(t, atoms,
-     type = "l",
-     lwd = 2,
-     col = "black",
-     xlab = "Time (seconds)",
-     ylab = "Number of radioactive atoms",
-     xlim = c(0, 400),
-     ylim = c(0, 1050),
-     xaxs = "i",
-     yaxs = "i",
-     las = 1)
+    # Target level: 10% remaining
+    abline(h = N_target, col = "red", lty = 2)
 
-# Target level: 10% remaining
-abline(h = N_target, col = "red", lty = 2)
+    # Projection lines
+    segments(0, N_target, t_target, N_target,
+             col = "red", lty = 2)
 
-# Projection lines
-segments(0, N_target, t_target, N_target,
-         col = "red", lty = 2)
+    segments(t_target, 0, t_target, N_target,
+             col = "red", lty = 2)
 
-segments(t_target, 0, t_target, N_target,
-         col = "red", lty = 2)
+    # Intersection point
+    points(t_target, N_target,
+           pch = 19, col = "red", cex = 1.2)
 
-# Intersection point
-points(t_target, N_target,
-       pch = 19, col = "red", cex = 1.2)
+    # Label
+    text(t_target, 200,
+         labels = paste0("t = ", round(t_target, 1), " s"),
+         pos = 4, offset = 0.5, col = "red")
 
-# Label
-text(t_target, 200,
-     labels = paste0("t = ", round(t_target, 1), " s"),
-     pos = 4, offset = 0.5, col = "red")
+    legend("topright",
+           legend = c("Radioactive decay", "10% remaining"),
+           col = c("black", "red"),
+           lty = c(1, 2),
+           lwd = c(2, 1),
+           bty = "n")
 
-legend("topright",
-       legend = c("Radioactive decay", "10% remaining"),
-       col = c("black", "red"),
-       lty = c(1, 2),
-       lwd = c(2, 1),
-       bty = "n")
-
-# Display result
-cat("Time until 10% remains:",
-    round(t_target, 2), "seconds\n")
-
-```
-
+  ```
 
 - Newton's Law of Cooling models how a heated or cooled object changes temperature over time as it interacts with its surrounding environment. A classic real-world example is tracking how fast a hot cup of coffee cools down to room temperature.
 
-The rate of change of the object's temperature $T(t)$ is directly proportional to the difference between its current temperature and the ambient environmental temperature $T_a$:
-
-$$\frac{dT}{dt} = -k (T - T_a)$$
-
-where:
-- $T(t)$ is the temperature of the object (e.g., coffee) at time $t$.
-- $T_a$ is the constant ambient temperature of the surrounding room.
-- $k > 0$ is the cooling constant ($\text{time}^{-1}$), which depends on physical factors such as the volume of the liquid, the surface area and shape of the container, and the thermal conductivity of the cup material.
-- The negative sign indicates that if the object is hotter than the room ($T > T_a$), its temperature decreases over time ($\frac{dT}{dt} < 0$).
-
-
-$$T(t) = T_a + (T_0 - T_a) e^{-kt}$$
-
-
-```{r}
-#| label: fig-newton-cooling
-#| fig-cap: "Newton's law of cooling for coffee ($T_0 = 90^\\circ\\text{C}, T_a = 20^\\circ\\text{C}$). Red dashed lines show the time to reach $37^\\circ\\text{C}$ and $25.5^\\circ\\text{C}$."
-
-#-----------------------------
-# 1. Parameters
-#-----------------------------
-T0 <- 90         # Initial coffee temperature (°C)
-Ta <- 20         # Ambient room temperature (°C)
-k  <- 0.09       # Cooling constant (min^-1)
-
-T_target1 <- 37    # Target 1: Body temperature (°C)
-T_target2 <- 25  # Target 2: Near-ambient equilibrium (°C)
-
-#-----------------------------
-# 2. Cooling function & time solver
-#-----------------------------
-T_cooling <- function(t) {
-  Ta + (T0 - Ta) * exp(-k * t)
-}
-
-# Analytical solution for time at a given target temperature
-calc_t_target <- function(T_target, T0, Ta, k) {
-  - (1 / k) * log((T_target - Ta) / (T0 - Ta))
-}
-
-t_target1 <- calc_t_target(T_target1, T0, Ta, k)
-t_target2 <- calc_t_target(T_target2, T0, Ta, k)
-
-#-----------------------------
-# 3. Generate time-series data
-#-----------------------------
-t_max <- max(t_target2 * 1.1, 100)
-t <- seq(0, t_max, length.out = 500)
-temp <- T_cooling(t)
-
-#-----------------------------
-# 4. Plot
-#-----------------------------
-plot(t, temp,
-     type = "l",
-     lwd = 2,
-     col = "black",
-     xlab = "Time (minutes)",
-     ylab = "Temperature (°C)",
-     xlim = c(0, t_max),
-     ylim = c(15, 95),
-     xaxs = "i",
-     yaxs = "i",
-     las = 1)
-
-# Ambient temperature baseline
-abline(h = Ta, col = "gray50", lty = 3, lwd = 1.5)
-
-# Target 1 projection lines (37°C)
-segments(0, T_target1, t_target1, T_target1, col = "red", lty = 2)
-segments(t_target1, 0, t_target1, T_target1, col = "red", lty = 2)
-points(t_target1, T_target1, pch = 19, col = "red", cex = 1.2)
-
-# Target 2 projection lines (20.5°C)
-segments(0, T_target2, t_target2, T_target2, col = "blue", lty = 2)
-segments(t_target2, 0, t_target2, T_target2, col = "blue", lty = 2)
-points(t_target2, T_target2, pch = 19, col = "blue", cex = 1.2)
-
-# Dynamic labels for targets
-text(t_target1, T_target1 + 4,
-     labels = paste0("37°C at t = ", round(t_target1, 1), " min"),
-     pos = 4, col = "red", cex = 0.9)
-
-text(t_target2, T_target2 + 4,
-     labels = paste0("25°C at t = ", round(t_target2, 1), " min"),
-     pos = 4, col = "blue", cex = 0.9)
-
-# Legend
-legend("topright",
-       legend = c("Coffee temperature",
-                  paste0("Target 1 (", T_target1, "°C)"),
-                  paste0("Target 2 (", T_target2, "°C)"),
-                  "Ambient (20°C)"),
-       col = c("black", "red", "blue", "gray50"),
-       lty = c(1, 2, 2, 3),
-       lwd = c(2, 1, 1, 1.5),
-       bty = "n")
-```
-
-
-- In continuous-time ecology, the simplest model of population dynamics assumes that per-capita rates of reproduction and mortality remain constant over time. This leads to the **Malthusian growth model**.
-
-Let $N(t)$ denote the total population size at continuous time $t$. The instantaneous rate of change of the population is given by:
-
-$$\frac{dN}{dt} = (b - d)N = r N$$
-
-where:
-- $b > 0$ is the per-capita birth rate (more potential parents yield proportionally more offspring).
-- $d > 0$ is the  per-capita death rate (mortality scales proportionally with current population size).
-- $r = b - d$ is the net continuous intrinsic growth rate.
-
-Given an initial population $N(0) = N_0$ at $t = 0$, integrating $\frac{dN}{dt} = r N$ yields the continuous exponential solution:
-
-$$N(t) = N_0 e^{r t}$$
-
-The long-term trajectory of the population is determined entirely by the sign of the net intrinsic growth rate $r$:
-
-1. Exponential Growth ($r > 0 \implies b > d$):
-   Births outpace deaths. The population grows
-2. Births exactly balance deaths. The population stays completely static over time ($N(t) = N_0$).
-3. Deaths outpace births. The population declines exponentially toward zero. Mathematically identical to radioactive decay.
-
-The script below models two population decline scenarios ($r_1 = -0.02$ vs. $r_2 = -0.05$) starting from $N_0 = 100$, tracking the exact time required to reach a threshold of $10\%$ of the initial population ($N_{\text{target}} = 10$).
-
-```{r}
-#| label: fig-malthusian-decay
-#| fig-cap: "Exponential population decline for negative growth rates ($r < 0$). The plot compares slow decay ($r = -0.015$) versus rapid decay ($r = -0.05$) to reach a target threshold of 10% remaining population."
-
-#-----------------------------
-# 1. System Parameters
-#-----------------------------
-N0 <- 100                 # Initial population size
-
-r_slow <- -0.015           # Slow population decline (b < d)
-r_fast <- -0.05           # Rapid population decline (b << d)
-
-N_target <- 10            # Target population threshold (10% of N0)
-
-#-----------------------------
-# 2. Population Functions & Time Solvers
-#-----------------------------
-N_pop <- function(t, r) {
-  N0 * exp(r * t)
-}
-
-calc_t_target <- function(N_target, N0, r) {
-  log(N_target / N0) / r
-}
-
-t_slow <- calc_t_target(N_target, N0, r_slow)
-t_fast <- calc_t_target(N_target, N0, r_fast)
-
-#-----------------------------
-# 3. Generate Time-Series Data
-#-----------------------------
-t <- seq(0, 250, by = 0.5)
-
-pop_slow <- N_pop(t, r_slow)
-pop_fast <- N_pop(t, r_fast)
-
-#-----------------------------
-# 4. Plot
-#-----------------------------
-plot(t, pop_slow,
-     type = "l",
-     lwd = 2.5,
-     col = "blue",
-     xlab = "Time steps (t)",
-     ylab = "Population size N(t)",
-     xlim = c(0, 250),
-     ylim = c(0, 105),
-     xaxs = "i",
-     yaxs = "i",
-     las = 1)
-
-lines(t, pop_fast, lwd = 2.5, col = "darkorange")
-
-# Target population threshold line
-abline(h = N_target, col = "red", lty = 2)
-
-# Projection lines for slow decline (r = -0.01)
-segments(0, N_target, t_slow, N_target, col = "blue", lty = 2)
-segments(t_slow, 0, t_slow, N_target, col = "blue", lty = 2)
-points(t_slow, N_target, pch = 19, col = "blue", cex = 1.2)
-
-# Projection lines for rapid decline (r = -0.05)
-segments(0, N_target, t_fast, N_target, col = "darkorange", lty = 2)
-segments(t_fast, 0, t_fast, N_target, col = "darkorange", lty = 2)
-points(t_fast, N_target, pch = 19, col = "darkorange", cex = 1.2)
-
-# Dynamic text labels
-text(t_slow + 2, N_target + 4,
-     labels = paste0("t = ", round(t_slow, 1)),
-     pos = 4, col = "blue", cex = 0.9)
-
-text(t_fast + 2, N_target + 4,
-     labels = paste0("t = ", round(t_fast, 1)),
-     pos = 4, col = "darkorange", cex = 0.9)
-
-# Legend
-legend("topright",
-       legend = c("Slow decline (r = -0.01)",
-                  "Rapid decline (r = -0.05)",
-                  "Threshold (N = 10)"),
-       col = c("blue", "darkorange", "red"),
-       lty = c(1, 1, 2),
-       lwd = c(2.5, 2.5, 1),
-       bty = "n")
-```
-
-
-
-- A simple population growth: $\frac{dy}{dt} = r y$ where $r = \text{birth} - \text{death}$. The right hand mean that the number of new offspring is proportional the population size (more mothers mean more baby) but also that mortality is proportional to the population size. This is the same equation as above as the decay and the solution is The population will grow if birth > death (r postive) and will go extinct if $ \text{death} \text{birth} <$ (r negative like the decay above).
-
-```{r}
-
-#-----------------------------
-# 1. Parameters
-#-----------------------------
-
-N0 <- 100
-
-r_small <- -0.01  # Small negative growth rate
-r_large <- -0.05  # Large negative growth rate
-
-N_target <- 10    # Target population (10% of initial population)
-
-#-----------------------------
-# 2. Population functions
-#-----------------------------
-
-N_small <- function(t) {
-  N0 * exp(r_small * t)
-}
-
-N_large <- function(t) {
-  N0 * exp(r_large * t)
-}
-
-# Time to reach target population
-t_small <- log(N_target / N0) / r_small
-t_large <- log(N_target / N0) / r_large
-
-#-----------------------------
-# 3. Generate data
-#-----------------------------
-
-t <- seq(0, 250, by = 0.5)
-
-pop_small <- N_small(t)
-pop_large <- N_large(t)
-
-#-----------------------------
-# 4. Plot
-#-----------------------------
-
-plot(t, pop_small,
-     type = "l",
-     lwd = 2,
-     col = "blue",
-     xlab = "Time",
-     ylab = "Population size",
-     xlim = c(0, 250),
-     ylim = c(0, 105),
-     xaxs = "i",
-     yaxs = "i",
-     las = 1)
-
-lines(t, pop_large, lwd = 2, col = "darkorange")
-
-# Target population
-abline(h = N_target, col = "red", lty = 2)
-
-# Projection for small negative growth rate
-segments(t_small, 0, t_small, N_target,
-         col = "blue", lty = 2)
-points(t_small, N_target, pch = 19, col = "blue")
-
-# Projection for large negative growth rate
-segments(t_large, 0, t_large, N_target,
-         col = "darkorange", lty = 2)
-points(t_large, N_target, pch = 19, col = "darkorange")
-
-# Time labels
-text(t_small - 10, 15,
-     labels = paste0(round(t_small, 1)),
-     pos = 4, offset = 0.5, col = "blue")
-
-text(t_large - 10, 15,
-     labels = paste0(round(t_large, 1)),
-     pos = 4, offset = 0.5, col = "darkorange")
-
-legend("topright",
-       legend = c("Small negative growth rate (-0.01)",
-                  "Large negative growth rate (-0.05)",
-                  "Target population (10)"),
-       col = c("blue", "darkorange", "red"),
-       lty = c(1, 1, 2),
-       lwd = c(2, 2, 1),
-       bty = "n")
-
-# # Display results
-# cat("Small negative growth rate:", round(t_small, 2), "time units\n")
-# cat("Large negative growth rate:", round(t_large, 2), "time units\n")
-
-```
+  The rate of change of the object's temperature $T(t)$ is directly proportional to the difference between its current temperature and the ambient temperature $T_a$:
+
+  $$\frac{dT}{dt} = -k (T - T_a)$$
+
+  where:
+  - $T(t)$ is the temperature of the object (e.g., coffee) at time $t$.
+  - $T_a$ is the constant ambient temperature of the surrounding room.
+  - $k > 0$ is the cooling constant ($\text{time}^{-1}$), which depends on physical factors such as the volume of the liquid, the surface area and shape of the container, and the thermal conductivity of the cup material.
+  - The negative sign indicates that if the object is hotter than the room ($T > T_a$), its temperature decreases over time ($\frac{dT}{dt} < 0$).
+
+  $$T(t) = T_a + (T_0 - T_a) e^{-kt}$$
+
+  ```{r}
+  #| label: fig-newton-cooling
+  #| fig-cap: "Newton's law of cooling for coffee ($T_0 = 90^\\circ\\text{C}, T_a = 20^\\circ\\text{C}$). Red dashed lines show the time to reach $37^\\circ\\text{C}$ and $25.5^\\circ\\text{C}$."
+
+  #-----------------------------
+  # 1. Parameters
+  #-----------------------------
+  T0 <- 90         # Initial coffee temperature (°C)
+  Ta <- 20         # Ambient room temperature (°C)
+  k  <- 0.09       # Cooling constant (min^-1)
+
+  T_target1 <- 37    # Target 1: Body temperature (°C)
+  T_target2 <- 25  # Target 2: Near-ambient equilibrium (°C)
+
+  #-----------------------------
+  # 2. Cooling function & time solver
+  #-----------------------------
+  T_cooling <- function(t) {
+    Ta + (T0 - Ta) * exp(-k * t)
+  }
+
+  # Analytical solution for time at a given target temperature
+  calc_t_target <- function(T_target, T0, Ta, k) {
+    - (1 / k) * log((T_target - Ta) / (T0 - Ta))
+  }
+
+  t_target1 <- calc_t_target(T_target1, T0, Ta, k)
+  t_target2 <- calc_t_target(T_target2, T0, Ta, k)
+
+  #-----------------------------
+  # 3. Generate time-series data
+  #-----------------------------
+  t_max <- max(t_target2 * 1.1, 100)
+  t <- seq(0, t_max, length.out = 500)
+  temp <- T_cooling(t)
+
+  #-----------------------------
+  # 4. Plot
+  #-----------------------------
+  plot(t, temp,
+       type = "l",
+       lwd = 2,
+       col = "black",
+       xlab = "Time (minutes)",
+       ylab = "Temperature (°C)",
+       xlim = c(0, t_max),
+       ylim = c(15, 95),
+       xaxs = "i",
+       yaxs = "i",
+       las = 1)
+
+  # Ambient temperature baseline
+  abline(h = Ta, col = "gray50", lty = 3, lwd = 1.5)
+
+  # Target 1 projection lines (37°C)
+  segments(0, T_target1, t_target1, T_target1, col = "red", lty = 2)
+  segments(t_target1, 0, t_target1, T_target1, col = "red", lty = 2)
+  points(t_target1, T_target1, pch = 19, col = "red", cex = 1.2)
+
+  # Target 2 projection lines (20.5°C)
+  segments(0, T_target2, t_target2, T_target2, col = "blue", lty = 2)
+  segments(t_target2, 0, t_target2, T_target2, col = "blue", lty = 2)
+  points(t_target2, T_target2, pch = 19, col = "blue", cex = 1.2)
+
+  # Dynamic labels for targets
+  text(t_target1, T_target1 + 4,
+       labels = paste0("37°C at t = ", round(t_target1, 1), " min"),
+       pos = 4, col = "red", cex = 0.9)
+
+  text(t_target2, T_target2 + 4,
+       labels = paste0("25°C at t = ", round(t_target2, 1), " min"),
+       pos = 4, col = "blue", cex = 0.9)
+
+  # Legend
+  legend("topright",
+         legend = c("Coffee temperature",
+                    paste0("Target 1 (", T_target1, "°C)"),
+                    paste0("Target 2 (", T_target2, "°C)"),
+                    "Ambient (20°C)"),
+         col = c("black", "red", "blue", "gray50"),
+         lty = c(1, 2, 2, 3),
+         lwd = c(2, 1, 1, 1.5),
+         bty = "n")
+  ```
+
+- In continuous-time ecology, the simplest model of population dynamics assumes that per-capita rates of reproduction and mortality remain constant over time. This leads to the Malthusian growth model.
+
+  Let $N(t)$ denote the total population size at continuous time $t$. The instantaneous rate of change of the population is given by:
+
+  $$\frac{dN}{dt} = (b - d)N = r N$$
+
+  where:
+  - $b > 0$ is the per-capita birth rate (more potential parents yield proportionally more offspring).
+  - $d > 0$ is the  per-capita death rate (mortality scales proportionally with current population size).
+  - $r = b - d$ is the net continuous intrinsic growth rate.
+
+  Given an initial population $N(0) = N_0$ at $t = 0$, integrating $\frac{dN}{dt} = r N$ yields the continuous exponential solution:
+
+  $$N(t) = N_0 e^{r t}$$
+
+  The long-term trajectory of the population is determined entirely by the sign of the net intrinsic growth rate $r$:
+
+  1. Exponential Growth ($r > 0 \implies b > d$):
+     Births outpace deaths. The population grows
+  2. Births exactly balance deaths. The population stays completely static over time ($N(t) = N_0$).
+  3. Deaths outpace births. The population declines exponentially toward zero. Mathematically identical to radioactive decay.
+
+  The script below models two population decline scenarios ($r_1 = -0.02$ vs. $r_2 = -0.05$) starting from $N_0 = 100$, tracking the exact time required to reach a threshold of $10\%$ of the initial population ($N_{\text{target}} = 10$).
+
+  ```{r}
+  #| label: fig-malthusian-decay
+  #| fig-cap: "Exponential population decline for negative growth rates ($r < 0$). The plot compares slow decay ($r = -0.015$) versus rapid decay ($r = -0.05$) to reach a target threshold of 10% remaining population."
+
+  #-----------------------------
+  # 1. System Parameters
+  #-----------------------------
+  N0 <- 100                 # Initial population size
+
+  r_slow <- -0.015           # Slow population decline (b < d)
+  r_fast <- -0.05           # Rapid population decline (b << d)
+
+  N_target <- 10            # Target population threshold (10% of N0)
+
+  #-----------------------------
+  # 2. Population Functions & Time Solvers
+  #-----------------------------
+  N_pop <- function(t, r) {
+    N0 * exp(r * t)
+  }
+
+  calc_t_target <- function(N_target, N0, r) {
+    log(N_target / N0) / r
+  }
+
+  t_slow <- calc_t_target(N_target, N0, r_slow)
+  t_fast <- calc_t_target(N_target, N0, r_fast)
+
+  #-----------------------------
+  # 3. Generate Time-Series Data
+  #-----------------------------
+  t <- seq(0, 250, by = 0.5)
+
+  pop_slow <- N_pop(t, r_slow)
+  pop_fast <- N_pop(t, r_fast)
+
+  #-----------------------------
+  # 4. Plot
+  #-----------------------------
+  plot(t, pop_slow,
+       type = "l",
+       lwd = 2.5,
+       col = "blue",
+       xlab = "Years elapsed",
+       ylab = "Population size N(t)",
+       xlim = c(0, 250),
+       ylim = c(0, 105),
+       xaxs = "i",
+       yaxs = "i",
+       las = 1)
+
+  lines(t, pop_fast, lwd = 2.5, col = "darkorange")
+
+  # Target population threshold line
+  abline(h = N_target, col = "red", lty = 2)
+
+  # Projection lines for slow decline (r = -0.01)
+  segments(0, N_target, t_slow, N_target, col = "blue", lty = 2)
+  segments(t_slow, 0, t_slow, N_target, col = "blue", lty = 2)
+  points(t_slow, N_target, pch = 19, col = "blue", cex = 1.2)
+
+  # Projection lines for rapid decline (r = -0.05)
+  segments(0, N_target, t_fast, N_target, col = "darkorange", lty = 2)
+  segments(t_fast, 0, t_fast, N_target, col = "darkorange", lty = 2)
+  points(t_fast, N_target, pch = 19, col = "darkorange", cex = 1.2)
+
+  # Dynamic text labels
+  text(t_slow + 2, N_target + 4,
+       labels = paste0("t = ", round(t_slow, 1)),
+       pos = 4, col = "blue", cex = 0.9)
+
+  text(t_fast + 2, N_target + 4,
+       labels = paste0("t = ", round(t_fast, 1)),
+       pos = 4, col = "darkorange", cex = 0.9)
+
+  # Legend
+  legend("topright",
+         legend = c("Slow decline (r = -0.01)",
+                    "Rapid decline (r = -0.05)",
+                    "Threshold (N = 10)"),
+         col = c("blue", "darkorange", "red"),
+         lty = c(1, 1, 2),
+         lwd = c(2.5, 2.5, 1),
+         bty = "n")
+  ```
 
 ## Tips and warnings {.unnumbered}
 - Notational Conventions for Derivatives:
@@ -481,6 +371,6 @@ legend("topright",
   - Lagrange's Notation ($f'$): Uses a prime mark to denote the derivative. While concise, it leaves the independent variable implicit.
   - Leibniz's Notation ($\frac{df}{dt}$): Though requiring more characters, Leibniz notation is the most explicit. It visually preserves the derivative's origin as a ratio of differential displacements ($d$), while clearly identifying both the dependent variable in the numerator and the independent variable of differentiation in the denominator.
 
-- The **order** of a differential equation is determined by the highest derivative present in the equation. Higher-order derivatives are denoted using Leibniz notation ($\frac{d^n y}{dt^n}$) or Lagrange notation ($y^{(n)}$). Note that the parentheses around the exponent in $y^{(n)}$ allow to distinguish the $n$-th derivative and taking the function to the $n$-th power, $y^n$. In biological modeling and ecology, most foundational equations are **first-order** (involving only the first derivative $\frac{dy}{dt}$), as they express rates of population change or chemical flux directly as a function of the current state.
+- The order of a differential equation is determined by the highest derivative present in the equation. Higher-order derivatives are denoted using Leibniz notation ($\frac{d^n y}{dt^n}$) or Lagrange notation ($y^{(n)}$). Note that the parentheses around the exponent in $y^{(n)}$ allow to distinguish the $n$-th derivative and taking the function to the $n$-th power, $y^n$. In biological modeling and ecology, most foundational equations are first-order (involving only the first derivative $\frac{dy}{dt}$), as they express rates of population change or chemical flux directly as a function of the current state.
 
-- While the analytical solutions covered in previous sections (such as $y(t) = y_0 e^{rt}$) offer neat, exact formulas for simple models, the vast majority of real-world differential equations cannot be solved analytically. Instead, we find practical solutions **numerically** by approximating the continuous differential equation with an equivalent discrete-time difference equation—a fundamental concept demonstrated by Euler's method. In R, specialized packages such as **`deSolve`** provide methods that numerically solve differential equations with high precision.
+- While the analytical solutions covered in previous sections (such as $y(t) = y_0 e^{rt}$) offer neat, exact formulas for simple models, the vast majority of real-world differential equations cannot be solved analytically. Instead, we find practical solutions numerically by approximating the continuous differential equation with an equivalent discrete-time difference equation—a fundamental concept demonstrated by Euler's method. In R, specialized packages such as `deSolve` provide methods that numerically solve differential equations with high precision.
