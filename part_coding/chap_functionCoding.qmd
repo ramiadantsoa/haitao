@@ -8,7 +8,7 @@ More than 4 250 functions and 25 000 CRAN packages
 
 A function in programming can be viewed as a generalization of mathematical functions (@sec-functionMath). This generalization makes programming exceptionally useful and powerful: the input (or independent variable) can be any data type, the number of arguments can be expanded as needed, and the output follows the same flexibility.
 
-In R, a function can represent a simple mathematical operation (such as `sin()`{.r}, `cos()`{.r}, `exp()`{.r}, or `log()`{.r}), a data constructor (such as `c()`{.r}, `matrix()`{.r}, or `list()`{.r}), or a summary statistic (such as `mean()`{.r} to compute the arithmetic average). Functions exist for nearly every statistical test, figure creation, data manipulation procedure, and equation-solving task available.
+In R, a function can represent a simple mathematical operation (such as `sin()`{.r}, `cos()`{.r}, `exp()`{.r}, or `log()`{.r}), a data constructor (such as `c()`{.r}, `matrix()`{.r}, or `list()`{.r}), or a summary statistic (such as `mean()`{.r} to compute the arithmetic average). Functions exist for nearly every statistical test, figure creation, data manipulation procedure, and tools to solve equations.
 
 When R is installed and launched, approximately 4,250 functions are immediately available. Because these base functions do not cover every specialized workflow, new functions are created continuously.
 
@@ -20,7 +20,7 @@ Functions provide powerful capabilities, but they can also present significant c
 
 ## Formal {.unnumbered}
 
-A function is defined using the `function()`{.r} keyword.
+A function is defined using the syntax `function()`{.r}.
 
 ```{r}
 #| echo: true
@@ -29,7 +29,7 @@ A function is defined using the `function()`{.r} keyword.
 # Define a function specifying its required and optional arguments
 function_name <- function(argument1, argument2 = TRUE, ...) {
   # Code block executing operations using the provided arguments
-  output <- argument1 + 10 # Example computation
+  output <- argument1 + argument2 # Example computation
   return(output)
 }
 
@@ -50,86 +50,86 @@ A function definition consists of several structural components:
 ## Examples {.unnumbered}
 -  Here are examples of basic mathematical functions:
 
-```{r}
-#| echo: true
+   ```{r}
+   #| echo: true
 
-# Calculate the sine of 1 radian
-sin(1)
+   # Calculate the sine of 1 radian
+   sin(1)
 
-# Calculate the absolute value of a negative number
-abs(-2)
+   # Calculate the absolute value of a negative number
+   abs(-2)
 
-# Calculate the square root of 25
-sqrt(25)
+   # Calculate the square root of 25
+   sqrt(25)
 
-# Combine function outputs and store the result using assignment
-result <- sqrt(25) + abs(-2)
-result
+   # Combine function outputs and store the result using assignment
+   result <- sqrt(25) + abs(-2)
+   result
 
-```
+   ```
 
 
 - Data manipulation
 
-```{r}
-#| echo: true
+  ```{r}
+  #| echo: true
 
-# Sort a numeric vector in ascending order
-sort(c(10, 2, 4, 2, 3.1))
+  # Sort a numeric vector in ascending order
+  sort(c(10, 2, 4, 2, 3.1))
 
-# Sort a numeric vector in descending order
-sort(c(10, 2, 4, 2, 3.1), decreasing = TRUE)
+  # Sort a numeric vector in descending order
+  sort(c(10, 2, 4, 2, 3.1), decreasing = TRUE)
 
-# Sort a character vector in alphabetical order
-sort(c("jaojoby", "tovo j'hay", "bessa", "reko"))
+  # Sort a character vector in alphabetical order
+  sort(c("jaojoby", "tovo j'hay", "bessa", "reko"))
 
-# Extract unique elements from a numeric vector, removing duplicate values
-unique(c(10, 2, 4, 2, 3.1))
+  # Extract unique elements from a numeric vector, removing duplicate values
+  unique(c(10, 2, 4, 2, 3.1))
 
-```
+  ```
 
-- Plotting functions {.unnumbered}
+- Plotting functions
 
-```{r}
-#| echo: true
+  ```{r}
+  #| echo: true
 
-# Generate a discrete sequence of integer values from 1 to 5
-indpt_variable <- 1:5
+  # Generate a discrete sequence of integer values from 1 to 5
+  indpt_variable <- 1:5
 
-# Compute dependent values by squaring the independent variable
-dpt_variable <- indpt_variable^2
+  # Compute dependent values by squaring the independent variable
+  dpt_variable <- indpt_variable^2
 
-# Create a scatter plot with blue triangle markers
-plot(
-  x = indpt_variable, # Numeric vector of x-axis values
-  y = dpt_variable,   # Numeric vector of y-axis values
-  col = "blue",        # Point color
-  pch = 2,             # Point symbol shape (2 = open triangle)
-  type = "p"           # Plot type ("p" for points)
-)
+  # Create a scatter plot with blue triangle markers
+  plot(
+    x = indpt_variable, # Numeric vector of x-axis values
+    y = dpt_variable,   # Numeric vector of y-axis values
+    col = "blue",        # Point color
+    pch = 2,             # Point symbol shape (2 = open triangle)
+    type = "p"           # Plot type ("p" for points)
+  )
 
-```
+  ```
 
-Modifying plot aesthetics and display types:^[All figures in this handbook were produced natively in R by adding graphic elements and configuring plotting arguments.]
+  Modifying plot aesthetics.^[All figures in this handbook were produced natively in R by adding graphic elements and configuring plotting arguments.]
 
-```{r}
-#| echo: true
+  ```{r}
+  #| echo: true
 
-# Generate a discrete sequence of integer values from 1 to 5
-indpt_variable <- 1:5
+  # Generate a discrete sequence of integer values from 1 to 5
+  indpt_variable <- 1:5
 
-# Compute dependent values by squaring the independent variable
-dpt_variable <- indpt_variable^2
+  # Compute dependent values by squaring the independent variable
+  dpt_variable <- indpt_variable^2
 
-# Create a line plot with a red line
-plot(
-  x = indpt_variable, # Numeric vector of x-axis values
-  y = dpt_variable,   # Numeric vector of y-axis values
-  col = "red",         # Line color
-  type = "l"           # Plot type ("l" for lines)
-)
+  # Create a line plot with a red line
+  plot(
+    x = indpt_variable, # Numeric vector of x-axis values
+    y = dpt_variable,   # Numeric vector of y-axis values
+    col = "red",         # Line color
+    type = "l"           # Plot type ("l" for lines)
+  )
 
-```
+  ```
 
 
 ## Tips and warnings {.unnumbered}
@@ -138,6 +138,8 @@ plot(
 - Functions are distinguished visually and syntactically from variables by the trailing parentheses `()`{.r} that follow their name. While a variable stores an object, a function represents an executable action that accepts arguments within those parentheses.
 
 - The vast majority of R packages are hosted on CRAN (Comprehensive R Archive Network), the official repository that subjects packages to rigorous quality and installation checks. Other major public repositories include Bioconductor, which specializes in genomic and biological data analyses, and GitHub, which hosts developmental versions and user-contributed community packages.
+
+- Despite the large number of functions in R, a user ultimately has specific needs and it is more efficient to write a function. That's when programming becomes more and more fun.
 
 ### Bonus {.unnumbered}
 
@@ -149,7 +151,7 @@ Inspecting the documentation for the `matrix()`{.r} function reveals its formal 
 
 The function defines four primary arguments: `data`{.r}, `nrow`{.r}, `ncol`{.r}, and `byrow`{.r}.
 
-#### Implicit vs explicit argument names {.unnumbered}
+**Implicit vs explicit argument names**
 
 Consider the fruit data used in this handbook. The matrix was constructed by specifying argument names explicitly within the function call.
 
@@ -170,7 +172,7 @@ mat
 
 ```
 
-In the example below, the order of the arguments within the function call does not affect the output. It works because the argument names are explicitly supplied.
+In the next example below, the order of the arguments was shuffled but that does not affect the output. It works because the argument names are explicitly supplied.
 
 ```{r}
 #| echo: true
@@ -186,8 +188,7 @@ mat
 
 ```
 
-
-In many instances, argument names are omitted in function calls. Passing values without supplying explicit names relies on implicit (positional) arguments. In positional matching, R assigns input values based strictly on the order defined in the function's formal specification.
+In the next example, the argument names are omitted. Passing values without supplying explicit names relies on implicit (positional) arguments. In positional matching, R assigns input values based strictly on the order defined in the function's formal specification.
 
 ```{r}
 #| echo: true
@@ -223,11 +224,15 @@ Using explicit argument names avoids this issue entirely or/and the challenge of
 #| echo: true
 
 # Pass the data vector implicitly while specifying remaining arguments explicitly
-mat <- matrix(data_fruit, nrow = 4, ncol = 3, byrow = FALSE)
+mat <- matrix(
+  data_fruit,
+  nrow = 4,
+  ncol = 3,
+  byrow = FALSE)
 
 ```
 
-#### Default argument values {.unnumbered}
+**Default argument values**
 
 - Specifying all arguments explicitly:
 

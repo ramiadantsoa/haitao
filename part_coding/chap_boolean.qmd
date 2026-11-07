@@ -6,9 +6,9 @@
 Aina sa vola?
 :::
 
-In @sec-arithmeticMath and the coding equivalent @sec-arithmeticCoding, the purpose was to observe how arithmetic operations work in a programming language. For instance the multiplication is encoded as asterisk `*`{.r}. Notable symbols that have not yet been used include inequality operators (`<`, `>`, `>=`, `<=`) and the equality operator (`=`).
+The chapter (@sec-arithmeticCoding) provide the syntax to perform arithmetic operation @sec-arithmeticMath. For instance the multiplication is encoded as asterisk `*`{.r}. Notable symbols that have not yet been used include inequality operators (`<`, `>`, `>=`, `<=`) and the equality operator (`=`).
 
-What does it mean to write `2 < 3`{.r}, or `2 > 3`{.r}? The first expression is a correct statement (true), while the other is incorrect (false). This concept applies directly to programming: these symbols serve as comparisons between the left-hand and right-hand sides. A Boolean variable is a specialized object type that stores the result of such comparisons as either true or false.
+What does it mean to write `2 < 3`{.r}, or `2 > 3`{.r}? The first expression is a correct statement (true), while the other is incorrect (false). This concept applies directly to programming: these symbols serve as comparisons between the left-hand and right-hand side. A Boolean variable is a specialized object type that stores the result of such comparisons as either true or false.
 
 In data-science, Boolean objects can encode qualitative variables (@sec-qualitativeVariable) when there are two outcomes: dead or alive, present or absent, or true or false. While strings or numeric types can also store binary data, Booleans are more explicit because they are restricted to exactly two values.
 
@@ -20,14 +20,14 @@ To make it explicit, Booleans are specifically represented by `TRUE`{.r} or `FAL
 
 - Syntax for relational operations:
 
-  - To evaluate if a is strictly smaller to b, the expression is `a < b`{.r}.
-  - To evaluate if a is smaller than or equal to b the expression is `a <= b`{.r};
-  - To evaluate if a is strictly larger to b the expression: `a > b`{.r}.
-  - To evaluate if a is larger than or equal to b the expression is `a >= b`{.r};
+  - To evaluate if `a`{.r} is strictly smaller to `b`{.r}, the expression is `a < b`{.r}.
+  - To evaluate if `a`{.r} is smaller than or equal to `b`{.r} the expression is `a <= b`{.r};
+  - To evaluate if `a`{.r} is strictly larger to `b`{.r} the expression: `a > b`{.r}.
+  - To evaluate if `a`{.r} is larger than or equal to `b`{.r} the expression is `a >= b`{.r};
 
-- Syntax for testing equality: because `=`{.r} is used for variable assignment and in function arguments (@sec-functionCoding), the convention is to use double equal signs `==`{.r}. Thus, to evalute whether a is equal to b, the expression is written as `a == b`{.r}^.
+- Syntax for testing equality: because `=`{.r} is used for variable assignment and in function arguments (@sec-functionCoding), the convention is to use double equal signs `==`{.r}. Thus, the expression to evalute whether `a`{.r} is equal to `b`{.r} is written as `a == b`{.r}^.
 
-- Syntax for testing inequality: to evaluate whether a is different from b, the expression is written as `a != b`{.r}.
+- Syntax for testing inequality: to evaluate whether `a`{.r} is different from `b`{.r}, the expression is written as `a != b`{.r}.
 
 - In R, the boolean type is encoded as logi, short for logical
 
@@ -76,34 +76,26 @@ var1 >= 1
 
 - In R, it is possible to perform arithmetic operation on boolean variable. The operation below works because R coerce them as 0 and 1 and thus proceed forward with the calculation.
 
-```{r}
-#| echo: true
+  ```{r}
+  #| echo: true
 
-# Assign Boolean values (FALSE implicitly equals 0, TRUE implicitly equals 1)
-a <- FALSE
-b <- TRUE
+  # Assign Boolean values (FALSE implicitly equals 0, TRUE implicitly equals 1)
+  a <- FALSE
+  b <- TRUE
 
-# Arithmetic operations automatically coerce Booleans to numbers (0 + 1 = 1)
-a + b
+  # Arithmetic operations automatically coerce Booleans to numbers (0 + 1 = 1)
+  a + b
 
-# Multiplication with a zero value yields zero (0 * 1 = 0)
-a * b
+  # Multiplication with a zero value yields zero (0 * 1 = 0)
+  a * b
 
-# Subtraction of numeric representations (0 - 1 = -1)
-a - b
+  # Subtraction of numeric representations (0 - 1 = -1)
+  a - b
 
-# Division of zero by one (0 / 1 = 0)
-a / b
+  # Division of zero by one (0 / 1 = 0)
+  a / b
 
-```
-
-<!-- - In data science workflows, relational comparison operators (`<`{.r}, `>`{.r}, `<`={.r}, `>=`{.r}, `==`{.r}, and `!=`{.r}) are primarily applied to filter datasets. Below is a slightly advanced concept to illustrate the idea
-
-```{r}
-
-which(c(1, 2, 3, 4 , 5) == 4)
-
-``` -->
+  ```
 
 
 

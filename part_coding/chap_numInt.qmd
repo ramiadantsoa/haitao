@@ -79,28 +79,30 @@ The type of object is shown on the left, above int for integer and num for numer
 - An integer requires less computer memory. However, memory is usually not an issue, and memory management is beyond the scope of this handbook.
 
 -  As a shortcut, the leading zero before a decimal point can be omitted:
-```{r}
-#| echo: tue
 
-# Instead of 0.234, entre .234
-a <- .234
-```
+   ```{r}
+   #| echo: true
+
+   # .123 is the same as 0.123
+   a <- .123
+
+   ```
 
 - Machine vs. mathematics: there are limits on the number of decimals and the maximum value a computer can store and compute.
 
-```{r}
-#| echo: true
+  ```{r}
+  #| echo: true
 
-# The largest integer
-.Machine$integer.max
+  # The largest integer
+  .Machine$integer.max
 
-# The largest postive numeric
-.Machine$double.xmax
+  # The largest postive numeric
+  .Machine$double.xmax
 
-# The smallest value (machine precision)
-.Machine$double.eps
-```
+  # The smallest value (machine precision)
+  .Machine$double.eps
+  ```
 
 - Astronomically large numbers are not supported and are rarely required in typical ecological workflows.
 - Due to precision limitations, multiplying very small numbers by very large numbers can lead to numerical instability and should be avoided.
-- Infinity is not a finite number and is represented by Inf{.r} and -Inf{.r}
+- Infinity is not a finite number and is represented by `Inf`{.r} and `-Inf`{.r}

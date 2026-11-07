@@ -30,30 +30,13 @@ my_list <- list(
 )
 ```
 
-A list is constructed with the function `list()`{.r}.
-
-```{r}
-#| echo: true
-#| eval: false
-
-# Construct a list where each argument defines an element name and its associated R object
-my_list <- list(
-  name1 = object1, # First element containing object1
-  name2 = object2, # Second element containing object2
-  name3 = object3  # Third element containing object3
-)
-
-```
-
 Unlike matrices or data frames, there are no structural constraints on the types or dimensions of the stored objects; elements may consist of vectors of varying lengths, matrices, data frames, or other lists.
 
-Elements can be accessed directly using double square brackets `[[]]`{.r}, for instanmce `my_list[[1]]`{.r} or `my_list[["name1"]]`{.r}, which extract the underlying object. If the elements are named, `my_list$name1`{.r} can also be used as a convenient shortcut.
+Objects can be accessed directly using double square brackets `[[]]`{.r}, for instanmce `my_list[[1]]`{.r} or `my_list[["name1"]]`{.r}, which extract the underlying object. If the elements are named, `my_list$name1`{.r} can also be used as a convenient shortcut.
 
 Single square brackets `my_list[1]`{.r} or `my_list["name1"]`{.r} subset the structure, returning a smaller list containing the specified element rather than the object itself.
 
 ## Examples {.unnumbered}
-
-- Single versus double brackets
 
 ```{r}
 #| echo: true
@@ -68,54 +51,58 @@ silly_example <- list(
 
 - Unlike a vector or a matrix, a list is displayed differently when printed.
 
-```{r}
-#| echo: true
+  ```{r}
+  #| echo: true
 
-# Print the complete list object to observe its hierarchical output structure
-silly_example
-```
+  # Print the complete list object to observe its hierarchical output structure
+  silly_example
+  ```
 
-- Extracting one element
+- Extracting one element: double vs. single bracket
 
-```{r}
-#| echo: true
+  ```{r}
+  #| echo: true
 
-# Extract the value of the first element (returns a numeric vector)
-silly_example[[1]]
+  # Extract the value of the first element
+  silly_example[[1]]
 
-# Subset the list to include only the first element (returns a 1-element list)
-silly_example[1]
+  str(silly_example[[1]])
 
-```
+  # Subset the list to include only the first element
+  silly_example[1]
 
-Comparing the output reveals that double brackets (`[[1]]`{.r}) extract the underlying value directly, whereas single brackets (`[1]`{.r}) return a sublist containing the target element (indicated by `$mine` in the output). This structural difference can be verified using the `str()`{.r} function. [Note: Removed the second-person pronoun "you" to maintain a neutral, formal handbook tone.]
+  str(silly_example[1])
+
+  ```
+
+  Comparing the output reveals that double brackets (`[[1]]`{.r}) extract the underlying value directly, whereas single brackets (`[1]`{.r}) return a sublist containing the target element (indicated by `$mine` in the output). This structural difference can be verified using the `str()`{.r} function.
 
 - Extracting named elements and nested components
 
-```{r}
-#| echo: true
+  ```{r}
+  #| echo: true
 
-# Extract the named element "xx" (returns a numeric vector)
-silly_example$mine
+  # Extract the named element "xx"
+  silly_example$mine
 
-# Extract the second element (returns the nested list)
-silly_example[[2]]
+  # Extract the 2nd element
+  silly_example[[2]]
 
-# Subset the first element within the second element (returns a list containing vector x)
-silly_example[[2]][1]
+  # Subset the 1st element within the 2nd element
+  silly_example[[2]][1]
 
-# Extract component x from the nested list using its name (returns a numeric vector)
-silly_example[[2]]$yours
+  # Extract component x from the nested list using its name
+  silly_example[[2]]$yours
 
-# Extract component x from the nested list using double brackets (returns a numeric vector)
-silly_example[[2]][[1]]
+  # Extract component x from the nested list using double brackets
+  silly_example[[2]][[1]]
 
-# Extract the second column of the matrix stored as the third element (returns a numeric vector)
-silly_example[[3]][, 2]
+  # Extract the 2nd column of the matrix stored as the 3rd element
+  silly_example[[3]][, 2]
 
-```
+  ```
 
 ## Tips and warnings {.unnumbered}
 
-Lists are rarely constructed manually unless specific requirements arise, such as building custom objects or tailored data structures. However, understanding list construction is essential for accessing and manipulating the outputs of statistical analyses.
+Lists are rarely constructed manually unless specific requirements arise, such as building custom objects or tailored data structures. However, understanding list construction helpl accessing and manipulating the outputs of statistical analyses.
 

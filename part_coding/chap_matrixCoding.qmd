@@ -14,11 +14,13 @@ In data science, datasets are often heterogeneous, in which case a data frame @s
 
 ## Formal {.unnumbered}
 
-To construct a matrix in R, the `matrix()`{.r} function is used.
+To construct a matrix in R, the syntax `matrix()`{.r} is used.
 
-`matrix_name <- matrix(data, nrow = n_rows, ncol = n_cols)`{.r}
+```r
+matrix_name <- matrix(data, nrow = n_rows, ncol = n_cols)
+```
 
-The `data` argument takes a vector of length `n_rows * n_cols` so that each entry in the matrix receives a value. By default, R fills matrices column-by-column.
+The `data` argument takes a vector of length `n_rows * n_cols` so that each value is assigned to all the entry of the matrix. By default, R fills matrices column-by-column.
 
 - The dimensions of a matrix represent the number of rows and columns it contains and can be retrieved with `dim()`{.r}. Alternatively, `nrow()`{.r} and `ncol()`{.r} return the row and column counts individually.
 
@@ -28,7 +30,7 @@ The `data` argument takes a vector of length `n_rows * n_cols` so that each entr
 
 ## Examples {.unnumbered}
 
-- Constructing the matrix used in @sec-matrixMath.
+Constructing the matrix used in @sec-matrixMath.
 
 ```{r}
 #| echo: true
@@ -67,7 +69,7 @@ mat[, c(1, 3)]
 
 ## Tips and warnings {.unnumbered}
 
-- Indexing a matrix using `[row_index, column_index]`{.r} follows the $a_{i,j}$ notation used in mathematics to denote the entry at row $i$ and column $j$ @sec-matrixMath. Leaving one index blank selects all values along that dimension.
+- The indexing `[row_index, column_index]`{.r} follows the $a_{i,j}$ notation used in mathematics to denote the entry at row $i$ and column $j$ @sec-matrixMath. Leaving one of the dimension blank means seleection all values along that dimension.
 
 - A matrix is typically used for mathematical operations @sec-matrixOperationMath and @sec-matrixMultiplicationMath.
 
@@ -77,17 +79,16 @@ mat[, c(1, 3)]
 
 - Column and row names can also be assigned to a matrix. However, this is not the most common use of a matrix; a data frame @sec-dataframe is more commonly used for named tabular data.
 
+  ```{r}
+  #| echo: true
 
-```{r}
-#| echo: true
 
+  # Assign names to rows
+  rownames(mat) <- c("Rabe", "Rakoto", "Sanda", "Dora")
 
-# Assign names to rows
-rownames(mat) <- c("Rabe", "Rakoto", "Sanda", "Dora")
+  # Assign names to columns
+  colnames(mat) <- c("Banana", "Strawberries", "Voatsinefy")
 
-# Assign names to columns
-colnames(mat) <- c("Banana", "Strawberries", "Voatsinefy")
-
-# Display matrix with dimnames
-mat
-```
+  # Display matrix with dimnames
+  mat
+  ```

@@ -10,7 +10,7 @@ The primary tenet of evolution is that natural selection has acted over a suffic
 
 Programming has existed since the birth of computers. With nearly 180 years of evolution^[Calculated from Ada Lovelace’s 1843 publication of the first computer algorithm for Charles Babbage's Analytical Engine], programmers have faced numerous challenges that led to the development of vast coding practices designed to surmount these issues. For ecologists and data scientists, adopting some of these practices can also make coding easier. One practice that is almost never mentioned in applied coding is the use of pseudocode.
 
-While the majority of readers of this book might not need to develop pseudocode in the traditional programmer sense, a accessible version—referred to here as pseudo-pseudocode—can be added to programming toolkits. In a nutshell, pseudo-pseudocode is a written description or sketch that could be shown to a colleague or relative to explain what the code is doing.
+While the majority of readers of this book might not need to develop pseudocode in the traditional programmer sense, a accessible version—referred to here as pseudo-pseudocode—can be added to programming toolkits. In a nutshell, pseudo-pseudocode is a written description or sketch that could be shown to a colleague or relative to explain how the code is structured and what the code is doing.
 
 ## Formal {.unnumbered}
 
@@ -27,22 +27,21 @@ The key characteristics of a pseudocode are:
 
 1. The example below is a developper style of the pseudocode is to find and print the largest of two numbers.
 
+   ```text
+   BEGIN
+       READ number1
+       READ number2
 
-```text
-BEGIN
-    READ number1
-    READ number2
+       IF number1 > number2 THEN
+           PRINT "number1 is greater"
+       ELSE IF number2 > number1 THEN
+           PRINT "number2 is greater"
+       ELSE
+           PRINT "Both numbers are equal"
+       ENDIF
+   END
 
-    IF number1 > number2 THEN
-        PRINT "number1 is greater"
-    ELSE IF number2 > number1 THEN
-        PRINT "number2 is greater"
-    ELSE
-        PRINT "Both numbers are equal"
-    ENDIF
-END
-
-```
+   ```
 
 2. An example of pseudo-pseudocode from the pseudocode above
 
@@ -63,7 +62,7 @@ END
 
 ## Tips and warnings {.unnumbered}
 
-- Pseudo-pseudocode is not an official term; it is used in this chapter simply to illustrate an idea.
+- Pseudo-pseudocode is not an official term; it is used in this chapter to illustrate an idea.
 - Pseudocode consists of brainstorming and constructing the skeleton of the code before actually writing any code.
 - Pseudo-pseudocode can be implemented in many ways. The most practical approach is to treat pseudo-pseudocode as the comments that will appear in the future code—writing comments is strongly advised.
 - There are many ways to reach the same result. For instance, while most figures are created using `ggplot2`{.r}, all figures in this volume use base R. Thinking at a higher level provides a clear conceptual understanding of the process rather than focusing strictly on specific syntax or functions.

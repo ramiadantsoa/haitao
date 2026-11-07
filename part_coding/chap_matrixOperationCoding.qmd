@@ -14,121 +14,126 @@ The sole purpose of this chapter is to introduce the symbols and syntax for matr
 
 - Scalar operation: when combining a number and a vector or a matrix, the same symbol notation addition `+`, subtraction `-`, multiplication `*`, division `/`.This is the same as in @sec-matrixOperationMath.
 
-` 2 * c(a, b) = c(2 * a, 2 * b)`{.r}
+```r
+  2 * c(a, b) = c(2 * a, 2 * b)
+```
 
 - Element-wise operation: when two objects are the same dimensions (vector of same length or matrix of same dimensions), the same symbols are used.
-  `c(a, b) * c(c, d) = c(a * c, b * d)`{.r}
 
-- Matrix multiplication (as in @sec-matrixMultiplicationMath): the R implementation symbol is `%*%`{.r}. The star is to remember that it is still a multiplication. Unlike the arithmetic operation which is the same in any langauge, this syntax or symbol is specific to R.
+  ```r
+  c(a, b) * c(c, d) = c(a * c, b * d)
+  ```
+
+- Matrix multiplication (as in @sec-matrixMultiplicationMath): the R implementation symbol is `%*%`{.r}. The star is to remember that it is still a multiplication. Unlike the arithmetic operation which is the same in any langauge, this syntax is specific to R.
 
 
 ## Examples {.unnumbered}
 - Scalar operations
 
-```{r}
-#| echo: true
+  ```{r}
+  #| echo: true
 
-# Define a numeric vector of length 3
-vec <- c(2, 0, 1)
+  # Define a numeric vector of length 3
+  vec <- c(2, 0, 1)
 
-# Multiply each element in the vector by a scalar (-2)
--2 * vec
+  # Multiply each element in the vector by a scalar (-2)
+  -2 * vec
 
-# Divide a scalar (10) by each vector element; division by zero yields Inf
-10 / vec
+  # Divide a scalar (10) by each vector element; division by zero yields Inf
+  10 / vec
 
-# Divide each element in the vector by a scalar (10)
-vec / 10
+  # Divide each element in the vector by a scalar (10)
+  vec / 10
 
-# Create a 2x3 matrix using vector values
-mat <- matrix(c(2, 3, 4, vec), nrow = 2)
+  # Create a 2x3 matrix using vector values
+  mat <- matrix(c(2, 3, 4, vec), nrow = 2)
 
-# Multiply all entries in the matrix by a scalar (-2)
--2 * mat
+  # Multiply all entries in the matrix by a scalar (-2)
+  -2 * mat
 
-```
+  ```
 
 - Element-wise operations between vectors of equal length
 
-```{r}
-#| echo: true
+  ```{r}
+  #| echo: true
 
-# Define a second numeric vector of equal length (3)
-new_vec <- c(10, 20, 30)
+  # Define a second numeric vector of equal length (3)
+  new_vec <- c(10, 20, 30)
 
-# Add corresponding elements of the two vectors
-vec + new_vec
+  # Add corresponding elements of the two vectors
+  vec + new_vec
 
-# Multiply corresponding elements of the two vectors
-vec * new_vec
+  # Multiply corresponding elements of the two vectors
+  vec * new_vec
 
-```
+  ```
 
 - Matrix multiplication to calculate total expenditure per person per shop @sec-matrixMultiplicationMath
 
-```{r}
-#| echo: true
+  ```{r}
+  #| echo: true
 
-# Define a 4x3 matrix representing quantities of fruits purchased
-fruit_quantity <- matrix(
-  data = c(6, 3, 0, 1, 3, 1, 10, 0, 0.5, 0, 0, 2),
-  nrow = 4,
-  ncol = 3
-)
+  # Define a 4x3 matrix representing quantities of fruits purchased
+  fruit_quantity <- matrix(
+    data = c(6, 3, 0, 1, 3, 1, 10, 0, 0.5, 0, 0, 2),
+    nrow = 4,
+    ncol = 3
+  )
 
-# Display the fruit quantity matrix
-fruit_quantity
+  # Display the fruit quantity matrix
+  fruit_quantity
 
-# Define a 3x2 matrix representing fruit prices at two different shops
-price_shops <- matrix(
-  data = c(500, 1000, 2000, 600, 800, 2500),
-  nrow = 3
-)
+  # Define a 3x2 matrix representing fruit prices at two different shops
+  price_shops <- matrix(
+    data = c(500, 1000, 2000, 600, 800, 2500),
+    nrow = 3
+  )
 
-# Display the price matrix
-price_shops
+  # Display the price matrix
+  price_shops
 
-# Perform matrix multiplication (%*%) to compute total expenditure per person per shop
-fruit_quantity %*% price_shops
-```
+  # Perform matrix multiplication (%*%) to compute total expenditure per person per shop
+  fruit_quantity %*% price_shops
+  ```
 
 
 ## Tips and warnings {.unnumbered}
 - A diagonal matrix (where all elements outside the main diagonal are zero) can be created using `diag(vec)`{.r}, where `vec`{.r} specifies the values along the diagonal. A useful shortcut is `diag(m)`{.r}; when given a single integer `m`{.r}, it creates an identity matrix with ones along the main diagonal
 
 
-```{r}
-#| echo: true
+  ```{r}
+  #| echo: true
 
-# A 2 x 2 diagonal matrix
-diag(c(12, 37))
+  # A 2 x 2 diagonal matrix
+  diag(c(12, 37))
 
-# A 4 x 4 identity matrix
-diag(4)
+  # A 4 x 4 identity matrix
+  diag(4)
 
-```
+  ```
 
 
 - The standard mathematical order of operations, parentheses, and rules apply. In matrix multiplication, the number of columns in the first matrix must equal the number of rows in the second matrix, and matrix division is undefined @sec-matrixMultiplicationMath.
 
 - R is vectorized, meaning that when the argument is a vector, a function operates on each element individually^[Not all functions are vectorized].
 
-```{r}
-#| echo: true
+  ```{r}
+  #| echo: true
 
-# Define a numeric vector
-another_vec <- c(1, 10, 100)
+  # Define a numeric vector
+  another_vec <- c(1, 10, 100)
 
-# Apply the sine function element-wise
-sin(another_vec)
+  # Apply the sine function element-wise
+  sin(another_vec)
 
-```
+  ```
 
 - A unexpected behavior in R:
 
-```{r}
-#| echo: true
-#| warning: true
-c(3, 2 , 1) + c(1, 2, 3, 4, 5)
-```
-R still performs addition even though the two vectors are not of equal length, although it issues a warning. Such an operation is not defined in standard mathematics.
+  ```{r}
+  #| echo: true
+  #| warning: true
+  c(3, 2 , 1) + c(1, 2, 3, 4, 5)
+  ```
+  R still performs addition even though the two vectors are not of equal length, although it issues a warning. Such an operation is not defined in standard mathematics.

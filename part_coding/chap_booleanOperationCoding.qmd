@@ -51,6 +51,7 @@ Boolean operations form a fundamental part of programming and can feel unintuiti
 ## Formal {.unnumbered}
 
 The AND operator is encoded as `&`{.r} in R (`A & B`{.r} or `A && B`{.r}).
+
 The OR operator is encoded as `|`{.r} in R (`A | B`{.r} or `A || B`{.r}).
 
 The single operators (`&`{.r}, `|`{.r}) perform element-wise evaluation, which serves as the primary method for vector filtering in data analysis.
@@ -95,12 +96,12 @@ a | (b & cc)
 
 - Although the concept of data frame is needed to full understand the example below. The example below combines and uses variable types, relational operators, and Boolean operators to filter individuals matching combined criteria:
 
-```r
-nationality == "Malagasy" & (male == TRUE | height < 1.6)
-```
-In this expression, nationality, male, and height are variable names (@sec-assignment) of character (@sec-character), logical (@sec-boolean), and numeric (@sec-numeric) types, respectively. The relational operators `==`{.r} and `<`{.r} filter within variables, whereas the Boolean operators `&`{.r} and `|`{.r} evaluate conditions across variables.
+  ```r
+  nationality == "Malagasy" & (male == TRUE | height < 1.6)
+  ```
+  In this expression, nationality, male, and height are variable names (@sec-assignment) of type character (@sec-character), logical (@sec-boolean), and numeric (@sec-numeric), respectively. The relational operators `==`{.r} and `<`{.r} filter within variables, whereas the Boolean operators `&`{.r} and `|`{.r} evaluate conditions across variables.
 
 - These Boolean operators correspond to the concepts of intersection (AND) and union (OR) in set theory. For example, in `nationality == "Malagasy" & male == TRUE`{.r} the operation essentialy intersect the set of malagasy and male.
 
-- Boolean operations are prone to mistakes because logical evaluation can be surprisingly counterintuitive. Extra caution is required during implementation.
+- Performing Boolean operations are prone to mistakes because logical evaluation can be surprisingly counterintuitive. Extra caution is required during implementation.
 

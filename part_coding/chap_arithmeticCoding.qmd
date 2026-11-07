@@ -6,7 +6,7 @@
 `{+, -, *, /, ^, ()}`
 :::
 
-R is primarily a calculator, and the purpose of this chapter is to translate basic arithmetic operations—as taught since primary school—into their R equivalents. These operations are identical across programming languages, so this is not specific to R. Operations follow the standard order of operations (@sec-arithmeticMath), so attention to precedence is required.
+R is primarily a calculator, and the purpose of this chapter is to show the sytnax for basic arithmetic operations—as taught since primary school—into their R equivalents. These operations are identical across programming languages, so this is not specific to R. Operations follow the standard order of operations (@sec-arithmeticMath), so attention to precedence is required.
 
 
 ## Formal {.unnumbered}
@@ -31,11 +31,11 @@ R is primarily a calculator, and the purpose of this chapter is to translate bas
 # Addition: computes the sum of 1 and 1
 1 + 1
 
-# Negation: evaluates -1 as a negative number
+# Negation: evaluates 2 minus 11
 2 - 11
 
-# Multiplication: explicit operator * is required (unlike mathematical notation like '2 a' or '2 x b')
-2 * 1 # caution as people just do a b or a x b
+# Multiplication: calculates 2 times 1
+2 * 1
 
 # Division: computes the quotient of 1 divided by 2
 1 / 2
@@ -50,11 +50,12 @@ R is primarily a calculator, and the purpose of this chapter is to translate bas
 ## Tips and warnings {.unnumbered}
 
 -  Here is a list of common mistakes that will display an error message:
+
   - Multiplication is often omitted. For example, $2\pi$ in mathematics is not written as `2 pi`{.r} in R. Multiplication must be explicit, so the equivalent is `2 * pi`{.r}. The same rule applies to `(a + b) * c`{.r}.
-  - Parentheses come in pairs, and closing parentheses are sometimes forgotten. However, using a code editor automatically adds the closing parenthesis.
+  - Parentheses come in pairs, and closing parentheses are sometimes forgotten. However, using a good script editor automatically adds the closing parenthesis.
 
 - Leaving spaces around expressions improves readability (e.g., `a * b`{.r} instead of `a*b`{.r}).
 
--  Other operations are also fundamental. For instance, modulo (remainder) is implemented using `5 %% 3`{.r}. Additional mathematical functions can be found by searching online.
+-  The modulo (remainder) is implemented using `5 %% 3`{.r}. 
 
 - These arithmetic symbols have special meanings in R, which is why they cannot be used when naming a variable.

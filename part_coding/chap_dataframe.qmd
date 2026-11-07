@@ -6,7 +6,7 @@
 Tableau pratique
 :::
 
-The previous chapters introduced mathematical concepts in programming, such as vectors, matrices, logical and numeric values, and matrix operations. This chapter transitions from strict mathematical structures to the more flexible requirements of data science. The data frame was developed to meet these needs, and most data encountered in ecological practice are stored in this format.
+The previous chapters mirrors mathematical concepts in programming, such as vectors, matrices, logical and numeric values, and matrix operations. This chapter transitions from mathematical structures to the more flexible requirements of data science. The data frame was developed to meet these needs, and most data encountered in ecological practice are stored in this format.
 
 A data frame stores multiple variables recorded across multiple observations.
 For instance, an investigator surveys 100 individuals and records name, age, and sex. The dataset consists of three columns: the first for name as character, the second for age as integer, and the third as logical (TRUE if female and FALSE if male). Similarly, a field researcher visits fifteen sites and records site name, altitude, pH, and other variables.
@@ -37,68 +37,76 @@ Columns can be conveniently accessed using `df$name1`{.r}, which is the most com
 
 ## Examples {.unnumbered}
 
-Below are three styles for creating a data frame. The third approach represents standard best practice.
+- Below are three styles for creating a data frame. The third approach represents standard best practice.
 
+  1- The quickest approach is to type directly each vector in the function. The code is shorter but the column names are usually a mess.
+  ```{r}
+  #| echo: true
 
-```{r}
-#| echo: true
+  # Method 1: Data frame created without specifying column names, resulting in default, uninformative names
+  my_df <- data.frame(
+    c(1, 2, 3),
+    c("A", "X", "B"),
+    c(TRUE, TRUE, FALSE))
+  my_df
+  ```
+  2. A more organized approach is to contruct the vector first and then add the vector name in the function. Ideally the vector name should be information which is not the case here.
 
+  ```{r}
+  #| echo: true
 
-# Method 1: Data frame created without specifying column names, resulting in default, uninformative names
-my_df <- data.frame(
-  c(1, 2, 3),
-  c("A", "X", "B"),
-  c(TRUE, TRUE, FALSE))
-my_df
+    # Method 2: Data frame created using existing vector names as column names
+    col1 <- c(1, 2, 3)
+    col2 <- c("A", "X", "B")
+    col3 <- c(TRUE, TRUE, FALSE)
 
-# Method 2: Data frame created using existing vector names as column names
-col1 <- c(1, 2, 3)
-col2 <- c("A", "X", "B")
-col3 <- c(TRUE, TRUE, FALSE)
+    my_df <- data.frame(col1, col2, col3)
+    my_df
+  ```
 
-my_df <- data.frame(col1, col2, col3)
-my_df
+  3. The third method assigns a column name to each vector/variable.
 
-# Method 3: Data frame created with explicit, descriptive variable names
-my_df <- data.frame(
-  id = col1,
-  letter = col2,
-  male = col3)
-my_df
-```
-
+  ```{r}
+  #| echo: true
+    # Method 3: Data frame created with explicit, descriptive variable names
+    my_df <- data.frame(
+      id = col1,
+      letter = col2,
+      male = col3)
+    my_df
+  ```
 
 - Different manners to extract column. The first approach represents standard best practice but can only extract one column. The remaning approach allows to extract more columns^[With dplyr, selecting columns is done with the function select]
 
-```{r}
-#| echo: true
+  ```{r}
+  #| echo: true
 
-# Extract a column using the dollar sign ($) operator (returns a vector)
-my_df$id
+  # Extract a column using the dollar sign ($) operator (returns a vector)
+  my_df$id
 
-# Extract the first column using matrix-style numerical indexing (returns a vector)
-my_df[, 1]
+  # Extract the first column using matrix-style numerical indexing (returns a vector)
+  my_df[, 1]
 
-# Subset a column by name using single brackets (returns a 1-column data frame)
-my_df["id"]
+  # Subset a column by name using single brackets (returns a 1-column data frame)
+  my_df["id"]
 
-# Extract a column by name using matrix-style character indexing (returns a vector)
-my_df[, "id"]
+  # Extract a column by name using matrix-style character indexing (returns a vector)
+  my_df[, "id"]
 
-# Extract two column by name using matrix-style character indexing (returns a 2-column data frame)
-my_df[, c("id", "letter")]
+  # Extract two column by name using matrix-style character indexing (returns a 2-column data frame)
+  my_df[, c("id", "letter")]
 
-```
+  ```
 
 - Appending a new column to a data frame
 
-```{r}
-#| echo: true
+  ```{r}
+  #| echo: true
 
-# Add a new column (variable) to the data frame
-my_df$name <- c("Andry", "Feno", "Felana")
-my_df
-```
+  # Add a new column (variable) to the data frame
+  my_df$name <- c("Andry", "Feno", "Felana")
+  my_df
+  ```
 
 ## Tips and warnings {.unnumbered}
 
@@ -106,14 +114,16 @@ my_df
 
 - In principle, all input vectors when constructing a data frame should be of equal length. There is a special case where a vector of length one is provided: R creates a constant vector matching the length of the longest vector.
 
-```{r}
-#| echo: true
+  ```{r}
+  #| echo: true
 
-# Construct a data frame using a scalar (recycled) and a multi-element vector
-data.frame(constant = 1, letters = c("A", "B", "C"))
+  # Construct a data frame using a scalar (recycled) and a multi-element vector
+  data.frame(constant = 1, letters = c("A", "B", "C"))
 
-```
+  ```
 
 - A `tibble`{.r} is a common variation of the data frame structure. The popular package ecosystem `tidyverse`{.r} prefers data formatted as a tibble, but standard data frames also work. The differences are subtle enough that either format can be used in most workflows.
+
+- A character vector is often converted into a factor (see last tip in @sec-vector).
 
 - The basic concepts above are useful for understanding the core structure and goals of this volume. However, manual entry is not the ideal method for entering data into R. Most often, data are entered in spreadsheet software such as Excel and subsequently imported into R as a data frame.
