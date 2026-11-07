@@ -452,7 +452,7 @@ legend("topright",
 
 ```
 
-- The concept of a derivative is strictly defined for continuous functions whose domain spans a continuous interval, typically within the real numbers $\mathbb{R}$ (see @sec-discrete_continuous). For functions defined over discrete sets, the instantaneous derivative is undefined; however, one can still evaluate discrete rates of change (slopes) between points, though these do not represent infinitesimal displacements.
+- The concept of a derivative is strictly defined for continuous functions whose domain spans a continuous interval, typically within the real numbers $\mathbb{R}$ (see @sec-discreteContinuous). For functions defined over discrete sets, the instantaneous derivative is undefined; however, one can still evaluate discrete rates of change (slopes) between points, though these do not represent infinitesimal displacements.
 
 - Symbolic computation engines and free online platforms (such as WolframAlpha) can automatically calculate the exact derivative of virtually any explicit mathematical function.
 

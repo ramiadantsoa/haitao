@@ -173,7 +173,7 @@ str(c(TRUE, 1.2, "text"))
 rpois(100, 4)
 ```
 
-- The elementary object (@sec-numeric, @sec-sec-character, @sec-boolean) are all considered as vector in R. The [1] means R displays the first element
+- The elementary object (@sec-numeric, @sec-character, @sec-boolean) are all considered as vector in R. The [1] means R displays the first element
 
 ```{r}
 #| echo: true

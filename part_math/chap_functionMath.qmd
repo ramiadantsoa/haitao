@@ -6,31 +6,27 @@ f(x) = y
 
 A function—along with accompanying terms like "domaine de définition," "dérivée," "étude de signe," and "tableau de variations"—rarely brings back fond memories. Unfortunately, society has misunderstood the true meaning of functions and their incredible utility.
 
-The notion rests on three pillars:
-
-1. Formalization
-2. Geometric representation
-3. Significance
-
-The geometric aspect will be elaborated in @sec-functionViz, while formalization is defined in the section below. The formalization will reappear in statistics (@sec-population, @sec-variable) as well as in computer programming (@sec-functionCoding), where the domain and codomain are not necessarily real numbers.
-
-The second key point is **significance**. The academic settings often focus on studying abstract expressions such as:
+The academic settings often focus on studying abstract expressions such as:
 
 $$
-  f(x) = \frac{e^x}{\sin(x) + x^2}
+  y = f(x) = \frac{e^x}{\sin(x) + x^2}
 $${#eq-uselessFunction}
 
-In this applied book, however, the focus is on practical applications: estimating a function that relates two real-world variables (think about fitting a linear regression), or constructing a function that could explain phenomenon (@sec-difference and @sec-differential):
+but in the applied what first is what is x, and what is f(x). Eventually, no need to study that, a geometric is enough to understand it, see next chapter (@sec-functionViz).
+
+This chapter will cover mutual understanding of formalization and significance. Formalization and serve as a fondation of other concepts in stats (@sec-population, @sec-variable) and  programming (@sec-functionCoding). The formalization is to think that a fonction cannot be separated by the notion of domain (source set) and codomain (target set).
+
+In math, the x and y are often abstract so one does not think (like the function above @eq-uselessFunction). But in the applied, the significance of function relies on the meaning of domain and codomain. Here are pair of domain and codmain with meaning
 
 * Changes in average income as a function of age
 * Number of species as a function of forest area (species-area relationship)
 * Rise in global temperature as a function of $\text{CO}_2$ emissions
 
-While we may loathe abstract mathematical formulas, discovering an expression that links real variables is powerful. It allows us to predict, optimize, or control outcomes—essentially providing a mechanism to achieve desired results or avoid undesirable ones.
+While we may loathe abstract mathematical formulas, discovering an expression that links domain and codomain is powerful. It allows us to predict, optimize, or control outcomes—essentially providing a mechanism to achieve desired results or avoid undesirable ones.
 
 ## Formal {.unnumbered}
 
-Let $D \subseteq \mathbb{R}$ be a non-empty subset of real numbers. A real-valued function $f$ defined on $D$ is a rule that assigns to each element $x \in D$ a unique real number $f(x) \in \mathbb{R}$:
+^[this is a minimal defintion based on real valued function, it could be easily generalized but not sure that helps]Let $D \subseteq \mathbb{R}$ be a non-empty subset of real numbers. A real-valued function $f$ defined on $D$ is a rule that assigns to each element $x \in D$ a unique real number $f(x) \in \mathbb{R}$:
 
 $$
   f: D \subseteq \mathbb{R} \to \mathbb{R}
@@ -44,26 +40,26 @@ $$
 
 To see how abstract mathematical rules map to practical concepts across disciplines, consider the following examples:
 
-- **Linear Functions:**
+- Linear Functions:
   The equation $y = ax + b$ represents a linear function, where a unit change in $x$ yields a constant rate of change $a$ in $y$.
 
-- **Geometric Area:**
+- Geometric Area:
   For positive values ($x > 0$), the function $y = x^2$ calculates the area of a square with side length $x$.
 
-- **Probability Density:**
+- Probability Density:
   The probability density function (PDF) of a Gaussian distribution maps a real value $x$ to the relative likelihood^[In rigorous probability theory, $f(x)$ represents probability *density* rather than the exact probability of an isolated continuous point, but the intuition holds for applied modeling.] of drawing that value randomly from a normal population:
 
   $$
     f(x) = \frac{1}{\sigma \sqrt{2\pi}} \exp\left( -\frac{(x - \mu)^2}{2\sigma^2} \right)
   $$ {#eq-pdfGaussian}
 
-- **Multivariable Physical Laws:**
+- Multivariable Physical Laws:
   Newton's law of universal gravitation, expressed as $F(m_1, m_2, d) = \frac{m_1 \times m_2}{d^2}$, is a multivariable function $F: D \subseteq \mathbb{R}^3 \to \mathbb{R}$. It calculates the gravitational attraction between two objects of mass $m_1$ and $m_2$ separated by distance $d$. In applied modeling, this function is only well-defined when its input domain ($\mathbb{R}^3$) respects physical constraints (e.g., $m_1, m_2 > 0$ and $d > 0$) with consistent measurement units.
 
 
 ## Tips and warning {.unnumbered}
 
-- Understanding and Categorizing Functions: whenever a function is introduced, the primary focus should remain on its physical or empirical meaning: **What do the input and output concretely represent?** The mathematical expression only makes sense once the practical context is established.
+- Understanding and Categorizing Functions: whenever a function is introduced, the primary focus should remain on its physical or empirical meaning: What do the input and output concretely represent? The mathematical expression only makes sense once the practical context is established.
 
 - In formal notation, functions are commonly denoted by symbolic letters such as $f$, $g$, or $h$. However, these symbols can be anything—as will be seen in practical applications throughout later chapters. When writing mathematical expressions (too) frequently, it is wise to choose concise, intuitive notation. In fact, many authors use $y(x)$ instead of $f(x)$ to explicitly combine the notation for the independent variable ($x$) and the response variable ($y$) into a single, compact expression.
 
@@ -85,11 +81,11 @@ Regardless of whether a function is elementary or non-elementary, the primary go
 
 Throughout this book, concepts from mathematics, statistics, and computer science are categorized into three core functional roles:
 
-1. **Input Variables (The Drivers):**
-   The terms **independent variable**, **$x$**, **input**, **covariate**, **argument**, **parameter**, and **predictor** are treated as functional synonyms—each representing an input value whose variation drives a change in the output. However, inputs (x, arguments, predictors) are variables that change across individual observations within a model. In contrast, parameters (β, a, b) are fixed constants that define the overall shape or structure of the function (e.g., in y=ax+b, x is the input, while a and b are parameters).
+- Input Variables (The Drivers):
+   The terms independent variable, $x$, input, covariate, argument, parameter, and predictor are treated as functional synonyms—each representing an input value whose variation drives a change in the output. However, inputs (x, arguments, predictors) are variables that change across individual observations within a model. In contrast, parameters (β, a, b) are fixed constants that define the overall shape or structure of the function (e.g., in y=ax+b, x is the input, while a and b are parameters).
 
-2. **Output Variables (The Responses):**
-   The terms **dependent variable**, **$y$**, **output**, and **response variable** are used interchangeably to denote the resulting value produced by the system.
+- Output Variables (The Responses):
+   The terms dependent variable, $y$, output, and response variable are used interchangeably to denote the resulting value produced by the system.
 
-3. **Mapping Operations:**
-   For the purpose of this book, **function**, **application**, and **map** mean the exact same thing: a formal rule $f: D \to \mathbb{R}$ assigning each input to a unique output.
+- Mapping Operations:
+   For the purpose of this book, function, application, and map mean the exact same thing: a formal rule $f: D \to \mathbb{R}$ assigning each input to a unique output.

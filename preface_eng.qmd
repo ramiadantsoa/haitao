@@ -50,7 +50,7 @@ This book is a tool, indeed trying to address superficial problems, I leave to e
 This current version contains three parts: basic mathematics, basic statistics, and basic coding. Each chapter shares the same format:
 
 - Intuition: it starts with a short quote hoping to help understand or remember the main idea and text elaborating on the topic.
-- Formal definition: this part can be found in any textbook, and is here for complementarity and formality
+- Formal definition: this part can be found in any textbook, to show the direct link between the intution and the theory
 - Examples
 - Tips and warning
 - A fifth section to explain terminology

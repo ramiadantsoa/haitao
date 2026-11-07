@@ -20,7 +20,7 @@ Consider measuring student heights in a single classroom. Height information cou
 
 The clearest way to resolve these questions is to define a variable by its measurement process, rather than viewing it merely as a collection of numbers. In statistical terms, a variable is fundamentally a function (@sec-functionMath). For any mathematical function to be well-defined, it requires a domain, an assignment rule, and a codomain. In statistics, the domain $X$ represents the population (or sample) under study, the function $f$ represents the measurement method, and the codomain $Y$ represents the set of resulting values that populate the data column.
 
-Viewing variables through this functional lens makes classification straightforward. Whether a variable is qualitative (@sec-qualitativeVariable), quantitative (@sec-sec-quantitativeVariable), discrete, or continuous (@sec-discreteContinuous) depends directly on the properties of its codomain.
+Viewing variables through this functional lens makes classification straightforward. Whether a variable is qualitative (@sec-qualitativeVariable), quantitative (@sec-quantitativeVariable), discrete, or continuous (@sec-discreteContinuous) depends directly on the properties of its codomain.
 
 
 ## Formal {.unnumbered}

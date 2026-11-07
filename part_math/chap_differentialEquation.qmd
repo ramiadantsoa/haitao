@@ -51,10 +51,7 @@ While this step-by-step update is an approximation (Euler's method), choosing a 
 
 ## Formal {.unnumbered}
 
-# Defining Differential Equations
-
 At its core, a differential equation relates a function to its own rates of change. While standard algebraic equations express relationships between static quantities (such as $x^2 + 2x = 5$), differential equations describe systems in continuous motion or transformation.
-
 
 A **differential equation** is an equation that contains one or more derivatives of an unknown function with respect to one or more independent variables.
 
@@ -83,7 +80,7 @@ $$\frac{dN}{dt} = -\lambda N$$
 where $\lambda > 0$ is the element-specific **decay constant** (measured in $\text{time}^{-1}$).
 
 
-Consider the isotope **Radon-220** ($^{220}\text{Rn}$), which has a half-life of $t_{1/2} = 55.6\text{ seconds}$. The relationship between the decay constant $\lambda$ and the half-life $t_{1/2}$ is derived from setting $N(t_{1/2}) = \frac{1}{2}N_0$:
+Consider the isotope Radon-220 ($^{220}\text{Rn}$), which has a half-life of $t_{1/2} = 55.6\text{ seconds}$. The relationship between the decay constant $\lambda$ and the half-life $t_{1/2}$ is derived from setting $N(t_{1/2}) = \frac{1}{2}N_0$:
 
 $$\lambda = \frac{\ln(2)}{t_{1/2}} \approx \frac{0.6931}{55.6 \text{ s}} \approx 0.01247 \text{ s}^{-1}$$
 

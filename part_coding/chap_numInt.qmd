@@ -6,7 +6,7 @@
 The machine version of discrete and continuous numbers
 :::
 
-The primary function of a program is to perform calculations. The most obvious objects that can be created, stored, and manipulated are numbers. There are two types of numbers, following the concepts in mathematics (@sec-discrete_continuous) and in statistics (@sec-quantitative-variable).
+The primary function of a program is to perform calculations. The most obvious objects that can be created, stored, and manipulated are numbers. There are two types of numbers, following the concepts in mathematics (@sec-discreteContinuous) and in statistics (@sec-quantitativeVariable).
 
  A whole number (discrete variables) are represented by integers and are used for counting and indexing. In R programming, real numbers (continuous variables) are called numeric.
 

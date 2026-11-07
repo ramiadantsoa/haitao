@@ -96,7 +96,7 @@ where $q > 0$ is the constant growth factor.
 
 Unlike the arithmetic model—where a fixed quantity is added—the update in a geometric system is proportional to the current state $u_n$. As seen with bank interest (*zanany*), when $q = 1 + r$, the balance scales geometrically at each step.
 
-Notice that if we apply a logarithmic transformation (@sec-logarithm), the geometric sequence simplifies into an equivalent arithmetic sequence:
+Notice that if we apply a logarithmic transformation (@sec-log), the geometric sequence simplifies into an equivalent arithmetic sequence:
 
 $$v_{n+1} = v_n + s$$
 

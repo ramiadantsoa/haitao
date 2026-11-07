@@ -1,4 +1,4 @@
-# Matrix operation - element-wise {#sec-matrixOperationMath}
+# Matrix arithmetic {#sec-matrixOperationMath}
 
 
 ::: {style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;"}
@@ -7,7 +7,7 @@ Andry + Fenitra = Tolotra
 
 <!-- A reccurrent problems for when someone straddles multiple fields (in this book it means mathematics, statistics, and coding) is that sometimes the same symbols or terms are used. A variable is used in mathematics (@sec-functionMath), in statistics(@sec-variable), a function in mathematics (@sec-functionMath) is not the same as a function in programming (@sec-functionCoding).  -->
 
-Above is an example of cross-field use of the mathematical notations^[It is fair to assume that mathematicians used them first] ($+$ and $=$) in the field of romance and act of love. While they maybe not as rigorously defined as in mathematics, the statement above actually have a meaning.
+Above is an example of cross-field use of the mathematical notations^[It is fair to assume that mathematicians used them first] ($+$ and $=$) in the field of romance and act of love. While they maybe not as rigorously defined as in mathematics, the statement above mean something.
 
 
 In the previous a chapter, a new kind of object mathematical object called matrix (@sec-matrixMath) was introduced. What would mean the sum of two matrix $A + B$ or the product of two matrices? Because mathematics is (arguably) a bit more rigourous than romance, mathematicians defined rigourously what does doing operation with matrix means. This chapter focuses on what is called element-wise operation. The next chapter (@sec-matrixMultiplicationMath) will delve into a special type of matrix multiplication.

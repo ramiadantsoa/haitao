@@ -5,6 +5,7 @@ Mathematics forms the foundation of all quantitative methods. Because this entir
 The practical value of mathematics is a frequent target of humor (such as jokes asking whether knowing the square root of 25 has ever helped in a crisis). Math phobia^[an intense, persistent feeling of tension, apprehension, or fear that interferes with a person's ability to manipulate numbers and solve math problems in daily life or academic settings] is a real experience, and many people resonate with these jokes.
 
 These jokes often unconsciously reinforce the idea that math is either impossibly difficult or practically useless. In reality, mathematical concepts fall into four distinct categories:
+
 - easy and useful in everyday life, such as basic arithmetic
 - difficult and useless for daily tasks, such as proving Fermat's last theorem
 - difficult and highly useful, such as partial differential equations
@@ -13,6 +14,7 @@ These jokes often unconsciously reinforce the idea that math is either impossibl
 The goal of this section is to stay firmly within the easy and useful quadrant—offering simplified concepts that are directly applicable for ecologists and scientists alike.
 
 Most chapters in this section are designed to support upcoming applied topics:
+
 - The opening chapters review fundamental rules of arithmetic (@sec-arithmeticMath) and introduce common Greek letters alongside their standard usage (@sec-greek).
 - The distinction between discrete and continuous variables is established (@sec-discreteContinuous), forming a basis for subsequent statistics and programming sections.
 - Compact notations for summations and products are explained (@sec-sum), which will be used throughout the text to define statistical estimators.

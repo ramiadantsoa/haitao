@@ -146,9 +146,11 @@ format:
       - brand
     css: handbook.css
     html-math-method: mathjax
-  pdf:
-    toc: true
-    documentclass: scrreprt
+    embed-resources: true
+    self-contained-math: true
+  # pdf:
+  #   toc: true
+  #   documentclass: scrreprt
   # docx:
   #   toc: true
   #   number-sections: true

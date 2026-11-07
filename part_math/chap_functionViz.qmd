@@ -9,44 +9,34 @@ In standard high-school mathematics curricula—such as the French *Baccalauréa
 
 Looking at the big picture, the overarching goal of this traditional exercise is simply to plot a curve for a given function. Yet, in the modern era, this is hardly a problem: one can instantly generate the graph by entering the function into software.
 
-While there is undeniably an educational purpose in learning to sketch a curve by hand, it often comes at the expense of developing a far more critical skill: **reading and interpreting graphs**. It is surprisingly common, even at the Master's and Ph.D. levels, to encounter students who struggle to interpret scientific figures.
+While there is undeniably an educational purpose in learning to sketch a curve by hand, it often comes at the expense of developing a far more critical skill: reading and interpreting graphs. It is surprisingly common, even at the Master's and Ph.D. levels, to encounter students who struggle to interpret scientific figures.
 
 This is where geometric properties bridge analytical definitions. Fundamentally, drawing a curve requires nothing more than evaluating $f(x)$ across many values of $x$; once enough points are plotted, the continuous curve emerges. The true value of mathematical analysis lies not in the mechanical rendering of points, but in understanding what the resulting geometric shape reveals about the underlying system.
 
-
-
-<!--
-Obviously, there are educational purposes but by drilling too much, the pratical meaning is lost. Most, importantly, many becomes poor when a figure is presented in front of them. So for this, let's just go backward and attempt to link geometric properties to the analytical properties.
-
-Later we will explore more general forms of functions @sec-functionCoding, but for the visualization, we will focus on the more familiar mathematical functions. A figure is the most powerful tool for to communicate ideas, improve literacy -->
-
-
 ## Formal {.unnumbered}
 
-## Graphical Representation of Functions {#sec-functionViz}
-
-In analytical geometry and applied mathematics, the **graphical representation** (or curve) of a real-valued function $f: D \subseteq \mathbb{R} \to \mathbb{R}$ is the geometric rendering of its formal mathematical graph $G \subset \mathbb{R}^2$ within a designated coordinate reference system.
+In analytical geometry and applied mathematics, the graphical representation (or curve) of a real-valued function $f: D \subseteq \mathbb{R} \to \mathbb{R}$ is the geometric rendering of its formal mathematical graph $G \subset \mathbb{R}^2$ within a designated coordinate reference system.
 
 Formally, it maps abstract ordered pairs $(x, f(x))$ to a two-dimensional space.
 
 Let $f: D \subseteq \mathbb{R} \to \mathbb{R}$ be a real-valued function defined on domain $D$. Its graphical representation is a two-dimensional geometric structure defined by the tuple $(\mathcal{A}_x, \mathcal{A}_y, \theta, s_x, s_y, C_f)$:
 
-1. **The Coordinate Axes (Reference Frame):**
+1. The Coordinate Axes (Reference Frame):
    * *Abscissa ($\mathcal{A}_x$):* The horizontal directed axis representing the input domain $D$.
    * *Ordinate ($\mathcal{A}_y$):* The vertical directed axis representing the output codomain $\mathbb{R}$.
    * *Origin ($O$):* The unique point of intersection $(0,0)$ between the two axes.
 
-2. **The Intersection Angle ($\theta$):**
+2. The Intersection Angle ($\theta$):
    * The angle of inclination formed at the intersection of $\mathcal{A}_x$ and $\mathcal{A}_y$.
    * *Cartesian (Orthogonal) Frame:* $\theta = \frac{\pi}{2} \text{ rad} = 90^\circ$. This standard convention ensures horizontal and vertical projections are perpendicular, preserving standard Euclidean metrics.
    * *Oblique Frame:* $\theta \neq 90^\circ$, used in non-orthogonal vector projections or specialized linear transformations.
 
-3. **The Metric Scales ($s_x, s_y$):**
+3. The Metric Scales ($s_x, s_y$):
    * The mapping functions $s_x: \mathbb{R} \to \mathbb{R}_{\ge 0}$ and $s_y: \mathbb{R} \to \mathbb{R}_{\ge 0}$ that map numerical values to physical lengths on the page or screen.
    * *Isosceles (Equiscale):* $s_x = s_y$. A unit length along $x$ equals a unit length along $y$, preserving true geometric ratios (e.g., perpendicular lines remain visually perpendicular).
    * *Anisotropic (Non-equiscale):* $s_x \neq s_y$. Essential when inputs and outputs represent distinct physical quantities (e.g., time in years vs. $\text{CO}_2$ concentration in ppm) or differ by orders of magnitude.
 
-4. **Point Construction via Projections:**
+4. Point Construction via Projections:
    For any domain value $x_0 \in D$, the corresponding point $P(x_0, f(x_0))$ on the graph is defined as the unique geometric intersection of two projection lines:
    * The *vertical projection line* $L_v = \{ (x, y) \in \mathbb{R}^2 \mid x = x_0 \}$, parallel to the $y$-axis.
    * The *horizontal projection line* $L_h = \{ (x, y) \in \mathbb{R}^2 \mid y = f(x_0) \}$, parallel to the $x$-axis.
@@ -54,14 +44,12 @@ Let $f: D \subseteq \mathbb{R} \to \mathbb{R}$ be a real-valued function defined
    The point $P$ is formally established by:
    $$P(x_0, f(x_0)) = L_v \cap L_h = \{ (x, y) \in \mathbb{R}^2 \mid x = x_0 \text{ and } y = f(x_0) \}$$
 
-5. **The Representative Curve ($C_f$):**
+5. The Representative Curve ($C_f$):
    The continuous curve $C_f$ representing the function $f$ is the set of all such intersection
-
 
 
 ## Examples {.unnumbered}
 - Linear function $y = a*x + b$ and
-
 
 ```{r}
 #| label: fig-linear
@@ -77,7 +65,7 @@ y_lim <- c(-3, 4)
 # LEFT PANEL: Varying Intercepts (Same Slope m = 0.5)
 # ==============================================================================
 plot(NA, xlim = c(-3, 3), ylim = y_lim, las = 1,
-     main = "Varying Intercepts (m = 0.5)",
+     main = "Varying Intercepts",
      xlab = "x", ylab = "y")
 grid(col = "gray90", lty = "dotted")
 abline(h = 0, v = 0, col = "gray80", lty = 1)
@@ -115,7 +103,7 @@ legend("topleft",
 # RIGHT PANEL: Varying Slopes (Same Intercept b = 0.5)
 # ==============================================================================
 plot(NA, xlim = c(-3, 3), ylim = y_lim, las = 1,
-     main = "Varying Slopes (b = 0.5)",
+     main = "Varying Slopes",
      xlab = "x", ylab = "y")
 grid(col = "gray90", lty = "dotted")
 abline(h = 0, v = 0, col = "gray80", lty = 1)
@@ -246,7 +234,6 @@ legend("topleft",
 
 - Gaussian, playing with the two parameters of the gaussian distribution by shifting the mean or changing the width
 
-
 ```{r}
 # Define parameter sets (mean and sd) for the 4 Gaussian PDFs
 means <- c(0, -2, 0, -2)
@@ -261,7 +248,7 @@ x <- seq(-6, 6, length.out = 1000)
 
 # Set up blank plot frame
 plot(NA, xlim = c(-6, 6), ylim = c(0, 0.85), las = 1,
-     main = "Gaussian Probability Density Functions",
+     main = "Normal distributions",
      xlab = "x", ylab = "Density f(x)")
 
 grid(col = "gray90", lty = "dotted")
@@ -373,25 +360,12 @@ legend("topleft",
 
 From the graphical representation of a function $f(x)$, key analytical properties can be visually interpreted directly:
 
-1. *Roots ($f(x) = 0$):* The solutions to the equation $f(x) = 0$ (called the **roots** or $x$-intercepts) correspond to the $x$-values where the curve intersects the horizontal axis. In the figure above, the roots are $x \approx -2.36$, $x \approx 1.14$, and $x \approx 2.72$.
+1. *Roots ($f(x) = 0$):* The solutions to the equation $f(x) = 0$ (called the roots or $x$-intercepts) correspond to the $x$-values where the curve intersects the horizontal axis. In the figure above, the roots are $x \approx -2.36$, $x \approx 1.14$, and $x \approx 2.72$.
 
-2. *$y$-Intercept ($f(0)$):* The point where the curve crosses the vertical axis is the **$y$-intercept**, which is simply the function evaluated at zero, $f(0)$. In this graph, the $y$-intercept is $1.35$.
+2. *$y$-Intercept ($f(0)$):* The point where the curve crosses the vertical axis is the $y$-intercept, which is simply the function evaluated at zero, $f(0)$. In this graph, the $y$-intercept is $1.35$.
 
 3. *Sign Analysis ($f(x) > 0$ vs. $f(x) < 0$):* The inequality $f(x) > 0$ corresponds to the portions of the curve lying within the shaded upper region ($y > 0$). The input values satisfying this condition belong to the intervals $x \in [-2.36, 1.14]$ and $x \in (2.72, \infty)$.
 
 Conversely, the negative region ($f(x) < 0$) forms the complementary set. Notice that the boundary points of these intervals are precisely the roots identified above—intuitively, to transition between the upper and lower half-planes, a continuous function must first cross the horizontal axis.
 
-4. *Monotonicity (Increasing vs. Decreasing Regions):*  A function is increasing on intervals where the curve moves upward from left to right (highlighted in green). The input values satisfying this growth define the green interval along the horizontal axis. Conversely, a function is **decreasing** on intervals where the curve falls from left to right (highlighted in red).
-
-
-<!-- - Coordinate and projection!
-- As in domain, what does x and y represent
-- Linear function because it plots a line, pick two points and
-- If x is discrete, you cannot just join line.
-- Don't rush, project, look at the changes in the axis not the "line"
-- Transforming the response variable
-- Transforming
-- Cheating
-- Just plot and you are good to go.
- - You can make figures with discrete x, see @sec-discrete_continuous, @sec-difference, @sec-pmf
- -->
+4. *Monotonicity (Increasing vs. Decreasing Regions):*  A function is increasing on intervals where the curve moves upward from left to right (highlighted in green). The input values satisfying this growth define the green interval along the horizontal axis. Conversely, a function is decreasing on intervals where the curve falls from left to right (highlighted in red).

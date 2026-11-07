@@ -8,7 +8,7 @@ To count or to measure.
 
 The title of this chapter should be natural numbers $\mathbb{N}$ and real numbers $\mathbb{R}$. Everyone is familiar with these sets. Because the set of natural numbers is a subset of real numbers (e.g. 3 is also a real number), one can basically use real number and ignore the set of natural numbers.
 
-So why such a title and why the distinction? The answer to the first question is because this book is about applied mathematics so there is more an emphasis about the properties of the numbers than nomenclature. In other words, natural numbers has the properties of discrete, while real numbers is a continuous set. The difference between discrete and continuous will appear in the statistics parts (discrete and continuous variables @sec-quantitative-variable) and also implemented differently in coding (@sec-numeric)^[although interchangeble use is not fatal in R ].
+So why such a title and why the distinction? The answer to the first question is because this book is about applied mathematics so there is more an emphasis about the properties of the numbers than nomenclature. In other words, natural numbers has the properties of discrete, while real numbers is a continuous set. The difference between discrete and continuous will appear in the statistics parts (discrete and continuous variables @sec-quantitativeVariable) and also implemented differently in coding (@sec-numeric)^[although interchangeble use is not fatal in R ].
 
 ## Formal {.unnumbered}
 The formal definition is useless for the purpose of this book (unless you want to learn about topology).
