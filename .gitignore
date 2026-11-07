@@ -3,6 +3,8 @@
 # Quarto output directory for books
 /_book/
 
+_freeze/
+
 # Optional: Common IDE and OS files
 .Rproj.user
 .jupyter_cache/

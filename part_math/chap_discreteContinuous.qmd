@@ -38,4 +38,4 @@ That is why a continuous number (real number) is represented by a continuous lin
 ### Semantic/Terminology/Notation {.unnumbered}
 - The discrete numbers are also called whole number, natural number or integer. The latter is the default term in coding.
 
-- finally discrete has nothing to do with "etre discret".
+- Discrete has nothing to do with "être discret".

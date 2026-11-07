@@ -62,7 +62,7 @@ x <- seq(-3, 3, length.out = 100)
 y_lim <- c(-3, 4)
 
 # ==============================================================================
-# LEFT PANEL: Varying Intercepts (Same Slope m = 0.5)
+# LEFT PANEL: Varying Intercepts 
 # ==============================================================================
 plot(NA, xlim = c(-3, 3), ylim = y_lim, las = 1,
      main = "Varying Intercepts",

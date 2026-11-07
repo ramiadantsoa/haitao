@@ -2,9 +2,9 @@ project:
   type: book
 
 book:
-  title: "A  handbook of quantitative methods for (ecological) data analyses"
-  author: "Tanjona Ramiadantsoa"
-  date: last-modified
+  # title: "A  handbook of quantitative methods for (ecological) data analyses"
+  # author: "Tanjona Ramiadantsoa"
+  # date: last-modified
   license: "CC BY-NC-ND"
   page-footer:
     left: "© 2026, Tanjona Ramiadantsoa"
@@ -12,6 +12,7 @@ book:
   chapters:
     - index.qmd
     - preface_mdg.qmd
+    # - index_eng.qmd
     - preface_eng.qmd
     - part: part_math/part_math.qmd
       chapters:
@@ -141,13 +142,17 @@ book:
 
 format:
   html:
+    title-block-style: none
     theme:
       - cosmo
-      - brand
+      # - brand
     css: handbook.css
-    html-math-method: mathjax
-    embed-resources: true
-    self-contained-math: true
+    # include-in-header: mathjax-config.html
+    # html-math-method:
+    #   method: mathjax
+    #   url: "site_libs/mathjax/es5/tex-chtml-full.js"
+    # # embed-resources: true
+    # self-contained-math: true
   # pdf:
   #   toc: true
   #   documentclass: scrreprt
@@ -159,3 +164,4 @@ execute:
   echo: false
   message: false
   warning: false
+  freeze: auto
