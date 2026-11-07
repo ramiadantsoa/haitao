@@ -127,12 +127,22 @@ grid(nx = NA, ny = NULL, col = "gray90", lty = "solid")
 par(mfrow = c(1, 1))
 ```
 
-
-
 ## Formal {.unnumbered}
 
-
 The empirical cumulative distribution can be formalized either through a binned domain (partitioned intervals) or directly over individual observed values.
+
+**Read this first**^[This part is heavy the reader is not expected to spend time understanding the defition. Unless one wants to train with rigorous mathematical defintion]
+
+#### Pointwise Definition (Value-Based) {.unnumbered}
+
+The cumulative empirical distribution can be defined directly on individual observed values .
+
+With an ordered set $\Omega$, for any value $x \in \Omega$, the absolute empirical cumulative distribution function $N(x)$ and relative empirical cumulative distribution function $F(x)$ are given by:
+
+$$N(x) = \sum_{x_i \le x} n(x_i) \quad \text{and} \quad F(x) = \sum_{x_i \le x} f(x_i)$$
+
+where $n(x_i)$ is the absolute frequency of the unique value $x_i$, and $f(x_i) = \dfrac{n(x_i)}{n}$ is its relative frequency. In operational terms, $F(x)$ sums the relative frequencies of all observed outcomes less than or equal to $x$.
+
 
 #### Binned Definition (Interval-Based) {.unnumbered}
 
@@ -142,21 +152,11 @@ $$B_j \cap B_k = \emptyset \quad \forall \, j \neq k$$
 
 where the bins respect a strict linear ordering: if $j < k$, then $x < y$ for all $x \in B_j$ and $y \in B_k$.
 
-For any bin index $i \in \{1, 2, \dots, K\}$, the **absolute cumulative frequency** $N(i)$ and **relative cumulative frequency** $F(i)$ are defined respectively as:
+For any bin index $i \in \{1, 2, \dots, K\}$, the absolute cumulative frequency $N(i)$ and relative cumulative frequency $F(i)$ are defined respectively as:
 
 $$N(i) = \sum_{j=1}^i n(B_j) \quad \text{and} \quad F(i) = \sum_{j=1}^i f(B_j)$$
 
-where $n(B_j)$ is the absolute count of observations in bin $B_j$, and $f(B_j) = \frac{n(B_j)}{n}$ is the corresponding relative frequency for a sample size $n$.
-
-#### Pointwise Definition (Value-Based) {.unnumbered}
-
-Alternatively, the cumulative empirical distribution can be defined directly on individual observed values without requiring prior binning.
-
-For any value $x \in \mathbb{R}$, the **absolute empirical cumulative distribution function** $N(x)$ and **relative empirical cumulative distribution function** $F(x)$ are given by:
-
-$$N(x) = \sum_{x_i \le x} n(x_i) \quad \text{and} \quad F(x) = \sum_{x_i \le x} f(x_i)$$
-
-where $n(x_i)$ is the absolute frequency of the unique value $x_i$, and $f(x_i) = \frac{n(x_i)}{n}$ is its relative frequency. In operational terms, $F(x)$ sums the relative frequencies of all observed outcomes less than or equal to $x$.
+where $n(B_j)$ is the absolute count of observations in bin $B_j$, and $f(B_j) = \dfrac{n(B_j)}{n}$ is the corresponding relative frequency for a sample size $n$.
 
 #### Fundamental Property {.unnumbered}
 

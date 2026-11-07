@@ -5,7 +5,7 @@
 "Hello world!"
 :::
 
-The first exercise in programming is printing a text to the console. While this is trivial in R, several concepts are required to achieve this in languages such as Fortran, C, or C++. The number one choice is to print "Hello world". The concept reflects learning a programming language well enough to prompt it to speak to the outside world.
+The first exercise in programming is printing text to the console. While this is trivial in languages like R, printing text in languages such as Fortran, C, or C++ can feel like an odyssey for an absolute beginner. When one finally manages to understand the computer's logic, figuratively taming and bringing the machine into the world of the living, the very first order is to ask it to greet: "Hello world".
 
 A computer program is more than a basic calculator, which should be clear by now. A major feature of a computer program is its ability to handle non-numeric data. Such objects are called strings, which is why printing "Hello world" involves string manipulation.
 

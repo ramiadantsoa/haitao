@@ -32,9 +32,22 @@ In summary, while a variable consists of an observed sequence of values, its emp
 
 A distribution is a tabular or visual summary of a variable's observed values—whether recorded as a sequence of numbers or discrete categories—constructed by counting the frequency of occurrences across the data (see @sec-functionViz for the equivalence between pairs of number and the visual representations).
 
-By mapping raw observations to their respective counts or proportions, a distribution converts unstructured sequence data into a structured format that reveals central tendency, variability, and the relative frequency of different values.
+By mapping raw observations to their respective counts or proportions, a distribution converts unstructured sequence data into a structured format.
 
 An empirical frequency distribution can be formalized either through a binned domain (partitioned intervals) or directly over individual observed values.
+
+**Read this first**^[This part is heavy the reader is not expected to spend time understanding the defition. Unless one wants to train with rigorous mathematical defintion]
+
+#### Pointwise Definition (Value-Based) {.unnumbered}
+
+The empirical frequency distribution can be defined directly on individual observed values.
+
+For any unique value $x \in \Omega$, the absolute empirical frequency function $n(x)$ and relative empirical frequency function $f(x)$ are given by:
+
+$$n(x) = \sum_{i=1}^n \mathbb{I}(x_i = x) \quad \text{and} \quad f(x) = \frac{n(x)}{n}$$
+
+In operational terms, $n(x)$ counts the exact number of occurrences of the specific outcome $x$, while $f(x)$ represents the proportion of the total sample equal to $x$.
+
 
 #### Binned Definition (Interval-Based) {.unnumbered}
 
@@ -44,29 +57,17 @@ $$B_j \cap B_k = \emptyset \quad \forall \, j \neq k$$
 
 where the bins respect a strict linear ordering: if $j < k$, then $x < y$ for all $x \in B_j$ and $y \in B_k$.
 
-For any bin index $j \in \{1, 2, \dots, K\}$, the **absolute frequency** $n(B_j)$ and **relative frequency** $f(B_j)$ are defined respectively as:
+For any bin index $j \in \{1, 2, \dots, K\}$, the absolute frequency $n(B_j)$ and relative frequency $f(B_j)$ are defined respectively as:
 
 $$n(B_j) = \sum_{i=1}^n \mathbb{I}(x_i \in B_j) \quad \text{and} \quad f(B_j) = \frac{n(B_j)}{n}$$
 
 where $\mathbb{I}(\cdot)$ is the indicator function evaluating to $1$ if the condition holds and $0$ otherwise, and $n$ represents the total sample size.
-
-#### Pointwise Definition (Value-Based) {.unnumbered}
-
-Alternatively, the empirical frequency distribution can be defined directly on individual observed values without requiring prior binning.
-
-For any unique value $x \in \mathbb{R}$, the **absolute empirical frequency function** $n(x)$ and **relative empirical frequency function** $f(x)$ are given by:
-
-$$n(x) = \sum_{i=1}^n \mathbb{I}(x_i = x) \quad \text{and} \quad f(x) = \frac{n(x)}{n}$$
-
-In operational terms, $n(x)$ counts the exact number of occurrences of the specific outcome $x$, while $f(x)$ represents the proportion of the total sample equal to $x$.
 
 #### Fundamental Property {.unnumbered}
 
 An immediate mathematical consequence of these definitions is normalization: summing all relative frequencies across the domain equals unity:
 
 $$\sum_{j=1}^K f(B_j) = 1 \quad \text{and} \quad \sum_{x \in \mathbb{R}} f(x) = 1$$
-
-[Note: Formatted the complete text block in raw Quarto Markdown and LaTeX for copy-paste integration into the handbook. Removed bolding from "indicator function" per formatting standards. Note that no executable R code chunks were present in this selection to comment.]
 
 ## Examples {.unnumbered}
 To focus directly on the geometric representation of empirical distributions, the the sequence vectors and summary tables are omitted.
