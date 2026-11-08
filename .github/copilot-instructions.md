@@ -1,3 +1,0 @@
-- When editing .qmd or .md files, preserve all Quarto code blocks, YAML front matter, and LaTeX math blocks ($...$).
-- Correct typos, spelling, and passive voice, but retain academic precision.
-- Do not add conversational fluff to inline text edits; only provide the revised Markdown.

@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>13&nbsp; Difference equations</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../part_math/chap_differentialEquation.html" rel="next">
+<link href="../part_math/chap_logarithm.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-51158cdd8ab739f8abdf38b6263dc08f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../handbook.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../part_math/part_math.html">Basic mathematics</a></li><li class="breadcrumb-item"><a href="../part_math/chap_differenceEquation.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Difference equations</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cover</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../preface_mdg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ala saron-teny</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../preface_eng.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../part_math/part_math.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basic mathematics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_math/chap_arithmeticMath.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Arithmetic operation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_math/chap_greek.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Greek letters</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_math/chap_discreteContinuous.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Discrete and continuous number</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_math/chap_sum.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sum and product</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_math/chap_matrixMath.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Matrix</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_math/chap_matrixOperationMath.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Matrix arithmetic</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_math/chap_matrixMultiplicationMath.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Matrix multiplication</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_math/chap_functionMath.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_math/chap_functionViz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Function and graphics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_math/chap_derivative.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Derivative</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_math/chap_exponential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Exponential function</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_math/chap_logarithm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Logarithm function</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_math/chap_differenceEquation.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Difference equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_math/chap_differentialEquation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Differential equations</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../part_stat/part_stat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basic statistics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_stat/chap_population.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Population</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_stat/chap_variable.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Variable</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_stat/chap_quantitative.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Quantitative variable</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_stat/chap_qualitative.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Qualitative variable</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_stat/chap_distribution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Distribution</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_stat/chap_cumulative.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Cumulative distribution</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_stat/chap_mean.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Arithmetic mean</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_stat/chap_mode.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Mode</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_stat/chap_variance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Variance and standard deviation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_stat/chap_median.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Median</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_stat/chap_quantile.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Quantile</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../part_coding/part_coding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basic coding</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_coding/chap_console.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Console</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_coding/chap_scriptEditor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Script editor</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_coding/chap_ide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">IDE: Integrated Development Environment</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_coding/chap_assign.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Variable assigment</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_coding/chap_numInt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Type: Integer and numeric</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_coding/chap_arithmeticCoding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Arithmetic operation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_coding/chap_strings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Type: String or Character</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_coding/chap_boolean.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Type: Boolean</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_coding/chap_booleanOperationCoding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Boolean operation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_coding/chap_vector.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Vector</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_coding/chap_matrixCoding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Matrix</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_coding/chap_matrixOperationCoding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Vector and matrix operation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_coding/chap_dataframe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Data frame</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_coding/chap_list.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">List</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_coding/chap_functionCoding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Function</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_coding/chap_pseudocode.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Pseudocode</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part_coding/chap_debugging.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Debugging</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#formal" id="toc-formal" class="nav-link active" data-scroll-target="#formal">Formal</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
+  <li><a href="#tips-and-warnings" id="toc-tips-and-warnings" class="nav-link" data-scroll-target="#tips-and-warnings">Tips and warnings</a>
+  <ul class="collapse">
+  <li><a href="#notationsemanticterminology" id="toc-notationsemanticterminology" class="nav-link" data-scroll-target="#notationsemanticterminology">Notation/Semantic/Terminology</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../part_math/part_math.html">Basic mathematics</a></li><li class="breadcrumb-item"><a href="../part_math/chap_differenceEquation.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Difference equations</span></a></li></ol></nav><h1 class="title display-7"><span id="sec-difference" class="quarto-section-identifier"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Difference equations</span></span></h1></header>
+
+<header id="title-block-header">
+
+
+</header>
+
+
+<div style="margin-top: 1em; font-size: 125%; font-weight: 1000; text-align: center;">
+<p>Zana-bola</p>
+</div>
+<p>A traditional bank savings account provides an intuitive real-world introduction to discrete-time dynamical systems. When you deposit an initial amount of money and leave it untouched for a fixed period <span class="math inline">\(t\)</span> (such as three months), an additional amount proportional to the current balance is added. In Madagascar, this earned yield is known as <em>zanany</em>.</p>
+<p>For instance, for a deposit of 1,000,000 Ariary at a quarterly interest rate <span class="math inline">\(r = 2\%\)</span> (<span class="math inline">\(0.02\)</span>), the balance at the end of the first period is:</p>
+<p><span class="math display">\[
+\begin{align*}
+\text{Balance}_1 &amp; =  1{,}000{,}000 + (0.02 \times 1{,}000{,}000) \\
+&amp; =  1{,}000{,}000 \times (1 + 0.02) \\
+&amp; = 1{,}000{,}000 \times 1.02
+\end{align*}
+\]</span></p>
+<p>At the end of the second three-month period, the interest applies to the new total rather than just the initial deposit:</p>
+<p><span class="math display">\[
+\begin{align*}
+\text{Balance}_2 &amp; = 1{,}020{,}000 + (0.02 \times 1{,}020{,}000) \\
+&amp; = 1{,}020{,}000 \times 1.02 \\
+&amp; = \text{Balance}_1 \times 1.02
+\end{align*}
+\]</span></p>
+<p>Generalizing this process, the next balance <span class="math inline">\(B_{n+1}\)</span> depends directly on the current balance <span class="math inline">\(B_n\)</span> and the interest rate <span class="math inline">\(r\)</span>:</p>
+<p><span class="math display">\[B_{n+1} = B_n + r \cdot B_n = B_n (1 + r)\]</span></p>
+<p>This relationship is a classic example of a difference equation (or recurrence relation). In such systems, time advances in discrete steps <span class="math inline">\(n \to n+1\)</span>, and the future state of the system is entirely determined by its present state.</p>
+<p>The concept of a next state depending sequentially on the current state is not limited to financial mathematics; it is deeply embedded in cultural proverbs (<em>ohabolana</em>) that reflect recursive processes and dependence on previous state:</p>
+<ul>
+<li>Ny hazo no vanon-ko lakana, ny tany naniriana no tsara.</li>
+<li>Raha maty aho, matesa rahavako; raha maty rahavako, matesa ny omby</li>
+</ul>
+<section id="formal" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="formal">Formal</h2>
+<p>A first-order difference equation is a functional equation of the form:</p>
+<p><span class="math display">\[y_{t+1} = f(t, y_t)\]</span></p>
+<p>where:</p>
+<ul>
+<li>The index <span class="math inline">\(t\)</span> belongs to a discrete domain (typically the set of non-negative integers <span class="math inline">\(\mathbb{Z}_{\ge 0} = \{0, 1, 2, \dots\}\)</span>).</li>
+<li><span class="math inline">\(f: \mathbb{R} \to \mathbb{R}\)</span> is a well-defined real-valued function.</li>
+<li>The state <span class="math inline">\(y_{t+1}\)</span> depends non-trivially on the current state <span class="math inline">\(y_t\)</span>.</li>
+</ul>
+<p>In discrete-time dynamical systems, a first-order difference equation specifies how a system evolves from state <span class="math inline">\(y_t\)</span> to state <span class="math inline">\(y_{t+1}\)</span> over a single step. Given an initial condition <span class="math inline">\(y_0\)</span>, the full trajectory <span class="math inline">\(\{y_0, y_1, y_2, \dots\}\)</span> is uniquely determined by repeated application of <span class="math inline">\(f\)</span>.</p>
+<p>While a first-order difference equation depends only on the immediate past state (<span class="math inline">\(y_t \to y_{t+1}\)</span>), a difference equation of order <span class="math inline">\(k\)</span> is a recurrence relation where the next state depends on the memory of the past <span class="math inline">\(k\)</span> discrete steps:</p>
+<p><span class="math display">\[y_{t+k} = f(t, y_t, y_{t+1}, \dots, y_{t+k-1})\]</span></p>
+<p>where <span class="math inline">\(k \ge 1\)</span> represents the order of the equation, defining the length of the system’s memory.</p>
+<p>To build intuition for the order of a difference equation, consider how much historical information you need to calculate the next step:</p>
+<ul>
+<li><p>Order 1 (Immediate Memory): The bank account balance for next month (<span class="math inline">\(y_{t+1}\)</span>) depends solely on your current balance (<span class="math inline">\(y_t\)</span>). You do not need to know what your balance was six months ago.</p></li>
+<li><p>Order 2 (Two-Step Memory): The famous Fibonacci sequence (<span class="math inline">\(F_{t+2} = F_{t+1} + F_t\)</span>) is of order 2. To determine tomorrow’s value, you must know both today’s value <em>and</em> yesterday’s value. In education, the success of the child might depend on both the parents and the grandparents.</p></li>
+</ul>
+</section>
+<section id="examples" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="examples">Examples</h2>
+<p>To illustrate how discrete-time dynamical systems behave, we examine three forms—ranging from linear additions to population dynamics.</p>
+<ol type="1">
+<li><p>An <strong>arithmetic sequence</strong> describes a system that grows or decays by a constant fixed amount at each step:</p>
+<p><span class="math display">\[u_{n+1} = u_n + r\]</span></p>
+<p>where <span class="math inline">\(r \in \mathbb{R}\)</span> is the constant difference. Consider a traditional piggy bank (<em>boatin-drakitra</em>). If you deposit a fixed sum of money <span class="math inline">\(r\)</span> at regular intervals, <span class="math inline">\(u_n\)</span> represents your total savings at step <span class="math inline">\(n\)</span>.</p>
+<p>In discrete modeling, specifying the time unit of the index step <span class="math inline">\(+1\)</span> is crucial. Depending on your saving schedule, an increment of <span class="math inline">\(n \to n+1\)</span> could represent a single day, one week, or one month. Without defining this period, the rate of change remains ambiguous.</p></li>
+<li><p>A <strong>geometric sequence</strong> models multiplicative growth or decay over discrete intervals:</p>
+<p><span class="math display">\[u_{n+1} = q \cdot u_n\]</span></p>
+<p>where <span class="math inline">\(q &gt; 0\)</span> is the constant growth factor.</p>
+<p>Unlike the arithmetic model—where a fixed quantity is added—the update in a geometric system is proportional to the current state <span class="math inline">\(u_n\)</span>. As seen with bank interest (<em>zanany</em>), when <span class="math inline">\(q = 1 + r\)</span>, the balance scales geometrically at each step.</p>
+<p>Notice that if we apply a logarithmic transformation (<a href="chap_logarithm.html" class="quarto-xref"><span>Chapter 12</span></a>), the geometric sequence simplifies into an equivalent arithmetic sequence:</p>
+<p><span class="math display">\[v_{n+1} = v_n + s = \]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(v_{n+1} = \log(u_{n+1})\)</span></li>
+<li><span class="math inline">\(v_n = \log(u_n)\)</span></li>
+<li><span class="math inline">\(s = \log(q)\)</span></li>
+</ul>
+<p>This transformation demonstrates another fundamental property of logarithms: converting multiplicative growth models into linear additive ones.</p></li>
+<li><p>Combining constant proportional growth with a fixed additive input yields a first-order linear difference equation:</p>
+<p><span class="math display">\[u_{n+1} = q \cdot u_n + r\]</span></p>
+<p>This models a hybrid savings strategy where the total saving is the sum of money in a bank account with interest at rate <span class="math inline">\(q = 1 + \text{interest}\)</span>, and the sum in from the <em>boatin-drakitra</em> with fixed manual deposit <span class="math inline">\(r\)</span>.</p></li>
+<li><p>In ecology, the total population size at time step <span class="math inline">\(t+1\)</span> depends on four fundamental demographic processes occurring during interval <span class="math inline">\(t\)</span> (generally one year):</p>
+<p><span class="math display">\[\text{Pop}_{t+1} = \text{Pop}_t + B + I - D - E\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(B\)</span> = Number of births</li>
+<li><span class="math inline">\(I\)</span> = Number of immigrants</li>
+<li><span class="math inline">\(D\)</span> = Number of deaths</li>
+<li><span class="math inline">\(E\)</span> = Number of emigrants</li>
+</ul>
+<p>Assuming that the net demographic change remains constant across intervals, these four terms collapse into a single net change parameter <span class="math inline">\(\delta = (B + I) - (D + E)\)</span>:</p>
+<p><span class="math display">\[\text{Pop}_{t+1} = \text{Pop}_t + \delta\]</span></p>
+<p>The long-term trajectory of the population depends entirely on the sign of <span class="math inline">\(\delta\)</span>:</p>
+<ul>
+<li><strong><span class="math inline">\(\delta &gt; 0\)</span> (Positive Net Growth):</strong> The population increases over time.</li>
+<li><strong><span class="math inline">\(\delta &lt; 0\)</span> (Negative Net Growth):</strong> The population decreases over time.</li>
+<li><strong><span class="math inline">\(\delta = 0\)</span> (Dynamic Equilibrium):</strong> Births and immigration exactly balance deaths and emigration (<span class="math inline">\(\text{Pop}_{t+1} = \text{Pop}_t\)</span>), the population is stable.</li>
+</ul>
+<p>When <span class="math inline">\(\delta\)</span> is a fixed constant, population size is described by an arithmetic sequence <span class="math display">\[\text{Pop}_{t+1} = \text{Pop}_t + \delta.\]</span> Conversely, when demographic rates are proportional to population size (<span class="math inline">\(\delta = r \times \text{Pop}_t\)</span>), population is described by a geometric sequence <span class="math display">\[\text{Pop}_{t+1} = \text{Pop}_t + \text{Pop}_t \times r = \text{Pop}_t \cdot (1 + r)\]</span></p>
+<p>However, in real ecological systems, <span class="math inline">\(\delta\)</span> is rarely constant. Demographic parameters (<span class="math inline">\(B, I, D, E\)</span>) fluctuate based on numerous interconnected factors:</p>
+<ul>
+<li>Environmental conditions (resource availability, rainfall, seasonal variations)</li>
+<li>Population structure (age distributions, sex ratios)</li>
+<li>Density dependence (crowding, competition for food)</li>
+<li>Inter-specific interactions (predation, mutualism, disease dynamics)</li>
+</ul>
+<p>When these parameters depend directly on the current population size (<span class="math inline">\(\delta = f(\text{Pop}_t)\)</span>), the system becomes non-linear, giving rise to complex dynamic behaviors such as stable cycles or deterministic chaos.</p></li>
+</ol>
+</section>
+<section id="tips-and-warnings" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="tips-and-warnings">Tips and warnings</h2>
+<ul>
+<li><p>A cobweb plot is a powerful visual tool for tracking the step-by-step trajectory of a discrete recurrence equation. While it may look intricate at first, the underlying geometric logic is straightforward:</p>
+<ol type="1">
+<li>Begin by graphing the update function <span class="math inline">\(y = f(u)\)</span> (blue curve below) alongside the identity line <span class="math inline">\(y = u\)</span> (black dashed-line below) (<a href="chap_functionViz.html" class="quarto-xref"><span>Chapter 9</span></a>).</li>
+<li>Starting at a current state <span class="math inline">\(u_n\)</span> on the horizontal axis, move vertically to intersect the function curve <span class="math inline">\(y = f(u)\)</span>. The height of this intersection gives the next state, <span class="math inline">\(u_{n+1}\)</span>.</li>
+<li>To find the subsequent state <span class="math inline">\(u_{n+2}\)</span>, first move <span class="math inline">\(u_{n+1}\)</span> onto the horizontal axis. This is accomplished visually by moving horizontally from the curve to intersect the identity line <span class="math inline">\(y = u\)</span>.</li>
+<li>Iterate: From this point on the diagonal line, move vertically back to the function curve to determine <span class="math inline">\(u_{n+2}\)</span>, and repeat the process recursively.</li>
+</ol>
+<p>Below are three examples illustrating how this simple visual algorithm reveals diverse dynamic behaviors. Notice that the values are on the x-axis.</p>
+<ul>
+<li>Arithmetic sequence: <span class="math inline">\(u_{n+1} = f(u_n) = u_n + 2\)</span> with <span class="math inline">\(u_0 = 0\)</span>.</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chap_differenceEquation_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Geometric sequence: <span class="math inline">\(u_{n+1} = f(u_n) =  3/4 \times u_n\)</span> with <span class="math inline">\(u_0 = 1\)</span></li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chap_differenceEquation_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Logistic growth : <span class="math inline">\(u_{n+1} = f(u_n) = 2.9 \times u_n (1- u_n)\)</span> with <span class="math inline">\(u_0 = 0.1\)</span></li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chap_differenceEquation_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The coweb plot allows to see that the number will increase to infinty (in the first example), goes to zero (the second example), or reach an equibrium where (<span class="math inline">\(f(u_n) = u_n = u_{n+1}\)</span>). This happens when the identity line intersects the curve representing the function.</p></li>
+<li><p>In classical mathematics, a primary goal when studying difference equations—such as the arithmetic and geometric sequences introduced in high school—is finding an explicit solution. Solving a recurrence relation analytically means deriving a closed-form formula <span class="math inline">\(u_n = g(n)\)</span> that expresses <span class="math inline">\(u_n\)</span> directly as a function of the time step <span class="math inline">\(n\)</span>, eliminating the need to evaluate prior terms recursively.</p>
+<p>While deriving these analytical formulas is a standard mathematical exercise, deriving exact closed-form solutions for complex systems is often difficult or impossible. In practice, modern computational tools allow us to evaluate discrete iterations almost instantaneously. As a result, visualizing trajectories directly—using tools like cobweb plots—often suffices to uncover the complete qualitative behavior of a dynamical system (<a href="chap_functionViz.html" class="quarto-xref"><span>Chapter 9</span></a>) without requiring an explicit algebraic solution .</p></li>
+<li><p>In discrete-time systems, state changes are modeled with difference equations (<span class="math inline">\(y_{t+1} = f(y_t)\)</span>). In the next chapter, we will transition to continuous-time systems governed by differential equations <span class="math inline">\(\dfrac{dy}{dt} = f(y)\)</span>, where rates of change are defined instantaneously at every infinitely small slice of time. This is an example where difference between discrete and continuous variables leads to different mathematical approach <a href="chap_discreteContinuous.html" class="quarto-xref"><span>Chapter 3</span></a>.</p></li>
+</ul>
+<section id="notationsemanticterminology" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="notationsemanticterminology">Notation/Semantic/Terminology</h3>
+<p>A difference equation is called recurrence equation or suite in French.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../part_math/chap_logarithm.html" class="pagination-link" aria-label="Logarithm function">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Logarithm function</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../part_math/chap_differentialEquation.html" class="pagination-link" aria-label="Differential equations">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Differential equations</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026, Tanjona Ramiadantsoa</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0 International License</a>.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
