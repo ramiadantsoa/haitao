@@ -67,6 +67,32 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<!-- Umami Tracking Script -->
+<script defer="" src="https://cloud.umami.is/script.js" data-website-id="09ee1de0-93c5-4fc0-bb8a-22b1e9373025"></script>
+
+<!-- Custom Click Tracker -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener("click", function () {
+      const href = this.getAttribute("href");
+      if (!href) return;
+
+      if (href.endsWith(".zip") || href.includes("/archive/")) {
+        if (window.umami) {
+          umami.track("zip_download", { url: href });
+        }
+      } else if (href.startsWith("http://") || href.startsWith("https://")) {
+        if (!href.includes(window.location.hostname)) {
+          if (window.umami) {
+            umami.track("outbound_link_click", { url: href });
+          }
+        }
+      }
+    });
+  });
+});
+</script>
 
 
 <link rel="stylesheet" href="handbook.css">
@@ -81,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Cover</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Cover page</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -104,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Cover</span></a>
+ <span class="menu-text">Cover page</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -414,7 +440,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#cover" id="toc-cover" class="nav-link active" data-scroll-target="#cover">Cover</a></li>
+  <li><a href="#cover-page" id="toc-cover-page" class="nav-link active" data-scroll-target="#cover-page">Cover page</a></li>
   </ul>
 </nav>
     </div>
@@ -424,20 +450,28 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="cover" class="level1 unnumbered">
-<h1 class="unnumbered">Cover</h1>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="cover_mdg.png" class="img-fluid figure-img"></p>
-<figcaption><a href="https://www.google.com">Afaka alaina amin’ity rohy ity koa ity boky ity</a></figcaption>
-</figure>
+<section id="cover-page" class="level1 unnumbered">
+<h1 class="unnumbered">Cover page</h1>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="cover_eng.png" class="img-fluid figure-img"></p>
-<figcaption><a href="https://www.google.com">This handbook can be downloaded here</a></figcaption>
-</figure>
+<div class="callout-title-container flex-fill">
+📥 Download for offline use
 </div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can download the complete web archive:</p>
+<ol type="1">
+<li><p><a href="https://github.com/ramiadantsoa/haitao/archive/refs/heads/main.zip">Download HTML Book (.zip)</a></p></li>
+<li><p>Unzip the file on your device</p></li>
+<li><p>Double-click <code>index.html</code> to open in any web browser.</p></li>
+</ol>
+</div>
+</div>
+<p><img src="cover_mdg.png" class="img-fluid"></p>
+<p><img src="cover_eng.png" class="img-fluid"></p>
 <!--
 ## License {.unnumbered}
 
