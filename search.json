@@ -4,7 +4,17 @@
     "href": "index.html",
     "title": "Cover page",
     "section": "",
-    "text": "Cover page\n\n\n\n\n\n\n📥 Download for offline use\n\n\n\nYou can download the complete web archive:\n\nDownload HTML Book (.zip)\nUnzip the file on your device\nDouble-click index.html to open in any web browser.",
+    "text": "Cover page",
+    "crumbs": [
+      "Cover page"
+    ]
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "Cover page",
+    "section": "License",
+    "text": "License\nThis book is open-access and published under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.\nYou are free to share, copy, and redistribute the material in any medium or format under the following terms:\n\nAttribution: You must give appropriate credit.\nNonCommercial: You may not use the material for commercial purposes.\nNoDerivatives: If you remix, transform, or build upon the material, you may not distribute the modified material.",
     "crumbs": [
       "Cover page"
     ]
