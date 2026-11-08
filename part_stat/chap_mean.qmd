@@ -52,7 +52,7 @@ Assume the grades of six students in a class are: $\{5, 7, 10, 10, 12, 14\}$. Be
 
 - The mean serves as a primary summary metric designed to capture the central tendency of a dataset, it is the center of mass (or gravity) of the data.
 
-- The arithmetic mean is only valid  for quantitative variables otherwise <br> ($n_i \times x_i$ or $\sum x_i$) is not defined (@sec-quantitativeVariable)
+- The arithmetic mean is only valid  for quantitative variables otherwise ($n_i \times x_i$ or $\sum x_i$) is not defined (@sec-quantitativeVariable)
 
 - The mean is highly sensitive to outliers or extreme skewness. For instance, computing the mean of the sequence $(1, 1, 1, 1, 10\,000\,000)$ yields $2\,000\,000.4$, beyond the numerical value, it does not have a practical intepretation.
 

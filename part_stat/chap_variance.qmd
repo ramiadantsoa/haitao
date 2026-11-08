@@ -139,7 +139,7 @@ $${#eq-standardDeviation}
 ## Tips and warnings {.unnumbered}
 - Calculating the mean of a single number is pointless, as is calculating the variance of only two numbers.
 
-- Because variance relies on squared values, taking the square root yields a more interpretable metric. For instance, a grade variance of 100 is difficult to interpret on a 0 to 20 scale. Taking the standard deviation <br> ($\sigma = \sqrt{100} = 10$) returns the measure of dispersion to the original scale of the data.
+- Because variance relies on squared values, taking the square root yields a more interpretable metric. For instance, a grade variance of 100 is difficult to interpret on a 0 to 20 scale. Taking the standard deviation ($\sigma = \sqrt{100} = 10$) returns the measure of dispersion to the original scale of the data.
 
 - In the formal definition shown in @eq-varianceA, variance involves the squared distance from the mean, known as the second moment. Raising values to higher powers, such as $X^3$, yields higher moments that describe additional geometric features of the distribution.
 

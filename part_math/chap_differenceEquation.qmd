@@ -130,7 +130,7 @@ To illustrate how discrete-time dynamical systems behave, we examine three forms
      - **$\delta = 0$ (Dynamic Equilibrium):** Births and immigration exactly balance deaths and emigration ($\text{Pop}_{t+1} = \text{Pop}_t$), the population is stable.
 
    When $\delta$ is a fixed constant, population size is described by an arithmetic sequence $$\text{Pop}_{t+1} = \text{Pop}_t + \delta.$$
-   Conversely, when demographic rates are proportional to population size <br>($\delta = r \times \text{Pop}_t$), population is described by a geometric sequence
+   Conversely, when demographic rates are proportional to population size ($\delta = r \times \text{Pop}_t$), population is described by a geometric sequence
     $$\text{Pop}_{t+1} = \text{Pop}_t + \text{Pop}_t \times r = \text{Pop}_t \cdot (1 + r)$$
 
    However, in real ecological systems, $\delta$ is rarely constant. Demographic parameters ($B, I, D, E$) fluctuate based on numerous interconnected factors:
@@ -140,7 +140,7 @@ To illustrate how discrete-time dynamical systems behave, we examine three forms
      - Density dependence (crowding, competition for food)
      - Inter-specific interactions (predation, mutualism, disease dynamics)
 
-   When these parameters depend directly on the current population size <br>($\delta = f(\text{Pop}_t)$), the system becomes non-linear, giving rise to complex dynamic behaviors such as stable cycles or deterministic chaos.
+   When these parameters depend directly on the current population size ($\delta = f(\text{Pop}_t)$), the system becomes non-linear, giving rise to complex dynamic behaviors such as stable cycles or deterministic chaos.
 
 ## Tips and warnings {.unnumbered}
 
@@ -200,7 +200,7 @@ To illustrate how discrete-time dynamical systems behave, we examine three forms
 
   While deriving these analytical formulas is a standard mathematical exercise, deriving exact closed-form solutions for complex systems is often difficult or impossible. In practice, modern computational tools allow us to evaluate discrete iterations almost instantaneously. As a result, visualizing trajectories directly—using tools like cobweb plots—often suffices to uncover the complete qualitative behavior of a dynamical system (@sec-functionViz) without requiring an explicit algebraic solution .
 
-- In discrete-time systems, state changes are modeled with difference equations <br>($y_{t+1} = f(y_t)$). In the next chapter, we will transition to continuous-time systems governed by differential equations $\dfrac{dy}{dt} = f(y)$, where rates of change are defined instantaneously at every infinitely small slice of time. This is an example where difference between discrete and continuous variables leads to different mathematical approach @sec-discreteContinuous.
+- In discrete-time systems, state changes are modeled with difference equations ($y_{t+1} = f(y_t)$). In the next chapter, we will transition to continuous-time systems governed by differential equations $\dfrac{dy}{dt} = f(y)$, where rates of change are defined instantaneously at every infinitely small slice of time. This is an example where difference between discrete and continuous variables leads to different mathematical approach @sec-discreteContinuous.
 
 
 ### Notation/Semantic/Terminology {.unnumbered}
