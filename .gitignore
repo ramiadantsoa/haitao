@@ -1,7 +1,5 @@
 # Quarto temporary artifacts
 /.quarto/
-# # Quarto output directory for books
-# /_book/
 
 _freeze/
 
