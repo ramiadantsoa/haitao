@@ -5,11 +5,6 @@ website:
   title: "Haitao"
   site-url: "https://ramiadantsoa.github.io/haitao/"
 
-publish:
-  gh-page:
-    repo: ramiadantsoa/haitao
-    branch: main
-
 book:
   # title: "A  handbook of quantitative methods for (ecological) data analyses"
   # author: "Tanjona Ramiadantsoa"
