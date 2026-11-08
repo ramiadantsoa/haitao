@@ -45,17 +45,17 @@ Here is dictionary of the greek alphabet in upper and lower case, the latin equi
 
 
 ## Examples {.unnumbered}
-- "I am $\alpha$ and $\Omega$", probably the most famous use of greek letters to mean the beginning and the end.
-- $\pi$ represents the number 3.14... or geometrically as the ratio between the circumference of a circle and its diameter.
-- $\sigma$ is used as the parameter for standard deviation for a normal distribution. The variance is $\sigma^2$.
-- $\sum$ and $\prod$ are used for shortcut summation and product see @sec-sum.
-<!-- - $\Omega$ is usually used to represent a set, but can mean something else in physics. -->
-- The Riemann zeta function $\zeta(s)$ is a important function, a conjectured property called the Riemann hypothesis remained unproven so far.
-- $\epsilon$ and $\omicron$ $\iota$ for covid variants.
+
+* "I am $\alpha$ and $\Omega$": probably the most famous use of Greek letters to mean the beginning and the end.
+* $\pi$ represents the number $3.14\dots$ and geometrically is the ratio between the circumference of a circle and its diameter.
+* $\sigma$ denotes standard deviation, while variance is $\sigma^2$.
+* $\sum$ and $\prod$ represent summation and product, respectively (see @sec-sum).
+* The Riemann zeta function $\zeta(s)$ is an important function; a conjectured property called the Riemann hypothesis has remained unproven so far.
+* $\epsilon$, $\omicron$, and $\iota$ were used to designate COVID-19 variants.
 
 ## Tips and warning {.unnumbered}
-- In mathematics: greek letter often represent parameters while latin letters represent variables, for example $x(t) = \alpha t^2 + \beta$.
-- In probability statics: greek letter for paremeters of probability distribution: $\mathcal{N}(\mu, \sigma)$ or Poisson($\lambda$).
-- $\alpha$ is used a threshold in stastistical signficance, $\beta$ for type II error, $\varepsilon$ or $\epsilon$^[the curly and lunate two typograph for epsilon due to historical styles] is a random error/
-- In statistics: greek letters denote the true value, for instance ($\sigma$) for the standard deviation of the population (@sec-population) and $s$ or $$\hat{s} for the  estimated value from the sample. This will become clearer when statistical inference is addressed.^[not yet in this version]
-<!-- - Latin browed letters from Greek. When the romans picked the letter, some of them were dropped because romans did not need them (like phi) or modified them, Delta, Lambda and sigma. while some kept the same. -->
+
+* In mathematics, Greek letters often represent parameters while Latin letters represent variables, for example $x(t) = \alpha t^2 + \beta$.
+* In probability and statistics, Greek letters represent parameters of a probability distribution: $\mathcal{N}(\mu, \sigma)$ or $\text{Poisson}(\lambda)$.
+* $\alpha$ is used as a threshold in statistical significance, $\beta$ for Type II error, and $\varepsilon$ or $\epsilon$^[The curly and lunate forms are two typographic styles for epsilon due to historical conventions.] represents a random error.
+* In statistics, Greek letters denote the true population value—for instance, $\sigma$ for the standard deviation of the population (@sec-population)—and $s$ or $\hat{\sigma}$ for the estimated value from the sample. This will become clearer when statistical inference is addressed.^[Not yet in this version.]

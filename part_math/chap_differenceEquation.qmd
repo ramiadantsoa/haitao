@@ -39,8 +39,6 @@ The concept of a next state depending sequentially on the current state is not l
 
 - Ny hazo no vanon-ko lakana, ny tany naniriana no tsara.
 - Raha maty aho, matesa rahavako; raha maty rahavako, matesa ny omby
--
-
 
 ## Formal {.unnumbered}
 

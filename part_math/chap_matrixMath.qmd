@@ -23,7 +23,7 @@ $$
     0 & 10 & 0 \\
     1 & 0 & 2
 \end{pmatrix}
-$$
+$${#eq-grocery}
 
 Alternatively, the data could be arranged by putting the purchaser on the column and the fruit on the row.
 $$
@@ -34,7 +34,7 @@ $$
 \end{pmatrix}
 $$
 
-These two rectangles contains the same amount of information (provided the meaning of the rows and columns are clear). Further, the conversion from the first matrix to the second one is called transposing.
+These two rectangles contains the same amount of information (provided the meaning of the rows and columns are clear). The conversion from the first matrix to the second one is called transposing.
 
 ## Formal {.unnumbered}
 
@@ -70,7 +70,7 @@ $$
 
 ## Examples {.unnumbered}
 
-- A square matrix is with the same number of row and column
+- A square matrix is a matrix with the same number of rows and columns.
 
 $$
 \begin{pmatrix}
@@ -80,7 +80,7 @@ $$
 \end{pmatrix}
 $$
 
-- A diagonal matrix has all element of the diagonal equals to 0, it is often noted diag()
+- A diagonal matrix has all off-diagonal elements equal to 0, often denoted diag().
 $$
 \text{diag}(a, b, c) =
 \begin{pmatrix}
@@ -90,7 +90,8 @@ a & 0 & 0 \\
 \end{pmatrix}
 $$
 
-- A matrix can be symmetric where the values are the same the diagonal, i.e. $a_{\{i,j\}} = a_{\{j,i\}}$
+- A matrix is symmetric when its entries are identical across the main diagonal, i.e., $a_{i,j} = a_{j,i}$.
+
 $$
 \begin{pmatrix}
 a & 1 & x \\
@@ -100,15 +101,18 @@ x & -1 & c
 $$
 
 ## Tips and warning {.unnumbered}
-<!-- - A matrix is often denoted by a capital letter, sometimes in bold to differentiate from value which are mostly lower case. -->
-- A community matrix for ecologist is a matrix where each row represents a site and each column represents a species (could be presence-absence or abundance).
-- A design matrix is a matrix where each row represents a site and each column represents a variable (altitude, temperature etc).
-- A distance matrix is a square and symmetric matrix computed from the community matrix. Each entry represents a pairwise distance between two sites (difference in species composition) or between species (difference in species distribution). Becaue distance between site A and site B is the same as the distance between site B and site A then the matrix is symmetric.
-<!-- - From a mathematical matrix, a column matrix is different than a row matrix (1 x n) is not the same as (n x 1) although one can transpose it. -->
-- Matrix is more than a rectangle storing data, it is the foundation of linear algebra...and sometimes have magical properties. Maybe in future chapters
-- A data frame (@sec-dataframe) is also a rectangular object mostly used in data-science. The columns could be a different type (numbers, text, etc.). There is no equivalent of data frame in mathematics.
-<!-- - The huge field of linear algebra in mathematics is essentially understand the properties of matrix. -->
+
+- A community matrix for an ecologist is a matrix where each row represents a site and each column represents a species (containing presence-absence or abundance data).
+
+- A design matrix is a matrix where each row represents a site and each column represents a variable (altitude, temperature, etc.).
+
+- A distance matrix is a square and symmetric matrix computed from the community matrix. Each entry represents a pairwise distance between two sites (difference in species composition) or between two species (difference in species distribution). Because the distance between site A and site B is the same as the distance between site B and site A, the matrix is symmetric.
+- A matrix is more than a rectangle storing data; it is the foundation of linear algebra...and sometimes has magical properties. Perhaps in future chapters.
+
+- A data frame (@sec-dataframe) is also a rectangular object mostly used in data science. The columns can be of different types (numbers, text, etc.). There is no mathematical equivalent of a data frame.
+
 
 #### Semantic/Terminology/Notation
-- The $i^{th}$ and $j^{th}$ entry is also called the $i^{th}$ and $j^{th}$ element of the matrix
-- For more succinct notation, the curly brackets and comma can be ommitted, so $a_{ij}$ instead of $a_{i,j}$ or $a_{\{i, j\}}$ as in @eq-matrixGeneral.
+- The entry in the $i^{\text{th}}$ row and $j^{\text{th}}$ column is also called the $(i, j)^{\text{th}}$ element of the matrix. [Note: Clarified indexing terminology; $i$ and $j$ refer to the row and column indices respectively, rather than two separate elements.]
+
+- For more succinct notation, the curly brackets and comma can be omitted, using $a_{ij}$ instead of $a_{i,j}$ or $a_{\{i, j\}}$ as in @eq-matrixGeneral.

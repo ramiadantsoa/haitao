@@ -34,7 +34,7 @@ Any amin'ny fizarana fahatelo vao misy kaody. Ilaina ny mampiditra ny [R](https:
 
 Teraka ihany Ambatobevohoka. Raha efa ela no nitsirian'ny hevitra, an-taonany maro no namisavisana ny fomba hanatanterahana azy, ny lohahevitra sy voatoatin-kevitra, ny fomba hampitana izany, ary ny hampifandraisana ny lohahevitra maro. Na dia tsy afa-po aza, dia nanapa-kevitra fa tonga ny fotoana hamoahana ity dika ity. Dika izay azo lazaina fa fanandramana sy vakiraoka ihany. Mety maro no ho diso fanantenana amin'ny voatoatony satria mbola fototra no resahina betsaka fa tsy ilay fampiharana izany tena ilaina rehefa hamakafaka data. Ireto anefa ny antony roa lehibe namoahana ity:
 
-- Mila ny fenehoan-kevitra avy any amin'ny mpampiasa ny boky aho. Manantenana fanitsiana, fanatsarana, faniriana, sy kiana avy amin'ny mpamaky. Afaka mandefa mailaka na koa mameno amin'[ity rohy ity](placeholder). Misaotra mialoha amin'ny fanampiana.
+- Mila ny fenehoan-kevitra avy any amin'ny mpampiasa ny boky aho. Manantenana fanitsiana, fanatsarana, faniriana, sy kiana avy amin'ny mpamaky. Afaka mandefa mailaka na koa mameno amin'[ity rohy ity](https://airtable.com/appNFctf6KBHxQgiv/pagIaOAtKsQVxTfdW/form). Misaotra mialoha amin'ny fanampiana.
 - Mila fotoana ianarana ny fototra. Matetika ny fototra koa ny olana lehibe. Raha ny atrikasa maro notanterihina dia ny andro voalohany no tena mavesatra satria fohy loatra ny fotoana nefa maro be ny fahalalana vaovao. Omena lanja manokana ny fototra eto ary omena fotoana handevonana azy.
 
 Sao gaga ny mpamaky fa hisy fanitsiana sy fanatsarana majinijika (Dika 0.5.1, 0.5.2) hivoaka miandalana. Ny dika farany ihany no ita ao amin'ny pejy. Manantena aho anefa tsy hiandry aman-taonany vao ny hivoaka ny dika ofisialy 1.0.

@@ -1,8 +1,12 @@
 # Cover {.unnumbered}
 
-![](cover_mdg.png)
 
-![](cover_eng.png)
+![[Afaka alaina amin'ity rohy ity koa ity boky ity](https://www.google.com)](cover_mdg.png)
+
+
+![[This handbook can be downloaded here](https://www.google.com)](cover_eng.png)
+
+
 <!--
 ## License {.unnumbered}
 

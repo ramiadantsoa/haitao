@@ -298,9 +298,9 @@ When the limit exists, $f$ is said to be differentiable at $a$. Here $f'(a)$ is 
 
   - *Increasing Region (Green):* On the domain highlighted in green ($x < 0$), the derivative is strictly positive ($f'(x) > 0$, orange curve above zero), causing the original function (blue line) to increase.
   - *Decreasing Region (Red):* Conversely, on the domain highlighted in red ($x > 0$), the derivative is negative ($f'(x) < 0$, orange curve below zero), and the function decreases.
-  - **Critical & Inflection Points (Orange Highlights):**
-    - **Local Maximum:** At $x = 0$, the derivative vanishes ($f'(0) = 0$), corresponding to the peak (local maximum) of the function.
-    - **Steepest Growth & Decay:** The maximum of the derivative curve (highest orange point at $x = -1$) marks the point of steepest ascent (inflection point) for the function. The minimum of the derivative curve (lowest orange point at $x = 1$) marks the point of steepest descent.
+  - Critical & Inflection Points (Orange Highlights):
+    - Local Maximum: At $x = 0$, the derivative vanishes ($f'(0) = 0$), corresponding to the peak (local maximum) of the function.
+    - Steepest Growth & Decay: The maximum of the derivative curve (highest orange point at $x = -1$) marks the point of steepest ascent (inflection point) for the function. The minimum of the derivative curve (lowest orange point at $x = 1$) marks the point of steepest descent.
 
 ```{r}
 #| label: fig-pdfDerivative

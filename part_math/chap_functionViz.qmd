@@ -7,7 +7,7 @@ Ikotozafy ihany no Alexis!
 
 In standard high-school mathematics curricula—such as the French *Baccalauréat* exam—the highest point allocation belongs to the comprehensive calculus problem. A function is introduced at the start, followed by a sequence of procedural steps: finding the domain of definition (*domaine de définition*), computing limits (*limites*), evaluating derivatives (*calcul de dérivée*), constructing sign and variation tables (*tableau de variations*), and ultimately sketching the representative curve (*construire la courbe représentative*).
 
-Looking at the big picture, the overarching goal of the exercise is simply to plot a curve for a given function. Yet, in the modern era, this is hardly a problem: there are applications that transform a handwritten function into a curve.
+Looking at the big picture, the overarching goal of the exercise is simply to plot a curve for a given function. Yet, in the modern era, this is hardly a problem: there are applications that transform a handwritten function into its representative curve.
 
 While there is undeniably an educational purpose in learning to sketch a curve by hand, it often comes at the expense of developing a far more critical skill: reading and interpreting graphs. It is surprisingly common, even at the Master's and Ph.D. levels, to encounter students who struggle to interpret scientific figures.
 

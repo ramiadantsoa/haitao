@@ -5,9 +5,9 @@
 Asio facture azafady!
 :::
 
-Wasn't matrix multiplication defined in the previous chapter(@sec-matrixOperationCoding)? Yes, but they are called Hadamard product and element-wise multiplication. But also as it might happen throughout this book, the same terms and symbols could be used where the meaning depends on the context. Here, another multiplication, but this is **the most used and useful matrix multiplication**.
+Was matrix multiplication not defined in the previous chapter (@sec-matrixOperationCoding)? Yes, but that was called the Hadamard product or element-wise multiplication. As may happen throughout this book, identical terms and symbols can be used with meanings that depend on context. Here, another multiplication is introduced, which is the most used and useful matrix multiplication.
 
-Matrix multiplication is something that we encounter all the time. Consider again the purchase matrix earlier (@sec-matrixMath). Rabe bought 6 bananas, 3 toko strawberries, and 0.5 kapoaka of voatsinefy. Rakoto bought 3 bananas, 1 toko of strawberries, no voatsinefy. Sanda bought  10 toko of strawberries. Finally, Dora bought 1 banana and 2 kapoaka of vaotsinefy. The data could be represented as a matrix $A$.
+Matrix multiplication is something encountered all the time. Consider again the purchase matrix introduced earlier (@sec-matrixMath). Rabe bought 6 bananas, 3 toko of strawberries, and 0.5 kapoaka of voatsinefy. Rakoto bought 3 bananas, 1 toko of strawberries, and no voatsinefy. Sanda bought 10 toko of strawberries. Finally, Dora bought 1 banana and 2 kapoaka of voatsinefy. The data can be represented as a grocery matrix $A$.
 
 $$
 A = \begin{pmatrix}
@@ -18,12 +18,13 @@ A = \begin{pmatrix}
 \end{pmatrix}
 $$
 
-Now assume one banana is 500 Ar, a toko of strawberries is 1000 Ar, and a kapoaka of voatsinefy is 2000 Ar.
+Now, assume one banana is 500 Ar, a toko of strawberries is 1000 Ar, and a kapoaka of voatsinefy is 2000 Ar.
 
 - Rabe paid: $500 \times 6 + 1000 \times 3 + 2000 \times 0.5 = 7000$
-- Rakoto paid: $500 \times 3 + 1000 \times 1 + 2000 \times 0 = 2500$  etc.
+- Rakoto paid: $500 \times 3 + 1000 \times 1 + 2000 \times 0 = 2500$ and so on.
 
-This formula above, called dot product, is what is done in a receipt. As usual, mathematicians, will note that $\cdot$ and call it a matrix multiplication. That is: if
+This formula above, called the dot product, is what is calculated on a receipt. Mathematicians denote it as $\cdot$ and call it matrix multiplication. That is, if
+
 $$
 P =
 \begin{pmatrix}
@@ -33,12 +34,10 @@ P =
 \end{pmatrix}
 $$
 then
-$$
-A \cdot P
-$$
-will give a vector of three rows and one column. Each row represents how much each person paid.
+$$A \cdot P = \begin{pmatrix} 6 & 3 & 0.5 \\ 3 & 1 & 0 \\ 0 & 10 & 0 \\ 1 & 0 & 2 \end{pmatrix} \begin{pmatrix} 500 \\ 1000 \\ 2000 \end{pmatrix} = \begin{pmatrix} 6 \times 500 + 3 \times 1000 + 0.5 \times 2000 \\ 3 \times 500 + 1 \times 1000 + 0 \times 2000 \\ 0 \times 500 + 10 \times 1000 + 0 \times 2000 \\ 1 \times 500 + 0 \times 1000 + 2 \times 2000 \end{pmatrix} = \begin{pmatrix} 3000 + 3000 + 1000 \\ 1500 + 1000 + 0 \\ 0 + 10000 + 0 \\ 500 + 0 + 4000 \end{pmatrix} = \begin{pmatrix} 7000 \\ 2500 \\ 10000 \\ 4500 \end{pmatrix}$$
 
-The multiplication makes sense only if the number of columns in the first matrix is the same as the number of rows in the second matrix--otherwise there is no pairs to multiply.
+
+The multiplication makes sense only if the number of columns in the first matrix equals the number of rows in the second matrix—otherwise, there are no pairs to multiply.
 
 ## Formal {.unnumbered}
 
@@ -53,169 +52,79 @@ Each entry  $c_{i,j}$ in the product matrix $C$ represents the dot product of th
 
 $$
     c_{i,j} = \sum_{k=1}^{n} a_{i,k} \cdot b_{k,j} = a_{i,1}b_{1,j} + a_{i,2}b_{2,j} + \dots + a_{i,n}b_{n,j}
-$${#eq-dotProduct}^[A good example to practice summation notation (@sec-sum)].
+$${#eq-dotProduct}
+
 
 ## Examples {.unnumbered}
-- The price of fruit differ among markets, in another market, the price of the fruits were and we combine both price in matrix with two columns
+- The prices of fruits differ across markets. In another market, the prices of the fruits were different, so both set of prices are combined into a matrix with two columns
+
+  $$
+  Q =
+  \begin{pmatrix}
+      500 & 600 \\
+      1000  & 800 \\
+      2000 & 2500
+  \end{pmatrix}
+  $$
+
+  The product $A \cdot Q$ will give the total for each market
+  $$ A \cdot Q =
+  \begin{pmatrix}
+      6 & 3 & 0.5 \\
+      3 & 1 & 0 \\
+      0 & 10 & 0 \\
+      1 & 0 & 2 \\
+  \end{pmatrix}
+  \cdot
+  \begin{pmatrix}
+      500 & 600 \\
+      1000  & 800 \\
+      2000 & 2500
+  \end{pmatrix} =
+  \begin{pmatrix}
+    7000 & 7250 \\
+    2500 & 2600 \\
+    10000 & 8000 \\
+    4500 & 5600
+  \end{pmatrix}
+  $$
+
+
+- Multiplication with the identity matrix $I$^[also denoted as $I_n$ to explicitly indicate the dimensions]
+
 $$
-Q =
-\begin{pmatrix}
-    500 & 600 \\
-    1000  & 800 \\
-    2000 & 2500
-\end{pmatrix}
+  A \cdot I =
+  \begin{pmatrix}
+      6 & 3 & 0.5 \\
+      3 & 1 & 0 \\
+      0 & 10 & 0 \\
+      1 & 0 & 2
+  \end{pmatrix}
+  \cdot
+  \begin{pmatrix}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+      6 & 3 & 0.5 \\
+      3 & 1 & 0 \\
+      0 & 10 & 0 \\
+      1 & 0 & 2
+  \end{pmatrix}
 $$
 
-The product $ A \cdot Q$ will give the total for each market
-$$ A \cdot Q
-\begin{pmatrix}
-    6 & 3 & 0.5 \\
-    3 & 1 & 0 \\
-    0 & 10 & 0 \\
-    1 & 0 & 2 \\
-\end{pmatrix}
-\cdot
-\begin{pmatrix}
-    500 & 600 \\
-    1000  & 800 \\
-    2000 & 2500
-\end{pmatrix} =
-\begin{pmatrix}
-  7000 & 7250 \\
-  2500 & 2600 \\
-  10000 & 8000 \\
-  4500 & 5600
-\end{pmatrix}
-$$
-
-
-- Multiplication with identity matrix $I$^[also noted as $I_n$ to be explicit with the dimensions]
-  $$ A \cdot I
-\begin{pmatrix}
-    6 & 3 & 0.5 \\
-    3 & 1 & 0 \\
-    0 & 10 & 0 \\
-    1 & 0 & 2
-\end{pmatrix}
-\cdot
-\begin{pmatrix}
-    1 & 0 & 0 \\
-    0 & 1 & 0 \\
-    0 & 0 & 1
-\end{pmatrix}
-=
-\begin{pmatrix}
-    6 & 3 & 0.5 \\
-    3 & 1 & 0 \\
-    0 & 10 & 0 \\
-    1 & 0 & 2
-\end{pmatrix}
-$$
-This is like multiplying by one in the arithmetic operation.
+Multiplying a matrix by the identity matrix leaves the matrix unchanged, just as multiplying a number by 1 does in arithmetic.
 
 ## Tips and warning {.unnumbered}
 
-- There is no equivalent for matrix division. Instead, a division is defined as a multiplication with the inverse^[the inverse of a matrix does not necessarily exist].
-- The inverse of a matrix $A$ is denoted as $A^{-1}$ such that $A \cdot A^{-1} = I$. This
-- A linear model is essentially a A x + b = y is a matrix multiplication A times
-- It is essential to understand that multiplication, and one can do it by hand, however, R programming can do that with almost not cost (@sec-matrixOperationCoding).
+- There is no equivalent for direct matrix division. Instead, division is defined as multiplication by the inverse^[The inverse of a matrix does not necessarily exist.].
 
+- The inverse of a matrix $A$ is denoted as $A^{-1}$ such that $A \cdot A^{-1} = I$.
 
-<!-- Think about a null matrix, there is no second matrix to multiply with
+- A linear model is essentially $A x + b = y$, which represents a matrix multiplication of $A$ times $x$ plus a vector $b$.
 
-% More mathematica properties
+- Understanding matrix multiplication conceptually—and performing it by hand—is essential; however, R can execute these operations at almost no computational cost^[unless the matrices are gigantic] (@sec-matrixOperationCoding).
 
-% - **Non-Commutative:** In general, $A \cdot B \neq B \cdot A$. The order of multiplication matters.
-% - **Associative:** $(A \cdot B) \cdot C = A \cdot (B \cdot C)$
-% - **Distributive:** $A \cdot (B + C) = A \cdot B + A \cdot C$
-
-
-% - Projecting the number of juvenile and adult of an annual plant with a Leslie matrix ($L$). Assume $40\%$ of juvenile survives to adulthood after one year, and adult only lives for one year.Juvenile does not produce offspring. An adult produces 2 juveniles in one year. We can turn that information into a matrix called Leslie matrix
-
-% $$
-% L =
-% \begin{pmatrix}
-% 0 & 2.0 \\
-% 0.4 & 0
-% \end{pmatrix}
-% $$
-
-
-
-% If the initial population vector is
-% $N_{\text{now}} =
-% \begin{pmatrix}
-%   100 \text{ (juveniles)} \\
-%   50 \text{ (adults)}
-% \end{pmatrix}$,
-
-% The population at time one year after is ($N_\text{next} = L \cdot N_{\text{now}}$) is calculated via matrix multiplication:
-
-% $$
-% N_\text{next} =
-% \begin{pmatrix}
-%     0 & 2.0 \\
-%     0.4 & 0
-% \end{pmatrix}
-% \cdot
-% \begin{pmatrix}
-% 100 \\
-% 50
-% \end{pmatrix} =
-% \begin{pmatrix}
-% (0 \cdot 100) + (2.0 \cdot 50) \\
-% (0.4 \cdot 100) + (0 \cdot 50)
-% \end{pmatrix}
-% =
-% \begin{pmatrix}
-% 100 \text{ juveniles} \\
-% 40 \text{ adults}
-% \end{pmatrix}
-% $$
-
-% - Biomass ($\text{g/m}^2$) in as a function of soil nitrogen ($\%$) and Annual Rainfall ($\text{m}$) at 4 sites. In this specific example assume we know the effect of each of the parameter on plant biomass which the coefficients ($\beta$):
-
-% * **$\beta_0 = 100$:** Baseline biomass
-% * **$\beta_1 = 150$:** $+150\text{ g/m}^2$ per $1\%$ nitrogen
-% * **$\beta_2 = 80$:** $+80\text{ g/m}^2$ per $1\text{ m}$ rainfall
-
-% The design matrix for each site is
-
-% - Site 1 (Arid / Low Nitrogen): 0.2\% Nitrogen, 0.8 m Rainfall.
-% - Site 2 (Warm Grassland): 0.5\% Nitrogen, 0.6 m Rainfall.
-% - Site 3 (Wet / Low Nitrogen): 0.1\% Nitrogen, 1.5 m Rainfall.
-% - Site 4 (Fertile Woodland): 0.4\% Nitrogen, 1.2 m Rainfall.
-
-% $$
-% \begin{matrix}
-%     \text{Site 1} \\
-%     \text{Site 2} \\
-%     \text{Site 3} \\
-%     \text{Site 4}
-% \end{matrix}
-% \begin{pmatrix}
-%   1 & 0.2 & 0.8 \\
-%   1 & 0.5 & 0.6 \\
-%   1 & 0.1 & 1.5 \\
-%   1 & 0.4 & 1.2
-% \end{pmatrix}
-% \cdot
-% \begin{pmatrix}
-%   100 \\
-%   150 \\
-%   80
-% \end{pmatrix}
-%  =
-% \begin{pmatrix}
-%   194 \\
-%   223 \\
-%   235 \\
-%   256
-% \end{pmatrix}
-% $$
-
-% This is an illustration, in practice we know the biomass, and the design matrix (we measured them). The goal is generally to estimate the coefficient $\beta$.
-
-
--->
 

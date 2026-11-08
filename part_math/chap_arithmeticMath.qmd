@@ -51,21 +51,23 @@ Parentheses and alternate symbols of grouping can be used to override the usual 
 
 ## Tips and warning {.unnumbered}
 
-- Solution to the problem is above $8 \div 2 \, (2 + 2)$
-  - First, include the multiplation symbol $8  \div 2 \times (2 + 2)$,
-  - Then do the operation within parentheses $8 \div 2 \times 2$
-  - Equal priority, so left then right $4 \times 2 = 8$^[If unconvinced, imagine calculating  $2 - 2 + 3$, nobody will do $2 + 3$ first.]
+-  The solution to the problem above is $8 \div 2 \, (2 + 2)$:
+   -  First, include the multiplication symbol: $8 \div 2 \times (2 + 2)$.
+   - Then, perform the operation within parentheses: $8 \div 2 \times 4$
+   - Operations have equal priority, so proceed from left to right: $4 \times 4 = 16$.^[If unconvinced, imagine calculating $2 - 2 + 3$; nobody would calculate $2 + 3$ first.]
 
-- The rule of performing exponentiation before multiplication and multiplication before addition should be natural. Multiplication by definition is a notation for repeated addition: $2 + 2 + 2 + 2 = 2 \times 4$. If the multiplication is unwrapped, then $2 \times 4 + 3 = 2 + 2 + 2 + 2 + 3$. Should be clear that it does not make sense to add $4 + 3$ first and then multiply by 2.
-- The same applies to power $2 ^ 3 = 2 \times 2 \times 2$. This if unwrapped,  $2^3 \times 3 = 2 \times 2 \times 2 \times 3$ and $2^3 + 3 = 2 \times 2 \times 2 + 3$
-- Add parenthesis when in doubt even it might be unnecessary--this can be important especially when coding. And do not skip calculation steps.
-<!-- - [What is $2^{2^2}$?]{.highlight-yourTurn} -->
+
+- The rule of performing exponentiation before multiplication and multiplication before addition should feel natural. Multiplication by definition is a notation for repeated addition: $2 + 2 + 2 + 2 = 2 \times 4$^[With that notation, $2 \times 4$ and $4 \times 2$ have different meanings.]. If the multiplication is unwrapped, then $2 \times 4 + 3 = 2 + 2 + 2 + 2 + 3$. It should be clear that performing $4 + 3$ first and then multiplying by 2 makes no sense.
+
+- The same applies to powers: $2^3 = 2 \times 2 \times 2$. Thus, when unwrapped, $2^3 \times 3 = 2 \times 2 \times 2 \times 3$ and $2^3 + 3 = 2 \times 2 \times 2 + 3$.
+
+- Add parentheses when in doubt, even if unnecessary—this can be important, especially when coding. Also, do not skip calculation steps.
 
 
 ### Semantic/Terminology/Notation{.unnumbered}
 
-- Semantic: power vs exponentiation. They are almost used exchangebly. Although exponentiaion is the precise math term.
-- Three notations for multiplication $a \times b$, $a .b$ and $a b$. While the latter makes the notation compact, it is also a source of confusion.^[One classic error in coding is forgetting to explicitly add a multiplication symbol (@sec-matrixOperationCoding) when coding]
-- There are also three notations for division $a \div$ b, $a / b$ and $\frac{a}{b}$. The latter can clarify priority and avoid usage of parentheses. Unfortunately, that symbol is not available in R language.
-     $\frac{1}{2} \times 3 \neq \frac{1}{2 \times 3}$ instead of $1/2 \times 3$
- 
+- Semantics: power vs. exponentiation. They are almost used interchangeably, although exponentiation is the precise mathematical term.
+
+- Three notations exist for multiplication: $a \times b$, $a \cdot b$, and $ab$. While the latter makes notation compact, it is also a source of confusion.^[One classic error in coding is forgetting to explicitly add a multiplication symbol (@sec-matrixOperationCoding).]
+
+- There are also three notations for division: $a \div b$, $a / b$, and $\frac{a}{b}$. The latter can clarify priority and avoid the usage of parentheses. $\frac{1}{2} \times 3 \neq \frac{1}{2 \times 3}$.^[Only one of these symbols represents a division in R @sec-arithmeticCoding]
